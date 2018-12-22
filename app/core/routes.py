@@ -9,6 +9,7 @@ from app.core import bp
 def index():   
     return render_template('index.html', title='Home')
 
+
 @bp.route('/pets/', methods=['GET', 'POST'])
 def pets():
 	return render_template('pets.html', title='Pets')

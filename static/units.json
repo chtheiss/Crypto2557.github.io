@@ -1,0 +1,362 @@
+{ 
+  "Paladin":{
+    "required": 5,
+    "buff": 50,
+    "img": "img/units/198.png",
+    "img_sr": "img/units/199.png",
+    "rotation": 12
+  },
+    "Royal Druid":{
+    "required": 20,
+    "buff": 100,
+    "img": "img/units/200.png",
+    "img_sr": "img/units/201.png",
+    "rotation": 12
+  },
+    "Skeleton Master":{
+    "required": 5,
+    "buff": 50,
+    "img": "img/units/202.png",
+    "img_sr": "img/units/203.png",
+    "rotation": 12
+  },
+    "Battle Hornist":{
+    "required": 10,
+    "buff": 20,
+    "img": "img/units/204.png",
+    "img_sr": "img/units/205.png",
+    "rotation": 12
+  },  
+  "Crimson Hawk Rider":{
+    "required": 20,
+    "buff": 60,
+    "img": "img/units/190.png",
+    "img_sr": "img/units/191.png",
+    "rotation": 12
+  },
+    "Astral Captain":{
+    "required": 15,
+    "buff": 30,
+    "img": "img/units/192.png",
+    "img_sr": "img/units/193.png",
+    "rotation": 12
+  },
+    "Shadow Knight":{
+    "required": 12,
+    "buff": 12,
+    "img": "img/units/194.png",
+    "img_sr": "img/units/195.png",
+    "rotation": 12
+  },
+    "War Bear Rider":{
+    "required": 25,
+    "buff": 1000,
+    "img": "img/units/196.png",
+    "img_sr": "img/units/197.png",
+    "rotation": 12
+  },
+    "Musketress":{
+    "required": 15,
+    "buff": 150,
+    "img": "img/units/182.png",
+    "img_sr": "img/units/183.png",
+    "rotation": 11
+  },
+    "Elf Sage":{
+    "required": 15,
+    "buff": 150,
+    "img": "img/units/184.png",
+    "img_sr": "img/units/185.png",
+    "rotation": 11
+  },
+    "Crow Knight":{
+    "required": 15,
+    "buff": 150,
+    "img": "img/units/186.png",
+    "img_sr": "img/units/187.png",
+    "rotation": 11
+  },
+    "Rangda":{
+    "required": 15,
+    "buff": 150,
+    "img": "img/units/188.png",
+    "img_sr": "img/units/189.png",
+    "rotation": 11
+  },
+    "Winged Knight":{
+    "required": 30,
+    "buff": 600,
+    "buff2": 1.2,
+    "img": "img/units/174.png",
+    "img_sr": "img/units/175.png",
+    "rotation": 10
+  },
+    "Windwalker":{
+    "required": 30,
+    "buff": 600,
+    "img": "img/units/176.png",
+    "img_sr": "img/units/177.png",
+    "rotation": 10
+  },
+    "Abyss Mage":{
+    "required": 30,
+    "buff": 600,
+    "img": "img/units/178.png",
+    "img_sr": "img/units/179.png",
+    "rotation": 10
+  },
+    "Siren":{
+    "required": 30,
+    "buff": 600,
+    "img": "img/units/180.png",
+    "img_sr": "img/units/181.png",
+    "rotation": 10
+  },
+    "Cleric":{
+    "required": 17,
+    "buff": 150,
+    "buff2": 50,
+    "img": "img/units/166.png",
+    "img_sr": "img/units/167.png",
+    "rotation": 9
+  },
+    "Elementalist":{
+    "required": 27,
+    "buff": 150,
+    "buff2": 4000,
+    "img": "img/units/168.png",
+    "img_sr": "img/units/169.png",
+    "rotation": 9
+  },
+    "Dark Elf":{
+    "required": 15,
+    "buff": 150,
+    "img": "img/units/170.png",
+    "img_sr": "img/units/171.png",
+    "rotation": 9
+  },
+    "Frost Demon":{
+    "required": 24,
+    "buff": 150,
+    "img": "img/units/172.png",
+    "img_sr": "img/units/173.png",
+    "rotation": 9
+  },
+    "Flame Spirit":{
+    "required": 27,
+    "buff": 4000,
+    "img": "img/units/158.png",
+    "img_sr": "img/units/159.png",
+    "rotation": 8
+  },
+    "Hippogriff":{
+    "required": 20,
+    "buff": 50,
+    "img": "img/units/160.png",
+    "img_sr": "img/units/161.png",
+    "rotation": 8
+  },
+    "Dark Spirit":{
+    "required": 12,
+    "buff": 15,
+    "img": "img/units/162.png",
+    "img_sr": "img/units/163.png",
+    "rotation": 8
+  },
+    "Blade Master":{
+    "required": 12,
+    "buff": 15,
+    "img": "img/units/164.png",
+    "img_sr": "img/units/165.png",
+    "rotation": 8
+  },
+    "Valkyrie":{
+    "required": 10,
+    "buff": 100,
+    "img": "img/units/142.png",
+    "img_sr": "img/units/143.png",
+    "rotation": 7
+  },
+    "Sword Dancer":{
+    "required": 10,
+    "buff": 100,
+    "img": "img/units/144.png",
+    "img_sr": "img/units/145.png",
+    "rotation": 7
+  },
+    "Incubus":{
+    "required": 10,
+    "buff": 10,
+    "img": "img/units/146.png",
+    "img_sr": "img/units/147.png",
+    "rotation": 7
+  },
+    "Ice Spirit":{
+    "required": 10,
+    "buff": 100,
+    "img": "img/units/148.png",
+    "img_sr": "img/units/149.png",
+    "rotation": 7
+  },
+    "Steam Punk":{
+    "required": 15,
+    "buff": 75,
+    "img": "img/units/134.png",
+    "img_sr": "img/units/135.png",
+    "rotation": 6
+  },
+    "Sylphid":{
+    "required": 15,
+    "buff": 75,
+    "img": "img/units/136.png",
+    "img_sr": "img/units/137.png",
+    "rotation": 6
+  },
+    "Medusa":{
+    "required": 15,
+    "buff": 75,
+    "img": "img/units/138.png",
+    "img_sr": "img/units/139.png",
+    "rotation": 6
+  },
+    "Naga":{
+    "required": 15,
+    "buff": 75,
+    "img": "img/units/140.png",
+    "img_sr": "img/units/141.png",
+    "rotation": 6
+  },
+    "Pilot":{
+    "required": 5,
+    "buff": 50,
+    "img": "img/units/124.png",
+    "img_sr": "img/units/125.png",
+    "rotation": 5
+  },
+    "Alchemist":{
+    "required": 5,
+    "buff": 5,
+    "img": "img/units/126.png",
+    "img_sr": "img/units/127.png",
+    "rotation": 5
+  },
+    "Lich":{
+    "required": 5,
+    "buff": 50,
+    "img": "img/units/128.png",
+    "img_sr": "img/units/129.png",
+    "rotation": 5
+  },
+    "Wyvern Rider":{
+    "required": 5,
+    "buff": 100,
+    "img": "img/units/130.png",
+    "img_sr": "img/units/131.png",
+    "rotation": 5
+  },
+    "Hot-Blooded Xuanzang":{
+    "required": 5,
+    "buff": 5,
+    "img": "img/units/116.png",
+    "img_sr": "img/units/117.png",
+    "rotation": 4
+  },
+    "Hoyden Goku":{
+    "required": 5,
+    "buff": 5,
+    "img": "img/units/118.png",
+    "img_sr": "img/units/119.png",
+    "rotation": 4
+  },
+    "Dark Admiral":{
+    "required": 5,
+    "buff": 5,
+    "img": "img/units/120.png",
+    "img_sr": "img/units/121.png",
+    "rotation": 4
+  },
+    "Raptor Rider":{
+    "required": 5,
+    "buff": 5,
+    "img": "img/units/122.png",
+    "img_sr": "img/units/123.png",
+    "rotation": 4
+  },
+    "Griffin Rider":{
+    "required": 1,
+    "buff": 1,
+    "img": "img/units/110.png",
+    "img_sr": "img/units/111.png",
+    "rotation": 3
+  },
+    "Forest Guardian":{
+    "required": 1,
+    "buff": 1,
+    "img": "img/units/112.png",
+    "img_sr": "img/units/113.png",
+    "rotation": 3
+  },
+    "Succubus":{
+    "required": 1,
+    "buff": 1,
+    "img": "img/units/114.png",
+    "img_sr": "img/units/115.png",
+    "rotation": 3
+  },
+    "Sorcerer":{
+    "required": 24,
+    "buff": 900,
+    "img": "img/units/100.png",
+    "img_sr": "img/units/101.png",
+    "rotation": 3
+  },
+    "Aladdin":{
+    "required": 18,
+    "buff": 90,
+    "img": "img/units/104.png",
+    "img_sr": "img/units/105.png",
+    "rotation": 2
+  },
+    "Druid":{
+    "required": 1,
+    "buff": 1,
+    "img": "img/units/106.png",
+    "img_sr": "img/units/107.png",
+    "rotation": 2
+  },
+    "Dark Ninja":{
+    "required": 1,
+    "buff": 1,
+    "img": "img/units/108.png",
+    "img_sr": "img/units/109.png",
+    "rotation": 2
+  },
+    "Battle Drummer":{
+    "required": 1000,
+    "buff": 10000,
+    "img": "img/units/102.png",
+    "img_sr": "img/units/103.png",
+    "rotation": 2
+  },
+    "Priest":{
+    "required": 12,
+    "buff": 30,
+    "img": "img/units/94.png",
+    "img_sr": "img/units/95.png",
+    "rotation": 1
+  },
+    "Fairy":{
+    "required": 14,
+    "buff": 30,
+    "img": "img/units/96.png",
+    "img_sr": "img/units/97.png",
+    "rotation": 1
+  },
+    "Dark Archer":{
+    "required": 24,
+    "buff": 60,
+    "img": "img/units/98.png",
+    "img_sr": "img/units/99.png",
+    "rotation": 1
+  }
+}

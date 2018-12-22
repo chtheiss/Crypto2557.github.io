@@ -1,4 +1,4 @@
-from app.farming import freezer
+from app import farming
 
 if __name__ == '__main__':
-    freezer.freeze()
+    farming.freezer.freeze()
