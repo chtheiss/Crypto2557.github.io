@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<script type="text/javascript">
+  function update_progress_bar(input){
+      if($(input).attr("id").endsWith("-sr")){
+          val_sr = parseInt($(input).val())
+          val = parseInt($("#"+$(input).attr("id").replace("-sr", "")).val())
+          max = 2 * parseInt($(input).attr("max"))
+      } else {
+          val_sr = parseInt($("#"+$(input).attr("id")+"-sr").val())
+          val = parseInt($(input).val())
+          max = parseInt($(input).attr("max"))
+      }
+      current_progress = ((val+2*val_sr)/max) * 100;
+
+      $("#prog-"+$(input).attr("id").replace("-sr", ""))
+        .css("width", current_progress + "%")
+        .attr("aria-valuenow", current_progress);
+      if(current_progress >=100)
+      {
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).addClass("progress-bar-green");
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).removeClass("progress-bar-blue");
+      } else {
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).addClass("progress-bar-blue");
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).removeClass("progress-bar-green");
+      }
+  }
+
+  function update_local_storage(input){
+    localStorage.setItem($(input).attr("id"), $(input).val())  
+  }
+
+  function reset_local_storage(input){
+    localStorage.setItem($(input).attr("id"), "0")  
+  }
+
+  $(window).on("load", function() {
+    inputs = document.getElementsByTagName('input');
+    for (i=0; i < inputs.length; i++) {
+      update_progress_bar(inputs[i])
+    }
+  });
+</script>
+{% endblock %}
+{% block content %}
+<script type="text/javascript">
+
+  String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+  };
+  json = JSON.parse($.ajax({url: "{{ url_for('../static', filename='units.json') }}", async: false}).responseText);
+  var keys = Object.keys(json);
+  var output = "<div class='table'>";
+  output += "<div class='row'>";
+  for (var i = 0; i < keys.length; i++)
+  {
+    if((i%4)==0)
+    {
+      output += "</div><div class='row'>" + "<div class='col-md-3 centered'>"+
+      "<div id='images'>"+
+        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
+        "</a>"+
+        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
+        "</a>"+
+      "</div>"+
+      "<div id='inputs'>"+
+          "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+2*json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"'>"+
+          "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
+      "</div>"+
+      "<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'></div></div>"+
+      "</div>";
+    }
+    else
+    {
+      output += "<div class='col-md-3 centered'>"+
+      "<div id='images'>"+
+        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
+        "</a>"+
+        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
+        "</a>"+
+      "</div>"+
+      "<div id='inputs'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+2*json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
+      "</div>"+
+      "<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required']+"'></div></div>"+
+      "</div>";
+    }
+  }
+
+  if((i%4)!=0)
+  {
+    output += "</div><div class='row'>";
+  }
+  output += "</div>";
+  document.write(output); 
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  }); 
+
+  $(function() {
+    $(":input").bind('keyup mouseup', function () {
+      update_progress_bar(this)
+      update_local_storage(this)
+    });
+  });
+</script>
+{% endblock %}

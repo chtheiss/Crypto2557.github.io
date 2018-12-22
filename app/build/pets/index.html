@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+ 	
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Unit Farming</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/normalize.css" >
+    <link rel="stylesheet" href="/static/css/ef.css" >
+    <script type="text/javascript" src="/static/js/lodash.min.js"></script>
+    <script type="text/javascript" src="/static/js/vue.min.js"></script>
+    <script type="text/javascript" src="/static/js/sortable.js"></script>
+    <script type="text/javascript" src="/static/js/data.js"></script>
+    
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/index/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/pets/">Pets</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/units/">Units</a>
+    </li>
+  </ul>
+  </nav>
+
+<div id="content">
+<div>
+	<!--
+	Credits and importants messages
+	-->
+	<center><h1><b>!!! DEV VERSION !!!</b><br/> Everything can change and you can lose your datas<h1><br/>
+	<h1>Please contact me on Discord (<b>Adeuxline#6320</b>) if you have ideas, recommandations or anything else to say :-)<h1>
+	<h2>Don't forget to visit my <a href="http://adeuxline.github.io/pet-farming">pet-farming website</a></h2></center>
+	<div id="petInputs">
+		<div class="petInput" v-for="pet in orderedPetList">
+		<div v-if="pet.img === 0"></div><div v-else>
+
+			<a id="${pet.img}-pet" :href="`https://www.endlessfrontierdata.com/units/${pet.img}`" :class="pet.fragments < pet.needed ? 'oneStar' : 'twoStar'">
+				<img :src="`https://www.endlessfrontierdata.com/images/units/${pet.img}.png`">
+			</a>
+			<div>
+				<span class="(pet.fragments * pet.caract1_6 + pet.fragments_n * pet.caract1_5 ) >= pet.caract1_max ? 'bonusok' : 'bonusnonok'" ></span><br/>
+
+				<p :class=" (pet.fragments * pet.caract1_6 + pet.fragments_n * pet.caract1_5 ) >= pet.caract1_max ? 'bonusok' : 'bonusnonok'" v-if="pet.caract1_5">Bonus 1: </p><p v-else><br/></p>
+
+				<p :class=" (pet.fragments * pet.caract2_6 + pet.fragments_n * pet.caract2_5 ) >= pet.caract2_max ? 'bonusok' : 'bonusnonok'" v-if="pet.caract2_5">Bonus 2: </p><p v-else><br/></p>
+
+				<input v-model.number="pet.fragments" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input v-model.number="pet.fragments_n" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;">
+			</div>
+		</div>		
+		</div>
+	</div>
+	<button @click="resetUnits">Reset</button>
+</div>
+</div>
+</body>
+</html>

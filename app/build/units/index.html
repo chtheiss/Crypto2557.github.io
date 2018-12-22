@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Unit Farming</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/normalize.css" >
+    <link rel="stylesheet" href="/static/css/ef.css" >
+    <script type="text/javascript" src="/static/js/lodash.min.js"></script>
+    <script type="text/javascript" src="/static/js/vue.min.js"></script>
+    <script type="text/javascript" src="/static/js/sortable.js"></script>
+    <script type="text/javascript" src="/static/js/data.js"></script>
+    
+<script type="text/javascript">
+  function update_progress_bar(input){
+      if($(input).attr("id").endsWith("-sr")){
+          val_sr = parseInt($(input).val())
+          val = parseInt($("#"+$(input).attr("id").replace("-sr", "")).val())
+          max = 2 * parseInt($(input).attr("max"))
+      } else {
+          val_sr = parseInt($("#"+$(input).attr("id")+"-sr").val())
+          val = parseInt($(input).val())
+          max = parseInt($(input).attr("max"))
+      }
+      current_progress = ((val+2*val_sr)/max) * 100;
+
+      $("#prog-"+$(input).attr("id").replace("-sr", ""))
+        .css("width", current_progress + "%")
+        .attr("aria-valuenow", current_progress);
+      if(current_progress >=100)
+      {
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).addClass("progress-bar-green");
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).removeClass("progress-bar-blue");
+      } else {
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).addClass("progress-bar-blue");
+        $("#prog-"+$(input).attr("id").replace("-sr", "")).removeClass("progress-bar-green");
+      }
+  }
+
+  function update_local_storage(input){
+    localStorage.setItem($(input).attr("id"), $(input).val())  
+  }
+
+  function reset_local_storage(input){
+    localStorage.setItem($(input).attr("id"), "0")  
+  }
+
+  $(window).on("load", function() {
+    inputs = document.getElementsByTagName('input');
+    for (i=0; i < inputs.length; i++) {
+      update_progress_bar(inputs[i])
+    }
+  });
+</script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/index/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/pets/">Pets</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/units/">Units</a>
+    </li>
+  </ul>
+  </nav>
+
+<div id="content">
+<script type="text/javascript">
+
+  String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+  };
+  json = JSON.parse($.ajax({url: "/static/units.json", async: false}).responseText);
+  var keys = Object.keys(json);
+  var output = "<div class='table'>";
+  output += "<div class='row'>";
+  for (var i = 0; i < keys.length; i++)
+  {
+    if((i%4)==0)
+    {
+      output += "</div><div class='row'>" + "<div class='col-md-3 centered'>"+
+      "<div id='images'>"+
+        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
+        "</a>"+
+        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
+        "</a>"+
+      "</div>"+
+      "<div id='inputs'>"+
+          "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+2*json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"'>"+
+          "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
+      "</div>"+
+      "<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'></div></div>"+
+      "</div>";
+    }
+    else
+    {
+      output += "<div class='col-md-3 centered'>"+
+      "<div id='images'>"+
+        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
+        "</a>"+
+        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
+          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
+        "</a>"+
+      "</div>"+
+      "<div id='inputs'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+2*json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+json[keys[i]]['required']+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
+      "</div>"+
+      "<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required']+"'></div></div>"+
+      "</div>";
+    }
+  }
+
+  if((i%4)!=0)
+  {
+    output += "</div><div class='row'>";
+  }
+  output += "</div>";
+  document.write(output); 
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  }); 
+
+  $(function() {
+    $(":input").bind('keyup mouseup', function () {
+      update_progress_bar(this)
+      update_local_storage(this)
+    });
+  });
+</script>
+</div>
+</body>
+</html>
