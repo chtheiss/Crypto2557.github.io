@@ -30,22 +30,12 @@
     <script type="text/javascript" src="/static/js/data.js"></script>
     
 <script type="text/javascript">
-  function update_progress_bar(bar, input){
-      if($(input).attr("id").endsWith("-sr")){
-          val_sr = parseInt($(input).val());
-          val = parseInt($("#"+$(input).attr("id").replace("-sr", "")).val());
-      } else {
-          val_sr = parseInt($("#"+$(input).attr("id")+"-sr").val());
-          val = parseInt($(input).val());
-      }
-      multiplier = parseFloat($(bar).attr("data-multiplier"));
-      current_progress = multiplier*val+val_sr;
-      max = $(bar).attr("aria-valuemax");
-      siz = (current_progress/max*100).toFixed(2);
 
+  function change_progress_bar_value(bar, value, max){
+      let siz = (value/max*100).toFixed(2);
       bar.css("width", siz + "%")
-         .attr("aria-valuenow", current_progress)
-         .text(Number((current_progress).toFixed(2))+"/"+max);
+         .attr("aria-valuenow", value)
+         .text(Number((value).toFixed(2))+"/"+max);
       if(siz >=100)
       {
         bar.addClass("progress-bar-green");
@@ -53,6 +43,37 @@
       } else {
         bar.addClass("progress-bar-red");
         bar.removeClass("progress-bar-green");
+      }
+  }
+
+  function update_progress_bar(bar, input){
+      let val = 0;
+      let val_sr = 0;
+      if($(input).attr("id").endsWith("-sr")){
+          val_sr += parseInt($(input).val());
+          val += parseInt($("#"+$(input).attr("id").replace("-sr", "")).val());
+      } else {
+          val_sr += parseInt($("#"+$(input).attr("id")+"-sr").val());
+          val += parseInt($(input).val());
+      }
+      let multiplier = parseFloat($(bar).data("multiplier"));
+      let linked_units = bar.data('linked-units');
+      additional_bars_to_update = [];
+      if(linked_units !== "undefined"){
+        linked_units = linked_units.split(',')
+        for (let unit of linked_units){
+          let input = document.getElementById('input-'+unit.replace(' ','-'));
+          let input_sr = document.getElementById('input-'+unit.replace(' ','-')+'-sr');
+          val += parseInt($(input).val());
+          val_sr += parseInt($(input_sr).val());
+          additional_bars_to_update.push($('#prog-input-'+unit.replace(' ', '-')+bar.attr('id').substr(-1)));
+        }        
+      }
+      let current_progress = multiplier*val+val_sr;
+      let max = $(bar).attr("aria-valuemax");
+      change_progress_bar_value(bar, current_progress, max);
+      for (let add_bar of additional_bars_to_update){
+        change_progress_bar_value(add_bar, current_progress, max);
       }
   }
 
@@ -69,10 +90,9 @@
   json = JSON.parse(localStorage.getItem('unit-info'));
 
   $(window).on("load", function() {
-
     $('[data-toggle="popover"]').each(function() {
-      unit = $(this).attr("data-unit");
-      buff_number = $(this).attr("data-buff-number");
+      unit = $(this).data("unit");
+      buff_number = $(this).data("buff-number");
       $(this).data("title", json[unit]["name-buff"+(buff_number === "2" ? buff_number : "")]);
       $(this).data("data-content", json[unit]["description-buff"+(buff_number === "2" ? buff_number : "")]);
     });
@@ -82,9 +102,9 @@
 
     inputs = document.getElementsByTagName('input');
     for (i=0; i < inputs.length; i++) {
-      update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+"1"), inputs[i]);
-      update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+"2"), inputs[i]);
-      update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+"3"), inputs[i]);
+      for(j=1;j<=json[$(inputs[i]).data("unit")]['number_buffs'];j++){
+        update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+j), inputs[i]);
+      }
     }
   });
 </script>
@@ -133,13 +153,16 @@
         "</a>"+
       "</div>";
       output += "<div id='inputs'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"' data-unit='"+keys[i]+"'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr' data-unit='"+keys[i]+"'>"+
       "</div>";
       for(j=1; j<=json[keys[i]]['number_buffs'];j++){
         output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
-        output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"'></div></div>"
+        output +="<div class='progress unit-bar'>"+
+            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"' data-linked-units='"+json[keys[i]]['linked_units']+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
+          "</div>"
         output += "</span>"
+
       }
       output +="</div>";
     }
@@ -155,13 +178,13 @@
         "</a>"+
       "</div>";
       output += "<div id='inputs'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"' data-unit='"+keys[i]+"'>"+
+        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr' data-unit='"+keys[i]+"'>"+
       "</div>";
       for(j=1; j<=json[keys[i]]['number_buffs'];j++){
         output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
         output +="<div class='progress unit-bar'>"+
-            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
+            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"' data-linked-units='"+json[keys[i]]['linked_units']+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
           "</div>"
         output += "</span>"
       }
@@ -185,9 +208,9 @@
 
   $(function() {
     $(":input").bind('keyup mouseup', function () {
-      update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+"1"), this)
-      update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+"2"), this)
-      update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+"3"), this)
+      for(j=1;j<=json[$(this).data("unit")]['number_buffs'];j++){
+        update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+j), this);
+      }
       update_local_storage(this)
     });
   });
