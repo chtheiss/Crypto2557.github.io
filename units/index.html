@@ -74,10 +74,6 @@
     $('[data-toggle="popover"]').each(function() {
       unit = $(this).attr("data-unit");
       buff_number = $(this).attr("data-buff-number");
-      console.log(unit);
-      console.log(buff_number);
-      console.log(json[unit]["name_buff"+(buff_number === "2" ? buff_number : "")]);
-      console.log(json[unit]["description_buff"+(buff_number === "2" ? buff_number : "")]);
       $(this).data("title", json[unit]["name-buff"+(buff_number === "2" ? buff_number : "")]);
       $(this).data("data-content", json[unit]["description-buff"+(buff_number === "2" ? buff_number : "")]);
     });
