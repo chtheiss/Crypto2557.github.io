@@ -23,7 +23,7 @@
     "rotation": 13,
     "number_buffs": 1,
     "multiplier1": 0.6,
-    "name_buff1": "Elf~s Secret Skill of Space-Time",
+    "name_buff1": "Elf's Secret Skill of Space-Time",
     "description_buff1": "For every 100 stages, there is a certain chance to skip 20 stages. (3% chance for every 5-star unit and 5% for every 6-star unit which are only applied when they are in the team.)"
   },
     "Skeleton Master":{
@@ -163,7 +163,7 @@
     "multiplier1": 0.5,
     "multiplier2": 0.5,
     "name_buff1": "Tribe Friendliness",
-    "description_buff1": "Increases the Tribe Friendliness for Human by 10 points for each 5-star Winged Knight, and 20 points for each 6-star Winged Knight. It is applied even when Winged Knight is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero~s tribe that you revive from.)",
+    "description_buff1": "Increases the Tribe Friendliness for Human by 10 points for each 5-star Winged Knight, and 20 points for each 6-star Winged Knight. It is applied even when Winged Knight is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)",
     "name_buff2": "Wings of Zephyrus",
     "description_buff2": "Increases the effieciency of boosting game speed(x2,x3,x5) by 0.05 for each 5-star Winged Knight(0.1 for 6-star). This would be activated by Winged Knight in your current team, NOT in Time Shop. For example, if you have four 5-star Winged Knights and three 6-star Winged Knights in your current team, then the game speed(x2,x3,x5) will be x2.5, x3.5 and x.5.5, respectively."
   },
@@ -176,7 +176,7 @@
     "number_buffs": 1,
     "multiplier1": 0.5,
     "name_buff1": "Tribe Friendliness",
-    "description_buff1": "Increases the Tribe Friendliness for Elf by 10 points for each 5-star Windwalker, and 20 points for each 6-star Windwalker. It is applied even when Windwalker is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero~s tribe that you revive from.)"
+    "description_buff1": "Increases the Tribe Friendliness for Elf by 10 points for each 5-star Windwalker, and 20 points for each 6-star Windwalker. It is applied even when Windwalker is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)"
   },
     "Abyss Mage":{
     "required1": 30,
@@ -187,7 +187,7 @@
     "number_buffs": 1,
     "multiplier1": 0.5,
     "name_buff1": "Tribe Friendliness",
-    "description_buff1": "Increases the Tribe Friendliness for Undead by 10 points for each 5-star Abyss Mage, and 20 points for each 6-star Abyss Mage. It is applied even when Abyss Mage is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero~s tribe that you revive from.)"
+    "description_buff1": "Increases the Tribe Friendliness for Undead by 10 points for each 5-star Abyss Mage, and 20 points for each 6-star Abyss Mage. It is applied even when Abyss Mage is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)"
   },
     "Siren":{
     "required1": 30,
@@ -198,7 +198,7 @@
     "number_buffs": 1,
     "multiplier1": 0.5,
     "name_buff1": "Tribe Friendliness",
-    "description_buff1": "Increases the Tribe Friendliness for Orc by 10 points for each 5-star Siren, and 20 points for each 6-star Siren. It is applied even when Siren is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero~s tribe that you revive from.)"
+    "description_buff1": "Increases the Tribe Friendliness for Orc by 10 points for each 5-star Siren, and 20 points for each 6-star Siren. It is applied even when Siren is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)"
   },
     "Cleric":{
     "required1": 15,
@@ -301,10 +301,10 @@
     "number_buffs": 2,
     "multiplier1": 0.4,
     "multiplier2": 0.4,
-    "name_buff1": "Elf~s Secret Skill 2",
-    "description_buff1": "When included in team, elf~s secret skill chance increases by 5%. (However, the increase by Hippogriffs cannot exceed 30%.)",
+    "name_buff1": "Elf's Secret Skill 2",
+    "description_buff1": "When included in team, elf's secret skill chance increases by 5%. (However, the increase by Hippogriffs cannot exceed 30%.)",
     "name_buff2": "Legend of Ancient Forest",
-    "description_buff2": "When elf~s secret skill is cast, this has a chance to pass 2 stages at a time. (This chance increases by 2% for each 5-star and 5% for each 6-star, but this only applies when they are included in the team. (Not applied when in Time Shop and cannot exceed 50%.)"
+    "description_buff2": "When elf's secret skill is cast, this has a chance to pass 2 stages at a time. (This chance increases by 2% for each 5-star and 5% for each 6-star, but this only applies when they are included in the team. (Not applied when in Time Shop and cannot exceed 50%.)"
   },
     "Dark Spirit":{
     "required1": 12,
@@ -561,8 +561,8 @@
     "rotation": 2,
     "number_buffs": 1,
     "multiplier1": 0.333333,
-    "name_buff1": "Human~s Secret Skill",
-    "description_buff1": "When operating Human~s Secret Skill, the amount of gold given increases by 10 times by 15% possibility."
+    "name_buff1": "Human's Secret Skill",
+    "description_buff1": "When operating Human's Secret Skill, the amount of gold given increases by 10 times by 15% possibility."
   },
     "Druid":{
     "required1": 1,
@@ -587,8 +587,8 @@
     "description_buff1": "This unit has no particular buffs but is good to have as a one of for Tower of Trials and Spirit Highlands."
   },
     "Battle Drummer":{
-    "required1": 1000,
-    "buff1": 10000,
+    "required1": 2500,
+    "buff1": 50000,
     "img": "img/units/102.png",
     "img_sr": "img/units/103.png",
     "rotation": 2,
@@ -605,7 +605,7 @@
     "rotation": 1,
     "number_buffs": 1,
     "multiplier1": 0.4,
-    "name_buff1": "God~s Blessing",
+    "name_buff1": "God's Blessing",
     "description_buff1": "With 5% possibilities, 5 times speedup for 2 minutes on every 10th floor (activation possibility is applied based on accumulation)"
   },
     "Fairy":{
@@ -616,8 +616,8 @@
     "rotation": 1,
     "number_buffs": 1,
     "multiplier1": 0.4,
-    "name_buff1": "Elf~s Secret Skill 1",
-    "description_buff1": "Activation possibility of the Elf~s secret arts will be increased by 5% (applied with accumulated manner)"
+    "name_buff1": "Elf's Secret Skill 1",
+    "description_buff1": "Activation possibility of the Elf's secret arts will be increased by 5% (applied with accumulated manner)"
   },
     "Dark Archer":{
     "required1": 24,

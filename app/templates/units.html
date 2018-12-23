@@ -14,7 +14,7 @@
       multiplier = parseFloat($(bar).attr("data-multiplier"));
       current_progress = multiplier*val+val_sr;
       max = $(bar).attr("aria-valuemax");
-      siz =current_progress/max*100;
+      siz = (current_progress/max*100).toFixed(2);
 
       bar.css("width", siz + "%")
          .attr("aria-valuenow", current_progress)
@@ -93,7 +93,7 @@
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
       "</div>";
       for(j=1; j<=json[keys[i]]['number_buffs'];j++){
-        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff'+j]+"' data-content='"+json[keys[i]]['description_buff'+j]+"' data-trigger='hover' data-placement='top' data-buff-number='"+j+"' data-unit='"+keys[i]+"'>"
+        output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
         output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"'></div></div>"
         output += "</span>"
       }
@@ -115,7 +115,7 @@
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
       "</div>";
       for(j=1; j<=json[keys[i]]['number_buffs'];j++){
-        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff'+j]+"' data-content='"+json[keys[i]]['description_buff'+j]+"' data-trigger='hover' data-placement='top' data-buff-number='"+j+"' data-unit='"+keys[i]+"'>"
+        output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
         output +="<div class='progress unit-bar'>"+
             "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
           "</div>"

@@ -44,17 +44,35 @@ img {
 
 .progress-bar-green {
       background-color: #1ca51c !important;
+      text-align: center; 
 }
 
 .progress-bar-red {
       background-color: #ce2323 !important;
+      text-align: left; 
 }
 
 .progress {
   height: 1.75rem;
   font-size: 1.5rem;
   background-color: #999999;
-  text-align: center; 
+}
+
+.popover {
+    background-color: #cccccc;
+    max-width: 25%;
+}
+
+.popover-header {
+    color: black;
+    background-color: #cccccc;
+    font-size: 20px;
+}
+
+.popover-body {
+    color: black;
+    background-color: #999999;
+    font-size: 18px;
 }
 
 /* Document
