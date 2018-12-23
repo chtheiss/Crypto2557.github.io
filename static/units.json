@@ -441,8 +441,8 @@
     "rotation": 4,
     "number_buffs": 1,
     "multiplier": 0.5,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Instructor (Human)",
+    "description_buff": "Increases the production speed of Human guild unit."
   },
     "Hoyden Goku":{
     "required": 5,
@@ -452,8 +452,8 @@
     "rotation": 4,
     "number_buffs": 1,
     "multiplier": 0.5,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Instructor (Elf)",
+    "description_buff": "Increases the production speed of Elf guild unit."
   },
     "Dark Admiral":{
     "required": 5,
@@ -463,8 +463,8 @@
     "rotation": 4,
     "number_buffs": 1,
     "multiplier": 0.5,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Instructor (Undead)",
+    "description_buff": "Increases the production speed of Undead guild unit."
   },
     "Raptor Rider":{
     "required": 5,
@@ -474,8 +474,8 @@
     "rotation": 4,
     "number_buffs": 1,
     "multiplier": 0.5,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Instructor (Orc)",
+    "description_buff": "Increases the production speed of Orc guild unit."
   },
     "Griffin Rider":{
     "required": 1,
@@ -485,8 +485,8 @@
     "rotation": 3,
     "number_buffs": 1,
     "multiplier": 0.333333,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Offline March",
+    "description_buff": "Increases offline marching speed by 15%."
   },
     "Forest Guardian":{
     "required": 1,
@@ -496,8 +496,8 @@
     "rotation": 3,
     "number_buffs": 1,
     "multiplier": 0.35,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Offline March",
+    "description_buff": "Increases offline marching speed by 20%."
   },
     "Succubus":{
     "required": 1,
@@ -507,8 +507,8 @@
     "rotation": 3,
     "number_buffs": 1,
     "multiplier": 0.333333,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Offline March",
+    "description_buff": "Increases offline marching speed by 30%."
   },
     "Sorcerer":{
     "required": 1,
@@ -520,10 +520,10 @@
     "rotation": 3,
     "number_buffs": 2,
     "multiplier": 0.5,
-    "name_buff": " ",
-    "description_buff": " ",
-    "name_buff2": "",
-    "description_buff2": ""
+    "name_buff": "Offline March",
+    "description_buff": "Increases offline marching speed by 15%.",
+    "name_buff2": " ",
+    "description_buff2": " "
   },
     "Aladdin":{
     "required": 18,
@@ -533,8 +533,8 @@
     "rotation": 2,
     "number_buffs": 1,
     "multiplier": 0.333333,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "Human~s Secret Skill",
+    "description_buff": "When operating Human~s Secret Skill, the amount of gold given increases by 10 times by 15% possibility."
   },
     "Druid":{
     "required": 1,
@@ -544,8 +544,8 @@
     "rotation": 2,
     "number_buffs": 1,
     "multiplier": 0.5,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "None",
+    "description_buff": "This unit has no particular buffs but is good to have as a one of for Tower of Trials and Spirit Highlands."
   },
     "Dark Ninja":{
     "required": 1,
@@ -555,8 +555,8 @@
     "rotation": 2,
     "number_buffs": 1,
     "multiplier": 0.5,
-    "name_buff": " ",
-    "description_buff": " "
+    "name_buff": "None",
+    "description_buff": "This unit has no particular buffs but is good to have as a one of for Tower of Trials and Spirit Highlands."
   },
     "Battle Drummer":{
     "required": 1000,

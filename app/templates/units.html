@@ -38,13 +38,31 @@
     localStorage.setItem($(input).attr("id"), "0")  
   }
 
+  data = JSON.parse($.ajax({url: "{{ url_for('static', filename='units.json') }}", async: false, cache: false}).responseText);
+  localStorage.setItem('unit-info', JSON.stringify(data));
+  json = JSON.parse(localStorage.getItem('unit-info'));
+
   $(window).on("load", function() {
+
+    $('[data-toggle="popover"]').each(function() {
+      unit = $(this).attr("data-unit");
+      buff_number = $(this).attr("data-buff-number");
+      console.log(unit);
+      console.log(buff_number);
+      console.log(json[unit]["name_buff"+(buff_number === "2" ? buff_number : "")]);
+      console.log(json[unit]["description_buff"+(buff_number === "2" ? buff_number : "")]);
+      $(this).data("title", json[unit]["name-buff"+(buff_number === "2" ? buff_number : "")]);
+      $(this).data("data-content", json[unit]["description-buff"+(buff_number === "2" ? buff_number : "")]);
+    });
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    }); 
+
     inputs = document.getElementsByTagName('input');
     for (i=0; i < inputs.length; i++) {
       update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")), inputs[i])
       update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+"-2"), inputs[i])
     }
-    inputs = document.getElementsByTagName('input');
   });
 </script>
 {% endblock %}
@@ -55,7 +73,6 @@
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
   };
-  json = JSON.parse($.ajax({url: "{{ url_for('static', filename='units.json') }}", async: false}).responseText);
   var keys = Object.keys(json);
   var output = "<div class='table'>";
   output += "<div class='row'>";
@@ -82,11 +99,11 @@
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+Math.ceil(maxval/json[keys[i]]['multiplier'])+"' id='input-"+keys[i].replaceAll(" ", "-")+"' data-multiplier='"+json[keys[i]]['multiplier']+"'>"+
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+maxval+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
       "</div>";
-      output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff']+"' data-content='"+json[keys[i]]['description_buff']+"' data-trigger='hover' data-placement='top'>"
+      output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff']+"' data-content='"+json[keys[i]]['description_buff']+"' data-trigger='hover' data-placement='top' data-buff-number='1' data-unit='"+keys[i]+"'>"
       output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required']+"'></div></div>"
       output += "</span>"
       if(json[keys[i]]['number_buffs']==2){
-        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff2']+"' data-content='"+json[keys[i]]['description_buff2']+"' data-trigger='hover' data-placement='bottom'>"
+        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff2']+"' data-content='"+json[keys[i]]['description_buff2']+"' data-trigger='hover' data-placement='bottom' data-buff-number='2' data-unit='"+keys[i]+"'>"
         output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"-2"+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required2']+"'></div></div>"
         output += "</span>"
       }
@@ -112,11 +129,11 @@
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+Math.ceil(maxval/json[keys[i]]['multiplier'])+"' id='input-"+keys[i].replaceAll(" ", "-")+"' data-multiplier='"+json[keys[i]]['multiplier']+"'>"+
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+maxval+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
       "</div>";
-      output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff']+"' data-content='"+json[keys[i]]['description_buff']+"' data-trigger='hover' data-placement='top'>"
+      output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff']+"' data-content='"+json[keys[i]]['description_buff']+"' data-trigger='hover' data-placement='top' data-buff-number='1' data-unit='"+keys[i]+"'>"
       output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required']+"'></div></div>"
       output += "</span>"
       if(json[keys[i]]['number_buffs']==2){
-        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff2']+"' data-content='"+json[keys[i]]['description_buff2']+"' data-trigger='hover' data-placement='bottom'>"
+        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff2']+"' data-content='"+json[keys[i]]['description_buff2']+"' data-trigger='hover' data-placement='bottom' data-buff-number='2' data-unit='"+keys[i]+"'>"
         output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"-2"+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required2']+"'></div></div>"
         output += "</span>"
       }
