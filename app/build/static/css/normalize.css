@@ -43,11 +43,18 @@ img {
 }
 
 .progress-bar-green {
-      background-color: green !important;
+      background-color: #1ca51c !important;
 }
 
-.progress-bar-blue {
-      background-color: blue !important;
+.progress-bar-red {
+      background-color: #ce2323 !important;
+}
+
+.progress {
+  height: 1.75rem;
+  font-size: 1.5rem;
+  background-color: #999999;
+  text-align: center; 
 }
 
 /* Document
