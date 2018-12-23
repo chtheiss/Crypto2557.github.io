@@ -17,13 +17,14 @@
       siz =current_progress/max*100;
 
       bar.css("width", siz + "%")
-         .attr("aria-valuenow", current_progress);
+         .attr("aria-valuenow", current_progress)
+         .text(Number((current_progress).toFixed(2))+"/"+max);
       if(siz >=100)
       {
         bar.addClass("progress-bar-green");
-        bar.removeClass("progress-bar-blue");
+        bar.removeClass("progress-bar-red");
       } else {
-        bar.addClass("progress-bar-blue");
+        bar.addClass("progress-bar-red");
         bar.removeClass("progress-bar-green");
       }
   }
@@ -69,7 +70,9 @@
     return target.replace(new RegExp(search, 'g'), replacement);
   };
   var keys = Object.keys(json);
-  var output = "<div class='table'>";
+  var output = ""
+
+  output += "<div class='table'>";
   output += "<div class='row'>";
   for (var i=0; i<keys.length; i++)
   {
@@ -113,7 +116,9 @@
       "</div>";
       for(j=1; j<=json[keys[i]]['number_buffs'];j++){
         output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff'+j]+"' data-content='"+json[keys[i]]['description_buff'+j]+"' data-trigger='hover' data-placement='top' data-buff-number='"+j+"' data-unit='"+keys[i]+"'>"
-        output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"'></div></div>"
+        output +="<div class='progress unit-bar'>"+
+            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
+          "</div>"
         output += "</span>"
       }
       output +="</div>";

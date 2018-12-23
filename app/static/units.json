@@ -547,6 +547,7 @@
     "rotation": 3,
     "number_buffs": 2,
     "multiplier1": 0.5,
+    "multiplier2": 0.5,
     "name_buff1": "Offline March",
     "description_buff1": "Increases offline marching speed by 15%.",
     "name_buff2": " ",
