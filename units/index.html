@@ -125,9 +125,13 @@
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+Math.ceil(maxval/json[keys[i]]['multiplier'])+"' id='input-"+keys[i].replaceAll(" ", "-")+"' data-multiplier='"+json[keys[i]]['multiplier']+"'>"+
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+maxval+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
       "</div>";
+      output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff']+"' data-content='"+json[keys[i]]['description_buff']+"' data-trigger='hover' data-placement='top'>"
       output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required']+"'></div></div>"
+      output += "</span>"
       if(json[keys[i]]['number_buffs']==2){
+        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff2']+"' data-content='"+json[keys[i]]['description_buff2']+"' data-trigger='hover' data-placement='bottom'>"
         output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"-2"+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required2']+"'></div></div>"
+        output += "</span>"
       }
       output +="</div>";
     }
@@ -151,9 +155,13 @@
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' max='"+Math.ceil(maxval/json[keys[i]]['multiplier'])+"' id='input-"+keys[i].replaceAll(" ", "-")+"' data-multiplier='"+json[keys[i]]['multiplier']+"'>"+
         "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' max='"+maxval+"' id='input-"+keys[i].replaceAll(" ", "-")+"-sr'>"+
       "</div>";
+      output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff']+"' data-content='"+json[keys[i]]['description_buff']+"' data-trigger='hover' data-placement='top'>"
       output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required']+"'></div></div>"
+      output += "</span>"
       if(json[keys[i]]['number_buffs']==2){
+        output += "<span data-toggle='popover' title='"+json[keys[i]]['name_buff2']+"' data-content='"+json[keys[i]]['description_buff2']+"' data-trigger='hover' data-placement='bottom'>"
         output +="<div class='progress unit-bar'><div id='prog-input-"+keys[i].replaceAll(" ", "-")+"-2"+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required2']+"'></div></div>"
+        output += "</span>"
       }
       output +="</div>";
     }
@@ -168,6 +176,10 @@
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
   }); 
+
+  $(function () {
+  $('[data-toggle="popover"]').popover()
+  });
 
   $(function() {
     $(":input").bind('keyup mouseup', function () {
