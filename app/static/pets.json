@@ -1,0 +1,155 @@
+{
+	"Combat":{
+		"img": "img/pets/207.png"
+	},
+	"Rolly":{
+		"img": "img/pets/208.png"
+	},
+	"Scourge":{
+		"img": "img/pets/209.png"
+	},
+	"Lazy":{
+		"img": "img/pets/210.png"
+	},
+	"Little Hawk":{
+		"img": "img/pets/183.png"
+	},
+	"Foxy":{
+		"img": "img/pets/184.png"
+	},
+	"Shadow":{
+		"img": "img/pets/185.png"
+	},
+	"Snow Bear":{
+		"img": "img/pets/186.png"
+	},
+	"Athos":{
+		"img": "img/pets/163.png"
+	},
+	"Grizzle":{
+		"img": "img/pets/164.png"
+	},
+	"Raven":{
+		"img": "img/pets/165.png"
+	},
+	"Leyak":{
+		"img": "img/pets/166.png"
+	},
+	"Cat Knight":{
+		"img": "img/pets/136.png"
+	},
+	"Mori":{
+		"img": "img/pets/137.png"
+	},
+	"Cerbero":{
+		"img": "img/pets/138.png"
+	},
+	"Octopa":{
+		"img": "img/pets/139.png"
+	},
+	"Bernard":{
+		"img": "img/pets/112.png"
+	},
+	"Chichi":{
+		"img": "img/pets/113.png"
+	},
+	"Chesher":{
+		"img": "img/pets/114.png"
+	},
+	"Bamba":{
+		"img": "img/pets/115.png"
+	},
+	"Rena":{
+		"img": "img/pets/93.png"
+	},
+	"Hippong":{
+		"img": "img/pets/94.png"
+	},
+	"Osma":{
+		"img": "img/pets/95.png"
+	},
+	"Saul":{
+		"img": "img/pets/96.png"
+	},
+	"Sarah":{
+		"img": "img/pets/55.png"
+	},
+	"Oscar":{
+		"img": "img/pets/56.png"
+	},
+	"Blalck":{
+		"img": "img/pets/57.png"
+	},
+	"Juda":{
+		"img": "img/pets/58.png"
+	},
+	"E-77":{
+		"img": "img/pets/48.png"
+	},
+	"Windy":{
+		"img": "img/pets/49.png"
+	},
+	"Dark Snake":{
+		"img": "img/pets/50.png"
+	},
+	"Seahorse":{
+		"img": "img/pets/51.png"
+	},
+	"Winky":{
+		"img": "img/pets/40.png"
+	},
+	"Bunny":{
+		"img": "img/pets/41.png"
+	},
+	"Cora":{
+		"img": "img/pets/42.png"
+	},
+	"Wakong":{
+		"img": "img/pets/43.png"
+	},
+	"Mir":{
+		"img": "img/pets/36.png"
+	}, 
+	"Nimbus":{
+		"img": "img/pets/37.png"
+	},
+	"Jingger":{
+		"img": "img/pets/38.png"
+	},
+	"Rapty":{
+		"img": "img/pets/39.png"
+	},
+	"Griffy":{
+		"img": "img/pets/29.png"
+	},
+	"Leo":{
+		"img": "img/pets/26.png"
+	},
+	"Devil":{
+		"img": "img/pets/27.png"
+	},
+	"Totem":{
+		"img": "img/pets/16.png"
+	},
+	"Magic Lamp":{
+		"img": "img/pets/13.png"
+	},
+	"Squirrel":{
+		"img": "img/pets/18.png"
+	},
+	"Sleepy":{
+		"img": "img/pets/15.png"
+	},
+	"Boom Boom":{
+		"img": "img/pets/28.png"
+	},
+	"Icy":{
+		"img": "img/pets/17.png"
+	},
+	"Tinky":{
+		"img": "img/pets/6.png"
+	},
+	"Moon":{
+		"img": "img/pets/19.png"
+	}
+}

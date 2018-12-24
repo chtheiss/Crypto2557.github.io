@@ -20,10 +20,14 @@ img {
 }
 
 .unit-image, .unit-input {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 30%; 
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 25%; 
   height: auto;
+}
+
+.pet-image {
+  width: 15%;
 }
 
 .unit-input {
