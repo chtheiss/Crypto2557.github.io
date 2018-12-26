@@ -19,15 +19,13 @@ img {
   margin-right: auto; 
 }
 
-.unit-image, .unit-input {
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 25%; 
-  height: auto;
-}
-
-.pet-image {
-  width: 15%;
+#unit-table{
+  margin-right: 0%;
+  margin-left: 0%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .unit-input {

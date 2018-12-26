@@ -58,26 +58,82 @@
     localStorage.setItem($(input).attr("id"), "0")  
   }
 
-  function add_unit(json, pets){
-
+  function static_path_to_efdata_link(path){
+    return path.replace("img", "https://www.endlessfrontierdata.com")
+      .replace(".png", "");
   }
 
+  function add_unit_cell(key, json, pets){
+    cell = "" 
+    cell += "<div class='row'>";
+    // Add image for normal unit
+    cell += "<div class='col-4' align='center'>";
+    cell += "<a href='"+static_path_to_efdata_link(json[key]['img'])+"'>"+
+      "<img class='unit-image' src="+"../static/"+json[key]['img']+" data-toggle='tooltip' data-placement='top' title='"+key+ "'>"+
+      "</a></div>";
+    // Add image for seniored unit
+    cell += "<div class='col-4' align='center'>"
+    cell += "<a href='"+static_path_to_efdata_link(json[key]['img_sr'])+"'>"+
+      "<img class='unit-image' src="+"../static/"+json[key]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+key+ "'>"+
+      "</a></div>";
+    // Add image for pet
+    cell += "<div class='col-2' align='center'>"
+    cell += "<a href='"+static_path_to_efdata_link(pets[json[key]["pet"]]["img"])+"'>"+
+      "<img class='pet-image' src="+"../static/"+pets[json[key]["pet"]]["img"]+" data-toggle='tooltip' data-placement='top' title='"+json[key]["pet"]+ "'>"+
+      "</a></div>";
+    cell += "<div class='w-100'></div>";
+    // Add input for normal unit
+    cell += "<div class='col-4' align='center'>"+
+      "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+key.replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+key.replaceAll(" ", "-")+"' data-unit='"+key+"'>"+
+      "</div>"
+    // Add input for seniored unit
+    cell += "<div class='col-4' align='center'>"+
+      "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+key.replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+key.replaceAll(" ", "-")+"-sr' data-unit='"+key+"'>"+
+      "</div>";
+    // Add input for pet 5*
+    cell += "<div class='col-2' align='center'>"+
+      "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='defaultCheck1'></div>"+
+      "</div>";
+    cell += "<div class='w-100'></div>";
+    for(j=1; j<=json[key]['number_buffs'];j++){
+      // Open Column
+      cell += "<div class='col'>" 
+      // Open Popover
+      cell += '<span data-toggle="popover" title="'+json[key]["name_buff"+j]+'" data-content="'+json[key]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
+      // Progress Bar
+      cell +="<div class='progress unit-bar'>"+
+        "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[key]['required'+j]+"' data-multiplier='"+json[key]['multiplier'+j]+"' data-linked-units='"+json[key]['linked_units']+"'>"+"0/"+json[key]['required'+j]+"</div>"+
+        "</div>"
+      // Close Popover and Column
+      cell += "</span></div>"
+      cell += "<div class='w-100'></div>";
+      }
+      // Close row
+      cell +="</div>";
+      return cell;
+    }
+
   data = JSON.parse($.ajax({url: "{{ url_for('static', filename='units.json') }}", async: false, cache: false}).responseText);
+  pets = JSON.parse($.ajax({url: "{{ url_for('static', filename='pets.json') }}", async: false, cache: false}).responseText);
   localStorage.setItem('unit-info', JSON.stringify(data));
+  localStorage.setItem('pet-info', JSON.stringify(pets));
   json = JSON.parse(localStorage.getItem('unit-info'));
 
   $(window).on("load", function() {
+    // Populate Popovers for progress bars
     $('[data-toggle="popover"]').each(function() {
       unit = $(this).data("unit");
       buff_number = $(this).data("buff-number");
       $(this).data("title", json[unit]["name-buff"+(buff_number === "2" ? buff_number : "")]);
       $(this).data("data-content", json[unit]["description-buff"+(buff_number === "2" ? buff_number : "")]);
     });
+
+    // Init Popovers for progress bars
     $(function () {
       $('[data-toggle="popover"]').popover()
     }); 
 
-    inputs = document.getElementsByTagName('input');
+    inputs = document.getElementsByClassName('unit-input');
     for (i=0; i < inputs.length; i++) {
       for(j=1;j<=json[$(inputs[i]).data("unit")]['number_buffs'];j++){
         update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+j), inputs[i]);
@@ -89,85 +145,28 @@
 {% endblock %}
 {% block content %}
 <script type="text/javascript">
-
   String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
   };
+
   var keys = Object.keys(json);
   var output = ""
-
-  output += "<div>";
-  output += "<div class='row'>";
+  output += "<div class='row' id='unit-table'>";
   for (var i=0; i<keys.length; i++)
   {
-    if((i%4)==0)
+    if((i%4)==0 & i!=0)
     {
-      output += "</div><div class='row'>";
-      output += "<div class='col-md-3 centered'>";
-      output += "<div class='row'>";
-      // Add image for normal unit
-      output += "<div class='col'>"+
-        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
-        "</a></div>";
-      // Add image for seniored unit
-      output += "<div class='col'>"+
-        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
-        "</a></div>";
       output += "<div class='w-100'></div>";
-      // Add input for normal unit
-      output += "<div class='col'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"' data-unit='"+keys[i]+"'></div>"
-      // Add input for seniored unit
-      output += "<div class='col'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr' data-unit='"+keys[i]+"'></div>";
-      output += "<div class='w-100'></div>";
-      for(j=1; j<=json[keys[i]]['number_buffs'];j++){
-        output += "<div class='col'>"
-        output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
-        output +="<div class='progress unit-bar'>"+
-            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"' data-linked-units='"+json[keys[i]]['linked_units']+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
-          "</div>"
-        output += "</span></div>"
-        output += "<div class='w-100'></div>";
-      }
-      output +="</div></div>";
     }
-    else
-    {
-      output += "<div class='col-md-3 centered'>";
-      output += "<div id='images'>"+
-        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
-        "</a>"+
-        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
-        "</a>"+
-      "</div>";
-      output += "<div id='inputs'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"' data-unit='"+keys[i]+"'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr' data-unit='"+keys[i]+"'>"+
-      "</div>";
-      output += "<div class='w-100'></div>";
-      for(j=1; j<=json[keys[i]]['number_buffs'];j++){
-        output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
-        output +="<div class='progress unit-bar'>"+
-            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"' data-linked-units='"+json[keys[i]]['linked_units']+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
-          "</div>"
-        output += "</span>"
-      }
-      output +="</div>";
-    }
-  }
+    output += "<div class='col-md-3'>";
+    output += add_unit_cell(keys[i], json, pets);
+    output +="</div>";
 
-  if((i%4)!=0)
-  {
-    output += "</div><div class='row'>";
   }
   output += "</div>";
   document.write(output); 
+
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
   }); 
