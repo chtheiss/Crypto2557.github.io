@@ -1,155 +1,549 @@
 {
 	"Combat":{
-		"img": "img/pets/207.png"
+		"img": "img/pets/207.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Rolly":{
-		"img": "img/pets/208.png"
+		"img": "img/pets/208.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Scourge":{
-		"img": "img/pets/209.png"
+		"img": "img/pets/209.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Lazy":{
-		"img": "img/pets/210.png"
+		"img": "img/pets/210.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Little Hawk":{
-		"img": "img/pets/183.png"
+		"img": "img/pets/183.png",
+		"buffs": [{
+			"name": "Surprise Attack",
+			"description": "Even if the Crimson Hawk Rider is in the shop of time, the surprise attack is triggered with a 1% chance for 5-star unit and a 3% chance for 6-star unit. However, the probability of surprise attack can not exceed 60%",
+			"multiplier": 0.333333,
+			"requirement": 60,
+			"amount": 20
+		}],
+		"additional_buffs": []
 	},
 	"Foxy":{
-		"img": "img/pets/184.png"
+		"img": "img/pets/184.png",
+		"buffs": [{
+			"name": "Airship VIP",
+			"description": "The maximum value of [Airship VIP] can be increased up to 30%. In other words, it can reduce the cost of purchasing fuel by up to 30%",
+			"multiplier": 0.5,
+			"requirement": 15,
+			"amount": 30
+		}],
+		"additional_buffs": []
 	},
 	"Shadow":{
-		"img": "img/pets/185.png"
+		"img": "img/pets/185.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Snow Bear":{
-		"img": "img/pets/186.png"
+		"img": "img/pets/186.png",
+		"buffs": [{
+			"name": "Enhance active skill",
+			"description": "Even if a Warbear rider is in the shop of time, the efficiency of active skill increases. (However, in the shop of time, the efficiency increases by 20 stages per 5-star unit, 40 stages per 6-star unit, and active skill enhancement by warbear riders can not exceed 1000 stages.)",
+			"multiplier": 0.5,
+			"requirement": 25,
+			"amount": 1000
+		}],
+		"additional_buffs": []
 	},
 	"Athos":{
-		"img": "img/pets/163.png"
+		"img": "img/pets/163.png",
+		"buffs":[{
+			"name": "Human Token",
+			"description": "The human tribe friendliness can be increased up to 150% by human unit seals.",
+			"multiplier": 0.5,
+			"requirement": 15,
+			"amount": 150
+		}],
+		"additional_buffs": []
 	},
 	"Grizzle":{
-		"img": "img/pets/164.png"
+		"img": "img/pets/164.png",
+		"buffs":[{
+			"name": "Elf Token",
+			"description": "The elf tribe friendliness can be increased up to 150% by human unit seals.",
+			"multiplier": 0.5,
+			"requirement": 15,
+			"amount": 150
+		}],
+		"additional_buffs": []
 	},
 	"Raven":{
-		"img": "img/pets/165.png"
+		"img": "img/pets/165.png",
+		"buffs":[{
+			"name": "Undead Token",
+			"description": "The undead tribe friendliness can be increased up to 150% by human unit seals.",
+			"multiplier": 0.5,
+			"requirement": 15,
+			"amount": 150
+		},
+		{
+			"name": "Darkness Resistance",
+			"description": "Increases darkness resistance by 75 for each Crow Knight, and 150 for each Senior Crow Knight. Also increases max darkness resistance through Crown Knights from 2,000 to 4,000",
+			"multiplier": 0.5,
+			"requirement": 27,
+			"amount": 4000
+		}],
+		"additional_buffs": []
 	},
 	"Leyak":{
-		"img": "img/pets/166.png"
+		"img": "img/pets/166.png",
+		"buffs":[{
+			"name": "Orc Token",
+			"description": "The orc tribe friendliness can be increased up to 150% by human unit seals.",
+			"multiplier": 0.5,
+			"requirement": 15,
+			"amount": 150
+		}],
+		"additional_buffs": []
 	},
 	"Cat Knight":{
-		"img": "img/pets/136.png"
+		"img": "img/pets/136.png",
+		"buffs":[{
+			"name": "Tribe Friendliness",
+			"description": "Tribe Friendliness for Human can be increased up to 600 by Winged Knight.",
+			"multiplier": 0.5,
+			"requirement": 30,
+			"amount": 600
+		},
+		{
+			"name": "Wings of Zephyrus",
+			"description": "[Wings of Zephyrus], is activated even if Winged Knight is in Time Shop. (The effect of [Wings of Zephyrus], is increased by 0.02 for each 5-star Winged Knight in Time shop and 0.04 for each 6-star. And this effect does not exceed 1.2.)",
+			"multiplier": 0.5,
+			"requirement": 30,
+			"amount": 1.2
+		}],
+		"additional_buffs": []
 	},
 	"Mori":{
-		"img": "img/pets/137.png"
+		"img": "img/pets/137.png",
+		"buffs":[{
+			"name": "Tribe Friendliness",
+			"description": "Tribe Friendliness for Elf can be increased up to 600 by Windwalker.",
+			"multiplier": 0.5,
+			"requirement": 30,
+			"amount": 600
+		}],
+		"additional_buffs": []
 	},
 	"Cerbero":{
-		"img": "img/pets/138.png"
+		"img": "img/pets/138.png",
+		"buffs":[{
+			"name": "Tribe Friendliness",
+			"description": "Tribe Friendliness for Undead can be increased up to 600 by Abyss Mage.",
+			"multiplier": 0.5,
+			"requirement": 30,
+			"amount": 600
+		}],
+		"additional_buffs": []
 	},
 	"Octopa":{
-		"img": "img/pets/139.png"
+		"img": "img/pets/139.png",
+		"buffs":[{
+			"name": "Tribe Friendliness",
+			"description": "Tribe Friendliness for Orc can be increased up to 600 by Siren.",
+			"multiplier": 0.5,
+			"requirement": 30,
+			"amount": 600
+		}],
+		"additional_buffs": []
 	},
 	"Bernard":{
-		"img": "img/pets/112.png"
+		"img": "img/pets/112.png",
+		"buffs":[{
+			"name": "Tribe Fortification (Human and Orc)",
+			"description": "[Tribe Fortification], is applied even when Cleric is in Time Shop, and can be increased up to 250 for human units.",
+			"multiplier": 0.5,
+			"requirement": 13,
+			"amount": 250
+		},
+		{
+			"name": "Innervate 2",
+			"description": "Increases the maximum value of [Innervate 2], to 50%. Thus, reducing skill cool time (Outland Battle) by up to 50%.",
+			"multiplier": 0.333333,
+			"requirement": 17,
+			"amount": 50 
+		}],
+		"additional_buffs": []
 	},
 	"Chichi":{
-		"img": "img/pets/113.png"
+		"img": "img/pets/113.png",
+		"buffs":[		{
+			"name": "Tribe Fortification (Elf and Human)",
+			"description": "[Tribe Fortification], is applied even when Elementalist is in Time Shop, and can be increased up to 250 for elf units.",
+			"multiplier": 0.4666666,
+			"requirement": 17,
+			"amount": 250 
+		},
+		{
+			"name": "Nature Resistance",
+			"description": "Increases nature resistance by 75 for each Elementalist, and 150 nature resistance for each Senior Elementalist. Also increases max nature resistance through Elementalists from 2,000 to 4,000.",
+			"multiplier": 0.5,
+			"requirement": 27,
+			"amount": 4000
+		}],
+		"additional_buffs": []
 	},
 	"Chesher":{
-		"img": "img/pets/114.png"
+		"img": "img/pets/114.png",
+		"buffs":[{
+			"name": "Tribe Fortification (Undead and Elf)",
+			"description": "[Tribe Fortification], is applied even when Dark Elf is in Time Shop, and can be increased up to 250 for undead units.",
+			"multiplier": 0.5,
+			"requirement": 13,
+			"amount":  250
+		}],
+		"additional_buffs": []
 	},
 	"Bamba":{
-		"img": "img/pets/115.png"
+		"img": "img/pets/115.png",
+		"buffs":[{
+			"name": "Tribe Fortification (Orc and Undead)",
+			"description": "[Tribe Fortification], is applied even when Frost Demon is in the Time Shop, and can be increased up to 250 for orc units.",
+			"multiplier": 0.4666666,
+			"requirement": 17,
+			"amount":  250
+		},		
+		{
+			"name": "Enhance Active Skill",
+			"description": "Active skill efficiency increases even when Frost Demon is in Time Shop. ( However, when in Time shop, the efficiency is increased by 10 stages for each 5-star Frost Demon and 20 stages for each 6 star Frost Demon. Active Skill enhancements through Frost Demon cannot exceed a maximum of 480 stages. )",
+			"multiplier": 0.5,
+			"requirement": 24,
+			"amount": 480
+		}],
+		"additional_buffs": []
 	},
 	"Rena":{
-		"img": "img/pets/93.png"
+		"img": "img/pets/93.png",
+		"buffs":[{
+			"name": "Fire Resistance",
+			"description": "Every Flame Spirit's fire resistance increases by 75 and every Senior Flame Spirit's fire resistance increases by 150. Also, the maximum value of resistance against fire from Flame Spirit increases from 2000 to 4000.",
+			"multiplier": 0.5,
+			"requirement": 27,
+			"amount": 4000
+		}],
+		"additional_buffs": []
 	},
 	"Hippong":{
-		"img": "img/pets/94.png"
+		"img": "img/pets/94.png",
+		"buffs":[{
+			"name": "Elf's Secret Skill 2",
+			"description": "Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf’s Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf’s Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)",
+			"multiplier": 0.4,
+			"requirement": 12,
+			"amount": 30
+		},
+		{
+			"name": "Legend of Ancient Forest",
+			"description": "Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf’s Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf’s Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)",
+			"multiplier": 0.4,
+			"requirement": 20,
+			"amount": 30	
+		}],
+		"additional_buffs": []
 	},
 	"Osma":{
-		"img": "img/pets/95.png"
+		"img": "img/pets/95.png",
+		"buffs": [{
+			"name": "Limit Break of Spirit Rest",
+			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%. In addition, when Blade Master is awakened, the maximum efficiency increases 12.5%- > 15%.)",
+			"multiplier": 0.42857,
+			"requirement": [18, 22],
+			"amount": [2.5, 5.0],
+			"linked_units": ["Blade Master"]
+		}],
+		"additional_buffs": []
 	},
 	"Saul":{
-		"img": "img/pets/96.png"
+		"img": "img/pets/96.png",
+		"buffs": [{
+			"name": "Limit Break of Spirit Rest",
+			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%.) In addition, when Dark Spirit is awakened, the maximum efficiency increases to 15%.)",
+			"multiplier": 0.42857,
+			"requirement": [18, 22],
+			"amount": [2.5, 5.0],
+			"linked_units": ["Dark Spirit"]
+		}],
+		"additional_buffs": []
 	},
 	"Sarah":{
-		"img": "img/pets/55.png"
+		"img": "img/pets/55.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "",
+			"description": "[Hero Sword] Strengthen skills: Every 5 star Valkyrie raises attack power by 5% and every 6 star Valkyrie raises attack power by 10% with [Hero Sword]. (Effective even if Valkyrie is at the Time Shop and can increase up to 100%. [Hero Sword]: Skill that increases ally unit's attack power for a certain amount of time during raid)",
+			"multiplier": 0.5,
+			"requirement": 10,
+			"amount": 100
+		}]
 	},
 	"Oscar":{
-		"img": "img/pets/56.png"
+		"img": "img/pets/56.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "None",
+			"description": "[Fast Sword] Strengthen skills: Every 5 star Sword Dancer raises attack speed by 5% and every 6 star Sword Dancer raises attack speed by 10% with [Fast Sword]. (Effective even if Sword Dancer is at the Time Shop and can increase up to 100%. [Fast Sword]: Skill that increases ally unit's attack speed for a certain amount of time during raid.)",
+			"multiplier": 0.5,
+			"requirement": 10,
+			"amount": 100
+		}]
 	},
-	"Blalck":{
-		"img": "img/pets/57.png"
+	"Black":{
+		"img": "img/pets/57.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Juda":{
-		"img": "img/pets/58.png"
+		"img": "img/pets/58.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "None",
+			"description": "[Fast Shoes] Strengthen skills: Every 5 star Ice Spirit raises movement speed by 5% and every 6 star Ice Spirit raises movement speed by 10% with [Fast Shoes]. (Effective even if Ice Spirit is at the Time Shop and can increase up to 100%.) [Fast Shoes]: Skill that increases ally unit's movement speed for a certain amount of time during raid.)",
+			"multiplier": 0.5,
+			"requirement": 10,
+			"amount": 100
+		}]
 	},
 	"E-77":{
-		"img": "img/pets/48.png"
+		"img": "img/pets/48.png",
+		"additional_buffs": [{
+			"name": "Inner Passion limit break",
+			"description": " Inner passion max increases by 5 per Senior Steam Punk. (However, this value cannot exceed 50.)",
+			"multiplier": 0.0,
+			"requirement": 10,
+			"amount": 50
+		}]
 	},
 	"Windy":{
-		"img": "img/pets/49.png"
+		"img": "img/pets/49.png",
+		"additional_buffs": [{
+			"name": "Inner Passion limit break",
+			"description": " Inner passion max increases by 5 per Senior Sylphid. (However, this value cannot exceed 50.)",
+			"multiplier": 0.0,
+			"requirement": 10,
+			"amount": 50
+		}]
 	},
 	"Dark Snake":{
-		"img": "img/pets/50.png"
+		"img": "img/pets/50.png",
+		"additional_buffs": [{
+			"name": "Inner Passion limit break",
+			"description": " Inner passion max increases by 5 per Senior Medusa. (However, this value cannot exceed 50.)",
+			"multiplier": 0.0,
+			"requirement": 10,
+			"amount": 50
+		}]
 	},
 	"Seahorse":{
-		"img": "img/pets/51.png"
+		"img": "img/pets/51.png",
+		"additional_buffs": [{
+			"name": "Inner Passion limit break",
+			"description": " Inner passion max increases by 5 per Senior Naga. (However, this value cannot exceed 50.)",
+			"multiplier": 0.0,
+			"requirement": 10,
+			"amount": 50
+		}]
 	},
 	"Winky":{
-		"img": "img/pets/40.png"
+		"img": "img/pets/40.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "Spirit Awakening Limit Break",
+			"description": "Max value of Spirit Awakening increases by 5 each per Senior Pilot. (However, this value cannot exceed 25.)",
+			"multiplier": 0.0,
+			"requirement": 5,
+			"amount": 25
+		}]
 	},
 	"Bunny":{
-		"img": "img/pets/41.png"
+		"img": "img/pets/41.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "Spirit Awakening Limit Break",
+			"description": "Max value of Spirit Awakening increases by 5 for each Senior Alchemist. (However, this value cannot exceed 25.)",
+			"multiplier": 0.0,
+			"requirement": 5,
+			"amount": 25
+		}]
 	},
 	"Cora":{
-		"img": "img/pets/42.png"
+		"img": "img/pets/42.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "Spirit Awakening Limit Break",
+			"description": "Spirit awakening max increases by 5 per Senior Lych. (However, this value cannot exceed 25.)",
+			"multiplier": 0.0,
+			"requirement": 5,
+			"amount": 25
+		}]
 	},
 	"Wakong":{
-		"img": "img/pets/43.png"
+		"img": "img/pets/43.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "Spirit Awakening Limit Break",
+			"description": "Spirit awakening max increases by 5 per Senior Wyvern Rider. (However, this value cannot exceed 25.)",
+			"multiplier": 0.0,
+			"requirement": 5,
+			"amount": 25
+		}]
 	},
 	"Mir":{
-		"img": "img/pets/36.png"
+		"img": "img/pets/36.png",
+		"buffs": [],
+		"additional_buffs": []
 	}, 
 	"Nimbus":{
-		"img": "img/pets/37.png"
+		"img": "img/pets/37.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Jingger":{
-		"img": "img/pets/38.png"
+		"img": "img/pets/38.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Rapty":{
-		"img": "img/pets/39.png"
+		"img": "img/pets/39.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Griffy":{
-		"img": "img/pets/29.png"
+		"img": "img/pets/29.png",
+		"buffs":[{
+			"name": "Offline March",
+			"description": "Raise offline march buff by 300%, and even if Griffin Rider is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Griffin Rider is 1,000%.",
+			"multiplier": 0.333333,
+			"requirement": 24,
+			"amount": 700 
+		}],
+		"additional_buffs": []
 	},
 	"Leo":{
-		"img": "img/pets/26.png"
+		"img": "img/pets/26.png",
+		"buffs":[{
+			"name": "Offline March",
+			"description": "Raise offline march buff by 300%, and even if Forest Guardian is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Forest Guardian is 1,000%.",
+			"multiplier": 0.333333,
+			"requirement": 24,
+			"amount": 700 
+		}],
+		"additional_buffs": []
 	},
 	"Devil":{
-		"img": "img/pets/27.png"
+		"img": "img/pets/27.png",
+		"buffs":[{
+			"name": "Offline March",
+			"description": " Raise offline march buff by 300%, and even if Succubus is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Succubus is 1,000%.",
+			"multiplier": 0.333333,
+			"requirement": 24,
+			"amount": 700 
+		}],
+		"additional_buffs": []
 	},
 	"Totem":{
-		"img": "img/pets/16.png"
+		"img": "img/pets/16.png",
+		"buffs": [],
+		"additional_buffs": [{
+			"name": "Enhance Active Skill",
+			"description": "Active skill (Explosion Shaking Heaven and Earth, Tower of Babel, Skyward Sword) efficiency improves. (Limit for damage to enemies has been upgraded. Basic 200 stages increased— increases 15 levels per 5-star and 30 levels per 6-star—up to a +900 stage limit. Even applies if Sorcerer is in the Time Shop.)",
+			"multiplier": 0.5,
+			"requirement": 24,
+			"amount": 700
+		}]
 	},
 	"Magic Lamp":{
-		"img": "img/pets/13.png"
+		"img": "img/pets/13.png",
+		"buffs": [{
+			"name": "Human's Secret Skill",
+			"description": " Even if Aladdin is at the Time Shop, this has an increased chance to get 10x gold. (Basic 10%, +2% per 5-star, +5% per 6-star) when using human secret skills.",
+			"multiplier": 0.4,
+			"requirement": 18,
+			"amount": 90
+		}],
+		"additional_buffs": [{
+			"name": "Golden Treasure Chests",
+			"description": "Automatically opens golden treasure chests containing gold at a certain percentage. (Basic 10%, +2% per 5-star and +5% per 6-star)",
+			"multiplier": 0.4,
+			"requirement": 18,
+			"amount": 90
+		}]
 	},
 	"Squirrel":{
-		"img": "img/pets/18.png"
+		"img": "img/pets/18.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Sleepy":{
-		"img": "img/pets/15.png"
+		"img": "img/pets/15.png",
+		"buffs": [],
+		"additional_buffs": []
 	},
 	"Boom Boom":{
-		"img": "img/pets/28.png"
+		"img": "img/pets/28.png",
+		"buffs": [{
+			"name": "Revival Team for spirit rest runs.",
+			"description": "When included in a team, medal buff increases by 30%. (Special skill 6 raises 10% to 40%)",
+			"multiplier": 0.0,
+			"requirement": 12,
+			"amount": 480
+		}],
+		"additional_buffs": [{
+			"name": "Time Shop Medal Bonus Limit Break",
+			"description": "Max medal buff increases by transcend units in Time Shop.(Every 5-star Battle Drummer increases by 10% and 6-star increases by 20%. => For example, when there are seven 5-star and ten 6-star Battle Drummers, the max medal buff of transcend units in Time Shop increases from 1,000% to 1,270%.)",
+			"multiplier": 0.5,
+			"requirement": 2250,
+			"amount": 45000
+		}]
 	},
 	"Icy":{
-		"img": "img/pets/17.png"
+		"img": "img/pets/17.png",
+		"buffs": [{
+			"name": "God's Blessing",
+			"description": "Even if the Priest is at the Time Shop, 5 times speed buff starts every 10th floor. ( 5-star 1%, 6-star 2.5% )The chance for 5 times speed buff by Priests in the Time Shop cannot exceed 30%. Even when passing 10 floors with elves' Secret Skill (from 9th to 11th), the 5 times speed buff can start.",
+			"multiplier": 0.4,
+			"requirement": 12,
+			"amount": 30
+		}],
+		"additional_buffs": []		
 	},
 	"Tinky":{
-		"img": "img/pets/6.png"
+		"img": "img/pets/6.png",
+		"buffs": [{
+			"name": "Elf's Secret Skill 1",
+			"description": "Even if Fairy is at the Time Shop, chance for Elf’s secret skill to be used increases. (Increases by 1% per 5-star and 2.5% per 6-star. When in the Time Shop, the max Elf’s secret skill enhancement by Fairy is 30%.)",
+			"multiplier": 0.4,
+			"requirement": 12,
+			"amount": 30
+		}],
+		"additional_buffs": []
 	},
 	"Moon":{
-		"img": "img/pets/19.png"
+		"img": "img/pets/19.png",
+		"buffs": [{
+			"name": "Elevates the first Stage after the Revival",
+			"description": "Even if Dark Archer is in the Time Shop, revives at the floor corresponding to #% of the current floor. (When in Time Shop, 2.5% bonus per 6-star and 1% per 5-star is applied. However, max revival floor buff cannot exceed 60%.)",
+			"multiplier": 0.4,
+			"requirement": 24,
+			"amount": 60
+		}],
+		"additional_buffs":[{
+			"name": "Undead Secret Skill",
+			"description": "Increases chance of Undead’s secret skill. (Increased by 1% per 6-star for a maximum of 30%, and is applied even when in Time Shop.)",
+			"multiplier": 0.0,
+			"requirement": 30,
+			"amount": 30
+		}]
 	}
 }

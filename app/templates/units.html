@@ -63,23 +63,35 @@
       .replace(".png", "");
   }
 
+  function switch_pet_checkbox(checkbox){
+      if($(checkbox).is(':checked')){
+        $("#"+($(checkbox).attr("for"))).addClass('five-star-pet');
+      } else {
+        $("#"+($(checkbox).attr("for"))).removeClass('five-star-pet');
+      }
+      localStorage.setItem($(checkbox).attr("id").replace("input-", "").replace("-", " "), $(checkbox).is(':checked'));  
+  }
+
   function add_unit_cell(key, json, pets){
-    cell = "" 
+    let unit = json[key];
+    let pet = pets[json[key]["pet"]];
+    let cell = "";
+    if (localStorage.getItem(unit["pet"]) == "true") {checked = "checked"} else {checked = ""}
     cell += "<div class='row'>";
     // Add image for normal unit
     cell += "<div class='col-4' align='center'>";
-    cell += "<a href='"+static_path_to_efdata_link(json[key]['img'])+"'>"+
-      "<img class='unit-image' src="+"../static/"+json[key]['img']+" data-toggle='tooltip' data-placement='top' title='"+key+ "'>"+
+    cell += "<a href='"+static_path_to_efdata_link(unit['img'])+"'>"+
+      "<img class='unit-image' src="+"../static/"+unit['img']+" data-toggle='tooltip' data-placement='top' title='"+key+ "'>"+
       "</a></div>";
     // Add image for seniored unit
     cell += "<div class='col-4' align='center'>"
-    cell += "<a href='"+static_path_to_efdata_link(json[key]['img_sr'])+"'>"+
-      "<img class='unit-image' src="+"../static/"+json[key]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+key+ "'>"+
+    cell += "<a href='"+static_path_to_efdata_link(unit['img_sr'])+"'>"+
+      "<img class='unit-image' src="+"../static/"+unit['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+key+ "'>"+
       "</a></div>";
     // Add image for pet
     cell += "<div class='col-2' align='center'>"
-    cell += "<a href='"+static_path_to_efdata_link(pets[json[key]["pet"]]["img"])+"'>"+
-      "<img class='pet-image' src="+"../static/"+pets[json[key]["pet"]]["img"]+" data-toggle='tooltip' data-placement='top' title='"+json[key]["pet"]+ "'>"+
+    cell += "<a href='"+static_path_to_efdata_link(pet["img"])+"'>"+
+      "<img id='"+"image-"+unit["pet"].replace(" ", "-")+"' class='pet-image' src="+"../static/"+pet["img"]+" data-toggle='tooltip' data-placement='top' title='"+unit["pet"]+ "'>"+
       "</a></div>";
     cell += "<div class='w-100'></div>";
     // Add input for normal unit
@@ -92,26 +104,53 @@
       "</div>";
     // Add input for pet 5*
     cell += "<div class='col-2' align='center'>"+
-      "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='defaultCheck1'></div>"+
+      "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='"+"input-"+unit["pet"].replace(" ", "-")+"' for='"+"image-"+unit["pet"].replaceAll(" ", "-")+"' "+checked+"></div>"+
       "</div>";
     cell += "<div class='w-100'></div>";
-    for(j=1; j<=json[key]['number_buffs'];j++){
+    for(j=1; j<=unit['number_buffs'];j++){
+      let requirement = unit['required'+j]
+      let multiplier = unit['multiplier'+j]
+      let description = unit['description_buff'+j]
+      if (checked == "checked"){
+        for (k=0;k<pet.buffs.length;k++){
+          buff = pet.buffs[k];
+          if ((buff.name == unit['name_buff'+j])) {
+            requirement = buff.requirement
+            multiplier = buff.multiplier
+            description = buff.description
+          }
+        }
+      }
       // Open Column
       cell += "<div class='col'>" 
       // Open Popover
-      cell += '<span data-toggle="popover" title="'+json[key]["name_buff"+j]+'" data-content="'+json[key]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
+      cell += '<span data-toggle="popover" title="'+unit["name_buff"+j]+'" data-content="'+description+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
       // Progress Bar
       cell +="<div class='progress unit-bar'>"+
-        "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[key]['required'+j]+"' data-multiplier='"+json[key]['multiplier'+j]+"' data-linked-units='"+json[key]['linked_units']+"'>"+"0/"+json[key]['required'+j]+"</div>"+
+        "<div id='prog-input-"+key.replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+requirement+"' data-multiplier='"+multiplier+"' data-linked-units='"+unit['linked_units']+"'>"+"0/"+requirement+"</div>"+
         "</div>"
       // Close Popover and Column
       cell += "</span></div>"
       cell += "<div class='w-100'></div>";
-      }
-      // Close row
-      cell +="</div>";
-      return cell;
     }
+    for(j=0; j<pet["additional_buffs"].length; j++){
+      //if(!$("#input-"+unit["pet"]).is(':checked')){ break;}
+      buff = pet["additional_buffs"][j];
+      cell += "<div class='col'>" 
+      // Open Popover
+      cell += '<span data-toggle="popover" title="'+buff["name"]+'" data-content="'+buff["description"]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
+      // Progress Bar
+      cell +="<div class='progress unit-bar "+((checked!="checked") ? "progress-bar-hidden" : "")+"'>"+
+        "<div id='prog-input-"+key.replace(" ", "-")+"-"+unit["pet"].replace(" ", "-")+"-"+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+buff['requirement']+"' data-multiplier='"+buff['multiplier']+"' data-linked-units='"+buff['linked_units']+"'>"+"0/"+buff['requirement']+"</div>"+
+        "</div>"
+      // Close Popover and Column
+      cell += "</span></div>"
+      cell += "<div class='w-100'></div>";
+    }
+    // Close row
+    cell +="</div>";
+    return cell;
+  }
 
   data = JSON.parse($.ajax({url: "{{ url_for('static', filename='units.json') }}", async: false, cache: false}).responseText);
   pets = JSON.parse($.ajax({url: "{{ url_for('static', filename='pets.json') }}", async: false, cache: false}).responseText);
@@ -133,11 +172,22 @@
       $('[data-toggle="popover"]').popover()
     }); 
 
-    inputs = document.getElementsByClassName('unit-input');
+    // Get corret values for progress bars
+    let inputs = document.getElementsByClassName('unit-input');
     for (i=0; i < inputs.length; i++) {
       for(j=1;j<=json[$(inputs[i]).data("unit")]['number_buffs'];j++){
+        //if (json[$(inputs[i]).data("unit")]['required'+j] == "0") { continue;}
         update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+j), inputs[i]);
       }
+      let pet = json[$(inputs[i]).data("unit")]["pet"]
+      for(j=0;j<pets[pet]["additional_buffs"].length;j++){
+        update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+"-"+pet.replace(" ", "-")+"-"+j), inputs[i]);
+      }
+    }
+
+    let checkboxes = document.getElementsByClassName('form-check-input');
+    for(i=0; i < checkboxes.length; i++){
+      switch_pet_checkbox(checkboxes[i]);
     }
   });
 
@@ -176,12 +226,20 @@
   });
 
   $(function() {
-    $(":input").bind('keyup mouseup', function () {
+    $(".unit-input").bind('keyup mouseup', function () {
       for(j=1;j<=json[$(this).data("unit")]['number_buffs'];j++){
+        update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+j), this);
         update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+j), this);
       }
       update_local_storage(this)
     });
   });
+
+  $(function() {
+    $('.form-check-input').click(function() {
+      switch_pet_checkbox(this);
+    });
+  });
+
 </script>
 {% endblock %}

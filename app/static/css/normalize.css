@@ -54,6 +54,10 @@ img {
       text-align: left; 
 }
 
+.progress-bar-hidden {
+  visibility: hidden;
+}
+
 .progress {
   height: 1.75rem;
   font-size: 1.5rem;
@@ -75,6 +79,10 @@ img {
     color: black;
     background-color: #999999;
     font-size: 18px;
+}
+
+.five-star-pet {
+  filter: drop-shadow(rgb(30, 220, 30) 1px 1px 5px);
 }
 
 /* Document
