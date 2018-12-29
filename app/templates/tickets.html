@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+ 	{{ super() }}
+ 	<script type="text/javascript">
+	$(window).on("load", function() {
+	//$("[data-meta=Elf]").css("background-color", "#1ca51c");
+	//$("[data-meta=Orc]").css("background-color", "#58689D");
+	//$("[data-meta=Undead]").css("background-color", "#2A334E");
+	//$("[data-meta=Miscellaneous]").css("background-color", "#B19E36");
+	$(".requirement").each(function(){
+		unit = $(this).data("unit")
+		requirement = $(this).children()[0].innerText;
+        number_units = parseInt(localStorage.getItem(("input "+unit).replaceAll(" ", "-")));
+        number_sr_units = parseInt(localStorage.getItem(("input "+unit+" sr").replaceAll(" ", "-")));
+		$(this).children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
+		});
+	});
+ 	</script>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-7 col-centered">
+        	{% for key, ticket in tickets.items() %}
+            	<div class="row border" data-meta="{{ticket['meta']}}">
+                	<div class="col-md-4" align="center">
+                    	<img class='unit-image' src="../static/{{units[ticket['unit']]['img_sr']}}">
+                	</div>
+                	<div class="col-md-4 horizontal-align" align="center"><h2>{{ ticket['unit'] }}</h2></div>
+                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="{{ticket['unit']}}"><h2>{{ ticket['requirement'] }}</h2></div>
+            	</div>
+            {% endfor %}
+        </div>
+    </div>
+    <footer class="page-footer font-medium">
+    	This ranking was originally created CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
+    </footer>
+{% endblock %}

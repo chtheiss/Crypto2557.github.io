@@ -27,6 +27,13 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/vue.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/sortable.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/data.js') }}"></script>
+
+    <script type="text/javascript">
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.replace(new RegExp(search, 'g'), replacement);
+    };
+    </script>
     {% endblock %}
 </head>
 <body>
@@ -42,9 +49,12 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ url_for('core.units') }}">Units</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('core.tickets') }}">Tickets</a>
+    </li>
   </ul>
   </nav>
 {% endblock %}
-<div id="content">{% block content %}{% endblock %}</div>
+<div id="content" class="container">{% block content %}{% endblock %}</div>
 </body>
 </html>
