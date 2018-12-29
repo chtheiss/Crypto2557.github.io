@@ -46,7 +46,11 @@
 		unit = $(this).data("unit")
 		requirement = $(this).children()[0].innerText;
         number_units = parseInt(localStorage.getItem(("input "+unit).replaceAll(" ", "-")));
+        number_units = (isNaN(number_units)) ? 0 : number_units;
         number_sr_units = parseInt(localStorage.getItem(("input "+unit+" sr").replaceAll(" ", "-")));
+        number_sr_units = (isNaN(number_sr_units)) ? 0 : number_sr_units;
+        console.log(number_units);
+        console.log(number_sr_units);
 		$(this).children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
 		});
 	});
