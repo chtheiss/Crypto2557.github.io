@@ -35,11 +35,11 @@
       if(linked_units !== "undefined"){
         linked_units = linked_units.split(',')
         for (let unit of linked_units){
-          let input = document.getElementById('input-'+unit.replace(' ','-'));
-          let input_sr = document.getElementById('input-'+unit.replace(' ','-')+'-sr');
+          let input = document.getElementById('input-'+unit.replaceAll(' ','-'));
+          let input_sr = document.getElementById('input-'+unit.replaceAll(' ','-')+'-sr');
           val += parseInt($(input).val());
           val_sr += parseInt($(input_sr).val());
-          additional_bars_to_update.push($('#prog-input-'+unit.replace(' ', '-')+bar.attr('id').substr(-1)));
+          additional_bars_to_update.push($('#prog-input-'+unit.replaceAll(' ', '-')+bar.attr('id').substr(-1)));
         }        
       }
       let current_progress = multiplier*val+val_sr;
@@ -63,49 +63,62 @@
       .replace(".png", "");
   }
 
+  function update_progress_bar_values(progress_bar, buff){
+    $(progress_bar).attr("aria-valuemax", buff["requirement"])
+      .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
+    change_progress_bar_value($(progress_bar), 
+      parseFloat($(progress_bar).attr("aria-valuenow")), 
+      parseInt($(progress_bar).attr("aria-valuemax")));
+  }
+
   function switch_pet_checkbox(checkbox){
     let unit = json[$(checkbox).data("unit")];
     let pet = pets[unit["pet"]];
       if($(checkbox).is(':checked')){
         $("#"+($(checkbox).attr("for"))).addClass('five-star-pet');
         for(let i=0;i<pets[unit["pet"]]["additional_buffs"].length;i++){
-          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replace(" ", "-")+"-"+i);
+          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replaceAll(" ", "-")+"-"+i);
           $(progress_bar).parent().removeClass('progress-bar-hidden');
         }
         for(j=1;j<=unit['number_buffs'];j++){
-          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replace(" ", "-")+j);
+          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replaceAll(" ", "-")+j);
           for (k=0;k<pet.buffs.length;k++){
             let buff = pet.buffs[k];
-            if ((buff.name == $(progress_bar).parent().parent().data("original-title"))) {
-              $(progress_bar).attr("aria-valuemax", buff["requirement"])
-                .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
-              change_progress_bar_value($(progress_bar), 
-                parseFloat($(progress_bar).attr("aria-valuenow")), 
-                parseInt($(progress_bar).attr("aria-valuemax")));
+            let span = $(progress_bar).parent().parent();
+            if ((buff.name == span.data("original-title"))) {
+              // Update progress bar
+              update_progress_bar_values(progress_bar, buff);
+              // Update popover conent 
+              $(span).attr('data-content', buff["description"]);
+              //
             }
           }
         }
       } else {
         $("#"+($(checkbox).attr("for"))).removeClass('five-star-pet');
         for(let i=0;i<pets[unit["pet"]]["additional_buffs"].length;i++){
-          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replace(" ", "-")+"-"+i);
+          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replaceAll(" ", "-")+"-"+i);
           $(progress_bar).parent().addClass('progress-bar-hidden');
         }
         for(j=1;j<=unit['number_buffs'];j++){
-          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replace(" ", "-")+j);
+          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replaceAll(" ", "-")+j);
           for (k=0;k<pet.buffs.length;k++){
             let buff = pet.buffs[k];
-            if ((buff.name == $(progress_bar).parent().parent().data("original-title"))) {
+            let span = $(progress_bar).parent().parent();
+            if ((buff.name == span.data("original-title"))) {
+              // Update progress bar
               $(progress_bar).attr("aria-valuemax", unit["required"+j])
                 .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
               change_progress_bar_value($(progress_bar), 
                 parseFloat($(progress_bar).attr("aria-valuenow")), 
                 parseInt($(progress_bar).attr("aria-valuemax")));
+              // Update popover conent    
+              $(span).attr('data-content', unit["description_buff"+j]);
             }
           }
         }
       }
-      localStorage.setItem($(checkbox).attr("id").replace("input-", "").replace("-", " "), $(checkbox).is(':checked'));  
+      localStorage.setItem($(checkbox).attr("id").replace("input-", "").replaceAll("-", " "), $(checkbox).is(':checked'));  
   }
 
   function add_unit_cell(key, json, pets){

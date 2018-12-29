@@ -65,7 +65,7 @@
     "description_buff2": "When active skills are used, there is a certain chancec that the cooldown is reset. Chance is increased by 0.25% for every 5-star unit and 0.5% for every 6-star unit, but cannot exceed a maximum of 5%. (Only applied in scenarios.)"
   },  
   "Crimson Hawk Rider":{
-    "required1": 5,
+    "required1": 6,
     "buff1": 30,
     "pet": "Little Hawk",
     "img": "img/units/190.png",
@@ -96,7 +96,7 @@
     "img_sr": "img/units/195.png",
     "rotation": 12,
     "number_buffs": 1,
-    "multiplier1": 0.5,
+    "multiplier1": 0.0,
     "name_buff1": " ",
     "description_buff1": " "
   },

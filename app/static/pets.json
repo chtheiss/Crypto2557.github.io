@@ -25,8 +25,8 @@
 			"name": "Surprise Attack",
 			"description": "Even if the Crimson Hawk Rider is in the shop of time, the surprise attack is triggered with a 1% chance for 5-star unit and a 3% chance for 6-star unit. However, the probability of surprise attack can not exceed 60%",
 			"multiplier": 0.333333,
-			"requirement": 60,
-			"amount": 20
+			"requirement": 20,
+			"amount": 60
 		}],
 		"additional_buffs": []
 	},
@@ -72,7 +72,7 @@
 		"img": "img/pets/164.png",
 		"buffs":[{
 			"name": "Elf Token",
-			"description": "The elf tribe friendliness can be increased up to 150% by human unit seals.",
+			"description": "The elf tribe friendliness can be increased up to 150% by elf unit seals.",
 			"multiplier": 0.5,
 			"requirement": 15,
 			"amount": 150
@@ -83,7 +83,7 @@
 		"img": "img/pets/165.png",
 		"buffs":[{
 			"name": "Undead Token",
-			"description": "The undead tribe friendliness can be increased up to 150% by human unit seals.",
+			"description": "The undead tribe friendliness can be increased up to 150% by undead unit seals.",
 			"multiplier": 0.5,
 			"requirement": 15,
 			"amount": 150
@@ -101,7 +101,7 @@
 		"img": "img/pets/166.png",
 		"buffs":[{
 			"name": "Orc Token",
-			"description": "The orc tribe friendliness can be increased up to 150% by human unit seals.",
+			"description": "The orc tribe friendliness can be increased up to 150% by orc unit seals.",
 			"multiplier": 0.5,
 			"requirement": 15,
 			"amount": 150
@@ -261,7 +261,8 @@
 			"multiplier": 0.42857,
 			"requirement": [18, 22],
 			"amount": [2.5, 5.0],
-			"linked_units": ["Blade Master"]
+			"linked_units": ["Blade Master"],
+			"linked_pets": ["Saul"]
 		}],
 		"additional_buffs": []
 	},
@@ -273,7 +274,8 @@
 			"multiplier": 0.42857,
 			"requirement": [18, 22],
 			"amount": [2.5, 5.0],
-			"linked_units": ["Dark Spirit"]
+			"linked_units": ["Dark Spirit"],
+			"linked_pets": ["Osma"]
 		}],
 		"additional_buffs": []
 	},
