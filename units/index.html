@@ -62,11 +62,11 @@
       if(linked_units !== "undefined"){
         linked_units = linked_units.split(',')
         for (let unit of linked_units){
-          let input = document.getElementById('input-'+unit.replace(' ','-'));
-          let input_sr = document.getElementById('input-'+unit.replace(' ','-')+'-sr');
+          let input = document.getElementById('input-'+unit.replaceAll(' ','-'));
+          let input_sr = document.getElementById('input-'+unit.replaceAll(' ','-')+'-sr');
           val += parseInt($(input).val());
           val_sr += parseInt($(input_sr).val());
-          additional_bars_to_update.push($('#prog-input-'+unit.replace(' ', '-')+bar.attr('id').substr(-1)));
+          additional_bars_to_update.push($('#prog-input-'+unit.replaceAll(' ', '-')+bar.attr('id').substr(-1)));
         }        
       }
       let current_progress = multiplier*val+val_sr;
@@ -85,28 +85,187 @@
     localStorage.setItem($(input).attr("id"), "0")  
   }
 
+  function static_path_to_efdata_link(path){
+    return path.replace("img", "https://www.endlessfrontierdata.com")
+      .replace(".png", "");
+  }
+
+  function update_progress_bar_values(progress_bar, buff){
+    $(progress_bar).attr("aria-valuemax", buff["requirement"])
+      .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
+    change_progress_bar_value($(progress_bar), 
+      parseFloat($(progress_bar).attr("aria-valuenow")), 
+      parseInt($(progress_bar).attr("aria-valuemax")));
+  }
+
+  function switch_pet_checkbox(checkbox){
+    let unit = json[$(checkbox).data("unit")];
+    let pet = pets[unit["pet"]];
+      if($(checkbox).is(':checked')){
+        $("#"+($(checkbox).attr("for"))).addClass('five-star-pet');
+        for(let i=0;i<pets[unit["pet"]]["additional_buffs"].length;i++){
+          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replaceAll(" ", "-")+"-"+i);
+          $(progress_bar).parent().removeClass('progress-bar-hidden');
+        }
+        for(j=1;j<=unit['number_buffs'];j++){
+          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replaceAll(" ", "-")+j);
+          for (k=0;k<pet.buffs.length;k++){
+            let buff = pet.buffs[k];
+            let span = $(progress_bar).parent().parent();
+            if ((buff.name == span.data("original-title"))) {
+              // Update progress bar
+              update_progress_bar_values(progress_bar, buff);
+              // Update popover conent 
+              $(span).attr('data-content', buff["description"]);
+              //
+            }
+          }
+        }
+      } else {
+        $("#"+($(checkbox).attr("for"))).removeClass('five-star-pet');
+        for(let i=0;i<pets[unit["pet"]]["additional_buffs"].length;i++){
+          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replaceAll(" ", "-")+"-"+i);
+          $(progress_bar).parent().addClass('progress-bar-hidden');
+        }
+        for(j=1;j<=unit['number_buffs'];j++){
+          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replaceAll(" ", "-")+j);
+          for (k=0;k<pet.buffs.length;k++){
+            let buff = pet.buffs[k];
+            let span = $(progress_bar).parent().parent();
+            if ((buff.name == span.data("original-title"))) {
+              // Update progress bar
+              $(progress_bar).attr("aria-valuemax", unit["required"+j])
+                .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
+              change_progress_bar_value($(progress_bar), 
+                parseFloat($(progress_bar).attr("aria-valuenow")), 
+                parseInt($(progress_bar).attr("aria-valuemax")));
+              // Update popover conent    
+              $(span).attr('data-content', unit["description_buff"+j]);
+            }
+          }
+        }
+      }
+      localStorage.setItem($(checkbox).attr("id").replace("input-", "").replaceAll("-", " "), $(checkbox).is(':checked'));  
+  }
+
+  function add_unit_cell(key, json, pets){
+    let unit = json[key];
+    let pet = pets[json[key]["pet"]];
+    let cell = "";
+    if (localStorage.getItem(unit["pet"]) == "true") {checked = "checked"} else {checked = ""}
+    cell += "<div class='row'>";
+    // Add image for normal unit
+    cell += "<div class='col-4' align='center'>";
+    cell += "<a href='"+static_path_to_efdata_link(unit['img'])+"'>"+
+      "<img class='unit-image' src="+"../static/"+unit['img']+" data-toggle='tooltip' data-placement='top' title='"+key+ "'>"+
+      "</a></div>";
+    // Add image for seniored unit
+    cell += "<div class='col-4' align='center'>"
+    cell += "<a href='"+static_path_to_efdata_link(unit['img_sr'])+"'>"+
+      "<img class='unit-image' src="+"../static/"+unit['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+key+ "'>"+
+      "</a></div>";
+    // Add image for pet
+    cell += "<div class='col-2' align='center'>"
+    cell += "<a href='"+static_path_to_efdata_link(pet["img"])+"'>"+
+      "<img id='"+"image-"+unit["pet"].replace(" ", "-")+"' class='pet-image' src="+"../static/"+pet["img"]+" data-toggle='tooltip' data-placement='top' title='"+unit["pet"]+ "'>"+
+      "</a></div>";
+    cell += "<div class='w-100'></div>";
+    // Add input for normal unit
+    cell += "<div class='col-4' align='center'>"+
+      "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+key.replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+key.replaceAll(" ", "-")+"' data-unit='"+key+"'>"+
+      "</div>"
+    // Add input for seniored unit
+    cell += "<div class='col-4' align='center'>"+
+      "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+key.replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+key.replaceAll(" ", "-")+"-sr' data-unit='"+key+"'>"+
+      "</div>";
+    // Add input for pet 5*
+    cell += "<div class='col-2' align='center'>"+
+      "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='"+"input-"+unit["pet"].replace(" ", "-")+"' for='"+"image-"+unit["pet"].replaceAll(" ", "-")+"' data-unit='"+key+"' "+checked+"></div>"+
+      "</div>";
+    cell += "<div class='w-100'></div>";
+    for(j=1; j<=unit['number_buffs'];j++){
+      let requirement = unit['required'+j]
+      let multiplier = unit['multiplier'+j]
+      let description = unit['description_buff'+j]
+      if (checked == "checked"){
+        for (k=0;k<pet.buffs.length;k++){
+          buff = pet.buffs[k];
+          if ((buff.name == unit['name_buff'+j])) {
+            requirement = buff.requirement
+            multiplier = buff.multiplier
+            description = buff.description
+          }
+        }
+      }
+      // Open Column
+      cell += "<div class='col'>" 
+      // Open Popover
+      cell += '<span data-toggle="popover" title="'+unit["name_buff"+j]+'" data-content="'+description+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
+      // Progress Bar
+      cell +="<div class='progress unit-bar'>"+
+        "<div id='prog-input-"+key.replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+requirement+"' data-multiplier='"+multiplier+"' data-linked-units='"+unit['linked_units']+"'>"+"0/"+requirement+"</div>"+
+        "</div>"
+      // Close Popover and Column
+      cell += "</span></div>"
+      cell += "<div class='w-100'></div>";
+    }
+    for(j=0; j<pet["additional_buffs"].length; j++){
+      buff = pet["additional_buffs"][j];
+      cell += "<div class='col'>" 
+      // Open Popover
+      cell += '<span data-toggle="popover" title="'+buff["name"]+'" data-content="'+buff["description"]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
+      // Progress Bar
+      cell +="<div class='progress unit-bar "+((checked!="checked") ? "progress-bar-hidden" : "")+"'>"+
+        "<div id='prog-input-"+unit["pet"].replace(" ", "-")+"-"+key.replace(" ", "-")+"-"+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+buff['requirement']+"' data-multiplier='"+buff['multiplier']+"' data-linked-units='"+buff['linked_units']+"'>"+"0/"+buff['requirement']+"</div>"+
+        "</div>"
+      // Close Popover and Column
+      cell += "</span></div>"
+      cell += "<div class='w-100'></div>";
+    }
+    // Close row
+    cell +="</div>";
+    return cell;
+  }
+
   data = JSON.parse($.ajax({url: "/static/units.json", async: false, cache: false}).responseText);
+  pets = JSON.parse($.ajax({url: "/static/pets.json", async: false, cache: false}).responseText);
   localStorage.setItem('unit-info', JSON.stringify(data));
+  localStorage.setItem('pet-info', JSON.stringify(pets));
   json = JSON.parse(localStorage.getItem('unit-info'));
 
   $(window).on("load", function() {
+    // Populate Popovers for progress bars
     $('[data-toggle="popover"]').each(function() {
       unit = $(this).data("unit");
       buff_number = $(this).data("buff-number");
       $(this).data("title", json[unit]["name-buff"+(buff_number === "2" ? buff_number : "")]);
       $(this).data("data-content", json[unit]["description-buff"+(buff_number === "2" ? buff_number : "")]);
     });
+
+    // Init Popovers for progress bars
     $(function () {
       $('[data-toggle="popover"]').popover()
     }); 
 
-    inputs = document.getElementsByTagName('input');
+    // Get corret values for progress bars
+    let inputs = document.getElementsByClassName('unit-input');
     for (i=0; i < inputs.length; i++) {
       for(j=1;j<=json[$(inputs[i]).data("unit")]['number_buffs'];j++){
+        //if (json[$(inputs[i]).data("unit")]['required'+j] == "0") { continue;}
         update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+j), inputs[i]);
       }
+      let pet = json[$(inputs[i]).data("unit")]["pet"]
+      for(j=0;j<pets[pet]["additional_buffs"].length;j++){
+        update_progress_bar($("#prog-input-"+pet.replace(" ", "-")+"-"+$(inputs[i]).data("unit").replace(" ", "-")+"-"+j), inputs[i]);
+      }
+    }
+
+    let checkboxes = document.getElementsByClassName('form-check-input');
+    for(i=0; i < checkboxes.length; i++){
+      switch_pet_checkbox(checkboxes[i]);
     }
   });
+
 </script>
 
 </head>
@@ -128,76 +287,28 @@
 
 <div id="content">
 <script type="text/javascript">
-
   String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
   };
+
   var keys = Object.keys(json);
   var output = ""
-
-  output += "<div class='table'>";
-  output += "<div class='row'>";
+  output += "<div class='row' id='unit-table'>";
   for (var i=0; i<keys.length; i++)
   {
-    if((i%4)==0)
+    if((i%4)==0 & i!=0)
     {
-      output += "</div><div class='row'>" 
-      output += "<div class='col-md-3 centered'>";
-      output += "<div id='images'>"+
-        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
-        "</a>"+
-        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
-        "</a>"+
-      "</div>";
-      output += "<div id='inputs'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"' data-unit='"+keys[i]+"'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr' data-unit='"+keys[i]+"'>"+
-      "</div>";
-      for(j=1; j<=json[keys[i]]['number_buffs'];j++){
-        output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
-        output +="<div class='progress unit-bar'>"+
-            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"' data-linked-units='"+json[keys[i]]['linked_units']+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
-          "</div>"
-        output += "</span>"
-
-      }
-      output +="</div>";
+      output += "<div class='w-100'></div>";
     }
-    else
-    {
-      output += "<div class='col-md-3 centered'>";
-      output += "<div id='images'>"+
-        "<a href='"+json[keys[i]]['img'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img']+" data-toggle='tooltip' data-placement='top' title='"+keys[i]+ "'>"+
-        "</a>"+
-        "<a href='"+json[keys[i]]['img_sr'].replace("img", "https://www.endlessfrontierdata.com")+"'>"+
-          "<img class='unit-image' src="+"../static/"+json[keys[i]]['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+keys[i]+ "'>"+
-        "</a>"+
-      "</div>";
-      output += "<div id='inputs'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"' data-unit='"+keys[i]+"'>"+
-        "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+keys[i].replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+keys[i].replaceAll(" ", "-")+"-sr' data-unit='"+keys[i]+"'>"+
-      "</div>";
-      for(j=1; j<=json[keys[i]]['number_buffs'];j++){
-        output += '<span data-toggle="popover" title="'+json[keys[i]]["name_buff"+j]+'" data-content="'+json[keys[i]]['description_buff'+j]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+keys[i]+'"">'
-        output +="<div class='progress unit-bar'>"+
-            "<div id='prog-input-"+keys[i].replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+json[keys[i]]['required'+j]+"' data-multiplier='"+json[keys[i]]['multiplier'+j]+"' data-linked-units='"+json[keys[i]]['linked_units']+"'>"+"0/"+json[keys[i]]['required'+j]+"</div>"+
-          "</div>"
-        output += "</span>"
-      }
-      output +="</div>";
-    }
-  }
+    output += "<div class='col-md-3'>";
+    output += add_unit_cell(keys[i], json, pets);
+    output +="</div>";
 
-  if((i%4)!=0)
-  {
-    output += "</div><div class='row'>";
   }
   output += "</div>";
   document.write(output); 
+
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
   }); 
@@ -207,13 +318,24 @@
   });
 
   $(function() {
-    $(":input").bind('keyup mouseup', function () {
+    $(".unit-input").bind('keyup mouseup', function () {
       for(j=1;j<=json[$(this).data("unit")]['number_buffs'];j++){
         update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+j), this);
+      }
+      for(let i=0;i<pets[json[$(this).data("unit")]["pet"]]["additional_buffs"].length;i++){
+        update_progress_bar($("#prog-input-"+json[$(this).data("unit")]["pet"].replace(" ","-")+"-"+$(this).data("unit").replace(" ", "-")+"-"+i), this);
       }
       update_local_storage(this)
     });
   });
+
+  $(function() {
+    $('.form-check-input').click(function() {
+      switch_pet_checkbox(this);
+
+    });
+  });
+
 </script>
 </div>
 </body>
