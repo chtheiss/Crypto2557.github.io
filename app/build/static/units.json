@@ -77,8 +77,8 @@
     "description_buff1": "Each Crimson Hawk Rider on the team increases chance of flying fast towards enemy crystal, with 3% chance for each 5 star and 5% chance for each 6 star Crimson Hawk Rider. Probability of thrust can not exceed a maximum of 30%."
   },
     "Astral Captain":{
-    "required1": 15,
-    "buff1": 30,
+    "required1": 10,
+    "buff1": 20,
     "pet": "Foxy",
     "img": "img/units/192.png",
     "img_sr": "img/units/193.png",
@@ -183,8 +183,8 @@
     "description_buff2": "Increases the effieciency of boosting game speed(x2,x3,x5) by 0.05 for each 5-star Winged Knight(0.1 for 6-star). This would be activated by Winged Knight in your current team, NOT in Time Shop. For example, if you have four 5-star Winged Knights and three 6-star Winged Knights in your current team, then the game speed(x2,x3,x5) will be x2.5, x3.5 and x.5.5, respectively."
   },
     "Windwalker":{
-    "required1": 30,
-    "buff1": 600,
+    "required1": 20,
+    "buff1": 400,
     "pet": "Mori",
     "img": "img/units/176.png",
     "img_sr": "img/units/177.png",
@@ -195,8 +195,8 @@
     "description_buff1": "Increases the Tribe Friendliness for Elf by 10 points for each 5-star Windwalker, and 20 points for each 6-star Windwalker. It is applied even when Windwalker is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)"
   },
     "Abyss Mage":{
-    "required1": 30,
-    "buff1": 600,
+    "required1": 20,
+    "buff1": 400,
     "pet": "Cerbero",
     "img": "img/units/178.png",
     "img_sr": "img/units/179.png",
@@ -207,8 +207,8 @@
     "description_buff1": "Increases the Tribe Friendliness for Undead by 10 points for each 5-star Abyss Mage, and 20 points for each 6-star Abyss Mage. It is applied even when Abyss Mage is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)"
   },
     "Siren":{
-    "required1": 30,
-    "buff1": 600,
+    "required1": 20,
+    "buff1": 400,
     "pet": "Octopa",
     "img": "img/units/180.png",
     "img_sr": "img/units/181.png",

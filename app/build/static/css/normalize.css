@@ -7,6 +7,12 @@
     float: none;
 }
 
+.col-centered {
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .centered { vertical-align:middle; text-align:center; }
 
 .form-control { display: inline }

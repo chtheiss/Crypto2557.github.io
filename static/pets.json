@@ -259,7 +259,7 @@
 			"name": "Limit Break of Spirit Rest",
 			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%. In addition, when Blade Master is awakened, the maximum efficiency increases 12.5%- > 15%.)",
 			"multiplier": 0.42857,
-			"requirement": [18, 22],
+			"requirement": 18,
 			"amount": [2.5, 5.0],
 			"linked_units": ["Blade Master"],
 			"linked_pets": ["Saul"]
@@ -272,7 +272,7 @@
 			"name": "Limit Break of Spirit Rest",
 			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%.) In addition, when Dark Spirit is awakened, the maximum efficiency increases to 15%.)",
 			"multiplier": 0.42857,
-			"requirement": [18, 22],
+			"requirement": 18,
 			"amount": [2.5, 5.0],
 			"linked_units": ["Dark Spirit"],
 			"linked_pets": ["Osma"]

@@ -28,6 +28,13 @@
     <script type="text/javascript" src="/static/js/vue.min.js"></script>
     <script type="text/javascript" src="/static/js/sortable.js"></script>
     <script type="text/javascript" src="/static/js/data.js"></script>
+
+    <script type="text/javascript">
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.replace(new RegExp(search, 'g'), replacement);
+    };
+    </script>
     
 <script type="text/javascript">
 
@@ -282,16 +289,14 @@
     <li class="nav-item">
       <a class="nav-link" href="/units/">Units</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/tickets/">Tickets</a>
+    </li>
   </ul>
   </nav>
 
-<div id="content">
+<div id="content" class="container">
 <script type="text/javascript">
-  String.prototype.replaceAll = function(search, replacement) {
-    var target = this;
-    return target.replace(new RegExp(search, 'g'), replacement);
-  };
-
   var keys = Object.keys(json);
   var output = ""
   output += "<div class='row' id='unit-table'>";
