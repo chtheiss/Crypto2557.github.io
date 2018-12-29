@@ -317,6 +317,7 @@
 	},
 	"E-77":{
 		"img": "img/pets/48.png",
+		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Steam Punk. (However, this value cannot exceed 50.)",
@@ -327,6 +328,7 @@
 	},
 	"Windy":{
 		"img": "img/pets/49.png",
+		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Sylphid. (However, this value cannot exceed 50.)",
@@ -337,6 +339,7 @@
 	},
 	"Dark Snake":{
 		"img": "img/pets/50.png",
+		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Medusa. (However, this value cannot exceed 50.)",
@@ -347,6 +350,7 @@
 	},
 	"Seahorse":{
 		"img": "img/pets/51.png",
+		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Naga. (However, this value cannot exceed 50.)",

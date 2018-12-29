@@ -653,8 +653,8 @@
     "rotation": 2,
     "number_buffs": 1,
     "multiplier1": 0.0,
-    "name_buff1": " ",
-    "description_buff1": " "
+    "name_buff1": "Revival Team for spirit rest runs.",
+    "description_buff1": "Increase medals earned at the time of revival by 10%."
   },
     "Priest":{
     "required1": 5,
