@@ -53,15 +53,19 @@
       }
   }
 
+  function handle_nan(val){
+    return (isNaN(val)) ? 0 : val;
+  }
+
   function update_progress_bar(bar, input){
       let val = 0;
       let val_sr = 0;
       if($(input).attr("id").endsWith("-sr")){
-          val_sr += parseInt($(input).val());
-          val += parseInt($("#"+$(input).attr("id").replace("-sr", "")).val());
+          val_sr += handle_nan(parseInt($(input).val()));
+          val += handle_nan(parseInt($("#"+$(input).attr("id").replace("-sr", "")).val()));
       } else {
-          val_sr += parseInt($("#"+$(input).attr("id")+"-sr").val());
-          val += parseInt($(input).val());
+          val_sr += handle_nan(parseInt($("#"+$(input).attr("id")+"-sr").val()));
+          val += handle_nan(parseInt($(input).val()));
       }
       let multiplier = parseFloat($(bar).data("multiplier"));
       let linked_units = bar.data('linked-units');

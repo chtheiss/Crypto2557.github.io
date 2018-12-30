@@ -15,6 +15,11 @@
 
 .centered { vertical-align:middle; text-align:center; }
 
+.rem-center{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .form-control { display: inline }
 
 .col-md-3 { padding-bottom: 15px }

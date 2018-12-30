@@ -43,15 +43,22 @@
 	//$("[data-meta=Undead]").css("background-color", "#2A334E");
 	//$("[data-meta=Miscellaneous]").css("background-color", "#B19E36");
 	$(".requirement").each(function(){
-		unit = $(this).data("unit")
-		requirement = $(this).children()[0].innerText;
-        number_units = parseInt(localStorage.getItem(("input "+unit).replaceAll(" ", "-")));
+		let unit = $(this).data("unit")
+        let progressbar = $($(this).children().children()[0])
+		let requirement = progressbar.attr('aria-valuemax');
+        let number_units = parseInt(localStorage.getItem(("input "+unit).replaceAll(" ", "-")));
         number_units = (isNaN(number_units)) ? 0 : number_units;
-        number_sr_units = parseInt(localStorage.getItem(("input "+unit+" sr").replaceAll(" ", "-")));
+        let number_sr_units = parseInt(localStorage.getItem(("input "+unit+" sr").replaceAll(" ", "-")));
         number_sr_units = (isNaN(number_sr_units)) ? 0 : number_sr_units;
-        console.log(number_units);
-        console.log(number_sr_units);
-		$(this).children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
+        let value = 100*((number_units+number_sr_units) / parseFloat(requirement));
+        progressbar.attr('aria-valuenow',value);
+        progressbar.css("width", value + "%");
+        if(value >=100){
+            progressbar.addClass("progress-bar-green");
+        } else{
+            progressbar.addClass("progress-bar-red");
+        }
+		$(this).children().children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
 		});
 	});
  	</script>
@@ -84,256 +91,384 @@
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/161.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Hippogriff</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Hippogriff"><h2>5</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Hippogriff</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Hippogriff">
+                        <div class="progress col-centered">
+                            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Elf">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/99.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Dark Archer</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Dark Archer"><h2>12</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Dark Archer</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Dark Archer">
+                        <div class="progress col-centered">
+                            <div id="prog-Dark Archer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Elf">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/95.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Priest</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Priest"><h2>5</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Priest</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Priest">
+                        <div class="progress col-centered">
+                            <div id="prog-Priest" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Elf">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/97.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Fairy</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Fairy"><h2>13</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Fairy</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Fairy">
+                        <div class="progress col-centered">
+                            <div id="prog-Fairy" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="13"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Elf">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/95.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Priest</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Priest"><h2>8</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Priest</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Priest">
+                        <div class="progress col-centered">
+                            <div id="prog-Priest" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Elf">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/161.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Hippogriff</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Hippogriff"><h2>10</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Hippogriff</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Hippogriff">
+                        <div class="progress col-centered">
+                            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Elf">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/103.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Battle Drummer</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Battle Drummer"><h2>12</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Battle Drummer</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Battle Drummer">
+                        <div class="progress col-centered">
+                            <div id="prog-Battle Drummer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/141.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Naga</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Naga"><h2>9</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Naga</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Naga">
+                        <div class="progress col-centered">
+                            <div id="prog-Naga" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="9"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/161.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Hippogriff</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Hippogriff"><h2>20</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Hippogriff</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Hippogriff">
+                        <div class="progress col-centered">
+                            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/99.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Dark Archer</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Dark Archer"><h2>24</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Dark Archer</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Dark Archer">
+                        <div class="progress col-centered">
+                            <div id="prog-Dark Archer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/173.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Frost Demon</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Frost Demon"><h2>17</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Frost Demon</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Frost Demon">
+                        <div class="progress col-centered">
+                            <div id="prog-Frost Demon" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="17"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/175.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Winged Knight</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Winged Knight"><h2>30</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Winged Knight</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Winged Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Winged Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/141.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Naga</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Naga"><h2>10</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Naga</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Naga">
+                        <div class="progress col-centered">
+                            <div id="prog-Naga" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/135.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Steam Punk</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Steam Punk"><h2>10</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Steam Punk</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Steam Punk">
+                        <div class="progress col-centered">
+                            <div id="prog-Steam Punk" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/137.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Sylphid</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Sylphid"><h2>10</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Sylphid</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Sylphid">
+                        <div class="progress col-centered">
+                            <div id="prog-Sylphid" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Orc">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/139.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Medusa</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Medusa"><h2>10</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Medusa</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Medusa">
+                        <div class="progress col-centered">
+                            <div id="prog-Medusa" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/179.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Abyss Mage</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Abyss Mage"><h2>3</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Abyss Mage</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Abyss Mage">
+                        <div class="progress col-centered">
+                            <div id="prog-Abyss Mage" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/187.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Crow Knight</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Crow Knight"><h2>5</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Crow Knight</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Crow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/171.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Dark Elf</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Dark Elf"><h2>6</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Dark Elf</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Dark Elf">
+                        <div class="progress col-centered">
+                            <div id="prog-Dark Elf" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="6"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/193.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Astral Captain</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Astral Captain"><h2>10</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Astral Captain</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Astral Captain">
+                        <div class="progress col-centered">
+                            <div id="prog-Astral Captain" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/187.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Crow Knight</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Crow Knight"><h2>15</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Crow Knight</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Crow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/183.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Musketress</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Musketress"><h2>15</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Musketress</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Musketress">
+                        <div class="progress col-centered">
+                            <div id="prog-Musketress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/179.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Abyss Mage</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Abyss Mage"><h2>30</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Abyss Mage</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Abyss Mage">
+                        <div class="progress col-centered">
+                            <div id="prog-Abyss Mage" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/195.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Shadow Knight</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Shadow Knight"><h2>12</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Shadow Knight</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Shadow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Shadow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Undead">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/193.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Astral Captain</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Astral Captain"><h2>15</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Astral Captain</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Astral Captain">
+                        <div class="progress col-centered">
+                            <div id="prog-Astral Captain" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Miscellaneous">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/173.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Frost Demon</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Frost Demon"><h2>24</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Frost Demon</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Frost Demon">
+                        <div class="progress col-centered">
+                            <div id="prog-Frost Demon" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Miscellaneous">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/101.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Sorcerer</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Sorcerer"><h2>24</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Sorcerer</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Sorcerer">
+                        <div class="progress col-centered">
+                            <div id="prog-Sorcerer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Miscellaneous">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/197.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>War Bear Rider</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="War Bear Rider"><h2>25</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>War Bear Rider</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="War Bear Rider">
+                        <div class="progress col-centered">
+                            <div id="prog-War Bear Rider" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="25"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Miscellaneous">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/159.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Flame Spirit</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Flame Spirit"><h2>27</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Flame Spirit</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Flame Spirit">
+                        <div class="progress col-centered">
+                            <div id="prog-Flame Spirit" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Miscellaneous">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/169.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Elementalist</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Elementalist"><h2>27</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Elementalist</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Elementalist">
+                        <div class="progress col-centered">
+                            <div id="prog-Elementalist" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Miscellaneous">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/187.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Crow Knight</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Crow Knight"><h2>27</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Crow Knight</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Crow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
+                        </div>
+                    </div>
             	</div>
             
             	<div class="row border" data-meta="Miscellaneous">
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/img/units/103.png">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>Battle Drummer</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="Battle Drummer"><h2>2250</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>Battle Drummer</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="Battle Drummer">
+                        <div class="progress col-centered">
+                            <div id="prog-Battle Drummer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="2250"></div>
+                        </div>
+                    </div>
             	</div>
             
         </div>
