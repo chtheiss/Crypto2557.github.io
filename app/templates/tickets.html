@@ -9,15 +9,22 @@
 	//$("[data-meta=Undead]").css("background-color", "#2A334E");
 	//$("[data-meta=Miscellaneous]").css("background-color", "#B19E36");
 	$(".requirement").each(function(){
-		unit = $(this).data("unit")
-		requirement = $(this).children()[0].innerText;
-        number_units = parseInt(localStorage.getItem(("input "+unit).replaceAll(" ", "-")));
+		let unit = $(this).data("unit")
+        let progressbar = $($(this).children().children()[0])
+		let requirement = progressbar.attr('aria-valuemax');
+        let number_units = parseInt(localStorage.getItem(("input "+unit).replaceAll(" ", "-")));
         number_units = (isNaN(number_units)) ? 0 : number_units;
-        number_sr_units = parseInt(localStorage.getItem(("input "+unit+" sr").replaceAll(" ", "-")));
+        let number_sr_units = parseInt(localStorage.getItem(("input "+unit+" sr").replaceAll(" ", "-")));
         number_sr_units = (isNaN(number_sr_units)) ? 0 : number_sr_units;
-        console.log(number_units);
-        console.log(number_sr_units);
-		$(this).children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
+        let value = 100*((number_units+number_sr_units) / parseFloat(requirement));
+        progressbar.attr('aria-valuenow',value);
+        progressbar.css("width", value + "%");
+        if(value >=100){
+            progressbar.addClass("progress-bar-green");
+        } else{
+            progressbar.addClass("progress-bar-red");
+        }
+		$(this).children().children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
 		});
 	});
  	</script>
@@ -30,8 +37,12 @@
                 	<div class="col-md-4" align="center">
                     	<img class='unit-image' src="../static/{{units[ticket['unit']]['img_sr']}}">
                 	</div>
-                	<div class="col-md-4 horizontal-align" align="center"><h2>{{ ticket['unit'] }}</h2></div>
-                	<div class="col-md-4 horizontal-align requirement" align="center" data-unit="{{ticket['unit']}}"><h2>{{ ticket['requirement'] }}</h2></div>
+                	<div class="col-md-4 rem-center big-text" align="center"><h3>{{ ticket['unit'] }}</h4></div>
+                	<div class="col-md-4 requirement rem-center" align="center" data-unit="{{ticket['unit']}}">
+                        <div class="progress col-centered">
+                            <div id="{{'prog-'+ticket['unit']}}" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ ticket['requirement'] }}"></div>
+                        </div>
+                    </div>
             	</div>
             {% endfor %}
         </div>
@@ -40,3 +51,4 @@
     	This ranking was originally created CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
     </footer>
 {% endblock %}
+</div>
