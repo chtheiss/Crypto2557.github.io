@@ -33,6 +33,9 @@
         var target = this;
         return target.replace(new RegExp(search, 'g'), replacement);
     };
+    function handle_nan(val){
+    return (isNaN(val)) ? 0 : val;
+    }
     </script>
     {% endblock %}
 </head>

@@ -18,11 +18,9 @@
         bar.removeClass("progress-bar-green");
       }
   }
-
-  function handle_nan(val){
+    function handle_nan(val){
     return (isNaN(val)) ? 0 : val;
-  }
-
+    }
   function update_progress_bar(bar, input){
       let val = 0;
       let val_sr = 0;
@@ -41,8 +39,8 @@
         for (let unit of linked_units){
           let input = document.getElementById('input-'+unit.replaceAll(' ','-'));
           let input_sr = document.getElementById('input-'+unit.replaceAll(' ','-')+'-sr');
-          val += parseInt($(input).val());
-          val_sr += parseInt($(input_sr).val());
+          val += handle_nan(parseInt($(input).val()));
+          val_sr += handle_nan(parseInt($(input_sr).val()));
           additional_bars_to_update.push($('#prog-input-'+unit.replaceAll(' ', '-')+bar.attr('id').substr(-1)));
         }        
       }
@@ -71,8 +69,8 @@
     $(progress_bar).attr("aria-valuemax", buff["requirement"])
       .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
     change_progress_bar_value($(progress_bar), 
-      parseFloat($(progress_bar).attr("aria-valuenow")), 
-      parseInt($(progress_bar).attr("aria-valuemax")));
+      handle_nan(parseFloat($(progress_bar).attr("aria-valuenow"))), 
+      handle_nan(parseInt($(progress_bar).attr("aria-valuemax"))));
   }
 
   function switch_pet_checkbox(checkbox){
@@ -114,8 +112,8 @@
               $(progress_bar).attr("aria-valuemax", unit["required"+j])
                 .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
               change_progress_bar_value($(progress_bar), 
-                parseFloat($(progress_bar).attr("aria-valuenow")), 
-                parseInt($(progress_bar).attr("aria-valuemax")));
+                handle_nan(parseFloat($(progress_bar).attr("aria-valuenow"))), 
+                handle_nan(parseInt($(progress_bar).attr("aria-valuemax"))));
               // Update popover conent    
               $(span).attr('data-content', unit["description_buff"+j]);
             }
