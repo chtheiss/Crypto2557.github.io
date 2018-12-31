@@ -475,7 +475,7 @@
 			"name": "Human's Secret Skill",
 			"description": " Even if Aladdin is at the Time Shop, this has an increased chance to get 10x gold. (Basic 10%, +2% per 5-star, +5% per 6-star) when using human secret skills.",
 			"multiplier": 0.4,
-			"requirement": 18,
+			"requirement": 8,
 			"amount": 90
 		}],
 		"additional_buffs": [{
@@ -551,5 +551,65 @@
 			"requirement": 30,
 			"amount": 30
 		}]
+	},
+	"Mambo": {
+		"img": "img/pets/1.png",
+		"buffs": [],
+		"additional_buffs": []
+	},	
+	"Joe": {
+		"img": "img/pets/2.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Mummy": {
+		"img": "img/pets/3.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Piggy": {
+		"img": "img/pets/4.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Potang": {
+		"img": "img/pets/5.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Uni": {
+		"img": "img/pets/14.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Joker": {
+		"img": "img/pets/7.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Snork": {
+		"img": "img/pets/8.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Phoenic": {
+		"img": "img/pets/9.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Indy": {
+		"img": "img/pets/10.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Grim": {
+		"img": "img/pets/11.png",
+		"buffs": [],
+		"additional_buffs": []
+	},
+	"Woola": {
+		"img": "img/pets/12.png",
+		"buffs": [],
+		"additional_buffs": []
 	}
 }

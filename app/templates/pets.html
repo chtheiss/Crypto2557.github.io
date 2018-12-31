@@ -1,10 +1,57 @@
 {% extends 'base.html' %}
 
 {% block head %}
- 	{{ super() }}
+    {{ super() }}
 {% endblock %}
 {% block content %}
 <div>
-	<center><h1>Currently not implemented. Stay tuned!<h1>
+    <center><h1>Currently not implemented. Stay tuned!<h1>
 </div>
+    <div class="row">
+        <div class="col-sm-12 col-centered">
+            {% for key, pet in pets.items() %}
+                {%if (loop.index-1) % 4 == 0 %}<div class="row centered-row">{% endif %}
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class='unit-image' src="../static/{{pet['img']}}">
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <h3>{{ key }}</h3>
+                                </div>
+                                <div>
+                                    <fieldset>
+                                        <label for="{{key}}-5star">
+                                            <input type="radio" id="{{key}}-5star" value="330">
+                                            <img src="../static/img/stargrey.png">
+                                        </label>
+                                        <label for="{{key}}-5star">
+                                            <input type="radio" id="{{key}}-4star" value="180">
+                                            <img src="../static/img/stargrey.png">
+                                        </label>
+                                        <label for="{{key}}-5star">
+                                            <input type="radio" id="{{key}}-3star" value="80">
+                                            <img src="../static/img/stargrey.png">
+                                        </label>
+                                        <label for="{{key}}-5star">
+                                            <input type="radio" id="{{key}}-2star" value="30">
+                                            <img src="../static/img/stargrey.png">
+                                        </label>
+                                        <label for="{{key}}-5star">
+                                            <input type="radio" id="{{key}}-1star" value="10">
+                                            <img src="../static/img/stargrey.png">
+                                        </label>
+                                    </fieldset>
+                                </div>  
+                                <div>
+                                    <input class="form-control" type="number" value="0" min="0" max="330">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%if (loop.index-1) % 4 == 3 %} </div>  {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

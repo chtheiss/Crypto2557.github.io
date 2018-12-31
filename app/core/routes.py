@@ -12,7 +12,9 @@ def index():
 
 @bp.route('/pets/', methods=['GET', 'POST'])
 def pets():
-    return render_template('pets.html', title='Pets')
+    pets_url = os.path.join(current_app.root_path, "static", "pets.json")
+    pets = json.load(open(pets_url))
+    return render_template('pets.html', title='Pets', pets=pets)
 
 @bp.route('/units/', methods=['GET', 'POST'])
 def units():

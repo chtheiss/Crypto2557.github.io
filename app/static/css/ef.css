@@ -25,7 +25,10 @@ body {
   margin-left: auto;
 }
 
-.form-control { display: inline }
+.form-control { 
+  display: inline;
+  text-align: center;
+ }
 
 .col-md-3 { padding-bottom: 15px }
 
@@ -99,4 +102,22 @@ img {
 
 .five-star-pet {
   filter: drop-shadow(rgb(30, 220, 30) 1px 1px 5px);
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 2px solid #f00;
 }
