@@ -28,6 +28,15 @@ body {
 .form-control { 
   display: inline;
   text-align: center;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-bottom-width: 0px;
+  max-width: 80%;
  }
 
 .col-md-3 { padding-bottom: 15px }
@@ -35,7 +44,8 @@ body {
 img { 
   display: inline-block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
+  max-height: 40px;
 }
 
 #unit-table{
@@ -115,9 +125,28 @@ img {
 /* IMAGE STYLES */
 [type=radio] + img {
   cursor: pointer;
+  max-width: 10px;
 }
 
 /* CHECKED STYLES */
 [type=radio]:checked + img {
   outline: 2px solid #f00;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0px;
+}
+
+.row {
+  margin-bottom: 0.5%;
+}
+
+.col-md-5, .col-md-7 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.super-row {
+  margin-top: 0.5%;
 }
