@@ -14,7 +14,8 @@ def index():
 def pets():
     pets_url = os.path.join(current_app.root_path, "static", "pets.json")
     pets = json.load(open(pets_url))
-    return render_template('pets.html', title='Pets', pets=pets)
+    pets_ordered = json.loads(json.dumps(dict([(pet, pets[pet]) for pet in sorted(pets, key=lambda d: pets[d]["from"][0])])))
+    return render_template('pets.html', title='Pets', pets=pets_ordered)
 
 @bp.route('/units/', methods=['GET', 'POST'])
 def units():

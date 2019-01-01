@@ -4,10 +4,7 @@
     {{ super() }}
 {% endblock %}
 {% block content %}
-<div>
-    <center><h1>Currently not implemented. Stay tuned!<h1>
-</div>
-    <div class="row">
+    <div class="row super-row">
         <div class="col-sm-12 col-centered">
             {% for key, pet in pets.items() %}
                 {%if (loop.index-1) % 6 == 0 %}<div class="row centered-row">{% endif %}
@@ -20,33 +17,34 @@
                                 <h3>{{ key }}</h3>
                             </div>
                         </div>
+                        {% set key=key.replace(" ", "-") %}
                         <div class="row centered-row">
                             <div class="col-md-7">
                                     <fieldset>
-                                        <label for="{{key}}-5star">
-                                            <input type="radio" id="{{key}}-5star" value="330">
-                                            <img class="star-img" src="../static/img/stargrey.png">
+                                        <label class="image-checkbox" id="{{key}}-1star">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" name="image[]" value="10" data-stars="1"/>
                                         </label>
-                                        <label for="{{key}}-5star">
-                                            <input type="radio" id="{{key}}-4star" value="180">
-                                            <img class="star-img" src="../static/img/stargrey.png">
+                                        <label class="image-checkbox" id="{{key}}-2star">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" name="image[]" value="30" data-stars="2"/>
                                         </label>
-                                        <label for="{{key}}-5star">
-                                            <input type="radio" id="{{key}}-3star" value="80">
-                                            <img class="star-img" src="../static/img/stargrey.png">
+                                        <label class="image-checkbox" id="{{key}}-3star">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" name="image[]" value="80" data-stars="3"/>
                                         </label>
-                                        <label for="{{key}}-5star">
-                                            <input type="radio" id="{{key}}-2star" value="30">
-                                            <img class="star-img" src="../static/img/stargrey.png">
+                                        <label class="image-checkbox" id="{{key}}-4star">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" name="image[]" value="180" data-stars="4"/>
                                         </label>
-                                        <label for="{{key}}-5star">
-                                            <input type="radio" id="{{key}}-1star" value="10">
-                                            <img class="star-img" src="../static/img/stargrey.png">
+                                        <label class="image-checkbox" id="{{key}}-5star">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" name="image[]" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
                             </div> 
                             <div class="col-md-5">
-                                    <input class="form-control" type="number" value="0" min="0" max="330">
+                                    <input id="{{key}}-fragments" data-pet="{{key}}" class="form-control pet-input" type="number" min="0" value="0"/>
                             </div>
                         </div>
                     </div>
@@ -54,4 +52,92 @@
             {% endfor %}
         </div>
     </div>
+
+    <script type="text/javascript">
+    (function() {
+        'use strict';
+        //check for support
+        if (!('indexedDB' in window)) {
+            console.log('This browser doesn\'t support IndexedDB');
+        return;
+        }
+        var dbPromise = idb.open('test-db4', 1, function(upgradeDb) {
+            if (!upgradeDb.objectStoreNames.contains('pets')) {
+                var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
+                petsOS.createIndex('fragments', 'fragments', {unique: false});
+            }
+        });
+    })();
+
+    $(".pet-input").each(function(){
+        idb.open('test-db4', 1).then(function(db){
+            var tx = db.transaction('pets', 'readwrite');
+            var store = tx.objectStore('pets');
+            return store.get($(this).data("pet"));
+        }.bind(this)).then(function(val) {
+            if(val != undefined){
+                $(this).attr("value", val["fragments"]);
+                if(val["fragments"] >=10){ $("#"+val["name"].replace(" ", "-")+"-1star").click() }
+                if(val["fragments"] >=30){ $("#"+val["name"].replace(" ", "-")+"-2star").click() }
+                if(val["fragments"] >=80){ $("#"+val["name"].replace(" ", "-")+"-3star").click() }
+                if(val["fragments"] >=180){ $("#"+val["name"].replace(" ", "-")+"-4star").click() }
+                if(val["fragments"] >=330){ $("#"+val["name"].replace(" ", "-")+"-5star").click() }
+            }
+        }.bind(this));
+    });
+
+    $(function() {
+        $(".pet-input").bind('keyup mouseup', function () {
+            request = idb.open('test-db4', 1);
+            request.then(function(db){
+                var tx = db.transaction('pets', 'readwrite');
+                var store = tx.objectStore('pets');
+                var item = {
+                    name: $(this).data("pet"),
+                    fragments: parseInt($(this).val())
+                };
+                store.put(item);
+                return tx.complete;
+            }.bind(this));
+
+        });
+    });
+
+    $(".image-checkbox").each(function () {
+        if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+            $(this).children().first().attr("src", "../static/img/star.png");
+        }
+        else {
+            $(this).children().first().attr("src", "../static/img/stargrey.png")
+        }
+    });
+
+    $(".image-checkbox").on("click", function (e) {
+        var $checkbox = $(this).find('input[type="checkbox"]');
+        var $fieldset = $(this).parent();
+        var stars = $checkbox.data("stars");
+        var $image_checkboxes = $fieldset.children();
+        var mapping = {1:5, 2:4, 3:3, 4:2, 5:1};
+        $checkbox.prop("checked",!$checkbox.prop("checked"));
+        if ($checkbox.prop("checked")){
+            stars = mapping[stars];
+            $image_checkboxes = $($image_checkboxes.get().reverse());
+        }
+        console.log($checkbox.prop("checked"));
+        for(var star=0;star<stars;star++){
+            console.log(star);
+            var $check = $($image_checkboxes[star]);
+            var $image = $check.find('.img-responsive');
+            $check.prop("checked", $checkbox.prop("checked"));
+            console.log($check.prop("checked"));
+            if($check.prop("checked")){
+                $image.attr("src", "../static/img/star.png")
+            } else {
+                $image.attr("src", "../static/img/stargrey.png")
+            }
+        }
+        e.preventDefault();
+    });
+
+    </script>
 {% endblock %}

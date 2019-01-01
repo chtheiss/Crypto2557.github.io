@@ -97,8 +97,8 @@
     "rotation": 12,
     "number_buffs": 1,
     "multiplier1": 0.0,
-    "name_buff1": " ",
-    "description_buff1": " "
+    "name_buff1": "Revival Team for Spirit Rest Runs",
+    "description_buff1": "When included in team, recieve 30% additional medals during revival."
   },
     "War Bear Rider":{
     "required1": 12,
@@ -567,7 +567,7 @@
     "img": "img/units/110.png",
     "img_sr": "img/units/111.png",
     "rotation": 3,
-    "number_buffs": 1,
+    "number_buffs": 0,
     "multiplier1": 0.333333,
     "name_buff1": "Offline March",
     "description_buff1": "Increases offline marching speed by 15%."
@@ -579,7 +579,7 @@
     "img": "img/units/112.png",
     "img_sr": "img/units/113.png",
     "rotation": 3,
-    "number_buffs": 1,
+    "number_buffs": 0,
     "multiplier1": 0.35,
     "name_buff1": "Offline March",
     "description_buff1": "Increases offline marching speed by 20%."
@@ -591,7 +591,7 @@
     "img": "img/units/114.png",
     "img_sr": "img/units/115.png",
     "rotation": 3,
-    "number_buffs": 1,
+    "number_buffs": 0,
     "multiplier1": 0.333333,
     "name_buff1": "Offline March",
     "description_buff1": "Increases offline marching speed by 30%."
@@ -603,7 +603,7 @@
     "img": "img/units/100.png",
     "img_sr": "img/units/101.png",
     "rotation": 3,
-    "number_buffs": 1,
+    "number_buffs": 0,
     "multiplier1": 0.5,
     "name_buff1": "Offline March",
     "description_buff1": "Increases offline marching speed by 15%."
@@ -653,7 +653,7 @@
     "rotation": 2,
     "number_buffs": 1,
     "multiplier1": 0.0,
-    "name_buff1": "Revival Team for spirit rest runs.",
+    "name_buff1": "Revival Team for Spirit Rest Runs",
     "description_buff1": "Increase medals earned at the time of revival by 10%."
   },
     "Priest":{
@@ -675,7 +675,7 @@
     "img": "img/units/96.png",
     "img_sr": "img/units/97.png",
     "rotation": 1,
-    "number_buffs": 1,
+    "number_buffs": 0,
     "multiplier1": 0.4,
     "name_buff1": "Elf's Secret Skill 1",
     "description_buff1": "Activation possibility of the Elf's secret arts will be increased by 5% (applied with accumulated manner)"

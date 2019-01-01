@@ -1,26 +1,31 @@
 {
 	"Combat":{
 		"img": "img/pets/207.png",
+		"from": [296],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Rolly":{
 		"img": "img/pets/208.png",
+		"from": [301],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Scourge":{
 		"img": "img/pets/209.png",
+		"from": [306],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Lazy":{
 		"img": "img/pets/210.png",
+		"from": [311],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Little Hawk":{
 		"img": "img/pets/183.png",
+		"from": [276],
 		"buffs": [{
 			"name": "Surprise Attack",
 			"description": "Even if the Crimson Hawk Rider is in the shop of time, the surprise attack is triggered with a 1% chance for 5-star unit and a 3% chance for 6-star unit. However, the probability of surprise attack can not exceed 60%",
@@ -32,6 +37,7 @@
 	},
 	"Foxy":{
 		"img": "img/pets/184.png",
+		"from": [281],
 		"buffs": [{
 			"name": "Airship VIP",
 			"description": "The maximum value of [Airship VIP] can be increased up to 30%. In other words, it can reduce the cost of purchasing fuel by up to 30%",
@@ -43,11 +49,19 @@
 	},
 	"Shadow":{
 		"img": "img/pets/185.png",
-		"buffs": [],
+		"from": [286],
+		"buffs": [{
+			"name": "Revival Team for Spirit Rest Runs",
+			"description": "When put in revival team, medal buff increases by 70%. (Increases bonus medals gained from revival from 30% to 100%)",
+			"multiplier": 0.0,
+			"requirement": 12,
+			"amount": 720
+		}],
 		"additional_buffs": []
 	},
 	"Snow Bear":{
 		"img": "img/pets/186.png",
+		"from": [291],
 		"buffs": [{
 			"name": "Enhance active skill",
 			"description": "Even if a Warbear rider is in the shop of time, the efficiency of active skill increases. (However, in the shop of time, the efficiency increases by 20 stages per 5-star unit, 40 stages per 6-star unit, and active skill enhancement by warbear riders can not exceed 1000 stages.)",
@@ -59,6 +73,7 @@
 	},
 	"Athos":{
 		"img": "img/pets/163.png",
+		"from": [256],
 		"buffs":[{
 			"name": "Human Token",
 			"description": "The human tribe friendliness can be increased up to 150% by human unit seals.",
@@ -70,6 +85,7 @@
 	},
 	"Grizzle":{
 		"img": "img/pets/164.png",
+		"from": [261],
 		"buffs":[{
 			"name": "Elf Token",
 			"description": "The elf tribe friendliness can be increased up to 150% by elf unit seals.",
@@ -81,6 +97,7 @@
 	},
 	"Raven":{
 		"img": "img/pets/165.png",
+		"from": [266],
 		"buffs":[{
 			"name": "Undead Token",
 			"description": "The undead tribe friendliness can be increased up to 150% by undead unit seals.",
@@ -99,6 +116,7 @@
 	},
 	"Leyak":{
 		"img": "img/pets/166.png",
+		"from": [271],
 		"buffs":[{
 			"name": "Orc Token",
 			"description": "The orc tribe friendliness can be increased up to 150% by orc unit seals.",
@@ -110,6 +128,7 @@
 	},
 	"Cat Knight":{
 		"img": "img/pets/136.png",
+		"from": [236],
 		"buffs":[{
 			"name": "Tribe Friendliness",
 			"description": "Tribe Friendliness for Human can be increased up to 600 by Winged Knight.",
@@ -128,6 +147,7 @@
 	},
 	"Mori":{
 		"img": "img/pets/137.png",
+		"from": [241],
 		"buffs":[{
 			"name": "Tribe Friendliness",
 			"description": "Tribe Friendliness for Elf can be increased up to 600 by Windwalker.",
@@ -139,6 +159,7 @@
 	},
 	"Cerbero":{
 		"img": "img/pets/138.png",
+		"from": [246],
 		"buffs":[{
 			"name": "Tribe Friendliness",
 			"description": "Tribe Friendliness for Undead can be increased up to 600 by Abyss Mage.",
@@ -150,6 +171,7 @@
 	},
 	"Octopa":{
 		"img": "img/pets/139.png",
+		"from": [251],
 		"buffs":[{
 			"name": "Tribe Friendliness",
 			"description": "Tribe Friendliness for Orc can be increased up to 600 by Siren.",
@@ -161,6 +183,7 @@
 	},
 	"Bernard":{
 		"img": "img/pets/112.png",
+		"from": [216],
 		"buffs":[{
 			"name": "Tribe Fortification (Human and Orc)",
 			"description": "[Tribe Fortification], is applied even when Cleric is in Time Shop, and can be increased up to 250 for human units.",
@@ -179,6 +202,7 @@
 	},
 	"Chichi":{
 		"img": "img/pets/113.png",
+		"from": [221],
 		"buffs":[		{
 			"name": "Tribe Fortification (Elf and Human)",
 			"description": "[Tribe Fortification], is applied even when Elementalist is in Time Shop, and can be increased up to 250 for elf units.",
@@ -197,6 +221,7 @@
 	},
 	"Chesher":{
 		"img": "img/pets/114.png",
+		"from": [226],
 		"buffs":[{
 			"name": "Tribe Fortification (Undead and Elf)",
 			"description": "[Tribe Fortification], is applied even when Dark Elf is in Time Shop, and can be increased up to 250 for undead units.",
@@ -208,6 +233,7 @@
 	},
 	"Bamba":{
 		"img": "img/pets/115.png",
+		"from": [231],
 		"buffs":[{
 			"name": "Tribe Fortification (Orc and Undead)",
 			"description": "[Tribe Fortification], is applied even when Frost Demon is in the Time Shop, and can be increased up to 250 for orc units.",
@@ -226,6 +252,7 @@
 	},
 	"Rena":{
 		"img": "img/pets/93.png",
+		"from": [196],
 		"buffs":[{
 			"name": "Fire Resistance",
 			"description": "Every Flame Spirit's fire resistance increases by 75 and every Senior Flame Spirit's fire resistance increases by 150. Also, the maximum value of resistance against fire from Flame Spirit increases from 2000 to 4000.",
@@ -237,6 +264,7 @@
 	},
 	"Hippong":{
 		"img": "img/pets/94.png",
+		"from": [201],
 		"buffs":[{
 			"name": "Elf's Secret Skill 2",
 			"description": "Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf’s Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf’s Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)",
@@ -255,6 +283,7 @@
 	},
 	"Osma":{
 		"img": "img/pets/95.png",
+		"from": [206],
 		"buffs": [{
 			"name": "Limit Break of Spirit Rest",
 			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%. In addition, when Blade Master is awakened, the maximum efficiency increases 12.5%- > 15%.)",
@@ -268,6 +297,7 @@
 	},
 	"Saul":{
 		"img": "img/pets/96.png",
+		"from": [211],
 		"buffs": [{
 			"name": "Limit Break of Spirit Rest",
 			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%.) In addition, when Dark Spirit is awakened, the maximum efficiency increases to 15%.)",
@@ -281,6 +311,7 @@
 	},
 	"Sarah":{
 		"img": "img/pets/55.png",
+		"from": [176],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "",
@@ -292,6 +323,7 @@
 	},
 	"Oscar":{
 		"img": "img/pets/56.png",
+		"from": [181],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "None",
@@ -303,11 +335,13 @@
 	},
 	"Black":{
 		"img": "img/pets/57.png",
+		"from": [186],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Juda":{
 		"img": "img/pets/58.png",
+		"from": [191],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "None",
@@ -319,6 +353,7 @@
 	},
 	"E-77":{
 		"img": "img/pets/48.png",
+		"from": [156, 295],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
@@ -330,6 +365,7 @@
 	},
 	"Windy":{
 		"img": "img/pets/49.png",
+		"from": [161, 305],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
@@ -341,6 +377,7 @@
 	},
 	"Dark Snake":{
 		"img": "img/pets/50.png",
+		"from": [166, 315],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
@@ -352,6 +389,7 @@
 	},
 	"Seahorse":{
 		"img": "img/pets/51.png",
+		"from": [171],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
@@ -363,6 +401,7 @@
 	},
 	"Winky":{
 		"img": "img/pets/40.png",
+		"from": [136, 255, 300],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
@@ -374,6 +413,7 @@
 	},
 	"Bunny":{
 		"img": "img/pets/41.png",
+		"from": [141, 265, 310],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
@@ -385,10 +425,11 @@
 	},
 	"Cora":{
 		"img": "img/pets/42.png",
+		"from": [146, 275],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
-			"description": "Spirit awakening max increases by 5 per Senior Lych. (However, this value cannot exceed 25.)",
+			"description": "Spirit awakening max increases by 5 per Senior Lich. (However, this value cannot exceed 25.)",
 			"multiplier": 0.0,
 			"requirement": 5,
 			"amount": 25
@@ -396,6 +437,7 @@
 	},
 	"Wakong":{
 		"img": "img/pets/43.png",
+		"from": [151, 285],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
@@ -407,59 +449,67 @@
 	},
 	"Mir":{
 		"img": "img/pets/36.png",
+		"from": [116, 215, 260],
 		"buffs": [],
 		"additional_buffs": []
 	}, 
 	"Nimbus":{
 		"img": "img/pets/37.png",
+		"from": [121, 225, 270],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Jingger":{
 		"img": "img/pets/38.png",
+		"from": [126, 235, 280],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Rapty":{
 		"img": "img/pets/39.png",
+		"from": [131, 245, 290],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Griffy":{
 		"img": "img/pets/29.png",
-		"buffs":[{
+		"from": [111, 205, 250],
+		"buffs":[],
+		"additional_buffs": [{
 			"name": "Offline March",
 			"description": "Raise offline march buff by 300%, and even if Griffin Rider is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Griffin Rider is 1,000%.",
 			"multiplier": 0.333333,
 			"requirement": 24,
 			"amount": 700 
-		}],
-		"additional_buffs": []
+		}]
 	},
 	"Leo":{
 		"img": "img/pets/26.png",
-		"buffs":[{
+		"from": [101, 185, 230],
+		"buffs":[],
+		"additional_buffs": [{
 			"name": "Offline March",
 			"description": "Raise offline march buff by 300%, and even if Forest Guardian is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Forest Guardian is 1,000%.",
 			"multiplier": 0.333333,
 			"requirement": 24,
 			"amount": 700 
-		}],
-		"additional_buffs": []
+		}]
 	},
 	"Devil":{
 		"img": "img/pets/27.png",
-		"buffs":[{
+		"from": [106, 195, 240],
+		"buffs":[],
+		"additional_buffs": [{
 			"name": "Offline March",
 			"description": " Raise offline march buff by 300%, and even if Succubus is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Succubus is 1,000%.",
 			"multiplier": 0.333333,
 			"requirement": 24,
 			"amount": 700 
-		}],
-		"additional_buffs": []
+		}]
 	},
 	"Totem":{
 		"img": "img/pets/16.png",
+		"from": [76, 135, 180],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Enhance Active Skill",
@@ -471,6 +521,7 @@
 	},
 	"Magic Lamp":{
 		"img": "img/pets/13.png",
+		"from": [61, 105, 150],
 		"buffs": [{
 			"name": "Human's Secret Skill",
 			"description": " Even if Aladdin is at the Time Shop, this has an increased chance to get 10x gold. (Basic 10%, +2% per 5-star, +5% per 6-star) when using human secret skills.",
@@ -488,16 +539,19 @@
 	},
 	"Squirrel":{
 		"img": "img/pets/18.png",
+		"from": [86, 155, 200],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Sleepy":{
 		"img": "img/pets/15.png",
+		"from": [71, 125, 170],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Boom Boom":{
 		"img": "img/pets/28.png",
+		"from": [96, 175, 220],
 		"buffs": [{
 			"name": "Revival Team for spirit rest runs.",
 			"description": "When included in a team, medal buff increases by 30%. (Special skill 6 raises 10% to 40%)",
@@ -515,6 +569,7 @@
 	},
 	"Icy":{
 		"img": "img/pets/17.png",
+		"from": [81, 145, 190],
 		"buffs": [{
 			"name": "God's Blessing",
 			"description": "Even if the Priest is at the Time Shop, 5 times speed buff starts every 10th floor. ( 5-star 1%, 6-star 2.5% )The chance for 5 times speed buff by Priests in the Time Shop cannot exceed 30%. Even when passing 10 floors with elves' Secret Skill (from 9th to 11th), the 5 times speed buff can start.",
@@ -526,17 +581,19 @@
 	},
 	"Tinky":{
 		"img": "img/pets/6.png",
-		"buffs": [{
+		"from": [66, 115, 160],
+		"buffs": [],
+		"additional_buffs": [{
 			"name": "Elf's Secret Skill 1",
 			"description": "Even if Fairy is at the Time Shop, chance for Elf’s secret skill to be used increases. (Increases by 1% per 5-star and 2.5% per 6-star. When in the Time Shop, the max Elf’s secret skill enhancement by Fairy is 30%.)",
 			"multiplier": 0.4,
 			"requirement": 12,
 			"amount": 30
-		}],
-		"additional_buffs": []
+		}]
 	},
 	"Moon":{
 		"img": "img/pets/19.png",
+		"from": [91, 165, 210],
 		"buffs": [{
 			"name": "Elevates the first Stage after the Revival",
 			"description": "Even if Dark Archer is in the Time Shop, revives at the floor corresponding to #% of the current floor. (When in Time Shop, 2.5% bonus per 6-star and 1% per 5-star is applied. However, max revival floor buff cannot exceed 60%.)",
@@ -554,61 +611,73 @@
 	},
 	"Mambo": {
 		"img": "img/pets/1.png",
+		"from": [1, 5, 30],
 		"buffs": [],
 		"additional_buffs": []
 	},	
 	"Joe": {
 		"img": "img/pets/2.png",
+		"from": [6, 10, 40],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Mummy": {
 		"img": "img/pets/3.png",
+		"from": [11, 15, 50],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Piggy": {
 		"img": "img/pets/4.png",
+		"from": [16, 20, 60],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Potang": {
 		"img": "img/pets/5.png",
+		"from": [21, 25, 70],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Uni": {
 		"img": "img/pets/14.png",
+		"from": [26, 35, 80],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Joker": {
 		"img": "img/pets/7.png",
+		"from": [31, 45, 90],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Snork": {
 		"img": "img/pets/8.png",
+		"from": [36, 55, 100],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Phoenic": {
 		"img": "img/pets/9.png",
+		"from": [41, 65, 110],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Indy": {
 		"img": "img/pets/10.png",
+		"from": [46, 75, 120],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Grim": {
 		"img": "img/pets/11.png",
+		"from": [51, 85, 130],
 		"buffs": [],
 		"additional_buffs": []
 	},
 	"Woola": {
 		"img": "img/pets/12.png",
+		"from": [56, 95, 140],
 		"buffs": [],
 		"additional_buffs": []
 	}

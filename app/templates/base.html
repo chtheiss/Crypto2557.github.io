@@ -27,6 +27,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/vue.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/sortable.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/data.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/idb.js') }}"></script>
 
     <script type="text/javascript">
     String.prototype.replaceAll = function(search, replacement) {
@@ -35,6 +36,10 @@
     };
     function handle_nan(val){
     return (isNaN(val)) ? 0 : val;
+    }
+
+    function update_local_storage(input){
+        localStorage.setItem($(input).attr("id"), $(input).val())  
     }
     </script>
     {% endblock %}

@@ -5,26 +5,7 @@
 
     <script type="text/javascript">
     $(window).on("load", function() {
-    $(".requirement").each(function(){
-        unit = $(this).data("unit")
-        progressbar = $($(this).children().children()[0])
-        requirement = progressbar.attr('aria-valuemax');
-        number_units = handle_nan(
-            parseInt(localStorage.getItem(
-                ("input "+unit).replaceAll(" ", "-"))));
-        number_sr_units = handle_nan(
-            parseInt(localStorage.getItem(
-                ("input "+unit+" sr").replaceAll(" ", "-"))));
-        value = 100*((number_units+number_sr_units) / parseFloat(requirement));
-        progressbar.attr('aria-valuenow',value);
-        progressbar.css("width", value + "%");
-        if(value >=100){
-            progressbar.addClass("progress-bar-green");
-        } else{
-            progressbar.addClass("progress-bar-red");
-        }
-        $(this).children().children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
-        });
+
     });
     </script>
 {% endblock %}
@@ -49,5 +30,27 @@
     <footer class="page-footer font-medium">
         This ranking was originally created by CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
     </footer>
+
+    <script type="text/javascript">    
+    $(".requirement").each(function(){
+        unit = $(this).data("unit")
+        progressbar = $($(this).children().children()[0])
+        requirement = progressbar.attr('aria-valuemax');
+        number_units = handle_nan(
+            parseInt(localStorage.getItem(
+                ("input "+unit).replaceAll(" ", "-"))));
+        number_sr_units = handle_nan(
+            parseInt(localStorage.getItem(
+                ("input "+unit+" sr").replaceAll(" ", "-"))));
+        value = 100*((number_units+number_sr_units) / parseFloat(requirement));
+        progressbar.attr('aria-valuenow',value);
+        progressbar.css("width", value + "%");
+        if(value >=100){
+            progressbar.addClass("progress-bar-green");
+        } else{
+            progressbar.addClass("progress-bar-red");
+        }
+        $(this).children().children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
+    });
+    </script>
 {% endblock %}
-</div>
