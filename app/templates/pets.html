@@ -119,17 +119,17 @@
         var $image_checkboxes = $fieldset.children();
         var mapping = {1:5, 2:4, 3:3, 4:2, 5:1};
         $checkbox.prop("checked",!$checkbox.prop("checked"));
-        if ($checkbox.prop("checked")){
+        if (!$checkbox.prop("checked")){
             stars = mapping[stars];
             $image_checkboxes = $($image_checkboxes.get().reverse());
         }
+        console.log(this);
         console.log($checkbox.prop("checked"));
         for(var star=0;star<stars;star++){
-            console.log(star);
             var $check = $($image_checkboxes[star]);
             var $image = $check.find('.img-responsive');
             $check.prop("checked", $checkbox.prop("checked"));
-            console.log($check.prop("checked"));
+            console.log(star);
             if($check.prop("checked")){
                 $image.attr("src", "../static/img/star.png")
             } else {

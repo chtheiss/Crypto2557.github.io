@@ -323,7 +323,7 @@
 	},
 	"Oscar":{
 		"img": "img/pets/56.png",
-		"from": [181, 345, 390, 496f],
+		"from": [181, 345, 390, 496],
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "None",
