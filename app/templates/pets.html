@@ -7,44 +7,44 @@
     <div class="row super-row">
         <div class="col-sm-12 col-centered">
             {% for key, pet in pets.items() %}
+            {% set key_id=key.replace(" ", "-") %}
                 {%if (loop.index-1) % 6 == 0 %}<div class="row centered-row">{% endif %}
                     <div class="col-lg-2 col-4 border block">
                         <div class="row centered-row">
                             <div class="col-md-7">
-                                <img class='unit-image' src="../static/{{pet['img']}}">
+                                <img id="{{key_id}}-image" class='unit-image zero-star' src="../static/{{pet['img']}}">
                             </div>
                             <div class="col-md-5">
                                 <h3>{{ key }}</h3>
                             </div>
                         </div>
-                        {% set key=key.replace(" ", "-") %}
                         <div class="row centered-row">
                             <div class="col-md-7">
                                     <fieldset>
-                                        <label class="image-checkbox" id="{{key}}-1star">
+                                        <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" name="image[]" value="10" data-stars="1"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
                                         </label>
-                                        <label class="image-checkbox" id="{{key}}-2star">
+                                        <label class="image-checkbox" id="{{key_id}}-2star" data-pet="{{key_id}}">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" name="image[]" value="30" data-stars="2"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
                                         </label>
-                                        <label class="image-checkbox" id="{{key}}-3star">
+                                        <label class="image-checkbox" id="{{key_id}}-3star" data-pet="{{key_id}}">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" name="image[]" value="80" data-stars="3"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
                                         </label>
-                                        <label class="image-checkbox" id="{{key}}-4star">
+                                        <label class="image-checkbox" id="{{key_id}}-4star" data-pet="{{key_id}}">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" name="image[]" value="180" data-stars="4"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
                                         </label>
-                                        <label class="image-checkbox" id="{{key}}-5star">
+                                        <label class="image-checkbox" id="{{key_id}}-5star" data-pet="{{key_id}}">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" name="image[]" value="330" data-stars="5"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
                             </div> 
                             <div class="col-md-5">
-                                    <input id="{{key}}-fragments" data-pet="{{key}}" class="form-control pet-input" type="number" min="0" value="0"/>
+                                    <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="form-control pet-input" type="number" min="0" value="0"/>
                             </div>
                         </div>
                     </div>
@@ -69,26 +69,98 @@
         });
     })();
 
-    $(".pet-input").each(function(){
+    function turn_star_on($image_checkbox){
+        var $checkbox = $image_checkbox.find('input[type="checkbox"]');
+        var $image = $image_checkbox.find('.img-responsive');
+        $checkbox.prop("checked", true);
+        $image.attr("src", "../static/img/star.png");
+    }
+
+    function turn_star_off($image_checkbox){
+        var $checkbox = $image_checkbox.find('input[type="checkbox"]');
+        var $image = $image_checkbox.find('.img-responsive');
+        $checkbox.prop("checked", false);
+        $image.attr("src", "../static/img/stargrey.png");
+    }
+
+    function remove_last_class($element){
+        var class_to_remove = $($element).attr('class').split(/\s+/).slice(-1)[0];
+        $element.removeClass(class_to_remove);
+    }
+
+    function remove_classes($element, classes_not_to_remove){
+        var classes = $($element).attr('class').split(/\s+/);
+        for(var i=0;i<classes.length;i++){
+            if(classes_not_to_remove.includes(classes[i]))
+                continue;
+            $element.removeClass(classes[i]);
+        }
+        var classes = $($element).attr('class').split(/\s+/);
+    }
+
+    function change_stars(val){
+        if(val != undefined){
+            var $img = $("#"+val["name"].replace(" ", "-")+"-image");
+            if(val["fragments"] >=10){ 
+                turn_star_on($("#"+val["name"].replace(" ", "-")+"-1star"));
+                remove_classes($img, ["unit-image", "one-star"]);
+                $img.addClass("one-star"); 
+            } else {
+                 turn_star_off($("#"+val["name"].replace(" ", "-")+"-1star"));
+                 remove_classes($img, ["unit-image", "zero-star"]);
+                 $img.addClass("zero-star");
+            }
+            if(val["fragments"] >=30){ 
+                turn_star_on($("#"+val["name"].replace(" ", "-")+"-2star"));
+                remove_classes($img, ["unit-image", "two-star"]);
+                $img.addClass("two-star"); 
+            } else {
+                turn_star_off($("#"+val["name"].replace(" ", "-")+"-2star"));
+            }
+            if(val["fragments"] >=80){ 
+                turn_star_on($("#"+val["name"].replace(" ", "-")+"-3star"));
+                remove_classes($img, ["unit-image", "three-star"]);
+                $img.addClass("three-star"); 
+            } else {
+                turn_star_off($("#"+val["name"].replace(" ", "-")+"-3star"));
+            }
+            if(val["fragments"] >=180){ 
+                turn_star_on($("#"+val["name"].replace(" ", "-")+"-4star"));
+                remove_classes($img, ["unit-image", "four-star"]);
+                $img.addClass("four-star"); 
+            } else {
+                turn_star_off($("#"+val["name"].replace(" ", "-")+"-4star"));
+            }
+            if(val["fragments"] >=330){ 
+                turn_star_on($("#"+val["name"].replace(" ", "-")+"-5star"));
+                remove_classes($img, ["unit-image", "five-star"]);
+                $img.addClass("five-star"); 
+            } else {
+                turn_star_off($("#"+val["name"].replace(" ", "-")+"-5star"));
+            }
+        } 
+    }
+
+    function on_pet_input_change($pet_input){
         idb.open('test-db4', 1).then(function(db){
             var tx = db.transaction('pets', 'readwrite');
             var store = tx.objectStore('pets');
-            return store.get($(this).data("pet"));
-        }.bind(this)).then(function(val) {
+            return store.get($pet_input.data("pet"));
+        }.bind($pet_input)).then(function(val) {
             if(val != undefined){
-                $(this).attr("value", val["fragments"]);
-                if(val["fragments"] >=10){ $("#"+val["name"].replace(" ", "-")+"-1star").click() }
-                if(val["fragments"] >=30){ $("#"+val["name"].replace(" ", "-")+"-2star").click() }
-                if(val["fragments"] >=80){ $("#"+val["name"].replace(" ", "-")+"-3star").click() }
-                if(val["fragments"] >=180){ $("#"+val["name"].replace(" ", "-")+"-4star").click() }
-                if(val["fragments"] >=330){ $("#"+val["name"].replace(" ", "-")+"-5star").click() }
-            }
-        }.bind(this));
+                $($pet_input).attr("value", val["fragments"]);
+            }      
+            change_stars(val);
+        }.bind($pet_input));
+    }
+
+    $(".pet-input").each(function(){
+        on_pet_input_change($(this));
     });
 
     $(function() {
         $(".pet-input").bind('keyup mouseup', function () {
-            request = idb.open('test-db4', 1);
+            var request = idb.open('test-db4', 1);
             request.then(function(db){
                 var tx = db.transaction('pets', 'readwrite');
                 var store = tx.objectStore('pets');
@@ -96,47 +168,26 @@
                     name: $(this).data("pet"),
                     fragments: parseInt($(this).val())
                 };
-                store.put(item);
+                var putRequest = store.put(item);
                 return tx.complete;
+            }.bind(this)).then(function() {
+                val = idb.open('test-db4', 1).then(function(db){
+                    var tx = db.transaction('pets', 'readwrite');
+                    var store = tx.objectStore('pets');
+                    return store.get($(this).data("pet"));
+                }.bind(this)).then(function(val){
+                    $(this).attr("value", val["fragments"]);
+                    change_stars(val);
+                });
             }.bind(this));
-
         });
-    });
-
-    $(".image-checkbox").each(function () {
-        if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-            $(this).children().first().attr("src", "../static/img/star.png");
-        }
-        else {
-            $(this).children().first().attr("src", "../static/img/stargrey.png")
-        }
     });
 
     $(".image-checkbox").on("click", function (e) {
         var $checkbox = $(this).find('input[type="checkbox"]');
-        var $fieldset = $(this).parent();
-        var stars = $checkbox.data("stars");
-        var $image_checkboxes = $fieldset.children();
-        var mapping = {1:5, 2:4, 3:3, 4:2, 5:1};
-        $checkbox.prop("checked",!$checkbox.prop("checked"));
-        if (!$checkbox.prop("checked")){
-            stars = mapping[stars];
-            $image_checkboxes = $($image_checkboxes.get().reverse());
-        }
-        console.log(this);
-        console.log($checkbox.prop("checked"));
-        for(var star=0;star<stars;star++){
-            var $check = $($image_checkboxes[star]);
-            var $image = $check.find('.img-responsive');
-            $check.prop("checked", $checkbox.prop("checked"));
-            console.log(star);
-            if($check.prop("checked")){
-                $image.attr("src", "../static/img/star.png")
-            } else {
-                $image.attr("src", "../static/img/stargrey.png")
-            }
-        }
-        e.preventDefault();
+        var $input = $("#"+$(this).data("pet")+"-fragments");
+        $input.val($checkbox.attr("value"));
+        $input.keyup();
     });
 
     </script>

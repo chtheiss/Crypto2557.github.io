@@ -158,3 +158,40 @@ img.img-responsive {
 fieldset {
   padding: 0px;
 }
+
+.zero-star, .one-star, .two-star, .three-star, .four-star, .five-star {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.zero-star {
+  opacity: 0.6;
+  filter: brightness(60%);  
+  border-color: rgb(85, 85, 85);
+  background: #292929;
+}
+
+.one-star {
+  border-color: rgb(170, 170, 170);
+  background: radial-gradient(circle, #333 0%, #333 0%, rgba(170, 170, 170, 0.3));
+}
+
+.two-star {
+    border-color: rgb(98, 145, 3);
+    background: radial-gradient(circle, #333 0%, #333 0%, rgba(98, 145, 3, 0.3));
+}
+
+.three-star {
+  border-color: rgb(50, 150, 347);
+  background: radial-gradient(circle, #333 0%, #333 0%, rgba(50, 150, 347, 0.3));
+}
+
+.four-star {
+  border-color: rgb(200, 51, 200);
+  background: radial-gradient(circle, #333 0%, #333 0%, rgba(200, 51, 200, 0.3));
+}
+
+.five-star {
+  border-color: rgb(224, 49, 6);
+  background: radial-gradient(circle, #333 0%, #333 0%, rgba(224, 49, 6, 0.3));
+}
