@@ -66,13 +66,13 @@
     }
 
     function on_pet_input_change($pet_input){
-        idb.open('test-db4', 1).then(function(db){
+        idb.open('endless-farming-db', 1).then(function(db){
             var tx = db.transaction('pets', 'readwrite');
             var store = tx.objectStore('pets');
             return store.get($pet_input.data("pet"));
         }.bind($pet_input)).then(function(val) {
             if(val != undefined){
-                $($pet_input).attr("value", val["fragments"]);
+                $pet_input.attr("value", val["fragments"]);
             }      
             change_stars(val);
         }.bind($pet_input));

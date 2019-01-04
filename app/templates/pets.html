@@ -10,7 +10,7 @@
             {% for key, pet in pets.items() %}
             {% set key_id=key.replace(" ", "-") %}
                 {%if (loop.index-1) % 6 == 0 %}<div class="row centered-row">{% endif %}
-                    <div class="col-lg-2 col-4 border block">
+                    <div class="col-lg-2 col-4 border block padding-0">
                         <div class="row centered-row">
                             <div class="col-md-7">
                                 <img id="{{key_id}}-image" class='unit-image zero-star' src="../static/{{pet['img']}}">
@@ -62,7 +62,12 @@
             console.log('This browser doesn\'t support IndexedDB');
         return;
         }
-        var dbPromise = idb.open('test-db4', 1, function(upgradeDb) {
+        var dbPromise = idb.open('endless-farming-db', 1, function(upgradeDb) {
+            if (!upgradeDb.objectStoreNames.contains('units')) {
+                var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
+                unitsOS.createIndex('nsr', 'nsr', {unique: false});
+                unitsOS.createIndex('sr', 'sr', {unique: false});
+            }
             if (!upgradeDb.objectStoreNames.contains('pets')) {
                 var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
                 petsOS.createIndex('fragments', 'fragments', {unique: false});
@@ -76,7 +81,7 @@
 
     $(function() {
         $(".pet-input").bind('keyup mouseup', function () {
-            var request = idb.open('test-db4', 1);
+            var request = idb.open('endless-farming-db', 1);
             request.then(function(db){
                 var tx = db.transaction('pets', 'readwrite');
                 var store = tx.objectStore('pets');
@@ -87,7 +92,7 @@
                 var putRequest = store.put(item);
                 return tx.complete;
             }.bind(this)).then(function() {
-                val = idb.open('test-db4', 1).then(function(db){
+                val = idb.open('endless-farming-db', 1).then(function(db){
                     var tx = db.transaction('pets', 'readwrite');
                     var store = tx.objectStore('pets');
                     return store.get($(this).data("pet"));

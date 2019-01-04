@@ -15,13 +15,13 @@ function change_progress_bar_value($bar, value, max){
 function update_progress_bar_values($progress_bar, buff){
 	$progress_bar
 		.attr("aria-valuemax", buff["requirement"])
-     	.text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"));
-    change_progress_bar_value($progress_bar, 
-    	handle_nan(parseFloat($progress_bar.attr("aria-valuenow"))), 
-    	handle_nan(parseInt($progress_bar.attr("aria-valuemax"))));
+		.text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"));
+	change_progress_bar_value($progress_bar, 
+		handle_nan(parseFloat($progress_bar.attr("aria-valuenow"))), 
+		handle_nan(parseInt($progress_bar.attr("aria-valuemax"))));
 }
 
-function update_progress_bar($bar, $input){
+function get_unit_input_values($input){
 	var val = 0;
 	var val_sr = 0;
 	if($input.attr("id").endsWith("-sr")){
@@ -31,24 +31,58 @@ function update_progress_bar($bar, $input){
 		val_sr += handle_nan(parseInt($("#"+$input.attr("id")+"-sr").val()));
 		val += handle_nan(parseInt($input.val()));
 	}
+	return {nsr: val, sr: val_sr}	
+}
+
+function update_progress_bar($bar, $input){
+	var unit_values = get_unit_input_values($input);
+	var val = unit_values.nsr;
+	var val_sr = unit_values.sr;
 	var multiplier = parseFloat($bar.data("multiplier"));
 	var linked_units = $bar.data("linked-units");
 	var additional_bars_to_update = [];
-    //if(linked_units !== "undefined"){
-    //	linked_units = linked_units.split(',')
-    //   for (var unit of linked_units){
-    //    	var input = $("#"+unit.replaceAll(" ","-")+"-number");
-    //    	var input_sr = $("#"+unit.replaceAll(" ","-")+"-number"+"-sr");
-    //    	val += handle_nan(parseInt($(input).val()));
-    //    	val_sr += handle_nan(parseInt($(input_sr).val()));
-    //    	additional_bars_to_update.push($('#prog-input-'+unit.replaceAll(' ', '-')+bar.attr('id').substr(-1)));
-    //    }        
-    //}
+	if(linked_units != ""){
+		linked_units = linked_units.replace("]", "").replace("[", "").replaceAll("'", "").split(',');
+		linked_units.forEach(function(part, index, linked_units) {
+  			linked_units[index] = linked_units[index].trim();
+		});
+		for (var unit of linked_units){
+			$unit_cell = $("#"+unit.replace(" ", "-"));
+			other_unit_values=get_unit_input_values($unit_cell.find("input").first())
+	    	val += other_unit_values.nsr;
+	    	val_sr += other_unit_values.sr;
+	    	additional_bars_to_update.push($unit_cell.find(".progress-bar[data-linked-units*='"+$input.data("unit").replace("-"," ")+"']"));
+	    }        
+	}
 	var current_progress = multiplier*val+val_sr;
 	var max = $bar.attr("aria-valuemax");
 	change_progress_bar_value($bar, current_progress, max);
 	for (var add_bar of additional_bars_to_update){
 		change_progress_bar_value(add_bar, current_progress, max);
+	}
+}
+
+function on_unit_input_change($unit_input){
+	idb.open('endless-farming-db', 1).then(function(db){
+		var tx = db.transaction('units', 'readwrite');
+		var store = tx.objectStore('units');
+		return store.get($unit_input.data("unit"));
+	}.bind($unit_input)).then(function(val) {
+		if(val != undefined){
+			if ($unit_input.attr("id").endsWith("-sr")){
+				$unit_input.attr("value", val["sr"]);
+			} else {
+				$unit_input.attr("value", val["nsr"]);
+			}
+			update_all_progress_bars_of_input($unit_input);
+		}      
+	}.bind($unit_input));
+}
+
+function update_all_progress_bars_of_input($input){
+	$unit_cell = $("#"+$input.data("unit"));
+	for (bar of $unit_cell.find('[role="progressbar"]')){
+		update_progress_bar($(bar), $input);
 	}
 }
 

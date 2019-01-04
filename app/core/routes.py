@@ -20,11 +20,7 @@ def pets():
 
 @bp.route('/units/', methods=['GET', 'POST'])
 def units():
-    return render_template('units.html', title='Units')
-
-@bp.route('/units_new/', methods=['GET', 'POST'])
-def units_new():
-    units_url = os.path.join(current_app.root_path, "static", "units_new.json")
+    units_url = os.path.join(current_app.root_path, "static", "units.json")
     units = json.load(open(units_url))
     pets_url = os.path.join(current_app.root_path, "static", "pets.json")
     pets = json.load(open(pets_url))
@@ -36,7 +32,7 @@ def units_new():
     max_add_buffs.reverse()
     max_add_buffs = np.repeat(np.array(max_add_buffs), 
         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], axis=0)
-    return render_template('units_new.html', title='Units', units=units, pets=pets, max_buffs=max_buffs, max_add_buffs=max_add_buffs)
+    return render_template('units.html', title='Units', units=units, pets=pets, max_buffs=max_buffs, max_add_buffs=max_add_buffs)
 
 @bp.route('/tickets/', methods=['GET', 'POST'])
 def tickets():

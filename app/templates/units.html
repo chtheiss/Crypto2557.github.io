@@ -1,286 +1,185 @@
 {% extends 'base.html' %}
 
 {% block head %}
-{{ super() }}
-<script type="text/javascript">
-
-  function change_progress_bar_value(bar, value, max){
-      let siz = (value/max*100).toFixed(2);
-      bar.css("width", siz + "%")
-         .attr("aria-valuenow", value)
-         .text(Number((value).toFixed(2))+"/"+max);
-      if(siz >=100)
-      {
-        bar.addClass("progress-bar-green");
-        bar.removeClass("progress-bar-red");
-      } else {
-        bar.addClass("progress-bar-red");
-        bar.removeClass("progress-bar-green");
-      }
-  }
-  
-  function update_progress_bar(bar, input){
-      let val = 0;
-      let val_sr = 0;
-      if($(input).attr("id").endsWith("-sr")){
-          val_sr += handle_nan(parseInt($(input).val()));
-          val += handle_nan(parseInt($("#"+$(input).attr("id").replace("-sr", "")).val()));
-      } else {
-          val_sr += handle_nan(parseInt($("#"+$(input).attr("id")+"-sr").val()));
-          val += handle_nan(parseInt($(input).val()));
-      }
-      let multiplier = parseFloat($(bar).data("multiplier"));
-      let linked_units = bar.data('linked-units');
-      additional_bars_to_update = [];
-      if(linked_units !== "undefined"){
-        linked_units = linked_units.split(',')
-        for (let unit of linked_units){
-          let input = document.getElementById('input-'+unit.replaceAll(' ','-'));
-          let input_sr = document.getElementById('input-'+unit.replaceAll(' ','-')+'-sr');
-          val += handle_nan(parseInt($(input).val()));
-          val_sr += handle_nan(parseInt($(input_sr).val()));
-          additional_bars_to_update.push($('#prog-input-'+unit.replaceAll(' ', '-')+bar.attr('id').substr(-1)));
-        }        
-      }
-      let current_progress = multiplier*val+val_sr;
-      let max = $(bar).attr("aria-valuemax");
-      change_progress_bar_value(bar, current_progress, max);
-      for (let add_bar of additional_bars_to_update){
-        change_progress_bar_value(add_bar, current_progress, max);
-      }
-  }
-
-  function reset_local_storage(input){
-    localStorage.setItem($(input).attr("id"), "0")  
-  }
-
-  function static_path_to_efdata_link(path){
-    return path.replace("img", "https://www.endlessfrontierdata.com")
-      .replace(".png", "");
-  }
-
-  function update_progress_bar_values(progress_bar, buff){
-    $(progress_bar).attr("aria-valuemax", buff["requirement"])
-      .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
-    change_progress_bar_value($(progress_bar), 
-      handle_nan(parseFloat($(progress_bar).attr("aria-valuenow"))), 
-      handle_nan(parseInt($(progress_bar).attr("aria-valuemax"))));
-  }
-
-  function switch_pet_checkbox(checkbox){
-    let unit = json[$(checkbox).data("unit")];
-    let pet = pets[unit["pet"]];
-      if($(checkbox).is(':checked')){
-        $("#"+($(checkbox).attr("for"))).addClass('five-star-pet');
-        for(let i=0;i<pets[unit["pet"]]["additional_buffs"].length;i++){
-          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replaceAll(" ", "-")+"-"+i);
-          $(progress_bar).parent().removeClass('progress-bar-hidden');
-        }
-        for(j=1;j<=unit['number_buffs'];j++){
-          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replaceAll(" ", "-")+j);
-          for (k=0;k<pet.buffs.length;k++){
-            let buff = pet.buffs[k];
-            let span = $(progress_bar).parent().parent();
-            if ((buff.name == span.data("original-title"))) {
-              // Update progress bar
-              update_progress_bar_values(progress_bar, buff);
-              // Update popover conent 
-              $(span).attr('data-content', buff["description"]);
-              //
-            }
-          }
-        }
-      } else {
-        $("#"+($(checkbox).attr("for"))).removeClass('five-star-pet');
-        for(let i=0;i<pets[unit["pet"]]["additional_buffs"].length;i++){
-          let progress_bar = $("#prog-"+$(checkbox).attr("id")+"-"+$(checkbox).data("unit").replaceAll(" ", "-")+"-"+i);
-          $(progress_bar).parent().addClass('progress-bar-hidden');
-        }
-        for(j=1;j<=unit['number_buffs'];j++){
-          let progress_bar = $("#prog-input-"+$(checkbox).data("unit").replaceAll(" ", "-")+j);
-          for (k=0;k<pet.buffs.length;k++){
-            let buff = pet.buffs[k];
-            let span = $(progress_bar).parent().parent();
-            if ((buff.name == span.data("original-title"))) {
-              // Update progress bar
-              $(progress_bar).attr("aria-valuemax", unit["required"+j])
-                .text($(progress_bar).attr("aria-valuenow")+"/"+$(progress_bar).attr("aria-valuemax"));
-              change_progress_bar_value($(progress_bar), 
-                handle_nan(parseFloat($(progress_bar).attr("aria-valuenow"))), 
-                handle_nan(parseInt($(progress_bar).attr("aria-valuemax"))));
-              // Update popover conent    
-              $(span).attr('data-content', unit["description_buff"+j]);
-            }
-          }
-        }
-      }
-      localStorage.setItem($(checkbox).attr("id").replace("input-", "").replaceAll("-", " "), $(checkbox).is(':checked'));  
-  }
-
-  function add_unit_cell(key, json, pets){
-    let unit = json[key];
-    let pet = pets[json[key]["pet"]];
-    let cell = "";
-    if (localStorage.getItem(unit["pet"]) == "true") {checked = "checked"} else {checked = ""}
-    cell += "<div class='row'>";
-    // Add image for normal unit
-    cell += "<div class='col-4' align='center'>";
-    cell += "<a href='"+static_path_to_efdata_link(unit['img'])+"'>"+
-      "<img class='unit-image' src="+"../static/"+unit['img']+" data-toggle='tooltip' data-placement='top' title='"+key+ "'>"+
-      "</a></div>";
-    // Add image for seniored unit
-    cell += "<div class='col-4' align='center'>"
-    cell += "<a href='"+static_path_to_efdata_link(unit['img_sr'])+"'>"+
-      "<img class='unit-image' src="+"../static/"+unit['img_sr']+" data-toggle='tooltip' data-placement='top' title='"+"Senior "+key+ "'>"+
-      "</a></div>";
-    // Add image for pet
-    cell += "<div class='col-2' align='center'>"
-    cell += "<a href='"+static_path_to_efdata_link(pet["img"])+"'>"+
-      "<img id='"+"image-"+unit["pet"].replace(" ", "-")+"' class='pet-image' src="+"../static/"+pet["img"]+" data-toggle='tooltip' data-placement='top' title='"+unit["pet"]+ "'>"+
-      "</a></div>";
-    cell += "<div class='w-100'></div>";
-    // Add input for normal unit
-    cell += "<div class='col-4' align='center'>"+
-      "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+key.replaceAll(" ", "-")) || "0")+"' min='0' id='input-"+key.replaceAll(" ", "-")+"' data-unit='"+key+"'>"+
-      "</div>"
-    // Add input for seniored unit
-    cell += "<div class='col-4' align='center'>"+
-      "<input class='form-control unit-input' type='number' value='"+(localStorage.getItem("input-"+key.replaceAll(" ", "-")+"-sr") || "0")+"' min='0' id='input-"+key.replaceAll(" ", "-")+"-sr' data-unit='"+key+"'>"+
-      "</div>";
-    // Add input for pet 5*
-    cell += "<div class='col-2' align='center'>"+
-      "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='"+"input-"+unit["pet"].replace(" ", "-")+"' for='"+"image-"+unit["pet"].replaceAll(" ", "-")+"' data-unit='"+key+"' "+checked+"></div>"+
-      "</div>";
-    cell += "<div class='w-100'></div>";
-    for(j=1; j<=unit['number_buffs'];j++){
-      let requirement = unit['required'+j]
-      let multiplier = unit['multiplier'+j]
-      let description = unit['description_buff'+j]
-      if (checked == "checked"){
-        for (k=0;k<pet.buffs.length;k++){
-          buff = pet.buffs[k];
-          if ((buff.name == unit['name_buff'+j])) {
-            requirement = buff.requirement
-            multiplier = buff.multiplier
-            description = buff.description
-          }
-        }
-      }
-      // Open Column
-      cell += "<div class='col'>" 
-      // Open Popover
-      cell += '<span data-toggle="popover" title="'+unit["name_buff"+j]+'" data-content="'+description+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
-      // Progress Bar
-      cell +="<div class='progress unit-bar'>"+
-        "<div id='prog-input-"+key.replaceAll(" ", "-")+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+requirement+"' data-multiplier='"+multiplier+"' data-linked-units='"+unit['linked_units']+"'>"+"0/"+requirement+"</div>"+
-        "</div>"
-      // Close Popover and Column
-      cell += "</span></div>"
-      cell += "<div class='w-100'></div>";
-    }
-    for(j=0; j<pet["additional_buffs"].length; j++){
-      buff = pet["additional_buffs"][j];
-      cell += "<div class='col'>" 
-      // Open Popover
-      cell += '<span data-toggle="popover" title="'+buff["name"]+'" data-content="'+buff["description"]+'"'+' data-trigger="hover" data-placement="top" data-buff-number="'+j+'" data-unit="'+key+'"">'
-      // Progress Bar
-      cell +="<div class='progress unit-bar "+((checked!="checked") ? "progress-bar-hidden" : "")+"'>"+
-        "<div id='prog-input-"+unit["pet"].replace(" ", "-")+"-"+key.replace(" ", "-")+"-"+j+"' class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='"+buff['requirement']+"' data-multiplier='"+buff['multiplier']+"' data-linked-units='"+buff['linked_units']+"'>"+"0/"+buff['requirement']+"</div>"+
-        "</div>"
-      // Close Popover and Column
-      cell += "</span></div>"
-      cell += "<div class='w-100'></div>";
-    }
-    // Close row
-    cell +="</div>";
-    return cell;
-  }
-
-  data = JSON.parse($.ajax({url: "{{ url_for('static', filename='units.json') }}", async: false, cache: false}).responseText);
-  pets = JSON.parse($.ajax({url: "{{ url_for('static', filename='pets.json') }}", async: false, cache: false}).responseText);
-  localStorage.setItem('unit-info', JSON.stringify(data));
-  localStorage.setItem('pet-info', JSON.stringify(pets));
-  json = JSON.parse(localStorage.getItem('unit-info'));
-
-  $(window).on("load", function() {
-    // Populate Popovers for progress bars
-    $('[data-toggle="popover"]').each(function() {
-      unit = $(this).data("unit");
-      buff_number = $(this).data("buff-number");
-      $(this).data("title", json[unit]["name-buff"+(buff_number === "2" ? buff_number : "")]);
-      $(this).data("data-content", json[unit]["description-buff"+(buff_number === "2" ? buff_number : "")]);
-    });
-
-    // Init Popovers for progress bars
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    }); 
-
-    // Get corret values for progress bars
-    let inputs = document.getElementsByClassName('unit-input');
-    for (i=0; i < inputs.length; i++) {
-      for(j=1;j<=json[$(inputs[i]).data("unit")]['number_buffs'];j++){
-        //if (json[$(inputs[i]).data("unit")]['required'+j] == "0") { continue;}
-        update_progress_bar($("#prog-"+$(inputs[i]).attr("id").replace("-sr", "")+j), inputs[i]);
-      }
-      let pet = json[$(inputs[i]).data("unit")]["pet"]
-      for(j=0;j<pets[pet]["additional_buffs"].length;j++){
-        update_progress_bar($("#prog-input-"+pet.replace(" ", "-")+"-"+$(inputs[i]).data("unit").replace(" ", "-")+"-"+j), inputs[i]);
-      }
-    }
-
-    let checkboxes = document.getElementsByClassName('form-check-input');
-    for(i=0; i < checkboxes.length; i++){
-      switch_pet_checkbox(checkboxes[i]);
-    }
-  });
-
-</script>
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/units.js') }}"></script>
 {% endblock %}
 {% block content %}
-<script type="text/javascript">
-  var keys = Object.keys(json);
-  var output = ""
-  output += "<div class='row super-row'>";
-  for (var i=0; i<keys.length; i++)
-  {
-    if((i%4)==0 & i!=0)
-    {
-      output += "<div class='w-100'></div>";
-    }
-    output += "<div class='col-md-3'>";
-    output += add_unit_cell(keys[i], json, pets);
-    output +="</div>";
+    <div class="row super-row">
+        <div class="col-sm-12 col-centered">
+            {% for key, unit in units.items() %}
+            {% set key_id=key.replace(" ", "-") %}
+                {% set max_buff=max_buffs[loop.index-1] %}
+                {% set max_add_buff=max_add_buffs[loop.index-1] %}
+                {%if (loop.index-1) % 4 == 0 %}
+                    <div class="row centered-row">
+                {% endif %}
+                    <div id="{{key_id}}" class="col-lg-3 col-6 border block padding-sm">
+                        <div class="row centered-row">
+                            <div class="col-9 padding-sm">
+                                <div class="row centered-row">
+                                    <div class="col-6 padding-sm">
+                                        <a href="{{unit['img'].replace('img', 'https://www.endlessfrontierdata.com').replace('.png', '')}}">
+                                            <img id="{{key_id}}-image" src="../static/{{unit['img']}}" data-toggle="tooltip" data-placement="top" title="{{key}}">
+                                        </a>
+                                    </div>
+                                    <div class="col-6 padding-sm">
+                                        <a href="{{unit['img'].replace('img', 'https://www.endlessfrontierdata.com').replace('.png', '')}}">
+                                            <img id="{{key_id}}-image" src="../static/{{unit['img_sr']}}" data-toggle="tooltip" data-placement="top" title="Senior {{key}}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row centered-row">
+                                    <div class="col-6 padding-sm">
+                                        <input id="{{key_id}}-number" data-unit="{{key_id}}" class="form-control unit-input" type="number" min="0" value="0"/>
+                                    </div> 
+                                    <div class="col-6 padding-sm">
+                                        <input id="{{key_id}}-number-sr" data-unit="{{key_id}}" class="form-control unit-input" type="number" min="0" value="0"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 padding-sm">
+                                <a href="{{pets[unit['pet']]['img'].replace('img', 'https://www.endlessfrontierdata.com').replace('.png', '')}}">
+                                    <img id="{{unit['pet'].replace(' ', '-')}}-image" class='pet-image' src="../static/{{pets[unit['pet']]['img']}}" data-pet="{{unit['pet'].replace(' ', '-')}}" data-unit="{{key_id}}">
+                                </a>
+                            </div>
+                        </div>
+                        {% for i in range(max_buff) %}
+                        <div class="row centered-row">
+                                <div class="col-12 padding-sm">
+                                    {%if i < unit["buffs"]|length %}
+                                        {% set buff=unit["buffs"][i] %}
+                                        <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
+                                            <div class='progress'>
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}">0/{{buff["requirement"]}}
+                                                </div>
+                                            </div>
+                                        </span>
+                                    {% else %}
+                                    <div class='progress progress-bar-hidden'>
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-linked-units=""></div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {% for i in range(max_add_buff) %}
+                        <div class="row centered-row">
+                                <div class="col-12 padding-sm">
+                                    {%if i < pets[unit["pet"]]["additional_buffs"]|length %}
+                                        {% set buff=pets[unit["pet"]]["additional_buffs"][i] %}
+                                        <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
+                                            <div class='progress progress-bar-hidden additional_buff'>
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}">0/{{buff["requirement"]}}
+                                                </div>
+                                            </div>
+                                        </span>
+                                    {% else %}
+                                    <div class='progress progress-bar-hidden'>
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-linked-units=""></div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {%if (loop.index-1) % 4 == 3 %} </div>  {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
-  }
-  output += "</div>";
-  document.write(output); 
+    <script type="text/javascript">
 
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  }); 
+    // IIFE - Immediately Invoked Function Expression
+    (function(yourcode) {
 
-  $(function () {
-  $('[data-toggle="popover"]').popover()
-  });
+        'use strict';
+        //check for support
+        if (!('indexedDB' in window)) {
+            console.log('This browser doesn\'t support IndexedDB');
+            return;
+        }
+        var dbPromise = idb.open('endless-farming-db', 1, function(upgradeDb) {
+            if (!upgradeDb.objectStoreNames.contains('units')) {
+                var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
+                unitsOS.createIndex('nsr', 'nsr', {unique: false});
+                unitsOS.createIndex('sr', 'sr', {unique: false});
+            }
+            if (!upgradeDb.objectStoreNames.contains('pets')) {
+                var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
+                petsOS.createIndex('fragments', 'fragments', {unique: false});
+            }
+        });
+        yourcode(window.jQuery, window.indexedDB, window, document);
 
-  $(function() {
-    $(".unit-input").bind('keyup mouseup', function () {
-      for(j=1;j<=json[$(this).data("unit")]['number_buffs'];j++){
-        update_progress_bar($("#prog-"+$(this).attr("id").replace("-sr", "")+j), this);
-      }
-      for(let i=0;i<pets[json[$(this).data("unit")]["pet"]]["additional_buffs"].length;i++){
-        update_progress_bar($("#prog-input-"+json[$(this).data("unit")]["pet"].replace(" ","-")+"-"+$(this).data("unit").replace(" ", "-")+"-"+i), this);
-      }
-      update_local_storage(this)
-    });
-  });
+    }(function($, indexedDB, window, document) {
 
-  $(function() {
-    $('.form-check-input').click(function() {
-      switch_pet_checkbox(this);
-    });
-  });
-
-</script>
+        $(function() {
+            $('.block').each(function(){
+                $unit_cell = $(this);
+                for (bar of $unit_cell.find('[role="progressbar"]')){
+                    for (input of $unit_cell.find('input')){
+                        update_progress_bar($(bar), $(input));
+                    }
+                }
+            });
+            $('.pet-image').each(function() {
+                idb.open('endless-farming-db', 1).then(function(db){
+                var tx = db.transaction('pets', 'readwrite');
+                var store = tx.objectStore('pets');
+                return store.get($(this).data("pet"));
+                }.bind(this)).then(function(val) {
+                    if(val != undefined){
+                        if (val["fragments"]>=330){
+                            $("#"+val["name"]+"-image").addClass("five-star-pet");
+                            getPet(val["name"]).done(function(data){
+                            $prog_bar_add_buff = $("#"+$(this).data("unit")).find(".additional_buff");   
+                            $prog_bar_add_buff.removeClass("progress-bar-hidden");
+                            for (buff of data["pet"]["buffs"]){
+                                $buff_span = $('[data-original-title="'+buff['name']+'"]');
+                                update_progress_bar_values($buff_span.find(".progress-bar"), buff);
+                                $buff_span.attr("data-content", buff["description"]);
+                            }
+                            });
+                        }
+                    }      
+                }.bind(this));
+            });
+            $(".unit-input").bind('keyup mouseup', function () {
+                $this = $(this);
+                update_all_progress_bars_of_input($this);
+                idb.open('endless-farming-db', 1).then(function(db){
+                    var tx = db.transaction('units', 'readwrite');
+                    var store = tx.objectStore('units');
+                    unit_values = get_unit_input_values($this);
+                    var item = {
+                        name: $this.data("unit"),
+                        nsr: unit_values.nsr,
+                        sr: unit_values.sr
+                    };
+                    store.put(item);
+                    return tx.complete;
+                }.bind($this)).then(function() {
+                    val = idb.open('endless-farming-db', 1).then(function(db){
+                        var tx = db.transaction('units', 'readwrite');
+                        var store = tx.objectStore('units');
+                        return store.get($this.data("unit"));
+                    }.bind($this)).then(function(val){
+                        console.log(val);
+                    });
+                }.bind($this));
+            });
+            $(".unit-input").each(function(){
+                on_unit_input_change($(this));
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').each(function(){
+                prog_bar = $(this).children().first();
+                if (!$(prog_bar).attr('class').split(/\s+/).includes("progress-bar-hidden")){
+                    $(this).popover();
+                }
+            });
+        });
+    }));
+    </script>
 {% endblock %}
