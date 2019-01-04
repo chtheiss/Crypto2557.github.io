@@ -133,14 +133,35 @@
                         if (val["fragments"]>=330){
                             $("#"+val["name"]+"-image").addClass("five-star-pet");
                             getPet(val["name"]).done(function(data){
-                            $prog_bar_add_buff = $("#"+$(this).data("unit")).find(".additional_buff");   
-                            $prog_bar_add_buff.removeClass("progress-bar-hidden");
-                            for (buff of data["pet"]["buffs"]){
-                                $buff_span = $('[data-original-title="'+buff['name']+'"]');
-                                update_progress_bar_values($buff_span.find(".progress-bar"), buff);
-                                $buff_span.attr("data-content", buff["description"]);
+                                $unit_cell = $("#"+$(this).data("unit"));
+                                $prog_bar_add_buff = $unit_cell.find(".additional_buff");   
+                                $prog_bar_add_buff.removeClass("progress-bar-hidden");
+                                $prog_bar_add_buff.parent().popover();
+                                for (buff of data["pet"]["buffs"]){
+                                    $buff_span = $unit_cell.find('[data-original-title="'+buff['name']+'"]');
+                                    update_progress_bar_values($buff_span.find(".progress-bar"), buff);
+                                    $buff_span.attr("data-content", buff["description"]);
+                                    if (buff["linked_pets"] != undefined){
+                                    idb.open('endless-farming-db', 1).then(function(db){
+                                        var tx = db.transaction('pets', 'readwrite');
+                                        var store = tx.objectStore('pets');
+                                        return store.getAll();
+                                    }).then(function(items, span){
+                                        linked_active_pets = []
+                                        buff = this["b"];
+                                        for (item of items){
+                                            if(item["fragments"]>=330 && buff["linked_pets"].includes(item["name"])){
+                                                linked_active_pets.push(item["name"]);
+                                            }
+                                        }
+                                        console.log(buff["requirement"]);
+                                        buff["requirement"] = buff["requirement"][linked_active_pets.length];
+                                        console.log(buff);
+                                        update_progress_bar_values(this["span"].find(".progress-bar"), buff);
+                                    }.bind({b:buff, span:$buff_span}));
+                                }
                             }
-                            });
+                            }.bind(this));
                         }
                     }      
                 }.bind(this));

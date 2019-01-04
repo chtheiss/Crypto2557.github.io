@@ -42,14 +42,14 @@ def tickets():
     tickets = json.load(open(tickets_url))
     return render_template('tickets.html', title='Tickets', units=units, tickets=tickets)
 
-@bp.route('/pet-<pet>/', methods=['GET', 'POST'])
-def get_pet(pet):
+@bp.route('/pet/<petid>.json', methods=['GET', 'POST'])
+def get_pet(petid):
     pets_url = os.path.join(current_app.root_path, "static", "pets.json")
     pets = json.load(open(pets_url))
-    return jsonify(pet=pets[pet.replace("-", " ")])
+    return jsonify(pet=pets[petid.replace("_", " ")])
 
-@bp.route('/unit-<unit>/', methods=['GET', 'POST'])
-def get_unit(unit):
-    units_url = os.path.join(current_app.root_path, "static", "units_new.json")
+@bp.route('/unit/<unitid>.json', methods=['GET', 'POST'])
+def get_unit(unitid):
+    units_url = os.path.join(current_app.root_path, "static", "units.json")
     units = json.load(open(units_url))
-    return jsonify(unit=units[unit])
+    return jsonify(unit=units[unitid.replace("_", " ")])

@@ -51,14 +51,15 @@ function update_progress_bar($bar, $input){
 			other_unit_values=get_unit_input_values($unit_cell.find("input").first())
 	    	val += other_unit_values.nsr;
 	    	val_sr += other_unit_values.sr;
-	    	additional_bars_to_update.push($unit_cell.find(".progress-bar[data-linked-units*='"+$input.data("unit").replace("-"," ")+"']"));
+	    	additional_bars_to_update=$unit_cell.find(
+	    		".progress-bar[data-linked-units*='"+$input.data("unit").replace("-"," ")+"']");
 	    }        
 	}
 	var current_progress = multiplier*val+val_sr;
 	var max = $bar.attr("aria-valuemax");
 	change_progress_bar_value($bar, current_progress, max);
 	for (var add_bar of additional_bars_to_update){
-		change_progress_bar_value(add_bar, current_progress, max);
+		change_progress_bar_value($(add_bar), current_progress, $(add_bar).attr("aria-valuemax"));
 	}
 }
 
@@ -89,7 +90,7 @@ function update_all_progress_bars_of_input($input){
 function getPet(petid) {
 	return $.ajax({
 		type: "GET",
-		url: "/pet-"+petid,
+		url: Flask.url_for("core.get_pet", {"petid": petid.replace("-", "_")}),
 		dataType: "json"
 	});
 }
@@ -97,7 +98,7 @@ function getPet(petid) {
 function getUnit(unitid) {
 	return $.ajax({
 		type: "GET",
-		url: "/unit-"+unitid,
+		url: Flask.url_for("core.get_unit", {"unit": unitid.replace("-", "_")}),
 		dataType: "json"
 	});
 }

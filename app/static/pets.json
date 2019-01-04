@@ -288,7 +288,7 @@
 			"name": "Limit Break of Spirit Rest",
 			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%. In addition, when Blade Master is awakened, the maximum efficiency increases 12.5%- > 15%.)",
 			"multiplier": 0.42857,
-			"requirement": 18,
+			"requirement": [18, 22],
 			"amount": [2.5, 5.0],
 			"linked_units": ["Blade Master"],
 			"linked_pets": ["Saul"]
@@ -302,7 +302,7 @@
 			"name": "Limit Break of Spirit Rest",
 			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%.) In addition, when Dark Spirit is awakened, the maximum efficiency increases to 15%.)",
 			"multiplier": 0.42857,
-			"requirement": 18,
+			"requirement": [18, 22],
 			"amount": [2.5, 5.0],
 			"linked_units": ["Dark Spirit"],
 			"linked_pets": ["Osma"]
@@ -354,7 +354,15 @@
 	"E-77":{
 		"img": "img/pets/48.png",
 		"from": [156, 295, 340, 471],
-		"buffs": [],
+		"buffs": [{
+            "name": "Inner Passion",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "multiplier": 0.4,
+            "requirement": [30, 40, 50, 60],
+            "amount": [150, 200, 250, 300],
+            "linked_pets": ["Windy", "Dark Snake", "Seahorse"],
+            "linked_units": ["Sylphid", "Medusa", "Naga"]
+        }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Steam Punk. (However, this value cannot exceed 50.)",
@@ -366,7 +374,15 @@
 	"Windy":{
 		"img": "img/pets/49.png",
 		"from": [161, 305, 350, 476],
-		"buffs": [],
+		"buffs": [{
+            "name": "Inner Passion",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "multiplier": 0.4,
+            "requirement": [30, 40, 50, 60],
+            "amount": [150, 200, 250, 300],
+            "linked_pets": ["E-77", "Dark Snake", "Seahorse"],
+            "linked_units": ["Steam Punk", "Medusa", "Naga"]
+        }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Sylphid. (However, this value cannot exceed 50.)",
@@ -378,7 +394,15 @@
 	"Dark Snake":{
 		"img": "img/pets/50.png",
 		"from": [166, 315, 360, 481],
-		"buffs": [],
+		"buffs": [{
+            "name": "Inner Passion",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "multiplier": 0.4,
+            "requirement": [30, 40, 50, 60],
+            "amount": [150, 200, 250, 300],
+            "linked_pets": ["Windy", "E-77", "Seahorse"],
+            "linked_units": ["Sylphid", "Steam Punk", "Naga"]
+        }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Medusa. (However, this value cannot exceed 50.)",
@@ -390,7 +414,15 @@
 	"Seahorse":{
 		"img": "img/pets/51.png",
 		"from": [171, 325, 370, 486],
-		"buffs": [],
+		"buffs": [{
+            "name": "Inner Passion",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "multiplier": 0.4,
+            "requirement": [30, 40, 50, 60],
+            "amount": [150, 200, 250, 300],
+            "linked_pets": ["Windy", "Dark Snake", "E-77"],
+            "linked_units": ["Sylphid", "Medusa", "Steam Punk"]
+        }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
 			"description": " Inner passion max increases by 5 per Senior Naga. (However, this value cannot exceed 50.)",
@@ -402,7 +434,15 @@
 	"Winky":{
 		"img": "img/pets/40.png",
 		"from": [136, 255, 300, 451],
-		"buffs": [],
+		"buffs": [{
+            "name": "Spirit Awakening",
+            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "multiplier": 0.5,
+            "requirement": [12.5, 15.0, 17.5, 20.0],
+            "amount": [125, 150, 175, 200],
+            "linked_pets": ["Bunny", "Cora", "Wakong"],
+            "linked_units": ["Alchemist", "Lich", "Wyvern Rider"]
+        }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
 			"description": "Max value of Spirit Awakening increases by 5 each per Senior Pilot. (However, this value cannot exceed 25.)",
@@ -414,7 +454,15 @@
 	"Bunny":{
 		"img": "img/pets/41.png",
 		"from": [141, 265, 310, 456],
-		"buffs": [],
+		"buffs": [{
+            "name": "Spirit Awakening",
+            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "multiplier": 0.5,
+            "requirement": [12.5, 15.0, 17.5, 20.0],
+            "amount": [125, 150, 175, 200],
+            "linked_pets": ["Winky", "Cora", "Wakong"],
+            "linked_units": ["Pilot", "Lich", "Wyvern Rider"]
+        }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
 			"description": "Max value of Spirit Awakening increases by 5 for each Senior Alchemist. (However, this value cannot exceed 25.)",
@@ -426,7 +474,15 @@
 	"Cora":{
 		"img": "img/pets/42.png",
 		"from": [146, 275, 320, 461],
-		"buffs": [],
+		"buffs": [{
+            "name": "Spirit Awakening",
+            "description":  "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "multiplier": 0.5,
+            "requirement": [12.5, 15.0, 17.5, 20.0],
+            "amount": [125, 150, 175, 200],
+           	"linked_pets": ["Bunny", "Winky", "Wakong"],
+            "linked_units": ["Alchemist", "Pilot", "Wyvern Rider"]
+        }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
 			"description": "Spirit awakening max increases by 5 per Senior Lich. (However, this value cannot exceed 25.)",
@@ -438,7 +494,15 @@
 	"Wakong":{
 		"img": "img/pets/43.png",
 		"from": [151, 285, 330, 466],
-		"buffs": [],
+		"buffs": [{
+            "name": "Spirit Awakening",
+            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "multiplier": 0.5,
+            "requirement": [12.5, 15.0, 17.5, 20.0],
+            "amount": [125, 150, 175, 200],
+            "linked_pets": ["Bunny", "Cora", "Winky"],
+            "linked_units": ["Alchemist", "Lich", "Pilot"]
+        }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
 			"description": "Spirit awakening max increases by 5 per Senior Wyvern Rider. (However, this value cannot exceed 25.)",
