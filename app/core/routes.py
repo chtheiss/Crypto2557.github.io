@@ -54,6 +54,6 @@ def get_pet(pet):
 
 @bp.route('/unit-<unit>/', methods=['GET', 'POST'])
 def get_unit(unit):
-    units_url = os.path.join(current_app.root_path, "static", "units.json")
+    units_url = os.path.join(current_app.root_path, "static", "units_new.json")
     units = json.load(open(units_url))
     return jsonify(unit=units[unit])
