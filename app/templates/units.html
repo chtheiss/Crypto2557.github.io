@@ -140,14 +140,6 @@
                     };
                     store.put(item);
                     return tx.complete;
-                }.bind($this)).then(function() {
-                    val = idb.open('endless-farming-db', 1).then(function(db){
-                        var tx = db.transaction('units', 'readwrite');
-                        var store = tx.objectStore('units');
-                        return store.get($this.data("unit"));
-                    }.bind($this)).then(function(val){
-                        console.log(val);
-                    });
                 }.bind($this));
             });
             $(".unit-input").each(function(){

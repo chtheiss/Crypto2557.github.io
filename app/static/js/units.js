@@ -94,7 +94,7 @@ function getPet(petid) {
 		type: "GET",
 		url: Flask.url_for("core.get_pet", {"petid": petid}),
 		dataType: "json",
-		async: true
+		async: false
 	});
 }
 
@@ -138,9 +138,7 @@ async function updateBuffs($petImage){
     var pet = await store.get( $petImage.data("pet"));
     if(pet != undefined && pet["fragments"]>=330){
     	$petImage.addClass("five-star-pet");
-    	data = getPet($petImage.data("pet")).then(async function(data){
-    		console.log(this["pet"]);
-    		console.log(data);
+    	data = await getPet($petImage.data("pet")).then(async function(data){
     		$unit_cell = $("#"+$petImage.data("unit"));
     		$prog_bar_add_buff = $unit_cell.find(".additional_buff");   
     		$prog_bar_add_buff.removeClass("progress-bar-hidden");
@@ -153,6 +151,17 @@ async function updateBuffs($petImage){
         		} else {
             		linked_active_pets = getLinkedActivePets(buff, items);
             		await updateBuffRequirement(buff, data);
+            		for (linked_pet of buff["linked_pets"]){
+            			linked_pet_info = await getPet(linked_pet);
+            			linked_pet_buffs = linked_pet_info["pet"]["buffs"];
+            		 	for (linked_pet_buff of linked_pet_buffs){
+                            if (linked_pet_buff["name"] == buff["name"]){
+                            	var nr = getLinkedActivePets(linked_pet_buff, items).length-1;
+                                linked_pet_buff["requirement"] = linked_pet_buff["requirement"][nr];
+                                update_progress_bar_values($("#"+linked_pet_info["petid"].replace(" ", "_")+"-image").parents(".block").find('[data-original-title="'+linked_pet_buff['name']+'"]').find(".progress-bar"), linked_pet_buff);
+                            }
+                        }
+            		}
             		/*
  getPet(linked_pet).done(function(data){
                                                 linked_pet_buffs = data["pet"]["buffs"];
