@@ -24,43 +24,43 @@
 
     function change_stars(val){
         if(val != undefined){
-            var $img = $("#"+val["name"].replace(" ", "-")+"-image");
+            var $img = $("#"+val["name"].replace(" ", "_")+"-image");
             if(val["fragments"] >=10){ 
-                turn_star_on($("#"+val["name"].replace(" ", "-")+"-1star"));
+                turn_star_on($("#"+val["name"].replace(" ", "_")+"-1star"));
                 remove_classes($img, ["unit-image", "one-star"]);
                 $img.addClass("one-star"); 
             } else {
-                 turn_star_off($("#"+val["name"].replace(" ", "-")+"-1star"));
+                 turn_star_off($("#"+val["name"].replace(" ", "_")+"-1star"));
                  remove_classes($img, ["unit-image", "zero-star"]);
                  $img.addClass("zero-star");
             }
             if(val["fragments"] >=30){ 
-                turn_star_on($("#"+val["name"].replace(" ", "-")+"-2star"));
+                turn_star_on($("#"+val["name"].replace(" ", "_")+"-2star"));
                 remove_classes($img, ["unit-image", "two-star"]);
                 $img.addClass("two-star"); 
             } else {
                 turn_star_off($("#"+val["name"].replace(" ", "-")+"-2star"));
             }
             if(val["fragments"] >=80){ 
-                turn_star_on($("#"+val["name"].replace(" ", "-")+"-3star"));
+                turn_star_on($("#"+val["name"].replace(" ", "_")+"-3star"));
                 remove_classes($img, ["unit-image", "three-star"]);
                 $img.addClass("three-star"); 
             } else {
-                turn_star_off($("#"+val["name"].replace(" ", "-")+"-3star"));
+                turn_star_off($("#"+val["name"].replace(" ", "_")+"-3star"));
             }
             if(val["fragments"] >=180){ 
-                turn_star_on($("#"+val["name"].replace(" ", "-")+"-4star"));
+                turn_star_on($("#"+val["name"].replace(" ", "_")+"-4star"));
                 remove_classes($img, ["unit-image", "four-star"]);
                 $img.addClass("four-star"); 
             } else {
-                turn_star_off($("#"+val["name"].replace(" ", "-")+"-4star"));
+                turn_star_off($("#"+val["name"].replace(" ", "_")+"-4star"));
             }
             if(val["fragments"] >=330){ 
                 turn_star_on($("#"+val["name"].replace(" ", "-")+"-5star"));
                 remove_classes($img, ["unit-image", "five-star"]);
                 $img.addClass("five-star"); 
             } else {
-                turn_star_off($("#"+val["name"].replace(" ", "-")+"-5star"));
+                turn_star_off($("#"+val["name"].replace(" ", "_")+"-5star"));
             }
         } 
     }

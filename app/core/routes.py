@@ -46,7 +46,7 @@ def tickets():
 def get_pet(petid):
     pets_url = os.path.join(current_app.root_path, "static", "pets.json")
     pets = json.load(open(pets_url))
-    return jsonify(pet=pets[petid.replace("_", " ")])
+    return jsonify({"petid":petid, "pet": pets[petid.replace("_", " ")]})
 
 @bp.route('/unit/<unitid>.json', methods=['GET', 'POST'])
 def get_unit(unitid):

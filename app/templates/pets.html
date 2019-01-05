@@ -8,7 +8,7 @@
     <div class="row super-row">
         <div class="col-sm-12 col-centered">
             {% for key, pet in pets.items() %}
-            {% set key_id=key.replace(" ", "-") %}
+            {% set key_id=key.replace(" ", "_") %}
                 {%if (loop.index-1) % 6 == 0 %}<div class="row centered-row">{% endif %}
                     <div class="col-lg-2 col-4 border block padding-0">
                         <div class="row centered-row">

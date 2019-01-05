@@ -33,24 +33,26 @@
 
     <script type="text/javascript">    
     $(".requirement").each(function(){
-        unit = $(this).data("unit")
-        progressbar = $($(this).children().children()[0])
-        requirement = progressbar.attr('aria-valuemax');
-        number_units = handle_nan(
-            parseInt(localStorage.getItem(
-                ("input "+unit).replaceAll(" ", "-"))));
-        number_sr_units = handle_nan(
-            parseInt(localStorage.getItem(
-                ("input "+unit+" sr").replaceAll(" ", "-"))));
-        value = 100*((number_units+number_sr_units) / parseFloat(requirement));
-        progressbar.attr('aria-valuenow',value);
-        progressbar.css("width", value + "%");
-        if(value >=100){
-            progressbar.addClass("progress-bar-green");
-        } else{
-            progressbar.addClass("progress-bar-red");
-        }
-        $(this).children().children()[0].innerText = (number_units+number_sr_units) +"/"+ requirement;
+        $this = $(this);
+        idb.open('endless-farming-db', 1).then(function(db){
+            var tx = db.transaction('units', 'readwrite');
+            var store = tx.objectStore('units');
+            return store.get(this.data("unit").replace(" ", "_"));
+        }.bind($this)).then(function(val){
+            if (val != undefined){
+                var $progressbar = $(this.children().children()[0]);
+                var requirement = $progressbar.attr('aria-valuemax');
+                var value = 100*((val.nsr+val.sr) / parseFloat(requirement));
+                $progressbar.attr('aria-valuenow',value);
+                $progressbar.css("width", value + "%");
+                if(value >=100){
+                    $progressbar.addClass("progress-bar-green");
+                } else{
+                    $progressbar.addClass("progress-bar-red");
+                }
+                this.children().children()[0].innerText = (val.nsr+val.sr) +"/"+ requirement;
+            }
+        }.bind($this));         
     });
     </script>
 {% endblock %}
