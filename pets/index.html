@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     
- 	
+    
+    <script src="/jsglue.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
@@ -27,15 +28,24 @@
     <script type="text/javascript" src="/static/js/lodash.min.js"></script>
     <script type="text/javascript" src="/static/js/vue.min.js"></script>
     <script type="text/javascript" src="/static/js/sortable.js"></script>
-    <script type="text/javascript" src="/static/js/data.js"></script>
+    <script type="text/javascript" src="/static/js/idb.js"></script>
 
     <script type="text/javascript">
     String.prototype.replaceAll = function(search, replacement) {
         var target = this;
         return target.replace(new RegExp(search, 'g'), replacement);
     };
+    
+    function handle_nan(val){
+    return (isNaN(val)) ? 0 : val;
+    }
+
+    function update_local_storage(input){
+        localStorage.setItem($(input).attr("id"), $(input).val())  
+    }
     </script>
     
+    <script type="text/javascript" src="/static/js/pets.js"></script>
 
 </head>
 <body>
@@ -58,9 +68,2779 @@
   </nav>
 
 <div id="content" class="container">
-<div>
-	<center><h1>Currently not implemented. Stay tuned!<h1>
-</div>
+    <div class="row super-row">
+        <div class="col-sm-12 col-centered">
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Mambo-image" class='unit-image zero-star' src="../static/img/pets/1.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Mambo</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Mambo-1star" data-pet="Mambo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mambo-2star" data-pet="Mambo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mambo-3star" data-pet="Mambo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mambo-4star" data-pet="Mambo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mambo-5star" data-pet="Mambo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Mambo-fragments" data-pet="Mambo" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Joe-image" class='unit-image zero-star' src="../static/img/pets/2.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Joe</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Joe-1star" data-pet="Joe">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joe-2star" data-pet="Joe">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joe-3star" data-pet="Joe">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joe-4star" data-pet="Joe">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joe-5star" data-pet="Joe">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Joe-fragments" data-pet="Joe" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Mummy-image" class='unit-image zero-star' src="../static/img/pets/3.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Mummy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Mummy-1star" data-pet="Mummy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mummy-2star" data-pet="Mummy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mummy-3star" data-pet="Mummy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mummy-4star" data-pet="Mummy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mummy-5star" data-pet="Mummy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Mummy-fragments" data-pet="Mummy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Piggy-image" class='unit-image zero-star' src="../static/img/pets/4.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Piggy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Piggy-1star" data-pet="Piggy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Piggy-2star" data-pet="Piggy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Piggy-3star" data-pet="Piggy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Piggy-4star" data-pet="Piggy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Piggy-5star" data-pet="Piggy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Piggy-fragments" data-pet="Piggy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Potang-image" class='unit-image zero-star' src="../static/img/pets/5.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Potang</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Potang-1star" data-pet="Potang">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Potang-2star" data-pet="Potang">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Potang-3star" data-pet="Potang">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Potang-4star" data-pet="Potang">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Potang-5star" data-pet="Potang">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Potang-fragments" data-pet="Potang" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Uni-image" class='unit-image zero-star' src="../static/img/pets/14.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Uni</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Uni-1star" data-pet="Uni">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Uni-2star" data-pet="Uni">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Uni-3star" data-pet="Uni">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Uni-4star" data-pet="Uni">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Uni-5star" data-pet="Uni">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Uni-fragments" data-pet="Uni" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Joker-image" class='unit-image zero-star' src="../static/img/pets/7.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Joker</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Joker-1star" data-pet="Joker">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joker-2star" data-pet="Joker">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joker-3star" data-pet="Joker">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joker-4star" data-pet="Joker">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Joker-5star" data-pet="Joker">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Joker-fragments" data-pet="Joker" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Snork-image" class='unit-image zero-star' src="../static/img/pets/8.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Snork</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Snork-1star" data-pet="Snork">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snork-2star" data-pet="Snork">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snork-3star" data-pet="Snork">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snork-4star" data-pet="Snork">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snork-5star" data-pet="Snork">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Snork-fragments" data-pet="Snork" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Phoenic-image" class='unit-image zero-star' src="../static/img/pets/9.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Phoenic</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Phoenic-1star" data-pet="Phoenic">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Phoenic-2star" data-pet="Phoenic">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Phoenic-3star" data-pet="Phoenic">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Phoenic-4star" data-pet="Phoenic">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Phoenic-5star" data-pet="Phoenic">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Phoenic-fragments" data-pet="Phoenic" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Indy-image" class='unit-image zero-star' src="../static/img/pets/10.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Indy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Indy-1star" data-pet="Indy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Indy-2star" data-pet="Indy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Indy-3star" data-pet="Indy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Indy-4star" data-pet="Indy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Indy-5star" data-pet="Indy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Indy-fragments" data-pet="Indy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Grim-image" class='unit-image zero-star' src="../static/img/pets/11.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Grim</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Grim-1star" data-pet="Grim">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grim-2star" data-pet="Grim">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grim-3star" data-pet="Grim">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grim-4star" data-pet="Grim">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grim-5star" data-pet="Grim">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Grim-fragments" data-pet="Grim" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Woola-image" class='unit-image zero-star' src="../static/img/pets/12.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Woola</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Woola-1star" data-pet="Woola">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Woola-2star" data-pet="Woola">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Woola-3star" data-pet="Woola">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Woola-4star" data-pet="Woola">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Woola-5star" data-pet="Woola">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Woola-fragments" data-pet="Woola" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Magic_Lamp-image" class='unit-image zero-star' src="../static/img/pets/13.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Magic Lamp</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Magic_Lamp-1star" data-pet="Magic_Lamp">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Magic_Lamp-2star" data-pet="Magic_Lamp">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Magic_Lamp-3star" data-pet="Magic_Lamp">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Magic_Lamp-4star" data-pet="Magic_Lamp">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Magic_Lamp-5star" data-pet="Magic_Lamp">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Magic_Lamp-fragments" data-pet="Magic_Lamp" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Tinky-image" class='unit-image zero-star' src="../static/img/pets/6.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Tinky</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Tinky-1star" data-pet="Tinky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Tinky-2star" data-pet="Tinky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Tinky-3star" data-pet="Tinky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Tinky-4star" data-pet="Tinky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Tinky-5star" data-pet="Tinky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Tinky-fragments" data-pet="Tinky" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Sleepy-image" class='unit-image zero-star' src="../static/img/pets/15.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Sleepy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Sleepy-1star" data-pet="Sleepy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sleepy-2star" data-pet="Sleepy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sleepy-3star" data-pet="Sleepy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sleepy-4star" data-pet="Sleepy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sleepy-5star" data-pet="Sleepy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Sleepy-fragments" data-pet="Sleepy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Totem-image" class='unit-image zero-star' src="../static/img/pets/16.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Totem</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Totem-1star" data-pet="Totem">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Totem-2star" data-pet="Totem">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Totem-3star" data-pet="Totem">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Totem-4star" data-pet="Totem">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Totem-5star" data-pet="Totem">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Totem-fragments" data-pet="Totem" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Icy-image" class='unit-image zero-star' src="../static/img/pets/17.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Icy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Icy-1star" data-pet="Icy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Icy-2star" data-pet="Icy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Icy-3star" data-pet="Icy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Icy-4star" data-pet="Icy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Icy-5star" data-pet="Icy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Icy-fragments" data-pet="Icy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Squirrel-image" class='unit-image zero-star' src="../static/img/pets/18.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Squirrel</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Squirrel-1star" data-pet="Squirrel">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Squirrel-2star" data-pet="Squirrel">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Squirrel-3star" data-pet="Squirrel">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Squirrel-4star" data-pet="Squirrel">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Squirrel-5star" data-pet="Squirrel">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Squirrel-fragments" data-pet="Squirrel" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Moon-image" class='unit-image zero-star' src="../static/img/pets/19.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Moon</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Moon-1star" data-pet="Moon">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Moon-2star" data-pet="Moon">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Moon-3star" data-pet="Moon">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Moon-4star" data-pet="Moon">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Moon-5star" data-pet="Moon">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Moon-fragments" data-pet="Moon" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Boom_Boom-image" class='unit-image zero-star' src="../static/img/pets/28.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Boom Boom</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Boom_Boom-1star" data-pet="Boom_Boom">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Boom_Boom-2star" data-pet="Boom_Boom">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Boom_Boom-3star" data-pet="Boom_Boom">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Boom_Boom-4star" data-pet="Boom_Boom">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Boom_Boom-5star" data-pet="Boom_Boom">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Boom_Boom-fragments" data-pet="Boom_Boom" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Leo-image" class='unit-image zero-star' src="../static/img/pets/26.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Leo</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Leo-1star" data-pet="Leo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leo-2star" data-pet="Leo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leo-3star" data-pet="Leo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leo-4star" data-pet="Leo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leo-5star" data-pet="Leo">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Leo-fragments" data-pet="Leo" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Devil-image" class='unit-image zero-star' src="../static/img/pets/27.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Devil</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Devil-1star" data-pet="Devil">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Devil-2star" data-pet="Devil">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Devil-3star" data-pet="Devil">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Devil-4star" data-pet="Devil">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Devil-5star" data-pet="Devil">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Devil-fragments" data-pet="Devil" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Griffy-image" class='unit-image zero-star' src="../static/img/pets/29.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Griffy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Griffy-1star" data-pet="Griffy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Griffy-2star" data-pet="Griffy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Griffy-3star" data-pet="Griffy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Griffy-4star" data-pet="Griffy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Griffy-5star" data-pet="Griffy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Griffy-fragments" data-pet="Griffy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Mir-image" class='unit-image zero-star' src="../static/img/pets/36.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Mir</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Mir-1star" data-pet="Mir">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mir-2star" data-pet="Mir">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mir-3star" data-pet="Mir">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mir-4star" data-pet="Mir">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mir-5star" data-pet="Mir">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Mir-fragments" data-pet="Mir" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Nimbus-image" class='unit-image zero-star' src="../static/img/pets/37.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Nimbus</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Nimbus-1star" data-pet="Nimbus">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Nimbus-2star" data-pet="Nimbus">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Nimbus-3star" data-pet="Nimbus">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Nimbus-4star" data-pet="Nimbus">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Nimbus-5star" data-pet="Nimbus">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Nimbus-fragments" data-pet="Nimbus" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Jingger-image" class='unit-image zero-star' src="../static/img/pets/38.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Jingger</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Jingger-1star" data-pet="Jingger">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Jingger-2star" data-pet="Jingger">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Jingger-3star" data-pet="Jingger">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Jingger-4star" data-pet="Jingger">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Jingger-5star" data-pet="Jingger">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Jingger-fragments" data-pet="Jingger" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Rapty-image" class='unit-image zero-star' src="../static/img/pets/39.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Rapty</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Rapty-1star" data-pet="Rapty">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rapty-2star" data-pet="Rapty">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rapty-3star" data-pet="Rapty">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rapty-4star" data-pet="Rapty">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rapty-5star" data-pet="Rapty">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Rapty-fragments" data-pet="Rapty" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Winky-image" class='unit-image zero-star' src="../static/img/pets/40.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Winky</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Winky-1star" data-pet="Winky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Winky-2star" data-pet="Winky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Winky-3star" data-pet="Winky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Winky-4star" data-pet="Winky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Winky-5star" data-pet="Winky">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Winky-fragments" data-pet="Winky" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Bunny-image" class='unit-image zero-star' src="../static/img/pets/41.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Bunny</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Bunny-1star" data-pet="Bunny">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bunny-2star" data-pet="Bunny">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bunny-3star" data-pet="Bunny">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bunny-4star" data-pet="Bunny">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bunny-5star" data-pet="Bunny">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Bunny-fragments" data-pet="Bunny" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Cora-image" class='unit-image zero-star' src="../static/img/pets/42.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Cora</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Cora-1star" data-pet="Cora">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cora-2star" data-pet="Cora">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cora-3star" data-pet="Cora">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cora-4star" data-pet="Cora">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cora-5star" data-pet="Cora">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Cora-fragments" data-pet="Cora" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Wakong-image" class='unit-image zero-star' src="../static/img/pets/43.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Wakong</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Wakong-1star" data-pet="Wakong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Wakong-2star" data-pet="Wakong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Wakong-3star" data-pet="Wakong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Wakong-4star" data-pet="Wakong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Wakong-5star" data-pet="Wakong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Wakong-fragments" data-pet="Wakong" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="E-77-image" class='unit-image zero-star' src="../static/img/pets/48.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>E-77</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="E-77-1star" data-pet="E-77">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="E-77-2star" data-pet="E-77">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="E-77-3star" data-pet="E-77">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="E-77-4star" data-pet="E-77">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="E-77-5star" data-pet="E-77">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="E-77-fragments" data-pet="E-77" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Windy-image" class='unit-image zero-star' src="../static/img/pets/49.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Windy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Windy-1star" data-pet="Windy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Windy-2star" data-pet="Windy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Windy-3star" data-pet="Windy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Windy-4star" data-pet="Windy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Windy-5star" data-pet="Windy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Windy-fragments" data-pet="Windy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Dark_Snake-image" class='unit-image zero-star' src="../static/img/pets/50.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Dark Snake</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Dark_Snake-1star" data-pet="Dark_Snake">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Dark_Snake-2star" data-pet="Dark_Snake">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Dark_Snake-3star" data-pet="Dark_Snake">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Dark_Snake-4star" data-pet="Dark_Snake">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Dark_Snake-5star" data-pet="Dark_Snake">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Dark_Snake-fragments" data-pet="Dark_Snake" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Seahorse-image" class='unit-image zero-star' src="../static/img/pets/51.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Seahorse</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Seahorse-1star" data-pet="Seahorse">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Seahorse-2star" data-pet="Seahorse">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Seahorse-3star" data-pet="Seahorse">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Seahorse-4star" data-pet="Seahorse">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Seahorse-5star" data-pet="Seahorse">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Seahorse-fragments" data-pet="Seahorse" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Sarah-image" class='unit-image zero-star' src="../static/img/pets/55.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Sarah</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Sarah-1star" data-pet="Sarah">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sarah-2star" data-pet="Sarah">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sarah-3star" data-pet="Sarah">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sarah-4star" data-pet="Sarah">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Sarah-5star" data-pet="Sarah">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Sarah-fragments" data-pet="Sarah" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Oscar-image" class='unit-image zero-star' src="../static/img/pets/56.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Oscar</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Oscar-1star" data-pet="Oscar">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Oscar-2star" data-pet="Oscar">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Oscar-3star" data-pet="Oscar">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Oscar-4star" data-pet="Oscar">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Oscar-5star" data-pet="Oscar">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Oscar-fragments" data-pet="Oscar" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Black-image" class='unit-image zero-star' src="../static/img/pets/57.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Black</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Black-1star" data-pet="Black">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Black-2star" data-pet="Black">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Black-3star" data-pet="Black">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Black-4star" data-pet="Black">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Black-5star" data-pet="Black">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Black-fragments" data-pet="Black" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Juda-image" class='unit-image zero-star' src="../static/img/pets/58.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Juda</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Juda-1star" data-pet="Juda">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Juda-2star" data-pet="Juda">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Juda-3star" data-pet="Juda">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Juda-4star" data-pet="Juda">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Juda-5star" data-pet="Juda">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Juda-fragments" data-pet="Juda" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Rena-image" class='unit-image zero-star' src="../static/img/pets/93.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Rena</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Rena-1star" data-pet="Rena">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rena-2star" data-pet="Rena">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rena-3star" data-pet="Rena">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rena-4star" data-pet="Rena">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rena-5star" data-pet="Rena">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Rena-fragments" data-pet="Rena" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Hippong-image" class='unit-image zero-star' src="../static/img/pets/94.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Hippong</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Hippong-1star" data-pet="Hippong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Hippong-2star" data-pet="Hippong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Hippong-3star" data-pet="Hippong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Hippong-4star" data-pet="Hippong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Hippong-5star" data-pet="Hippong">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Hippong-fragments" data-pet="Hippong" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Osma-image" class='unit-image zero-star' src="../static/img/pets/95.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Osma</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Osma-1star" data-pet="Osma">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Osma-2star" data-pet="Osma">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Osma-3star" data-pet="Osma">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Osma-4star" data-pet="Osma">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Osma-5star" data-pet="Osma">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Osma-fragments" data-pet="Osma" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Saul-image" class='unit-image zero-star' src="../static/img/pets/96.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Saul</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Saul-1star" data-pet="Saul">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Saul-2star" data-pet="Saul">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Saul-3star" data-pet="Saul">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Saul-4star" data-pet="Saul">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Saul-5star" data-pet="Saul">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Saul-fragments" data-pet="Saul" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Bernard-image" class='unit-image zero-star' src="../static/img/pets/112.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Bernard</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Bernard-1star" data-pet="Bernard">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bernard-2star" data-pet="Bernard">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bernard-3star" data-pet="Bernard">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bernard-4star" data-pet="Bernard">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bernard-5star" data-pet="Bernard">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Bernard-fragments" data-pet="Bernard" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Chichi-image" class='unit-image zero-star' src="../static/img/pets/113.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Chichi</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Chichi-1star" data-pet="Chichi">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chichi-2star" data-pet="Chichi">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chichi-3star" data-pet="Chichi">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chichi-4star" data-pet="Chichi">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chichi-5star" data-pet="Chichi">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Chichi-fragments" data-pet="Chichi" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Chesher-image" class='unit-image zero-star' src="../static/img/pets/114.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Chesher</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Chesher-1star" data-pet="Chesher">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chesher-2star" data-pet="Chesher">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chesher-3star" data-pet="Chesher">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chesher-4star" data-pet="Chesher">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Chesher-5star" data-pet="Chesher">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Chesher-fragments" data-pet="Chesher" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Bamba-image" class='unit-image zero-star' src="../static/img/pets/115.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Bamba</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Bamba-1star" data-pet="Bamba">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bamba-2star" data-pet="Bamba">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bamba-3star" data-pet="Bamba">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bamba-4star" data-pet="Bamba">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Bamba-5star" data-pet="Bamba">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Bamba-fragments" data-pet="Bamba" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Cat_Knight-image" class='unit-image zero-star' src="../static/img/pets/136.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Cat Knight</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Cat_Knight-1star" data-pet="Cat_Knight">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cat_Knight-2star" data-pet="Cat_Knight">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cat_Knight-3star" data-pet="Cat_Knight">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cat_Knight-4star" data-pet="Cat_Knight">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cat_Knight-5star" data-pet="Cat_Knight">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Cat_Knight-fragments" data-pet="Cat_Knight" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Mori-image" class='unit-image zero-star' src="../static/img/pets/137.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Mori</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Mori-1star" data-pet="Mori">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mori-2star" data-pet="Mori">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mori-3star" data-pet="Mori">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mori-4star" data-pet="Mori">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Mori-5star" data-pet="Mori">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Mori-fragments" data-pet="Mori" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Cerbero-image" class='unit-image zero-star' src="../static/img/pets/138.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Cerbero</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Cerbero-1star" data-pet="Cerbero">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cerbero-2star" data-pet="Cerbero">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cerbero-3star" data-pet="Cerbero">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cerbero-4star" data-pet="Cerbero">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Cerbero-5star" data-pet="Cerbero">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Cerbero-fragments" data-pet="Cerbero" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Octopa-image" class='unit-image zero-star' src="../static/img/pets/139.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Octopa</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Octopa-1star" data-pet="Octopa">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Octopa-2star" data-pet="Octopa">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Octopa-3star" data-pet="Octopa">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Octopa-4star" data-pet="Octopa">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Octopa-5star" data-pet="Octopa">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Octopa-fragments" data-pet="Octopa" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Athos-image" class='unit-image zero-star' src="../static/img/pets/163.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Athos</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Athos-1star" data-pet="Athos">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Athos-2star" data-pet="Athos">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Athos-3star" data-pet="Athos">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Athos-4star" data-pet="Athos">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Athos-5star" data-pet="Athos">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Athos-fragments" data-pet="Athos" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Grizzle-image" class='unit-image zero-star' src="../static/img/pets/164.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Grizzle</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Grizzle-1star" data-pet="Grizzle">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grizzle-2star" data-pet="Grizzle">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grizzle-3star" data-pet="Grizzle">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grizzle-4star" data-pet="Grizzle">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Grizzle-5star" data-pet="Grizzle">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Grizzle-fragments" data-pet="Grizzle" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Raven-image" class='unit-image zero-star' src="../static/img/pets/165.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Raven</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Raven-1star" data-pet="Raven">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Raven-2star" data-pet="Raven">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Raven-3star" data-pet="Raven">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Raven-4star" data-pet="Raven">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Raven-5star" data-pet="Raven">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Raven-fragments" data-pet="Raven" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Leyak-image" class='unit-image zero-star' src="../static/img/pets/166.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Leyak</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Leyak-1star" data-pet="Leyak">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leyak-2star" data-pet="Leyak">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leyak-3star" data-pet="Leyak">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leyak-4star" data-pet="Leyak">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Leyak-5star" data-pet="Leyak">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Leyak-fragments" data-pet="Leyak" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Little_Hawk-image" class='unit-image zero-star' src="../static/img/pets/183.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Little Hawk</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Little_Hawk-1star" data-pet="Little_Hawk">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Little_Hawk-2star" data-pet="Little_Hawk">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Little_Hawk-3star" data-pet="Little_Hawk">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Little_Hawk-4star" data-pet="Little_Hawk">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Little_Hawk-5star" data-pet="Little_Hawk">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Little_Hawk-fragments" data-pet="Little_Hawk" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Foxy-image" class='unit-image zero-star' src="../static/img/pets/184.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Foxy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Foxy-1star" data-pet="Foxy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Foxy-2star" data-pet="Foxy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Foxy-3star" data-pet="Foxy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Foxy-4star" data-pet="Foxy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Foxy-5star" data-pet="Foxy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Foxy-fragments" data-pet="Foxy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Shadow-image" class='unit-image zero-star' src="../static/img/pets/185.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Shadow</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Shadow-1star" data-pet="Shadow">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Shadow-2star" data-pet="Shadow">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Shadow-3star" data-pet="Shadow">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Shadow-4star" data-pet="Shadow">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Shadow-5star" data-pet="Shadow">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Shadow-fragments" data-pet="Shadow" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Snow_Bear-image" class='unit-image zero-star' src="../static/img/pets/186.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Snow Bear</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Snow_Bear-1star" data-pet="Snow_Bear">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snow_Bear-2star" data-pet="Snow_Bear">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snow_Bear-3star" data-pet="Snow_Bear">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snow_Bear-4star" data-pet="Snow_Bear">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Snow_Bear-5star" data-pet="Snow_Bear">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Snow_Bear-fragments" data-pet="Snow_Bear" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Combat-image" class='unit-image zero-star' src="../static/img/pets/207.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Combat</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Combat-1star" data-pet="Combat">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Combat-2star" data-pet="Combat">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Combat-3star" data-pet="Combat">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Combat-4star" data-pet="Combat">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Combat-5star" data-pet="Combat">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Combat-fragments" data-pet="Combat" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                 </div>  
+            
+            
+                <div class="row centered-row">
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Rolly-image" class='unit-image zero-star' src="../static/img/pets/208.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Rolly</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Rolly-1star" data-pet="Rolly">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rolly-2star" data-pet="Rolly">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rolly-3star" data-pet="Rolly">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rolly-4star" data-pet="Rolly">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Rolly-5star" data-pet="Rolly">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Rolly-fragments" data-pet="Rolly" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Scourge-image" class='unit-image zero-star' src="../static/img/pets/209.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Scourge</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Scourge-1star" data-pet="Scourge">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Scourge-2star" data-pet="Scourge">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Scourge-3star" data-pet="Scourge">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Scourge-4star" data-pet="Scourge">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Scourge-5star" data-pet="Scourge">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Scourge-fragments" data-pet="Scourge" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+                
+                    <div class="col-lg-2 col-4 border block padding-0">
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                <img id="Lazy-image" class='unit-image zero-star' src="../static/img/pets/210.png">
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Lazy</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="Lazy-1star" data-pet="Lazy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Lazy-2star" data-pet="Lazy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Lazy-3star" data-pet="Lazy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Lazy-4star" data-pet="Lazy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="Lazy-5star" data-pet="Lazy">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5">
+                                    <input id="Lazy-fragments" data-pet="Lazy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    (function() {
+        'use strict';
+        //check for support
+        if (!('indexedDB' in window)) {
+            console.log('This browser doesn\'t support IndexedDB');
+        return;
+        }
+        var dbPromise = idb.open('endless-farming-db', 1, function(upgradeDb) {
+            if (!upgradeDb.objectStoreNames.contains('units')) {
+                var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
+                unitsOS.createIndex('nsr', 'nsr', {unique: false});
+                unitsOS.createIndex('sr', 'sr', {unique: false});
+            }
+            if (!upgradeDb.objectStoreNames.contains('pets')) {
+                var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
+                petsOS.createIndex('fragments', 'fragments', {unique: false});
+            }
+        });
+    })();
+
+    $(".pet-input").each(function(){
+        on_pet_input_change($(this));
+    });
+
+    $(function() {
+        $(".pet-input").bind('keyup mouseup', function () {
+            var request = idb.open('endless-farming-db', 1);
+            request.then(function(db){
+                var tx = db.transaction('pets', 'readwrite');
+                var store = tx.objectStore('pets');
+                var item = {
+                    name: $(this).data("pet"),
+                    fragments: parseInt($(this).val())
+                };
+                var putRequest = store.put(item);
+                return tx.complete;
+            }.bind(this)).then(function() {
+                val = idb.open('endless-farming-db', 1).then(function(db){
+                    var tx = db.transaction('pets', 'readwrite');
+                    var store = tx.objectStore('pets');
+                    return store.get($(this).data("pet"));
+                }.bind(this)).then(function(val){
+                    $(this).attr("value", val["fragments"]);
+                    change_stars(val);
+                });
+            }.bind(this));
+        });
+    });
+
+    $(".image-checkbox").on("click", function (e) {
+        var $checkbox = $(this).find('input[type="checkbox"]');
+        var $input = $("#"+$(this).data("pet")+"-fragments");
+        $input.val($checkbox.attr("value"));
+        $input.keyup();
+    });
+
+    </script>
 </div>
 </body>
 </html>

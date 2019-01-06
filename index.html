@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     
+    <script src="/jsglue.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
@@ -26,13 +27,21 @@
     <script type="text/javascript" src="/static/js/lodash.min.js"></script>
     <script type="text/javascript" src="/static/js/vue.min.js"></script>
     <script type="text/javascript" src="/static/js/sortable.js"></script>
-    <script type="text/javascript" src="/static/js/data.js"></script>
+    <script type="text/javascript" src="/static/js/idb.js"></script>
 
     <script type="text/javascript">
     String.prototype.replaceAll = function(search, replacement) {
         var target = this;
         return target.replace(new RegExp(search, 'g'), replacement);
     };
+    
+    function handle_nan(val){
+    return (isNaN(val)) ? 0 : val;
+    }
+
+    function update_local_storage(input){
+        localStorage.setItem($(input).attr("id"), $(input).val())  
+    }
     </script>
     
 </head>

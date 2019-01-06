@@ -1,0 +1,1 @@
+{"unit":{"buffs":[{"amount":40,"description":"Reduces raid skill cool-time by 3%. (Innervate can be stacked, but cannot exceed 40%. Also applies when units are in Time Shop.)","linked_units":["Sword Dancer","Valkyrie","Ice Spirit"],"multiplier":0.333333,"name":"Innervate","requirement":14}],"img":"img/units/146.png","img_sr":"img/units/147.png","pet":"Black","rotation":7}}
