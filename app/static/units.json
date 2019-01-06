@@ -389,7 +389,7 @@
             "name": "Limit Break of Spirit Rest",
             "description": "Increases Spirit Rest efficiency by 0.7%. (Also applied even if unit is in Time Shop and can be increased by up to 10%.)",
             "multiplier": 0.42857,
-            "requirement": 15,
+            "requirement": 14.28,
             "amount": 10,
             "linked_units": ["Blade Master"]
         }]
@@ -403,7 +403,7 @@
             "name": "Limit Break of Spirit Rest",
             "description": "Increases Spirit Rest efficiency by 0.7%. (Also applied even if unit is in Time Shop and can be increased by up to 10%.)",
             "multiplier": 0.42857,
-            "requirement": 15,
+            "requirement": 14.28,
             "amount": 10,
             "linked_units": ["Dark Spirit"]
         }]
