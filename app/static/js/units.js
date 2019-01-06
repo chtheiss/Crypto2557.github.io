@@ -15,10 +15,12 @@ function change_progress_bar_value($bar, value, max){
 function update_progress_bar_values($progress_bar, buff){
 	$progress_bar
 		.attr("aria-valuemax", buff["requirement"])
-		.text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"));
+		.text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"))
+		.attr("data-multiplier", buff["multiplier"]);
 	change_progress_bar_value($progress_bar, 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuenow"))), 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuemax"))));
+	update_progress_bar($progress_bar, $progress_bar.parents(".block").find("input").first());
 }
 
 function get_unit_input_values($input){
@@ -38,7 +40,7 @@ function update_progress_bar($bar, $input){
 	var unit_values = get_unit_input_values($input);
 	var val = unit_values.nsr;
 	var val_sr = unit_values.sr;
-	var multiplier = parseFloat($bar.data("multiplier"));
+	var multiplier = parseFloat($bar.attr("data-multiplier"));
 	var linked_units = $bar.data("linked-units");
 	var additional_bars_to_update = [];
 	if(linked_units != ""){
