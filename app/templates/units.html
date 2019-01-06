@@ -92,24 +92,6 @@
 
     // IIFE - Immediately Invoked Function Expression
     (function(yourcode) {
-
-        'use strict';
-        //check for support
-        if (!('indexedDB' in window)) {
-            console.log('This browser doesn\'t support IndexedDB');
-            return;
-        }
-        var dbPromise = idb.open('endless-farming-db', 1, function(upgradeDb) {
-            if (!upgradeDb.objectStoreNames.contains('units')) {
-                var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
-                unitsOS.createIndex('nsr', 'nsr', {unique: false});
-                unitsOS.createIndex('sr', 'sr', {unique: false});
-            }
-            if (!upgradeDb.objectStoreNames.contains('pets')) {
-                var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
-                petsOS.createIndex('fragments', 'fragments', {unique: false});
-            }
-        });
         yourcode(window.jQuery, window.indexedDB, window, document);
 
     }(function($, indexedDB, window, document) {

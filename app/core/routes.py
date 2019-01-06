@@ -8,8 +8,12 @@ from flask import (render_template, flash, redirect, url_for,
 from app.core import bp
 
 @bp.route('/', methods=['GET', 'POST'])
-def index():   
-    return render_template('index.html', title='Home')
+def index():
+    pet_priority_url = os.path.join(current_app.root_path, "static", "pet_priority.json")
+    pet_priority = json.load(open(pet_priority_url))
+    pets_url = os.path.join(current_app.root_path, "static", "pets.json")
+    pets = json.load(open(pets_url))
+    return render_template('index.html', title='Home', pet_priority=pet_priority, pets=pets)
 
 @bp.route('/pets/', methods=['GET', 'POST'])
 def pets():

@@ -121,6 +121,11 @@ img {
   filter: drop-shadow(rgb(30, 220, 30) 1px 1px 5px);
 }
 
+h1 {
+  text-align:center;
+  font-size: 4em;
+}
+
 h3 {
   font-size: 1.25rem;
   margin-bottom: 0px;
@@ -229,4 +234,16 @@ fieldset {
 
 .padding-md {
   padding: 5px !important;
+}
+
+#gem-image{
+  max-width: 20px;
+}
+
+td:hover{
+    cursor:pointer;
+    }
+
+.table td{
+  padding: 0px;
 }
