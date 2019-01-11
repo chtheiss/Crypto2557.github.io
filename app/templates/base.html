@@ -35,22 +35,34 @@
 {% endblock %}
 
 {% block navbar %}
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="{{ url_for('core.index') }}">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ url_for('core.pets') }}">Pets</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ url_for('core.units') }}">Units</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ url_for('core.tickets') }}">Tickets</a>
-    </li>
-  </ul>
-  </nav>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.pets') }}">Pets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.units') }}">Units</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.tickets') }}">Tickets</a>
+            </li>
+            <li class="nav-item">
+                <button id="import-button" class="btn btn-dark" type="button">Import</button>
+            </li>
+            <li class="nav-item">
+                <button id="export-button" class="btn btn-dark" type="button">Export</button>
+            </li>
+        </ul>
+    </div>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -83,7 +95,15 @@
         }(function($, indexedDB, window, document) {
 
             $(function() {
+                $("#import-button").on("click", function (e) {
+                    var db = new Dexie('endless-farming-db');
+                    window.location.reload()
+                });
 
+                $("#export-button").on("click", function (e) {
+                    var db = new Dexie('endless-farming-db');
+                    window.location.reload()
+                });
             });
         }));
 
