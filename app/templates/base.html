@@ -1,51 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% block head %}
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    Endless Farming
+{% endblock %}
+
+{% block head %}
     {{ JSGlue.include() }}
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Unit Farming</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-    <!-- JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" >
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ef.css') }}" >
-    <script type="text/javascript" src="{{ url_for('static', filename='js/lodash.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/vue.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/sortable.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/idb.js') }}"></script>
-
-    <script type="text/javascript">
-    String.prototype.replaceAll = function(search, replacement) {
-        var target = this;
-        return target.replace(new RegExp(search, 'g'), replacement);
-    };
-    
-    function handle_nan(val){
-    return (isNaN(val)) ? 0 : val;
-    }
-
-    function update_local_storage(input){
-        localStorage.setItem($(input).attr("id"), $(input).val())  
-    }
-    </script>
+    {% block metas %}
+        {{ super() }}
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="author" content="">
     {% endblock %}
-</head>
-<body>
+
+    {% block styles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/ef.css') }}" >
+    {% endblock styles %}
+{% endblock %}
+
 {% block navbar %}
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
@@ -61,9 +38,77 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ url_for('core.tickets') }}">Tickets</a>
     </li>
+        <li class="nav-item">
+      <button id="import-button" type="button" class="btn btn-dark">Import</button>
+    </li>
+        <li class="nav-item">
+      <button id="export-button" type="button" class="btn btn-dark">Export</button>
+    </li>
   </ul>
   </nav>
 {% endblock %}
-<div id="content" class="container">{% block content %}{% endblock %}</div>
-</body>
-</html>
+
+{% block content %}
+    <div id="content" class="container">{% block app_content %}{% endblock %}</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/lodash.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/vue.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/sortable.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/idb.js') }}"></script>
+
+    <script type="text/javascript">
+
+        String.prototype.replaceAll = function(search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, 'g'), replacement);
+        };
+    
+        function handle_nan(val){
+        return (isNaN(val)) ? 0 : val;
+        }
+
+        // IIFE - Immediately Invoked Function Expression
+        (function(yourcode) {
+
+            yourcode(window.jQuery, window.indexedDB, window, document);
+
+        }(function($, indexedDB, window, document) {
+
+            $(function() {
+                $("#import-button").on("click", function(e){
+                    
+                });
+                $("#export-button").on("click", function(e){
+                    
+                });
+            });
+
+            (function() {
+                'use strict';
+                //check for support
+                if (!('indexedDB' in window)) {
+                    console.log('This browser doesn\'t support IndexedDB');
+                return;
+                }
+                var dbPromise = idb.open('endless-farming-db', 1, function(upgradeDb) {
+                    if (!upgradeDb.objectStoreNames.contains('units')) {
+                        var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
+                        unitsOS.createIndex('nsr', 'nsr', {unique: false});
+                        unitsOS.createIndex('sr', 'sr', {unique: false});
+                    }
+                    if (!upgradeDb.objectStoreNames.contains('pets')) {
+                        var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
+                        petsOS.createIndex('fragments', 'fragments', {unique: false});
+                    }
+                });
+            })();
+        }));
+    </script>
+{% endblock %}

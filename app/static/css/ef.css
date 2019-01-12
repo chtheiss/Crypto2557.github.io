@@ -230,3 +230,13 @@ fieldset {
 .padding-md {
   padding: 5px !important;
 }
+
+.pet-modal:hover{
+    cursor:pointer;
+}
+
+.modal-content{
+  text-align: left;
+  background-color: #111;
+  font-size: 14px;
+}

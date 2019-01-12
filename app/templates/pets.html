@@ -4,7 +4,7 @@
     {{ super() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
 {% endblock %}
-{% block content %}
+{% block app_content %}
     <div class="row super-row">
         <div class="col-sm-12 col-centered">
             {% for key, pet in pets.items() %}
@@ -53,63 +53,51 @@
             {% endfor %}
         </div>
     </div>
-
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
     <script type="text/javascript">
-    (function() {
-        'use strict';
-        //check for support
-        if (!('indexedDB' in window)) {
-            console.log('This browser doesn\'t support IndexedDB');
-        return;
-        }
-        var dbPromise = idb.open('endless-farming-db', 1, function(upgradeDb) {
-            if (!upgradeDb.objectStoreNames.contains('units')) {
-                var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
-                unitsOS.createIndex('nsr', 'nsr', {unique: false});
-                unitsOS.createIndex('sr', 'sr', {unique: false});
-            }
-            if (!upgradeDb.objectStoreNames.contains('pets')) {
-                var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
-                petsOS.createIndex('fragments', 'fragments', {unique: false});
-            }
-        });
-    })();
+    // IIFE - Immediately Invoked Function Expression
+    (function(yourcode) {
 
-    $(".pet-input").each(function(){
-        on_pet_input_change($(this));
-    });
+        yourcode(window.jQuery, window.indexedDB, window, document);
 
-    $(function() {
-        $(".pet-input").bind('keyup mouseup', function () {
-            var request = idb.open('endless-farming-db', 1);
-            request.then(function(db){
-                var tx = db.transaction('pets', 'readwrite');
-                var store = tx.objectStore('pets');
-                var item = {
-                    name: $(this).data("pet"),
-                    fragments: parseInt($(this).val())
-                };
-                var putRequest = store.put(item);
-                return tx.complete;
-            }.bind(this)).then(function() {
-                val = idb.open('endless-farming-db', 1).then(function(db){
+    }(function($, indexedDB, window, document) {
+
+        $(function() {
+            $(".pet-input").each(function(){
+                on_pet_input_change($(this));
+            });
+            $(".pet-input").bind('keyup mouseup', function () {
+                var request = idb.open('endless-farming-db', 1);
+                request.then(function(db){
                     var tx = db.transaction('pets', 'readwrite');
                     var store = tx.objectStore('pets');
-                    return store.get($(this).data("pet"));
-                }.bind(this)).then(function(val){
-                    $(this).attr("value", val["fragments"]);
-                    change_stars(val);
-                });
-            }.bind(this));
+                    var item = {
+                        name: $(this).data("pet"),
+                        fragments: parseInt($(this).val())
+                    };
+                    var putRequest = store.put(item);
+                    return tx.complete;
+                }.bind(this)).then(function() {
+                    val = idb.open('endless-farming-db', 1).then(function(db){
+                        var tx = db.transaction('pets', 'readwrite');
+                        var store = tx.objectStore('pets');
+                        return store.get($(this).data("pet"));
+                    }.bind(this)).then(function(val){
+                        $(this).attr("value", val["fragments"]);
+                        change_stars(val);
+                    });
+                }.bind(this));
+            });
+
+            $(".image-checkbox").on("click", function (e) {
+                var $checkbox = $(this).find('input[type="checkbox"]');
+                var $input = $("#"+$(this).data("pet")+"-fragments");
+                $input.val($checkbox.attr("value"));
+                $input.keyup();
+            });          
         });
-    });
-
-    $(".image-checkbox").on("click", function (e) {
-        var $checkbox = $(this).find('input[type="checkbox"]');
-        var $input = $("#"+$(this).data("pet")+"-fragments");
-        $input.val($checkbox.attr("value"));
-        $input.keyup();
-    });
-
+    }));
     </script>
 {% endblock %}

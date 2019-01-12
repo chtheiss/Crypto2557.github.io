@@ -4,7 +4,7 @@
     {{ super() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/units.js') }}"></script>
 {% endblock %}
-{% block content %}
+{% block app_content %}
     <div class="row super-row">
         <div class="col-sm-12 col-centered">
             {% for key, unit in units.items() %}
@@ -39,9 +39,10 @@
                                 </div>
                             </div>
                             <div class="col-3 padding-sm">
-                                <a href="{{pets[unit['pet']]['img'].replace('img', 'https://www.endlessfrontierdata.com').replace('.png', '')}}">
-                                    <img id="{{unit['pet'].replace(' ', '_')}}-image" class='pet-image' src="../static/{{pets[unit['pet']]['img']}}" data-pet="{{unit['pet'].replace(' ', '_')}}" data-unit="{{key_id}}">
-                                </a>
+                                <span class="pet-modal" data-toggle="modal" data-target="#{{unit['pet'].replace(' ', '_')}}-modal">
+                                    <img id="{{unit['pet'].replace(' ', '_')}}-image" class='pet-image' src="../static/{{pets[unit['pet']]['img']}}" data-pet="{{unit['pet'].replace(' ', '_')}}" data-unit="{{key_id}}" data-toggle="tooltip" data-placement="top" title="{{unit['pet']}}">
+                                </span>
+                                {% include '_pet_modal.html' %}
                             </div>
                         </div>
                         {% for i in range(max_buff) %}
@@ -87,29 +88,16 @@
             {% endfor %}
         </div>
     </div>
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+</div>
+{% endblock %}
 
+{% block scripts %}
+    {{ super() }}
     <script type="text/javascript">
-
     // IIFE - Immediately Invoked Function Expression
     (function(yourcode) {
 
-        'use strict';
-        //check for support
-        if (!('indexedDB' in window)) {
-            console.log('This browser doesn\'t support IndexedDB');
-            return;
-        }
-        var dbPromise = idb.open('endless-farming-db', 1, function(upgradeDb) {
-            if (!upgradeDb.objectStoreNames.contains('units')) {
-                var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
-                unitsOS.createIndex('nsr', 'nsr', {unique: false});
-                unitsOS.createIndex('sr', 'sr', {unique: false});
-            }
-            if (!upgradeDb.objectStoreNames.contains('pets')) {
-                var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
-                petsOS.createIndex('fragments', 'fragments', {unique: false});
-            }
-        });
         yourcode(window.jQuery, window.indexedDB, window, document);
 
     }(function($, indexedDB, window, document) {

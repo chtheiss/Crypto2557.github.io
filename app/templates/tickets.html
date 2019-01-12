@@ -1,15 +1,6 @@
 {% extends 'base.html' %}
 
-{% block head %}
-    {{ super() }}
-
-    <script type="text/javascript">
-    $(window).on("load", function() {
-
-    });
-    </script>
-{% endblock %}
-{% block content %}
+{% block app_content %}
     <div class="row super-row">
         <div class="col-sm-7 col-centered">
             {% for key, ticket in tickets.items() %}
@@ -30,35 +21,45 @@
     <footer class="page-footer font-medium">
         This ranking was originally created by CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
     </footer>
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript">
+    // IIFE - Immediately Invoked Function Expression
+    (function(yourcode) {
 
-    <script type="text/javascript">    
-    $(".requirement").each(function(){
-        $this = $(this);
-        idb.open('endless-farming-db', 1).then(function(db){
-            var tx = db.transaction('units', 'readwrite');
-            var store = tx.objectStore('units');
-            console.log(this.data("unit").replace(" ", "_"));
-            return store.get(this.data("unit").replace(" ", "_"));
-        }.bind($this)).then(function(val){
-            var $progressbar = $(this.children().children()[0]);
-            var requirement = $progressbar.attr('aria-valuemax');
-            if (val != undefined){
-                var value = 100*((val.nsr+val.sr) / parseFloat(requirement));
-                var val_text = val.nsr+val.sr;
-            } else {
-                var value = 0;
-                var val_text = 0;
-            }
-            $progressbar.attr('aria-valuenow',value);
-            $progressbar.css("width", value + "%");
-            if(value >=100){
-                $progressbar.addClass("progress-bar-green");
-            } else{
-                $progressbar.addClass("progress-bar-red");
-                }
-            this.children().children()[0].innerText = (val_text) +"/"+ requirement;
-            
-        }.bind($this));         
-    });
+        yourcode(window.jQuery, window.indexedDB, window, document);
+
+    }(function($, indexedDB, window, document) {
+
+        $(function() {
+            $(".requirement").each(function(){
+                $this = $(this);
+                idb.open('endless-farming-db', 1).then(function(db){
+                    var tx = db.transaction('units', 'readwrite');
+                    var store = tx.objectStore('units');
+                    return store.get(this.data("unit").replace(" ", "_"));
+                }.bind($this)).then(function(val){
+                    var $progressbar = $(this.children().children()[0]);
+                    var requirement = $progressbar.attr('aria-valuemax');
+                    if (val != undefined){
+                        var value = 100*((val.nsr+val.sr) / parseFloat(requirement));
+                        var val_text = val.nsr+val.sr;
+                    } else {
+                        var value = 0;
+                        var val_text = 0;
+                    }
+                    $progressbar.attr('aria-valuenow',value);
+                    $progressbar.css("width", value + "%");
+                    if(value >=100){
+                        $progressbar.addClass("progress-bar-green");
+                    } else{
+                        $progressbar.addClass("progress-bar-red");
+                        }
+                    this.children().children()[0].innerText = (val_text) +"/"+ requirement;
+                }.bind($this));         
+            });
+        });
+    }));    
     </script>
 {% endblock %}
