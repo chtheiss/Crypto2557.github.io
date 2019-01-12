@@ -28,7 +28,7 @@
 		"from": [276, 535, 580, 591],
 		"buffs": [{
 			"name": "Surprise Attack",
-			"description": "Even if the Crimson Hawk Rider is in the shop of time, the surprise attack is triggered with a 1% chance for 5-star unit and a 3% chance for 6-star unit. However, the probability of surprise attack can not exceed 60%",
+			"description": "[Surprise Attack] can activate even if the Crimson Hawk Rider is in the Time Shop (5-star 1%, 6-star 3%, Max 60%).",
 			"multiplier": 0.333333,
 			"requirement": 20,
 			"amount": 60
@@ -40,7 +40,7 @@
 		"from": [281, 545, 590, 596],
 		"buffs": [{
 			"name": "Airship VIP",
-			"description": "The maximum value of [Airship VIP] can be increased up to 30%. In other words, it can reduce the cost of purchasing fuel by up to 30%",
+			"description": "The maximum value of [Airship VIP] can be increased up to 30%.",
 			"multiplier": 0.5,
 			"requirement": 15,
 			"amount": 30
@@ -52,7 +52,7 @@
 		"from": [286, 555, 600, 601],
 		"buffs": [{
 			"name": "Revival Team for Spirit Rest Runs",
-			"description": "When put in revival team, medal buff increases by 70%. (Increases bonus medals gained from revival from 30% to 100%)",
+			"description": "When included in a team, medal buff increases by 70% (from 30% to 100%).",
 			"multiplier": 0.0,
 			"requirement": 12,
 			"amount": 720
@@ -64,7 +64,7 @@
 		"from": [291, 565, 606, 610],
 		"buffs": [{
 			"name": "Enhance active skill",
-			"description": "Even if a Warbear rider is in the shop of time, the efficiency of active skill increases. (However, in the shop of time, the efficiency increases by 20 stages per 5-star unit, 40 stages per 6-star unit, and active skill enhancement by warbear riders can not exceed 1000 stages.)",
+			"description": "[Enhance active skill] applies even if when Warbear rider is in the Time Shop. (5-star 20 stages, 6-star 40 stages, Max 1000 stages).",
 			"multiplier": 0.5,
 			"requirement": 25,
 			"amount": 1000
@@ -107,7 +107,7 @@
 		},
 		{
 			"name": "Darkness Resistance",
-			"description": "Increases darkness resistance by 75 for each Crow Knight, and 150 for each Senior Crow Knight. Also increases max darkness resistance through Crown Knights from 2,000 to 4,000",
+			"description": "Increases darkness resistance to 75 for each 5-star Crow Knight, and 150 for each 6-star Crow Knight. Also increases max darkness resistance through Crown Knights from 2,000 to 4,000.",
 			"multiplier": 0.5,
 			"requirement": 27,
 			"amount": 4000
@@ -138,7 +138,7 @@
 		},
 		{
 			"name": "Wings of Zephyrus",
-			"description": "[Wings of Zephyrus], is activated even if Winged Knight is in Time Shop. (The effect of [Wings of Zephyrus], is increased by 0.02 for each 5-star Winged Knight in Time shop and 0.04 for each 6-star. And this effect does not exceed 1.2.)",
+			"description": "[Wings of Zephyrus] is activated even if Winged Knight is in Time Shop (5-star 0.02, 6-star 0.04, Max 1.2).",
 			"multiplier": 0.5,
 			"requirement": 30,
 			"amount": 1.2
@@ -186,17 +186,17 @@
 		"from": [216, 415, 460, 531],
 		"buffs":[{
 			"name": "Tribe Fortification (Human and Orc)",
-			"description": "[Tribe Fortification], is applied even when Cleric is in Time Shop, and can be increased up to 250 for human units.",
+			"description": "[Tribe Fortification] is applied even when Cleric is in Time Shop, and can be increased up to 250 for human units.",
 			"multiplier": 0.5,
 			"requirement": 13,
 			"amount": 250
 		},
 		{
 			"name": "Innervate 2",
-			"description": "Increases the maximum value of [Innervate 2], to 50%. Thus, reducing skill cool time (Outland Battle) by up to 50%.",
+			"description": "Increases the maximum value of [Innervate 2] to 50%. Thus, reducing skill cool time (Outland Battle) by up to 50%.",
 			"multiplier": 0.333333,
 			"requirement": 17,
-			"amount": 50 
+			"amount": 50
 		}],
 		"additional_buffs": []
 	},
@@ -205,14 +205,14 @@
 		"from": [221, 425, 470, 536],
 		"buffs":[		{
 			"name": "Tribe Fortification (Elf and Human)",
-			"description": "[Tribe Fortification], is applied even when Elementalist is in Time Shop, and can be increased up to 250 for elf units.",
+			"description": "[Tribe Fortification] is applied even when Elementalist is in Time Shop, and can be increased up to 250 for elf units.",
 			"multiplier": 0.4666666,
 			"requirement": 17,
-			"amount": 250 
+			"amount": 250
 		},
 		{
 			"name": "Nature Resistance",
-			"description": "Increases nature resistance by 75 for each Elementalist, and 150 nature resistance for each Senior Elementalist. Also increases max nature resistance through Elementalists from 2,000 to 4,000.",
+			"description": "Increases nature resistance to 75 for each 5-star Elementalist, and 150 nature resistance for each 6-star Elementalist. Also increases max nature resistance through Elementalists from 2,000 to 4,000.",
 			"multiplier": 0.5,
 			"requirement": 27,
 			"amount": 4000
@@ -224,7 +224,7 @@
 		"from": [226, 435, 480, 541],
 		"buffs":[{
 			"name": "Tribe Fortification (Undead and Elf)",
-			"description": "[Tribe Fortification], is applied even when Dark Elf is in Time Shop, and can be increased up to 250 for undead units.",
+			"description": "[Tribe Fortification] is applied even when Dark Elf is in Time Shop, and can be increased up to 250 for undead units.",
 			"multiplier": 0.5,
 			"requirement": 13,
 			"amount":  250
@@ -236,14 +236,14 @@
 		"from": [231, 445, 490, 546],
 		"buffs":[{
 			"name": "Tribe Fortification (Orc and Undead)",
-			"description": "[Tribe Fortification], is applied even when Frost Demon is in the Time Shop, and can be increased up to 250 for orc units.",
+			"description": "[Tribe Fortification] is applied even when Frost Demon is in the Time Shop, and can be increased up to 250 for orc units.",
 			"multiplier": 0.4666666,
 			"requirement": 17,
 			"amount":  250
-		},		
+		},
 		{
 			"name": "Enhance Active Skill",
-			"description": "Active skill efficiency increases even when Frost Demon is in Time Shop. ( However, when in Time shop, the efficiency is increased by 10 stages for each 5-star Frost Demon and 20 stages for each 6 star Frost Demon. Active Skill enhancements through Frost Demon cannot exceed a maximum of 480 stages. )",
+			"description": "[Enhance active skill] applies even if when Frost Demon is in the Time Shop. (5-star 10 stages, 6-star 20 stages, Max 480 stages).",
 			"multiplier": 0.5,
 			"requirement": 24,
 			"amount": 480
@@ -255,7 +255,7 @@
 		"from": [196, 375, 420, 511],
 		"buffs":[{
 			"name": "Fire Resistance",
-			"description": "Every Flame Spirit's fire resistance increases by 75 and every Senior Flame Spirit's fire resistance increases by 150. Also, the maximum value of resistance against fire from Flame Spirit increases from 2000 to 4000.",
+			"description": "Increases fire resistance to 75 for each Flame Spirit, and 150 for each Senior Flame Spirit. Also increases max fire resistance through Flame Spirits from 2,000 to 4,000.",
 			"multiplier": 0.5,
 			"requirement": 27,
 			"amount": 4000
@@ -267,17 +267,17 @@
 		"from": [201, 385, 430, 516],
 		"buffs":[{
 			"name": "Elf's Secret Skill 2",
-			"description": "Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf’s Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf’s Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)",
+			"description": "[Elf's Secret Skill 2] is applied even if Hippogriff is in Time Shop (5-star 1%, 6-star 2.5%, Max 30%).",
 			"multiplier": 0.4,
 			"requirement": 12,
 			"amount": 30
 		},
 		{
 			"name": "Legend of Ancient Forest",
-			"description": "Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf’s Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf’s Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)",
+			"description": "[Legend of Ancient Forest] is applied even if Hippogriff is in Time Shop (5-star 1%, 6-star 2.5%, Max 50%).",
 			"multiplier": 0.4,
 			"requirement": 20,
-			"amount": 30	
+			"amount": 30
 		}],
 		"additional_buffs": []
 	},
@@ -286,7 +286,7 @@
 		"from": [206, 395, 440, 521],
 		"buffs": [{
 			"name": "Limit Break of Spirit Rest",
-			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%. In addition, when Blade Master is awakened, the maximum efficiency increases 12.5%- > 15%.)",
+			"description": "The maximum value of Spirit Rest increases by 2.5%, increasing maximum efficiency up to 12.5% (The maximum efficiency of current Spirit Rest increases from 10% to 12.5%. In addition, when Blade Master is awakened, the maximum efficiency increases from 12.5% to 15%).",
 			"multiplier": 0.42857,
 			"requirement": [17.85, 21.42],
 			"amount": [2.5, 5.0],
@@ -300,7 +300,7 @@
 		"from": [211, 405, 450, 526],
 		"buffs": [{
 			"name": "Limit Break of Spirit Rest",
-			"description": "The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -> 12.5%.) In addition, when Dark Spirit is awakened, the maximum efficiency increases to 15%.)",
+			"description": "The maximum value of Spirit Rest increases by 2.5%, increasing maximum efficiency up to 12.5% (The maximum efficiency of current Spirit Rest increases from 10% to 12.5%. In addition, when Dark Spirit is awakened, the maximum efficiency increases from 12.5 to 15%).",
 			"multiplier": 0.42857,
 			"requirement": [17.85, 21.42],
 			"amount": [2.5, 5.0],
@@ -356,7 +356,7 @@
 		"from": [156, 295, 340, 471],
 		"buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop).",
             "multiplier": 0.4,
             "requirement": [30, 40, 50, 60],
             "amount": [150, 200, 250, 300],
@@ -365,7 +365,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
-			"description": " Inner passion max increases by 5 per Senior Steam Punk. (However, this value cannot exceed 50.)",
+			"description": " Inner passion max increases by 5 per Senior Steam Punk. (However, this value cannot exceed 50).",
 			"multiplier": 0.0,
 			"requirement": 10,
 			"amount": 50
@@ -376,7 +376,7 @@
 		"from": [161, 305, 350, 476],
 		"buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop).",
             "multiplier": 0.4,
             "requirement": [30, 40, 50, 60],
             "amount": [150, 200, 250, 300],
@@ -385,7 +385,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
-			"description": " Inner passion max increases by 5 per Senior Sylphid. (However, this value cannot exceed 50.)",
+			"description": " Inner passion max increases by 5 per Senior Sylphid. (However, this value cannot exceed 50).",
 			"multiplier": 0.0,
 			"requirement": 10,
 			"amount": 50
@@ -396,7 +396,7 @@
 		"from": [166, 315, 360, 481],
 		"buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop).",
             "multiplier": 0.4,
             "requirement": [30, 40, 50, 60],
             "amount": [150, 200, 250, 300],
@@ -405,7 +405,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
-			"description": " Inner passion max increases by 5 per Senior Medusa. (However, this value cannot exceed 50.)",
+			"description": " Inner passion max increases by 5 per Senior Medusa. (However, this value cannot exceed 50).",
 			"multiplier": 0.0,
 			"requirement": 10,
 			"amount": 50
@@ -416,7 +416,7 @@
 		"from": [171, 325, 370, 486],
 		"buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop).",
             "multiplier": 0.4,
             "requirement": [30, 40, 50, 60],
             "amount": [150, 200, 250, 300],
@@ -425,7 +425,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Inner Passion limit break",
-			"description": " Inner passion max increases by 5 per Senior Naga. (However, this value cannot exceed 50.)",
+			"description": " Inner passion max increases by 5 per Senior Naga. (However, this value cannot exceed 50).",
 			"multiplier": 0.0,
 			"requirement": 10,
 			"amount": 50
@@ -436,7 +436,7 @@
 		"from": [136, 255, 300, 451],
 		"buffs": [{
             "name": "Spirit Awakening",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases by 10 for all units. ([Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop).",
             "multiplier": 0.5,
             "requirement": [12.5, 15.0, 17.5, 20.0],
             "amount": [125, 150, 175, 200],
@@ -445,7 +445,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
-			"description": "Max value of Spirit Awakening increases by 5 each per Senior Pilot. (However, this value cannot exceed 25.)",
+			"description": "Max value of Spirit Awakening increases by 5 each per Senior Pilot. (However, this value cannot exceed 25).",
 			"multiplier": 0.0,
 			"requirement": 5,
 			"amount": 25
@@ -456,7 +456,7 @@
 		"from": [141, 265, 310, 456],
 		"buffs": [{
             "name": "Spirit Awakening",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases by 10 for all units. ([Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop).",
             "multiplier": 0.5,
             "requirement": [12.5, 15.0, 17.5, 20.0],
             "amount": [125, 150, 175, 200],
@@ -465,7 +465,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
-			"description": "Max value of Spirit Awakening increases by 5 for each Senior Alchemist. (However, this value cannot exceed 25.)",
+			"description": "Max value of Spirit Awakening increases by 5 for each Senior Alchemist. (However, this value cannot exceed 25).",
 			"multiplier": 0.0,
 			"requirement": 5,
 			"amount": 25
@@ -476,7 +476,7 @@
 		"from": [146, 275, 320, 461],
 		"buffs": [{
             "name": "Spirit Awakening",
-            "description":  "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description":  "Maximum level-up increases by 10 for all units. ([Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop).",
             "multiplier": 0.5,
             "requirement": [12.5, 15.0, 17.5, 20.0],
             "amount": [125, 150, 175, 200],
@@ -485,7 +485,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
-			"description": "Spirit awakening max increases by 5 per Senior Lich. (However, this value cannot exceed 25.)",
+			"description": "Spirit awakening max increases by 5 per Senior Lich. (However, this value cannot exceed 25).",
 			"multiplier": 0.0,
 			"requirement": 5,
 			"amount": 25
@@ -496,7 +496,7 @@
 		"from": [151, 285, 330, 466],
 		"buffs": [{
             "name": "Spirit Awakening",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases by 10 for all units. ([Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop).",
             "multiplier": 0.5,
             "requirement": [12.5, 15.0, 17.5, 20.0],
             "amount": [125, 150, 175, 200],
@@ -505,7 +505,7 @@
         }],
 		"additional_buffs": [{
 			"name": "Spirit Awakening Limit Break",
-			"description": "Spirit awakening max increases by 5 per Senior Wyvern Rider. (However, this value cannot exceed 25.)",
+			"description": "Spirit awakening max increases by 5 per Senior Wyvern Rider. (However, this value cannot exceed 25).",
 			"multiplier": 0.0,
 			"requirement": 5,
 			"amount": 25
@@ -516,7 +516,7 @@
 		"from": [116, 215, 260, 431],
 		"buffs": [],
 		"additional_buffs": []
-	}, 
+	},
 	"Nimbus":{
 		"img": "img/pets/37.png",
 		"from": [121, 225, 270, 436],
@@ -541,10 +541,10 @@
 		"buffs":[],
 		"additional_buffs": [{
 			"name": "Offline March",
-			"description": "Raise offline march buff by 300%, and even if Griffin Rider is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Griffin Rider is 1,000%.",
+			"description": "Raise [offline march] buff by 300%, and even if Griffin Rider is in the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%, Max 1000%).",
 			"multiplier": 0.333333,
 			"requirement": 24,
-			"amount": 700 
+			"amount": 700
 		}]
 	},
 	"Leo":{
@@ -553,10 +553,10 @@
 		"buffs":[],
 		"additional_buffs": [{
 			"name": "Offline March",
-			"description": "Raise offline march buff by 300%, and even if Forest Guardian is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Forest Guardian is 1,000%.",
+			"description": "Raise [offline march] buff by 300%, and even if Forest Guardian is in the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%, Max 1000%).",
 			"multiplier": 0.333333,
 			"requirement": 24,
-			"amount": 700 
+			"amount": 700
 		}]
 	},
 	"Devil":{
@@ -565,10 +565,10 @@
 		"buffs":[],
 		"additional_buffs": [{
 			"name": "Offline March",
-			"description": " Raise offline march buff by 300%, and even if Succubus is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Succubus is 1,000%.",
+			"description": " Raise [offline march] buff by 300%, and even if Succubus is in the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%, Max 1000%).",
 			"multiplier": 0.333333,
 			"requirement": 24,
-			"amount": 700 
+			"amount": 700
 		}]
 	},
 	"Totem":{
@@ -577,7 +577,7 @@
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Enhance Active Skill",
-			"description": "Active skill (Explosion Shaking Heaven and Earth, Tower of Babel, Skyward Sword) efficiency improves. (Limit for damage to enemies has been upgraded. Basic 200 stages increased— increases 15 levels per 5-star and 30 levels per 6-star—up to a +900 stage limit. Even applies if Sorcerer is in the Time Shop.)",
+			"description": "[Enhance active skill] applies even if when Sorcerer is in the Time Shop (5-star 15 stages, 6-star 30 stages, Default +200 stages, Max 900 stages).",
 			"multiplier": 0.5,
 			"requirement": 24,
 			"amount": 700
@@ -588,14 +588,14 @@
 		"from": [61, 105, 150, 376],
 		"buffs": [{
 			"name": "Human's Secret Skill",
-			"description": " Even if Aladdin is at the Time Shop, this has an increased chance to get 10x gold. (Basic 10%, +2% per 5-star, +5% per 6-star) when using human secret skills.",
+			"description": " Even if Aladdin is at the Time Shop, this has an increased chance to get 10x gold (Basic 10%, 5-star 2%, 6-star 5%) when using human secret skills.",
 			"multiplier": 0.4,
 			"requirement": 8,
 			"amount": 90
 		}],
 		"additional_buffs": [{
 			"name": "Golden Treasure Chests",
-			"description": "Automatically opens golden treasure chests containing gold at a certain percentage. (Basic 10%, +2% per 5-star and +5% per 6-star)",
+			"description": "Automatically opens golden treasure chests containing gold at a certain percentage (Basic 10%, 5-star 2%, 6-star 5%).",
 			"multiplier": 0.4,
 			"requirement": 18,
 			"amount": 90
@@ -618,14 +618,14 @@
 		"from": [96, 175, 220, 411],
 		"buffs": [{
 			"name": "Revival Team for spirit rest runs.",
-			"description": "When included in a team, medal buff increases by 30%. (Special skill 6 raises 10% to 40%)",
+			"description": "When included in a team, medal buff increases by 30% (from 10% to 40%).",
 			"multiplier": 0.0,
 			"requirement": 12,
 			"amount": 480
 		}],
 		"additional_buffs": [{
 			"name": "Time Shop Medal Bonus Limit Break",
-			"description": "Max medal buff increases by transcend units in Time Shop.(Every 5-star Battle Drummer increases by 10% and 6-star increases by 20%. => For example, when there are seven 5-star and ten 6-star Battle Drummers, the max medal buff of transcend units in Time Shop increases from 1,000% to 1,270%.)",
+			"description": "Max medal buff increases by transcend units in Time Shop (Every 5-star Battle Drummer increases by 10% and 6-star increases by 20%. => For example, when there are seven 5-star and ten 6-star Battle Drummers, the max medal buff of transcend units in Time Shop increases from 1,000% to 1,270%).",
 			"multiplier": 0.5,
 			"requirement": 2250,
 			"amount": 45000
@@ -636,12 +636,12 @@
 		"from": [81, 145, 190, 396],
 		"buffs": [{
 			"name": "God's Blessing",
-			"description": "Even if the Priest is at the Time Shop, 5 times speed buff starts every 10th floor. ( 5-star 1%, 6-star 2.5% )The chance for 5 times speed buff by Priests in the Time Shop cannot exceed 30%. Even when passing 10 floors with elves' Secret Skill (from 9th to 11th), the 5 times speed buff can start.",
+			"description": "Even if the Priest is in the Time Shop, there is a chance for the 5 times speed buff starts every 10th floor (5-star 1%, 6-star 2.5%, Max 30%). Even when passing 10 floors with elves' Secret Skill (from 9th to 11th), there is a chance for the 5 times speed buff to start.",
 			"multiplier": 0.4,
 			"requirement": 12,
 			"amount": 30
 		}],
-		"additional_buffs": []		
+		"additional_buffs": []
 	},
 	"Tinky":{
 		"img": "img/pets/6.png",
@@ -649,7 +649,7 @@
 		"buffs": [],
 		"additional_buffs": [{
 			"name": "Elf's Secret Skill 1",
-			"description": "Even if Fairy is at the Time Shop, chance for Elf’s secret skill to be used increases. (Increases by 1% per 5-star and 2.5% per 6-star. When in the Time Shop, the max Elf’s secret skill enhancement by Fairy is 30%.)",
+			"description": "[Elf's Secret Skill 1] can still activate even if Fairy is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%).",
 			"multiplier": 0.4,
 			"requirement": 12,
 			"amount": 30
@@ -660,14 +660,14 @@
 		"from": [91, 165, 210, 406],
 		"buffs": [{
 			"name": "Elevates the first Stage after the Revival",
-			"description": "Even if Dark Archer is in the Time Shop, revives at the floor corresponding to #% of the current floor. (When in Time Shop, 2.5% bonus per 6-star and 1% per 5-star is applied. However, max revival floor buff cannot exceed 60%.)",
+			"description": "[Elevates the first stage after revival] can still activate even if Dark Archer is in the Time Shop (5-star 1%, 6-star 2.5%%, Max 60%).",
 			"multiplier": 0.4,
 			"requirement": 24,
 			"amount": 60
 		}],
 		"additional_buffs":[{
 			"name": "Undead Secret Skill",
-			"description": "Increases chance of Undead’s secret skill. (Increased by 1% per 6-star for a maximum of 30%, and is applied even when in Time Shop.)",
+			"description": "Increases chance of [Undead’s secret skill] even if Dark Archer is in the Time Shop. (6-star 1%, Max 30%).",
 			"multiplier": 0.0,
 			"requirement": 30,
 			"amount": 30
@@ -678,7 +678,7 @@
 		"from": [1, 5, 30, 316],
 		"buffs": [],
 		"additional_buffs": []
-	},	
+	},
 	"Joe": {
 		"img": "img/pets/2.png",
 		"from": [6, 10, 40, 321],
