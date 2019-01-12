@@ -32,6 +32,11 @@
 
     <script type="text/javascript" src="{{ url_for('static', filename='js/sortable.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/idb.js') }}"></script>
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/lodash.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/require.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+
 {% endblock %}
 
 {% block navbar %}
@@ -101,8 +106,14 @@
                 });
 
                 $("#export-button").on("click", function (e) {
-                    var db = new Dexie('endless-farming-db');
-                    window.location.reload()
+                    exportToJsonString(function(err, jsonString) {
+                        console.log("HELLO!");
+                        if (err){
+                            console.log(err);
+                        } else {
+                            console.log(jsonString);
+                        }
+                    });
                 });
             });
         }));
