@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 
-{% block head %}
-    {{ super() }}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/units.js') }}"></script>
-{% endblock %}
 {% block app_content %}
     <div class="row super-row">
         <div class="col-sm-12 col-centered">
@@ -20,12 +16,12 @@
                                 <div class="row centered-row">
                                     <div class="col-6 padding-sm">
                                         <a href="{{unit['img'].replace('img', 'https://www.endlessfrontierdata.com').replace('.png', '')}}">
-                                            <img id="{{key_id}}-image" src="../static/{{unit['img']}}" data-toggle="tooltip" data-placement="top" title="{{key}}">
+                                            <img id="{{key_id}}-image" class="unit-image" src="../static/{{unit['img']}}" data-toggle="tooltip" data-placement="top" title="{{key}}">
                                         </a>
                                     </div>
                                     <div class="col-6 padding-sm">
                                         <a href="{{unit['img'].replace('img', 'https://www.endlessfrontierdata.com').replace('.png', '')}}">
-                                            <img id="{{key_id}}-image" src="../static/{{unit['img_sr']}}" data-toggle="tooltip" data-placement="top" title="Senior {{key}}">
+                                            <img id="{{key_id}}-image" class="unit-image" src="../static/{{unit['img_sr']}}" data-toggle="tooltip" data-placement="top" title="Senior {{key}}">
                                         </a>
                                     </div>
                                 </div>
@@ -39,6 +35,10 @@
                                 </div>
                             </div>
                             <div class="col-3 padding-sm">
+                                <span class="pet-modal" data-toggle="modal" data-target="#{{unit['pet'].replace(' ', '_')}}-modal">
+                                    <img id="{{unit['pet'].replace(' ', '_')}}-image" class='pet-image' src="../static/{{pets[unit['pet']]['img']}}" data-pet="{{unit['pet'].replace(' ', '_')}}" data-unit="{{key_id}}" data-toggle="tooltip" data-placement="top" title="{{unit['pet']}}">
+                                </span>
+                                {% include '_pet_modal.html' %}
                             </div>
                         </div>
                         {% for i in range(max_buff) %}
@@ -84,15 +84,15 @@
             {% endfor %}
         </div>
     </div>
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-</div>
 {% endblock %}
 
 {% block scripts %}
     {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/units.js') }}"></script>
     <script type="text/javascript">
     // IIFE - Immediately Invoked Function Expression
     (function(yourcode) {
+
         yourcode(window.jQuery, window.indexedDB, window, document);
 
     }(function($, indexedDB, window, document) {

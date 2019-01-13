@@ -48,6 +48,12 @@
                                     <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="form-control pet-input" type="number" min="0" value="0"/>
                             </div>
                         </div>
+                        <div class="row centered-row padding-sm">
+                            <div class="col-3 col-kl">{{(ceil(pet["from"][0]/5)*2)|int}}</div>
+                            <div class="col-3 col-kl">{{(ceil(pet["from"][1]/5)*2)|int}}</div>
+                            {% if(pet["from"][2]) %} <div class="col-3 col-kl">{{(ceil(pet["from"][2]/5)*2)|int}}</div> {% endif %}
+                            {% if(pet["from"][3]) %} <div class="col-3 col-kl">{{(ceil(pet["from"][3]/5)*2)|int}}</div> {% endif %}
+                        </div>
                     </div>
                 {%if (loop.index-1) % 6 == 5 %} </div>  {% endif %}
             {% endfor %}
@@ -69,7 +75,7 @@
                 on_pet_input_change($(this));
             });
             $(".pet-input").bind('keyup mouseup', function () {
-                var request = idb.open('endless-farming-db', 1);
+                var request = idb.open('endless-farming-db');
                 request.then(function(db){
                     var tx = db.transaction('pets', 'readwrite');
                     var store = tx.objectStore('pets');
@@ -80,7 +86,7 @@
                     var putRequest = store.put(item);
                     return tx.complete;
                 }.bind(this)).then(function() {
-                    val = idb.open('endless-farming-db', 1).then(function(db){
+                    val = idb.open('endless-farming-db').then(function(db){
                         var tx = db.transaction('pets', 'readwrite');
                         var store = tx.objectStore('pets');
                         return store.get($(this).data("pet"));
@@ -96,6 +102,23 @@
                 var $input = $("#"+$(this).data("pet")+"-fragments");
                 $input.val($checkbox.attr("value"));
                 $input.keyup();
+            });
+
+            request = idb.open('endless-farming-db');
+            request.then(function(db){
+                var tx = db.transaction('player', 'readwrite');
+                var store = tx.objectStore('player');
+                var KL = store.get("KL");
+                KL.then(function(val){
+                    if (val !== undefined){
+                        $(".col-kl").each(function(){
+                            var $col = $(this);
+                            if(val["value"]>=parseFloat($col.text())){
+                                $col.css("color", "#1ca51c");
+                            }
+                        });
+                    }
+                });
             });          
         });
     }));

@@ -66,7 +66,7 @@
     }
 
     function on_pet_input_change($pet_input){
-        idb.open('endless-farming-db', 1).then(function(db){
+        idb.open('endless-farming-db').then(function(db){
             var tx = db.transaction('pets', 'readwrite');
             var store = tx.objectStore('pets');
             return store.get($pet_input.data("pet"));

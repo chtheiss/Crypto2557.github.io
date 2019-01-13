@@ -35,7 +35,7 @@
         $(function() {
             $(".requirement").each(function(){
                 $this = $(this);
-                idb.open('endless-farming-db', 1).then(function(db){
+                idb.open('endless-farming-db').then(function(db){
                     var tx = db.transaction('units', 'readwrite');
                     var store = tx.objectStore('units');
                     return store.get(this.data("unit").replace(" ", "_"));

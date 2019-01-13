@@ -8,15 +8,19 @@ from flask import (render_template, flash, redirect, url_for,
 from app.core import bp
 
 @bp.route('/', methods=['GET', 'POST'])
-def index():   
-    return render_template('index.html', title='Home')
+def index():
+    pet_priority_url = os.path.join(current_app.root_path, "static", "pet_priority.json")
+    pet_priority = json.load(open(pet_priority_url))
+    pets_url = os.path.join(current_app.root_path, "static", "pets.json")
+    pets = json.load(open(pets_url))
+    return render_template('index.html', title='Home', pet_priority=pet_priority, pets=pets)
 
 @bp.route('/pets/', methods=['GET', 'POST'])
 def pets():
     pets_url = os.path.join(current_app.root_path, "static", "pets.json")
     pets = json.load(open(pets_url))
     pets_ordered = json.loads(json.dumps(dict([(pet, pets[pet]) for pet in sorted(pets, key=lambda d: pets[d]["from"][0])])))
-    return render_template('pets.html', title='Pets', pets=pets_ordered)
+    return render_template('pets.html', title='Pets', pets=pets_ordered, ceil=np.ceil)
 
 @bp.route('/units/', methods=['GET', 'POST'])
 def units():
@@ -53,3 +57,7 @@ def get_unit(unitid):
     units_url = os.path.join(current_app.root_path, "static", "units.json")
     units = json.load(open(units_url))
     return jsonify(unit=units[unitid.replace("_", " ")])
+
+@bp.route('/meta_progression', methods=['GET', 'POST'])
+def meta_progression():   
+    return render_template('meta_progression.html')
