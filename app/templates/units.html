@@ -112,7 +112,7 @@
             $(".unit-input").bind('keyup mouseup', function () {
                 $this = $(this);
                 update_all_progress_bars_of_input($this);
-                idb.open('endless-farming-db', 1).then(function(db){
+                idb.open('endless-farming-db').then(function(db){
                     var tx = db.transaction('units', 'readwrite');
                     var store = tx.objectStore('units');
                     unit_values = get_unit_input_values($this);

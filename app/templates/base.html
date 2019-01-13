@@ -50,7 +50,7 @@
     </li>
     <li class="nav-item">
         <button id="first-visit-button" data-toggle="modal" data-target="#stats-modal" data-welcome-text="Welcome to Endless Farming. If you want to use this application to its full potential please insert your knightage level, the spirit highland tickets available to you and how many times a day you buy additional tickets. You can later change it at any time by clicking the 'My Stats' button in the top right corner of the screen." style="display:none"></button>
-        <button id="stats-button" type="button" class="btn btn-dark" data-toggle="modal" data-target="#stats-modal" data-welcome-text="Hallo">My Stats</button>
+        <button id="stats-button" type="button" class="btn btn-dark" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
             {% include '_first_visit_modal.html' %}
     </li>
   </ul>
@@ -174,6 +174,8 @@
                         var tx = db.transaction('player', 'readwrite');
                         var store = tx.objectStore('player');
                         var KL = store.put({name: this.attr("id").replace("-number", ""), value: this.val()});
+                        updateStages(this.val());
+                        calculatePetFragmentsToFarm();
                     }.bind($this));
                 });
 
@@ -184,7 +186,6 @@
 
                 $('#stats-modal').on('show.bs.modal', function (event) {
                     var button = $(event.relatedTarget);
-                    console.log(button); 
                     var text = button.data('welcome-text');
                     var modal = $(this);
                     modal.find('#welcome-text').children().first().text(text);

@@ -98,6 +98,7 @@
                     }.bind(this)).then(function(val){
                         $(this).attr("value", val["fragments"]);
                         change_stars(val);
+                        calculatePetFragmentsToFarm();
                     });
                 }.bind(this));
             });
@@ -116,13 +117,7 @@
                 var KL = store.get("KL");
                 KL.then(function(val){
                     if (val !== undefined){
-                        $(".col-kl").each(function(){
-                            var $col = $(this);
-                            if(val["value"]>=parseFloat($col.text())){
-                                $col.removeClass('col-red');
-                                $col.addClass('col-green');
-                            }
-                        });
+                        updateStages(val["value"]);
                     }
                 });
             });
@@ -156,45 +151,9 @@
                     $(event.item).attr("data-id", event.newIndex);
                     $(event.item).data("id", event.newIndex);
                     
-                    $("#dragable-row").children().each(function(){
-                        request = idb.open('endless-farming-db');
-                        col = $(this);
-                        val = {name: col.attr("id"), 
-                                fragments: parseInt(col.find(".pet-input").val()),
-                                priority: parseInt(col.attr("data-id"))}
-                        request.then(function(db){
-                            var tx = db.transaction('pets', 'readwrite');
-                            var store = tx.objectStore('pets');
-                            store.put(this);
-                        }.bind(val)); 
-                    });
+                    updatePriorities()
                     calculatePetFragmentsToFarm()     
                 },
-            });
-            
-            request = idb.open('endless-farming-db');
-            request.then(function(db){
-                var tx = db.transaction('pets', 'readwrite');
-                var store = tx.objectStore('pets');
-                var items = store.getAll();
-                items.then(function(items){
-                    for(item of items){
-                        $("#"+item["name"]).attr("data-id", item["priority"]);
-                        $("#"+item["name"]).data("id", item["priority"]);
-                    }
-                    var listitems = $("#dragable-row").children('.block').get();
-                    listitems.sort(function(a, b) {
-                        var compA = parseFloat($(a).data('id'));
-                        var compB = parseFloat($(b).data('id'));
-                        return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
-                    });
-                    var $superrow = $('#dragable-row');
-                    $.each(listitems, function(idx, itm) {
-                        $superrow.append(itm);
-                    });
-                    $("#dragable-row").removeClass("row-hidden");
-                    calculatePetFragmentsToFarm()
-                });                
             });
 
             $("#add-all-btn").click(function(){ 
@@ -211,9 +170,17 @@
             $("#reset-btn").click(function(){ 
                 getPriority().then(function(data){
                     var priority = data["priority"];
-                    console.log(typeof(priority));
+                    for (p in priority){
+                        col = $("#"+priority[""+p]);
+                        col.attr("data-id", p-1);
+                        col.data("id", p-1);
+                    }
+                    updatePriorities()
+                    sortPetsByPriority()
                 });
             });
+
+            sortPetsByPriority()
         });
     }));
     </script>
