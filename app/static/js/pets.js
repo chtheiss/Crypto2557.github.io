@@ -77,3 +77,40 @@
             change_stars(val);
         }.bind($pet_input));
     }
+
+    function calculatePetFragmentsToFarm(){
+        var KL = parseInt($("#KL-number").val());
+        var tickets = parseInt($("#tickets-number").val()) + parseInt(5*$("#refills-number").val());
+        console.log(KL);
+        console.log(tickets);
+        $("#dragable-row").children().each(function(){
+            var col = $(this);
+            var possible_stages = [];
+            var fragments = 0;
+            col.find('.col-kl.col-green').each(function(){
+                possible_stages.push(parseInt($(this).text()));
+            });
+            for (stage of possible_stages){
+                if (tickets >= 3){
+                    fragments += 3;
+                    tickets -= 3; 
+                }
+            }
+            frag_text = col.find("p");
+            frag_text.text(fragments);
+            if (fragments > 0){
+                frag_text.removeClass('zero-fragments');
+            } else {
+                frag_text.addClass('zero-fragments');
+            }
+        });
+    }
+
+    function getPriority(petid) {
+        return $.ajax({
+            type: "GET",
+            url: Flask.url_for("core.get_priority"),
+            dataType: "json",
+            async: true
+        });
+}

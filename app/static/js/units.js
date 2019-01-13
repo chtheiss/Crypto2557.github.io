@@ -137,7 +137,7 @@ async function updateBuffs($petImage){
     var tx = await db.transaction('pets', 'readwrite');
     var store = tx.objectStore('pets');
     var items = await store.getAll();
-    var pet = await store.get( $petImage.data("pet"));
+    var pet = await store.get($petImage.data("pet"));
     if(pet != undefined && pet["fragments"]>=330){
     	$petImage.addClass("five-star-pet");
     	data = await getPet($petImage.data("pet")).then(async function(data){

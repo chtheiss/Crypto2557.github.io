@@ -1,4 +1,4 @@
-{ 
+{
   "Paladin":{
     "pet": "Combat",
     "img": "img/units/198.png",
@@ -6,7 +6,7 @@
     "rotation": 13,
     "buffs": [{
             "name": "Spirit Awakening 2",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening 2] is cumulative, but the maximum level-up for units cannot increase more than +50. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
             "multiplier": 0.5,
             "requirement": 5,
             "amount": 50,
@@ -14,7 +14,7 @@
         },
         {
             "name": "Offline Limit Break",
-            "description": "Increase the maximum stage of offline march by 0.2% for every 5-star and 0.4% for every 6-star unit. (Offline Limit Break is applied even when units are in the Time Shop, but cannot exceed the maximum of 4%)",
+            "description": "Increase the maximum stage of offline march even if Paladin is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 4,
@@ -28,7 +28,7 @@
     "rotation": 13,
     "buffs": [{
             "name": "Elf's Secret Skill of Space-Time",
-            "description": "For every 100 stages, there is a certain chance to skip 20 stages. (3% chance for every 5-star unit and 5% for every 6-star unit which are only applied when they are in the team.)",
+            "description": "For every 100 stages, there is a chance to skip 20 stages. (5-star 3%, 6-star 5%, only applied when they are in the team).",
             "multiplier": 0.6,
             "requirement": 20,
             "amount": 100
@@ -41,7 +41,7 @@
     "rotation": 13,
     "buffs": [{
             "name": "Spirit Awakening 2",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening 2] is cumulative, but the maximum level-up for units cannot increase more than +50. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases for all units even if Skeleton Master is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
             "multiplier": 0.5,
             "requirement": 5,
             "amount": 50,
@@ -49,7 +49,7 @@
         },
         {
             "name": "Offline Limit Break",
-            "description": "Increase the maximum stage of offline march by 0.2% for every 5-star and 0.4% for every 6-star unit. (Offline Limit Break is applied even when units are in the Time Shop, but cannot exceed the maximum of 4%)",
+            "description": "Increase the maximum stage of offline march even if Skeleton Master is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 4,
@@ -63,19 +63,19 @@
     "rotation": 13,
     "buffs": [{
             "name": "Increase Auto-skill Efficiency",
-            "description": "Reduce the cooldown of skills when using Auto-skill. Duration is reduced by 1% for every 5-star unit and 2% for every 6 star unit. Cooldown reduction is applied even when they are in the Time Shop, but cannot exceed the maximum of 20%",
+            "description": "There is a chance to reduce the cooldown of skills when using auto-skill. Applies even if Battle Hornist is in the Time Shop (5-star 1%, 6-star 2%, Max 20%).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 20
         },
         {
             "name": "Mental Stimulation",
-            "description": "When active skills are used, there is a certain chancec that the cooldown is reset. Chance is increased by 0.25% for every 5-star unit and 0.5% for every 6-star unit, but cannot exceed a maximum of 5%. (Only applied in scenarios.)",
+            "description": "When active skills are used, there is a certain chance that the cooldown is reset (5-star 0.25%, 6-star 0.5%, Max 5%, Only applied in scenarios).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 5
         }]
-  },  
+  },
   "Crimson Hawk Rider":{
     "pet": "Little Hawk",
     "img": "img/units/190.png",
@@ -83,7 +83,7 @@
     "rotation": 12,
     "buffs": [{
             "name": "Surprise Attack",
-            "description": "Each Crimson Hawk Rider on the team increases chance of flying fast towards enemy crystal, with 3% chance for each 5 star and 5% chance for each 6 star Crimson Hawk Rider. Probability of thrust can not exceed a maximum of 30%.",
+            "description": "Each Crimson Hawk Rider on the team increases chance of flying fast towards enemy crystal (5-star 3%, 6-star 5%, Max 30%).",
             "multiplier": 0.6,
             "requirement": 6,
             "amount": 30
@@ -96,10 +96,10 @@
     "rotation": 12,
     "buffs": [{
             "name": "Airship VIP",
-            "description": "Airship fuel purchase costs are reduced by 1% for each 5 star Astral Captain and 2% for each 6 star Astral Captain. Applied even from timeshop and cannot exceed 20%.",
+            "description": "Airship fuel purchase costs are reduced even if Astral Captain is in the Time Shop (5-star 1%, 6-star 2%, Max 20%).",
             "multiplier": 0.5,
             "requirement": 10,
-            "amount": 20 
+            "amount": 20
         }]
   },
     "Shadow Knight":{
@@ -109,7 +109,7 @@
     "rotation": 12,
     "buffs": [{
             "name": "Revival Team for Spirit Rest Runs",
-            "description": "When included in team, recieve 30% additional medals during revival.",
+            "description": "When included in team, receive 30% additional medals during revival.",
             "multiplier": 0.0,
             "requirement": 12,
             "amount": 12
@@ -122,7 +122,7 @@
     "rotation": 12,
     "buffs": [{
             "name": "Enhance active skill",
-            "description": "Increases efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword by 40 stages(not applied from time shop).",
+            "description": "Increases efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword (not applied from time shop) (5-star 20 stages, 6-star 40 stages).",
             "multiplier": 0.5,
             "requirement": 12,
             "amount": 480
@@ -135,7 +135,7 @@
     "rotation": 11,
     "buffs": [{
             "name": "Human Token",
-            "description": "Increases the human tribe friendliness that is gained from human unit seals by 5% for each 5-star Musketress, and 10% for each 6-star Musketress. It is applied even when Musketress is in Time Shop and does not exceed 100%.",
+            "description": "Increases the Human tribe friendliness that is gained from Human unit seals even if Musketress is in the Time Shop (5-star 5%, 6-star 10%, Max 100%).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100
@@ -148,7 +148,7 @@
     "rotation": 11,
     "buffs": [{
             "name": "Elf Token",
-            "description": "Increases the elf tribe friendliness that is gained from elf unit seals by 5% for each 5-star Elf Sage, and 10% for each 6-star Elf Sage. It is applied even when Elf Sage is in Time Shop and does not exceed 100%.",
+            "description": "Increases the Elf tribe friendliness that is gained from Elf unit seals even if Elf Sage is in the Time Shop (5-star 5%, 6-star 10%, Max 100%).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100
@@ -161,14 +161,14 @@
     "rotation": 11,
     "buffs": [{
             "name": "Undead Token",
-            "description": "Increases the undead tribe friendliness that is gained from undead unit seals by 5% for each 5-star Crow Knight, and 10% for each 6-star Crow Knight. It is applied even when Crow Knight is in Time Shop and does not exceed 100%.",
+            "description": "Increases the Undead tribe friendliness that is gained from Undead unit seals even if Crow Knight is in the Time Shop (5-star 5%, 6-star 10%, Max 100%).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100
         },
         {
             "name": "Darkness Resistance",
-            "description": "Increases darkness resistance by 100. ( It is applied even when Crow Knight is in Time Shop. Darkness resistance by Crow Knight does not exceed 2,000. )",
+            "description": "Increases darkness resistance even if Crow Knight is in the Time Shop (5-star 50, 6-star 100, Max 2000).",
             "multiplier": 0.5,
             "requirement": 20,
             "amount": 2000
@@ -181,7 +181,7 @@
     "rotation": 11,
     "buffs": [{
             "name": "Orc Token",
-            "description": "Increases the orc tribe friendliness that is gained from orc unit seals by 5% for each 5-star Rangda, and 10% for each 6-star Rangda. It is applied even when Rangda is in Time Shop and does not exceed 100%.",
+            "description": "Increases the Orc tribe friendliness that is gained from Orc unit seals even if Rangda is in the Time Shop (5-star 5%, 6-star 10%, Max 100%).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100
@@ -194,14 +194,14 @@
     "rotation": 10,
     "buffs": [{
             "name": "Tribe Friendliness",
-            "description": "Increases the Tribe Friendliness for Human by 10 points for each 5-star Winged Knight, and 20 points for each 6-star Winged Knight. It is applied even when Winged Knight is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)",
+            "description": "Increases the Tribe Friendliness for Human even if Winged Knight is in the Time Shop (5-star 10, 6 star 20, Max 400).",
             "multiplier": 0.5,
             "requirement": 20,
             "amount": 400
         },
         {
             "name": "Wings of Zephyrus",
-            "description": "Increases the effieciency of boosting game speed(x2,x3,x5) by 0.05 for each 5-star Winged Knight(0.1 for 6-star). This would be activated by Winged Knight in your current team, NOT in Time Shop. For example, if you have four 5-star Winged Knights and three 6-star Winged Knights in your current team, then the game speed(x2,x3,x5) will be x2.5, x3.5 and x.5.5, respectively.",
+            "description": "Increases the effieciency of boosting game speed when Winged Knight is included in your team (5-star 0.05, 6-star 0.1). For example, if you have four 5-star Winged Knights and three 6-star Winged Knights in your current team, then the game speed(x2,x3,x5) will be x2.5, x3.5 and x5.5, respectively.",
             "multiplier": 0.5,
             "requirement": 12,
             "amount": 1.2
@@ -214,7 +214,7 @@
     "rotation": 10,
     "buffs": [{
             "name": "Tribe Friendliness",
-            "description": "Increases the Tribe Friendliness for Elf by 10 points for each 5-star Windwalker, and 20 points for each 6-star Windwalker. It is applied even when Windwalker is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)",
+            "description": "Increases the Tribe Friendliness for Elf even if Windwalker is in the Time Shop (5-star 10, 6 star 20, Max 400).",
             "multiplier": 0.5,
             "requirement": 20,
             "amount": 400
@@ -227,7 +227,7 @@
     "rotation": 10,
     "buffs": [{
             "name": "Tribe Friendliness",
-            "description": "Increases the Tribe Friendliness for Undead by 10 points for each 5-star Abyss Mage, and 20 points for each 6-star Abyss Mage. It is applied even when Abyss Mage is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)",
+            "description": "Increases the Tribe Friendliness for Undead even if Abyss Mage is in the Time Shop (5-star 10, 6 star 20, Max 400).",
             "multiplier": 0.5,
             "requirement": 20,
             "amount": 400
@@ -240,7 +240,7 @@
     "rotation": 10,
     "buffs": [{
             "name": "Tribe Friendliness",
-            "description": "Increases the Tribe Friendliness for Orc by 10 points for each 5-star Siren, and 20 points for each 6-star Siren. It is applied even when Siren is in Time Shop and does not exceed 400 points. (The medal buff increases as much as the Tribe Friendliness for the Knightage Hero's tribe that you revive from.)",
+            "description": "Increases the Tribe Friendliness for Orc even if Octopa is in the Time Shop (5-star 10, 6 star 20, Max 400).",
             "multiplier": 0.5,
             "requirement": 20,
             "amount": 400
@@ -253,21 +253,21 @@
     "rotation": 9,
     "buffs": [{
             "name": "Dimensional Binding (Human and Orc)",
-            "description": "Increase the attack power, HP, and defense power of Human and Orc unit in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum of 150% and it’s applied cumulatively even when in Time Shop.)",
+            "description": "Increase the attack power, HP, and defense power of Human and Orc units in the Outland battle even if Cleric is in the Time Shop (5-star 5%, 6-star 10%, Max 150%).",
             "multiplier": 0.5,
             "requirement": 15,
             "amount": 150
         },
         {
             "name": "Tribe Fortification (Human and Orc)",
-            "description": " Increases the Human unit’s ability (attack power/defense power/HP) by 20 levels, and Orc unit’s ability by 10 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "description": "Increases the Human unit’s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Orc unit’s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
             "multiplier": 0.5,
             "requirement": 12,
             "amount": 240
         },
         {
             "name": "Innervate 2",
-            "description": "Reduces Outland Battle skill cool time by 3% (Innervate 2 is cumulative, but cannot exceed max 40%. Applied even when the unit is in the Time Shop.)",
+            "description": "Reduces Outland Battle skill cool time even if Cleric is in the Time Shop (5-star 1%, 6-star 3%, Max 40%).",
             "multiplier": 0.333333,
             "requirement": 14,
             "amount": 40
@@ -280,21 +280,21 @@
     "rotation": 9,
     "buffs": [{
             "name": "Dimensional Binding 2 (Elf and Human)",
-            "description": "Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
+            "description": "Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle even if Elementalist is in the Time Shop (5-star 5%, 6-star 10%, Max 150%).",
             "multiplier": 0.5,
             "requirement": 15,
             "amount": 150
         },
         {
             "name": "Tribe Fortification (Elf and Human)",
-            "description": "Increases the Elf unit’s ability (attack power/defense power/HP) by 15 levels, and Human unit’s ability by 8 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "description": "Increases the Elf unit’s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Human unit’s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
             "multiplier": 0.4666666,
             "requirement": 12,
             "amount": 240
         },
         {
             "name": "Nature Resistance",
-            "description": "Increase Nature resistance by 100. (Applied even when in Time Shop, and applied cumulatively. However, Nature Resistance from [Elementalist] cannot exceed maximum 2000.)",
+            "description": "Increases nature resistance even if Elementalist is in the Time Shop (5-star 50, 6-star 100, Max 2000).",
             "multiplier": 0.5,
             "requirement": 20,
             "amount": 2000
@@ -307,14 +307,14 @@
     "rotation": 9,
     "buffs": [{
             "name": "Dimensional Binding 1 (Undead and Elf)",
-            "description": "Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.) ",
+            "description": "Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle even if Dark Elf is in the Time Shop (5-star 5%, 6-star 10%, Max 150%).",
             "multiplier": 0.5,
             "requirement": 15,
             "amount": 150
         },
         {
             "name": "Tribe Fortification (Undead and Elf)",
-            "description": "Increases the Undead unit’s ability (attack power/defense power/HP) by 20 levels, and Elf unit’s ability by 10 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "description": "Increases the Undead unit’s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Elf unit’s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
             "multiplier": 0.5,
             "requirement": 12,
             "amount": 240
@@ -327,21 +327,21 @@
     "rotation": 9,
     "buffs": [{
             "name": "Dimensional Binding 2 (Orc and Undead)",
-            "description": "Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
+            "description": "Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle even if Elementalist is in the Time Shop (5-star 5%, 6-star 10%, Max 150%).",
             "multiplier": 0.5,
             "requirement": 15,
             "amount": 150
         },
         {
             "name": "Tribe Fortification (Orc and Undead)",
-            "description": "Increases the Orc unit’s ability (attack power/defense power/HP) by 15 levels, and Undead unit’s ability by 8 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "description": "Increases the Orc unit’s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Undead unit’s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
             "multiplier": 0.4666666,
             "requirement": 12,
             "amount": 250
         },
         {
             "name": "Enhance Active Skill",
-            "description": "Increases the efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel, and Skyward Sword by 40 stages. (Applied cumulatively, and not applied when in Time Shop.)",
+            "description": "Increases efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword (not applied from time shop) (5-star 20 stages, 6-star 40 stages)",
             "multiplier": 0.5,
             "requirement": 12,
             "amount": 480
@@ -354,7 +354,7 @@
     "rotation": 8,
     "buffs": [{
             "name": "Fire Resistance",
-            "description": "Increases Fire Resistance by 100. (Also applied in Time Shop and can be applied repeatedly. However, Fire Resistance by [Flame Spirit] cannot exceed 2,000.)",
+            "description": "Increases fire resistance even if Flame Spirit is in the Time Shop (5-star 50, 6-star 100, Max 2000).",
             "multiplier": 0.5,
             "requirement": 20,
             "amount": 2000
@@ -367,14 +367,14 @@
     "rotation": 8,
     "buffs": [{
             "name": "Elf's Secret Skill 2",
-            "description": "When included in team, elf's secret skill chance increases by 5%. (However, the increase by Hippogriffs cannot exceed 30%.)",
+            "description": "Increases the chance of elf's secret skill (not applied from Time Shop)(5-star 2%, 6-star 5%, Max 30%).",
             "multiplier": 0.4,
             "requirement": 6,
             "amount": 30
         },
         {
             "name": "Legend of Ancient Forest",
-            "description": "When elf's secret skill is cast, this has a chance to pass 2 stages at a time. (This chance increases by 2% for each 5-star and 5% for each 6-star, but this only applies when they are included in the team. (Not applied when in Time Shop and cannot exceed 50%.)",
+            "description": "When elf's secret skill is cast, this has a chance to pass 2 stages at a time (not applied from Time Shop)(5-star 2%, 6-star 5%, Max 50%).",
             "multiplier": 0.4,
             "requirement": 10,
             "amount": 50
@@ -387,7 +387,7 @@
     "rotation": 8,
     "buffs": [{
             "name": "Limit Break of Spirit Rest",
-            "description": "Increases Spirit Rest efficiency by 0.7%. (Also applied even if unit is in Time Shop and can be increased by up to 10%.)",
+            "description": "Increases Spirit Rest efficiency even if Dark Spirit is in the Time Shop (5-star 0.3%, 6-star 0.7%, Max 10%).",
             "multiplier": 0.42857,
             "requirement": 14.28,
             "amount": 10,
@@ -401,7 +401,7 @@
     "rotation": 8,
     "buffs": [{
             "name": "Limit Break of Spirit Rest",
-            "description": "Increases Spirit Rest efficiency by 0.7%. (Also applied even if unit is in Time Shop and can be increased by up to 10%.)",
+            "description": "Increases Spirit Rest efficiency even if Blade Master is in the Time Shop (5-star 0.3%, 6-star 0.7%, Max 10%).",
             "multiplier": 0.42857,
             "requirement": 14.28,
             "amount": 10,
@@ -415,7 +415,7 @@
     "rotation": 7,
     "buffs": [{
             "name": "Innervate",
-            "description": "Reduces raid skill cool-time by 3%. (Innervate can be stacked, but cannot exceed 40%. Also applies when units are in Time Shop.)",
+            "description": "Reduces raid skill cool-time even if Valkyrie is in the Time Shop (5-star 1%, 6-star 3%, Max 40%).",
             "multiplier": 0.333333,
             "requirement": 14,
             "amount": 40,
@@ -429,7 +429,7 @@
     "rotation": 7,
     "buffs": [{
             "name": "Innervate",
-            "description": "Reduces raid skill cool-time by 3%. (Innervate can be stacked, but cannot exceed 40%. Also applies when units are in Time Shop.)",
+            "description": "Reduces raid skill cool-time even if Sword Dancer is in the Time Shop (5-star 1%, 6-star 3%, Max 40%).",
             "multiplier": 0.333333,
             "requirement": 14,
             "amount": 40,
@@ -443,7 +443,7 @@
     "rotation": 7,
     "buffs": [{
             "name": "Innervate",
-            "description": "Reduces raid skill cool-time by 3%. (Innervate can be stacked, but cannot exceed 40%. Also applies when units are in Time Shop.)",
+            "description": "Reduces raid skill cool-time even if Incubus is in the Time Shop (5-star 1%, 6-star 3%, Max 40%).",
             "multiplier": 0.333333,
             "requirement": 14,
             "amount": 40,
@@ -457,7 +457,7 @@
     "rotation": 7,
     "buffs": [{
             "name": "Innervate",
-            "description": "Reduces raid skill cool-time by 3%. (Innervate can be stacked, but cannot exceed 40%. Also applies when units are in Time Shop.)",
+            "description": "Reduces raid skill cool-time even if Ice Spirit is in the Time Shop (5-star 1%, 6-star 3%, Max 40%).",
             "multiplier": 0.333333,
             "requirement": 14,
             "amount": 40,
@@ -471,7 +471,7 @@
     "rotation": 6,
     "buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units even if Steam Punk is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels).",
             "multiplier": 0.4,
             "requirement": 20,
             "amount": 100,
@@ -485,7 +485,7 @@
     "rotation": 6,
     "buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units even if Sylphid is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels).",
             "multiplier": 0.4,
             "requirement": 20,
             "amount": 100,
@@ -499,7 +499,7 @@
     "rotation": 6,
     "buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units even if Medusa is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels).",
             "multiplier": 0.4,
             "requirement": 20,
             "amount": 100,
@@ -513,7 +513,7 @@
     "rotation": 6,
     "buffs": [{
             "name": "Inner Passion",
-            "description": "Increases all abilities (attack/defense/HP) of units by 5 levels. ([Inner passion] can only be used in stages. [Inner passion] is accrued when applied, but the unit abilities cannot increase to more than +100 level. This is activated even when units are in the Time Shop.)",
+            "description": "Increases all abilities (attack/defense/HP) of units even if Naga is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels).",
             "multiplier": 0.4,
             "requirement": 20,
             "amount": 100,
@@ -527,7 +527,7 @@
     "rotation": 5,
     "buffs": [{
             "name": "Spirit Awakening",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases for all units even if Pilot is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100,
@@ -541,7 +541,7 @@
     "rotation": 5,
     "buffs": [{
             "name": "Spirit Awakening",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases for all units even if Alchemist is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100,
@@ -555,7 +555,7 @@
     "rotation": 5,
     "buffs": [{
             "name": "Spirit Awakening",
-            "description":  "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description":  "Maximum level-up increases for all units even if Cora is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100,
@@ -569,7 +569,7 @@
     "rotation": 5,
     "buffs": [{
             "name": "Spirit Awakening",
-            "description": "Maximum level-up increases by 10 for all units. ( [Spirit Awakening] is cumulative, but the maximum level-up for units cannot increase more than +100. Can also be activated in the Time Shop. )",
+            "description": "Maximum level-up increases for all units even if Wyvern Rider is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels).",
             "multiplier": 0.5,
             "requirement": 10,
             "amount": 100,
@@ -702,7 +702,7 @@
     "rotation": 2,
     "buffs": [{
             "name": "Revival Team for Spirit Rest Runs",
-            "description": "Increase medals earned at the time of revival by 10%.",
+            "description": "Increase medals earned at the time of revival (not applied from Time Shop)(5-star 5%, 6-star 10%).",
             "multiplier": 0.0,
             "requirement": 12,
             "amount": 480
@@ -715,7 +715,7 @@
     "rotation": 1,
     "buffs": [{
             "name": "God's Blessing",
-            "description": "With 5% possibilities, 5 times speedup for 2 minutes on every 10th floor (activation possibility is applied based on accumulation)",
+            "description": "There is a chance for a 5 times speedup for 2 minutes on every 10th floor (not applied from Time Shop)(5-star 2%, 6-star 5%)",
             "multiplier": 0.0,
             "requirement": 5,
             "amount": 25
@@ -735,7 +735,7 @@
     "rotation": 1,
     "buffs": [{
             "name": "Elevates the first Stage after the Revival",
-            "description": "When Reviving, start at 5% of the previously reached level. (applied consecutively).",
+            "description": "When Reviving, start at a percentage of the previously reached level. (not applied from Time Shop)(5-star 2%, 6-star 5%) For Example, if you previously reached staged 100 and you had 2 5-star Dark Archers and 3 6-star Dark Archers included in your team you would revive at stage 19.",
             "multiplier": 0.4,
             "requirement": 12,
             "amount": 60

@@ -5,22 +5,28 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
 {% endblock %}
 {% block app_content %}
-    <div class="row super-row">
-        <div class="col-sm-12 col-centered">
+<div class="row super-row">
+    <div class="col-12 col-centered">
+        <button id="reset-btn" class="btn btn-dark btn-md">Reset Priority</button>
+        <button id="add-all-btn" class="btn btn-dark btn-md">Add All</button>
+    </div>
+    <div id="dragable-row" class="row super-row row-hidden">
             {% for key, pet in pets.items() %}
             {% set key_id=key.replace(" ", "_") %}
-                {%if (loop.index-1) % 6 == 0 %}<div class="row centered-row">{% endif %}
-                    <div class="col-lg-2 col-4 border block padding-0">
+                    <div id="{{key_id}}" data-id="{{loop.index-1}}" class="col-md-2 col-sm-3 col-6 border block padding-sm">
                         <div class="row centered-row">
-                            <div class="col-md-7">
+                            <div class="col-md-5 padding-0">
                                 <img id="{{key_id}}-image" class='unit-image zero-star' src="../static/{{pet['img']}}">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-2 col-fragments padding-0">
+                                <p id="{{key_id}}-farmable-fragments" class="zero-fragments">0</p>
+                            </div>
+                            <div class="col-md-5 padding-0">
                                 <h3>{{ key }}</h3>
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7">
+                            <div class="col-md-6 padding-0">
                                     <fieldset>
                                         <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -44,21 +50,20 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5">
+                            <div class="col-md-5 ml-auto">
                                     <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="form-control pet-input" type="number" min="0" value="0"/>
                             </div>
                         </div>
                         <div class="row centered-row padding-sm">
-                            <div class="col-3 col-kl">{{(ceil(pet["from"][0]/5)*2)|int}}</div>
-                            <div class="col-3 col-kl">{{(ceil(pet["from"][1]/5)*2)|int}}</div>
-                            {% if(pet["from"][2]) %} <div class="col-3 col-kl">{{(ceil(pet["from"][2]/5)*2)|int}}</div> {% endif %}
-                            {% if(pet["from"][3]) %} <div class="col-3 col-kl">{{(ceil(pet["from"][3]/5)*2)|int}}</div> {% endif %}
+                            <div class="col-3 col-kl col-red">{{(ceil(pet["from"][0]/5)*2)|int}}</div>
+                            <div class="col-3 col-kl col-red">{{(ceil(pet["from"][1]/5)*2)|int}}</div>
+                            {% if(pet["from"][2]) %} <div class="col-3 col-kl col-red">{{(ceil(pet["from"][2]/5)*2)|int}}</div> {% endif %}
+                            {% if(pet["from"][3]) %} <div class="col-3 col-kl col-red">{{(ceil(pet["from"][3]/5)*2)|int}}</div> {% endif %}
                         </div>
                     </div>
-                {%if (loop.index-1) % 6 == 5 %} </div>  {% endif %}
             {% endfor %}
-        </div>
     </div>
+</div>
 {% endblock %}
 {% block scripts %}
     {{ super() }}
@@ -114,12 +119,101 @@
                         $(".col-kl").each(function(){
                             var $col = $(this);
                             if(val["value"]>=parseFloat($col.text())){
-                                $col.css("color", "#1ca51c");
+                                $col.removeClass('col-red');
+                                $col.addClass('col-green');
                             }
                         });
                     }
                 });
-            });          
+            });
+
+            row = $("#dragable-row").get()[0];
+            sortable = Sortable.create(row, {
+                cursor: 'move',
+                animation: 150,              
+                onUpdate: function(event) {
+                    change = $("#dragable-row").children().filter(function() {
+                        id = parseInt($(this).attr("data-id"));
+                        if (event.newIndex < event.oldIndex){
+                            return id >= event.newIndex && id <= event.oldIndex;   
+                        } else {
+                            return id >= event.oldIndex && id <= event.newIndex;   
+                        }
+                                    
+                    });
+                    
+                    change.each(function(){
+                        var $col = $(this);
+                        if(event.newIndex < event.oldIndex) {
+                            $col.attr("data-id", parseInt($col.attr("data-id"))+1);
+                            $col.data("id", parseInt($col.attr("id"))+1);
+                        } else {
+                            $col.attr("data-id", parseInt($col.attr("data-id"))-1);
+                            $col.data("id", parseInt($col.attr("id"))-1);
+                        }
+                    });
+
+                    $(event.item).attr("data-id", event.newIndex);
+                    $(event.item).data("id", event.newIndex);
+                    
+                    $("#dragable-row").children().each(function(){
+                        request = idb.open('endless-farming-db');
+                        col = $(this);
+                        val = {name: col.attr("id"), 
+                                fragments: parseInt(col.find(".pet-input").val()),
+                                priority: parseInt(col.attr("data-id"))}
+                        request.then(function(db){
+                            var tx = db.transaction('pets', 'readwrite');
+                            var store = tx.objectStore('pets');
+                            store.put(this);
+                        }.bind(val)); 
+                    });
+                    calculatePetFragmentsToFarm()     
+                },
+            });
+            
+            request = idb.open('endless-farming-db');
+            request.then(function(db){
+                var tx = db.transaction('pets', 'readwrite');
+                var store = tx.objectStore('pets');
+                var items = store.getAll();
+                items.then(function(items){
+                    for(item of items){
+                        $("#"+item["name"]).attr("data-id", item["priority"]);
+                        $("#"+item["name"]).data("id", item["priority"]);
+                    }
+                    var listitems = $("#dragable-row").children('.block').get();
+                    listitems.sort(function(a, b) {
+                        var compA = parseFloat($(a).data('id'));
+                        var compB = parseFloat($(b).data('id'));
+                        return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+                    });
+                    var $superrow = $('#dragable-row');
+                    $.each(listitems, function(idx, itm) {
+                        $superrow.append(itm);
+                    });
+                    $("#dragable-row").removeClass("row-hidden");
+                    calculatePetFragmentsToFarm()
+                });                
+            });
+
+            $("#add-all-btn").click(function(){ 
+                $("#dragable-row").children('.block').each(function(){
+                    var col = $(this);
+                    var frags_to_add = parseInt(col.find(".col-fragments p").text());
+                    var input = col.find(".pet-input");
+                    var current_frags = handle_nan(parseInt(input.val()));
+                    input.val(current_frags+frags_to_add);
+                    input.keyup();
+                });
+            });
+
+            $("#reset-btn").click(function(){ 
+                getPriority().then(function(data){
+                    var priority = data["priority"];
+                    console.log(typeof(priority));
+                });
+            });
         });
     }));
     </script>

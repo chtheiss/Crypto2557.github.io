@@ -73,6 +73,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/idb.js') }}"></script>
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.sortable.min.js') }}"></script>
 
     <script type="text/javascript">
 
@@ -241,10 +242,8 @@
                             }
                         });
                     }
-                    if(!upgradeDb.objectStoreNames.contains('pet_priority_normal_sh')){
-                        var priorityOS = upgradeDb.createObjectStore('pet_priority_normal_sh', {keyPath: 'name', autoIncrement:true});
-                        priorityOS.createIndex('priority', 'priority', {unique: false});
-                    }
+                    var petsOS = upgradeDb.transaction.objectStore('pets');
+                    petsOS.createIndex('priority', 'priority', {unique: false});
             }   
         });
     })();
