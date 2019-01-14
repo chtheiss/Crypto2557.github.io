@@ -174,14 +174,19 @@
                         var tx = db.transaction('player', 'readwrite');
                         var store = tx.objectStore('player');
                         var KL = store.put({name: this.attr("id").replace("-number", ""), value: this.val()});
-                        updateStages(this.val());
+                        if($this.attr("id") == "KL-number"){
+                            updateStages(this.val());
+                        }
                         calculatePetFragmentsToFarm();
                     }.bind($this));
                 });
 
                 $("#refills-number").bind('keyup mouseup', function(){
                     $this = $(this);
-                    $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600][$this.val()]);
+                    function getSum(total, num) {
+                        return total + num;
+                    }
+                    $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600].slice(0, handle_nan(parseInt($this.val()))+1).reduce(getSum));
                 });
 
                 $('#stats-modal').on('show.bs.modal', function (event) {
