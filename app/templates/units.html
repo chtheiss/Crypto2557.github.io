@@ -40,6 +40,8 @@
                                 <span class="pet-modal" data-toggle="modal" data-target="#{{unit['pet'].replace(' ', '_')}}-modal">
                                     <img id="{{unit['pet'].replace(' ', '_')}}-image" class='pet-image' src="../static/{{pets[unit['pet']]['img']}}" data-pet="{{unit['pet'].replace(' ', '_')}}" data-unit="{{key_id}}" data-toggle="tooltip" data-placement="top" title="{{unit['pet']}}">
                                 </span>
+                                {% set pet_name=unit['pet'] %}
+                                {% set pet=pets[unit['pet']] %}
                                 {% include '_pet_modal.html' %}
                             </div>
                         </div>

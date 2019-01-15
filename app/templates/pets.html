@@ -16,7 +16,11 @@
                     <div id="{{key_id}}" data-id="{{loop.index-1}}" class="col-md-2 col-sm-3 col-6 border block padding-sm">
                         <div class="row centered-row">
                             <div class="col-md-5 padding-0">
-                                <img id="{{key_id}}-image" class='unit-image zero-star' src="../static/{{pet['img']}}">
+                                <span class="unit-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
+                                    <img id="{{key_id}}-image" class='unit-image zero-star' src="../static/{{pet['img']}}">
+                                </span>
+                                {% set pet_name=key %}
+                                {% include '_pet_modal.html' %}
                             </div>
                             <div class="col-md-2 col-fragments padding-0">
                                 <p id="{{key_id}}-farmable-fragments" class="zero-fragments">0</p>
