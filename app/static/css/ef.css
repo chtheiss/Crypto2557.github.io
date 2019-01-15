@@ -271,7 +271,7 @@ td:hover {
   margin-top: auto;
 }
 
-.unit-modal-image{
+.unit-modal-image, .pet-modal-image{
   display: inline-block;
   margin-right: auto;
   max-height: 40px; 

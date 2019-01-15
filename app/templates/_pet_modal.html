@@ -3,19 +3,20 @@
     	<div class="modal-content">
       		<div class="modal-header">
         		<h5 class="modal-title" id="exampleModalLongTitle">{{unit['pet']}}</h5>
+                  <img class="pet-modal-image" src="../static/{{pets[unit['pet']]['img'].replace('img', 'gif')}}">
       		</div>
       		<div class="modal-body">
       			 <div class="container-fluid">
+                              {% set pet=pets[unit['pet']] %}
       			 	<div class="row">
-      			 		<div class="col-12">Skill 1: Increase quest gold buff (300%, 800%, 3000%, 8000%, 15000%)</div>
-      			 		<div class="col-12">Skill 2: Increase movement speed of orc unit in PvP (0.4%, 0.8%, 1.2%, 1.6%, 2%)</div>
-      			 		<div class="col-12">Skill 3: Awakens the hidden special ability of [ Senior Big Foot ].</div>
+      			 		<div class="col-12">Skill1: {{pet['description']['skill1']}}</div>
+      			 		<div class="col-12">Skill2: {{pet['description']['skill2']}}</div>
+      			 		<div class="col-12">Skill3: {{pet['description']['skill3']}}</div>
       			 		<div class="col-12">
       			 			<ul>
-      			 				<li>Increases resistance against knock-back by 70% and makes it pushed back less.</li>
-      			 				<li>Quickly moves (dash) to first attack target, and when attacked by a ranged unit, has a chance to approach it immediately.</li>
-      			 				<li>Engages in battle quickly.</li>
-      			 				<li>Raises HP and defense of Orc units by 15%.</li>
+                                                {% for ability in pet['description']['hidden_abilites'] %}
+                                                      <li>{{ability}}</li>
+                                                {% endfor %}
       			 			</ul>
       			 		</div>
       			 	</div>
