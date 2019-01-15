@@ -38,7 +38,7 @@
                 idb.open('endless-farming-db').then(function(db){
                     var tx = db.transaction('units', 'readwrite');
                     var store = tx.objectStore('units');
-                    return store.get(this.data("unit").replace(" ", "_"));
+                    return store.get(this.data("unit").replaceAll(" ", "_"));
                 }.bind($this)).then(function(val){
                     var $progressbar = $(this.children().children()[0]);
                     var requirement = $progressbar.attr('aria-valuemax');

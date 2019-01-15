@@ -171,8 +171,6 @@
                 getPriority().then(function(data){
                     var priority = data["priority"];
                     for (p in priority){
-                        console.log(priority[""+p]);
-                        console.log(p);
                         col = $("#"+priority[""+p].replaceAll(" ", "_"));
                         col.attr("data-id", p-1);
                         col.data("id", p-1);
