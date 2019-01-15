@@ -66,7 +66,7 @@
     }
 
     function on_pet_input_change($pet_input){
-        idb.open('endless-farming-db', 1).then(function(db){
+        idb.open('endless-farming-db').then(function(db){
             var tx = db.transaction('pets', 'readwrite');
             var store = tx.objectStore('pets');
             return store.get($pet_input.data("pet"));
@@ -76,4 +76,110 @@
             }      
             change_stars(val);
         }.bind($pet_input));
+    }
+
+    function calculatePetFragmentsToFarm(){
+        var KL = parseInt($("#KL-number").val());
+        var tickets = parseInt($("#tickets-number").val()) + parseInt(5*$("#refills-number").val());
+        var row = $("#dragable-row");
+        if (row != undefined){
+        row.children().each(function(){
+            var col = $(this);
+            var possible_stages = [];
+            var from_stage = [];
+            var fragments = 0;
+            var current_frags = 0;
+            col.find('.col-kl.col-green').each(function(){
+                possible_stages.push(parseInt($(this).text()));
+                from_stage.push(parseInt($(this).data("from")));
+            });
+            for (stage of from_stage){
+                current_frags = handle_nan(parseInt(col.find(".pet-input").val()));
+                if (current_frags >= 330){
+                    break;
+                }
+                if (tickets > 0){
+                    var add = 3;
+                    if ((stage >= 296) && (stage % 5 != 0)){
+                        add = 1;
+                    }
+                    fragments += (tickets >= add) ? add : tickets;
+                    tickets -= (tickets >= add) ? add : tickets; 
+                }
+            }
+            tickets += (fragments > 330-current_frags) ? fragments - (330-current_frags) : 0;
+            fragments = (fragments > 330-current_frags) ? 330-current_frags : fragments;
+            frag_text = col.find("p");
+            frag_text.text(fragments);
+            if (fragments > 0){
+                frag_text.removeClass('zero-fragments');
+            } else {
+                frag_text.addClass('zero-fragments');
+            }
+        });
+        }
+    }
+
+    function getPriority(petid) {
+        return $.ajax({
+            type: "GET",
+            url: Flask.url_for("core.get_priority"),
+            dataType: "json",
+            async: true
+        });
+    }
+
+    function updatePriorities(){
+        $("#dragable-row").children().each(function(){
+            request = idb.open('endless-farming-db');
+            col = $(this);
+            val = {name: col.attr("id"), 
+                    fragments: parseInt(col.find(".pet-input").val()),
+                    priority: parseInt(col.attr("data-id"))}
+            request.then(function(db){
+                var tx = db.transaction('pets', 'readwrite');
+                var store = tx.objectStore('pets');
+                store.put(this);
+            }.bind(val)); 
+        });
+    }
+
+    function sortPetsByPriority(){
+        request = idb.open('endless-farming-db');
+        request.then(function(db){
+            var tx = db.transaction('pets', 'readwrite');
+            var store = tx.objectStore('pets');
+            var items = store.getAll();
+            items.then(function(items){
+                for(item of items){
+                    $("#"+item["name"]).attr("data-id", item["priority"]);
+                    $("#"+item["name"]).data("id", item["priority"]);
+                }
+                var listitems = $("#dragable-row").children('.block').get();
+                listitems.sort(function(a, b) {
+                    var compA = parseFloat($(a).data('id'));
+                    var compB = parseFloat($(b).data('id'));
+                    return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+                });
+                var $superrow = $('#dragable-row');
+                $.each(listitems, function(idx, itm) {
+                    $superrow.append(itm);
+                });
+                $("#dragable-row").removeClass("row-hidden");
+                calculatePetFragmentsToFarm()
+            });                
+        });
+    }
+
+    function updateStages(kl){
+        $(".col-kl").each(function(){
+            var col = $(this);
+            if(kl>=parseFloat(col.text())){
+                col.removeClass('col-red');
+                col.addClass('col-green');
+            }else{
+                col.removeClass('col-green');
+                col.addClass('col-red');                
+            }
+        });
     }

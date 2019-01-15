@@ -16,7 +16,8 @@ function update_progress_bar_values($progress_bar, buff){
 	$progress_bar
 		.attr("aria-valuemax", buff["requirement"])
 		.text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"))
-		.attr("data-multiplier", buff["multiplier"]);
+		.attr("data-multiplier", buff["multiplier"])
+		.data("multiplier", buff["multiplier"]);
 	change_progress_bar_value($progress_bar, 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuenow"))), 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuemax"))));
@@ -68,7 +69,7 @@ function update_progress_bar($bar, $input){
 }
 
 function on_unit_input_change($unit_input){
-	idb.open('endless-farming-db', 1).then(function(db){
+	idb.open('endless-farming-db').then(function(db){
 		var tx = db.transaction('units', 'readwrite');
 		var store = tx.objectStore('units');
 		return store.get($unit_input.data("unit"));
@@ -120,7 +121,7 @@ function getLinkedActivePets(buff, items){
 }
 
 function updateBuffRequirement(buff, data){
-        idb.open('endless-farming-db', 1).then(function(db){
+        idb.open('endless-farming-db').then(function(db){
             var tx = db.transaction('pets', 'readwrite');
             var store = tx.objectStore('pets');
             return store.getAll();
@@ -133,11 +134,11 @@ function updateBuffRequirement(buff, data){
 }
 
 async function updateBuffs($petImage){
-    var db = await idb.open('endless-farming-db', 1)
+    var db = await idb.open('endless-farming-db')
     var tx = await db.transaction('pets', 'readwrite');
     var store = tx.objectStore('pets');
     var items = await store.getAll();
-    var pet = await store.get( $petImage.data("pet"));
+    var pet = await store.get($petImage.data("pet"));
     if(pet != undefined && pet["fragments"]>=330){
     	$petImage.addClass("five-star-pet");
     	data = await getPet($petImage.data("pet")).then(async function(data){
