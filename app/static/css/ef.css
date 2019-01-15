@@ -266,6 +266,17 @@ td:hover {
   max-height: 40px;
 }
 
+.modal-title {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.unit-modal-image{
+  display: inline-block;
+  margin-right: auto;
+  max-height: 40px; 
+}
+
 .col-kl{
   padding: 0px; 
   font-weight: bold;

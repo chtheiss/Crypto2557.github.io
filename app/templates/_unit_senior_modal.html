@@ -3,16 +3,17 @@
     	<div class="modal-content">
       		<div class="modal-header">
         		<h5 class="modal-title">{{key}}</h5>
+            <img class="unit-modal-image" src="../static/{{unit['img_sr']}}">
       		</div>
       		<div class="modal-body">
       			 <div class="container-fluid">
       			 	<div class="row">
+                <div class="col-12"><h2>Unit Attacks and Abilities</h2></div> 
       			 		<div class="col-12">
       			 			<ul>
-      			 				<li>SR Increases resistance against knock-back by 70% and makes it pushed back less.</li>
-      			 				<li>SR Quickly moves (dash) to first attack target, and when attacked by a ranged unit, has a chance to approach it immediately.</li>
-      			 				<li>SR Engages in battle quickly.</li>
-      			 				<li>SR Raises HP and defense of Orc units by 15%.</li>
+                      {% for ability in unit['atk_abil_sr'] %}
+                        <li>{{ability}}</li>
+                      {% endfor %}
       			 			</ul>
       			 		</div>
       			 	</div>
