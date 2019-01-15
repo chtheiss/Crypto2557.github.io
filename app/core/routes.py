@@ -67,6 +67,6 @@ def get_priority():
     pet_priority = json.load(open(pet_priority_url))
     return jsonify(priority=pet_priority)
 
-@bp.route('/meta_progression', methods=['GET', 'POST'])
+@bp.route('/meta_progression/', methods=['GET', 'POST'])
 def meta_progression():   
     return render_template('meta_progression.html')
