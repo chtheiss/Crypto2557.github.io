@@ -24,37 +24,37 @@
 {% endblock %}
 
 {% block navbar %}
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('core.index') }}">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('core.pets') }}">Pets</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('core.units') }}">Units</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('core.tickets') }}">Tickets</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('core.meta_progression') }}">Metas</a>
-    </li>
-    <li class="nav-item">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Endless Farming</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.pets') }}">Pets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.units') }}">Units</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.tickets') }}">Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('core.meta_progression') }}">Metas</a>
+            </li>
+        </ul>
         <input type="file" id="dbupload" value="Import" style="display:none"/> 
-        <button id="import-button" type="button" class="btn btn-dark">Import</button>
-    </li>
-    <li class="nav-item">
-        <button id="export-button" type="button" class="btn btn-dark">Export</button>
-    </li>
-    <li class="nav-item">
-        <button id="first-visit-button" data-toggle="modal" data-target="#stats-modal" data-welcome-text="Welcome to Endless Farming. If you want to use this application to its full potential please insert your knightage level, the spirit highland tickets available to you and how many times a day you buy additional tickets. You can later change it at any time by clicking the 'My Stats' button in the top right corner of the screen." style="display:none"></button>
-        <button id="stats-button" type="button" class="btn btn-dark" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
-            {% include '_first_visit_modal.html' %}
-    </li>
-  </ul>
-  </nav>
+        <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
+        <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
+                <button id="first-visit-button" data-toggle="modal" data-target="#stats-modal" data-welcome-text="Welcome to Endless Farming. If you want to use this application to its full potential please insert your knightage level, the spirit highland tickets available to you and how many times a day you buy additional tickets. You can later change it at any time by clicking the 'My Stats' button in the top right corner of the screen." style="display:none"></button>
+        <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        {% include '_first_visit_modal.html' %}
+    </div> 
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -102,7 +102,7 @@
                     var files = document.getElementById('dbupload').files;
                     var fr = new FileReader();
                     fr.onload = function(e) { 
-                        var result = JSON.parse(e.target.result);
+                        var result = JSON.parse(e.target.result);                       
                         var db = new Dexie('endless-farming-db');
                         db.open().then(function(){
                             var idb_db = db.backendDB();

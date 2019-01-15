@@ -86,19 +86,25 @@
         row.children().each(function(){
             var col = $(this);
             var possible_stages = [];
+            var from_stage = [];
             var fragments = 0;
             var current_frags = 0;
             col.find('.col-kl.col-green').each(function(){
                 possible_stages.push(parseInt($(this).text()));
+                from_stage.push(parseInt($(this).data("from")));
             });
-            for (stage of possible_stages){
+            for (stage of from_stage){
                 current_frags = handle_nan(parseInt(col.find(".pet-input").val()));
                 if (current_frags >= 330){
                     break;
                 }
                 if (tickets > 0){
-                    fragments += (tickets >= 3) ? 3 : tickets;
-                    tickets -= (tickets >= 3) ? 3 : tickets; 
+                    var add = 3;
+                    if ((stage >= 296) && (stage % 5 != 0)){
+                        add = 1;
+                    }
+                    fragments += (tickets >= add) ? add : tickets;
+                    tickets -= (tickets >= add) ? add : tickets; 
                 }
             }
             tickets += (fragments > 330-current_frags) ? fragments - (330-current_frags) : 0;

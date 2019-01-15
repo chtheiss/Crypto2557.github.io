@@ -16,7 +16,8 @@ function update_progress_bar_values($progress_bar, buff){
 	$progress_bar
 		.attr("aria-valuemax", buff["requirement"])
 		.text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"))
-		.attr("data-multiplier", buff["multiplier"]);
+		.attr("data-multiplier", buff["multiplier"])
+		.data("multiplier", buff["multiplier"]);
 	change_progress_bar_value($progress_bar, 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuenow"))), 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuemax"))));

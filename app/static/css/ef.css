@@ -102,7 +102,7 @@ body {
 
 .popover {
     background-color: #cccccc;
-    max-width: 25%;
+    max-width: 40%;
 }
 
 .popover-header {
@@ -115,6 +115,7 @@ body {
     color: black;
     background-color: #999999;
     font-size: 18px;
+    max-width: 100%;
 }
 
 .five-star-pet {
