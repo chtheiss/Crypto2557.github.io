@@ -122,6 +122,11 @@ body {
   filter: drop-shadow(rgb(30, 220, 30) 1px 1px 5px);
 }
 
+h1 {
+  text-align:center;
+  font-size: 4em;
+}
+
 h3 {
   font-size: 1.25rem;
   margin-bottom: 0px;
