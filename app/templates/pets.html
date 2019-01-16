@@ -10,6 +10,46 @@
         <button id="reset-btn" class="btn btn-dark btn-md">Reset Priority</button>
         <button id="add-all-btn" class="btn btn-dark btn-md">Add All</button>
     </div>
+    <div class="col-12 col-centered">
+        <div id="tracking" class="row justify-content-center" style="display:None;">
+        <div id="track-1" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-2" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-3" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-4" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-5" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-6" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-7" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-8" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-9" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-10" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-11" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+        <div id="track-12" class="col-md-1 col-sm-1"data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>            
+        </div>
+    </div>
     <div id="dragable-row" class="row super-row row-hidden justify-content-center">
             {% for key, pet in pets.items() %}
             {% set key_id=key.replace(" ", "_") %}
@@ -17,7 +57,7 @@
                         <div class="row centered-row">
                             <div class="col-md-5 padding-0">
                                 <span class="unit-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
-                                    <img id="{{key_id}}-image" class='unit-image zero-star' src="../static/{{pet['img']}}">
+                                    <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
                                 </span>
                                 {% set pet_name=key %}
                                 {% include '_pet_modal.html' %}

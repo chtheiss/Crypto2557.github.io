@@ -27,37 +27,37 @@
             var $img = $("#"+val["name"].replace(" ", "_")+"-image");
             if(val["fragments"] >=10){ 
                 turn_star_on($("#"+val["name"].replace(" ", "_")+"-1star"));
-                remove_classes($img, ["unit-image", "one-star"]);
+                remove_classes($img, ["pet-image", "one-star"]);
                 $img.addClass("one-star"); 
             } else {
                  turn_star_off($("#"+val["name"].replace(" ", "_")+"-1star"));
-                 remove_classes($img, ["unit-image", "zero-star"]);
+                 remove_classes($img, ["pet-image", "zero-star"]);
                  $img.addClass("zero-star");
             }
             if(val["fragments"] >=30){ 
                 turn_star_on($("#"+val["name"].replace(" ", "_")+"-2star"));
-                remove_classes($img, ["unit-image", "two-star"]);
+                remove_classes($img, ["pet-image", "two-star"]);
                 $img.addClass("two-star"); 
             } else {
                 turn_star_off($("#"+val["name"].replace(" ", "-")+"-2star"));
             }
             if(val["fragments"] >=80){ 
                 turn_star_on($("#"+val["name"].replace(" ", "_")+"-3star"));
-                remove_classes($img, ["unit-image", "three-star"]);
+                remove_classes($img, ["pet-image", "three-star"]);
                 $img.addClass("three-star"); 
             } else {
                 turn_star_off($("#"+val["name"].replace(" ", "_")+"-3star"));
             }
             if(val["fragments"] >=180){ 
                 turn_star_on($("#"+val["name"].replace(" ", "_")+"-4star"));
-                remove_classes($img, ["unit-image", "four-star"]);
+                remove_classes($img, ["pet-image", "four-star"]);
                 $img.addClass("four-star"); 
             } else {
                 turn_star_off($("#"+val["name"].replace(" ", "_")+"-4star"));
             }
             if(val["fragments"] >=330){ 
                 turn_star_on($("#"+val["name"].replace(" ", "-")+"-5star"));
-                remove_classes($img, ["unit-image", "five-star"]);
+                remove_classes($img, ["pet-image", "five-star"]);
                 $img.addClass("five-star"); 
             } else {
                 turn_star_off($("#"+val["name"].replace(" ", "_")+"-5star"));
@@ -83,6 +83,15 @@
         var tickets = parseInt($("#tickets-number").val()) + parseInt(5*$("#refills-number").val());
         var row = $("#dragable-row");
         if (row != undefined){
+
+        $("#tracking").children().each(function(){
+            var track_col = $(this);
+            track_col.css("display", "none");
+            track_col.find("img").attr("src", "");
+            track_col.attr("data-empty", "True");
+            track_col.data("empty", "True");
+            track_col.find("p").text("");
+        });
         row.children().each(function(){
             var col = $(this);
             var possible_stages = [];
@@ -111,10 +120,24 @@
             fragments = (fragments > 330-current_frags) ? 330-current_frags : fragments;
             frag_text = col.find("p");
             frag_text.text(fragments);
+
             if (fragments > 0){
                 frag_text.removeClass('zero-fragments');
+                var days = Math.ceil((330 - current_frags) / fragments);
+                var track_col = $('.col-sm-1[data-empty="True"]').first();
+                track_col.css("display", "");
+                track_col.find("img").attr("src", col.find(".pet-image").attr("src"));
+                track_col.attr("data-empty", "False");
+                track_col.data("empty", "False");
+                track_col.find("p").text(days + " days");
+                track_col.parent(".justify-content-center").css("display", "");
+
             } else {
                 frag_text.addClass('zero-fragments');
+                var track_col = $('.col-sm-1[data-empty="True"]').first();
+                if (track_col.attr("id") == "track-1"){
+                    track_col.parent(".justify-content-center").css("display", "none");
+                }
             }
         });
         }
