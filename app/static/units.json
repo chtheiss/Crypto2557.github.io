@@ -551,7 +551,7 @@
             },
             {
                 "name":"Tribe Fortification (Human and Orc)",
-                "description":"Increases the Human unit’s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Orc unit’s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
+                "description":"Increases the Human unit's ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Orc unit's ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.5,
                 "requirement":12,
                 "amount":240
@@ -566,23 +566,23 @@
         ],
         "atk_abil":[
             "Normal Attack: Attack maximum of 3 enemies by throwing an energy of holy light, and stun them.",
-            "Skill Attack: Summon a gigantic cross to attack the enemy and recover friendly unit’s health.",
+            "Skill Attack: Summon a gigantic cross to attack the enemy and recover friendly unit's health.",
             "Special Ability 1: Increases the basic speed of the game by 4%, and increase movement speed of Human unit and Orc unit by 2%, and their attack range by 3%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above Stage 10,000.",
-            "Dimensional Binding (Human and Orc): Increase the attack power, HP, and defense power of Human and Orc unit in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum of 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Human unit’s ability (attack power/defense power/HP) by 10 levels, and Orc unit’s ability by 5 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "Dimensional Binding (Human and Orc): Increase the attack power, HP, and defense power of Human and Orc unit in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum of 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Human unit's ability (attack power/defense power/HP) by 10 levels, and Orc unit's ability by 5 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)",
             "Innervate 2- reduces Outland Battle skill cool time by 1% (Innervate 2 is cumulative, but cannot exceed max 40%. Applied even when the unit is in the Time Shop.)"
         ],
         "atk_abil_sr":[
             "Normal Attack: Attack maximum of 4 enemies by throwing an energy of holy light, and stun them.",
-            "Skill Attack: Summon a gigantic cross to attack the enemy and recover friendly unit’s health.",
+            "Skill Attack: Summon a gigantic cross to attack the enemy and recover friendly unit's health.",
             "Special Ability 1: Increases the basic speed of the game by 8%, and increase movement speed of Human unit and Orc unit by 5%, and their attack range by 6%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
-            "Special Ability 4: Immune to stun, and doesn’t fly into the air even on blow attacks.",
-            "Dimensional Binding (Human and Orc): Increase the attack power, HP, and defense power of Human and Orc unit in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum of 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Human unit’s ability (attack power/defense power/HP) by 20 levels, and Orc unit’s ability by 10 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "Special Ability 4: Immune to stun, and doesn't fly into the air even on blow attacks.",
+            "Dimensional Binding (Human and Orc): Increase the attack power, HP, and defense power of Human and Orc unit in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum of 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Human unit's ability (attack power/defense power/HP) by 20 levels, and Orc unit's ability by 10 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)",
             "Innervate 2- reduces Outland Battle skill cool time by 3% (Innervate 2 is cumulative, but cannot exceed max 40%. Applied even when the unit is in the Time Shop.)"
         ]
     },
@@ -601,7 +601,7 @@
             },
             {
                 "name":"Tribe Fortification (Elf and Human)",
-                "description":"Increases the Elf unit’s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Human unit’s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
+                "description":"Increases the Elf unit's ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Human unit's ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.4666666,
                 "requirement":12,
                 "amount":240
@@ -618,23 +618,23 @@
             "Normal Attack: Summon two small spirits of two different attribute to attack the enemy. (Squirrel: Slows enemy. Bird: Attack up to maximum 3 enemies, and stun them)",
             "Skill Attack: Summon a gigantic spirit, and push the enemies back (knock back), blow them into the air (blow), and stun them.",
             "Special Ability 1: Increases the basic speed of the game by 4%, and increase movement speed of Elf unit and Human unit by 2%, and their attack range by 3%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
             "Special ability 4: Detects cloaking.",
-            "Dimensional Binding 2 (Elf and Human): Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Elf unit’s ability (attack power/defense power/HP) by 7 levels, and Human unit’s ability by 4 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "Dimensional Binding 2 (Elf and Human): Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Elf unit's ability (attack power/defense power/HP) by 7 levels, and Human unit's ability by 4 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)",
             "Nature Resistance: Increase Nature resistance by 50. (Applied even when in Time Shop, and applied cumulatively. However, Nature Resistance from [Elementalist] cannot exceed maximum 2000.)"
         ],
         "atk_abil_sr":[
             "Normal Attack: Summon three small spirits of three different attribute to attack the enemy. (Squirrel: Slows enemy. Bird: Attack up to maximum 3 enemies, and stun them. Sheep: Push the enemy back)",
             "Skill Attack: Summon a gigantic spirit, and push the enemies back (knock back), blow them into the air (blow), and stun them.",
             "Special Ability 1: Increases the basic speed of the game by 8%, and increase movement speed of Elf unit and Human unit by 5%, and their attack range by 6%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
             "Special Ability 4: Immune to knock back attacks, and immune to interruptions by attacks.",
             "Special ability 5: Detects cloaking.",
-            "Dimensional Binding 2 (Elf and Human): Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Elf unit’s ability (attack power/defense power/HP) by 15 levels, and Human unit’s ability by 8 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "Dimensional Binding 2 (Elf and Human): Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Elf unit's ability (attack power/defense power/HP) by 15 levels, and Human unit's ability by 8 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)",
             "Nature Resistance: Increase Nature resistance by 100. (Applied even when in Time Shop, and applied cumulatively. However, Nature Resistance from [Elementalist] cannot exceed maximum 2000.)"
         ]
     },
@@ -653,7 +653,7 @@
             },
             {
                 "name":"Tribe Fortification (Undead and Elf)",
-                "description":"Increases the Undead unit’s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Elf unit’s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
+                "description":"Increases the Undead unit's ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Elf unit's ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.5,
                 "requirement":12,
                 "amount":240
@@ -663,23 +663,23 @@
             "Normal Attack: Attack multiple enemies with a whip, and throw dagger of darkness to blow the enemy.",
             "Skill Attack: Advance forward, swing a powerful whip to stun multiple enemies and blow them into the air.",
             "Special Ability 1: Increases the basic speed of the game by 4%, and increase movement speed of Undead unit and Elf unit by 2%, and their attack range by 3%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above stage 10,000 and become immune to stun, and paralysis.",
             "Special Ability 4: Instantly move to first attack target (dash), and cast a shield which absorbs 99% of the damage rarely when attacked.",
             "Special Ability 5: Revive with 60% of the HP after death. 5 star revives 1 time, 6 star revives 2 times,1 Trans revives 3 times, 2 Trans 4times, and 3 Trans 5 times. (HP, attack power, and defense power increases by 250% each time when revived in the stage). On 5th revival in 3 Trans, attack power, defense power, and HP increases about 100 times, enabling you to march on to higher stages.",
-            "Dimensional Binding 1 (Undead and Elf): Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Undead unit’s ability (attack power/defense power/HP) by 10 levels, and Elf unit’s ability by 5 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)"
+            "Dimensional Binding 1 (Undead and Elf): Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Undead unit's ability (attack power/defense power/HP) by 10 levels, and Elf unit's ability by 5 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)"
         ],
         "atk_abil_sr":[
             "Normal Attack: Attack multiple enemies with a whip, and throw dagger of darkness to blow the enemy.",
             "Skill Attack: Advance forward, swing a powerful whip to stun multiple enemies and blow them into the air.",
             "Special Ability 1: Increases the basic speed of the game by 8%, and increase movement speed of Undead unit and Elf unit by 5%, and their attack range by 6%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above stage 10,000 and become immune to stun, and paralysis.",
             "Special Ability 4: Instantly move to first attack target (dash), and cast a shield which absorbs 99% of the damage rarely when attacked.",
             "Special Ability 5: Revive with 60% of the HP after death. 5 star revives 1 time, 6 star revives 2 times,1 Trans revives 3 times, 2 Trans 4times, and 3 Trans 5 times. (HP, attack power, and defense power increases by 250% each time when revived in the stage). On 5th revival in 3 Trans, attack power, defense power, and HP increases about 100 times, enabling you to march on to higher stages.",
-            "Dimensional Binding 1 (Undead and Elf): Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Undead unit’s ability (attack power/defense power/HP) by 20 levels, and Elf unit’s ability by 10 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)"
+            "Dimensional Binding 1 (Undead and Elf): Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Undead unit's ability (attack power/defense power/HP) by 20 levels, and Elf unit's ability by 10 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)"
         ]
     },
     "Frost Demon":{
@@ -697,7 +697,7 @@
             },
             {
                 "name":"Tribe Fortification (Orc and Undead)",
-                "description":"Increases the Orc unit’s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Undead unit’s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
+                "description":"Increases the Orc unit's ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Undead unit's ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.4666666,
                 "requirement":12,
                 "amount":250
@@ -714,24 +714,24 @@
             "Normal Attack: Swing a giant sword to blow away multiple enemies and freeze them by throwing ice lance. Also regenerate a small portion of the HP.",
             "Skill Attack: Summon multiple ice pillars to attack enemies and freeze them.",
             "Special Ability 1: Increases the basic speed of the game by 4%, and increase movement speed of Undead unit and Orc unit by 2%, and their attack range by 3%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above stage 10,000 and become immune to freezing, and paralysis.",
             "Special Ability 4: Instantly move to first attack target (dash).",
             "Special Ability 5: Revive with 60% of the HP after death. 5 star revives 1 time, 6 star revives 2 times,1 Trans revives 3 times, 2 Trans 4times, and 3 Trans 5 times. (HP, attack power, and defense power increases by 250% each time when revived in the stage). On 5th revival in 3 Trans, attack power, defense power, and HP increases about 100 times, enabling you to march on to higher stages.)",
-            "Dimensional Binding 2 (Orc and Undead): Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Orc unit’s ability (attack power/defense power/HP) by 7 levels, and Undead unit’s ability by 4 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "Dimensional Binding 2 (Orc and Undead): Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle by 5%. (Dimensional Binding cannot exceed maximum 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Orc unit's ability (attack power/defense power/HP) by 7 levels, and Undead unit's ability by 4 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)",
             "Enhance Active Skill: Increases the efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel, and Skyward Sword by 20 stages. (Applied cumulatively, and not applied when in Time Shop.)"
         ],
         "atk_abil_sr":[
             "Normal Attack: Swing a giant sword to blow away multiple enemies and freeze them by throwing ice lance. Also regenerate a small portion of the HP.",
             "Skill Attack: Summon multiple ice pillars to attack enemies and freeze them.",
             "Special Ability 1: Increases the basic speed of the game by 8%, and increase movement speed of Undead unit and Orc unit by 5%, and their attack range by 6%.",
-            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster’s movement speed and attack speed.",
+            "Special Ability 2: Appear near the enemy when first appearing, and casts buff to increase the caster's movement speed and attack speed.",
             "Special Ability 3: Unaffected by attacks by terrain above stage 10,000 and become immune to freezing, and paralysis.",
             "Special Ability 4: Instantly move to first attack target (dash).",
             "Special Ability 5: Revive with 60% of the HP after death. 5 star revives 1 time, 6 star revives 2 times,1 Trans revives 3 times, 2 Trans 4times, and 3 Trans 5 times. (HP, attack power, and defense power increases by 250% each time when revived in the stage). On 5th revival in 3 Trans, attack power, defense power, and HP increases about 100 times, enabling you to march on to higher stages.)",
-            "Dimensional Binding 2 (Orc and Undead): Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it’s applied cumulatively even when in Time Shop.)",
-            "Tribe Fortification: Increases the Orc unit’s ability (attack power/defense power/HP) by 15 levels, and Undead unit’s ability by 8 levels. ([Tribe Fortification] is only applied on the stages and it’s cumulative, but unit’s ability cannot increase above +150 levels. Not applied when in Time Shop.)",
+            "Dimensional Binding 2 (Orc and Undead): Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle by 10%. (Dimensional Binding cannot exceed maximum 150% and it's applied cumulatively even when in Time Shop.)",
+            "Tribe Fortification: Increases the Orc unit's ability (attack power/defense power/HP) by 15 levels, and Undead unit's ability by 8 levels. ([Tribe Fortification] is only applied on the stages and it's cumulative, but unit's ability cannot increase above +150 levels. Not applied when in Time Shop.)",
             "Enhance Active Skill: Increases the efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel, and Skyward Sword by 40 stages. (Applied cumulatively, and not applied when in Time Shop.)"
         ]
     },

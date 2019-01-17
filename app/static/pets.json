@@ -553,7 +553,7 @@
             "hidden_abilites":[
                 "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against physical attacks.",
                 "Increases game speed by 4% and increases its movement speed by 7%.",
-                "Increases all unit’s movement speed, attack power and critical damage by 4%.",
+                "Increases all unit's movement speed, attack power and critical damage by 4%.",
                 "[Tribe Fortification] is applied even when Cleric is in Time Shop, and can be increased up to 250 for human units.",
                 "Increases the maximum value of [Innervate 2] to 50%. Thus, reducing skill cool time (Outland Battle) by up to 50%."
             ]
@@ -751,7 +751,7 @@
                 "Increases the basic speed of the game by 4%, and increases the attack range and movement speed by 7%. ",
                 "When first appearing, helps ally units use skill attacks faster. ",
                 "Increases the attack speed and attack power of all units by 6%. ",
-                "Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf’s Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf’s Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)"
+                "Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf's Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf's Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)"
             ]
         },
         "pp_per_star":[
@@ -1787,7 +1787,7 @@
             "skill3":"Awakens the hidden special ability of [ Senior Aladdin ]",
             "hidden_abilites":[
                 "Even if Aladdin is at the Time Shop, this has an increased chance to get 10x gold. (Basic 10%, +2% per 5-star, +5% per 6-star) when using human secret skills.",
-                "The five lowest quests from those most recently opened is instantly cleared by human’s secret skill. (Example: When the last quest is number 20, quests between 16 and 20 are cleared instantly.)",
+                "The five lowest quests from those most recently opened is instantly cleared by human's secret skill. (Example: When the last quest is number 20, quests between 16 and 20 are cleared instantly.)",
                 "Automatically opens golden treasure chests containing gold at a certain percentage. (Basic 10%, +2% per 5-star and +5% per 6-star)",
                 "Upon first appearing, helps ally unit perform skill attacks faster."
             ]
@@ -2022,7 +2022,7 @@
         "additional_buffs":[
             {
                 "name":"Undead Secret Skill",
-                "description":"Increases chance of [Undead’s secret skill] even if Dark Archer is in the Time Shop. (6-star 1%, Max 30%).",
+                "description":"Increases chance of [Undead's secret skill] even if Dark Archer is in the Time Shop. (6-star 1%, Max 30%).",
                 "multiplier":0.0,
                 "requirement":30,
                 "amount":30
