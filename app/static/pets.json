@@ -1901,7 +1901,7 @@
         ],
         "buffs":[
             {
-                "name":"Revival Team for spirit rest runs.",
+                "name":"Revival Team for Spirit Rest Runs",
                 "description":"When included in a team, medal buff increases by 30% (from 10% to 40%).",
                 "multiplier":0.0,
                 "requirement":12,
