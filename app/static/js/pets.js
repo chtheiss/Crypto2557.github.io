@@ -124,7 +124,7 @@
             if (fragments > 0){
                 frag_text.removeClass('zero-fragments');
                 var days = Math.ceil((330 - current_frags) / fragments);
-                var track_col = $('.col-sm-1[data-empty="True"]').first();
+                var track_col = $('.col-2[data-empty="True"]').first();
                 track_col.css("display", "");
                 track_col.find("img").attr("src", col.find(".pet-image").attr("src"));
                 track_col.attr("data-empty", "False");
@@ -134,7 +134,7 @@
 
             } else {
                 frag_text.addClass('zero-fragments');
-                var track_col = $('.col-sm-1[data-empty="True"]').first();
+                var track_col = $('.col-2[data-empty="True"]').first();
                 if (track_col.attr("id") == "track-1"){
                     track_col.parent(".justify-content-center").css("display", "none");
                 }
