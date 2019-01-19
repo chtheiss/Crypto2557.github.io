@@ -572,8 +572,11 @@
                 "name":"Tribe Fortification (Human and Orc)",
                 "description":"[Tribe Fortification] is applied even when Cleric is in Time Shop, and can be increased up to 250 for human units.",
                 "multiplier":0.5,
-                "requirement":13,
-                "amount":250
+                "requirement":[13,13,13],
+                "amount":250,
+                "linked_units": ["Frost Demon", "Elementalist"],
+                "linked_pets": ["Bamba", "Chichi"],
+                "linked_multiplier": [0.0, 0.4]
             },
             {
                 "name":"Innervate 2",
@@ -614,8 +617,11 @@
                 "name":"Tribe Fortification (Elf and Human)",
                 "description":"[Tribe Fortification] is applied even when Elementalist is in Time Shop, and can be increased up to 250 for elf units.",
                 "multiplier":0.4666666,
-                "requirement":17,
-                "amount":250
+                "requirement":[17, 17, 17],
+                "amount":250,
+                "linked_units": ["Cleric", "Dark Elf"],
+                "linked_pets": ["Bernard", "Chesher"],
+                "linked_multiplier": [0.0, 0.666666]
             },
             {
                 "name":"Nature Resistance",
@@ -656,8 +662,11 @@
                 "name":"Tribe Fortification (Undead and Elf)",
                 "description":"[Tribe Fortification] is applied even when Dark Elf is in Time Shop, and can be increased up to 250 for undead units.",
                 "multiplier":0.5,
-                "requirement":13,
-                "amount":250
+                "requirement":[13, 13, 13],
+                "amount":250,
+                "linked_units": ["Elementalist", "Frost Demon"],
+                "linked_pets": ["Bamba", "Chichi"],
+                "linked_multiplier": [0.0, 0.4]
             }
         ],
         "additional_buffs":[
@@ -691,8 +700,11 @@
                 "name":"Tribe Fortification (Orc and Undead)",
                 "description":"[Tribe Fortification] is applied even when Frost Demon is in the Time Shop, and can be increased up to 250 for orc units.",
                 "multiplier":0.4666666,
-                "requirement":17,
-                "amount":250
+                "requirement":[17, 17, 17],
+                "amount":250,
+                "linked_units": ["Dark Elf", "Cleric"],
+                "linked_pets": ["Chesher", "Bernard"],
+                "linked_multiplier": [0.0, 0.666666]
             },
             {
                 "name":"Enhance Active Skill",

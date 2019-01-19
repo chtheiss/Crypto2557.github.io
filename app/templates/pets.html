@@ -52,15 +52,13 @@
     </div>
     <div id="dragable-row" class="row super-row row-hidden justify-content-center">
             {% for key, pet in pets.items() %}
-            {% set key_id=key.replace(" ", "_") %}
+                {% set key_id=key.replace(" ", "_") %}
                     <div id="{{key_id}}" data-id="{{loop.index-1}}" class="col-md-2 col-sm-3 col-5 border block padding-sm">
                         <div class="row centered-row">
                             <div class="col-md-5 padding-0">
                                 <span class="pet-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
                                     <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
                                 </span>
-                                {% set pet_name=key %}
-                                {% include '_pet_modal.html' %}
                             </div>
                             <div class="col-md-2 col-fragments padding-0">
                                 <p id="{{key_id}}-farmable-fragments" class="zero-fragments">0</p>
@@ -105,6 +103,11 @@
                             {% if(pet["from"][3]) %} <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{(ceil(pet["from"][3]/5)*2)|int}}</div> {% endif %}
                         </div>
                     </div>
+            {% endfor %}
+            {% for key, pet in pets.items() %}
+                {% set key_id=key.replace(" ", "_") %}
+                {% set pet_name=key %}
+                {% include '_pet_modal.html' %}
             {% endfor %}
     </div>
 </div>
@@ -169,8 +172,9 @@
             row = $("#dragable-row").get()[0];
             sortable = Sortable.create(row, {
                 cursor: 'move',
-                animation: 150,              
+                animation: 150,             
                 onUpdate: function(event) {
+                    console.log(event)
                     change = $("#dragable-row").children().filter(function() {
                         id = parseInt($(this).attr("data-id"));
                         if (event.newIndex < event.oldIndex){

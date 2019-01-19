@@ -18,6 +18,14 @@ function update_progress_bar_values($progress_bar, buff){
 		.text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"))
 		.attr("data-multiplier", buff["multiplier"])
 		.data("multiplier", buff["multiplier"]);
+	if (buff["linked_units"] != undefined){
+		$progress_bar.attr("data-linked-units", buff["linked_units"].toString())
+			.data("linked-units", buff["linked_units"].toString());
+	}
+	if (buff["linked_multiplier"] != undefined){
+		$progress_bar.attr("data-linked-multiplier", buff["linked_multiplier"].toString())
+			.data("linked-multiplier", buff["linked_multiplier"].toString());
+	}
 	change_progress_bar_value($progress_bar, 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuenow"))), 
 		handle_nan(parseFloat($progress_bar.attr("aria-valuemax"))));
@@ -39,32 +47,53 @@ function get_unit_input_values($input){
 
 function update_progress_bar($bar, $input){
 	var unit_values = get_unit_input_values($input);
-	var val = unit_values.nsr;
-	var val_sr = unit_values.sr;
 	var multiplier = parseFloat($bar.attr("data-multiplier"));
+
 	var linked_units = $bar.data("linked-units");
 	var additional_bars_to_update = [];
+	var val_linked = 0;
+	var val_sr_linked = 0;
+
 	if(linked_units != ""){
 		linked_units = linked_units.replace("]", "").replace("[", "").replaceAll("'", "").split(',');
 		linked_units.forEach(function(part, index, linked_units) {
-  			linked_units[index] = linked_units[index].trim();
+  			linked_units[index] = linked_units[index].trim().replaceAll(" ", "_");
 		});
+		var linked_multiplier = ($bar.attr("data-linked-multiplier") == undefined) ? Array(linked_units.length).fill().map(function(){return 1.0}) : $bar.attr("data-linked-multiplier").split(",").map(Number);
+		var i = 0;
 		for (var unit of linked_units){
 			$unit_cell = $("#"+unit.replace(" ", "_"));
 			other_unit_values=get_unit_input_values($unit_cell.find("input").first());
-	    	val += other_unit_values.nsr;
-	    	val_sr += other_unit_values.sr;
+	    	val_linked += linked_multiplier[i]*other_unit_values.nsr;
+	    	val_sr_linked += linked_multiplier[i]*other_unit_values.sr;
 	    	for (add_buff of $unit_cell.find(
 	    		".progress-bar[data-linked-units*='"+$input.data("unit").replace("_"," ")+"']")){
 	    		additional_bars_to_update.push(add_buff);
 	    	}
+	    	i += 1;
 	    }        
 	}
-	var current_progress = multiplier*val+val_sr;
+	var current_progress = multiplier*unit_values.nsr + unit_values.sr + (multiplier*val_linked + val_sr_linked);
 	var max = $bar.attr("aria-valuemax");
 	change_progress_bar_value($bar, current_progress, max);
+
+	i = additional_bars_to_update.length;
 	for (var add_bar of additional_bars_to_update){
-		change_progress_bar_value($(add_bar), current_progress, $(add_bar).attr("aria-valuemax"));
+		$add_bar = $(add_bar);
+		if($add_bar.attr("data-linked-multiplier") == undefined){
+			_current_progress = current_progress;
+			change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax"));
+		} 
+		else {
+			linked_multiplier = $add_bar.attr("data-linked-multiplier").split(",").map(Number);
+
+			if (linked_multiplier[i-1] != 0.0){
+				other_unit_values = get_unit_input_values($add_bar.parents(".block").find("input").first());
+				_current_progress = multiplier*other_unit_values.nsr + other_unit_values.sr + linked_multiplier[i-1]*(multiplier*unit_values.nsr + unit_values.sr);
+				change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax"));
+			}
+		}
+		i -= 1		
 	}
 }
 
@@ -133,6 +162,10 @@ function updateBuffRequirement(buff, data){
         }.bind(buff));  
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function updateBuffs($petImage){
     var db = await idb.open('endless-farming-db')
     var tx = await db.transaction('pets', 'readwrite');
@@ -142,7 +175,7 @@ async function updateBuffs($petImage){
     if(pet != undefined && pet["fragments"]>=330){
     	$petImage.addClass("five-star-pet");
     	data = await getPet($petImage.data("pet")).then(async function(data){
-    		$unit_cell = $("#"+$petImage.data("unit"));
+    		const $unit_cell = $("#"+$petImage.data("unit"));
     		$prog_bar_add_buff = $unit_cell.find(".additional_buff");   
     		$prog_bar_add_buff.removeClass("progress-bar-hidden");
    			$prog_bar_add_buff.parent().popover();
