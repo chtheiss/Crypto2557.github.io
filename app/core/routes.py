@@ -13,10 +13,10 @@ def index():
 
 @bp.route('/pets/', methods=['GET', 'POST'])
 def pets():
-    pet_priority_url = os.path.join(current_app.root_path, "static", "pet_priority.json")
+    pet_priority_url = os.path.join(current_app.root_path, "static/json", "pet_priority.json")
     pet_priority = json.load(open(pet_priority_url))
 
-    pets_url = os.path.join(current_app.root_path, "static", "pets.json")
+    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
 
     for key, item in pet_priority.items():
@@ -27,9 +27,9 @@ def pets():
 
 @bp.route('/units/', methods=['GET', 'POST'])
 def units():
-    units_url = os.path.join(current_app.root_path, "static", "units.json")
+    units_url = os.path.join(current_app.root_path, "static/json", "units.json")
     units = json.load(open(units_url))
-    pets_url = os.path.join(current_app.root_path, "static", "pets.json")
+    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
     max_buffs = [max([len(unit["buffs"]) for key, unit in units.items() if(unit["rotation"] == i)]) for i in range(1, 14)]
     max_buffs.reverse()
@@ -43,27 +43,27 @@ def units():
 
 @bp.route('/tickets/', methods=['GET', 'POST'])
 def tickets():
-    units_url = os.path.join(current_app.root_path, "static", "units.json")
+    units_url = os.path.join(current_app.root_path, "static/json", "units.json")
     units = json.load(open(units_url))
-    tickets_url = os.path.join(current_app.root_path, "static", "ticket_order.json")
+    tickets_url = os.path.join(current_app.root_path, "static/json", "ticket_order.json")
     tickets = json.load(open(tickets_url))
     return render_template('tickets.html', title='Tickets', units=units, tickets=tickets)
 
 @bp.route('/pet/<petid>.json', methods=['GET', 'POST'])
 def get_pet(petid):
-    pets_url = os.path.join(current_app.root_path, "static", "pets.json")
+    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
     return jsonify({"petid":petid, "pet": pets[petid.replace("_", " ")]})
 
 @bp.route('/unit/<unitid>.json', methods=['GET', 'POST'])
 def get_unit(unitid):
-    units_url = os.path.join(current_app.root_path, "static", "units.json")
+    units_url = os.path.join(current_app.root_path, "static/json", "units.json")
     units = json.load(open(units_url))
     return jsonify(unit=units[unitid.replace("_", " ")])
 
 @bp.route('/priority.json', methods=['GET', 'POST'])
 def get_priority():
-    pet_priority_url = os.path.join(current_app.root_path, "static", "pet_priority.json")
+    pet_priority_url = os.path.join(current_app.root_path, "static/json", "pet_priority.json")
     pet_priority = json.load(open(pet_priority_url))
     return jsonify(priority=pet_priority)
 

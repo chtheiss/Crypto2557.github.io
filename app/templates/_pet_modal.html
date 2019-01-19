@@ -1,29 +1,29 @@
 <div id="{{pet_name.replace(' ', '_')}}-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-    	<div class="modal-content">
-      		<div class="modal-header">
-        		<h5 class="modal-title" id="exampleModalLongTitle">{{pet_name}}</h5>
-                  <img class="pet-modal-image" src="../static/{{pet['img'].replace('img', 'gif')}}">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{pet_name}}</h5>
+        <img class="pet-modal-image" src="../static/{{pet['img'].replace('img', 'gif')}}">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      		</div>
-      		<div class="modal-body">
-      			 <div class="container-fluid">
-      			 	<div class="row">
-      			 		<div class="col-12">Skill1: {{pet['description']['skill1']}}</div>
-      			 		<div class="col-12">Skill2: {{pet['description']['skill2']}}</div>
-      			 		<div class="col-12">Skill3: {{pet['description']['skill3']}}</div>
-      			 		<div class="col-12">
-      			 			<ul>
-                                                {% for ability in pet['description']['hidden_abilites'] %}
-                                                      <li>{{ability}}</li>
-                                                {% endfor %}
-      			 			</ul>
-      			 		</div>
-      			 	</div>
-      			 </div>
-      		</div>
-		</div>
-	</div>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">Skill1: {{pet['description']['skill1']}}</div>
+            <div class="col-12">Skill2: {{pet['description']['skill2']}}</div>
+            <div class="col-12">Skill3: {{pet['description']['skill3']}}</div>
+            <div class="col-12">
+              <ul>
+                {% for ability in pet['description']['hidden_abilites'] %}
+                  <li>{{ability}}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
