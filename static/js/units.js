@@ -169,19 +169,18 @@ async function updateBuffs($petImage){
   if(pet != undefined && pet["fragments"]>=330){
     $petImage.addClass("five-star-pet");
     data = await getPet($petImage.data("pet")).then(async function(data){
-      d = data;
       const $unit_cell = $("#"+$petImage.data("unit"));
       $prog_bar_add_buff = $unit_cell.find(".additional_buff");   
       $prog_bar_add_buff.removeClass("progress-bar-hidden");
       $prog_bar_add_buff.parent().popover();
-      for (buff of d["pet"]["buffs"]){
+      for (buff of data["pet"]["buffs"]){
         $buff_span = $unit_cell.find('[data-original-title="'+buff['name']+'"]');
         $buff_span.attr("data-content", buff["description"]);
         if (buff["linked_pets"] == undefined){
           update_progress_bar_values($buff_span.find(".progress-bar"), buff);
         } else {
           linked_active_pets = getLinkedActivePets(buff, items);
-          await updateBuffRequirement(buff, d);
+          await updateBuffRequirement(buff, data);
           for (linked_pet of buff["linked_pets"]){
             linked_pet_info = await getPet(linked_pet.replaceAll(" ", "_"));
             linked_pet_buffs = linked_pet_info["pet"]["buffs"];
