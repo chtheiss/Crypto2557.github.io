@@ -231,7 +231,7 @@ fieldset {
   padding: 5px !important;
 }
 
-.pet-modal:hover {
+.pet-modal:hover, .unit-modal:hover {
     cursor:pointer;
 }
 
@@ -322,4 +322,8 @@ td:hover {
 
 .btn-md {
   padding: 6px 12px;
+}
+
+.col-2{
+  padding: 0px;
 }
