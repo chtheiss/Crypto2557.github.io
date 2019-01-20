@@ -128,9 +128,7 @@ function handle_nan(val) {
       var KL = store.get("KL");
       KL.then(function(val) {
         if (val !== undefined && val["value"] == 0) {
-          //$(document).ready(function() {
-          //    $("#stats-modal").modal();
-          //});
+          $("#first-visit-button").click();
         }
       });
     });
