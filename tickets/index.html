@@ -1,589 +1,745 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <script src="/jsglue.js" type="text/javascript"></script>
+    <script src="/jsglue.js" type="text/javascript"></script>
 
-  
     
+        
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="author" content="">
-  
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
 
-  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="/static/css/normalize.css" >
-    <link rel="stylesheet" href="/static/css/ef.css" >
-  
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="/static/css/normalize.css" >
+        <link rel="stylesheet" href="/static/css/ef.css" >
+    
 
   </head>
   <body>
     
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Endless Farming</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pets/">Pets</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/units/">Units</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/tickets/">Tickets</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/meta_progression/">Metas</a>
-      </li>
-    </ul>
-    <input type="file" id="dbupload" value="Import" style="display:none"/> 
-    <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
-    <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
-    <button id="first-visit-button" data-toggle="modal" data-target="#stats-modal" data-welcome-text="Welcome to Endless Farming. If you want to use this application to its full potential please insert your knightage level, the spirit highland tickets available to you and how many times a day you buy additional tickets. You can later change it at any time by clicking the 'My Stats' button in the top right corner of the screen." style="display:none"></button>
-    <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
-  </div> 
-</nav>
-<div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <a class="navbar-brand" href="#">Endless Farming</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pets/">Pets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/units/">Units</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tickets/">Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/meta_progression/">Metas</a>
+            </li>
+        </ul>
+        <input type="file" id="dbupload" value="Import" style="display:none"/> 
+        <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
+        <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
+                <button id="first-visit-button" data-toggle="modal" data-target="#stats-modal" data-welcome-text="Welcome to Endless Farming. If you want to use this application to its full potential please insert your knightage level, the spirit highland tickets available to you and how many times a day you buy additional tickets. You can later change it at any time by clicking the 'My Stats' button in the top right corner of the screen." style="display:none"></button>
+        <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Endless Farming</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row super-row justify-content-start">
-          <div id="welcome-text" class="col-12 col-centered padding-0">
-            <b></b>
-          </div>
-          <div class="col-12 col-centered padding-0">
-            <div class="row centered-row">
-              <div class="col-3 col-centered padding-sm">
-                Knightage Level
-              </div>
-              <div class="col-3 col-centered padding-sm">
-                <input id="KL-number" class="form-control user-input" type="number" min="1" value="0"/>
-              </div>
-            </div>
-            <div class="row centered-row">
-              <div class="col-3 col-centered padding-sm">
-                Tickets
-              </div>
-              <div class="col-3 col-centered padding-sm">
-                <input id="tickets-number" class="form-control user-input" type="number" min="10" value="0"/>
-              </div>      
-            </div>
-            <div class="row centered-row">
-              <div class="col-3 col-centered padding-sm">
-                Refills
-              </div>
-              <div class="col-3 col-centered padding-sm">
-                <input id="refills-number" class="form-control user-input" type="number" min="0" value="0" max="6"/>
-              </div>      
-            </div>
-            <div class="row centered-row">
-              <div class="col-6 col-centered padding-sm">
-                <img id="gem-image" src="../static/img/gem.png">
-                <label id="gem-label" for="gem-image">0</label>
-              </div>
-            </div>
-          </div>
+        		<h5 class="modal-title" id="exampleModalLongTitle">Endless Farming</h5>
+       			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+      		<div class="modal-body">
+      			<div class="row super-row justify-content-start">
+      				<div id="welcome-text" class="col-12 col-centered padding-0">
+      					<b></b>
+      				</div>
+					<div class="col-12 col-centered padding-0">
+						<div class="row centered-row">
+							<div class="col-3 col-centered padding-sm">
+								Knightage Level
+							</div>
+							<div class="col-3 col-centered padding-sm">
+				 				<input id="KL-number" class="form-control user-input" type="number" min="1" value="0"/>
+							</div>
+						</div>
+						<div class="row centered-row">
+							<div class="col-3 col-centered padding-sm">
+								Tickets
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								<input id="tickets-number" class="form-control user-input" type="number" min="10" value="0"/>
+							</div>			
+						</div>
+						<div class="row centered-row">
+							<div class="col-3 col-centered padding-sm">
+								Refills
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								<input id="refills-number" class="form-control user-input" type="number" min="0" value="0" max="6"/>
+							</div>			
+						</div>
+						<div class="row centered-row">
+							<div class="col-6 col-centered padding-sm">
+								<img id="gem-image" src="../static/img/gem.png">
+								<label id="gem-label" for="gem-image">0</label>
+							</div>
+						</div>
+					</div>
+				</div>
+      		</div>
+		</div>
+	</div>
+</div>
+    </div> 
+</nav>
+
+    
+    <div id="content" class="container">
+    <div class="row super-row">
+        <div class="col-sm-7 col-centered">
+            
+                <div class="row border centered-row" data-meta="Elf">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/161.png">
+                    </div>
+                    <div class="col-md-4"><h3>Hippogriff</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Hippogriff">
+                        <div class="progress col-centered">
+                            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Elf">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/99.png">
+                    </div>
+                    <div class="col-md-4"><h3>Dark Archer</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Dark Archer">
+                        <div class="progress col-centered">
+                            <div id="prog-Dark Archer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Elf">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/95.png">
+                    </div>
+                    <div class="col-md-4"><h3>Priest</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Priest">
+                        <div class="progress col-centered">
+                            <div id="prog-Priest" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Elf">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/97.png">
+                    </div>
+                    <div class="col-md-4"><h3>Fairy</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Fairy">
+                        <div class="progress col-centered">
+                            <div id="prog-Fairy" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="13"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Elf">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/95.png">
+                    </div>
+                    <div class="col-md-4"><h3>Priest</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Priest">
+                        <div class="progress col-centered">
+                            <div id="prog-Priest" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Elf">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/161.png">
+                    </div>
+                    <div class="col-md-4"><h3>Hippogriff</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Hippogriff">
+                        <div class="progress col-centered">
+                            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Elf">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/103.png">
+                    </div>
+                    <div class="col-md-4"><h3>Battle Drummer</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Battle Drummer">
+                        <div class="progress col-centered">
+                            <div id="prog-Battle Drummer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/141.png">
+                    </div>
+                    <div class="col-md-4"><h3>Naga</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Naga">
+                        <div class="progress col-centered">
+                            <div id="prog-Naga" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="9"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/161.png">
+                    </div>
+                    <div class="col-md-4"><h3>Hippogriff</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Hippogriff">
+                        <div class="progress col-centered">
+                            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/99.png">
+                    </div>
+                    <div class="col-md-4"><h3>Dark Archer</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Dark Archer">
+                        <div class="progress col-centered">
+                            <div id="prog-Dark Archer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/173.png">
+                    </div>
+                    <div class="col-md-4"><h3>Frost Demon</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Frost Demon">
+                        <div class="progress col-centered">
+                            <div id="prog-Frost Demon" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="17"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/175.png">
+                    </div>
+                    <div class="col-md-4"><h3>Winged Knight</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Winged Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Winged Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/141.png">
+                    </div>
+                    <div class="col-md-4"><h3>Naga</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Naga">
+                        <div class="progress col-centered">
+                            <div id="prog-Naga" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/135.png">
+                    </div>
+                    <div class="col-md-4"><h3>Steam Punk</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Steam Punk">
+                        <div class="progress col-centered">
+                            <div id="prog-Steam Punk" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/137.png">
+                    </div>
+                    <div class="col-md-4"><h3>Sylphid</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Sylphid">
+                        <div class="progress col-centered">
+                            <div id="prog-Sylphid" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Orc">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/139.png">
+                    </div>
+                    <div class="col-md-4"><h3>Medusa</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Medusa">
+                        <div class="progress col-centered">
+                            <div id="prog-Medusa" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/179.png">
+                    </div>
+                    <div class="col-md-4"><h3>Abyss Mage</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Abyss Mage">
+                        <div class="progress col-centered">
+                            <div id="prog-Abyss Mage" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/187.png">
+                    </div>
+                    <div class="col-md-4"><h3>Crow Knight</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Crow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/171.png">
+                    </div>
+                    <div class="col-md-4"><h3>Dark Elf</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Dark Elf">
+                        <div class="progress col-centered">
+                            <div id="prog-Dark Elf" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="6"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/193.png">
+                    </div>
+                    <div class="col-md-4"><h3>Astral Captain</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Astral Captain">
+                        <div class="progress col-centered">
+                            <div id="prog-Astral Captain" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/187.png">
+                    </div>
+                    <div class="col-md-4"><h3>Crow Knight</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Crow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/183.png">
+                    </div>
+                    <div class="col-md-4"><h3>Musketress</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Musketress">
+                        <div class="progress col-centered">
+                            <div id="prog-Musketress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/179.png">
+                    </div>
+                    <div class="col-md-4"><h3>Abyss Mage</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Abyss Mage">
+                        <div class="progress col-centered">
+                            <div id="prog-Abyss Mage" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/195.png">
+                    </div>
+                    <div class="col-md-4"><h3>Shadow Knight</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Shadow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Shadow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Undead">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/193.png">
+                    </div>
+                    <div class="col-md-4"><h3>Astral Captain</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Astral Captain">
+                        <div class="progress col-centered">
+                            <div id="prog-Astral Captain" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Miscellaneous">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/173.png">
+                    </div>
+                    <div class="col-md-4"><h3>Frost Demon</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Frost Demon">
+                        <div class="progress col-centered">
+                            <div id="prog-Frost Demon" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Miscellaneous">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/101.png">
+                    </div>
+                    <div class="col-md-4"><h3>Sorcerer</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Sorcerer">
+                        <div class="progress col-centered">
+                            <div id="prog-Sorcerer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Miscellaneous">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/197.png">
+                    </div>
+                    <div class="col-md-4"><h3>War Bear Rider</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="War Bear Rider">
+                        <div class="progress col-centered">
+                            <div id="prog-War Bear Rider" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="25"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Miscellaneous">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/159.png">
+                    </div>
+                    <div class="col-md-4"><h3>Flame Spirit</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Flame Spirit">
+                        <div class="progress col-centered">
+                            <div id="prog-Flame Spirit" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Miscellaneous">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/169.png">
+                    </div>
+                    <div class="col-md-4"><h3>Elementalist</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Elementalist">
+                        <div class="progress col-centered">
+                            <div id="prog-Elementalist" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Miscellaneous">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/187.png">
+                    </div>
+                    <div class="col-md-4"><h3>Crow Knight</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Crow Knight">
+                        <div class="progress col-centered">
+                            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row border centered-row" data-meta="Miscellaneous">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/img/units/103.png">
+                    </div>
+                    <div class="col-md-4"><h3>Battle Drummer</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="Battle Drummer">
+                        <div class="progress col-centered">
+                            <div id="prog-Battle Drummer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="2250"></div>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
-      </div>
     </div>
-  </div>
-</div>
-
-    
-  <div id="content" class="container">
-<div class="row super-row">
-  <div class="col-sm-7 col-centered">
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/187.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Crow Knight</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Crow Knight">
-          <div class="progress col-centered">
-            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Miscellaneous">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/187.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Crow Knight</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Crow Knight">
-          <div class="progress col-centered">
-            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Elf">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/99.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Dark Archer</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Dark Archer">
-          <div class="progress col-centered">
-            <div id="prog-Dark Archer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/141.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Naga</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Naga">
-          <div class="progress col-centered">
-            <div id="prog-Naga" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="9"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/99.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Dark Archer</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Dark Archer">
-          <div class="progress col-centered">
-            <div id="prog-Dark Archer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Elf">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/97.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Fairy</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Fairy">
-          <div class="progress col-centered">
-            <div id="prog-Fairy" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="13"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/161.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Hippogriff</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Hippogriff">
-          <div class="progress col-centered">
-            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/179.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Abyss Mage</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Abyss Mage">
-          <div class="progress col-centered">
-            <div id="prog-Abyss Mage" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/193.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Astral Captain</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Astral Captain">
-          <div class="progress col-centered">
-            <div id="prog-Astral Captain" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Miscellaneous">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/169.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Elementalist</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Elementalist">
-          <div class="progress col-centered">
-            <div id="prog-Elementalist" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/193.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Astral Captain</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Astral Captain">
-          <div class="progress col-centered">
-            <div id="prog-Astral Captain" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/137.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Sylphid</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Sylphid">
-          <div class="progress col-centered">
-            <div id="prog-Sylphid" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Miscellaneous">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/197.png">
-        </div>
-        <div class="col-md-4">
-          <h3>War Bear Rider</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="War Bear Rider">
-          <div class="progress col-centered">
-            <div id="prog-War Bear Rider" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="25"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/173.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Frost Demon</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Frost Demon">
-          <div class="progress col-centered">
-            <div id="prog-Frost Demon" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="17"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/175.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Winged Knight</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Winged Knight">
-          <div class="progress col-centered">
-            <div id="prog-Winged Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/195.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Shadow Knight</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Shadow Knight">
-          <div class="progress col-centered">
-            <div id="prog-Shadow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/139.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Medusa</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Medusa">
-          <div class="progress col-centered">
-            <div id="prog-Medusa" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/135.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Steam Punk</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Steam Punk">
-          <div class="progress col-centered">
-            <div id="prog-Steam Punk" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/179.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Abyss Mage</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Abyss Mage">
-          <div class="progress col-centered">
-            <div id="prog-Abyss Mage" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Miscellaneous">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/159.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Flame Spirit</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Flame Spirit">
-          <div class="progress col-centered">
-            <div id="prog-Flame Spirit" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="27"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Elf">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/161.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Hippogriff</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Hippogriff">
-          <div class="progress col-centered">
-            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/171.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Dark Elf</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Dark Elf">
-          <div class="progress col-centered">
-            <div id="prog-Dark Elf" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="6"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Miscellaneous">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/173.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Frost Demon</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Frost Demon">
-          <div class="progress col-centered">
-            <div id="prog-Frost Demon" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Orc">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/141.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Naga</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Naga">
-          <div class="progress col-centered">
-            <div id="prog-Naga" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/187.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Crow Knight</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Crow Knight">
-          <div class="progress col-centered">
-            <div id="prog-Crow Knight" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Elf">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/95.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Priest</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Priest">
-          <div class="progress col-centered">
-            <div id="prog-Priest" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Undead">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/183.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Musketress</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Musketress">
-          <div class="progress col-centered">
-            <div id="prog-Musketress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Miscellaneous">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/101.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Sorcerer</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Sorcerer">
-          <div class="progress col-centered">
-            <div id="prog-Sorcerer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="24"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Miscellaneous">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/103.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Battle Drummer</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Battle Drummer">
-          <div class="progress col-centered">
-            <div id="prog-Battle Drummer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="2250"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Elf">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/161.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Hippogriff</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Hippogriff">
-          <div class="progress col-centered">
-            <div id="prog-Hippogriff" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Elf">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/95.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Priest</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Priest">
-          <div class="progress col-centered">
-            <div id="prog-Priest" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5"></div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row border centered-row" data-meta="Elf">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/img/units/103.png">
-        </div>
-        <div class="col-md-4">
-          <h3>Battle Drummer</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="Battle Drummer">
-          <div class="progress col-centered">
-            <div id="prog-Battle Drummer" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
-          </div>
-        </div>
-      </div>
-    
-  </div>
-</div>
-<footer class="page-footer font-medium col-centered">
-  This ranking was originally created by CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
-</footer>
+    <footer class="page-footer font-medium">
+        This ranking was originally created by CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
+    </footer>
 </div>
 
 
     
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <!-- still needed? -->
-  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript" src="/static/js/extern/lodash.min.js"></script>
-  <script type="text/javascript" src="/static/js/extern/sortable.js"></script>
-  <script type="text/javascript" src="/static/js/extern/idb.js"></script>
-  <script type="text/javascript" src="/static/js/extern/index.js"></script>
-  <script type="text/javascript" src="/static/js/extern/jquery.sortable.min.js"></script>
+    <script type="text/javascript" src="/static/js/lodash.min.js"></script>
+    <script type="text/javascript" src="/static/js/sortable.js"></script>
+    <script type="text/javascript" src="/static/js/idb.js"></script>
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script type="text/javascript" src="/static/js/index.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.sortable.min.js"></script>
 
-  <script type="text/javascript" src="/static/js/base.js"></script>
+    <script type="text/javascript">
 
-  <script type="text/javascript" src="/static/js/tickets.js"></script>
+        String.prototype.replaceAll = function(search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, 'g'), replacement);
+        };
+    
+        function handle_nan(val){
+        return (isNaN(val)) ? 0 : val;
+        }
+
+        // IIFE - Immediately Invoked Function Expression
+        (function(yourcode) {
+
+            yourcode(window.jQuery, window.indexedDB, window, document);
+
+        }(function($, indexedDB, window, document) {
+
+            $(function() {
+                $("#import-button").click(function(){ 
+                    $('#dbupload').trigger('click');
+                });
+
+                $("#dbupload").change(function(e){ 
+                    var files = document.getElementById('dbupload').files;
+                    var fr = new FileReader();
+                    fr.onload = function(e) { 
+                        var result = JSON.parse(e.target.result);                       
+                        var db = new Dexie('endless-farming-db');
+                        db.open().then(function(){
+                            var idb_db = db.backendDB();
+                            clearDatabase(idb_db, function(err) {
+                                if(!err){
+                                    importFromJsonString(idb_db, result, function(err) {
+                                        if (!err){
+                                            console.log("Imported data successfully");
+                                            window.location.reload();
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    }
+                    fr.readAsText(files.item(0));
+                });
+
+                $("#export-button").on("click", function(e){
+                    var db = new Dexie('endless-farming-db');
+                    db.open().then(function(){
+                        var idb_db = db.backendDB();
+                        exportToJsonString(idb_db, function(err, jsonString) {
+                            if(err){
+                                console.error(err);
+                            }
+                            else {
+                                var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonString));
+                                var downloadAnchorNode = document.createElement('a');
+                                downloadAnchorNode.setAttribute("href", dataStr);
+                                downloadAnchorNode.setAttribute("download", "endless_farming.json");
+                                document.body.appendChild(downloadAnchorNode); // required for firefox
+                                downloadAnchorNode.click();
+                                downloadAnchorNode.remove();
+                            }
+                        });
+                    });                   
+                });
+
+                request = idb.open('endless-farming-db');
+                request.then(function(db){
+                    var tx = db.transaction('player', 'readwrite');
+                    var store = tx.objectStore('player');
+                    var KL = store.get("KL");
+                    KL.then(function(val){
+                        if (val !== undefined){
+                            $("#KL-number").attr("value", val["value"]);
+                        }
+                    });
+                    var tickets = store.get("tickets");
+                    tickets.then(function(val){
+                        if (val !== undefined){
+                            $("#tickets-number").attr("value", val["value"]);                       
+                        }
+                    });
+                    var refills = store.get("refills");
+                    refills.then(function(val){
+                        if (val !== undefined){
+                            $("#refills-number").attr("value", val["value"]);
+                            $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600][val["value"]]);
+                        }
+                    });
+                });
+
+                $(".user-input").bind('keyup mouseup', function () {
+                    $this = $(this);
+                    request = idb.open('endless-farming-db');
+                    request.then(function(db){
+                        var tx = db.transaction('player', 'readwrite');
+                        var store = tx.objectStore('player');
+                        var KL = store.put({name: this.attr("id").replace("-number", ""), value: this.val()});
+                        if($this.attr("id") == "KL-number" && $("#dragable-row").length != 0){
+                            updateStages(this.val());
+                        }
+                        if($("#dragable-row").length != 0){
+                            calculatePetFragmentsToFarm();
+                        }
+                    }.bind($this));
+                });
+
+                $("#refills-number").bind('keyup mouseup', function(){
+                    $this = $(this);
+                    function getSum(total, num) {
+                        return total + num;
+                    }
+                    $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600].slice(0, handle_nan(parseInt($this.val()))+1).reduce(getSum));
+                });
+
+                $('#stats-modal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget);
+                    var text = button.data('welcome-text');
+                    var modal = $(this);
+                    modal.find('#welcome-text').children().first().text(text);
+                });
+
+                request = idb.open('endless-farming-db');
+                request.then(function(db){
+                    var tx = db.transaction('player', 'readwrite');
+                    var store = tx.objectStore('player');
+                    var KL = store.get("KL");
+                    KL.then(function(val){
+                        if (val !== undefined && val["value"]==0){
+                            //$(document).ready(function() {
+                            //    $("#stats-modal").modal();
+                            //});
+                        }
+                    });
+                });
+            });
+
+    (function() {
+        'use strict';
+        //check for support
+        if (!('indexedDB' in window)) {
+            console.log('This browser doesn\'t support IndexedDB');
+        return;
+        }
+        var dbPromise = idb.open('endless-farming-db', 2,  function(upgradeDb) {
+            switch (upgradeDb.oldVersion) {
+                case 0:
+                    if (!upgradeDb.objectStoreNames.contains('units')) {
+                        var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
+                        unitsOS.createIndex('nsr', 'nsr', {unique: false});
+                        unitsOS.createIndex('sr', 'sr', {unique: false});
+                    }
+                    if (!upgradeDb.objectStoreNames.contains('pets')) {
+                        var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
+                        petsOS.createIndex('fragments', 'fragments', {unique: false});
+                    }
+                case 1:
+                    if(!upgradeDb.objectStoreNames.contains('player')){
+                        var playerOS = upgradeDb.createObjectStore('player', {keyPath: 'name', autoIncrement:true});
+                        playerOS.createIndex('value', 'value', {unique: false});
+                        playerOS.get("KL").then(function(val){
+                            if (val == undefined){
+                                playerOS.put({"name": "KL", "value": 0});
+                            }
+                        });
+                        playerOS.get("KL").then(function(val){
+                            if (val == undefined){
+                                playerOS.put({"name": "tickets", "value": 0});
+                            }
+                        });
+                        playerOS.get("KL").then(function(val){
+                            if (val == undefined){
+                                playerOS.put({"name": "refills", "value": 0});
+                            }
+                        });
+                    }
+                    var petsOS = upgradeDb.transaction.objectStore('pets');
+                    petsOS.createIndex('priority', 'priority', {unique: false});
+            }   
+        });
+    })();
+        }));
+    </script>
+
+    <script type="text/javascript">
+    // IIFE - Immediately Invoked Function Expression
+    (function(yourcode) {
+
+        yourcode(window.jQuery, window.indexedDB, window, document);
+
+    }(function($, indexedDB, window, document) {
+
+        $(function() {
+            $(".requirement").each(function(){
+                $this = $(this);
+                idb.open('endless-farming-db').then(function(db){
+                    var tx = db.transaction('units', 'readwrite');
+                    var store = tx.objectStore('units');
+                    return store.get(this.data("unit").replaceAll(" ", "_"));
+                }.bind($this)).then(function(val){
+                    var $progressbar = $(this.children().children()[0]);
+                    var requirement = $progressbar.attr('aria-valuemax');
+                    if (val != undefined){
+                        var value = 100*((val.nsr+val.sr) / parseFloat(requirement));
+                        var val_text = val.nsr+val.sr;
+                    } else {
+                        var value = 0;
+                        var val_text = 0;
+                    }
+                    $progressbar.attr('aria-valuenow',value);
+                    $progressbar.css("width", value + "%");
+                    if(value >=100){
+                        $progressbar.addClass("progress-bar-green");
+                    } else{
+                        $progressbar.addClass("progress-bar-red");
+                        }
+                    this.children().children()[0].innerText = (val_text) +"/"+ requirement;
+                }.bind($this));         
+            });
+        });
+    }));    
+    </script>
 
   </body>
 </html>

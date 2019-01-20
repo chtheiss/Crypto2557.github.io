@@ -1,31 +1,65 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-<div class="row super-row">
-  <div class="col-sm-7 col-centered">
-    {% for key, ticket in tickets.items() %}
-      <div class="row border centered-row" data-meta="{{ticket['meta']}}">
-        <div class="col-md-4">
-          <img class='unit-image' src="../static/{{units[ticket['unit']]['img_sr']}}">
+    <div class="row super-row">
+        <div class="col-sm-7 col-centered">
+            {% for key, ticket in tickets.items() %}
+                <div class="row border centered-row" data-meta="{{ticket['meta']}}">
+                    <div class="col-md-4">
+                        <img class='unit-image' src="../static/{{units[ticket['unit']]['img_sr']}}">
+                    </div>
+                    <div class="col-md-4"><h3>{{ ticket['unit'] }}</h3></div>
+                    <div class="col-md-4 requirement col-padding-mobile" data-unit="{{ticket['unit']}}">
+                        <div class="progress col-centered">
+                            <div id="{{'prog-'+ticket['unit']}}" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ ticket['requirement'] }}"></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-        <div class="col-md-4">
-          <h3>{{ ticket['unit'] }}</h3>
-        </div>
-        <div class="col-md-4 requirement col-padding-mobile" data-unit="{{ticket['unit']}}">
-          <div class="progress col-centered">
-            <div id="{{'prog-'+ticket['unit']}}" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ ticket['requirement'] }}"></div>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
-<footer class="page-footer font-medium col-centered">
-  This ranking was originally created by CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
-</footer>
+    </div>
+    <footer class="page-footer font-medium col-centered">
+        This ranking was originally created by CheezyBob and can be found <a href="https://www.reddit.com/r/EndlessFrontier/wiki/guides/unit_selection_ticket">here</a>.
+    </footer>
 {% endblock %}
-
 {% block scripts %}
-  {{ super() }}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/tickets.js') }}"></script>
+    {{ super() }}
+    <script type="text/javascript">
+    // IIFE - Immediately Invoked Function Expression
+    (function(yourcode) {
+
+        yourcode(window.jQuery, window.indexedDB, window, document);
+
+    }(function($, indexedDB, window, document) {
+
+        $(function() {
+            $(".requirement").each(function(){
+                $this = $(this);
+                idb.open('endless-farming-db').then(function(db){
+                    var tx = db.transaction('units', 'readwrite');
+                    var store = tx.objectStore('units');
+                    return store.get(this.data("unit").replaceAll(" ", "_"));
+                }.bind($this)).then(function(val){
+                    var $progressbar = $(this.children().children()[0]);
+                    var requirement = $progressbar.attr('aria-valuemax');
+                    if (val != undefined){
+                        var value = 100*((val.nsr+val.sr) / parseFloat(requirement));
+                        var val_text = val.nsr+val.sr;
+                    } else {
+                        var value = 0;
+                        var val_text = 0;
+                    }
+                    $progressbar.attr('aria-valuenow',value);
+                    $progressbar.css("width", value + "%");
+                    if(value >=100){
+                        $progressbar.addClass("progress-bar-green");
+                    } else{
+                        $progressbar.addClass("progress-bar-red");
+                        }
+                    this.children().children()[0].innerText = (val_text) +"/"+ requirement;
+                }.bind($this));         
+            });
+        });
+    }));    
+    </script>
 {% endblock %}

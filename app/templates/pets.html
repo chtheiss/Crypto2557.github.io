@@ -1,131 +1,231 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
+{% endblock %}
 {% block app_content %}
 <div class="row super-row">
-  <div class="col-12 col-centered">
-    <button id="reset-btn" class="btn btn-dark btn-md">Reset Priority</button>
-    <button id="add-all-btn" class="btn btn-dark btn-md">Add All</button>
-  </div>
-  <div class="col-12 col-centered">
-    <div id="tracking" class="row justify-content-center" style="display:None;">
-      <div id="track-1" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-2" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-3" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-4" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-5" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-6" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-7" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-8" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-9" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-10" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-11" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
-      <div id="track-12" class="col-2" data-empty="True">
-        <img class="pet-image" src=""/>
-        <p></p>
-      </div>
+    <div class="col-12 col-centered">
+        <button id="reset-btn" class="btn btn-dark btn-md">Reset Priority</button>
+        <button id="add-all-btn" class="btn btn-dark btn-md">Add All</button>
     </div>
-  </div>
-  <div id="dragable-row" class="row super-row row-hidden justify-content-center">
-    {% for key, pet in pets.items() %}
-      {% set key_id=key.replace(" ", "_") %}
-      <div id="{{key_id}}" data-id="{{loop.index-1}}" class="col-md-2 col-sm-3 col-5 border block padding-sm">
-        <div class="row centered-row">
-          <div class="col-md-5 padding-0">
-            <span class="pet-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
-            <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
-            </span>
-          </div>
-          <div class="col-md-2 col-fragments padding-0">
-            <p id="{{key_id}}-farmable-fragments" class="zero-fragments">0</p>
-          </div>
-          <div class="col-md-5 padding-0">
-            <h3>{{ key }}</h3>
-          </div>
+    <div class="col-12 col-centered">
+        <div id="tracking" class="row justify-content-center" style="display:None;">
+                <div id="track-1" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
         </div>
-        <div class="row centered-row">
-          <div class="col-md-7 padding-md">
-            <fieldset>
-              <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
-                <img class="img-responsive" src="../static/img/stargrey.png"/>
-                <input type="checkbox" value="10" data-stars="1"/>
-              </label>
-              <label class="image-checkbox" id="{{key_id}}-2star" data-pet="{{key_id}}">
-                <img class="img-responsive" src="../static/img/stargrey.png"/>
-                <input type="checkbox" value="30" data-stars="2"/>
-              </label>
-              <label class="image-checkbox" id="{{key_id}}-3star" data-pet="{{key_id}}">
-                <img class="img-responsive" src="../static/img/stargrey.png"/>
-                <input type="checkbox" value="80" data-stars="3"/>
-              </label>
-              <label class="image-checkbox" id="{{key_id}}-4star" data-pet="{{key_id}}">
-                <img class="img-responsive" src="../static/img/stargrey.png"/>
-                <input type="checkbox" value="180" data-stars="4"/>
-              </label>
-              <label class="image-checkbox" id="{{key_id}}-5star" data-pet="{{key_id}}">
-                <img class="img-responsive" src="../static/img/stargrey.png"/>
-                <input type="checkbox" value="330" data-stars="5"/>
-              </label>
-            </fieldset>
-          </div>
-          <div class="col-md-5 ml-auto">
-            <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="form-control pet-input" type="number" min="0" value="0"/>
-          </div>
+                <div id="track-2" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
         </div>
-        <div class="row centered-row">
-          <div class="col-3 col-kl col-red" data-from="{{pet['from'][0]}}">{{(ceil(pet["from"][0]/5)*2)|int}}</div>
-          <div class="col-3 col-kl col-red" data-from="{{pet['from'][1]}}">{{(ceil(pet["from"][1]/5)*2)|int}}</div>
-          {% if(pet["from"][2]) %} 
-            <div class="col-3 col-kl col-red" data-from="{{pet['from'][2]}}">{{(ceil(pet["from"][2]/5)*2)|int}}</div>
-          {% endif %}
-          {% if(pet["from"][3]) %} 
-            <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{(ceil(pet["from"][3]/5)*2)|int}}</div>
-          {% endif %}
+                <div id="track-3" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
         </div>
-      </div>
-    {% endfor %}
-    {% for key, pet in pets.items() %}
-      {% set key_id=key.replace(" ", "_") %}
-      {% set pet_name=key %}
-      {% include '_pet_modal.html' %}
-    {% endfor %}
-  </div>
+                <div id="track-4" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-5" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-6" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-7" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-8" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-9" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-10" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+                <div id="track-11" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>
+            <div id="track-12" class="col-2" data-empty="True">
+            <img class="pet-image" src=""/><p></p>
+        </div>            
+        </div>
+    </div>
+    <div id="dragable-row" class="row super-row row-hidden justify-content-center">
+            {% for key, pet in pets.items() %}
+            {% set key_id=key.replace(" ", "_") %}
+                    <div id="{{key_id}}" data-id="{{loop.index-1}}" class="col-md-2 col-sm-3 col-5 border block padding-sm">
+                        <div class="row centered-row">
+                            <div class="col-md-5 padding-0">
+                                <span class="pet-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
+                                    <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
+                                </span>
+                                {% set pet_name=key %}
+                                {% include '_pet_modal.html' %}
+                            </div>
+                            <div class="col-md-2 col-fragments padding-0">
+                                <p id="{{key_id}}-farmable-fragments" class="zero-fragments">0</p>
+                            </div>
+                            <div class="col-md-5 padding-0">
+                                <h3>{{ key }}</h3>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-md-7 padding-md">
+                                    <fieldset>
+                                        <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="10" data-stars="1"/>
+                                        </label>
+                                        <label class="image-checkbox" id="{{key_id}}-2star" data-pet="{{key_id}}">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="30" data-stars="2"/>
+                                        </label>
+                                        <label class="image-checkbox" id="{{key_id}}-3star" data-pet="{{key_id}}">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="80" data-stars="3"/>
+                                        </label>
+                                        <label class="image-checkbox" id="{{key_id}}-4star" data-pet="{{key_id}}">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="180" data-stars="4"/>
+                                        </label>
+                                        <label class="image-checkbox" id="{{key_id}}-5star" data-pet="{{key_id}}">
+                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
+                                            <input type="checkbox" value="330" data-stars="5"/>
+                                        </label>
+                                    </fieldset>
+                            </div> 
+                            <div class="col-md-5 ml-auto">
+                                    <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="form-control pet-input" type="number" min="0" value="0"/>
+                            </div>
+                        </div>
+                        <div class="row centered-row">
+                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][0]}}">{{(ceil(pet["from"][0]/5)*2)|int}}</div>
+                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][1]}}">{{(ceil(pet["from"][1]/5)*2)|int}}</div>
+                            {% if(pet["from"][2]) %} <div class="col-3 col-kl col-red" data-from="{{pet['from'][2]}}">{{(ceil(pet["from"][2]/5)*2)|int}}</div> {% endif %}
+                            {% if(pet["from"][3]) %} <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{(ceil(pet["from"][3]/5)*2)|int}}</div> {% endif %}
+                        </div>
+                    </div>
+            {% endfor %}
+    </div>
 </div>
 {% endblock %}
-
 {% block scripts %}
-  {{ super() }}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
+    {{ super() }}
+    <script type="text/javascript">
+    // IIFE - Immediately Invoked Function Expression
+    (function(yourcode) {
+
+        yourcode(window.jQuery, window.indexedDB, window, document);
+
+    }(function($, indexedDB, window, document) {
+
+        $(function() {
+            $(".pet-input").each(function(){
+                on_pet_input_change($(this));
+            });
+            $(".pet-input").bind('keyup mouseup', function () {
+                var request = idb.open('endless-farming-db');
+                request.then(function(db){
+                    var tx = db.transaction('pets', 'readwrite');
+                    var store = tx.objectStore('pets');
+                    var item = {
+                        name: $(this).data("pet"),
+                        fragments: parseInt($(this).val())
+                    };
+                    var putRequest = store.put(item);
+                    return tx.complete;
+                }.bind(this)).then(function() {
+                    val = idb.open('endless-farming-db').then(function(db){
+                        var tx = db.transaction('pets', 'readwrite');
+                        var store = tx.objectStore('pets');
+                        return store.get($(this).data("pet"));
+                    }.bind(this)).then(function(val){
+                        $(this).attr("value", val["fragments"]);
+                        change_stars(val);
+                        calculatePetFragmentsToFarm();
+                    });
+                }.bind(this));
+            });
+
+            $(".image-checkbox").on("click", function (e) {
+                var $checkbox = $(this).find('input[type="checkbox"]');
+                var $input = $("#"+$(this).data("pet")+"-fragments");
+                $input.val($checkbox.attr("value"));
+                $input.keyup();
+            });
+
+            request = idb.open('endless-farming-db');
+            request.then(function(db){
+                var tx = db.transaction('player', 'readwrite');
+                var store = tx.objectStore('player');
+                var KL = store.get("KL");
+                KL.then(function(val){
+                    if (val !== undefined){
+                        updateStages(val["value"]);
+                    }
+                });
+            });
+
+            row = $("#dragable-row").get()[0];
+            sortable = Sortable.create(row, {
+                cursor: 'move',
+                animation: 150,              
+                onUpdate: function(event) {
+                    change = $("#dragable-row").children().filter(function() {
+                        id = parseInt($(this).attr("data-id"));
+                        if (event.newIndex < event.oldIndex){
+                            return id >= event.newIndex && id <= event.oldIndex;   
+                        } else {
+                            return id >= event.oldIndex && id <= event.newIndex;   
+                        }
+                                    
+                    });
+                    
+                    change.each(function(){
+                        var $col = $(this);
+                        if(event.newIndex < event.oldIndex) {
+                            $col.attr("data-id", parseInt($col.attr("data-id"))+1);
+                            $col.data("id", parseInt($col.attr("id"))+1);
+                        } else {
+                            $col.attr("data-id", parseInt($col.attr("data-id"))-1);
+                            $col.data("id", parseInt($col.attr("id"))-1);
+                        }
+                    });
+
+                    $(event.item).attr("data-id", event.newIndex);
+                    $(event.item).data("id", event.newIndex);
+                    
+                    updatePriorities()
+                    calculatePetFragmentsToFarm()     
+                },
+            });
+
+            $("#add-all-btn").click(function(){ 
+                $("#dragable-row").children('.block').each(function(){
+                    var col = $(this);
+                    var frags_to_add = parseInt(col.find(".col-fragments p").text());
+                    var input = col.find(".pet-input");
+                    var current_frags = handle_nan(parseInt(input.val()));
+                    input.val(current_frags+frags_to_add);
+                    input.keyup();
+                });
+            });
+
+            $("#reset-btn").click(function(){ 
+                getPriority().then(function(data){
+                    var priority = data["priority"];
+                    for (p in priority){
+                        col = $("#"+priority[""+p].replaceAll(" ", "_"));
+                        col.attr("data-id", p-1);
+                        col.data("id", p-1);
+                    }
+                    updatePriorities()
+                    sortPetsByPriority()
+                });
+            });
+
+            sortPetsByPriority()
+        });
+    }));
+    </script>
 {% endblock %}
