@@ -2,7 +2,7 @@
 var Flask = new (function(){
     'use strict';
     return {
-        '_endpoints': [["bootstrap.static", ["/static/bootstrap/", ""], ["filename"]], ["core.get_unit", ["/unit/", ".json"], ["unitid"]], ["core.get_pet", ["/pet/", ".json"], ["petid"]], ["static", ["/static/", ""], ["filename"]], ["core.meta_progression", ["/meta_progression/"], []], ["core.get_priority", ["/priority.json"], []], ["serve_js", ["/jsglue.js"], []], ["core.tickets", ["/tickets/"], []], ["core.units", ["/units/"], []], ["core.pets", ["/pets/"], []], ["core.index", ["/"], []]],
+        '_endpoints': [["core.get_unit", ["/static/json/units/", ".json"], ["unitid"]], ["core.get_pet", ["/static/json/pets/", ".json"], ["petid"]], ["bootstrap.static", ["/static/bootstrap/", ""], ["filename"]], ["static", ["/static/", ""], ["filename"]], ["core.get_priority", ["/static/json/priority.json"], []], ["core.meta_progression", ["/meta_progression/"], []], ["serve_js", ["/jsglue.js"], []], ["core.tickets", ["/tickets/"], []], ["core.units", ["/units/"], []], ["core.pets", ["/pets/"], []], ["core.index", ["/"], []]],
         'url_for': function(endpoint, rule) {
             if(typeof rule === "undefined") rule = {};
 

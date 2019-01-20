@@ -49,19 +49,19 @@ def tickets():
     tickets = json.load(open(tickets_url))
     return render_template('tickets.html', title='Tickets', units=units, tickets=tickets)
 
-@bp.route('/pet/<petid>.json', methods=['GET', 'POST'])
+@bp.route('/static/json/pets/<petid>.json', methods=['GET', 'POST'])
 def get_pet(petid):
     pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
     return jsonify({"petid":petid, "pet": pets[petid.replace("_", " ")]})
 
-@bp.route('/unit/<unitid>.json', methods=['GET', 'POST'])
+@bp.route('/static/json/units/<unitid>.json', methods=['GET', 'POST'])
 def get_unit(unitid):
     units_url = os.path.join(current_app.root_path, "static/json", "units.json")
     units = json.load(open(units_url))
     return jsonify(unit=units[unitid.replace("_", " ")])
 
-@bp.route('/priority.json', methods=['GET', 'POST'])
+@bp.route('/static/json/priority.json', methods=['GET', 'POST'])
 def get_priority():
     pet_priority_url = os.path.join(current_app.root_path, "static/json", "pet_priority.json")
     pet_priority = json.load(open(pet_priority_url))
