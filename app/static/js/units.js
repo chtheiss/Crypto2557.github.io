@@ -145,7 +145,7 @@ function updateBuffRequirement(buff, data, items){
     .find('[data-original-title="'+buff['name']+'"]').find(".progress-bar")
   update_progress_bar_values($progbar, buff);
 }
-
+/*
 function updateBuffs($petImage, items){
   for (var item of items){
     if (item["name"]==$petImage.data("pet")){
@@ -184,6 +184,47 @@ function updateBuffs($petImage, items){
     }
   }
 }
+*/
+
+async function updateBuffs($petImage){
+  var db = await idb.open('endless-farming-db')
+  var tx = await db.transaction('pets', 'readwrite');
+  var store = tx.objectStore('pets');
+  var items = await store.getAll();
+  var pet = await store.get($petImage.data("pet"));
+  if(pet != undefined && pet["fragments"]>=330){
+    $petImage.addClass("five-star-pet");
+    await getPet($petImage.data("pet")).then(async function(data){
+      const $unit_cell = $("#"+$petImage.data("unit"));
+      var $prog_bar_add_buff = $unit_cell.find(".additional_buff");   
+      $prog_bar_add_buff.removeClass("progress-bar-hidden");
+      $prog_bar_add_buff.parent().popover();
+      for (var buff of data["pet"]["buffs"]){
+        var $buff_span = $unit_cell.find('[data-original-title="'+buff['name']+'"]');
+        $buff_span.attr("data-content", buff["description"]);
+        if (buff["linked_pets"] == undefined){
+          update_progress_bar_values($buff_span.find(".progress-bar"), buff);
+        } else {
+          var linked_active_pets = getLinkedActivePets(buff, items);
+          await updateBuffRequirement(buff, data, items);
+          for (var linked_pet of buff["linked_pets"]){
+            var linked_pet_info = await getPet(linked_pet.replaceAll(" ", "_"));
+            var linked_pet_buffs = linked_pet_info["pet"]["buffs"];
+            for (var linked_pet_buff of linked_pet_buffs){
+              if (linked_pet_buff["name"] == buff["name"]){
+                var nr = getLinkedActivePets(linked_pet_buff, items).length-1;
+                linked_pet_buff["requirement"] = linked_pet_buff["requirement"][nr];
+                update_progress_bar_values($("#"+linked_pet_info["petid"].replace(" ", "_")+"-image").parents(".block").find('[data-original-title="'+linked_pet_buff['name']+'"]').find(".progress-bar"), linked_pet_buff);
+              }
+            }
+          }
+        }
+      }
+    }.bind({"pet": pet, "items": items}));
+    return true;
+  }
+}
+
 
 (function(yourcode) {
   yourcode(window.jQuery, window.indexedDB, window, document);
@@ -197,16 +238,16 @@ function updateBuffs($petImage, items){
         }
       }
     });
-    idb.open("endless-farming-db").then(function(db){
+    /*idb.open("endless-farming-db").then(function(db){
       var tx = db.transaction('pets', 'readwrite');
       var store = tx.objectStore('pets');
       return store.getAll();
-    }).then(function(items){
+    }).then(function(items){*/
       $('.pet-image').each(function() {
         var $this = $(this);
-        updateBuffs($this, items);
+        updateBuffs($this);
       });
-    });
+    //});
     $(".unit-input").bind('keyup mouseup', function () {
       var $this = $(this);
       update_all_progress_bars_of_input($this);
