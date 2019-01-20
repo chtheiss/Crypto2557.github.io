@@ -124,7 +124,7 @@ function getPet(petid) {
     type: "GET",
     url: Flask.url_for("core.get_pet", {"petid": petid}),
     dataType: "json",
-    async: true
+    async: false
   });
 }
 
