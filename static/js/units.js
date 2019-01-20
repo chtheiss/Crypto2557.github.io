@@ -124,7 +124,7 @@ function getPet(petid) {
     type: "GET",
     url: Flask.url_for("core.get_pet", {"petid": petid}),
     dataType: "json",
-    async: true
+    async: false
   });
 }
 
@@ -147,7 +147,7 @@ function updateBuffRequirement(buff, data, items){
 }
 
 function updateBuffs($petImage, items){
-  for (item of items){
+  for (var item of items){
     if (item["name"]==$petImage.data("pet")){
       if(item["fragments"]>=330){
         $petImage.addClass("five-star-pet");
@@ -190,9 +190,9 @@ function updateBuffs($petImage, items){
 }(function($, indexedDB, window, document) {
   $(function() {
     $('.block').each(function(){
-      $unit_cell = $(this);
-      for (bar of $unit_cell.find('[role="progressbar"]')){
-        for (input of $unit_cell.find('input')){
+      var $unit_cell = $(this);
+      for (var bar of $unit_cell.find('[role="progressbar"]')){
+        for (var input of $unit_cell.find('input')){
             update_progress_bar($(bar), $(input));
         }
       }
@@ -203,11 +203,12 @@ function updateBuffs($petImage, items){
       return store.getAll();
     }).then(function(items){
       $('.pet-image').each(function() {
-        updateBuffs($(this), items);
+        var $this = $(this);
+        updateBuffs($this, items);
       });
     });
     $(".unit-input").bind('keyup mouseup', function () {
-      $this = $(this);
+      var $this = $(this);
       update_all_progress_bars_of_input($this);
       idb.open('endless-farming-db').then(function(db){
         var tx = db.transaction('units', 'readwrite');
