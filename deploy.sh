@@ -6,7 +6,8 @@ fi
 python freeze.py
 for FILE in $(find $BUILD_DIRECTORY/static/js/*.js)
 do
-	uglifyjs $FILE -o $FILE
+	#uglifyjs $FILE -o $FILE
+	echo $FILE
 done
 
 cleancss -o $BUILD_DIRECTORY/static/css/ef.css $BUILD_DIRECTORY/static/css/ef.css
