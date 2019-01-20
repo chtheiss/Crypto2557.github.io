@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 
-{% block head %}
-    {{ super() }}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
-{% endblock %}
 {% block app_content %}
 <div class="row super-row">
     <div class="col-12 col-centered">
@@ -59,8 +55,6 @@
                                 <span class="pet-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
                                     <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
                                 </span>
-                                {% set pet_name=key %}
-                                {% include '_pet_modal.html' %}
                             </div>
                             <div class="col-md-2 col-fragments padding-0">
                                 <p id="{{key_id}}-farmable-fragments" class="zero-fragments">0</p>
@@ -108,124 +102,13 @@
             {% endfor %}
     </div>
 </div>
+{% for key, pet in pets.items() %}
+    {% set key_id=key.replace(" ", "_") %}
+    {% set pet_name=key %}
+    {% include '_pet_modal.html' %}
+{% endfor %}
 {% endblock %}
 {% block scripts %}
     {{ super() }}
-    <script type="text/javascript">
-    // IIFE - Immediately Invoked Function Expression
-    (function(yourcode) {
-
-        yourcode(window.jQuery, window.indexedDB, window, document);
-
-    }(function($, indexedDB, window, document) {
-
-        $(function() {
-            $(".pet-input").each(function(){
-                on_pet_input_change($(this));
-            });
-            $(".pet-input").bind('keyup mouseup', function () {
-                var request = idb.open('endless-farming-db');
-                request.then(function(db){
-                    var tx = db.transaction('pets', 'readwrite');
-                    var store = tx.objectStore('pets');
-                    var item = {
-                        name: $(this).data("pet"),
-                        fragments: parseInt($(this).val())
-                    };
-                    var putRequest = store.put(item);
-                    return tx.complete;
-                }.bind(this)).then(function() {
-                    val = idb.open('endless-farming-db').then(function(db){
-                        var tx = db.transaction('pets', 'readwrite');
-                        var store = tx.objectStore('pets');
-                        return store.get($(this).data("pet"));
-                    }.bind(this)).then(function(val){
-                        $(this).attr("value", val["fragments"]);
-                        change_stars(val);
-                        calculatePetFragmentsToFarm();
-                    });
-                }.bind(this));
-            });
-
-            $(".image-checkbox").on("click", function (e) {
-                var $checkbox = $(this).find('input[type="checkbox"]');
-                var $input = $("#"+$(this).data("pet")+"-fragments");
-                $input.val($checkbox.attr("value"));
-                $input.keyup();
-            });
-
-            request = idb.open('endless-farming-db');
-            request.then(function(db){
-                var tx = db.transaction('player', 'readwrite');
-                var store = tx.objectStore('player');
-                var KL = store.get("KL");
-                KL.then(function(val){
-                    if (val !== undefined){
-                        updateStages(val["value"]);
-                    }
-                });
-            });
-
-            row = $("#dragable-row").get()[0];
-            sortable = Sortable.create(row, {
-                cursor: 'move',
-                animation: 150,              
-                onUpdate: function(event) {
-                    change = $("#dragable-row").children().filter(function() {
-                        id = parseInt($(this).attr("data-id"));
-                        if (event.newIndex < event.oldIndex){
-                            return id >= event.newIndex && id <= event.oldIndex;   
-                        } else {
-                            return id >= event.oldIndex && id <= event.newIndex;   
-                        }
-                                    
-                    });
-                    
-                    change.each(function(){
-                        var $col = $(this);
-                        if(event.newIndex < event.oldIndex) {
-                            $col.attr("data-id", parseInt($col.attr("data-id"))+1);
-                            $col.data("id", parseInt($col.attr("id"))+1);
-                        } else {
-                            $col.attr("data-id", parseInt($col.attr("data-id"))-1);
-                            $col.data("id", parseInt($col.attr("id"))-1);
-                        }
-                    });
-
-                    $(event.item).attr("data-id", event.newIndex);
-                    $(event.item).data("id", event.newIndex);
-                    
-                    updatePriorities()
-                    calculatePetFragmentsToFarm()     
-                },
-            });
-
-            $("#add-all-btn").click(function(){ 
-                $("#dragable-row").children('.block').each(function(){
-                    var col = $(this);
-                    var frags_to_add = parseInt(col.find(".col-fragments p").text());
-                    var input = col.find(".pet-input");
-                    var current_frags = handle_nan(parseInt(input.val()));
-                    input.val(current_frags+frags_to_add);
-                    input.keyup();
-                });
-            });
-
-            $("#reset-btn").click(function(){ 
-                getPriority().then(function(data){
-                    var priority = data["priority"];
-                    for (p in priority){
-                        col = $("#"+priority[""+p].replaceAll(" ", "_"));
-                        col.attr("data-id", p-1);
-                        col.data("id", p-1);
-                    }
-                    updatePriorities()
-                    sortPetsByPriority()
-                });
-            });
-
-            sortPetsByPriority()
-        });
-    }));
-    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
 {% endblock %}
