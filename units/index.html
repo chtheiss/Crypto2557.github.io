@@ -51,7 +51,9 @@
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
                 <button id="first-visit-button" data-toggle="modal" data-target="#stats-modal" data-welcome-text="Welcome to Endless Farming. If you want to use this application to its full potential please insert your knightage level, the spirit highland tickets available to you and how many times a day you buy additional tickets. You can later change it at any time by clicking the 'My Stats' button in the top right corner of the screen." style="display:none"></button>
         <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
-        <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div> 
+</nav>
+<div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -102,8 +104,6 @@
 		</div>
 	</div>
 </div>
-    </div> 
-</nav>
 
     
     <div id="content" class="container">
@@ -9053,254 +9053,21 @@
 
     
     
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="/static/js/lodash.min.js"></script>
-    <script type="text/javascript" src="/static/js/sortable.js"></script>
-    <script type="text/javascript" src="/static/js/idb.js"></script>
+    <script type="text/javascript" src="/static/js/extern/lodash.min.js"></script>
+    <script type="text/javascript" src="/static/js/extern/sortable.js"></script>
+    <script type="text/javascript" src="/static/js/extern/idb.js"></script>
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
-    <script type="text/javascript" src="/static/js/index.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.sortable.min.js"></script>
+    <script type="text/javascript" src="/static/js/extern/index.js"></script>
+    <script type="text/javascript" src="/static/js/extern/jquery.sortable.min.js"></script>
 
-    <script type="text/javascript">
-
-        String.prototype.replaceAll = function(search, replacement) {
-            var target = this;
-            return target.replace(new RegExp(search, 'g'), replacement);
-        };
-    
-        function handle_nan(val){
-        return (isNaN(val)) ? 0 : val;
-        }
-
-        // IIFE - Immediately Invoked Function Expression
-        (function(yourcode) {
-
-            yourcode(window.jQuery, window.indexedDB, window, document);
-
-        }(function($, indexedDB, window, document) {
-
-            $(function() {
-                $("#import-button").click(function(){ 
-                    $('#dbupload').trigger('click');
-                });
-
-                $("#dbupload").change(function(e){ 
-                    var files = document.getElementById('dbupload').files;
-                    var fr = new FileReader();
-                    fr.onload = function(e) { 
-                        var result = JSON.parse(e.target.result);                       
-                        var db = new Dexie('endless-farming-db');
-                        db.open().then(function(){
-                            var idb_db = db.backendDB();
-                            clearDatabase(idb_db, function(err) {
-                                if(!err){
-                                    importFromJsonString(idb_db, result, function(err) {
-                                        if (!err){
-                                            console.log("Imported data successfully");
-                                            window.location.reload();
-                                        }
-                                    });
-                                }
-                            });
-                        });
-                    }
-                    fr.readAsText(files.item(0));
-                });
-
-                $("#export-button").on("click", function(e){
-                    var db = new Dexie('endless-farming-db');
-                    db.open().then(function(){
-                        var idb_db = db.backendDB();
-                        exportToJsonString(idb_db, function(err, jsonString) {
-                            if(err){
-                                console.error(err);
-                            }
-                            else {
-                                var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonString));
-                                var downloadAnchorNode = document.createElement('a');
-                                downloadAnchorNode.setAttribute("href", dataStr);
-                                downloadAnchorNode.setAttribute("download", "endless_farming.json");
-                                document.body.appendChild(downloadAnchorNode); // required for firefox
-                                downloadAnchorNode.click();
-                                downloadAnchorNode.remove();
-                            }
-                        });
-                    });                   
-                });
-
-                request = idb.open('endless-farming-db');
-                request.then(function(db){
-                    var tx = db.transaction('player', 'readwrite');
-                    var store = tx.objectStore('player');
-                    var KL = store.get("KL");
-                    KL.then(function(val){
-                        if (val !== undefined){
-                            $("#KL-number").attr("value", val["value"]);
-                        }
-                    });
-                    var tickets = store.get("tickets");
-                    tickets.then(function(val){
-                        if (val !== undefined){
-                            $("#tickets-number").attr("value", val["value"]);                       
-                        }
-                    });
-                    var refills = store.get("refills");
-                    refills.then(function(val){
-                        if (val !== undefined){
-                            $("#refills-number").attr("value", val["value"]);
-                            $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600][val["value"]]);
-                        }
-                    });
-                });
-
-                $(".user-input").bind('keyup mouseup', function () {
-                    $this = $(this);
-                    request = idb.open('endless-farming-db');
-                    request.then(function(db){
-                        var tx = db.transaction('player', 'readwrite');
-                        var store = tx.objectStore('player');
-                        var KL = store.put({name: this.attr("id").replace("-number", ""), value: this.val()});
-                        if($this.attr("id") == "KL-number" && $("#dragable-row").length != 0){
-                            updateStages(this.val());
-                        }
-                        if($("#dragable-row").length != 0){
-                            calculatePetFragmentsToFarm();
-                        }
-                    }.bind($this));
-                });
-
-                $("#refills-number").bind('keyup mouseup', function(){
-                    $this = $(this);
-                    function getSum(total, num) {
-                        return total + num;
-                    }
-                    $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600].slice(0, handle_nan(parseInt($this.val()))+1).reduce(getSum));
-                });
-
-                $('#stats-modal').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget);
-                    var text = button.data('welcome-text');
-                    var modal = $(this);
-                    modal.find('#welcome-text').children().first().text(text);
-                });
-
-                request = idb.open('endless-farming-db');
-                request.then(function(db){
-                    var tx = db.transaction('player', 'readwrite');
-                    var store = tx.objectStore('player');
-                    var KL = store.get("KL");
-                    KL.then(function(val){
-                        if (val !== undefined && val["value"]==0){
-                            //$(document).ready(function() {
-                            //    $("#stats-modal").modal();
-                            //});
-                        }
-                    });
-                });
-            });
-
-    (function() {
-        'use strict';
-        //check for support
-        if (!('indexedDB' in window)) {
-            console.log('This browser doesn\'t support IndexedDB');
-        return;
-        }
-        var dbPromise = idb.open('endless-farming-db', 2,  function(upgradeDb) {
-            switch (upgradeDb.oldVersion) {
-                case 0:
-                    if (!upgradeDb.objectStoreNames.contains('units')) {
-                        var unitsOS = upgradeDb.createObjectStore('units', {keyPath: 'name'});
-                        unitsOS.createIndex('nsr', 'nsr', {unique: false});
-                        unitsOS.createIndex('sr', 'sr', {unique: false});
-                    }
-                    if (!upgradeDb.objectStoreNames.contains('pets')) {
-                        var petsOS = upgradeDb.createObjectStore('pets', {keyPath: 'name'});
-                        petsOS.createIndex('fragments', 'fragments', {unique: false});
-                    }
-                case 1:
-                    if(!upgradeDb.objectStoreNames.contains('player')){
-                        var playerOS = upgradeDb.createObjectStore('player', {keyPath: 'name', autoIncrement:true});
-                        playerOS.createIndex('value', 'value', {unique: false});
-                        playerOS.get("KL").then(function(val){
-                            if (val == undefined){
-                                playerOS.put({"name": "KL", "value": 0});
-                            }
-                        });
-                        playerOS.get("KL").then(function(val){
-                            if (val == undefined){
-                                playerOS.put({"name": "tickets", "value": 0});
-                            }
-                        });
-                        playerOS.get("KL").then(function(val){
-                            if (val == undefined){
-                                playerOS.put({"name": "refills", "value": 0});
-                            }
-                        });
-                    }
-                    var petsOS = upgradeDb.transaction.objectStore('pets');
-                    petsOS.createIndex('priority', 'priority', {unique: false});
-            }   
-        });
-    })();
-        }));
-    </script>
+    <script type="text/javascript" src="/static/js/base.js"></script>
 
     <script type="text/javascript" src="/static/js/units.js"></script>
-    <script type="text/javascript">
-    // IIFE - Immediately Invoked Function Expression
-    (function(yourcode) {
-
-        yourcode(window.jQuery, window.indexedDB, window, document);
-
-    }(function($, indexedDB, window, document) {
-
-        $(function() {
-            $('.block').each(function(){
-                $unit_cell = $(this);
-                for (bar of $unit_cell.find('[role="progressbar"]')){
-                    for (input of $unit_cell.find('input')){
-                        update_progress_bar($(bar), $(input));
-                    }
-                }
-            });
-            $('.pet-image').each(function() {
-                updateBuffs($(this));
-            });
-            $(".unit-input").bind('keyup mouseup', function () {
-                $this = $(this);
-                update_all_progress_bars_of_input($this);
-                idb.open('endless-farming-db').then(function(db){
-                    var tx = db.transaction('units', 'readwrite');
-                    var store = tx.objectStore('units');
-                    unit_values = get_unit_input_values($this);
-                    var item = {
-                        name: $this.data("unit"),
-                        nsr: unit_values.nsr,
-                        sr: unit_values.sr
-                    };
-                    store.put(item);
-                    return tx.complete;
-                }.bind($this));
-            });
-            $(".unit-input").each(function(){
-                on_unit_input_change($(this));
-            });
-            $('[data-toggle="tooltip"]').tooltip();
-            $('[data-toggle="popover"]').each(function(){
-                prog_bar = $(this).children().first();
-                if (!$(prog_bar).attr('class').split(/\s+/).includes("progress-bar-hidden")){
-                    $(this).popover();
-                }
-            });
-        });
-    }));
-    </script>
 
   </body>
 </html>

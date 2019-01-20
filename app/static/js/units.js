@@ -149,7 +149,7 @@ async function updateBuffs($petImage) {
   if (pet != undefined && pet["fragments"] >= 330) {
     $petImage.addClass("five-star-pet");
     data = await getPet($petImage.data("pet")).then(async function(data) {
-      $unit_cell = $("#" + $petImage.data("unit"));
+      const $unit_cell = $("#" + $petImage.data("unit"));
       $prog_bar_add_buff = $unit_cell.find(".additional_buff");
       $prog_bar_add_buff.removeClass("progress-bar-hidden");
       $prog_bar_add_buff.parent().popover();

@@ -1,0 +1,165 @@
+{  
+   "1":{  
+      "unit":"Hippogriff",
+      "requirement":5,
+      "meta":"Elf"
+   },
+   "2":{  
+      "unit":"Dark Archer",
+      "requirement":12,
+      "meta":"Elf"
+   },
+   "3":{  
+      "unit":"Priest",
+      "requirement":5,
+      "meta":"Elf"
+   },
+   "4":{  
+      "unit":"Fairy",
+      "requirement":13,
+      "meta":"Elf"
+   },
+   "5":{  
+      "unit":"Priest",
+      "requirement":8,
+      "meta":"Elf"
+   },
+   "6":{  
+      "unit":"Hippogriff",
+      "requirement":10,
+      "meta":"Elf"
+   },
+   "7":{  
+      "unit":"Battle Drummer",
+      "requirement":12,
+      "meta":"Elf"
+   },
+   "8":{  
+      "unit":"Naga",
+      "requirement":9,
+      "note":"orc meta support with pet",
+      "meta":"Orc"
+   },
+   "9":{  
+      "unit":"Hippogriff",
+      "requirement":20,
+      "meta":"Orc"
+   },
+   "10":{  
+      "unit":"Dark Archer",
+      "requirement":24,
+      "meta":"Orc"
+   },
+   "11":{  
+      "unit":"Frost Demon",
+      "requirement":17,
+      "meta":"Orc"
+   },
+   "12":{  
+      "unit":"Winged Knight",
+      "requirement":30,
+      "meta":"Orc"
+   },
+   "13":{  
+      "unit":"Naga",
+      "requirement":10,
+      "meta":"Orc"
+   },
+   "14":{  
+      "unit":"Steam Punk",
+      "requirement":10,
+      "meta":"Orc"
+   },
+   "15":{  
+      "unit":"Sylphid",
+      "requirement":10,
+      "meta":"Orc"
+   },
+   "16":{  
+      "unit":"Medusa",
+      "requirement":10,
+      "meta":"Orc"
+   },
+   "17":{  
+      "unit":"Abyss Mage",
+      "requirement":3,
+      "meta":"Undead"
+   },
+   "18":{  
+      "unit":"Crow Knight",
+      "requirement":5,
+      "meta":"Undead"
+   },
+   "19":{  
+      "unit":"Dark Elf",
+      "requirement":6,
+      "meta":"Undead"
+   },
+   "20":{  
+      "unit":"Astral Captain",
+      "requirement":10,
+      "note":"Airship fuel",
+      "meta":"Undead"
+   },
+   "21":{  
+      "unit":"Crow Knight",
+      "requirement":15,
+      "meta":"Undead"
+   },
+   "22":{  
+      "unit":"Musketress",
+      "requirement":15,
+      "meta":"Undead"
+   },
+   "23":{  
+      "unit":"Abyss Mage",
+      "requirement":30,
+      "meta":"Undead"
+   },
+   "24":{  
+      "unit":"Shadow Knight",
+      "requirement":12,
+      "meta":"Undead"
+   },
+   "25":{  
+      "unit":"Astral Captain",
+      "requirement":15,
+      "note":"with pet",
+      "meta":"Undead"
+   },
+   "26":{  
+      "unit":"Frost Demon",
+      "requirement":24,
+      "meta":"Miscellaneous"
+   },
+   "27":{  
+      "unit":"Sorcerer",
+      "requirement":24,
+      "meta":"Miscellaneous"
+   },
+   "28":{  
+      "unit":"War Bear Rider",
+      "requirement":25,
+      "meta":"Miscellaneous"
+   },
+   "29":{  
+      "unit":"Flame Spirit",
+      "requirement":27,
+      "meta":"Miscellaneous"
+   },
+   "30":{  
+      "unit":"Elementalist",
+      "requirement":27,
+      "meta":"Miscellaneous"
+   },
+   "31":{  
+      "unit":"Crow Knight",
+      "requirement":27,
+      "meta":"Miscellaneous"
+   },
+   "32":{  
+      "unit":"Battle Drummer",
+      "requirement":2250,
+      "meta":"Miscellaneous"
+   }
+}
