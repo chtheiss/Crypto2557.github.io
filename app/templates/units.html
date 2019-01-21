@@ -52,7 +52,7 @@
                                         {% set buff=unit["buffs"][i] %}
                                         <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
                                             <div class='progress'>
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}">0/{{buff["requirement"]}}
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}" data-linked-multiplier="{{buff['linked_multiplier']}}">0/{{buff["requirement"]}}
                                                 </div>
                                             </div>
                                         </span>
@@ -71,7 +71,7 @@
                                         {% set buff=pets[unit["pet"]]["additional_buffs"][i] %}
                                         <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
                                             <div class='progress progress-bar-hidden additional_buff'>
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}">0/{{buff["requirement"]}}
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}" data-linked-multiplier="{{buff['linked_multiplier']}}">0/{{buff["requirement"]}}
                                                 </div>
                                             </div>
                                         </span>

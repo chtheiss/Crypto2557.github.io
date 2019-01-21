@@ -554,7 +554,19 @@
                 "description":"Increases the Human unit's ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Orc unit's ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.5,
                 "requirement":12,
-                "amount":240
+                "amount":240,
+                "linked_units":[
+                    "Frost Demon",
+                    "Elementalist"
+                ],
+                "linked_pets":[
+                    "Bamba",
+                    "Chichi"
+                ],
+                "linked_multiplier":[
+                    0.0,
+                    0.4
+                ]
             },
             {
                 "name":"Innervate 2",
@@ -604,7 +616,19 @@
                 "description":"Increases the Elf unit's ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Human unit's ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.4666666,
                 "requirement":12,
-                "amount":240
+                "amount":240,
+                "linked_units":[
+                    "Cleric",
+                    "Dark Elf"
+                ],
+                "linked_pets":[
+                    "Bernard",
+                    "Chesher"
+                ],
+                "linked_multiplier":[
+                    0.0,
+                    0.666666
+                ]
             },
             {
                 "name":"Nature Resistance",
@@ -656,7 +680,19 @@
                 "description":"Increases the Undead unit's ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Elf unit's ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.5,
                 "requirement":12,
-                "amount":240
+                "amount":240,
+                "linked_units":[
+                    "Elementalist",
+                    "Frost Demon"
+                ],
+                "linked_pets":[
+                    "Chichi",
+                    "Bamba"
+                ],
+                "linked_multiplier":[
+                    0.0,
+                    0.4
+                ]
             }
         ],
         "atk_abil":[
@@ -700,7 +736,19 @@
                 "description":"Increases the Orc unit's ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Undead unit's ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels).",
                 "multiplier":0.4666666,
                 "requirement":12,
-                "amount":250
+                "amount":250,
+                "linked_units":[
+                    "Dark Elf",
+                    "Cleric"
+                ],
+                "linked_pets":[
+                    "Chesher",
+                    "Bernard"
+                ],
+                "linked_multiplier":[
+                    0.0,
+                    0.666666
+                ]
             },
             {
                 "name":"Enhance Active Skill",
