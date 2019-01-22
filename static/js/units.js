@@ -59,19 +59,22 @@ function update_progress_bar($bar, $input){
     linked_units.forEach(function(part, index, linked_units) {
         linked_units[index] = linked_units[index].trim().replaceAll(" ", "_");
     });
-    var linked_multiplier = ($bar.attr("data-linked-multiplier") == undefined) ? Array(linked_units.length).fill().map(function(){return 1.0}) : $bar.attr("data-linked-multiplier").split(",").map(Number);
+    var linked_multiplier = ($bar.attr("data-linked-multiplier") == undefined) ? 
+      Array(linked_units.length).fill().map(function(){return 1.0}) : 
+      $bar.attr("data-linked-multiplier").replace("]", "").replace("[", "").replace(" ", "").split(",").map(Number);
     var i = 0;
     for (var unit of linked_units){
       var $unit_cell = $("#"+unit.replace(" ", "_"));
-      if ($unit_cell.find(".pet-image.five-star-pet").length > 0){
       var other_unit_values = get_unit_input_values($unit_cell.find("input").first());
+        if ($unit_cell.find(".pet-image.five-star-pet").length > 0){
         val_linked += linked_multiplier[i]*other_unit_values.nsr;
         val_sr_linked += linked_multiplier[i]*other_unit_values.sr;
-        for (add_buff of $unit_cell.find(
+        }
+        for (var add_buff of $unit_cell.find(
           ".progress-bar[data-linked-units*='"+$input.data("unit").replace("_"," ")+"']")){
           additional_bars_to_update.push(add_buff);
         }
-      }
+      
         i += 1;
       }        
   }
@@ -84,11 +87,14 @@ function update_progress_bar($bar, $input){
      if($add_bar.attr("data-linked-multiplier") == undefined){
       _current_progress = current_progress;
       change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax"));
-    } else if ($add_bar.parents(".block").attr("id") == linked_units[0].replaceAll(" ", "_")){
-      var linked_multiplier = $add_bar.attr("data-linked-multiplier").split(",").map(Number); 
-      other_unit_values = get_unit_input_values($add_bar.parents(".block").find("input").first());
+    } else {
+      if ($add_bar.parents(".block").attr("id") == linked_units[0].replaceAll(" ", "_") &&
+      $bar.parents(".block").find(".pet-image.five-star-pet").length > 0){
+      var linked_multiplier = $add_bar.attr("data-linked-multiplier").replace("]", "").replace("[", "").replace(" ", "").split(",").map(Number); 
+      var other_unit_values = get_unit_input_values($add_bar.parents(".block").find("input").first());
       var _current_progress = multiplier*other_unit_values.nsr + other_unit_values.sr + linked_multiplier[linked_multiplier.length-1]*(multiplier*unit_values.nsr + unit_values.sr);
       change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax")); 
+    }
     }      
   }
 }
