@@ -26,11 +26,21 @@
                 ]
             }
         ],
-        "atk_abil":[
-
+        "atk_abil":["Normal Attack: Throws multiple hammers that attack and stun enemies.",
+            "Skill Attack: A giant hammer drops from the sky, blowing away enemies and damaging them, Additionally, there is acertain chance a dead ally will be resurrected with 40% of its HP. (However, in Raid and Outland Battle, only heroes will be resurrected and not the soldiers brought by the heroes.)",
+            "Special Ability 1: Increases basic speed of the game by 6%, increases human movement speed by 5% and attack distance by 3%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Spirit Awakening 2: Maximum level cap of all units are increased by 5. ([Spirit Awakening 2] is stackable, but the increased level cap cannot exceed +50). Can also be activated in the Time Shop.",
+            "Offline Limit Break: Increase the maximum stage of offline march by 0.2% for every 5-star unit and 0.4% for every 6-star unit. (Offline Limit Break is aplied even when the units are in Time Shop, but cannot exceed the maximum of 4%)"
         ],
-        "atk_abil_sr":[
-
+        "atk_abil_sr":["Normal Attack: Throws multiple hammers that attack and stun enemies.",
+            "Skill Attack: A giant hammer drops from the sky, blowing away enemies and damaging them, Additionally, there is acertain chance a dead ally will be resurrected with 70% of its HP. (However, in Raid and Outland Battle, only heroes will be resurrected and not the soldiers brought by the heroes.)",
+            "Special Ability 1: Increases basic speed of the game by 11%, increases human movement speed by 7% and attack distance by 6%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Spirit Awakening 2: Maximum level cap of all units are increased by 10. ([Spirit Awakening 2] is stackable, but the increased level cap cannot exceed +50). Can also be activated in the Time Shop.",
+            "Offline Limit Break: Increase the maximum stage of offline march by 0.2% for every 5-star unit and 0.4% for every 6-star unit. (Offline Limit Break is aplied even when the units are in Time Shop, but cannot exceed the maximum of 4%)"
         ]
     },
     "Royal Druid":{
@@ -47,10 +57,19 @@
                 "amount":100
             }
         ],
-        "atk_abil":[
-
+        "atk_abil":["Normal Attack: Hurls multiple magic missiles that attack enemies.",
+            "Skill Attack: Casts a huge leafe Shuriken that slows and knocks back enemies. Enemies that are knocked back have a certain chance to be bound and receive additional damage over time.",
+            "Special Ability 1: Increases basic speed of the game by 6%, increases elf attack speed and movement speed by 5%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Elf's Secret SKill of Space-Time: For every 100 stages, there is a certain chance to skip 20 stages. (3% chance for every 5-star unit and 5% for every 6-star unit which are only applied when they are in the team."
         ],
-        "atk_abil_sr":[
+        "atk_abil_sr":["Normal Attack: Hurls multiple magic missiles that attack enemies.",
+            "Skill Attack: Casts a huge leafe Shuriken that slows and knocks back enemies. Enemies that are knocked back have a certain chance to be bound and receive additional damage over time.",
+            "Special Ability 1: Increases basic speed of the game by 11%, increases elf attack speed and movement speed by 7%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Elf's Secret SKill of Space-Time: For every 100 stages, there is a certain chance to skip 20 stages. (3% chance for every 5-star unit and 5% for every 6-star unit which are only applied when they are in the team."
 
         ]
     },
@@ -81,11 +100,21 @@
                 ]
             }
         ],
-        "atk_abil":[
-
+        "atk_abil":["Normal Attack: Casts a bone missile that attack enemies.",
+            "Skill Attack: Summons a Dragon Bone to attack and paralyze enemies. Enemies that are paralyzed have a certain chance to lose 5% of their current HP due to the currse of aging. (Does not apply for bosses)",
+            "Special Ability 1: Increases basic speed of the game by 5%, increases undead movement speed by 3% and attack distance by 4%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Spirit Awakening 2: Maximum level cap of all units are increased by 5. ([Spirit Awakening 2] is stackable, but the increased level cap cannot exceed +50). Can also be activated in the Time Shop.",
+            "Offline Limit Break: Increase the maximum stage of offline march by 0.2% for every 5-star unit and 0.4% for every 6-star unit. (Offline Limit Break is aplied even when the units are in Time Shop, but cannot exceed the maximum of 4%)"
         ],
-        "atk_abil_sr":[
-
+        "atk_abil_sr":["Normal Attack: Casts a bone missile that attack enemies.",
+            "Skill Attack: Summons a Dragon Bone to attack and paralyze enemies. Enemies that are paralyzed have a certain chance to lose 10% of their current HP due to the currse of aging. (Does not apply for bosses)",
+            "Special Ability 1: Increases basic speed of the game by 9%, increases undead movement speed by 6% and attack distance by 7%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Spirit Awakening 2: Maximum level cap of all units are increased by 10. ([Spirit Awakening 2] is stackable, but the increased level cap cannot exceed +50). Can also be activated in the Time Shop.",
+            "Offline Limit Break: Increase the maximum stage of offline march by 0.2% for every 5-star unit and 0.4% for every 6-star unit. (Offline Limit Break is aplied even when the units are in Time Shop, but cannot exceed the maximum of 4%)"
         ]
     },
     "Battle Hornist":{
@@ -109,10 +138,21 @@
                 "amount":5
             }
         ],
-        "atk_abil":[
-
+        "atk_abil":["Normal Attack: Fires a hypnotic shot that deals damage and has a certain chance to put enemies to sleep.",
+            "Skill Attack: Fires multiple hypnotic shots hat deal damage and has a certain chance to put multiple enemies to sleep. There is a certain chance that when the skill is cast, a clone is summoned to attack enemies.",
+            "Special Ability 1: Increases basic speed of the game by 5%, increases orc movement speed by 5% and attack distance by 3%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Increase Auto-skill Efficiency: Reduces the cooldown of skills when using Auto-skill. Duration is reduced by 1% for every 5-star and 2% for every 6-star unit. Cooldown reduction is applied even when they are in Time Shop, but cannot exceed the maximum of 20%.",
+            "Mental Stimulation: When active skills are used, there is a certain chance that the cooldown is reset. Chance is increased by 0.25% fofr every 5-star unit and 0.5% for every 6-star nit, but cannot excee a maximum of 5%. (Only applies in scenarios)"
         ],
-        "atk_abil_sr":[
+        "atk_abil_sr":["Normal Attack: Fires a hypnotic shot that deals damage and has a certain chance to put enemies to sleep.",
+            "Skill Attack: Fires multiple hypnotic shots hat deal damage and has a certain chance to put multiple enemies to sleep. There is a certain chance that when the skill is cast, a clone is summoned to attack enemies.",
+            "Special Ability 1: Increases basic speed of the game by 9%, increases orc movement speed by 7% and attack distance by 6%.",
+            "Special Ability 2: Never gets disturbed by the terrain of Stage 10,000 or higher.",
+            "Special Ability 3: Appears near the enemies at its first appearance, and casts a buff to increase the its own movement speed and attack speed.",
+            "Increase Auto-skill Efficiency: Reduces the cooldown of skills when using Auto-skill. Duration is reduced by 1% for every 5-star and 2% for every 6-star unit. Cooldown reduction is applied even when they are in Time Shop, but cannot exceed the maximum of 20%.",
+            "Mental Stimulation: When active skills are used, there is a certain chance that the cooldown is reset. Chance is increased by 0.25% fofr every 5-star unit and 0.5% for every 6-star nit, but cannot excee a maximum of 5%. (Only applies in scenarios)"
 
         ]
     },
