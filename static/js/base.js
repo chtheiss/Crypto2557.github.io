@@ -7,6 +7,13 @@ function handle_nan(val) {
   return (isNaN(val)) ? 0 : val;
 }
 
+function change_gem_label($refill_number){
+  function getSum(total, num) {
+    return total + num;
+  }
+  $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600].slice(0, handle_nan(parseInt($refill_number.val())) + 1).reduce(getSum));
+}
+
 (function(yourcode) {
 
   yourcode(window.jQuery, window.indexedDB, window, document);
@@ -81,7 +88,7 @@ function handle_nan(val) {
       refills.then(function(val) {
         if (val !== undefined) {
           $("#refills-number").attr("value", val["value"]);
-          $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600][val["value"]]);
+          change_gem_label($("#refills-number"));
         }
       });
     });
@@ -107,11 +114,7 @@ function handle_nan(val) {
 
     $("#refills-number").bind('keyup mouseup', function() {
       $this = $(this);
-
-      function getSum(total, num) {
-        return total + num;
-      }
-      $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600].slice(0, handle_nan(parseInt($this.val())) + 1).reduce(getSum));
+      change_gem_label($this);
     });
 
     $('#stats-modal').on('show.bs.modal', function(event) {
