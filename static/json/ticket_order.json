@@ -22,7 +22,7 @@
    "5":{  
       "unit":"Fairy",
       "requirement":13,
-      "meta":"Elf"
+      "meta":" Elf"
    },
    "6":{  
       "unit":"Priest",
@@ -40,37 +40,37 @@
       "meta":"Elf"
    },
    "9":{  
-      "unit":"War Bear Rider",
-      "requirement":10,
-      "meta":"Miscellaneous"
-   },   
-   "10":{  
       "unit":"Astral Captain",
       "requirement":10,
       "note":"Airship fuel",
       "meta":"Undead"
    },
-   "11":{  
+   "10":{  
       "unit":"Naga",
       "requirement":9,
       "note":"orc meta support with pet",
       "meta":"Orc"
    },
-   "12":{  
+   "11":{  
       "unit":"Hippogriff",
       "requirement":20,
       "meta":"Orc"
    },
-   "13":{  
+   "12":{  
       "unit":"Dark Archer",
       "requirement":24,
       "meta":"Orc"
    },
-   "14":{  
+   "13":{  
       "unit":"Frost Demon",
       "requirement":17,
       "meta":"Orc"
    },
+   "14":{  
+      "unit":"War Bear Rider",
+      "requirement":10,
+      "meta":"Miscellaneous"
+   },   
    "15":{  
       "unit":"Winged Knight",
       "requirement":30,
