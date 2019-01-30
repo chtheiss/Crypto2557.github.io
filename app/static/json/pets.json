@@ -2024,7 +2024,7 @@
             "skill2":"Increase HP of elf unit in Guild War (3.6%, 7.2%, 10.8%, 14.4%, 18%)",
             "skill3":"Awakens the hidden special ability of [ Senior Fairy ]",
             "hidden_abilites":[
-                "Even if Fairy is at the Time Shop, chance for Elf’s secret skill to be used increases. (Increases by 1% per 5-star and 2.5% per 6-star. When in the Time Shop, the max Elf’s secret skill enhancement by Fairy is 30%.)",
+                "Even if Fairy is at the Time Shop, chance for Elf's secret skill to be used increases. (Increases by 1% per 5-star and 2.5% per 6-star. When in the Time Shop, the max Elf's secret skill enhancement by Fairy is 30%.)",
                 "Upon first appearing, greatly increases movement speed of all ally units and casts a barrier that defends against 99% of damage for a short period."
             ]
         },
@@ -2058,7 +2058,7 @@
             "skill3":"Awakens the hidden special ability of [ Senior Dark Archer ]",
             "hidden_abilites":[
                 "Even if Dark Archer is in the Time Shop, revives at the floor corresponding to #% of the current floor. (When in Time Shop, 2.5% bonus per 6-star and 1% per 5-star is applied. However, max revival floor buff cannot exceed 60%.) ",
-                "Increases chance of Undead’s secret skill. (Increased by 1% per 6-star for a maximum of 30%, and is applied even when in Time Shop.)"
+                "Increases chance of Undead's secret skill. (Increased by 1% per 6-star for a maximum of 30%, and is applied even when in Time Shop.)"
             ]
         },
         "pp_per_star":[
