@@ -227,7 +227,8 @@ function updateStages(kl) {
         var store = tx.objectStore('pets');
         var item = {
           name: $(this).data("pet"),
-          fragments: parseInt($(this).val())
+          fragments: parseInt($(this).val()),
+          priority: parseInt($(this).parents(".block").attr("data-id"))
         };
         var putRequest = store.put(item);
         return tx.complete;
