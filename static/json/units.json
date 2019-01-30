@@ -910,6 +910,9 @@
                 "amount":10,
                 "linked_units":[
                     "Blade Master"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             }
         ],
@@ -946,6 +949,9 @@
                 "amount":10,
                 "linked_units":[
                     "Dark Spirit"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             }
         ],
@@ -986,6 +992,11 @@
                     "Sword Dancer",
                     "Incubus",
                     "Ice Spirit"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1024,6 +1035,11 @@
                     "Valkyrie",
                     "Incubus",
                     "Ice Spirit"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1062,6 +1078,11 @@
                     "Sword Dancer",
                     "Valkyrie",
                     "Ice Spirit"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1098,6 +1119,11 @@
                     "Sword Dancer",
                     "Incubus",
                     "Valkyrie"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1136,6 +1162,11 @@
                     "Sylphid",
                     "Medusa",
                     "Naga"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1172,6 +1203,11 @@
                     "Steam Punk",
                     "Medusa",
                     "Naga"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1208,6 +1244,11 @@
                     "Sylphid",
                     "Steam Punk",
                     "Naga"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1242,6 +1283,11 @@
                     "Sylphid",
                     "Medusa",
                     "Steam Punk"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1280,6 +1326,11 @@
                     "Alchemist",
                     "Lich",
                     "Wyvern Rider"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1316,6 +1367,11 @@
                     "Pilot",
                     "Lich",
                     "Wyvern Rider"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1350,6 +1406,11 @@
                     "Alchemist",
                     "Pilot",
                     "Wyvern Rider"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
@@ -1386,6 +1447,11 @@
                     "Alchemist",
                     "Lich",
                     "Pilot"
+                ],
+                "linked_multiplier":[
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         ],
