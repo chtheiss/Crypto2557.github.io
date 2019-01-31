@@ -231,6 +231,10 @@ fieldset {
   padding: 5px !important;
 }
 
+.modal-header button span {
+  color: white;
+  text-shadow: 0 1px 0 #000;
+}
 .pet-modal:hover, .unit-modal:hover {
     cursor:pointer;
 }
@@ -239,6 +243,9 @@ fieldset {
   text-align: left;
   background-color: #111;
   font-size: 14px;
+  border: white;
+  border-width: 1px;
+  border-style: solid;
 }
 
 h1 {
@@ -258,7 +265,7 @@ td:hover {
   padding: 0px;
 }
 
-.pet-image, .unit-image { 
+.pet-image, .unit-image, .media-image { 
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -321,7 +328,7 @@ td:hover {
 }
 
 .btn-md {
-  padding: 6px 12px;
+  padding: 12px 18px;
 }
 
 .col-2{
@@ -330,4 +337,61 @@ td:hover {
 
 .page-footer {
   font-size: 12px;
+}
+
+.block{
+  margin-bottom: 0.5em !important;
+}
+
+.border {
+    border: 1px solid #dee2e6 !important;
+    border-radius: 5px;
+}
+
+#dragable-row .border:hover{
+  background-color: #555;
+  border: 1px solid #111 !important;
+  cursor: pointer;
+}
+
+.navbar{
+  min-height: 50px;
+}
+
+.navbar-collapse button {
+  min-height: inherit;
+  border-width: 2px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar-collapse{
+  min-height: inherit;
+}
+
+.nav-link{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-link:hover{
+  border: 2px solid rgb(130, 156, 165) !important;
+  border-radius: 5px;
+}
+
+.text-center{
+  text-align:center;
+}
+
+li {
+  float:left;
+}
+
+p.col-12 {
+  font-size: 16px;
+  margin-bottom: 11px;
+}
+
+hr{
+    border-top: 2px solid rgb(255, 255, 255);
 }
