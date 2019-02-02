@@ -1,27 +1,64 @@
-<div id="{{key_id}}-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-    	<div class="modal-content">
-      		<div class="modal-header">
-        		<h5 class="modal-title">{{key}}</h5>
-            <img class="unit-modal-image" src="../static/{{unit['img']}}">       
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<div class="modal" id="{{key_id}}-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-offset-top">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{key}}</h5>
+        <img class="unit-modal-image" src="../static/{{unit['img']}}">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      		</div>
-      		<div class="modal-body">
-      			 <div class="container-fluid">
-      			 	<div class="row">
-                                    <div class="col-12"><h2>Unit Attacks and Abilities</h2></div>
-      			 		<div class="col-12">
-      			 			<ul>
-                                                {% for ability in unit['atk_abil'] %}
-                                                      <li>{{ability}}</li>
-                                                {% endfor %}
-      			 			</ul>
-      			 		</div>
-      			 	</div>
-      			 </div>
-      		</div>
-		</div>
-	</div>
+      </div> 
+      <div class="modal-body">
+        <div class="sd-tabs sd-tab-interaction">
+          <div class="row">
+            <ul class="nav nav-tabs col-md-12">
+              <li class="nav-item active">
+                <a class="nav-link" data-toggle="tab" href="#tab-{{key_id}}-normal">Normal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-{{key_id}}-senior">Senior</a>
+              </li>
+
+            </ul>
+            <div class="tab-content col-md-12">
+              <form id="tab-{{key_id}}-normal" class="tab-pane active" action="" method="post">
+                <div class="container-fluid">
+                  <div class="row super-row">
+                    <div class="col-12">
+                      <h2>Unit Attacks and Abilities</h2>
+                    </div>
+                    <div class="col-12">
+                      <ul>
+                        {% for ability in unit['atk_abil'] %}
+                          <li>{{ability}}</li>
+                        {% endfor %}
+                      </ul>
+                    </div> 
+                  </div> 
+                </div> 
+              </form>
+      
+              <form id="tab-{{key_id}}-senior" class="tab-pane">
+                <div class="container-fluid">
+                  <div class="row super-row">
+                    <div class="col-12">
+                      <h2>Unit Attacks and Abilities</h2>
+                    </div>
+                    <div class="col-12">
+                      <ul>
+                        {% for ability in unit['atk_abil_sr'] %}
+                          <li>{{ability}}</li>
+                        {% endfor %}
+                      </ul>
+                    </div> 
+                  </div> 
+                </div> 
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

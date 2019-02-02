@@ -72,7 +72,7 @@ function on_pet_input_change($pet_input) {
     return store.get($pet_input.data("pet"));
   }.bind($pet_input)).then(function(val) {
     if (val != undefined) {
-      $pet_input.attr("value", val["fragments"]);
+      $pet_input.val(val["fragments"]);
     }
     change_stars(val);
   }.bind($pet_input));
@@ -217,10 +217,12 @@ function updateStages(kl) {
 }(function($, indexedDB, window, document) {
 
   $(function() {
-    $(".pet-input").each(function() {
+    $(".pet-input[type='number']").inputSpinner();
+
+    $(".pet-input[type='number']").each(function() {
       on_pet_input_change($(this));
     });
-    $(".pet-input").bind('keyup mouseup', function() {
+    $(".pet-input[type='number']").bind('keyup mouseup', function() {
       var request = idb.open('endless-farming-db');
       request.then(function(db) {
         var tx = db.transaction('pets', 'readwrite');
@@ -238,7 +240,7 @@ function updateStages(kl) {
           var store = tx.objectStore('pets');
           return store.get($(this).data("pet"));
         }.bind(this)).then(function(val) {
-          $(this).attr("value", val["fragments"]);
+          $(this).val(val["fragments"])
           change_stars(val);
           calculatePetFragmentsToFarm();
         });

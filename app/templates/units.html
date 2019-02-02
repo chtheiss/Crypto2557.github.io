@@ -15,24 +15,23 @@
                             <div class="col-9 padding-sm">
                                 <div class="row centered-row">
                                     <div class="col-6 padding-sm">
-                                        <span class="unit-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
+                                        <a class="unit-modal" href="#tab-{{key_id}}-normal" data-toggle="modal" data-target="#{{key_id}}-modal">
                                             <img id="{{key_id}}-image" class="unit-image" src="../static/{{unit['img']}}" data-toggle="tooltip" data-placement="top" title="{{key}}">
-                                        </span>
-                                        {% include '_unit_modal.html' %}
+                                        </a>
                                     </div>
                                     <div class="col-6 padding-sm">
-                                        <span class="unit-modal" data-toggle="modal" data-target="#{{key_id}}-sr-modal">
+                                        <a class="unit-modal" href="#tab-{{key_id}}-senior" data-toggle="modal" data-target="#{{key_id}}-modal">
                                             <img id="{{key_id}}-image" class="unit-image" src="../static/{{unit['img_sr']}}" data-toggle="tooltip" data-placement="top" title="Senior {{key}}">
-                                        </span>
-                                        {% include '_unit_senior_modal.html' %}
+                                        </a>
                                     </div>
+                                    {% include '_unit_modal.html' %}
                                 </div>
                                 <div class="row centered-row">
-                                    <div class="col-6 padding-sm">
-                                        <input id="{{key_id}}-number" data-unit="{{key_id}}" class="form-control unit-input" type="number" min="0" value="0"/>
+                                    <div class="col-md-6 col-sm-12 padding-sm">
+                                        <input id="{{key_id}}-number" data-unit="{{key_id}}" class="unit-input" type="number" min="0" value="0" step="1"/>
                                     </div> 
-                                    <div class="col-6 padding-sm">
-                                        <input id="{{key_id}}-number-sr" data-unit="{{key_id}}" class="form-control unit-input" type="number" min="0" value="0"/>
+                                    <div class="col-md-6 col-sm-12 padding-sm">
+                                        <input id="{{key_id}}-number-sr" data-unit="{{key_id}}" class="unit-input" type="number" min="0" value="0" step="1"/>
                                     </div>
                                 </div>
                             </div>

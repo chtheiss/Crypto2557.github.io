@@ -26,7 +26,7 @@ function update_progress_bar_values($progress_bar, buff){
     $progress_bar.attr("data-linked-multiplier", buff["linked_multiplier"].toString())
       .data("linked-multiplier", buff["linked_multiplier"].toString());
   }
-  update_progress_bar($progress_bar, $progress_bar.parents(".block").find("input").first());
+  update_progress_bar($progress_bar, $progress_bar.parents(".block").find(".unit-input[type='number']").first());
 }
 
 function get_unit_input_values($input) {
@@ -65,7 +65,7 @@ function update_progress_bar($bar, $input){
     var i = 0;
     for (var unit of linked_units){
       var $unit_cell = $("#"+unit.replace(" ", "_"));
-      var other_unit_values = get_unit_input_values($unit_cell.find("input").first());
+      var other_unit_values = get_unit_input_values($unit_cell.find(".unit-input[type='number']").first());
           val_linked += linked_multiplier[i]*other_unit_values.nsr;
           val_sr_linked += linked_multiplier[i]*other_unit_values.sr;
         for (var add_buff of $unit_cell.find(
@@ -89,7 +89,7 @@ function update_progress_bar($bar, $input){
       if ($add_bar.parents(".block").attr("id") == linked_units[0].replaceAll(" ", "_") &&
       $bar.parents(".block").find(".pet-image.five-star-pet").length > 0){
         var linked_multiplier = $add_bar.attr("data-linked-multiplier").replace("]", "").replace("[", "").replace(" ", "").split(",").map(Number); 
-        var other_unit_values = get_unit_input_values($add_bar.parents(".block").find("input").first());
+        var other_unit_values = get_unit_input_values($add_bar.parents(".block").find(".unit-input[type='number']").first());
         var _current_progress = multiplier*other_unit_values.nsr + other_unit_values.sr + linked_multiplier[linked_multiplier.length-1]*(multiplier*unit_values.nsr + unit_values.sr);
         change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax")); 
     }
@@ -107,9 +107,9 @@ function load_input_value($unit_input) {
     }).then(function(val) {
       if (val != undefined) {
         if ($unit_input.attr("id").endsWith("-sr")) {
-          $unit_input.attr("value", val["sr"]);
+          $unit_input.val(val["sr"]);
         } else {
-          $unit_input.attr("value", val["nsr"]);
+          $unit_input.val(val["nsr"]);
         }
         update_all_progress_bars_of_input($unit_input);
       }
@@ -195,14 +195,23 @@ async function updateBuffs($petImage, items) {
 }(function($, indexedDB, window, document) {
 
   $(function() {
+
+    $(".unit-input[type='number']").inputSpinner();
+
+    $(".modal").on('shown.bs.modal', function(e) {
+      var tab = e.relatedTarget.hash;
+      $('.nav-tabs a[href="'+tab+'"]').tab('show');
+    });
+
     $('.block').each(function() {
       $unit_cell = $(this);
       for (bar of $unit_cell.find('[role="progressbar"]')) {
-        for (input of $unit_cell.find('input')) {
+        for (input of $unit_cell.find(".unit-input[type='number']")) {
           update_progress_bar($(bar), $(input));
         }
       }
     });
+
     idb.open("endless-farming-db").then(function(db) {
       var tx = db.transaction('pets', 'readwrite');
       var store = tx.objectStore('pets');
@@ -212,7 +221,8 @@ async function updateBuffs($petImage, items) {
         updateBuffs($(this), items);
       });
     });
-    $(".unit-input").bind('keyup mouseup', function() {
+
+    $(".unit-input[type='number']").bind('keyup mouseup', function() {
       $this = $(this);
       update_all_progress_bars_of_input($this);
       idb.open('endless-farming-db').then(function(db) {
@@ -228,7 +238,8 @@ async function updateBuffs($petImage, items) {
         return tx.complete;
       }.bind($this));
     });
-    $(".unit-input").each(function() {
+
+    $(".unit-input[type='number']").each(function() {
       load_input_value($(this));
     });
     $('[data-toggle="tooltip"]').tooltip();
