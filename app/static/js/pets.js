@@ -104,7 +104,8 @@ function calculatePetFragmentsToFarm() {
       });
       for (stage of from_stage) {
         current_frags = handle_nan(parseInt(col.find(".pet-input").val()));
-        if (current_frags >= 330) {
+        current_frags = (current_frags > 330) ? 330 : current_frags;
+        if (current_frags == 330) {
           break;
         }
         if (tickets > 0) {
@@ -222,11 +223,12 @@ function updateStages(kl) {
     $(".pet-input[type='number']").each(function() {
       on_pet_input_change($(this));
     });
-    $(".pet-input[type='number']").bind('keyup mouseup', function() {
+    $(".pet-input[type='number']").bind('change', function() {
       var request = idb.open('endless-farming-db');
       request.then(function(db) {
         var tx = db.transaction('pets', 'readwrite');
         var store = tx.objectStore('pets');
+        console.log($(this).val());
         var item = {
           name: $(this).data("pet"),
           fragments: parseInt($(this).val()),
@@ -251,7 +253,7 @@ function updateStages(kl) {
       var $checkbox = $(this).find('input[type="checkbox"]');
       var $input = $("#" + $(this).data("pet") + "-fragments");
       $input.val($checkbox.attr("value"));
-      $input.keyup();
+      $input.change();
     });
 
     request = idb.open('endless-farming-db');

@@ -222,7 +222,7 @@ async function updateBuffs($petImage, items) {
       });
     });
 
-    $(".unit-input[type='number']").bind('keyup mouseup', function() {
+    $(".unit-input[type='number']").bind('change', function() {
       $this = $(this);
       update_all_progress_bars_of_input($this);
       idb.open('endless-farming-db').then(function(db) {
