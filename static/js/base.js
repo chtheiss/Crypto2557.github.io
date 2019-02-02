@@ -142,18 +142,6 @@ function change_gem_label($refill_number, $gem_label, costs){
       var modal = $(this);
       modal.find('#welcome-text').children().first().text(text);
     });
-
-    request = idb.open('endless-farming-db');
-    request.then(function(db) {
-      var tx = db.transaction('player', 'readwrite');
-      var store = tx.objectStore('player');
-      var KL = store.get("KL");
-      KL.then(function(val) {
-        if (val !== undefined && val["value"] == 0) {
-          $("#first-visit-button").click();
-        }
-      });
-    });
   });
 
   (function() {
@@ -198,7 +186,7 @@ function change_gem_label($refill_number, $gem_label, costs){
               if (val == undefined) {
                 playerOS.put({
                   "name": "KL",
-                  "value": 0
+                  "value": 1
                 });
               }
             });
@@ -206,7 +194,7 @@ function change_gem_label($refill_number, $gem_label, costs){
               if (val == undefined) {
                 playerOS.put({
                   "name": "tickets",
-                  "value": 0
+                  "value": 10
                 });
               }
             });
@@ -240,7 +228,7 @@ function change_gem_label($refill_number, $gem_label, costs){
             if (val == undefined) {
               playerOS.put({
                 "name": "tickets_hard",
-                "value": 0
+                "value": 5
               });
             }
           });
