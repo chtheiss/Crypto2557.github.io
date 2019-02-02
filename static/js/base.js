@@ -7,11 +7,11 @@ function handle_nan(val) {
   return (isNaN(val)) ? 0 : val;
 }
 
-function change_gem_label($refill_number){
+function change_gem_label($refill_number, $gem_label, costs){
   function getSum(total, num) {
     return total + num;
   }
-  $("#gem-label").text([0, 100, 200, 400, 800, 1200, 1600].slice(0, handle_nan(parseInt($refill_number.val())) + 1).reduce(getSum));
+  $gem_label.text(costs.slice(0, handle_nan(parseInt($refill_number.val())) + 1).reduce(getSum));
 }
 
 (function(yourcode) {
@@ -21,6 +21,9 @@ function change_gem_label($refill_number){
 }(function($, indexedDB, window, document) {
 
   $(function() {
+
+    $(".user-input[type='number']").inputSpinner();
+
     $("#import-button").click(function() {
       $('#dbupload').trigger('click');
     });
@@ -75,25 +78,38 @@ function change_gem_label($refill_number){
       var KL = store.get("KL");
       KL.then(function(val) {
         if (val !== undefined) {
-          $("#KL-number").attr("value", val["value"]);
+          $("#KL-number").val(val["value"]);
         }
       });
       var tickets = store.get("tickets");
       tickets.then(function(val) {
         if (val !== undefined) {
-          $("#tickets-number").attr("value", val["value"]);
+          $("#tickets-number").val(val["value"]);
         }
       });
       var refills = store.get("refills");
       refills.then(function(val) {
         if (val !== undefined) {
-          $("#refills-number").attr("value", val["value"]);
-          change_gem_label($("#refills-number"));
+          $("#refills-number").val(val["value"]);
+          change_gem_label($("#refills-number"), $("#gem-label"), [0, 100, 200, 400, 800, 1200, 1600]);
+        }
+      });
+      var tickets_hard = store.get("tickets_hard");
+      tickets_hard.then(function(val) {
+        if (val !== undefined) {
+          $("#tickets_hard-number").val(val["value"]);
+        }
+      });
+      var refills_hard = store.get("refills_hard");
+      refills_hard.then(function(val) {
+        if (val !== undefined) {
+          $("#refills_hard-number").val(val["value"]);
+          change_gem_label($("#refills_hard-number"), $("#gem-hard-label"), [0, 200, 400, 800]);
         }
       });
     });
 
-    $(".user-input").bind('keyup mouseup', function() {
+    $(".user-input").bind('change', function() {
       $this = $(this);
       request = idb.open('endless-farming-db');
       request.then(function(db) {
@@ -112,9 +128,12 @@ function change_gem_label($refill_number){
       }.bind($this));
     });
 
-    $("#refills-number").bind('keyup mouseup', function() {
-      $this = $(this);
-      change_gem_label($this);
+    $("#refills-number").bind('change', function() {
+      change_gem_label($(this), $("#gem-label"), [0, 100, 200, 400, 800, 1200, 1600]);
+    });
+
+    $("#refills-hard-number").bind('change', function() {
+      change_gem_label($(this), $("#gem-hard-label"), [0, 200, 400, 800]);
     });
 
     $('#stats-modal').on('show.bs.modal', function(event) {
@@ -144,7 +163,7 @@ function change_gem_label($refill_number){
       console.log('This browser doesn\'t support IndexedDB');
       return;
     }
-    var dbPromise = idb.open('endless-farming-db', 2, function(upgradeDb) {
+    var dbPromise = idb.open('endless-farming-db', 3, function(upgradeDb) {
       switch (upgradeDb.oldVersion) {
         case 0:
           if (!upgradeDb.objectStoreNames.contains('units')) {
@@ -183,7 +202,7 @@ function change_gem_label($refill_number){
                 });
               }
             });
-            playerOS.get("KL").then(function(val) {
+            playerOS.get("tickets").then(function(val) {
               if (val == undefined) {
                 playerOS.put({
                   "name": "tickets",
@@ -191,7 +210,7 @@ function change_gem_label($refill_number){
                 });
               }
             });
-            playerOS.get("KL").then(function(val) {
+            playerOS.get("refills").then(function(val) {
               if (val == undefined) {
                 playerOS.put({
                   "name": "refills",
@@ -204,6 +223,35 @@ function change_gem_label($refill_number){
           petsOS.createIndex('priority', 'priority', {
             unique: false
           });
+        case 2:
+          if (!upgradeDb.objectStoreNames.contains('pets_hard')) {
+            var pets_hardOS = upgradeDb.createObjectStore('pets_hard', {
+              keyPath: 'name'
+            });
+            pets_hardOS.createIndex('fragments', 'fragments', {
+              unique: false
+            });
+            pets_hardOS.createIndex('priority', 'priority', {
+            unique: false
+            });
+          }
+          var playerOS = upgradeDb.transaction.objectStore('player');
+          playerOS.get("tickets_hard").then(function(val) {
+            if (val == undefined) {
+              playerOS.put({
+                "name": "tickets_hard",
+                "value": 0
+              });
+            }
+          });
+          playerOS.get("refills_hard").then(function(val) {
+            if (val == undefined) {
+              playerOS.put({
+                "name": "refills_hard",
+                "value": 0
+              });
+            }
+          });     
       }
     });
   })();

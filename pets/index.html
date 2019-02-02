@@ -47,8 +47,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/pets/">Pets</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
+                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/pets/">Normal</a>
+                    <a class="dropdown-item" href="/pets_hard/">Hard</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/units/">Units</a>
@@ -60,6 +64,7 @@
                 <a class="nav-link" href="/meta_progression/">Metas</a>
             </li>
         </ul>
+        <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none"/> 
         <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
@@ -87,7 +92,15 @@
 								Knightage Level
 							</div>
 							<div class="col-3 col-centered padding-sm">
-				 				<input id="KL-number" class="form-control user-input" type="number" min="1" value="0"/>
+				 				<input id="KL-number" class="user-input" type="number" min="1" value="0" step="1"/>
+							</div>
+						</div>
+						<div class="row centered-row">
+							<div class="col-6 col-centered padding-sm">
+								Spirit Highlands Normal
+							</div>
+							<div class="col-6 col-centered padding-sm">
+								Spirit Highlands Hard
 							</div>
 						</div>
 						<div class="row centered-row">
@@ -95,7 +108,13 @@
 								Tickets
 							</div>
 							<div class="col-3 col-centered padding-sm">
-								<input id="tickets-number" class="form-control user-input" type="number" min="10" value="0"/>
+								<input id="tickets-number" class="user-input" type="number" min="10" value="0" step="1"/>
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								Tickets
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								<input id="tickets_hard-number" class="user-input" type="number" min="5" value="0" step="1"/>
 							</div>			
 						</div>
 						<div class="row centered-row">
@@ -103,13 +122,23 @@
 								Refills
 							</div>
 							<div class="col-3 col-centered padding-sm">
-								<input id="refills-number" class="form-control user-input" type="number" min="0" value="0" max="6"/>
+								<input id="refills-number" class="user-input" type="number" min="0" max="6" value="0" step="1"/>
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								Refills
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								<input id="refills_hard-number" class="user-input" type="number" min="0" max="3" value="0" step="1"/>
 							</div>			
 						</div>
 						<div class="row centered-row">
 							<div class="col-6 col-centered padding-sm">
 								<img id="gem-image" src="../static/img/gem.png">
 								<label id="gem-label" for="gem-image">0</label>
+							</div>
+							<div class="col-6 col-centered padding-sm">
+								<img id="gem-hard-image" src="../static/img/gem.png">
+								<label id="gem-hard-label" for="gem-hard-image">0</label>
 							</div>
 						</div>
 					</div>
@@ -184,7 +213,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Hippong-1star" data-pet="Hippong">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -208,15 +237,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Hippong-fragments" data-pet="Hippong" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Hippong-fragments" data-pet="Hippong" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="201">82</div>
-                            <div class="col-3 col-kl col-red" data-from="385">154</div>
-                             <div class="col-3 col-kl col-red" data-from="430">172</div> 
-                             <div class="col-3 col-kl col-red" data-from="516">208</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="385">154</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="430">172</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="516">208</div> 
+                            
                         </div>
                     </div>
             
@@ -236,7 +271,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Tinky-1star" data-pet="Tinky">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -260,15 +295,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Tinky-fragments" data-pet="Tinky" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Tinky-fragments" data-pet="Tinky" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="66">28</div>
-                            <div class="col-3 col-kl col-red" data-from="115">46</div>
-                             <div class="col-3 col-kl col-red" data-from="160">64</div> 
-                             <div class="col-3 col-kl col-red" data-from="381">154</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="115">46</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="160">64</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="381">154</div> 
+                            
                         </div>
                     </div>
             
@@ -288,7 +329,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Icy-1star" data-pet="Icy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -312,15 +353,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Icy-fragments" data-pet="Icy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Icy-fragments" data-pet="Icy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="81">34</div>
-                            <div class="col-3 col-kl col-red" data-from="145">58</div>
-                             <div class="col-3 col-kl col-red" data-from="190">76</div> 
-                             <div class="col-3 col-kl col-red" data-from="396">160</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="145">58</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="190">76</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="396">160</div> 
+                            
                         </div>
                     </div>
             
@@ -340,7 +387,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Rolly-1star" data-pet="Rolly">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -364,13 +411,15 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Rolly-fragments" data-pet="Rolly" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Rolly-fragments" data-pet="Rolly" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="301">122</div>
-                            <div class="col-3 col-kl col-red" data-from="585">234</div>
+                             
+                                <div class="col-3 col-kl col-red" data-from="585">234</div> 
+                            
                             
                             
                         </div>
@@ -392,7 +441,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Cat_Knight-1star" data-pet="Cat_Knight">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -416,15 +465,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Cat_Knight-fragments" data-pet="Cat_Knight" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Cat_Knight-fragments" data-pet="Cat_Knight" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="236">96</div>
-                            <div class="col-3 col-kl col-red" data-from="455">182</div>
-                             <div class="col-3 col-kl col-red" data-from="500">200</div> 
-                             <div class="col-3 col-kl col-red" data-from="551">222</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="455">182</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="500">200</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="551">222</div> 
+                            
                         </div>
                     </div>
             
@@ -444,7 +499,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Raven-1star" data-pet="Raven">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -468,15 +523,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Raven-fragments" data-pet="Raven" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Raven-fragments" data-pet="Raven" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="266">108</div>
-                            <div class="col-3 col-kl col-red" data-from="515">206</div>
-                             <div class="col-3 col-kl col-red" data-from="560">224</div> 
-                             <div class="col-3 col-kl col-red" data-from="581">234</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="515">206</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="560">224</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="581">234</div> 
+                            
                         </div>
                     </div>
             
@@ -496,7 +557,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Wakong-1star" data-pet="Wakong">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -520,15 +581,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Wakong-fragments" data-pet="Wakong" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Wakong-fragments" data-pet="Wakong" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="151">62</div>
-                            <div class="col-3 col-kl col-red" data-from="285">114</div>
-                             <div class="col-3 col-kl col-red" data-from="330">132</div> 
-                             <div class="col-3 col-kl col-red" data-from="466">188</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="285">114</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="330">132</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="466">188</div> 
+                            
                         </div>
                     </div>
             
@@ -548,7 +615,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Seahorse-1star" data-pet="Seahorse">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -572,15 +639,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Seahorse-fragments" data-pet="Seahorse" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Seahorse-fragments" data-pet="Seahorse" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="171">70</div>
-                            <div class="col-3 col-kl col-red" data-from="325">130</div>
-                             <div class="col-3 col-kl col-red" data-from="370">148</div> 
-                             <div class="col-3 col-kl col-red" data-from="486">196</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="325">130</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="370">148</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="486">196</div> 
+                            
                         </div>
                     </div>
             
@@ -600,7 +673,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Bamba-1star" data-pet="Bamba">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -624,15 +697,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Bamba-fragments" data-pet="Bamba" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Bamba-fragments" data-pet="Bamba" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="231">94</div>
-                            <div class="col-3 col-kl col-red" data-from="445">178</div>
-                             <div class="col-3 col-kl col-red" data-from="490">196</div> 
-                             <div class="col-3 col-kl col-red" data-from="546">220</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="445">178</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="490">196</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="546">220</div> 
+                            
                         </div>
                     </div>
             
@@ -652,7 +731,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Snow_Bear-1star" data-pet="Snow_Bear">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -676,15 +755,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Snow_Bear-fragments" data-pet="Snow_Bear" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Snow_Bear-fragments" data-pet="Snow_Bear" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="291">118</div>
-                            <div class="col-3 col-kl col-red" data-from="565">226</div>
-                             <div class="col-3 col-kl col-red" data-from="606">244</div> 
-                             <div class="col-3 col-kl col-red" data-from="610">244</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="565">226</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="606">244</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="610">244</div> 
+                            
                         </div>
                     </div>
             
@@ -704,7 +789,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Totem-1star" data-pet="Totem">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -728,15 +813,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Totem-fragments" data-pet="Totem" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Totem-fragments" data-pet="Totem" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="76">32</div>
-                            <div class="col-3 col-kl col-red" data-from="135">54</div>
-                             <div class="col-3 col-kl col-red" data-from="180">72</div> 
-                             <div class="col-3 col-kl col-red" data-from="391">158</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="135">54</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="180">72</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="391">158</div> 
+                            
                         </div>
                     </div>
             
@@ -756,7 +847,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Lazy-1star" data-pet="Lazy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -780,13 +871,15 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Lazy-fragments" data-pet="Lazy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Lazy-fragments" data-pet="Lazy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="311">126</div>
-                            <div class="col-3 col-kl col-red" data-from="605">242</div>
+                             
+                                <div class="col-3 col-kl col-red" data-from="605">242</div> 
+                            
                             
                             
                         </div>
@@ -808,7 +901,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Chesher-1star" data-pet="Chesher">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -832,15 +925,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Chesher-fragments" data-pet="Chesher" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Chesher-fragments" data-pet="Chesher" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="226">92</div>
-                            <div class="col-3 col-kl col-red" data-from="435">174</div>
-                             <div class="col-3 col-kl col-red" data-from="480">192</div> 
-                             <div class="col-3 col-kl col-red" data-from="541">218</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="435">174</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="480">192</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="541">218</div> 
+                            
                         </div>
                     </div>
             
@@ -860,7 +959,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Cerbero-1star" data-pet="Cerbero">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -884,15 +983,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Cerbero-fragments" data-pet="Cerbero" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Cerbero-fragments" data-pet="Cerbero" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="246">100</div>
-                            <div class="col-3 col-kl col-red" data-from="475">190</div>
-                             <div class="col-3 col-kl col-red" data-from="520">208</div> 
-                             <div class="col-3 col-kl col-red" data-from="561">226</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="475">190</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="520">208</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="561">226</div> 
+                            
                         </div>
                     </div>
             
@@ -912,7 +1017,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Moon-1star" data-pet="Moon">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -936,15 +1041,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Moon-fragments" data-pet="Moon" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Moon-fragments" data-pet="Moon" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="91">38</div>
-                            <div class="col-3 col-kl col-red" data-from="165">66</div>
-                             <div class="col-3 col-kl col-red" data-from="210">84</div> 
-                             <div class="col-3 col-kl col-red" data-from="406">164</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="165">66</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="210">84</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="406">164</div> 
+                            
                         </div>
                     </div>
             
@@ -964,7 +1075,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Athos-1star" data-pet="Athos">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -988,15 +1099,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Athos-fragments" data-pet="Athos" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Athos-fragments" data-pet="Athos" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="256">104</div>
-                            <div class="col-3 col-kl col-red" data-from="495">198</div>
-                             <div class="col-3 col-kl col-red" data-from="540">216</div> 
-                             <div class="col-3 col-kl col-red" data-from="571">230</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="495">198</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="540">216</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="571">230</div> 
+                            
                         </div>
                     </div>
             
@@ -1016,7 +1133,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Shadow-1star" data-pet="Shadow">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1040,15 +1157,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Shadow-fragments" data-pet="Shadow" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Shadow-fragments" data-pet="Shadow" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="286">116</div>
-                            <div class="col-3 col-kl col-red" data-from="555">222</div>
-                             <div class="col-3 col-kl col-red" data-from="600">240</div> 
-                             <div class="col-3 col-kl col-red" data-from="601">242</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="555">222</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="600">240</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="601">242</div> 
+                            
                         </div>
                     </div>
             
@@ -1068,7 +1191,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Windy-1star" data-pet="Windy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1092,15 +1215,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Windy-fragments" data-pet="Windy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Windy-fragments" data-pet="Windy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="161">66</div>
-                            <div class="col-3 col-kl col-red" data-from="305">122</div>
-                             <div class="col-3 col-kl col-red" data-from="350">140</div> 
-                             <div class="col-3 col-kl col-red" data-from="476">192</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="305">122</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="350">140</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="476">192</div> 
+                            
                         </div>
                     </div>
             
@@ -1120,7 +1249,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="E-77-1star" data-pet="E-77">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1144,15 +1273,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="E-77-fragments" data-pet="E-77" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="E-77-fragments" data-pet="E-77" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="156">64</div>
-                            <div class="col-3 col-kl col-red" data-from="295">118</div>
-                             <div class="col-3 col-kl col-red" data-from="340">136</div> 
-                             <div class="col-3 col-kl col-red" data-from="471">190</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="295">118</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="340">136</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="471">190</div> 
+                            
                         </div>
                     </div>
             
@@ -1172,7 +1307,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Dark_Snake-1star" data-pet="Dark_Snake">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1196,15 +1331,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Dark_Snake-fragments" data-pet="Dark_Snake" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Dark_Snake-fragments" data-pet="Dark_Snake" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="166">68</div>
-                            <div class="col-3 col-kl col-red" data-from="315">126</div>
-                             <div class="col-3 col-kl col-red" data-from="360">144</div> 
-                             <div class="col-3 col-kl col-red" data-from="481">194</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="315">126</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="360">144</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="481">194</div> 
+                            
                         </div>
                     </div>
             
@@ -1224,7 +1365,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Leyak-1star" data-pet="Leyak">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1248,15 +1389,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Leyak-fragments" data-pet="Leyak" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Leyak-fragments" data-pet="Leyak" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="271">110</div>
-                            <div class="col-3 col-kl col-red" data-from="525">210</div>
-                             <div class="col-3 col-kl col-red" data-from="570">228</div> 
-                             <div class="col-3 col-kl col-red" data-from="586">236</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="525">210</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="570">228</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="586">236</div> 
+                            
                         </div>
                     </div>
             
@@ -1276,7 +1423,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Grizzle-1star" data-pet="Grizzle">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1300,15 +1447,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Grizzle-fragments" data-pet="Grizzle" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Grizzle-fragments" data-pet="Grizzle" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="261">106</div>
-                            <div class="col-3 col-kl col-red" data-from="505">202</div>
-                             <div class="col-3 col-kl col-red" data-from="550">220</div> 
-                             <div class="col-3 col-kl col-red" data-from="576">232</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="505">202</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="550">220</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="576">232</div> 
+                            
                         </div>
                     </div>
             
@@ -1328,7 +1481,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Foxy-1star" data-pet="Foxy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1352,15 +1505,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Foxy-fragments" data-pet="Foxy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Foxy-fragments" data-pet="Foxy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="281">114</div>
-                            <div class="col-3 col-kl col-red" data-from="545">218</div>
-                             <div class="col-3 col-kl col-red" data-from="590">236</div> 
-                             <div class="col-3 col-kl col-red" data-from="596">240</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="545">218</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="590">236</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="596">240</div> 
+                            
                         </div>
                     </div>
             
@@ -1380,7 +1539,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Mori-1star" data-pet="Mori">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1404,15 +1563,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Mori-fragments" data-pet="Mori" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Mori-fragments" data-pet="Mori" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="241">98</div>
-                            <div class="col-3 col-kl col-red" data-from="465">186</div>
-                             <div class="col-3 col-kl col-red" data-from="510">204</div> 
-                             <div class="col-3 col-kl col-red" data-from="556">224</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="465">186</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="510">204</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="556">224</div> 
+                            
                         </div>
                     </div>
             
@@ -1432,7 +1597,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Octopa-1star" data-pet="Octopa">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1456,15 +1621,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Octopa-fragments" data-pet="Octopa" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Octopa-fragments" data-pet="Octopa" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="251">102</div>
-                            <div class="col-3 col-kl col-red" data-from="485">194</div>
-                             <div class="col-3 col-kl col-red" data-from="530">212</div> 
-                             <div class="col-3 col-kl col-red" data-from="566">228</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="485">194</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="530">212</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="566">228</div> 
+                            
                         </div>
                     </div>
             
@@ -1484,7 +1655,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Cora-1star" data-pet="Cora">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1508,15 +1679,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Cora-fragments" data-pet="Cora" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Cora-fragments" data-pet="Cora" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="146">60</div>
-                            <div class="col-3 col-kl col-red" data-from="275">110</div>
-                             <div class="col-3 col-kl col-red" data-from="320">128</div> 
-                             <div class="col-3 col-kl col-red" data-from="461">186</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="275">110</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="320">128</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="461">186</div> 
+                            
                         </div>
                     </div>
             
@@ -1536,7 +1713,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Bunny-1star" data-pet="Bunny">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1560,15 +1737,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Bunny-fragments" data-pet="Bunny" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Bunny-fragments" data-pet="Bunny" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="141">58</div>
-                            <div class="col-3 col-kl col-red" data-from="265">106</div>
-                             <div class="col-3 col-kl col-red" data-from="310">124</div> 
-                             <div class="col-3 col-kl col-red" data-from="456">184</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="265">106</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="310">124</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="456">184</div> 
+                            
                         </div>
                     </div>
             
@@ -1588,7 +1771,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Winky-1star" data-pet="Winky">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1612,15 +1795,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Winky-fragments" data-pet="Winky" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Winky-fragments" data-pet="Winky" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="136">56</div>
-                            <div class="col-3 col-kl col-red" data-from="255">102</div>
-                             <div class="col-3 col-kl col-red" data-from="300">120</div> 
-                             <div class="col-3 col-kl col-red" data-from="451">182</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="255">102</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="300">120</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="451">182</div> 
+                            
                         </div>
                     </div>
             
@@ -1640,7 +1829,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Combat-1star" data-pet="Combat">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1664,13 +1853,15 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Combat-fragments" data-pet="Combat" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Combat-fragments" data-pet="Combat" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="296">120</div>
-                            <div class="col-3 col-kl col-red" data-from="575">230</div>
+                             
+                                <div class="col-3 col-kl col-red" data-from="575">230</div> 
+                            
                             
                             
                         </div>
@@ -1692,7 +1883,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Scourge-1star" data-pet="Scourge">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1716,13 +1907,15 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Scourge-fragments" data-pet="Scourge" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Scourge-fragments" data-pet="Scourge" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="306">124</div>
-                            <div class="col-3 col-kl col-red" data-from="595">238</div>
+                             
+                                <div class="col-3 col-kl col-red" data-from="595">238</div> 
+                            
                             
                             
                         </div>
@@ -1744,7 +1937,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Sarah-1star" data-pet="Sarah">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1768,15 +1961,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Sarah-fragments" data-pet="Sarah" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Sarah-fragments" data-pet="Sarah" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="176">72</div>
-                            <div class="col-3 col-kl col-red" data-from="335">134</div>
-                             <div class="col-3 col-kl col-red" data-from="380">152</div> 
-                             <div class="col-3 col-kl col-red" data-from="491">198</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="335">134</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="380">152</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="491">198</div> 
+                            
                         </div>
                     </div>
             
@@ -1796,7 +1995,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Oscar-1star" data-pet="Oscar">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1820,15 +2019,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Oscar-fragments" data-pet="Oscar" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Oscar-fragments" data-pet="Oscar" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="181">74</div>
-                            <div class="col-3 col-kl col-red" data-from="345">138</div>
-                             <div class="col-3 col-kl col-red" data-from="390">156</div> 
-                             <div class="col-3 col-kl col-red" data-from="496">200</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="345">138</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="390">156</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="496">200</div> 
+                            
                         </div>
                     </div>
             
@@ -1848,7 +2053,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Magic_Lamp-1star" data-pet="Magic_Lamp">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1872,15 +2077,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Magic_Lamp-fragments" data-pet="Magic_Lamp" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Magic_Lamp-fragments" data-pet="Magic_Lamp" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="61">26</div>
-                            <div class="col-3 col-kl col-red" data-from="105">42</div>
-                             <div class="col-3 col-kl col-red" data-from="150">60</div> 
-                             <div class="col-3 col-kl col-red" data-from="376">152</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="105">42</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="150">60</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="376">152</div> 
+                            
                         </div>
                     </div>
             
@@ -1900,7 +2111,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Boom_Boom-1star" data-pet="Boom_Boom">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1924,15 +2135,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Boom_Boom-fragments" data-pet="Boom_Boom" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Boom_Boom-fragments" data-pet="Boom_Boom" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="96">40</div>
-                            <div class="col-3 col-kl col-red" data-from="175">70</div>
-                             <div class="col-3 col-kl col-red" data-from="220">88</div> 
-                             <div class="col-3 col-kl col-red" data-from="411">166</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="175">70</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="220">88</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="411">166</div> 
+                            
                         </div>
                     </div>
             
@@ -1952,7 +2169,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Little_Hawk-1star" data-pet="Little_Hawk">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -1976,15 +2193,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Little_Hawk-fragments" data-pet="Little_Hawk" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Little_Hawk-fragments" data-pet="Little_Hawk" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="276">112</div>
-                            <div class="col-3 col-kl col-red" data-from="535">214</div>
-                             <div class="col-3 col-kl col-red" data-from="580">232</div> 
-                             <div class="col-3 col-kl col-red" data-from="591">238</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="535">214</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="580">232</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="591">238</div> 
+                            
                         </div>
                     </div>
             
@@ -2004,7 +2227,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Saul-1star" data-pet="Saul">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2028,15 +2251,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Saul-fragments" data-pet="Saul" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Saul-fragments" data-pet="Saul" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="211">86</div>
-                            <div class="col-3 col-kl col-red" data-from="405">162</div>
-                             <div class="col-3 col-kl col-red" data-from="450">180</div> 
-                             <div class="col-3 col-kl col-red" data-from="526">212</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="405">162</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="450">180</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="526">212</div> 
+                            
                         </div>
                     </div>
             
@@ -2056,7 +2285,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Osma-1star" data-pet="Osma">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2080,15 +2309,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Osma-fragments" data-pet="Osma" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Osma-fragments" data-pet="Osma" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="206">84</div>
-                            <div class="col-3 col-kl col-red" data-from="395">158</div>
-                             <div class="col-3 col-kl col-red" data-from="440">176</div> 
-                             <div class="col-3 col-kl col-red" data-from="521">210</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="395">158</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="440">176</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="521">210</div> 
+                            
                         </div>
                     </div>
             
@@ -2108,7 +2343,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Chichi-1star" data-pet="Chichi">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2132,15 +2367,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Chichi-fragments" data-pet="Chichi" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Chichi-fragments" data-pet="Chichi" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="221">90</div>
-                            <div class="col-3 col-kl col-red" data-from="425">170</div>
-                             <div class="col-3 col-kl col-red" data-from="470">188</div> 
-                             <div class="col-3 col-kl col-red" data-from="536">216</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="425">170</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="470">188</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="536">216</div> 
+                            
                         </div>
                     </div>
             
@@ -2160,7 +2401,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Rena-1star" data-pet="Rena">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2184,15 +2425,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Rena-fragments" data-pet="Rena" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Rena-fragments" data-pet="Rena" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="196">80</div>
-                            <div class="col-3 col-kl col-red" data-from="375">150</div>
-                             <div class="col-3 col-kl col-red" data-from="420">168</div> 
-                             <div class="col-3 col-kl col-red" data-from="511">206</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="375">150</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="420">168</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="511">206</div> 
+                            
                         </div>
                     </div>
             
@@ -2212,7 +2459,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Jingger-1star" data-pet="Jingger">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2236,15 +2483,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Jingger-fragments" data-pet="Jingger" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Jingger-fragments" data-pet="Jingger" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="126">52</div>
-                            <div class="col-3 col-kl col-red" data-from="235">94</div>
-                             <div class="col-3 col-kl col-red" data-from="280">112</div> 
-                             <div class="col-3 col-kl col-red" data-from="441">178</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="235">94</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="280">112</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="441">178</div> 
+                            
                         </div>
                     </div>
             
@@ -2264,7 +2517,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Devil-1star" data-pet="Devil">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2288,15 +2541,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Devil-fragments" data-pet="Devil" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Devil-fragments" data-pet="Devil" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="106">44</div>
-                            <div class="col-3 col-kl col-red" data-from="195">78</div>
-                             <div class="col-3 col-kl col-red" data-from="240">96</div> 
-                             <div class="col-3 col-kl col-red" data-from="421">170</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="195">78</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="240">96</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="421">170</div> 
+                            
                         </div>
                     </div>
             
@@ -2316,7 +2575,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Black-1star" data-pet="Black">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2340,15 +2599,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Black-fragments" data-pet="Black" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Black-fragments" data-pet="Black" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="186">76</div>
-                            <div class="col-3 col-kl col-red" data-from="355">142</div>
-                             <div class="col-3 col-kl col-red" data-from="400">160</div> 
-                             <div class="col-3 col-kl col-red" data-from="501">202</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="355">142</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="400">160</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="501">202</div> 
+                            
                         </div>
                     </div>
             
@@ -2368,7 +2633,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Leo-1star" data-pet="Leo">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2392,15 +2657,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Leo-fragments" data-pet="Leo" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Leo-fragments" data-pet="Leo" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="101">42</div>
-                            <div class="col-3 col-kl col-red" data-from="185">74</div>
-                             <div class="col-3 col-kl col-red" data-from="230">92</div> 
-                             <div class="col-3 col-kl col-red" data-from="416">168</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="185">74</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="230">92</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="416">168</div> 
+                            
                         </div>
                     </div>
             
@@ -2420,7 +2691,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Mir-1star" data-pet="Mir">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2444,15 +2715,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Mir-fragments" data-pet="Mir" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Mir-fragments" data-pet="Mir" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="116">48</div>
-                            <div class="col-3 col-kl col-red" data-from="215">86</div>
-                             <div class="col-3 col-kl col-red" data-from="260">104</div> 
-                             <div class="col-3 col-kl col-red" data-from="431">174</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="215">86</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="260">104</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="431">174</div> 
+                            
                         </div>
                     </div>
             
@@ -2472,7 +2749,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Nimbus-1star" data-pet="Nimbus">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2496,15 +2773,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Nimbus-fragments" data-pet="Nimbus" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Nimbus-fragments" data-pet="Nimbus" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="121">50</div>
-                            <div class="col-3 col-kl col-red" data-from="225">90</div>
-                             <div class="col-3 col-kl col-red" data-from="270">108</div> 
-                             <div class="col-3 col-kl col-red" data-from="436">176</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="225">90</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="270">108</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="436">176</div> 
+                            
                         </div>
                     </div>
             
@@ -2524,7 +2807,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Rapty-1star" data-pet="Rapty">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2548,15 +2831,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Rapty-fragments" data-pet="Rapty" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Rapty-fragments" data-pet="Rapty" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="131">54</div>
-                            <div class="col-3 col-kl col-red" data-from="245">98</div>
-                             <div class="col-3 col-kl col-red" data-from="290">116</div> 
-                             <div class="col-3 col-kl col-red" data-from="446">180</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="245">98</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="290">116</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="446">180</div> 
+                            
                         </div>
                     </div>
             
@@ -2576,7 +2865,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Bernard-1star" data-pet="Bernard">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2600,15 +2889,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Bernard-fragments" data-pet="Bernard" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Bernard-fragments" data-pet="Bernard" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="216">88</div>
-                            <div class="col-3 col-kl col-red" data-from="415">166</div>
-                             <div class="col-3 col-kl col-red" data-from="460">184</div> 
-                             <div class="col-3 col-kl col-red" data-from="531">214</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="415">166</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="460">184</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="531">214</div> 
+                            
                         </div>
                     </div>
             
@@ -2628,7 +2923,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Mambo-1star" data-pet="Mambo">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2652,15 +2947,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Mambo-fragments" data-pet="Mambo" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Mambo-fragments" data-pet="Mambo" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="1">2</div>
-                            <div class="col-3 col-kl col-red" data-from="5">2</div>
-                             <div class="col-3 col-kl col-red" data-from="30">12</div> 
-                             <div class="col-3 col-kl col-red" data-from="316">128</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="5">2</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="30">12</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="316">128</div> 
+                            
                         </div>
                     </div>
             
@@ -2680,7 +2981,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Joe-1star" data-pet="Joe">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2704,15 +3005,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Joe-fragments" data-pet="Joe" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Joe-fragments" data-pet="Joe" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="6">4</div>
-                            <div class="col-3 col-kl col-red" data-from="10">4</div>
-                             <div class="col-3 col-kl col-red" data-from="40">16</div> 
-                             <div class="col-3 col-kl col-red" data-from="321">130</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="10">4</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="40">16</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="321">130</div> 
+                            
                         </div>
                     </div>
             
@@ -2732,7 +3039,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Griffy-1star" data-pet="Griffy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2756,15 +3063,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Griffy-fragments" data-pet="Griffy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Griffy-fragments" data-pet="Griffy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="111">46</div>
-                            <div class="col-3 col-kl col-red" data-from="205">82</div>
-                             <div class="col-3 col-kl col-red" data-from="250">100</div> 
-                             <div class="col-3 col-kl col-red" data-from="426">172</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="205">82</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="250">100</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="426">172</div> 
+                            
                         </div>
                     </div>
             
@@ -2784,7 +3097,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Sleepy-1star" data-pet="Sleepy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2808,15 +3121,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Sleepy-fragments" data-pet="Sleepy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Sleepy-fragments" data-pet="Sleepy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="71">30</div>
-                            <div class="col-3 col-kl col-red" data-from="125">50</div>
-                             <div class="col-3 col-kl col-red" data-from="170">68</div> 
-                             <div class="col-3 col-kl col-red" data-from="386">156</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="125">50</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="170">68</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="386">156</div> 
+                            
                         </div>
                     </div>
             
@@ -2836,7 +3155,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Snork-1star" data-pet="Snork">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2860,15 +3179,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Snork-fragments" data-pet="Snork" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Snork-fragments" data-pet="Snork" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="36">16</div>
-                            <div class="col-3 col-kl col-red" data-from="55">22</div>
-                             <div class="col-3 col-kl col-red" data-from="100">40</div> 
-                             <div class="col-3 col-kl col-red" data-from="351">142</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="55">22</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="100">40</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="351">142</div> 
+                            
                         </div>
                     </div>
             
@@ -2888,7 +3213,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Piggy-1star" data-pet="Piggy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2912,15 +3237,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Piggy-fragments" data-pet="Piggy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Piggy-fragments" data-pet="Piggy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="16">8</div>
-                            <div class="col-3 col-kl col-red" data-from="20">8</div>
-                             <div class="col-3 col-kl col-red" data-from="60">24</div> 
-                             <div class="col-3 col-kl col-red" data-from="331">134</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="20">8</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="60">24</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="331">134</div> 
+                            
                         </div>
                     </div>
             
@@ -2940,7 +3271,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Squirrel-1star" data-pet="Squirrel">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -2964,15 +3295,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Squirrel-fragments" data-pet="Squirrel" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Squirrel-fragments" data-pet="Squirrel" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="86">36</div>
-                            <div class="col-3 col-kl col-red" data-from="155">62</div>
-                             <div class="col-3 col-kl col-red" data-from="200">80</div> 
-                             <div class="col-3 col-kl col-red" data-from="401">162</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="155">62</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="200">80</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="401">162</div> 
+                            
                         </div>
                     </div>
             
@@ -2992,7 +3329,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Phoenic-1star" data-pet="Phoenic">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3016,15 +3353,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Phoenic-fragments" data-pet="Phoenic" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Phoenic-fragments" data-pet="Phoenic" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="41">18</div>
-                            <div class="col-3 col-kl col-red" data-from="65">26</div>
-                             <div class="col-3 col-kl col-red" data-from="110">44</div> 
-                             <div class="col-3 col-kl col-red" data-from="356">144</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="65">26</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="110">44</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="356">144</div> 
+                            
                         </div>
                     </div>
             
@@ -3044,7 +3387,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Indy-1star" data-pet="Indy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3068,15 +3411,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Indy-fragments" data-pet="Indy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Indy-fragments" data-pet="Indy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="46">20</div>
-                            <div class="col-3 col-kl col-red" data-from="75">30</div>
-                             <div class="col-3 col-kl col-red" data-from="120">48</div> 
-                             <div class="col-3 col-kl col-red" data-from="361">146</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="75">30</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="120">48</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="361">146</div> 
+                            
                         </div>
                     </div>
             
@@ -3096,7 +3445,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Juda-1star" data-pet="Juda">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3120,15 +3469,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Juda-fragments" data-pet="Juda" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Juda-fragments" data-pet="Juda" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="191">78</div>
-                            <div class="col-3 col-kl col-red" data-from="365">146</div>
-                             <div class="col-3 col-kl col-red" data-from="410">164</div> 
-                             <div class="col-3 col-kl col-red" data-from="506">204</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="365">146</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="410">164</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="506">204</div> 
+                            
                         </div>
                     </div>
             
@@ -3148,7 +3503,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Mummy-1star" data-pet="Mummy">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3172,15 +3527,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Mummy-fragments" data-pet="Mummy" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Mummy-fragments" data-pet="Mummy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="11">6</div>
-                            <div class="col-3 col-kl col-red" data-from="15">6</div>
-                             <div class="col-3 col-kl col-red" data-from="50">20</div> 
-                             <div class="col-3 col-kl col-red" data-from="326">132</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="15">6</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="50">20</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="326">132</div> 
+                            
                         </div>
                     </div>
             
@@ -3200,7 +3561,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Potang-1star" data-pet="Potang">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3224,15 +3585,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Potang-fragments" data-pet="Potang" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Potang-fragments" data-pet="Potang" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="21">10</div>
-                            <div class="col-3 col-kl col-red" data-from="25">10</div>
-                             <div class="col-3 col-kl col-red" data-from="70">28</div> 
-                             <div class="col-3 col-kl col-red" data-from="336">136</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="25">10</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="70">28</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="336">136</div> 
+                            
                         </div>
                     </div>
             
@@ -3252,7 +3619,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Uni-1star" data-pet="Uni">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3276,15 +3643,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Uni-fragments" data-pet="Uni" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Uni-fragments" data-pet="Uni" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="26">12</div>
-                            <div class="col-3 col-kl col-red" data-from="35">14</div>
-                             <div class="col-3 col-kl col-red" data-from="80">32</div> 
-                             <div class="col-3 col-kl col-red" data-from="341">138</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="35">14</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="80">32</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="341">138</div> 
+                            
                         </div>
                     </div>
             
@@ -3304,7 +3677,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Joker-1star" data-pet="Joker">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3328,15 +3701,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Joker-fragments" data-pet="Joker" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Joker-fragments" data-pet="Joker" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="31">14</div>
-                            <div class="col-3 col-kl col-red" data-from="45">18</div>
-                             <div class="col-3 col-kl col-red" data-from="90">36</div> 
-                             <div class="col-3 col-kl col-red" data-from="346">140</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="45">18</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="90">36</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="346">140</div> 
+                            
                         </div>
                     </div>
             
@@ -3356,7 +3735,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Grim-1star" data-pet="Grim">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3380,15 +3759,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Grim-fragments" data-pet="Grim" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Grim-fragments" data-pet="Grim" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="51">22</div>
-                            <div class="col-3 col-kl col-red" data-from="85">34</div>
-                             <div class="col-3 col-kl col-red" data-from="130">52</div> 
-                             <div class="col-3 col-kl col-red" data-from="366">148</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="85">34</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="130">52</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="366">148</div> 
+                            
                         </div>
                     </div>
             
@@ -3408,7 +3793,7 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-md-7 padding-md">
+                            <div class="col-12 padding-md">
                                     <fieldset>
                                         <label class="image-checkbox" id="Woola-1star" data-pet="Woola">
                                             <img class="img-responsive" src="../static/img/stargrey.png"/>
@@ -3432,15 +3817,21 @@
                                         </label>
                                     </fieldset>
                             </div> 
-                            <div class="col-md-5 ml-auto">
-                                    <input id="Woola-fragments" data-pet="Woola" class="form-control pet-input" type="number" min="0" value="0"/>
+                            <div class="col-12 padding-sm">
+                                    <input id="Woola-fragments" data-pet="Woola" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="56">24</div>
-                            <div class="col-3 col-kl col-red" data-from="95">38</div>
-                             <div class="col-3 col-kl col-red" data-from="140">56</div> 
-                             <div class="col-3 col-kl col-red" data-from="371">150</div> 
+                             
+                                <div class="col-3 col-kl col-red" data-from="95">38</div> 
+                            
+                             
+                                <div class="col-3 col-kl col-red" data-from="140">56</div> 
+                            
+                             
+                            <div class="col-3 col-kl col-red" data-from="371">150</div> 
+                            
                         </div>
                     </div>
             
@@ -5895,9 +6286,14 @@
     <script type="text/javascript" src="/static/js/extern/index.js"></script>
     <script type="text/javascript" src="/static/js/extern/jquery.sortable.min.js"></script>
 
+    <script type="text/javascript" src="/static/js/extern/bootstrap-input-spinner.js"></script>
+
     <script type="text/javascript" src="/static/js/base.js"></script>
 
     <script type="text/javascript" src="/static/js/pets.js"></script>
+    
+        <script type="text/javascript" src="/static/js/pets_normal.js"></script>
+    
 
   </body>
 </html>

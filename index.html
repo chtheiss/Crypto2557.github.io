@@ -47,8 +47,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/pets/">Pets</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
+                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/pets/">Normal</a>
+                    <a class="dropdown-item" href="/pets_hard/">Hard</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/units/">Units</a>
@@ -60,6 +64,7 @@
                 <a class="nav-link" href="/meta_progression/">Metas</a>
             </li>
         </ul>
+        <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none"/> 
         <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
@@ -87,7 +92,15 @@
 								Knightage Level
 							</div>
 							<div class="col-3 col-centered padding-sm">
-				 				<input id="KL-number" class="form-control user-input" type="number" min="1" value="0"/>
+				 				<input id="KL-number" class="user-input" type="number" min="1" value="0" step="1"/>
+							</div>
+						</div>
+						<div class="row centered-row">
+							<div class="col-6 col-centered padding-sm">
+								Spirit Highlands Normal
+							</div>
+							<div class="col-6 col-centered padding-sm">
+								Spirit Highlands Hard
 							</div>
 						</div>
 						<div class="row centered-row">
@@ -95,7 +108,13 @@
 								Tickets
 							</div>
 							<div class="col-3 col-centered padding-sm">
-								<input id="tickets-number" class="form-control user-input" type="number" min="10" value="0"/>
+								<input id="tickets-number" class="user-input" type="number" min="10" value="0" step="1"/>
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								Tickets
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								<input id="tickets_hard-number" class="user-input" type="number" min="5" value="0" step="1"/>
 							</div>			
 						</div>
 						<div class="row centered-row">
@@ -103,13 +122,23 @@
 								Refills
 							</div>
 							<div class="col-3 col-centered padding-sm">
-								<input id="refills-number" class="form-control user-input" type="number" min="0" value="0" max="6"/>
+								<input id="refills-number" class="user-input" type="number" min="0" max="6" value="0" step="1"/>
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								Refills
+							</div>
+							<div class="col-3 col-centered padding-sm">
+								<input id="refills_hard-number" class="user-input" type="number" min="0" max="3" value="0" step="1"/>
 							</div>			
 						</div>
 						<div class="row centered-row">
 							<div class="col-6 col-centered padding-sm">
 								<img id="gem-image" src="../static/img/gem.png">
 								<label id="gem-label" for="gem-image">0</label>
+							</div>
+							<div class="col-6 col-centered padding-sm">
+								<img id="gem-hard-image" src="../static/img/gem.png">
+								<label id="gem-hard-label" for="gem-hard-image">0</label>
 							</div>
 						</div>
 					</div>
@@ -149,6 +178,8 @@
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script type="text/javascript" src="/static/js/extern/index.js"></script>
     <script type="text/javascript" src="/static/js/extern/jquery.sortable.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/extern/bootstrap-input-spinner.js"></script>
 
     <script type="text/javascript" src="/static/js/base.js"></script>
 

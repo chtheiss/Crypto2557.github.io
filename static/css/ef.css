@@ -60,10 +60,6 @@ body {
 
 .col-md-3 { padding-bottom: 15px }
 
-.unit-input {
-  margin-top: 2%;
-}
-
 .unit-bar {
   margin-top: 5%;
 }
@@ -253,7 +249,7 @@ h1 {
   font-size: 4em;
 }
 
-#gem-image {
+#gem-image, #gem-hard-image {
   max-width: 20px;
 }
 
@@ -374,7 +370,7 @@ td:hover {
   font-weight: 600;
 }
 
-.nav-link:hover{
+.navbar-nav .nav-link:hover{
   border: 2px solid rgb(130, 156, 165) !important;
   border-radius: 5px;
 }
@@ -394,4 +390,8 @@ p.col-12 {
 
 hr{
     border-top: 2px solid rgb(255, 255, 255);
+}
+
+.nav-tabs>li>a{
+  color:rgba(255,255,255,.5);
 }
