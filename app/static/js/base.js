@@ -21,6 +21,9 @@ function change_gem_label($refill_number){
 }(function($, indexedDB, window, document) {
 
   $(function() {
+
+    $(".user-input[type='number']").inputSpinner();
+
     $("#import-button").click(function() {
       $('#dbupload').trigger('click');
     });
@@ -75,25 +78,25 @@ function change_gem_label($refill_number){
       var KL = store.get("KL");
       KL.then(function(val) {
         if (val !== undefined) {
-          $("#KL-number").attr("value", val["value"]);
+          $("#KL-number").val(val["value"]);
         }
       });
       var tickets = store.get("tickets");
       tickets.then(function(val) {
         if (val !== undefined) {
-          $("#tickets-number").attr("value", val["value"]);
+          $("#tickets-number").val(val["value"]);
         }
       });
       var refills = store.get("refills");
       refills.then(function(val) {
         if (val !== undefined) {
-          $("#refills-number").attr("value", val["value"]);
+          $("#refills-number").val(val["value"]);
           change_gem_label($("#refills-number"));
         }
       });
     });
 
-    $(".user-input").bind('keyup mouseup', function() {
+    $(".user-input").bind('change', function() {
       $this = $(this);
       request = idb.open('endless-farming-db');
       request.then(function(db) {
@@ -112,7 +115,7 @@ function change_gem_label($refill_number){
       }.bind($this));
     });
 
-    $("#refills-number").bind('keyup mouseup', function() {
+    $("#refills-number").bind('change', function() {
       $this = $(this);
       change_gem_label($this);
     });
