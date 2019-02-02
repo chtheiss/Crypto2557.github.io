@@ -395,3 +395,7 @@ hr{
 .nav-tabs>li>a{
   color:rgba(255,255,255,.5);
 }
+
+h2{
+  text-decoration: underline;
+}
