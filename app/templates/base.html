@@ -49,8 +49,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('core.index') }}">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('core.pets') }}">Pets</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
+                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ url_for('core.pets') }}">Normal</a>
+                    <a class="dropdown-item" href="{{ url_for('core.pets_hard') }}">Hard</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('core.units') }}">Units</a>

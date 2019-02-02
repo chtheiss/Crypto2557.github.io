@@ -93,10 +93,16 @@
                             </div>
                         </div>
                         <div class="row centered-row">
-                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][0]}}">{{(ceil(pet["from"][0]/5)*2)|int}}</div>
-                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][1]}}">{{(ceil(pet["from"][1]/5)*2)|int}}</div>
-                            {% if(pet["from"][2]) %} <div class="col-3 col-kl col-red" data-from="{{pet['from'][2]}}">{{(ceil(pet["from"][2]/5)*2)|int}}</div> {% endif %}
-                            {% if(pet["from"][3]) %} <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{(ceil(pet["from"][3]/5)*2)|int}}</div> {% endif %}
+                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][0]}}">{{pet["KL"][0]}}</div>
+                            {% if(pet["from"][1]) %} 
+                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][1]}}">{{pet["KL"][1]}}</div> 
+                            {% endif %}
+                            {% if(pet["from"][2]) %} 
+                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][2]}}">{{pet["KL"][2]}}</div> 
+                            {% endif %}
+                            {% if(pet["from"][3]) %} 
+                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{pet["KL"][3]}}</div> 
+                            {% endif %}
                         </div>
                     </div>
             {% endfor %}
@@ -114,4 +120,7 @@
 {% block scripts %}
     {{ super() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
+    {% block pet_scripts %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/pets_normal.js') }}"></script>
+    {% endblock %}
 {% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'pets.html' %}
+
+{% block scripts %}
+    {{ super() }}
+    {% block pet_scripts %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/pets_hard.js') }}"></script>
+    {% endblock %}
+{% endblock %}

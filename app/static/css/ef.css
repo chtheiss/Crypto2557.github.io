@@ -249,7 +249,7 @@ h1 {
   font-size: 4em;
 }
 
-#gem-image {
+#gem-image, #gem-hard-image {
   max-width: 20px;
 }
 

@@ -12,16 +12,6 @@ function turn_star_off($image_checkbox) {
   $image.attr("src", "../static/img/stargrey.png");
 }
 
-function remove_classes($element, classes_not_to_remove) {
-  var classes = $($element).attr('class').split(/\s+/);
-  for (var i = 0; i < classes.length; i++) {
-    if (classes_not_to_remove.includes(classes[i]))
-      continue;
-    $element.removeClass(classes[i]);
-  }
-  var classes = $($element).attr('class').split(/\s+/);
-}
-
 function change_stars(val) {
   if (val != undefined) {
     var $img = $("#" + val["name"].replace(" ", "_") + "-image");
@@ -65,10 +55,48 @@ function change_stars(val) {
   }
 }
 
-function on_pet_input_change($pet_input) {
+function remove_classes($element, classes_not_to_remove) {
+  var classes = $($element).attr('class').split(/\s+/);
+  for (var i = 0; i < classes.length; i++) {
+    if (classes_not_to_remove.includes(classes[i]))
+      continue;
+    $element.removeClass(classes[i]);
+  }
+  var classes = $($element).attr('class').split(/\s+/);
+}
+
+function updateStages(kl) {
+  $(".col-kl").each(function() {
+    var col = $(this);
+    if (kl >= parseFloat(col.text())) {
+      col.removeClass('col-red');
+      col.addClass('col-green');
+    } else {
+      col.removeClass('col-green');
+      col.addClass('col-red');
+    }
+  });
+}
+
+function getPriority(hard) {
+  var url = ""
+  if (hard){
+    url = "core.get_hard_sh_priority";
+  } else {
+    url = "core.get_priority";
+  }
+  return $.ajax({
+    type: "GET",
+    url: Flask.url_for(url),
+    dataType: "json",
+    async: true
+  });
+}
+
+function change_pet_input_on_page_load($pet_input, storage_name) {
   idb.open('endless-farming-db').then(function(db) {
-    var tx = db.transaction('pets', 'readwrite');
-    var store = tx.objectStore('pets');
+    var tx = db.transaction(storage_name, 'readwrite');
+    var store = tx.objectStore(storage_name);
     return store.get($pet_input.data("pet"));
   }.bind($pet_input)).then(function(val) {
     if (val != undefined) {
@@ -78,103 +106,11 @@ function on_pet_input_change($pet_input) {
   }.bind($pet_input));
 }
 
-function calculatePetFragmentsToFarm() {
-  var KL = parseInt($("#KL-number").val());
-  var tickets = parseInt($("#tickets-number").val()) + parseInt(5 * $("#refills-number").val());
-  var row = $("#dragable-row");
-  if (row != undefined) {
-
-    $("#tracking").children().each(function() {
-      var track_col = $(this);
-      track_col.css("display", "none");
-      track_col.find("img").attr("src", "");
-      track_col.attr("data-empty", "True");
-      track_col.data("empty", "True");
-      track_col.find("p").text("");
-    });
-    row.children().each(function() {
-      var col = $(this);
-      var possible_stages = [];
-      var from_stage = [];
-      var fragments = 0;
-      var current_frags = 0;
-      col.find('.col-kl.col-green').each(function() {
-        possible_stages.push(parseInt($(this).text()));
-        from_stage.push(parseInt($(this).data("from")));
-      });
-      for (stage of from_stage) {
-        current_frags = handle_nan(parseInt(col.find(".pet-input").val()));
-        current_frags = (current_frags > 330) ? 330 : current_frags;
-        if (current_frags == 330) {
-          break;
-        }
-        if (tickets > 0) {
-          var add = 3;
-          if ((stage >= 296) && (stage % 5 != 0)) {
-            add = 1;
-          }
-          fragments += (tickets >= add) ? add : tickets;
-          tickets -= (tickets >= add) ? add : tickets;
-        }
-      }
-      tickets += (fragments > 330 - current_frags) ? fragments - (330 - current_frags) : 0;
-      fragments = (fragments > 330 - current_frags) ? 330 - current_frags : fragments;
-      frag_text = col.find("p");
-      frag_text.text(fragments);
-
-      if (fragments > 0) {
-        frag_text.removeClass('zero-fragments');
-        var days = Math.ceil((330 - current_frags) / fragments);
-        var track_col = $('.col-2[data-empty="True"]').first();
-        track_col.css("display", "");
-        track_col.find("img").attr("src", col.find(".pet-image").attr("src"));
-        track_col.attr("data-empty", "False");
-        track_col.data("empty", "False");
-        track_col.find("p").text(days + " days");
-        track_col.parent(".justify-content-center").css("display", "");
-
-      } else {
-        frag_text.addClass('zero-fragments');
-        var track_col = $('.col-2[data-empty="True"]').first();
-        if (track_col.attr("id") == "track-1") {
-          track_col.parent(".justify-content-center").css("display", "none");
-        }
-      }
-    });
-  }
-}
-
-function getPriority(petid) {
-  return $.ajax({
-    type: "GET",
-    url: Flask.url_for("core.get_priority"),
-    dataType: "json",
-    async: true
-  });
-}
-
-function updatePriorities() {
-  $("#dragable-row").children().each(function() {
-    request = idb.open('endless-farming-db');
-    col = $(this);
-    val = {
-      name: col.attr("id"),
-      fragments: parseInt(col.find(".pet-input").val()),
-      priority: parseInt(col.attr("data-id"))
-    }
-    request.then(function(db) {
-      var tx = db.transaction('pets', 'readwrite');
-      var store = tx.objectStore('pets');
-      store.put(this);
-    }.bind(val));
-  });
-}
-
-function sortPetsByPriority() {
+function sortPetsByPriority(storage_name) {
   request = idb.open('endless-farming-db');
   request.then(function(db) {
-    var tx = db.transaction('pets', 'readwrite');
-    var store = tx.objectStore('pets');
+    var tx = db.transaction(storage_name, 'readwrite');
+    var store = tx.objectStore(storage_name);
     var items = store.getAll();
     items.then(function(items) {
       for (item of items) {
@@ -197,16 +133,56 @@ function sortPetsByPriority() {
   });
 }
 
-function updateStages(kl) {
-  $(".col-kl").each(function() {
-    var col = $(this);
-    if (kl >= parseFloat(col.text())) {
-      col.removeClass('col-red');
-      col.addClass('col-green');
-    } else {
-      col.removeClass('col-green');
-      col.addClass('col-red');
+function updatePriorities(storage_name) {
+  $("#dragable-row").children().each(function() {
+    request = idb.open('endless-farming-db');
+    col = $(this);
+    val = {
+      name: col.attr("id"),
+      fragments: parseInt(col.find(".pet-input").val()),
+      priority: parseInt(col.attr("data-id"))
     }
+    request.then(function(db) {
+      var tx = db.transaction(storage_name, 'readwrite');
+      var store = tx.objectStore(storage_name);
+      store.put(this);
+    }.bind(val));
+  });
+}
+
+function on_pet_input_change($pet_input, storage_name){
+   var request = idb.open('endless-farming-db');
+      request.then(function(db) {
+        var tx = db.transaction(storage_name, 'readwrite');
+        var store = tx.objectStore(storage_name);
+        var item = {
+          name: this.data("pet"),
+          fragments: parseInt(this.val()),
+          priority: parseInt(this.parents(".block").attr("data-id"))
+        };
+        var putRequest = store.put(item);
+        return tx.complete;
+      }.bind($pet_input)).then(function() {
+        val = idb.open('endless-farming-db').then(function(db) {
+          var tx = db.transaction(storage_name, 'readwrite');
+          var store = tx.objectStore(storage_name);
+          return store.get(this.data("pet"));
+        }.bind(this)).then(function(val) {
+          this.val(val["fragments"]);
+          change_stars(val);
+          calculatePetFragmentsToFarm();
+        }.bind($pet_input));
+      }.bind($pet_input));
+}
+
+function clear_tracking(){
+  $("#tracking").children().each(function() {
+    var track_col = $(this);
+    track_col.css("display", "none");
+    track_col.find("img").attr("src", "");
+    track_col.attr("data-empty", "True");
+    track_col.data("empty", "True");
+    track_col.find("p").text("");
   });
 }
 
@@ -220,40 +196,24 @@ function updateStages(kl) {
   $(function() {
     $(".pet-input[type='number']").inputSpinner();
 
-    $(".pet-input[type='number']").each(function() {
-      on_pet_input_change($(this));
-    });
-    $(".pet-input[type='number']").bind('change', function() {
-      var request = idb.open('endless-farming-db');
-      request.then(function(db) {
-        var tx = db.transaction('pets', 'readwrite');
-        var store = tx.objectStore('pets');
-        console.log($(this).val());
-        var item = {
-          name: $(this).data("pet"),
-          fragments: parseInt($(this).val()),
-          priority: parseInt($(this).parents(".block").attr("data-id"))
-        };
-        var putRequest = store.put(item);
-        return tx.complete;
-      }.bind(this)).then(function() {
-        val = idb.open('endless-farming-db').then(function(db) {
-          var tx = db.transaction('pets', 'readwrite');
-          var store = tx.objectStore('pets');
-          return store.get($(this).data("pet"));
-        }.bind(this)).then(function(val) {
-          $(this).val(val["fragments"])
-          change_stars(val);
-          calculatePetFragmentsToFarm();
-        });
-      }.bind(this));
-    });
-
     $(".image-checkbox").on("click", function(e) {
       var $checkbox = $(this).find('input[type="checkbox"]');
       var $input = $("#" + $(this).data("pet") + "-fragments");
       $input.val($checkbox.attr("value"));
       $input.change();
+    });
+
+    $("#add-all-btn").click(function() {
+      $("#dragable-row").children('.block').each(function() {
+        var col = $(this);
+        var frags_to_add = parseInt(col.find(".col-fragments p").text());
+        var input = col.find(".pet-input");
+        var current_frags = handle_nan(parseInt(input.val()));
+        if (frags_to_add > 0){
+          input.val(current_frags + frags_to_add);
+          input.change();
+        }
+      });
     });
 
     request = idb.open('endless-farming-db');
@@ -267,65 +227,5 @@ function updateStages(kl) {
         }
       });
     });
-
-    row = $("#dragable-row").get()[0];
-    sortable = Sortable.create(row, {
-      cursor: 'move',
-      animation: 150,
-      onUpdate: function(event) {
-        change = $("#dragable-row").children().filter(function() {
-          id = parseInt($(this).attr("data-id"));
-          if (event.newIndex < event.oldIndex) {
-            return id >= event.newIndex && id <= event.oldIndex;
-          } else {
-            return id >= event.oldIndex && id <= event.newIndex;
-          }
-
-        });
-
-        change.each(function() {
-          var $col = $(this);
-          if (event.newIndex < event.oldIndex) {
-            $col.attr("data-id", parseInt($col.attr("data-id")) + 1);
-            $col.data("id", parseInt($col.attr("id")) + 1);
-          } else {
-            $col.attr("data-id", parseInt($col.attr("data-id")) - 1);
-            $col.data("id", parseInt($col.attr("id")) - 1);
-          }
-        });
-
-        $(event.item).attr("data-id", event.newIndex);
-        $(event.item).data("id", event.newIndex);
-
-        updatePriorities()
-        calculatePetFragmentsToFarm()
-      },
-    });
-
-    $("#add-all-btn").click(function() {
-      $("#dragable-row").children('.block').each(function() {
-        var col = $(this);
-        var frags_to_add = parseInt(col.find(".col-fragments p").text());
-        var input = col.find(".pet-input");
-        var current_frags = handle_nan(parseInt(input.val()));
-        input.val(current_frags + frags_to_add);
-        input.keyup();
-      });
-    });
-
-    $("#reset-btn").click(function() {
-      getPriority().then(function(data) {
-        var priority = data["priority"];
-        for (p in priority) {
-          col = $("#" + priority["" + p].replaceAll(" ", "_"));
-          col.attr("data-id", p - 1);
-          col.data("id", p - 1);
-        }
-        updatePriorities()
-        sortPetsByPriority()
-      });
-    });
-
-    sortPetsByPriority()
-  });
+  })
 }));

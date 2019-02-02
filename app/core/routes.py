@@ -21,9 +21,25 @@ def pets():
 
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
+        pets[item]["KL"] = (np.ceil(np.array(pets[item]["from"])/5)*2).astype(int).tolist()
 
     pets_ordered = json.loads(json.dumps(dict([(pet, pets[pet]) for pet in sorted(pets, key=lambda d: int(pets[d]["priority"]))])))
     return render_template('pets.html', title='Pets', pets=pets_ordered, ceil=np.ceil)
+
+@bp.route('/pets_hard/', methods=['GET', 'POST'])
+def pets_hard():
+    pet_priority_url = os.path.join(current_app.root_path, "static/json", "hard_sh_pet_priority.json")
+    pet_priority = json.load(open(pet_priority_url))
+
+    pets_url = os.path.join(current_app.root_path, "static/json", "hard_sh_pets.json")
+    pets = json.load(open(pets_url))
+
+    for key, item in pet_priority.items():
+        pets[item]["priority"] = key
+        pets[item]["KL"] = (30 + np.ceil(np.array(pets[item]["from"])/5)*20).astype(int).tolist()
+
+    pets_ordered = json.loads(json.dumps(dict([(pet, pets[pet]) for pet in sorted(pets, key=lambda d: int(pets[d]["priority"]))])))
+    return render_template('pets_hard.html', title='Pets', pets=pets_ordered, ceil=np.ceil)
 
 @bp.route('/units/', methods=['GET', 'POST'])
 def units():
@@ -61,9 +77,15 @@ def get_unit(unitid):
     units = json.load(open(units_url))
     return jsonify(unit=units[unitid.replace("_", " ")])
 
-@bp.route('/static/json/priority.json', methods=['GET', 'POST'])
+@bp.route('/static/json/pet_priority.json', methods=['GET', 'POST'])
 def get_priority():
     pet_priority_url = os.path.join(current_app.root_path, "static/json", "pet_priority.json")
+    pet_priority = json.load(open(pet_priority_url))
+    return jsonify(priority=pet_priority)
+
+@bp.route('/static/json/hard_sh_pet_priority.json', methods=['GET', 'POST'])
+def get_hard_sh_priority():
+    pet_priority_url = os.path.join(current_app.root_path, "static/json", "hard_sh_pet_priority.json")
     pet_priority = json.load(open(pet_priority_url))
     return jsonify(priority=pet_priority)
 
