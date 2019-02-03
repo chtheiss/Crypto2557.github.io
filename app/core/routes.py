@@ -36,7 +36,7 @@ def pets_hard():
 
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
-        pets[item]["KL"] = (30 + np.ceil(np.array(pets[item]["from"])/5)*20).astype(int).tolist()
+        pets[item]["KL"] = (50 + (np.array(pets[item]["from"])-1)*4).astype(int).tolist()
 
     pets_ordered = json.loads(json.dumps(dict([(pet, pets[pet]) for pet in sorted(pets, key=lambda d: int(pets[d]["priority"]))])))
     return render_template('pets_hard.html', title='Pets', pets=pets_ordered, ceil=np.ceil)
