@@ -13,6 +13,9 @@
                 "amount":50,
                 "linked_units":[
                     "Skeleton Master"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             },
             {
@@ -23,6 +26,9 @@
                 "amount":4,
                 "linked_units":[
                     "Skeleton Master"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             }
         ],
@@ -87,6 +93,9 @@
                 "amount":50,
                 "linked_units":[
                     "Paladin"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             },
             {
@@ -97,6 +106,9 @@
                 "amount":4,
                 "linked_units":[
                     "Paladin"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             }
         ],

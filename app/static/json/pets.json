@@ -20,12 +20,33 @@
             296,
             575
         ],
-        "buffs": [
-
+        "buffs":[
+                {"name":"Spirit Awakening 2",
+                "description":"Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
+                "multiplier": 0.5,
+                "requirement": [
+                7.5,
+                10
+            ],
+            "amount": [
+                50,
+                75,
+                100
+            ],
+            "linked_pets": [
+                "Scourge"
+            ],
+            "linked_units": [
+                "Skeleton Master"
+            ]}
         ],
-        "additional_buffs": [
-
-        ]
+        "additional_buffs": [{
+            "name": "Spirit Awakening 2 limit break",
+            "description": "Spirit Awakening 2 max ncreases value by 5 per 6-star Paladin, up to 25.",
+            "multiplier": 0.0,
+            "requirement": 5,
+            "amount": 25
+        }]
     },
     "Rolly": {
         "img": "img/pets/208.png",
@@ -76,12 +97,33 @@
             306,
             595
         ],
-        "buffs": [
-
+        "buffs":[
+                {"name":"Spirit Awakening 2",
+                "description":"Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
+                "multiplier": 0.5,
+                "requirement": [
+                7.5,
+                10
+            ],
+            "amount": [
+                50,
+                75,
+                100
+            ],
+            "linked_pets": [
+                "Combat"
+            ],
+            "linked_units": [
+                "Paladin"
+            ]}
         ],
-        "additional_buffs": [
-
-        ]
+        "additional_buffs": [{
+            "name": "Spirit Awakening 2 limit break",
+            "description": "Spirit Awakening 2 max ncreases value by 5 per 6-star Skeleton Master, up to 25.",
+            "multiplier": 0.0,
+            "requirement": 5,
+            "amount": 25
+        }]
     },
     "Lazy": {
         "img": "img/pets/210.png",
