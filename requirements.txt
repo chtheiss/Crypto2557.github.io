@@ -1,0 +1,6 @@
+Flask
+Flask-Bootstrap
+Frozen-Flask
+Flask-JSGlue
+Flask-FlatPages
+numpy
