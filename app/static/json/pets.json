@@ -69,7 +69,13 @@
             301,
             585
         ],
-        "buffs": [
+        "buffs": [{
+                "name":"Elf's Secret Skill of Space-Time",
+                "description":"Even when Royal Druid is in the timeshop, elf space-time skill is applied. (5-star gives 2% probability and 6-star give 4%), but maximum probability of Space-Time Skill from timeshop can not exceed 90%.",
+                "multiplier":0.6,
+                "requirement":25,
+                "amount":100
+            }
 
         ],
         "additional_buffs": [
@@ -147,12 +153,22 @@
             311,
             605
         ],
-        "buffs": [
+        "buffs": [{
+                "name":"Increase Auto-skill Efficiency",
+                "description":" Increases maximum value of automatic skill cooldown reduction to 30%.",
+                "multiplier":0.5,
+                "requirement":15,
+                "amount":30
+            }
 
         ],
-        "additional_buffs": [
-
-        ]
+        "additional_buffs": [{
+            "name": "Enhanced Active Skill Efficiency",
+            "description": "Increases efficiency of Active Skills. (Raise the limit by 10 floors per 5-star Unit, 20 floors per 6-star unit, up to +300, works from timeshop.)",
+            "multiplier":0.5,
+            "requirement":15,
+            "amount":300
+        }]
     },
     "Little Hawk": {
         "img": "img/pets/183.png",
