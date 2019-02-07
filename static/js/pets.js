@@ -216,6 +216,30 @@ function clear_tracking(){
       });
     });
 
+    $("#5-star-btn").click(function() {
+      $this = $(this);
+      var display_five_star = $this.attr('data-on')=='true';
+      $("#dragable-row").children('.block').each(function() {
+        var col = $(this);
+        var input = col.find(".pet-input");
+        var current_frags = handle_nan(parseInt(input.val()));
+        if (current_frags >= 330){
+          if (display_five_star){
+            col.removeClass('invisible');
+          } else {
+            col.addClass('invisible');
+          }
+        }
+      });
+      if (display_five_star){
+        $this.text('Hide 5* Pets');
+      } else {
+        $this.text('Show 5* Pets');
+      }
+      $this.attr('data-on', (!display_five_star).toString());
+    });
+    
+
     request = idb.open('endless-farming-db');
     request.then(function(db) {
       var tx = db.transaction('player', 'readwrite');

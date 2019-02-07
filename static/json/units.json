@@ -13,6 +13,9 @@
                 "amount":50,
                 "linked_units":[
                     "Skeleton Master"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             },
             {
@@ -20,10 +23,7 @@
                 "description":"Increase the maximum stage of offline march even if Paladin is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%).",
                 "multiplier":0.5,
                 "requirement":10,
-                "amount":4,
-                "linked_units":[
-                    "Skeleton Master"
-                ]
+                "amount":4
             }
         ],
         "atk_abil":["Normal Attack: Throws multiple hammers that attack and stun enemies.",
@@ -87,6 +87,9 @@
                 "amount":50,
                 "linked_units":[
                     "Paladin"
+                ],
+                "linked_multiplier":[
+                    1.0
                 ]
             },
             {
@@ -94,10 +97,7 @@
                 "description":"Increase the maximum stage of offline march even if Skeleton Master is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%).",
                 "multiplier":0.5,
                 "requirement":10,
-                "amount":4,
-                "linked_units":[
-                    "Paladin"
-                ]
+                "amount":4
             }
         ],
         "atk_abil":["Normal Attack: Casts a bone missile that attack enemies.",

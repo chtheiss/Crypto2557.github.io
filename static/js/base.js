@@ -132,7 +132,7 @@ function change_gem_label($refill_number, $gem_label, costs){
       change_gem_label($(this), $("#gem-label"), [0, 100, 200, 400, 800, 1200, 1600]);
     });
 
-    $("#refills-hard-number").bind('change', function() {
+    $("#refills_hard-number").bind('change', function() {
       change_gem_label($(this), $("#gem-hard-label"), [0, 200, 400, 800]);
     });
 
