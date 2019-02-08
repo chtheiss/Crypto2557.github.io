@@ -5,7 +5,7 @@ function calculatePetFragmentsToFarm() {
   if (row != undefined) {
 
     clear_tracking();
-    
+
     row.children().each(function() {
       var col = $(this);
       var possible_stages = [];
@@ -16,7 +16,7 @@ function calculatePetFragmentsToFarm() {
         possible_stages.push(parseInt($(this).text()));
         from_stage.push(parseInt($(this).data("from")));
       });
-      for (stage of from_stage) {
+      for (let stage of from_stage) {
         current_frags = handle_nan(parseInt(col.find(".pet-input").val()));
         current_frags = (current_frags > 330) ? 330 : current_frags;
         if (current_frags == 330) {
@@ -36,10 +36,11 @@ function calculatePetFragmentsToFarm() {
       frag_text = col.find("p");
       frag_text.text(fragments);
 
+      var track_col = $('.col-2[data-empty="True"]').first();
+
       if (fragments > 0) {
         frag_text.removeClass('zero-fragments');
         var days = Math.ceil((330 - current_frags) / fragments);
-        var track_col = $('.col-2[data-empty="True"]').first();
         track_col.css("display", "");
         track_col.find("img").attr("src", col.find(".pet-image").attr("src"));
         track_col.attr("data-empty", "False");
@@ -49,7 +50,6 @@ function calculatePetFragmentsToFarm() {
 
       } else {
         frag_text.addClass('zero-fragments');
-        var track_col = $('.col-2[data-empty="True"]').first();
         if (track_col.attr("id") == "track-1") {
           track_col.parent(".justify-content-center").css("display", "none");
         }
@@ -100,28 +100,28 @@ function calculatePetFragmentsToFarm() {
         $(event.item).attr("data-id", event.newIndex);
         $(event.item).data("id", event.newIndex);
 
-        updatePriorities("pets")
-        calculatePetFragmentsToFarm()
+        updatePriorities("pets");
+        calculatePetFragmentsToFarm();
       },
     });
 
     $(".pet-input[type='number']").bind('change', function() {
-      on_pet_input_change($(this), "pets")
+      on_pet_input_change($(this), "pets");
     });
 
     $("#reset-btn").click(function() {
       getPriority(false).then(function(data) {
-        var priority = data["priority"];
-        for (p in priority) {
+        var priority = data.priority;
+        for (let p in priority) {
           col = $("#" + priority["" + p].replaceAll(" ", "_"));
           col.attr("data-id", p - 1);
           col.data("id", p - 1);
         }
-        updatePriorities('pets')
-        sortPetsByPriority('pets')
+        updatePriorities('pets');
+        sortPetsByPriority('pets');
       });
     });
 
-    sortPetsByPriority('pets')
+    sortPetsByPriority('pets');
   });
 }));

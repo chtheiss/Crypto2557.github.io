@@ -65,11 +65,11 @@
             </li>
         </ul>
         <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
-        <input type="file" id="dbupload" value="Import" style="display:none"/> 
+        <input type="file" id="dbupload" value="Import" style="display:none"/>
         <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
         <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
-    </div> 
+    </div>
 </nav>
 <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -114,7 +114,7 @@
 							</div>
 							<div class="col-3 col-centered padding-sm">
 								<input id="tickets_hard-number" class="user-input" type="number" min="5" value="0" step="1"/>
-							</div>			
+							</div>
 						</div>
 						<div class="row centered-row">
 							<div class="col-3 col-centered padding-sm">
@@ -128,7 +128,7 @@
 							</div>
 							<div class="col-3 col-centered padding-sm">
 								<input id="refills_hard-number" class="user-input" type="number" min="0" max="3" value="0" step="1"/>
-							</div>			
+							</div>
 						</div>
 						<div class="row centered-row">
 							<div class="col-6 col-centered padding-sm">
@@ -152,7 +152,8 @@
 <div class="row super-row">
     <div class="col-12 col-centered">
         <button id="reset-btn" class="btn btn-dark btn-md">Reset Priority</button>
-        <button id="add-all-btn" class="btn btn-dark btn-md">Add All</button>
+        <button id="add-all-btn" class="btn btn-dark btn-md">Progress 1 Day</button>
+        <button id="5-star-btn" data-on="false" class="btn btn-dark btn-md">Hide 5* Pets</button>
     </div>
     <div class="col-12 col-centered">
         <div id="tracking" class="row justify-content-center" style="display:None;">
@@ -191,7 +192,7 @@
         </div>
             <div id="track-12" class="col-2" data-empty="True">
             <img class="pet-image" src=""/><p></p>
-        </div>            
+        </div>
         </div>
     </div>
     <div id="dragable-row" class="row super-row row-hidden justify-content-center">
@@ -242,8 +243,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="55">266</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="117">514</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="117">514</div>
                             
                             
                             
@@ -296,8 +297,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="56">270</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="118">518</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="118">518</div>
                             
                             
                             
@@ -350,8 +351,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="57">274</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="118">518</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="118">518</div>
                             
                             
                             
@@ -404,8 +405,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="58">278</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="120">526</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="120">526</div>
                             
                             
                             
@@ -458,8 +459,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="59">282</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="121">530</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="121">530</div>
                             
                             
                             
@@ -512,8 +513,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="60">286</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="122">534</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="122">534</div>
                             
                             
                             
@@ -566,8 +567,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="61">290</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="123">538</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="123">538</div>
                             
                             
                             
@@ -620,8 +621,8 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="62">294</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="124">542</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="124">542</div>
                             
                             
                             
@@ -1298,11 +1299,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="1">50</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="28">158</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="90">406</div> 
+                                <div class="col-3 col-kl col-red" data-from="28">158</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="90">406</div>
                             
                             
                         </div>
@@ -1354,11 +1355,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="2">54</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="29">162</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="91">410</div> 
+                                <div class="col-3 col-kl col-red" data-from="29">162</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="91">410</div>
                             
                             
                         </div>
@@ -1410,11 +1411,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="9">82</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="36">190</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="98">438</div> 
+                                <div class="col-3 col-kl col-red" data-from="36">190</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="98">438</div>
                             
                             
                         </div>
@@ -1466,11 +1467,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="4">62</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="31">170</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="93">418</div> 
+                                <div class="col-3 col-kl col-red" data-from="31">170</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="93">418</div>
                             
                             
                         </div>
@@ -1522,11 +1523,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="7">74</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="34">182</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="96">430</div> 
+                                <div class="col-3 col-kl col-red" data-from="34">182</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="96">430</div>
                             
                             
                         </div>
@@ -1578,11 +1579,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="8">78</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="35">186</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="97">434</div> 
+                                <div class="col-3 col-kl col-red" data-from="35">186</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="97">434</div>
                             
                             
                         </div>
@@ -1634,11 +1635,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="10">86</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="37">194</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="99">442</div> 
+                                <div class="col-3 col-kl col-red" data-from="37">194</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="99">442</div>
                             
                             
                         </div>
@@ -1690,11 +1691,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="5">66</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="32">174</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="94">422</div> 
+                                <div class="col-3 col-kl col-red" data-from="32">174</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="94">422</div>
                             
                             
                         </div>
@@ -1746,11 +1747,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="3">58</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="30">166</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="92">414</div> 
+                                <div class="col-3 col-kl col-red" data-from="30">166</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="92">414</div>
                             
                             
                         </div>
@@ -1802,11 +1803,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="11">90</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="38">198</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="100">446</div> 
+                                <div class="col-3 col-kl col-red" data-from="38">198</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="100">446</div>
                             
                             
                         </div>
@@ -1858,14 +1859,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="13">98</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="40">206</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="75">346</div> 
+                                <div class="col-3 col-kl col-red" data-from="40">206</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="102">454</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="75">346</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="102">454</div>
                             
                         </div>
                     </div>
@@ -1916,14 +1917,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="14">102</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="41">210</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="76">350</div> 
+                                <div class="col-3 col-kl col-red" data-from="41">210</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="103">458</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="76">350</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="103">458</div>
                             
                         </div>
                     </div>
@@ -1974,14 +1975,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="15">106</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="42">214</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="77">354</div> 
+                                <div class="col-3 col-kl col-red" data-from="42">214</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="104">462</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="77">354</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="104">462</div>
                             
                         </div>
                     </div>
@@ -2032,14 +2033,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="16">110</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="43">218</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="78">358</div> 
+                                <div class="col-3 col-kl col-red" data-from="43">218</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="105">466</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="78">358</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="105">466</div>
                             
                         </div>
                     </div>
@@ -2090,14 +2091,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="17">114</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="44">222</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="79">362</div> 
+                                <div class="col-3 col-kl col-red" data-from="44">222</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="106">470</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="79">362</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="106">470</div>
                             
                         </div>
                     </div>
@@ -2148,14 +2149,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="18">118</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="45">226</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="80">366</div> 
+                                <div class="col-3 col-kl col-red" data-from="45">226</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="107">474</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="80">366</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="107">474</div>
                             
                         </div>
                     </div>
@@ -2206,14 +2207,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="19">122</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="46">230</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="81">370</div> 
+                                <div class="col-3 col-kl col-red" data-from="46">230</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="108">478</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="81">370</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="108">478</div>
                             
                         </div>
                     </div>
@@ -2264,14 +2265,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="20">126</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="47">234</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="82">374</div> 
+                                <div class="col-3 col-kl col-red" data-from="47">234</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="109">482</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="82">374</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="109">482</div>
                             
                         </div>
                     </div>
@@ -2322,14 +2323,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="21">130</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="48">238</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="83">378</div> 
+                                <div class="col-3 col-kl col-red" data-from="48">238</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="110">486</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="83">378</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="110">486</div>
                             
                         </div>
                     </div>
@@ -2380,14 +2381,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="22">134</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="49">242</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="84">382</div> 
+                                <div class="col-3 col-kl col-red" data-from="49">242</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="111">490</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="84">382</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="111">490</div>
                             
                         </div>
                     </div>
@@ -2438,14 +2439,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="23">138</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="50">246</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="85">386</div> 
+                                <div class="col-3 col-kl col-red" data-from="50">246</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="112">494</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="85">386</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="112">494</div>
                             
                         </div>
                     </div>
@@ -2496,14 +2497,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="24">142</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="51">250</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="86">390</div> 
+                                <div class="col-3 col-kl col-red" data-from="51">250</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="113">498</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="86">390</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="113">498</div>
                             
                         </div>
                     </div>
@@ -2554,14 +2555,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="25">146</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="52">254</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="87">394</div> 
+                                <div class="col-3 col-kl col-red" data-from="52">254</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="114">502</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="87">394</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="114">502</div>
                             
                         </div>
                     </div>
@@ -2612,14 +2613,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="26">150</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="53">258</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="88">398</div> 
+                                <div class="col-3 col-kl col-red" data-from="53">258</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="115">506</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="88">398</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="115">506</div>
                             
                         </div>
                     </div>
@@ -2670,14 +2671,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="27">154</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="54">262</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="89">402</div> 
+                                <div class="col-3 col-kl col-red" data-from="54">262</div>
                             
-                             
-                            <div class="col-3 col-kl col-red" data-from="116">510</div> 
+                            
+                                <div class="col-3 col-kl col-red" data-from="89">402</div>
+                            
+                            
+                            <div class="col-3 col-kl col-red" data-from="116">510</div>
                             
                         </div>
                     </div>
@@ -2728,11 +2729,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="6">70</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="33">178</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="95">426</div> 
+                                <div class="col-3 col-kl col-red" data-from="33">178</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="95">426</div>
                             
                             
                         </div>
@@ -2784,11 +2785,11 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="12">94</div>
-                             
-                                <div class="col-3 col-kl col-red" data-from="39">202</div> 
                             
-                             
-                                <div class="col-3 col-kl col-red" data-from="101">450</div> 
+                                <div class="col-3 col-kl col-red" data-from="39">202</div>
+                            
+                            
+                                <div class="col-3 col-kl col-red" data-from="101">450</div>
                             
                             
                         </div>
@@ -4208,7 +4209,7 @@
 </div>
 
 <footer class="page-footer font-medium col-centered">
-        This priority ranking was originally created by HarroweD and can be found <a href="https://docs.google.com/document/d/1PkxaXZJBcfswkJoUzs0Q85bVJpYHDxmwyc300QQ4-70/edit?usp=sharing">here</a>.
+        This priority ranking was originally created by HarroweD and can be found <a href="http://bit.ly/HarroweD">here</a>.
 </footer>
 </div>
 
