@@ -4,7 +4,7 @@
 <div class="row super-row">
     <div class="col-12 col-centered">
         <button id="reset-btn" class="btn btn-dark btn-md">Reset Priority</button>
-        <button id="add-all-btn" class="btn btn-dark btn-md">Add 1 Day</button>
+        <button id="add-all-btn" class="btn btn-dark btn-md">Progress 1 Day</button>
         <button id="5-star-btn" data-on="false" class="btn btn-dark btn-md">Hide 5* Pets</button>
     </div>
     <div class="col-12 col-centered">
@@ -44,7 +44,7 @@
         </div>
             <div id="track-12" class="col-2" data-empty="True">
             <img class="pet-image" src=""/><p></p>
-        </div>            
+        </div>
         </div>
     </div>
     <div id="dragable-row" class="row super-row row-hidden justify-content-center">
@@ -95,14 +95,14 @@
                         </div>
                         <div class="row centered-row">
                             <div class="col-3 col-kl col-red" data-from="{{pet['from'][0]}}">{{pet["KL"][0]}}</div>
-                            {% if(pet["from"][1]) %} 
-                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][1]}}">{{pet["KL"][1]}}</div> 
+                            {% if(pet["from"][1]) %}
+                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][1]}}">{{pet["KL"][1]}}</div>
                             {% endif %}
-                            {% if(pet["from"][2]) %} 
-                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][2]}}">{{pet["KL"][2]}}</div> 
+                            {% if(pet["from"][2]) %}
+                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][2]}}">{{pet["KL"][2]}}</div>
                             {% endif %}
-                            {% if(pet["from"][3]) %} 
-                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{pet["KL"][3]}}</div> 
+                            {% if(pet["from"][3]) %}
+                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{pet["KL"][3]}}</div>
                             {% endif %}
                         </div>
                     </div>
