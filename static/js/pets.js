@@ -14,55 +14,55 @@ function turn_star_off($image_checkbox) {
 
 function change_stars(val) {
   if (val != undefined) {
-    var $img = $("#" + val["name"].replace(" ", "_") + "-image");
-    if (val["fragments"] >= 10) {
-      turn_star_on($("#" + val["name"].replace(" ", "_") + "-1star"));
+    var $img = $("#" + val.name.replace(" ", "_") + "-image");
+    if (val.fragments >= 10) {
+      turn_star_on($("#" + val.name.replace(" ", "_") + "-1star"));
       remove_classes($img, ["pet-image", "one-star"]);
       $img.addClass("one-star");
     } else {
-      turn_star_off($("#" + val["name"].replace(" ", "_") + "-1star"));
+      turn_star_off($("#" + val.name.replace(" ", "_") + "-1star"));
       remove_classes($img, ["pet-image", "zero-star"]);
       $img.addClass("zero-star");
     }
-    if (val["fragments"] >= 30) {
-      turn_star_on($("#" + val["name"].replace(" ", "_") + "-2star"));
+    if (val.fragments >= 30) {
+      turn_star_on($("#" + val.name.replace(" ", "_") + "-2star"));
       remove_classes($img, ["pet-image", "two-star"]);
       $img.addClass("two-star");
     } else {
-      turn_star_off($("#" + val["name"].replace(" ", "-") + "-2star"));
+      turn_star_off($("#" + val.name.replace(" ", "-") + "-2star"));
     }
-    if (val["fragments"] >= 80) {
-      turn_star_on($("#" + val["name"].replace(" ", "_") + "-3star"));
+    if (val.fragments >= 80) {
+      turn_star_on($("#" + val.name.replace(" ", "_") + "-3star"));
       remove_classes($img, ["pet-image", "three-star"]);
       $img.addClass("three-star");
     } else {
-      turn_star_off($("#" + val["name"].replace(" ", "_") + "-3star"));
+      turn_star_off($("#" + val.name.replace(" ", "_") + "-3star"));
     }
-    if (val["fragments"] >= 180) {
-      turn_star_on($("#" + val["name"].replace(" ", "_") + "-4star"));
+    if (val.fragments >= 180) {
+      turn_star_on($("#" + val.name.replace(" ", "_") + "-4star"));
       remove_classes($img, ["pet-image", "four-star"]);
       $img.addClass("four-star");
     } else {
-      turn_star_off($("#" + val["name"].replace(" ", "_") + "-4star"));
+      turn_star_off($("#" + val.name.replace(" ", "_") + "-4star"));
     }
-    if (val["fragments"] >= 330) {
-      turn_star_on($("#" + val["name"].replace(" ", "-") + "-5star"));
+    if (val.fragments >= 330) {
+      turn_star_on($("#" + val.name.replace(" ", "-") + "-5star"));
       remove_classes($img, ["pet-image", "five-star"]);
       $img.addClass("five-star");
     } else {
-      turn_star_off($("#" + val["name"].replace(" ", "_") + "-5star"));
+      turn_star_off($("#" + val.name.replace(" ", "_") + "-5star"));
     }
   }
 }
 
 function remove_classes($element, classes_not_to_remove) {
   var classes = $($element).attr('class').split(/\s+/);
-  for (var i = 0; i < classes.length; i++) {
-    if (classes_not_to_remove.includes(classes[i]))
+  for (i=0; i < classes.length; i+=1) {
+    if (classes_not_to_remove.includes(classes[i])){
       continue;
+    }
     $element.removeClass(classes[i]);
   }
-  var classes = $($element).attr('class').split(/\s+/);
 }
 
 function updateStages(kl) {
@@ -79,7 +79,7 @@ function updateStages(kl) {
 }
 
 function getPriority(hard) {
-  var url = ""
+  var url = "";
   if (hard){
     url = "core.get_hard_sh_priority";
   } else {
@@ -94,28 +94,30 @@ function getPriority(hard) {
 }
 
 function change_pet_input_on_page_load($pet_input, storage_name) {
+  'use strict';
   idb.open('endless-farming-db').then(function(db) {
     var tx = db.transaction(storage_name, 'readwrite');
     var store = tx.objectStore(storage_name);
     return store.get($pet_input.data("pet"));
   }.bind($pet_input)).then(function(val) {
     if (val != undefined) {
-      $pet_input.val(val["fragments"]);
+      $pet_input.val(val.fragments);
     }
     change_stars(val);
   }.bind($pet_input));
 }
 
 function sortPetsByPriority(storage_name) {
+  'use strict';
   request = idb.open('endless-farming-db');
   request.then(function(db) {
     var tx = db.transaction(storage_name, 'readwrite');
     var store = tx.objectStore(storage_name);
     var items = store.getAll();
     items.then(function(items) {
-      for (item of items) {
-        $("#" + item["name"]).attr("data-id", item["priority"]);
-        $("#" + item["name"]).data("id", item["priority"]);
+      for (let item of items) {
+        $("#" + item.name).attr("data-id", item.priority);
+        $("#" + item.name).data("id", item.priority);
       }
       var listitems = $("#dragable-row").children('.block').get();
       listitems.sort(function(a, b) {
@@ -128,7 +130,7 @@ function sortPetsByPriority(storage_name) {
         $superrow.append(itm);
       });
       $("#dragable-row").removeClass("row-hidden");
-      calculatePetFragmentsToFarm()
+      calculatePetFragmentsToFarm();
     });
   });
 }
@@ -141,7 +143,7 @@ function updatePriorities(storage_name) {
       name: col.attr("id"),
       fragments: parseInt(col.find(".pet-input").val()),
       priority: parseInt(col.attr("data-id"))
-    }
+    };
     request.then(function(db) {
       var tx = db.transaction(storage_name, 'readwrite');
       var store = tx.objectStore(storage_name);
@@ -168,9 +170,12 @@ function on_pet_input_change($pet_input, storage_name){
           var store = tx.objectStore(storage_name);
           return store.get(this.data("pet"));
         }.bind(this)).then(function(val) {
-          this.val(val["fragments"]);
+          this.val(val.fragments);
           change_stars(val);
           calculatePetFragmentsToFarm();
+          if ($("#5-star-btn").attr('data-on')=='true'){
+            hide_or_show_pet(this, false);
+          }
         }.bind($pet_input));
       }.bind($pet_input));
 }
@@ -184,6 +189,18 @@ function clear_tracking(){
     track_col.data("empty", "True");
     track_col.find("p").text("");
   });
+}
+
+function hide_or_show_pet($input, display){
+  var current_frags = handle_nan(parseInt($input.val()));
+  var col = $input.parents('.block').first();
+  if (current_frags >= 330){
+    if (display){
+      col.removeClass('invisible');
+    } else {
+      col.addClass('invisible');
+    }
+  }
 }
 
 // IIFE - Immediately Invoked Function Expression
@@ -222,14 +239,7 @@ function clear_tracking(){
       $("#dragable-row").children('.block').each(function() {
         var col = $(this);
         var input = col.find(".pet-input");
-        var current_frags = handle_nan(parseInt(input.val()));
-        if (current_frags >= 330){
-          if (display_five_star){
-            col.removeClass('invisible');
-          } else {
-            col.addClass('invisible');
-          }
-        }
+        hide_or_show_pet(input, display_five_star);
       });
       if (display_five_star){
         $this.text('Hide 5* Pets');
@@ -238,7 +248,6 @@ function clear_tracking(){
       }
       $this.attr('data-on', (!display_five_star).toString());
     });
-    
 
     request = idb.open('endless-farming-db');
     request.then(function(db) {
@@ -247,9 +256,9 @@ function clear_tracking(){
       var KL = store.get("KL");
       KL.then(function(val) {
         if (val !== undefined) {
-          updateStages(val["value"]);
+          updateStages(val.value);
         }
       });
     });
-  })
+  });
 }));

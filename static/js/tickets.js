@@ -14,12 +14,12 @@
       }.bind($this)).then(function(val) {
         var $progressbar = $(this.children().children()[0]);
         var requirement = $progressbar.attr('aria-valuemax');
+
+        var value = 0;
+        var val_text = 0;
         if (val != undefined) {
-          var value = 100 * ((val.nsr + val.sr) / parseFloat(requirement));
-          var val_text = val.nsr + val.sr;
-        } else {
-          var value = 0;
-          var val_text = 0;
+          value = 100 * ((val.nsr + val.sr) / parseFloat(requirement));
+          val_text = val.nsr + val.sr;
         }
         $progressbar.attr('aria-valuenow', value);
         $progressbar.css("width", value + "%");

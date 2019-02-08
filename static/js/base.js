@@ -47,7 +47,7 @@ function change_gem_label($refill_number, $gem_label, costs){
             }
           });
         });
-      }
+      };
       fr.readAsText(files.item(0));
     });
 
@@ -78,32 +78,32 @@ function change_gem_label($refill_number, $gem_label, costs){
       var KL = store.get("KL");
       KL.then(function(val) {
         if (val !== undefined) {
-          $("#KL-number").val(val["value"]);
+          $("#KL-number").val(val.value);
         }
       });
       var tickets = store.get("tickets");
       tickets.then(function(val) {
         if (val !== undefined) {
-          $("#tickets-number").val(val["value"]);
+          $("#tickets-number").val(val.value);
         }
       });
       var refills = store.get("refills");
       refills.then(function(val) {
         if (val !== undefined) {
-          $("#refills-number").val(val["value"]);
+          $("#refills-number").val(val.value);
           change_gem_label($("#refills-number"), $("#gem-label"), [0, 100, 200, 400, 800, 1200, 1600]);
         }
       });
       var tickets_hard = store.get("tickets_hard");
       tickets_hard.then(function(val) {
         if (val !== undefined) {
-          $("#tickets_hard-number").val(val["value"]);
+          $("#tickets_hard-number").val(val.value);
         }
       });
       var refills_hard = store.get("refills_hard");
       refills_hard.then(function(val) {
         if (val !== undefined) {
-          $("#refills_hard-number").val(val["value"]);
+          $("#refills_hard-number").val(val.value);
           change_gem_label($("#refills_hard-number"), $("#gem-hard-label"), [0, 200, 400, 800]);
         }
       });
@@ -239,7 +239,7 @@ function change_gem_label($refill_number, $gem_label, costs){
                 "value": 0
               });
             }
-          });     
+          });
       }
     });
   })();
