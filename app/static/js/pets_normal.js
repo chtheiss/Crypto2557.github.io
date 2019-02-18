@@ -16,6 +16,7 @@ function calculatePetFragmentsToFarm() {
         possible_stages.push(parseInt($(this).text()));
         from_stage.push(parseInt($(this).data("from")));
       });
+      var first_possible_stage = true;
       for (let stage of from_stage) {
         current_frags = handle_nan(parseInt(col.find(".pet-input").val()));
         current_frags = (current_frags > 330) ? 330 : current_frags;
@@ -26,6 +27,9 @@ function calculatePetFragmentsToFarm() {
           var add = 3;
           if ((stage >= 296) && (stage % 5 != 0)) {
             add = 1;
+          } else if (first_possible_stage){
+            add = 4;
+            first_possible_stage = false;
           }
           fragments += (tickets >= add) ? add : tickets;
           tickets -= (tickets >= add) ? add : tickets;
