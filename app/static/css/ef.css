@@ -115,7 +115,7 @@ body {
 }
 
 .five-star-pet {
-  filter: drop-shadow(rgb(30, 220, 30) 1px 1px 5px);
+  filter: drop-shadow(rgb(50, 250, 50) 1px 1px 10px);
 }
 
 h3 {
@@ -395,16 +395,16 @@ h2{
   text-decoration: underline;
 }
 
-.navbar-nav > li > .dropdown-menu{ 
-  background-color: #343a40!important; 
+.navbar-nav > li > .dropdown-menu{
+  background-color: #343a40!important;
 }
 
-.navbar-nav > li > .dropdown-menu > .dropdown-item{ 
+.navbar-nav > li > .dropdown-menu > .dropdown-item{
   color: #ccc!important;
 }
 
-.navbar-nav > li > .dropdown-menu > .dropdown-item:hover{ 
-  background-color: #343a40!important; 
+.navbar-nav > li > .dropdown-menu > .dropdown-item:hover{
+  background-color: #343a40!important;
   color: #fff!important;
 }
 
