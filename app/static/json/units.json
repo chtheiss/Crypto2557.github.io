@@ -53,7 +53,7 @@
                 "name":"Elf's Secret Skill of Space-Time",
                 "description":"For every 100 stages, there is a chance to skip 20 stages. (5-star 3%, 6-star 5%, only applied when they are in the team).",
                 "multiplier":0.6,
-                "requirement":20,
+                "requirement":10,
                 "amount":100
             }
         ],
