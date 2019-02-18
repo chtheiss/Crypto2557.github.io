@@ -74,6 +74,7 @@ function calculatePetFragmentsToFarm() {
     row = $("#dragable-row").get()[0];
     sortable = Sortable.create(row, {
       cursor: 'move',
+      filter: 'input',
       animation: 150,
       onUpdate: function(event) {
         change = $("#dragable-row").children().filter(function() {

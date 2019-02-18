@@ -412,6 +412,6 @@ h2{
   display: none;
 }
 
-.btn{
-  margin: 2px;
+.btn-margin{
+  margin: 2px !important;
 }
