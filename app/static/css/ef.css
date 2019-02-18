@@ -411,3 +411,7 @@ h2{
 .invisible{
   display: none;
 }
+
+.btn{
+  margin: 2px;
+}
