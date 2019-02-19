@@ -27,6 +27,7 @@ function calculatePetFragmentsToFarm() {
           var add = 3;
           if ((stage >= 296) && (stage % 5 != 0)) {
             add = 1;
+            first_possible_stage = false;
           } else if (first_possible_stage){
             add = 4;
             first_possible_stage = false;
