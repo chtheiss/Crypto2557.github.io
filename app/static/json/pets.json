@@ -1,4 +1,88 @@
 {
+    "Shasha": {
+        "img": "img/pets/219.png",
+        "description": {
+            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
+            "skill2": "Critical chance and critical damage of human units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill3": "Awakens the hidden special ability of [ Senior Sindbad ]",
+            "hidden_abilites": []
+        },
+        "pp_per_star": [
+            4
+        ],
+        "from": [
+            316,
+            615
+        ],
+        "buffs": [
+
+        ],
+        "additional_buffs": [
+
+        ]
+    },
+    "Choochoo": {
+        "img": "img/pets/220.png",
+        "description": {
+            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
+            "skill2": "Critical chance and critical damage of elf units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill3": "Awakens the hidden special ability of [ Senior Champion ]",
+            "hidden_abilites": []
+        },
+        "pp_per_star": [
+            4
+        ],
+        "from": [
+            321,
+            625
+        ],
+        "buffs": [
+
+        ],
+        "additional_buffs": [
+
+        ]
+    },
+    "Cask": {
+        "img": "img/pets/221.png",
+        "description": {
+            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
+            "skill2": "Critical chance and critical damage of undead units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill3": "Awakens the hidden special ability of [ Senior Undertaker ]",
+            "hidden_abilites": []
+        },
+        "pp_per_star": [
+            4
+        ],
+        "from": [
+            326,
+            635
+        ],
+        "buffs": [],
+        "additional_buffs": []
+    },
+    "Pooh": {
+        "img": "img/pets/222.png",
+        "description": {
+            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
+            "skill2": "Critical chance and critical damage of orc units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill3": "Awakens the hidden special ability of [ Senior Barbarian ]",
+            "hidden_abilites": []
+        },
+        "pp_per_star": [
+            4
+        ],
+        "from": [
+            331,
+            645
+        ],
+        "buffs": [
+
+        ],
+        "additional_buffs": [
+
+        ]
+    },
     "Combat": {
         "img": "img/pets/207.png",
         "description": {
@@ -18,13 +102,15 @@
         ],
         "from": [
             296,
-            575
+            575,
+            620,
+            631
         ],
-        "buffs":[
-                {"name":"Spirit Awakening 2",
-                "description":"Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
-                "multiplier": 0.5,
-                "requirement": [
+        "buffs": [{
+            "name": "Spirit Awakening 2",
+            "description": "Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
+            "multiplier": 0.5,
+            "requirement": [
                 7.5,
                 10
             ],
@@ -38,8 +124,8 @@
             ],
             "linked_units": [
                 "Skeleton Master"
-            ]}
-        ],
+            ]
+        }],
         "additional_buffs": [{
             "name": "Spirit Awakening 2 limit break",
             "description": "Spirit Awakening 2 max ncreases value by 5 per 6-star Paladin, up to 25.",
@@ -67,14 +153,16 @@
         ],
         "from": [
             301,
-            585
+            585,
+            630,
+            636
         ],
         "buffs": [{
-                "name":"Elf's Secret Skill of Space-Time",
-                "description":"Even when Royal Druid is in the timeshop, elf space-time skill is applied. (5-star gives 2% probability and 6-star give 4%), but maximum probability of Space-Time Skill from timeshop can not exceed 90%.",
-                "multiplier":0.6,
-                "requirement":25,
-                "amount":100
+                "name": "Elf's Secret Skill of Space-Time",
+                "description": "Even when Royal Druid is in the timeshop, elf space-time skill is applied. (5-star gives 2% probability and 6-star give 4%), but maximum probability of Space-Time Skill from timeshop can not exceed 90%.",
+                "multiplier": 0.6,
+                "requirement": 25,
+                "amount": 100
             }
 
         ],
@@ -101,13 +189,15 @@
         ],
         "from": [
             306,
-            595
+            595,
+            640,
+            641
         ],
-        "buffs":[
-                {"name":"Spirit Awakening 2",
-                "description":"Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
-                "multiplier": 0.5,
-                "requirement": [
+        "buffs": [{
+            "name": "Spirit Awakening 2",
+            "description": "Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels).",
+            "multiplier": 0.5,
+            "requirement": [
                 7.5,
                 10
             ],
@@ -121,8 +211,8 @@
             ],
             "linked_units": [
                 "Paladin"
-            ]}
-        ],
+            ]
+        }],
         "additional_buffs": [{
             "name": "Spirit Awakening 2 limit break",
             "description": "Spirit Awakening 2 max ncreases value by 5 per 6-star Skeleton Master, up to 25.",
@@ -151,23 +241,25 @@
         ],
         "from": [
             311,
-            605
+            605,
+            646,
+            650
         ],
         "buffs": [{
-                "name":"Increase Auto-skill Efficiency",
-                "description":" Increases maximum value of automatic skill cooldown reduction to 30%.",
-                "multiplier":0.5,
-                "requirement":15,
-                "amount":30
+                "name": "Increase Auto-skill Efficiency",
+                "description": " Increases maximum value of automatic skill cooldown reduction to 30%.",
+                "multiplier": 0.5,
+                "requirement": 15,
+                "amount": 30
             }
 
         ],
         "additional_buffs": [{
             "name": "Enhanced Active Skill Efficiency",
             "description": "Increases efficiency of Active Skills. (Raise the limit by 10 floors per 5-star Unit, 20 floors per 6-star unit, up to +300, works from timeshop.)",
-            "multiplier":0.5,
-            "requirement":15,
-            "amount":300
+            "multiplier": 0.5,
+            "requirement": 15,
+            "amount": 300
         }]
     },
     "Little Hawk": {
@@ -192,7 +284,7 @@
             276,
             535,
             580,
-            591
+            611
         ],
         "buffs": [{
             "name": "Surprise Attack",
@@ -228,7 +320,7 @@
             281,
             545,
             590,
-            596
+            616
         ],
         "buffs": [{
             "name": "Airship VIP",
@@ -263,7 +355,7 @@
             286,
             555,
             600,
-            601
+            621
         ],
         "buffs": [{
             "name": "Revival Team for Spirit Rest Runs",
@@ -298,7 +390,7 @@
             291,
             565,
             606,
-            610
+            630
         ],
         "buffs": [{
             "name": "Enhance active skill",
@@ -332,7 +424,7 @@
             256,
             495,
             540,
-            571
+            591
         ],
         "buffs": [{
             "name": "Human Token",
@@ -366,7 +458,7 @@
             261,
             505,
             550,
-            576
+            596
         ],
         "buffs": [{
             "name": "Elf Token",
@@ -401,7 +493,7 @@
             266,
             515,
             560,
-            581
+            601
         ],
         "buffs": [{
                 "name": "Undead Token",
@@ -443,7 +535,7 @@
             271,
             525,
             570,
-            586
+            606
         ],
         "buffs": [{
             "name": "Orc Token",
@@ -477,7 +569,7 @@
             236,
             455,
             500,
-            551
+            571
         ],
         "buffs": [{
                 "name": "Tribe Friendliness",
@@ -518,7 +610,7 @@
             241,
             465,
             510,
-            556
+            576
         ],
         "buffs": [{
             "name": "Tribe Friendliness",
@@ -551,7 +643,7 @@
             246,
             475,
             520,
-            561
+            581
         ],
         "buffs": [{
             "name": "Tribe Friendliness",
@@ -584,7 +676,7 @@
             251,
             485,
             530,
-            566
+            586
         ],
         "buffs": [{
             "name": "Tribe Friendliness",
@@ -618,7 +710,7 @@
             216,
             415,
             460,
-            531
+            551
         ],
         "buffs": [{
                 "name": "Tribe Fortification (Human and Orc)",
@@ -675,7 +767,7 @@
             221,
             425,
             470,
-            536
+            556
         ],
         "buffs": [{
                 "name": "Tribe Fortification (Elf and Human)",
@@ -732,7 +824,7 @@
             226,
             435,
             480,
-            541
+            561
         ],
         "buffs": [{
             "name": "Tribe Fortification (Undead and Elf)",
@@ -781,7 +873,7 @@
             231,
             445,
             490,
-            546
+            566
         ],
         "buffs": [{
                 "name": "Tribe Fortification (Orc and Undead)",
@@ -838,7 +930,7 @@
             196,
             375,
             420,
-            511
+            531
         ],
         "buffs": [{
             "name": "Fire Resistance",
@@ -871,7 +963,7 @@
             201,
             385,
             430,
-            516
+            536
         ],
         "buffs": [{
                 "name": "Elf's Secret Skill 2",
@@ -912,7 +1004,7 @@
             206,
             395,
             440,
-            521
+            541
         ],
         "buffs": [{
             "name": "Limit Break of Spirit Rest",
@@ -958,7 +1050,7 @@
             211,
             405,
             450,
-            526
+            546
         ],
         "buffs": [{
             "name": "Limit Break of Spirit Rest",
@@ -1004,7 +1096,7 @@
             176,
             335,
             380,
-            491
+            511
         ],
         "buffs": [
 
@@ -1039,7 +1131,7 @@
             181,
             345,
             390,
-            496
+            516
         ],
         "buffs": [
 
@@ -1073,7 +1165,7 @@
             186,
             355,
             400,
-            501
+            521
         ],
         "buffs": [
 
@@ -1104,7 +1196,7 @@
             191,
             365,
             410,
-            506
+            526
         ],
         "buffs": [
 
@@ -1140,7 +1232,7 @@
             156,
             295,
             340,
-            471
+            491
         ],
         "buffs": [{
             "name": "Inner Passion",
@@ -1200,7 +1292,7 @@
             161,
             305,
             350,
-            476
+            496
         ],
         "buffs": [{
             "name": "Inner Passion",
@@ -1259,7 +1351,7 @@
             166,
             315,
             360,
-            481
+            501
         ],
         "buffs": [{
             "name": "Inner Passion",
@@ -1318,7 +1410,7 @@
             171,
             325,
             370,
-            486
+            506
         ],
         "buffs": [{
             "name": "Inner Passion",
@@ -1376,7 +1468,7 @@
             136,
             255,
             300,
-            451
+            471
         ],
         "buffs": [{
             "name": "Spirit Awakening",
@@ -1434,7 +1526,7 @@
             141,
             265,
             310,
-            456
+            476
         ],
         "buffs": [{
             "name": "Spirit Awakening",
@@ -1493,7 +1585,7 @@
             146,
             275,
             320,
-            461
+            481
         ],
         "buffs": [{
             "name": "Spirit Awakening",
@@ -1552,7 +1644,7 @@
             151,
             285,
             330,
-            466
+            486
         ],
         "buffs": [{
             "name": "Spirit Awakening",
@@ -1609,7 +1701,7 @@
             116,
             215,
             260,
-            431
+            451
         ],
         "buffs": [
 
@@ -1639,7 +1731,7 @@
             121,
             225,
             270,
-            436
+            456
         ],
         "buffs": [
 
@@ -1669,7 +1761,7 @@
             126,
             235,
             280,
-            441
+            461
         ],
         "buffs": [
 
@@ -1699,7 +1791,7 @@
             131,
             245,
             290,
-            446
+            466
         ],
         "buffs": [
 
@@ -1728,7 +1820,7 @@
             111,
             205,
             250,
-            426
+            446
         ],
         "buffs": [
 
@@ -1761,7 +1853,7 @@
             101,
             185,
             230,
-            416
+            436
         ],
         "buffs": [
 
@@ -1793,7 +1885,7 @@
             106,
             195,
             240,
-            421
+            441
         ],
         "buffs": [
 
@@ -1825,7 +1917,7 @@
             76,
             135,
             180,
-            391
+            411
         ],
         "buffs": [
 
@@ -1858,7 +1950,7 @@
             61,
             105,
             150,
-            376
+            396
         ],
         "buffs": [{
             "name": "Human's Secret Skill",
@@ -1895,7 +1987,7 @@
             86,
             155,
             200,
-            401
+            421
         ],
         "buffs": [
 
@@ -1923,7 +2015,7 @@
             71,
             125,
             170,
-            386
+            406
         ],
         "buffs": [
 
@@ -1953,7 +2045,7 @@
             96,
             175,
             220,
-            411
+            431
         ],
         "buffs": [{
             "name": "Revival Team for Spirit Rest Runs",
@@ -1989,7 +2081,7 @@
             81,
             145,
             190,
-            396
+            416
         ],
         "buffs": [{
             "name": "God's Blessing",
@@ -2020,7 +2112,7 @@
             66,
             115,
             160,
-            381
+            401
         ],
         "buffs": [
 
@@ -2051,7 +2143,7 @@
             91,
             165,
             210,
-            406
+            426
         ],
         "buffs": [{
             "name": "Elevates the first Stage after the Revival",
@@ -2087,7 +2179,7 @@
             1,
             5,
             30,
-            316
+            336
         ],
         "buffs": [
 
@@ -2115,7 +2207,7 @@
             6,
             10,
             40,
-            321
+            341
         ],
         "buffs": [
 
@@ -2143,7 +2235,7 @@
             11,
             15,
             50,
-            326
+            346
         ],
         "buffs": [
 
@@ -2172,7 +2264,7 @@
             16,
             20,
             60,
-            331
+            351
         ],
         "buffs": [
 
@@ -2201,7 +2293,7 @@
             21,
             25,
             70,
-            336
+            356
         ],
         "buffs": [
 
@@ -2229,7 +2321,7 @@
             26,
             35,
             80,
-            341
+            361
         ],
         "buffs": [
 
@@ -2258,7 +2350,7 @@
             31,
             45,
             90,
-            346
+            366
         ],
         "buffs": [
 
@@ -2287,7 +2379,7 @@
             36,
             55,
             100,
-            351
+            371
         ],
         "buffs": [
 
@@ -2316,7 +2408,7 @@
             41,
             65,
             110,
-            356
+            376
         ],
         "buffs": [
 
@@ -2345,7 +2437,7 @@
             46,
             75,
             120,
-            361
+            381
         ],
         "buffs": [
 
@@ -2375,7 +2467,7 @@
             51,
             85,
             130,
-            366
+            386
         ],
         "buffs": [
 
@@ -2405,7 +2497,7 @@
             56,
             95,
             140,
-            371
+            391
         ],
         "buffs": [
 

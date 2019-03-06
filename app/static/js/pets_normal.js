@@ -25,7 +25,7 @@ function calculatePetFragmentsToFarm() {
         }
         if (tickets > 0) {
           var add = 3;
-          if ((stage >= 296) && (stage % 5 != 0)) {
+          if ((stage >= 316) && (stage % 5 != 0)) {
             add = 1;
             first_possible_stage = false;
           } else if (first_possible_stage){
@@ -79,7 +79,6 @@ function calculatePetFragmentsToFarm() {
     row = $("#dragable-row").get()[0];
     sortable = Sortable.create(row, {
       cursor: 'move',
-      filter: 'input',
       animation: 150,
       onUpdate: function(event) {
         change = $("#dragable-row").children().filter(function() {
