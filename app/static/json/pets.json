@@ -2,10 +2,19 @@
     "Shasha": {
         "img": "img/pets/219.png",
         "description": {
-            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
-            "skill2": "Critical chance and critical damage of human units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill1": "Permanently increases the beginning stage after being revived (20f, 40f, 60f, 80f, 100f)",
+            "skill2": "Critical chance and critical damage of human units increase in Guild Invasion (0%, 0%, 6%, 8%, 10%)",
             "skill3": "Awakens the hidden special ability of [ Senior Sindbad ]",
-            "hidden_abilites": []
+            "hidden_abilites": [
+                "Increases attack speed and movement speed of all friendly soldiers for a short period of time when first appearing, and casts a shield that gives immunity to magic attacks.",
+                "Increases basic speed of the game by 7%.",
+                "Increases self movement speed and attack distance by 10%.",
+                "Increases movements speed and attack distance of all units by 6% and critical damage by 5%.",
+                "Increases the damage and critical damage against enemy crystal.",
+                "Warcry (Human) Limit Break: Warcry (Human) increases from 30% to 40%.",
+                "[Damage Sword] Skill Strengthening: Increases bonus from damage sword in guild invasion. 5% for 5* unit, 10% per 6*. Works from shop of time, goes up to 100%.",
+                "Reduces the cooldown of the race change. Reduces the cooldown by 3 minutes for each 5-star unit and 6 minutes for each 6 star unit. Applied from timeshop, and can not exceed 1 hour."
+            ]
         },
         "pp_per_star": [
             4
@@ -24,10 +33,19 @@
     "Choochoo": {
         "img": "img/pets/220.png",
         "description": {
-            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
-            "skill2": "Critical chance and critical damage of elf units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill1": "Permanently increases the beginning stage after being revived (20f, 40f, 60f, 80f, 100f)",
+            "skill2": "Critical chance and critical damage of elf units increase in Guild Invasion (0%, 0%, 6%, 8%, 10%)",
             "skill3": "Awakens the hidden special ability of [ Senior Champion ]",
-            "hidden_abilites": []
+            "hidden_abilites": [
+                "Increases attack speed and movement speed of all friendly soldiers for a short period of time when first appearing, and casts a shield that gives immunity to physical attacks.",
+                "Increases basic speed of the game by 7%.",
+                "Increases self movement speed by 10% and attack speed by 9%.",
+                "Increases attack of all units by 7% and movement speed by 9%.",
+                "Increases the damage and critical damage against enemy crystal.",
+                "Warcry (Elf) Limit Break: Warcry (Elf) increases from 30% to 40%.",
+                "[Fast sword ]Skill Strengthening: Increases bonus from fast sword in guild invasion. 5% for 5* unit, 10% per 6*. Works from shop of time, goes up to 100%.",
+                "Reduces the cooldown of the race change. Reduces the cooldown by 3 minutes for each 5-star unit and 6 minutes for each 6 star unit. Applied from timeshop, and can not exceed 1 hour."
+            ]
         },
         "pp_per_star": [
             4
@@ -46,10 +64,19 @@
     "Cask": {
         "img": "img/pets/221.png",
         "description": {
-            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
-            "skill2": "Critical chance and critical damage of undead units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill1": "Permanently increases the beginning stage after being revived (20f, 40f, 60f, 80f, 100f)",
+            "skill2": "Critical chance and critical damage of undead units increase in Guild Invasion (0%, 0%, 6%, 8%, 10%)",
             "skill3": "Awakens the hidden special ability of [ Senior Undertaker ]",
-            "hidden_abilites": []
+            "hidden_abilites": [
+                "Increases attack speed and movement speed of all friendly soldiers for a short period of time when first appearing, and casts a shield that gives immunity to magic attacks.",
+                "Increases basic speed of the game by 7%.",
+                "Increases self movement speed and attack distance by 10%.",
+                "Increases attack and critical damage of all units by 6% and movement speed by 5%.",
+                "Increases the damage and critical damage against enemy crystal.",
+                "Warcry (Undead) Limit Break: Warcry (Undead) increases from 30% to 40%.",
+                "Innervate 3 limit break: Decrease the cooldown by 0.5% per 5 star and 1% per 6 star unit. Works from timeshop, can not exceed 10%.",
+                "Reduces the cooldown of the race change. Reduces the cooldown by 3 minutes for each 5-star undertaker and 6 minutes for each 6 star unit. Applied from timeshop, and can not exceed 1 hour."
+            ]
         },
         "pp_per_star": [
             4
@@ -64,10 +91,19 @@
     "Pooh": {
         "img": "img/pets/222.png",
         "description": {
-            "skill1": "Permanently increases  the beginning stage after being revived (0f, 0f, 0f, 0f, 0f)",
-            "skill2": "Critical chance and critical damage of orc units increase in Guild Invasion (0%, 0%, 0%, 0%, 0%)",
+            "skill1": "Permanently increases  the beginning stage after being revived (20f, 40f, 60f, 80f, 100f)",
+            "skill2": "Critical chance and critical damage of orc units increase in Guild Invasion (0%, 0%, 6%, 8%, 10%)",
             "skill3": "Awakens the hidden special ability of [ Senior Barbarian ]",
-            "hidden_abilites": []
+            "hidden_abilites": [
+                "Increases attack speed and movement speed of all friendly soldiers for a short period of time when first appearing, and casts a shield that gives physical immunity.",
+                "Increases basic speed of the game by 7%.",
+                "Increases self movement speed by 9% and attack power by 10%.",
+                "Increases movement speed of all soldiers by 7% and critical damage by 9%.",
+                "Increases damage and critical damage chance against enemy crystal.",
+                "Warcry (Orc) Limit Break: Warcry (Orc) Maximum increases from 30% to 40%.",
+                "Frost resistance by the barbarian increases by 50% (5s 50 => 75, 6s 100 => 150) Also, the barbarian resistance of the frost can increase up to 4000.",
+                "[Swift Shoes] Skill Strengthening: Increases movement speed bonus from swift shoes in guild invasion. 5% for 5* barbarian, 10% per 6*. Works from shop of time, goes up to 100%."
+            ]
         },
         "pp_per_star": [
             4
