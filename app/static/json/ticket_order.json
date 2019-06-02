@@ -1,170 +1,122 @@
-{  
-   "1":{  
+{
+   "1":{
       "unit":"Hippogriff",
-      "requirement":4,
+      "requirement":5,
       "meta":"Elf"
    },
-   "2":{  
+   "2":{
+      "unit":"Dark Priestess",
+      "requirement":2,
+      "meta":"Elf"
+   },
+   "3":{
+      "unit":"Priest",
+      "requirement":3,
+      "meta":"Elf"
+   },
+   "4":{
       "unit":"Dark Archer",
       "requirement":12,
       "meta":"Elf"
    },
-   "3":{  
-      "unit":"Hippogriff",
-      "requirement":5,
-      "meta":"Elf"
-   },
-   "4":{  
-      "unit":"Priest",
-      "requirement":5,
-      "meta":"Elf"
-   },
-   "5":{  
+   "5":{
       "unit":"Fairy",
       "requirement":13,
       "meta":" Elf"
    },
-   "6":{  
+   "6":{
       "unit":"Priest",
       "requirement":8,
       "meta":"Elf"
    },
-   "7":{  
+   "7":{
       "unit":"Hippogriff",
       "requirement":10,
       "meta":"Elf"
    },
-   "8":{  
+   "8":{
       "unit":"Shadow Knight",
       "requirement":12,
       "meta":"Elf"
    },
-   "9":{  
-      "unit":"Astral Captain",
-      "requirement":10,
-      "note":"Airship fuel",
+   "9":{
+      "unit":"Hippogriff",
+      "requirement":20,
       "meta":"Undead"
    },
-   "10":{  
-      "unit":"Naga",
-      "requirement":9,
-      "note":"orc meta support with pet",
-      "meta":"Orc"
-   },
-   "11":{  
-      "unit":"Hippogriff",
+   "10":{
+      "unit":"Dark Archer",
       "requirement":20,
       "meta":"Orc"
    },
-   "12":{  
-      "unit":"Dark Archer",
-      "requirement":24,
-      "meta":"Orc"
-   },
-   "13":{  
+   "11":{
       "unit":"Frost Demon",
-      "requirement":17,
+      "requirement":12,
       "meta":"Orc"
    },
-   "14":{  
+   "12":{
       "unit":"War Bear Rider",
+      "requirement":12,
+      "meta":"Orc"
+   },
+   "13":{
+      "unit":"Sorcerer",
+      "requirement":15,
+      "meta":"Orc"
+   },
+   "14":{
+      "unit":"Battle Hornist",
       "requirement":10,
-      "meta":"Miscellaneous"
-   },   
-   "15":{  
+      "meta":"Orc"
+   },
+   "15":{
+      "unit":"Naga Knight",
+      "requirement":10,
+      "meta":"Orc"
+   },
+   "16":{
+      "unit":"Frost Demon",
+      "requirement":20,
+      "meta":"Orc"
+   },
+   "17":{
+      "unit":"War Bear Rider",
+      "requirement":20,
+      "meta":"Orc"
+   },
+   "18":{
       "unit":"Winged Knight",
-      "requirement":30,
+      "requirement":20,
       "meta":"Orc"
    },
-   "16":{  
-      "unit":"Naga",
-      "requirement":10,
-      "meta":"Orc"
-   },
-   "17":{  
-      "unit":"Steam Punk",
-      "requirement":10,
-      "meta":"Orc"
-   },
-   "18":{  
-      "unit":"Sylphid",
-      "requirement":10,
-      "meta":"Orc"
-   },
-   "19":{  
-      "unit":"Medusa",
-      "requirement":10,
-      "meta":"Orc"
-   },
-   "20":{  
-      "unit":"Abyss Mage",
-      "requirement":3,
-      "meta":"Undead"
-   },
-   "21":{  
-      "unit":"Crow Knight",
-      "requirement":5,
-      "meta":"Undead"
-   },
-   "22":{  
+   "19":{
       "unit":"Dark Elf",
       "requirement":6,
       "meta":"Undead"
    },
-   "23":{  
+   "20":{
+      "unit":"Royal Druid",
+      "requirement":25,
+      "meta":"Undead"
+   },
+   "21":{
+      "unit":"Astral Captain",
+      "requirement":10,
+      "meta":"Undead"
+   },
+   "22":{
       "unit":"Crow Knight",
       "requirement":15,
       "meta":"Undead"
    },
-   "24":{  
+   "23":{
       "unit":"Musketress",
       "requirement":15,
       "meta":"Undead"
    },
-   "25":{  
-      "unit":"Abyss Mage",
-      "requirement":30,
-      "meta":"Undead"
-   },
-   "26":{  
+   "24":{
       "unit":"Astral Captain",
       "requirement":15,
-      "note":"with pet",
       "meta":"Undead"
-   },
-   "27":{  
-      "unit":"Frost Demon",
-      "requirement":24,
-      "meta":"Miscellaneous"
-   },
-   "28":{  
-      "unit":"Sorcerer",
-      "requirement":24,
-      "meta":"Miscellaneous"
-   },
-   "29":{  
-      "unit":"War Bear Rider",
-      "requirement":25,
-      "meta":"Miscellaneous"
-   },
-   "30":{  
-      "unit":"Flame Spirit",
-      "requirement":27,
-      "meta":"Miscellaneous"
-   },
-   "31":{  
-      "unit":"Elementalist",
-      "requirement":27,
-      "meta":"Miscellaneous"
-   },
-   "32":{  
-      "unit":"Crow Knight",
-      "requirement":27,
-      "meta":"Miscellaneous"
-   },
-   "33":{  
-      "unit":"Battle Drummer",
-      "requirement":2250,
-      "meta":"Miscellaneous"
    }
 }
