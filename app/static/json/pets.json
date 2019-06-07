@@ -99,7 +99,24 @@
             660,
             671
         ],
-        "buffs": [
+        "buffs": [{
+            "name":"Innervate 3",
+            "description":"Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
+            "multiplier":0.333333,
+            "requirement":[14,17],
+            "amount":40,
+            "linked_units":[
+               "Champion",
+               "Undertaker",
+               "Barbarian"
+            ],
+            "linked_multiplier":[
+               1.0,
+               1.0,
+               1.0
+            ],
+            "linked_pets":["Cask"]
+         },
             {
                 "name": "Battle Cry (Human)",
                 "description": "Increases the attack, defense and HP of human units in Guild Invasion even if Sindbad is in the Time Shop (5-star 1%, 6-star 2.5%, Max 40%).",
@@ -145,7 +162,24 @@
             670,
             676
         ],
-        "buffs": [
+        "buffs": [{
+            "name":"Innervate 3",
+            "description":"Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
+            "multiplier":0.333333,
+            "requirement":[17],
+            "amount":40,
+            "linked_units":[
+               "Sindbad",
+               "Undertaker",
+               "Barbarian"
+            ],
+            "linked_multiplier":[
+               1.0,
+               1.0,
+               1.0
+            ],
+            "linked_pets":["Cask"]
+         },
             {
                 "name": "Battle Cry (Elf)",
                 "description": "Increases the attack, defense and HP of elf units in Guild Invasion even if Champion is in the Time Shop (5-star 1%, 6-star 2.5%, Max 40%).",
@@ -192,6 +226,23 @@
             681
         ],
         "buffs": [{
+            "name":"Innervate 3",
+            "description":"Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
+            "multiplier":0.333333,
+            "requirement":[17],
+            "amount":40,
+            "linked_units":[
+               "Champion",
+               "Sindbad",
+               "Barbarian"
+            ],
+            "linked_multiplier":[
+               1.0,
+               1.0,
+               1.0
+            ],
+            "linked_pets":["Cask"]
+         },{
                 "name": "Battle Cry (Undead)",
                 "description": "Increases the attack, defense and HP of undead units in Guild Invasion even if Undertaker is in the Time Shop (5-star 1%, 6-star 2.5%, Max 40%).",
                 "multiplier": 0.4,
@@ -199,8 +250,8 @@
                 "amount": 40
             }],
         "additional_buffs": [            
-            {"name":"",
-            "description":"",
+            {"name":"Innervate3 Limit Break",
+            "description":"Cooldown of Guild Invasion skills are decreased by 0.5% for every 5-star, and 1% for every 6-star. Effects are applied even when Undertake is in Time Shop and can be reduced by up to 10%.",
             "multiplier":0.5,
             "requirement":10,
             "amount": 100},
@@ -235,6 +286,23 @@
             690
         ],
         "buffs": [{
+            "name":"Innervate 3",
+            "description":"Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
+            "multiplier":0.333333,
+            "requirement":[14,17],
+            "amount":40,
+            "linked_units":[
+               "Champion",
+               "Undertaker",
+               "Sindbad"
+            ],
+            "linked_multiplier":[
+               1.0,
+               1.0,
+               1.0
+            ],
+            "linked_pets":["Cask"]
+         },{
                 "name": "Battle Cry (Orc)",
                 "description": "Increases the attack, defense and HP of elf units in Guild Invasion even if Barbarian is in the Time Shop (5-star 1%, 6-star 2.5%, Max 40%).",
                 "multiplier": 0.4,

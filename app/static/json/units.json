@@ -162,7 +162,7 @@
             "name":"Innervate 3",
             "description":"Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
             "multiplier":0.333333,
-            "requirement":14,
+            "requirement":[14,17],
             "amount":40,
             "linked_units":[
                "Champion",
@@ -173,7 +173,8 @@
                1.0,
                1.0,
                1.0
-            ]
+            ],
+            "linked_pets":["Cask"]
          },
          {
             "name":"Battle Cry (Human)",
@@ -214,9 +215,9 @@
       "buffs":[
          {
             "name":"Innervate 3",
-            "description":"Decreases cooldown of Guild Invasion skills even if Champion is in the Time Shop (5-star 1%, 6-star 3%).",
+            "description":"Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
             "multiplier":0.333333,
-            "requirement":14,
+            "requirement":[14,17],
             "amount":40,
             "linked_units":[
                "Sindbad",
@@ -227,7 +228,8 @@
                1.0,
                1.0,
                1.0
-            ]
+            ],
+            "linked_pets":["Cask"]
          },
          {
             "name":"Battle Cry (Elf)",
@@ -266,7 +268,7 @@
             "name":"Innervate 3",
             "description":"Decreases cooldown of Guild Invasion skills even if Undertaker is in the Time Shop (5-star 1%, 6-star 3%).",
             "multiplier":0.333333,
-            "requirement":14,
+            "requirement":[14,17],
             "amount":40,
             "linked_units":[
                "Sindbad",
@@ -277,7 +279,8 @@
                1.0,
                1.0,
                1.0
-            ]
+            ],
+            "linked_pets":["Cask"]
          },
          {
             "name":"Battle Cry (Undead)",
@@ -316,7 +319,7 @@
             "name":"Innervate 3",
             "description":"Decreases cooldown of Guild Invasion skills even if Barbarian is in the Time Shop (5-star 1%, 6-star 3%).",
             "multiplier":0.333333,
-            "requirement":14,
+            "requirement":[14,17],
             "amount":40,
             "linked_units":[
                "Sindbad",
@@ -327,7 +330,8 @@
                1.0,
                1.0,
                1.0
-            ]
+            ],
+            "linked_pets":["Cask"]
          },
          {
             "name":"Battle Cry (Orc)",
