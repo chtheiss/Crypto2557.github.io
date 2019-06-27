@@ -46,6 +46,7 @@ function get_unit_input_values($input) {
 }
 
 function update_progress_bar($bar, $input){
+
   var unit_values = get_unit_input_values($input);
   var multiplier = parseFloat($bar.attr("data-multiplier"));
 
@@ -116,10 +117,10 @@ function load_input_value($unit_input) {
     });
 }
 
-function update_all_progress_bars_of_input($input) {
+async function update_all_progress_bars_of_input($input) {
   var $unit_cell = $("#" + $input.data("unit"));
   for (let bar of $unit_cell.find('[role="progressbar"]')) {
-    update_progress_bar($(bar), $input);
+    await update_progress_bar($(bar), $input);
   }
 }
 
@@ -128,6 +129,17 @@ function getPet(petid) {
     type: "GET",
     url: Flask.url_for("core.get_pet", {
       "petid": petid
+    }),
+    dataType: "json",
+    async: true
+  });
+}
+
+function getUnit(unitid) {
+  return $.ajax({
+    type: "GET",
+    url: Flask.url_for("core.get_unit", {
+      "unitid": unitid
     }),
     dataType: "json",
     async: true
@@ -144,10 +156,10 @@ function getLinkedActivePets(buff, items) {
   return linked_active_pets;
 }
 
-function updateBuffRequirement(buff, data, items) {
+function updateBuffRequirement(buff, id, items) {
   var linked_active_pets = getLinkedActivePets(buff, items);
   buff.requirement = buff.requirement[linked_active_pets.length];
-  var $progbar = $("#" + data.petid + "-image").parents(".block").find('[data-original-title="' + buff.name + '"]').find(".progress-bar");
+  var $progbar = $("#" + id + "-image").parents(".block").find('[data-original-title="' + buff.name + '"]').find(".progress-bar");
   update_progress_bar_values($progbar, buff);
 }
 
@@ -168,7 +180,7 @@ async function updateBuffs($petImage, items) {
               update_progress_bar_values($buff_span.find(".progress-bar"), buff);
             } else {
               var linked_active_pets = getLinkedActivePets(buff, items);
-              await updateBuffRequirement(buff, data, items);
+              await updateBuffRequirement(buff, data.petid, items);
               for (let linked_pet of buff.linked_pets) {
                 var linked_pet_info = await getPet(linked_pet.replaceAll(" ", "_"));
                 var linked_pet_buffs = linked_pet_info.pet.buffs;
@@ -217,8 +229,16 @@ async function updateBuffs($petImage, items) {
       var store = tx.objectStore('pets');
       return store.getAll();
     }).then(function(items) {
-      $('.pet-image').each(function() {
-        updateBuffs($(this), items);
+      $('.pet-image').each(async function() {
+        console.log()
+        await getUnit($(this).parents('.block')[0].id).then(function(unit){
+          for (buff of unit.unit.buffs){
+              if (buff.linked_pets != undefined){
+                updateBuffRequirement(buff, $(this).data("unit"), items)
+              }
+          }
+          updateBuffs($(this), items);
+        }.bind(this))
       });
     });
 
