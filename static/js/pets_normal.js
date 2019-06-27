@@ -25,7 +25,7 @@ function calculatePetFragmentsToFarm() {
         }
         if (tickets > 0) {
           var add = 3;
-          if ((stage >= 316) && (stage % 5 != 0)) {
+          if ((stage >= 336) && (stage % 5 != 0)) {
             add = 1;
             first_possible_stage = false;
           } else if (first_possible_stage){
