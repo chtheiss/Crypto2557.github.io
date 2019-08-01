@@ -29,7 +29,7 @@ function calculatePetFragmentsToFarm() {
             add = 1;
             first_possible_stage = false;
           } else if (first_possible_stage){
-            add = 4;
+            add = 6;
             first_possible_stage = false;
           }
           fragments += (tickets >= add) ? add : tickets;
