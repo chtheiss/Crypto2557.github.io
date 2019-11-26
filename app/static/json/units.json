@@ -1,4 +1,296 @@
 {
+   "Flame Sibyl":{
+      "pet":"Hellfly",
+      "img":"img/units/230.png",
+      "img_sr":"img/units/231.png",
+      "rotation":17,
+      "buffs":[
+         {
+            "name":"Weaken Crystal (Human)",
+            "description":"Upon reviving as a Human, the enemy’s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit’s maximum crystal HP cannot be reduced by more than 20%.",
+            "multiplier":0.5,
+            "requirement":20,
+            "amount":20
+         },
+         {
+            "name":"Might of Fire",
+            "description":"Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. (However, [Might of Fire] is only applied in stage battles.)",
+            "multiplier":0.4666666,
+            "requirement":20,
+            "amount":150
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Blows flame sword aura while dancing a sword that atttacks and knocks back up to 3 enemies.",
+         "Skill Attack: Dances and causes a flame whirlwind that damages enemies on land and blows them up to the air.",
+         "Special Ability 1: Increases the game speed by 6%, movement speed of Human units by 5% and attack range by 3%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000."
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Blows flame sword aura while dancing a sword that atttacks and knocks back up to 4 enemies.",
+         "Skill Attack: Dances and causes a flame whirlwind that damages enemies on land and blows them up to the air.",
+         "Special Ability 1: Increases the game speed by 11%, movement speed of Human units by 8% and attack range by 7%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
+         "Special Ability 4: Never gets disturbed by enemy's attacks. Never gets stunned. Never gets frozen."
+      ]
+   },
+   "Mystic Archer":{
+      "pet":"Leafwiz",
+      "img":"img/units/232.png",
+      "img_sr":"img/units/233.png",
+      "rotation":17,
+      "buffs":[
+         {
+            "name":"Weaken Crystal (Elf)",
+            "description":"Upon reviving as an Elf, the enemy’s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit’s maximum crystal HP cannot be reduced by more than 20%.",
+            "multiplier":0.5,
+            "requirement":20,
+            "amount":20
+         },
+         {
+            "name":"Additional Attack (High Elf Archer)",
+            "description":"With the command of the Mystic Archer, the chance of the [High Elf Archer] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 3% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 30%.",
+            "multiplier":0.333333,
+            "requirement":10,
+            "amount":30
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Jumps and fires multiple magic arrows that damages and knocks back enemy.",
+         "Skill Attack: Fires multiple magic arrows into the sky, creating a rain of arrows that damages and knocks back enemy.",
+         "Special Ability 1: Increases the game speed by 6%, movement speed of Elf units by 3% and attack range by 4%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
+         "Special Ability 4: Detects stealth(cloaked) units."
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Jumps and fires multiple magic arrows that damages and knocks back enemy.",
+         "Skill Attack: Fires multiple magic arrows into the sky, creating a rain of arrows that damages and knocks back enemy.",
+         "Special Ability 1: Increases the game speed by 12%, movement speed of Elf units by 7% and attack range by 8%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
+         "Special Ability 4: Detects stealth(cloaked) units.",
+         "Special Ability 5: Never gets disturbed by enemy's attacks. Never gets paralyzed. Never gets stunned."
+      ]
+   },
+   "Skeleton General":{
+      "pet":"Eye Captain",
+      "img":"img/units/234.png",
+      "img_sr":"img/units/235.png",
+      "rotation":17,
+      "buffs":[
+         {
+            "name":"Weaken Crystal (Undead)",
+            "description":"Upon reviving as an Undead, the enemy’s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit’s maximum crystal HP cannot be reduced by more than 20%.",
+            "multiplier":0.5,
+            "requirement":20,
+            "amount":20
+         },
+         {
+            "name":"Additional Attack (Skeleton Warrior)",
+            "description":"With the command of the Skeleton General, the chance of the [Skeleton Warrior] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 2% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 20%.",
+            "multiplier":0.5,
+            "requirement":10,
+            "amount":20
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Swings sword 2 times, which damages and knocks back enemy.",
+         "Skill Attack: Attacks enemy by striking with a sword with dark aura 3 times, then cloaks itself for a period of time, absorbing all ranged attacks from enemy. The attacked enemy becomes cursed.",
+         "Special Ability 1: Increases the game speed by 6%, movement speed of Undead units by 5% and attack range by 3%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
+         "Special Ability 4: Instantly move to first attack target (dash)."
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Swings sword 3 times, which damages and knocks back enemy.",
+         "Skill Attack: Attacks enemy by striking with a sword with dark aura 4 times, then cloaks itself for a period of time, absorbing all ranged attacks from enemy. The attacked enemy becomes cursed.",
+         "Special Ability 1: Increases the game speed by 11%, movement speed of Undead units by 8% and attack range by 7%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
+         "Special Ability 4: Instantly move to first attack target (dash).",
+         "Special Ability 5: Never gets paralyzed. Never gets knocked back. Never gets stunned."
+      ]
+   },
+   "Frozen Witch":{
+      "pet":"Ice Slime",
+      "img":"img/units/236.png",
+      "img_sr":"img/units/237.png",
+      "rotation":17,
+      "buffs":[
+         {
+            "name":"Weaken Crystal (Orc)",
+            "description":"Upon reviving as an Orc, the enemy’s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit’s maximum crystal HP cannot be reduced by more than 20%.",
+            "multiplier":0.5,
+            "requirement":20,
+            "amount":20
+         },
+         {
+            "name":"Pact of the Grand Chief",
+            "description":"Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. Pact of the Grand Chief only applies to Stage Combat (main game mode)",
+            "multiplier":0.4666666,
+            "requirement":20,
+            "amount":150
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Attacks enemy by shooting multiple ice crystals with a chance of freezing the target.",
+         "Skill Attack: Attacks multiple enemies by shooting a giant chunk of ice with a chance to freezing the targets.",
+         "Special Ability 1: Increases the game speed by 6% and movement speed and critical damage of Orc units by 5%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
+         "Special Ability 4: Detects stealth(cloaked) units."
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Attacks enemy by shooting multiple ice crystals with a chance of freezing the target.",
+         "Skill Attack: Attacks multiple enemies by shooting a giant chunk of ice with a chance to freezing the targets.",
+         "Special Ability 1: Increases the game speed by 12% and movement speed and critical damage of Orc units by 8%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
+         "Special Ability 4: Detects stealth(cloaked) units.",
+         "Special Ability 5: Never gets disturbed by enemy's attacks. Never gets knocked back. Never gets blown away."
+      ]
+   },
+   "Fire Ranger":{
+      "pet":"Monkey Robin",
+      "img":"img/units/222.png",
+      "img_sr":"img/units/223.png",
+      "rotation":16,
+      "buffs":[
+         {
+            "name":"Tribe Friendliness (Human)",
+            "description":"Increases Human Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Fire Ranger cannot exceed 1,000.",
+            "multiplier":0.5,
+            "requirement":25,
+            "amount":1000
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Fires multiple exploding arrows, dealing damage to enemies. When the arrows hit an enemy under the burn effect, it creates a chain of explosions, dealing damage to surrounding enemies.",
+         "Skill Attack: Fires a piercing fire arrow, dealing damage to enemies and inflicting burn effect. Enemies affected by burn effect receive additional damage for a set amount of time.",
+         "Special Ability 1: Increases the game speed by 6%, movement speed of Human units by 4% and attack range by 5%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000."
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Fires multiple exploding arrows, dealing damage to enemies. When the arrows hit an enemy under the burn effect, it creates a chain of explosions, dealing damage to surrounding enemies.",
+         "Skill Attack: Fires a piercing fire arrow, dealing damage to enemies and inflicting burn effect. Enemies affected by burn effect receive additional damage for a set amount of time.",
+         "Special Ability 1: Increases the game speed by 12%, movement speed of Human units by 7% and attack range by 8%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
+         "Special Ability 4: Cannot be paralyzed and is immune to freeze and blow."
+      ]
+   },
+   "Forest Knight":{
+      "pet":"Owl",
+      "img":"img/units/224.png",
+      "img_sr":"img/units/225.png",
+      "rotation":16,
+      "buffs":[
+         {
+            "name":"Tribe Friendliness (Elf)",
+            "description":"Increases Elf Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Forest Knight cannot exceed 1,000.",
+            "multiplier":0.5,
+            "requirement":24,
+            "amount":1000
+         },
+         {
+            "name":"Ancient Blessing",
+            "description":"Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 2,000.",
+            "multiplier":0.5,
+            "requirement":40,
+            "amount":2000
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Performs 4 consecutive attacks by swinging the spear and knocks back enemies.",
+         "Skill Attack: Slams his powerful spear onto the ground, creating a shock wave that deals damage in a wide area and summons thorn bush to immobilize enemies. Enemies immobilized by the thorn bush receive damage over time.",
+         "Special Ability 1: Increases the game speed by 6%, movement speed of Elf units by 5% and attack range by 4%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
+         "Special Ability 4: Instantly move to first attack target (dash)."
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Performs 6 consecutive attacks by swinging the spear and knocks back enemies.",
+         "Skill Attack: Slams his powerful spear onto the ground, creating a shock wave that deals damage in a wide area and summons thorn bush to immobilize enemies. Enemies immobilized by the thorn bush receive damage over time.",
+         "Special Ability 1: Increases the game speed by 11%, movement speed of Elf units by 8% and attack range by 7%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
+         "Special Ability 4: Instantly move to first attack target (dash).",
+         "Special Ability 5: Cannot be interrupted by attacks and is immune to paralyze and knockback."
+      ]
+   },
+   "Devil Mage":{
+      "pet":"Hornbat",
+      "img":"img/units/226.png",
+      "img_sr":"img/units/227.png",
+      "rotation":16,
+      "buffs":[
+         {
+            "name":"Tribe Friendliness (Undead)",
+            "description":"Increases Undead Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Devil Mage cannot exceed 1,000.",
+            "multiplier":0.5,
+            "requirement":25,
+            "amount":1000
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Swings his staff and hurls multiple dark blades at enemies.",
+         "Skill Attack: Creates a sphere of darkness every set amount of time. When a certain number is gathered, they strike the enemies automatically.",
+         "Special Ability 1: Increases the game speed by 6%, movement speed of Undead units by 4% and attack range by 5%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000"
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Swings his staff and hurls multiple dark blades at enemies.",
+         "Skill Attack: Creates a sphere of darkness every set amount of time. When a certain number is gathered, they strike the enemies automatically.",
+         "Special Ability 1: Increases the game speed by 12%, movement speed of Undead units by 7% and attack range by 8%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
+         "Special Ability 4: Cannot be interrupted by attacks and is immune to stun and blow."
+      ]
+   },
+   "Storm Warrior":{
+      "pet":"Tau",
+      "img":"img/units/228.png",
+      "img_sr":"img/units/229.png",
+      "rotation":16,
+      "buffs":[
+         {
+            "name":"Tribe Friendliness (Orc)",
+            "description":"Increases Orc Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Storm Warrior cannot exceed 1,000.",
+            "multiplier":0.5,
+            "requirement":25,
+            "amount":1000
+         },
+         {
+            "name":"Enhance Active Skill",
+            "description":"Enhance Active Skill: Efficiency of Active skills(Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword) are improved by 20/40 stages. (Effects can stack but cannot be applied when in time shop)",
+            "multiplier":0.5,
+            "requirement":12,
+            "amount":240
+         }
+      ],
+      "atk_abil":[
+         "Normal Attack: Slams the target using his large pillar, stunning the target with great damage.",
+         "Skill Attack: Swings his large pillar, creating a snow storm that deals damage and knocks back enemy units.",
+         "Special Ability 1: Increases basic game speed by 6%, increases the movement speed of orc units by 5% and attack range of orc units by 4%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
+         "Special Ability 4: Instantly move to first attack target (dash)."
+      ],
+      "atk_abil_sr":[
+         "Normal Attack: Slams the target using his large pillar, stunning the target with great damage.",
+         "Skill Attack: Swings his large pillar, creating a snow storm that deals damage and knocks back enemy units.",
+         "Special Ability 1: Increases basic game speed by 11%, increases the movement speed of orc units by 8% and attack range of orc units by 7%.",
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
+         "Special Ability 3: Unaffected by attacks by terrain above stage 10,000.",
+         "Special Ability 4: Instantly move to first attack target (dash).",
+         "Special Ability 5: Cannot be interrupted by attacks and is immune to paralyze and freeze."
+      ]
+   },
    "Salamander Rider":{
       "pet":"Selda",
       "img":"img/units/214.png",
