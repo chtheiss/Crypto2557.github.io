@@ -47,14 +47,14 @@ def units():
     units = json.load(open(units_url))
     pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
-    max_buffs = [max([len(unit["buffs"]) for key, unit in units.items() if(unit["rotation"] == i)]) for i in range(1, 16)]
+    max_buffs = [max([len(unit["buffs"]) for key, unit in units.items() if(unit["rotation"] == i)]) for i in range(1, 18)]
     max_buffs.reverse()
     max_buffs = np.repeat(np.array(max_buffs),
-        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], axis=0)
-    max_add_buffs = [max([len(pets[unit["pet"]]["additional_buffs"]) for key, unit in units.items() if(unit["rotation"] == i)]) for i in range(1, 16)]
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], axis=0)
+    max_add_buffs = [max([len(pets[unit["pet"]]["additional_buffs"]) for key, unit in units.items() if(unit["rotation"] == i)]) for i in range(1, 18)]
     max_add_buffs.reverse()
     max_add_buffs = np.repeat(np.array(max_add_buffs),
-        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], axis=0)
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], axis=0)
     return render_template('units.html', title='Units', units=units, pets=pets, max_buffs=max_buffs, max_add_buffs=max_add_buffs)
 
 @bp.route('/tickets/', methods=['GET', 'POST'])
