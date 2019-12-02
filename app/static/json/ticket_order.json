@@ -1,53 +1,53 @@
 {
    "1":{
+      "unit":"High Fairy",
+      "requirement":1,
+      "meta":"Elf"
+   },
+   "2":{
       "unit":"Hippogriff",
       "requirement":5,
       "meta":"Elf"
    },
-   "2":{
+   "3":{
       "unit":"Dark Priestess",
       "requirement":2,
       "meta":"Elf"
    },
-   "3":{
+   "4":{
       "unit":"Priest",
       "requirement":3,
       "meta":"Elf"
    },
-   "4":{
+   "5":{
       "unit":"Dark Archer",
       "requirement":12,
       "meta":"Elf"
    },
-   "5":{
+   "6":{
       "unit":"Fairy",
       "requirement":13,
       "meta":" Elf"
    },
-   "6":{
+   "7":{
       "unit":"Priest",
-      "requirement":8,
+      "requirement":6,
       "meta":"Elf"
    },
-   "7":{
+   "8":{
       "unit":"Hippogriff",
       "requirement":10,
       "meta":"Elf"
    },
-   "8":{
+   "9":{
       "unit":"Shadow Knight",
-      "requirement":12,
+      "requirement":1,
       "meta":"Elf"
    },
-   "9":{
+   "10":{
       "unit":"Hippogriff",
       "requirement":20,
       "meta":"Undead"
-   },
-   "10":{
-      "unit":"Dark Archer",
-      "requirement":20,
-      "meta":"Orc"
    },
    "11":{
       "unit":"Frost Demon",
@@ -85,38 +85,58 @@
       "meta":"Orc"
    },
    "18":{
-      "unit":"Winged Knight",
-      "requirement":20,
+      "unit":"Storm Warrior",
+      "requirement":12,
       "meta":"Orc"
    },
    "19":{
+      "unit":"Shadow Knight",
+      "requirement":12,
+      "meta":"Orc"
+   },
+   "20":{
+      "unit":"Dark Archer",
+      "requirement":20,
+      "meta":"Orc"
+   },
+   "21":{
       "unit":"Dark Elf",
       "requirement":6,
       "meta":"Undead"
    },
-   "20":{
+   "22":{
       "unit":"Royal Druid",
       "requirement":25,
       "meta":"Undead"
    },
-   "21":{
+   "23":{
+      "unit":"Winged Knight",
+      "requirement":20,
+      "meta":"Orc"
+   },
+   "24":{
       "unit":"Astral Captain",
       "requirement":10,
       "meta":"Undead"
    },
-   "22":{
+   "25":{
       "unit":"Crow Knight",
       "requirement":15,
       "meta":"Undead"
    },
-   "23":{
+   "26":{
       "unit":"Musketress",
       "requirement":15,
       "meta":"Undead"
    },
-   "24":{
+   "27":{
       "unit":"Astral Captain",
       "requirement":15,
+      "meta":"Undead"
+   },
+   "28":{
+      "unit":"Battle Drummer",
+      "requirement":2250,
       "meta":"Undead"
    }
 }
