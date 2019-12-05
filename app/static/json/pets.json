@@ -764,7 +764,7 @@
       "additional_buffs":[
          {
             "name":"Spirit Awakening 2 limit break",
-            "description":"Spirit Awakening 2 max ncreases value by 5 per 6-star Paladin, up to 25.",
+            "description":"Spirit Awakening 2 max increases value by 5 per 6-star Paladin, up to 25.",
             "multiplier":0.0,
             "requirement":5,
             "amount":25
@@ -774,7 +774,7 @@
    "Rolly":{
       "img":"img/pets/208.png",
       "description":{
-         "skill1":" Increases the number of Stages in Elfs Secret Skill of Space Time (2, 4, 6, 8, 10)",
+         "skill1":" Increases the number of Stages in Elf's Secret Skill of Space Time (2, 4, 6, 8, 10)",
          "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 50%)",
          "skill3":"Awakens the hidden special ability of [ Senior Royal Druid ]",
          "hidden_abilites":[
@@ -2555,7 +2555,7 @@
       "description":{
          "skill1":"Increase attack power of elf unit in Guild War (4.2%, 8.4%, 12.6%, 16.8%, 21%)",
          "skill2":"Increase critical damage of elf unit in Guild War (4.2%, 8.4%, 12.6%, 16.8%, 21%)",
-         "skill3":"Awakens the hidden special ability of [ Senior Leo ]",
+         "skill3":"Awakens the hidden special ability of [ Senior Forest Guardian ]",
          "hidden_abilites":[
             "Raise all units' attack speed by 5%, attack range by 3%.",
             "When first appearing, casts magic immunity barrier to all ally units.",
@@ -2883,7 +2883,7 @@
       "buffs":[
          {
             "name":"Elevates the first Stage after the Revival",
-            "description":"[Elevates the first stage after revival] can still activate even if Dark Archer is in the Time Shop (5-star 1%, 6-star 2.5%%, Max 60%).",
+            "description":"[Elevates the first stage after revival] can still activate even if Dark Archer is in the Time Shop (5-star 1%, 6-star 2.5%, Max 60%).",
             "multiplier":0.4,
             "requirement":24,
             "amount":60
