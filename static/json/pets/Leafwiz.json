@@ -1,18 +1,1 @@
-{
-  "pet": {
-    "additional_buffs": [], 
-    "buffs": [], 
-    "description": {
-      "hidden_abilites": [], 
-      "skill1": "Upon reviving as an Elf, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)", 
-      "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)", 
-      "skill3": "Awakens the hidden special ability of [ Senior Mystic Archer ]"
-    }, 
-    "from": [], 
-    "img": "img/pets/278.png", 
-    "pp_per_star": [
-      4
-    ]
-  }, 
-  "petid": "Leafwiz"
-}
+{"pet":{"additional_buffs":[],"buffs":[],"description":{"hidden_abilites":[],"skill1":"Upon reviving as an Elf, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)","skill2":"Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)","skill3":"Awakens the hidden special ability of [ Senior Mystic Archer ]"},"from":[381,745],"img":"img/pets/278.png","pp_per_star":[4]},"petid":"Leafwiz"}
