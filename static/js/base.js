@@ -14,6 +14,18 @@ function change_gem_label($refill_number, $gem_label, costs){
   $gem_label.text(costs.slice(0, handle_nan(parseInt($refill_number.val())) + 1).reduce(getSum));
 }
 
+function hide_or_show_pet($input, display){
+  var current_frags = handle_nan(parseInt($input.val()));
+  var col = $input.parents('.block').first();
+  if (current_frags >= 330){
+    if (display){
+      col.removeClass('invisible');
+    } else {
+      col.addClass('invisible');
+    }
+  }
+}
+
 (function(yourcode) {
 
   yourcode(window.jQuery, window.indexedDB, window, document);
@@ -107,6 +119,12 @@ function change_gem_label($refill_number, $gem_label, costs){
           change_gem_label($("#refills_hard-number"), $("#gem-hard-label"), [0, 200, 400, 800]);
         }
       });
+      var hide_five_star_pets = store.get("hide_five_star_pets");
+      hide_five_star_pets.then(function(val) {
+        if (val !== undefined) {
+          $('#hide-five-star-pets').prop("checked", val.value);
+        }
+      });
     });
 
     $(".user-input").bind('change', function() {
@@ -125,6 +143,24 @@ function change_gem_label($refill_number, $gem_label, costs){
         if ($("#dragable-row").length != 0) {
           calculatePetFragmentsToFarm();
         }
+      }.bind($this));
+    });
+
+    $("#hide-five-star-pets").bind('change', function() {
+      $this = $(this);
+      request = idb.open('endless-farming-db');
+      request.then(function(db) {
+        var tx = db.transaction('player', 'readwrite');
+        var store = tx.objectStore('player');
+        var KL = store.put({
+          name: 'hide_five_star_pets',
+          value: $('#hide-five-star-pets').prop("checked")
+        });
+        $("#dragable-row").children('.block').each(function() {
+            var col = $(this);
+            var input = col.find(".pet-input");
+            hide_or_show_pet(input, !$('#hide-five-star-pets').prop("checked"));
+          });
       }.bind($this));
     });
 
@@ -151,7 +187,7 @@ function change_gem_label($refill_number, $gem_label, costs){
       console.log('This browser doesn\'t support IndexedDB');
       return;
     }
-    var dbPromise = idb.open('endless-farming-db', 3, function(upgradeDb) {
+    var dbPromise = idb.open('endless-farming-db', 4, function(upgradeDb) {
       switch (upgradeDb.oldVersion) {
         case 0:
           if (!upgradeDb.objectStoreNames.contains('units')) {
@@ -240,6 +276,16 @@ function change_gem_label($refill_number, $gem_label, costs){
               });
             }
           });
+        case 3:
+            var playerOS = upgradeDb.transaction.objectStore('player');
+            playerOS.get("hide_five_star_pets").then(function(val) {
+              if (val == undefined) {
+                playerOS.put({
+                  "name": "hide_five_star_pets",
+                  "value": false
+                });
+              }
+            });
       }
     });
   })();

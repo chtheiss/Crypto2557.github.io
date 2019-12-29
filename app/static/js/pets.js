@@ -102,6 +102,7 @@ function change_pet_input_on_page_load($pet_input, storage_name) {
   }.bind($pet_input)).then(function(val) {
     if (val != undefined) {
       $pet_input.val(val.fragments);
+      hide_or_show_pet($pet_input, !$('#hide-five-star-pets').prop("checked"));
     }
     change_stars(val);
   }.bind($pet_input));
@@ -173,7 +174,7 @@ function on_pet_input_change($pet_input, storage_name){
           this.val(val.fragments);
           change_stars(val);
           calculatePetFragmentsToFarm();
-          if ($("#5-star-btn").attr('data-on')=='true'){
+          if ($('#hide-five-star-pets').prop("checked")){
             hide_or_show_pet(this, false);
           }
         }.bind($pet_input));
@@ -189,18 +190,6 @@ function clear_tracking(){
     track_col.data("empty", "True");
     track_col.find("p").text("");
   });
-}
-
-function hide_or_show_pet($input, display){
-  var current_frags = handle_nan(parseInt($input.val()));
-  var col = $input.parents('.block').first();
-  if (current_frags >= 330){
-    if (display){
-      col.removeClass('invisible');
-    } else {
-      col.addClass('invisible');
-    }
-  }
 }
 
 // IIFE - Immediately Invoked Function Expression
@@ -233,22 +222,6 @@ function hide_or_show_pet($input, display){
       });
     });
 
-    $("#5-star-btn").click(function() {
-      $this = $(this);
-      var display_five_star = $this.attr('data-on')=='true';
-      $("#dragable-row").children('.block').each(function() {
-        var col = $(this);
-        var input = col.find(".pet-input");
-        hide_or_show_pet(input, display_five_star);
-      });
-      if (display_five_star){
-        $this.text('Hide 5* Pets');
-      } else {
-        $this.text('Show 5* Pets');
-      }
-      $this.attr('data-on', (!display_five_star).toString());
-    });
-
     request = idb.open('endless-farming-db');
     request.then(function(db) {
       var tx = db.transaction('player', 'readwrite');
@@ -258,7 +231,7 @@ function hide_or_show_pet($input, display){
         if (val !== undefined) {
           updateStages(val.value);
         }
+        });
       });
     });
-  });
 }));
