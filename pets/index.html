@@ -93,6 +93,10 @@
 							<div class="col-3 col-centered padding-sm">
 				 				<input id="KL-number" class="user-input" type="number" min="1" value="0" step="1"/>
 							</div>
+							<div class="col-6 col-centered custom-control custom-checkbox checkbox-lg">
+  								<input id="hide-five-star-pets" type="checkbox" class="custom-control-input" unchecked>
+  								<label class="custom-control-label" for="hide-five-star-pets">Hide 5* Pets</label>
+							</div>
 						</div>
 						<div class="row centered-row">
 							<div class="col-6 col-centered padding-sm">
@@ -153,7 +157,6 @@
     <div class="col-12 col-centered">
         <button id="reset-btn" class="btn btn-dark btn-md btn-margin">Reset Priority</button>
         <button id="add-all-btn" class="btn btn-dark btn-md btn-margin">Progress 1 Day</button>
-        <button id="5-star-btn" data-on="false" class="btn btn-dark btn-md btn-margin">Hide 5* Pets</button>
     </div>
     <div class="col-12 col-centered">
         <div id="tracking" class="row justify-content-center" style="display:None;">
@@ -236,7 +239,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Hippong-fragments" data-pet="Hippong" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -294,7 +297,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Tinky-fragments" data-pet="Tinky" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -352,7 +355,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Icy-fragments" data-pet="Icy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -410,7 +413,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Rolly-fragments" data-pet="Rolly" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -468,7 +471,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Cat_Knight-fragments" data-pet="Cat_Knight" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -526,7 +529,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Raven-fragments" data-pet="Raven" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -584,7 +587,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Totem-fragments" data-pet="Totem" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -642,7 +645,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Wakong-fragments" data-pet="Wakong" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -700,7 +703,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Seahorse-fragments" data-pet="Seahorse" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -758,7 +761,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Bamba-fragments" data-pet="Bamba" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -816,7 +819,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Snow_Bear-fragments" data-pet="Snow_Bear" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -874,7 +877,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Lazy-fragments" data-pet="Lazy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -932,7 +935,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Chesher-fragments" data-pet="Chesher" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -990,7 +993,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Lobta-fragments" data-pet="Lobta" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1048,7 +1051,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Moon-fragments" data-pet="Moon" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1106,7 +1109,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Athos-fragments" data-pet="Athos" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1164,7 +1167,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Shadow-fragments" data-pet="Shadow" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1222,7 +1225,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Ferry-fragments" data-pet="Ferry" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1280,7 +1283,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Windy-fragments" data-pet="Windy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1338,7 +1341,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="E-77-fragments" data-pet="E-77" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1396,7 +1399,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Dark_Snake-fragments" data-pet="Dark_Snake" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1454,7 +1457,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Cobri-fragments" data-pet="Cobri" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1512,7 +1515,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Foxy-fragments" data-pet="Foxy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1570,7 +1573,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Leyak-fragments" data-pet="Leyak" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1628,7 +1631,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Grizzle-fragments" data-pet="Grizzle" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1686,7 +1689,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Cerbero-fragments" data-pet="Cerbero" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1744,7 +1747,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Selda-fragments" data-pet="Selda" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1802,7 +1805,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Magic_Lamp-fragments" data-pet="Magic_Lamp" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1860,7 +1863,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Mori-fragments" data-pet="Mori" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1918,7 +1921,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Octopa-fragments" data-pet="Octopa" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -1976,7 +1979,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Combat-fragments" data-pet="Combat" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2034,7 +2037,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Scourge-fragments" data-pet="Scourge" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2092,7 +2095,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Little_Hawk-fragments" data-pet="Little_Hawk" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2150,7 +2153,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Boom_Boom-fragments" data-pet="Boom_Boom" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2208,7 +2211,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Sarah-fragments" data-pet="Sarah" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2266,7 +2269,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Oscar-fragments" data-pet="Oscar" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2324,7 +2327,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Shasha-fragments" data-pet="Shasha" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2382,7 +2385,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Choochoo-fragments" data-pet="Choochoo" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2440,7 +2443,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Cask-fragments" data-pet="Cask" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2498,7 +2501,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Pooh-fragments" data-pet="Pooh" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2556,7 +2559,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Saul-fragments" data-pet="Saul" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2614,7 +2617,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Osma-fragments" data-pet="Osma" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2672,7 +2675,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Rena-fragments" data-pet="Rena" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2730,7 +2733,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Winky-fragments" data-pet="Winky" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2788,7 +2791,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Cora-fragments" data-pet="Cora" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2846,7 +2849,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Bunny-fragments" data-pet="Bunny" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2904,7 +2907,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Chichi-fragments" data-pet="Chichi" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -2962,7 +2965,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Jingger-fragments" data-pet="Jingger" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3020,7 +3023,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Devil-fragments" data-pet="Devil" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3078,7 +3081,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Black-fragments" data-pet="Black" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3136,7 +3139,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Leo-fragments" data-pet="Leo" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3194,7 +3197,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Mir-fragments" data-pet="Mir" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3252,7 +3255,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Nimbus-fragments" data-pet="Nimbus" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3310,7 +3313,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Rapty-fragments" data-pet="Rapty" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3368,7 +3371,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Bernard-fragments" data-pet="Bernard" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3426,7 +3429,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Griffy-fragments" data-pet="Griffy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3484,7 +3487,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Juda-fragments" data-pet="Juda" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3542,7 +3545,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Sleepy-fragments" data-pet="Sleepy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3600,7 +3603,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Mambo-fragments" data-pet="Mambo" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3658,7 +3661,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Joe-fragments" data-pet="Joe" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3716,7 +3719,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Snork-fragments" data-pet="Snork" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3774,7 +3777,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Piggy-fragments" data-pet="Piggy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3832,7 +3835,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Squirrel-fragments" data-pet="Squirrel" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3890,7 +3893,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Phoenic-fragments" data-pet="Phoenic" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -3948,7 +3951,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Indy-fragments" data-pet="Indy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4006,7 +4009,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Mummy-fragments" data-pet="Mummy" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4064,7 +4067,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Potang-fragments" data-pet="Potang" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4122,7 +4125,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Uni-fragments" data-pet="Uni" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4180,7 +4183,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Joker-fragments" data-pet="Joker" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4238,7 +4241,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Grim-fragments" data-pet="Grim" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4296,7 +4299,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Woola-fragments" data-pet="Woola" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4354,7 +4357,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Monkey_Robin-fragments" data-pet="Monkey_Robin" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4412,7 +4415,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Owl-fragments" data-pet="Owl" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4470,7 +4473,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Hornbat-fragments" data-pet="Hornbat" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4528,7 +4531,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Tau-fragments" data-pet="Tau" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4586,7 +4589,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Hellfly-fragments" data-pet="Hellfly" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4640,7 +4643,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Leafwiz-fragments" data-pet="Leafwiz" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4694,7 +4697,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Eye_Captain-fragments" data-pet="Eye_Captain" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
@@ -4748,7 +4751,7 @@
                                             <input type="checkbox" value="330" data-stars="5"/>
                                         </label>
                                     </fieldset>
-                            </div> 
+                            </div>
                             <div class="col-12 padding-sm">
                                     <input id="Ice_Slime-fragments" data-pet="Ice_Slime" class="pet-input" type="number" min="0" value="0" step="1"/>
                             </div>
