@@ -239,7 +239,7 @@
          "Normal Attack: Performs 6 consecutive attacks by swinging the spear and knocks back enemies.",
          "Skill Attack: Slams his powerful spear onto the ground, creating a shock wave that deals damage in a wide area and summons thorn bush to immobilize enemies. Enemies immobilized by the thorn bush receive damage over time.",
          "Special Ability 1: Increases the game speed by 11%, movement speed of Elf units by 8% and attack range by 7%.",
-         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",     
+         "Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.",
          "Special Ability 3: Unaffected by attacks by terrain above stage 10,000",
          "Special Ability 4: Instantly move to first attack target (dash).",
          "Special Ability 5: Cannot be interrupted by attacks and is immune to paralyze and knockback.",
@@ -1468,7 +1468,7 @@
       "buffs":[
          {
             "name":"Dimensional Binding 2 (Orc and Undead)",
-            "description":"Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle even if Elementalist is in the Time Shop (5-star 5%, 6-star 10%, Max 150%).",
+            "description":"Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle even if Frost Demon is in the Time Shop (5-star 5%, 6-star 10%, Max 150%).",
             "multiplier":0.5,
             "requirement":15,
             "amount":150
