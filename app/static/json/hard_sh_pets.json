@@ -1,989 +1,1471 @@
-{   "Flame Sorceress":{
-        "img":"img/pets/92.png",
-        "description":{
-            "skill1":"Increases resistance against fire (100, 400, 800, 1600, 3200)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Sun Ring"
+{
+    "Flame Sorceress": {
+        "img": "img/pets/92.png",
+        "description": {
+            "skill1": "Increases resistance against fire (100, 400, 800, 1600, 3200)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Sun Ring"
         },
         "pp_per_star": 7,
-        "from":[
-            6,33,95
+        "from": [
+            6,
+            30,
+            92,
+            170
         ]
     },
-    "Forest Sorceress":{
-        "img":"img/pets/111.png",
-        "description":{
-            "skill1":"Increase resistance to nature attacks. (100, 400, 800, 1600, 3200)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Gaia's Rage"
+    "Forest Sorceress": {
+        "img": "img/pets/111.png",
+        "description": {
+            "skill1": "Increase resistance to nature attacks. (100, 400, 800, 1600, 3200)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Gaia's Rage"
         },
         "pp_per_star": 7,
-        "from":[
-            12,39,101
+        "from": [
+            12,
+            36,
+            98
         ]
     },
-    "Black Tortoise":{
-        "img":"img/pets/31.png",
-        "description":{
-            "skill1":"Increase active skill damage efficiency (40, 90, 150, 220, 300)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Black Turtle Shield"
+    "Black Tortoise": {
+        "img": "img/pets/31.png",
+        "description": {
+            "skill1": "Increase active skill damage efficiency (40, 90, 150, 220, 300)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Black Turtle Shield"
         },
         "pp_per_star": 7,
-        "from":[
-            2,29,91
+        "from": [
+            2,
+            26,
+            88
         ]
     },
-    "Phoenix":{
-        "img":"img/pets/32.png",
-        "description":{
-            "skill1":"Decrease 2nd active skill cool-time (2%, 4%, 6%, 8%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Phoenix Cloak"
+    "Phoenix": {
+        "img": "img/pets/32.png",
+        "description": {
+            "skill1": "Decrease 2nd active skill cool-time (2%, 4%, 6%, 8%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Phoenix Cloak"
         },
         "pp_per_star": 7,
-        "from":[
-            3,30,92
+        "from": [
+            3,
+            27,
+            89
         ]
     },
-    "Blue Dragon":{
-        "img":"img/pets/33.png",
-        "description":{
-            "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (200%, 400%, 600%, 800%, 1000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Blue Dragon Armor"
+    "Blue Dragon": {
+        "img": "img/pets/33.png",
+        "description": {
+            "skill1": "Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (200%, 400%, 600%, 800%, 1000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Blue Dragon Armor"
         },
         "pp_per_star": 7,
-        "from":[
-            4,31,93
+        "from": [
+            4,
+            28,
+            90
         ]
     },
-    "White Tiger":{
-        "img":"img/pets/34.png",
-        "description":{
-            "skill1":"Decrease 3rd active skill cool-time (3%, 6%, 10%, 15%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"White Tiger Helmet"
+    "White Tiger": {
+        "img": "img/pets/34.png",
+        "description": {
+            "skill1": "Decrease 3rd active skill cool-time (3%, 6%, 10%, 15%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "White Tiger Helmet"
         },
         "pp_per_star": 7,
-        "from":[
-            5,32,94
+        "from": [
+            5,
+            29,
+            91
         ]
     },
-    "Gold Dragon":{
-        "img":"img/pets/35.png",
-        "description":{
-            "skill1":"Decrease quest level up cost (1000%, 5000%, 10000%, 100000%, 1000000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Yellow Dragon Saber"
+    "Gold Dragon": {
+        "img": "img/pets/35.png",
+        "description": {
+            "skill1": "Decrease quest level up cost (1000%, 5000%, 10000%, 100000%, 1000000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Yellow Dragon Saber"
         },
         "pp_per_star": 7,
-        "from":[
-            1,28,90
+        "from": [
+            1,
+            25,
+            87
         ]
     },
-    "Human Guardian":{
-        "img":"img/pets/84.png",
-        "description":{
-            "skill1":"Increase Medal Buff from transcended Human Unit (20%, 45%, 75%, 110%, 150%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Human Hero's Sword"
+    "Human Guardian": {
+        "img": "img/pets/84.png",
+        "description": {
+            "skill1": "Increase Medal Buff from transcended Human Unit (20%, 45%, 75%, 110%, 150%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Human Hero's Sword"
         },
         "pp_per_star": 7,
-        "from":[
-            7,34,96
+        "from": [
+            7,
+            31,
+            93
         ]
     },
-    "Elf Guardian":{
-        "img":"img/pets/85.png",
-        "description":{
-            "skill1":"Increase Medal Buff from transcended Elf Unit (20%, 45%, 75%, 110%, 150%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Elf Hero's Bow"
+    "Elf Guardian": {
+        "img": "img/pets/85.png",
+        "description": {
+            "skill1": "Increase Medal Buff from transcended Elf Unit (20%, 45%, 75%, 110%, 150%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Elf Hero's Bow"
         },
         "pp_per_star": 7,
-        "from":[
-            8,35,97
+        "from": [
+            8,
+            32,
+            94
         ]
     },
-    "Undead Guardian":{
-        "img":"img/pets/86.png",
-        "description":{
-            "skill1":"Increase Medal Buff from transcended Undead Unit (20%, 45%, 75%, 110%, 150%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Undead Hero's Staff"
+    "Undead Guardian": {
+        "img": "img/pets/86.png",
+        "description": {
+            "skill1": "Increase Medal Buff from transcended Undead Unit (20%, 45%, 75%, 110%, 150%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Undead Hero's Staff"
         },
         "pp_per_star": 7,
-        "from":[
-            9,36,98
+        "from": [
+            9,
+            33,
+            95
         ]
     },
-    "Orc Guardian":{
-        "img":"img/pets/87.png",
-        "description":{
-            "skill1":"Increase Medal Buff from transcended Orc Unit (20%, 45%, 75%, 110%, 150%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Orc Hero's Axe"
+    "Orc Guardian": {
+        "img": "img/pets/87.png",
+        "description": {
+            "skill1": "Increase Medal Buff from transcended Orc Unit (20%, 45%, 75%, 110%, 150%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Orc Hero's Axe"
         },
         "pp_per_star": 7,
-        "from":[
-            10,37,99
+        "from": [
+            10,
+            34,
+            96
         ]
     },
-    "Cleo":{
-        "img":"img/pets/101.png",
-        "description":{
-            "skill1":"Increase Maximum Quest level (1000%, 100000%, 10000000%, 1000000000%, 100000000000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Horus’s Greatsword"
+    "Cleo": {
+        "img": "img/pets/101.png",
+        "description": {
+            "skill1": "Increase Maximum Quest level (1000%, 100000%, 10000000%, 1000000000%, 100000000000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Horus\u00e2\u20ac\u2122s Greatsword"
         },
         "pp_per_star": 7,
-        "from":[
-            11,38,100
+        "from": [
+            11,
+            35,
+            97
         ]
     },
-    "Loki":{
-        "img":"img/pets/141.png",
-        "description":{
-            "skill1":"Decrease the unit upgrade cost (18000%, 36000%, 72000%, 144000%, 288000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Loki's Trickster Card"
+    "Loki": {
+        "img": "img/pets/141.png",
+        "description": {
+            "skill1": "Decrease the unit upgrade cost (18000%, 36000%, 72000%, 144000%, 288000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Loki's Trickster Card"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
+            60
+        ]
+    },
+    "Verdandi": {
+        "img": "img/pets/142.png",
+        "description": {
+            "skill1": "Increase quest gold buff (5400%, 14400%, 54000%, 144000%, 270000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Wheel of Fate"
+        },
+        "pp_per_star": 7,
+        "from": [
+            61
+        ]
+    },
+    "Freyr": {
+        "img": "img/pets/143.png",
+        "description": {
+            "skill1": "Increases resistance against fire (80, 300, 600, 1200, 2400)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Laevateinn"
+        },
+        "pp_per_star": 7,
+        "from": [
+            62
+        ]
+    },
+    "Freya": {
+        "img": "img/pets/144.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 2%, 3%, 4%, 5%)",
+            "skill2": "Increase HP of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Freya's Necklace"
+        },
+        "pp_per_star": 7,
+        "from": [
             63
         ]
     },
-    "Verdandi":{
-        "img":"img/pets/142.png",
-        "description":{
-            "skill1":"Increase quest gold buff (5400%, 14400%, 54000%, 144000%, 270000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Wheel of Fate"
+    "Skuld": {
+        "img": "img/pets/145.png",
+        "description": {
+            "skill1": "Decrease quest level up cost (2000%, 10000%, 20000%, 200000%, 2000000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Scissors of Fate"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             64
         ]
     },
-    "Freyr":{
-        "img":"img/pets/143.png",
-        "description":{
-            "skill1":"Increases resistance against fire (80, 300, 600, 1200, 2400)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Laevateinn"
+    "Baldur": {
+        "img": "img/pets/146.png",
+        "description": {
+            "skill1": "Increase resistance to nature attacks. (80, 300, 600, 1200, 2400)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Mistilteinn"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             65
         ]
     },
-    "Freya":{
-        "img":"img/pets/144.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 2%, 3%, 4%, 5%)",
-            "skill2":"Increase HP of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Freya's Necklace"
+    "Odin": {
+        "img": "img/pets/147.png",
+        "description": {
+            "skill1": "Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Odin's Spear"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             66
         ]
     },
-    "Skuld":{
-        "img":"img/pets/145.png",
-        "description":{
-            "skill1":"Decrease quest level up cost (2000%, 10000%, 20000%, 200000%, 2000000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Scissors of Fate"
+    "Urd": {
+        "img": "img/pets/148.png",
+        "description": {
+            "skill1": "Increase Maximum Quest level (2000%, 200000%, 20000000%, 2000000000%, 200000000000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Thread of Fate"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             67
         ]
     },
-    "Baldur":{
-        "img":"img/pets/146.png",
-        "description":{
-            "skill1":"Increase resistance to nature attacks. (80, 300, 600, 1200, 2400)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Mistilteinn"
+    "Tyr": {
+        "img": "img/pets/149.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 2%, 3%, 4%, 5%)",
+            "skill2": "Increase attack power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Tyrfing"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             68
         ]
     },
-    "Odin":{
-        "img":"img/pets/147.png",
-        "description":{
-            "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Odin's Spear"
+    "Thor": {
+        "img": "img/pets/150.png",
+        "description": {
+            "skill1": "Increases efficiency of [Unit attack power 10 times] skill from the shop. (200%, 400%, 800%, 1600%, 3200%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Thor's Hammer"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             69
         ]
     },
-    "Urd":{
-        "img":"img/pets/148.png",
-        "description":{
-            "skill1":"Increase Maximum Quest level (2000%, 200000%, 20000000%, 2000000000%, 200000000000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Thread of Fate"
+    "Skadi": {
+        "img": "img/pets/151.png",
+        "description": {
+            "skill1": "Increase quest gold buff (5400%, 14400%, 54000%, 144000%, 320000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Avalanche Bow"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             70
         ]
     },
-    "Tyr":{
-        "img":"img/pets/149.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 2%, 3%, 4%, 5%)",
-            "skill2":"Increase attack power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Tyrfing"
+    "Heimdall": {
+        "img": "img/pets/152.png",
+        "description": {
+            "skill1": "Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Horn of Warning"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             71
         ]
     },
-    "Thor":{
-        "img":"img/pets/150.png",
-        "description":{
-            "skill1":"Increases efficiency of [Unit attack power 10 times] skill from the shop. (200%, 400%, 800%, 1600%, 3200%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Thor's Hammer"
-        },
-        "pp_per_star": 7,
-        "from":[
-            72
-        ]
-    },
-    "Skadi":{
-        "img":"img/pets/151.png",
-        "description":{
-            "skill1":"Increase quest gold buff (5400%, 14400%, 54000%, 144000%, 320000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Avalanche Bow"
-        },
-        "pp_per_star": 7,
-        "from":[
-            73
-        ]
-    },
-    "Heimdall":{
-        "img":"img/pets/152.png",
-        "description":{
-            "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Horn of Warning"
-        },
-        "pp_per_star": 7,
-        "from":[
-            74
-        ]
-    },
-    "Ardor":{
-        "img":"img/pets/187.png",
-        "description":{
-            "skill1":"Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)",
-            "skill2":"Increase attack power of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 37"
+    "Ardor": {
+        "img": "img/pets/187.png",
+        "description": {
+            "skill1": "Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)",
+            "skill2": "Increase attack power of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 37"
         },
         "pp_per_star": 4,
-        "from":[
-            55,117
+        "from": [
+            52,
+            114
         ]
     },
-    "Silva":{
-        "img":"img/pets/188.png",
-        "description":{
-            "skill1":"Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)",
-            "skill2":"Increase attack power of Elf units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 38"
+    "Silva": {
+        "img": "img/pets/188.png",
+        "description": {
+            "skill1": "Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)",
+            "skill2": "Increase attack power of Elf units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 38"
         },
         "pp_per_star": 4,
-        "from":[
-            56,118
+        "from": [
+            53,
+            115
         ]
     },
-    "Noctis":{
-        "img":"img/pets/189.png",
-        "description":{
-            "skill1":"Increase Maximum Quest level (2000%, 200000%, 20000000%, 2000000000%, 200000000000%)",
-            "skill2":"Increase attack power of Undead units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 39"
+    "Noctis": {
+        "img": "img/pets/189.png",
+        "description": {
+            "skill1": "Increase Maximum Quest level (2000%, 200000%, 20000000%, 2000000000%, 200000000000%)",
+            "skill2": "Increase attack power of Undead units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 39"
         },
         "pp_per_star": 4,
-        "from":[
-            57,119
+        "from": [
+            54,
+            116
         ]
     },
-    "Frigus":{
-        "img":"img/pets/190.png",
-        "description":{
-            "skill1":"Decrease quest level up cost (2000%, 10000%, 20000%, 200000%, 2000000%)",
-            "skill2":"Increase attack power of Orc units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 40"
+    "Frigus": {
+        "img": "img/pets/190.png",
+        "description": {
+            "skill1": "Decrease quest level up cost (2000%, 10000%, 20000%, 200000%, 2000000%)",
+            "skill2": "Increase attack power of Orc units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 40"
         },
         "pp_per_star": 4,
-        "from":[
-            58,120
+        "from": [
+            55,
+            117
         ]
     },
-    "Dudu Petra":{
-        "img":"img/pets/191.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
-            "skill2":"Increase critical damage of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 33"
+    "Dudu Petra": {
+        "img": "img/pets/191.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
+            "skill2": "Increase critical damage of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 33"
         },
         "pp_per_star": 4,
-        "from":[
-            59,121
+        "from": [
+            56,
+            119
         ]
     },
-    "Nana Petra":{
-        "img":"img/pets/192.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
-            "skill2":"Increase critical damage of Elf units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 34"
+    "Nana Petra": {
+        "img": "img/pets/192.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
+            "skill2": "Increase critical damage of Elf units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 34"
         },
         "pp_per_star": 4,
-        "from":[
-            60,122
+        "from": [
+            57,
+            120
         ]
     },
-    "Oni Petra":{
-        "img":"img/pets/193.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
-            "skill2":"Increase critical damage of Undead units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 35"
+    "Oni Petra": {
+        "img": "img/pets/193.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
+            "skill2": "Increase critical damage of Undead units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 35"
         },
         "pp_per_star": 4,
-        "from":[
-            61,123
+        "from": [
+            58,
+            121
         ]
     },
-    "Lay Petra":{
-        "img":"img/pets/194.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
-            "skill2":"Increase critical damage of Orc units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3":"Receive Tablet 36"
+    "Lay Petra": {
+        "img": "img/pets/194.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
+            "skill2": "Increase critical damage of Orc units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
+            "skill3": "Receive Tablet 36"
         },
         "pp_per_star": 4,
-        "from":[
-            62,124
+        "from": [
+            59,
+            122
         ]
     },
-    "Lunar Rabbit":{
-        "img":"img/pets/195.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Lunar Rabbit": {
+        "img": "img/pets/195.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 4,
-        "from":[
+        "from": [
+            124
+        ]
+    },
+    "Lesser Panda": {
+        "img": "img/pets/197.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
+        },
+        "pp_per_star": 4,
+        "from": [
             125
         ]
     },
-    "Lesser Panda":{
-        "img":"img/pets/197.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Witch": {
+        "img": "img/pets/199.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 4,
-        "from":[
+        "from": [
             126
         ]
     },
-    "Witch":{
-        "img":"img/pets/199.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Snow Jack": {
+        "img": "img/pets/205.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 4,
-        "from":[
+        "from": [
             127
         ]
     },
-    "Snow Jack":{
-        "img":"img/pets/205.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Scarecrow": {
+        "img": "img/pets/196.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 4,
-        "from":[
+        "from": [
             128
         ]
     },
-    "Scarecrow":{
-        "img":"img/pets/196.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Panda": {
+        "img": "img/pets/198.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 4,
-        "from":[
+        "from": [
             129
         ]
     },
-    "Panda":{
-        "img":"img/pets/198.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Franken": {
+        "img": "img/pets/200.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 4,
-        "from":[
+        "from": [
             130
         ]
     },
-    "Franken":{
-        "img":"img/pets/200.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Snow Peng": {
+        "img": "img/pets/206.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 4,
-        "from":[
+        "from": [
             131
         ]
     },
-    "Snow Peng":{
-        "img":"img/pets/206.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
-            "skill3":"Receive Legendary Artifact"
+    "Khepri": {
+        "img": "img/pets/171.png",
+        "description": {
+            "skill1": "Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)",
+            "skill2": "Increase HP of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
+            "skill3": "Receive Legendary Artifact"
         },
-        "pp_per_star": 4,
-        "from":[
+        "pp_per_star": 7,
+        "from": [
             132
         ]
     },
-    "Khepri":{
-        "img":"img/pets/171.png",
-        "description":{
-            "skill1":"Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)",
-            "skill2":"Increase HP of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
-            "skill3":"Receive Legendary Artifact"
+    "Nefertem": {
+        "img": "img/pets/174.png",
+        "description": {
+            "skill1": "Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             133
         ]
     },
-    "Nefertem":{
-        "img":"img/pets/174.png",
-        "description":{
-            "skill1":"Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Seth": {
+        "img": "img/pets/177.png",
+        "description": {
+            "skill1": "Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)",
+            "skill2": "Increase attack speed of all units in Guild Raid (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             134
         ]
     },
-    "Seth":{
-        "img":"img/pets/177.png",
-        "description":{
-            "skill1":"Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)",
-            "skill2":"Increase attack speed of all units in Guild Raid (0%, 0%, 4%, 6%, 8%)",
-            "skill3":"Receive Legendary Artifact"
+    "Sobek": {
+        "img": "img/pets/180.png",
+        "description": {
+            "skill1": "Decrease quest level up cost (20000%, 100000%, 200000%, 2000000%, 20000000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             135
         ]
     },
-    "Sobek":{
-        "img":"img/pets/180.png",
-        "description":{
-            "skill1":"Decrease quest level up cost (20000%, 100000%, 200000%, 2000000%, 20000000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Ra": {
+        "img": "img/pets/172.png",
+        "description": {
+            "skill1": "Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             136
         ]
     },
-    "Ra":{
-        "img":"img/pets/172.png",
-        "description":{
-            "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Osiris": {
+        "img": "img/pets/175.png",
+        "description": {
+            "skill1": "Increase active skill damage efficiency (40, 90, 150, 220, 300)",
+            "skill2": "Increase defense power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             137
         ]
     },
-    "Osiris":{
-        "img":"img/pets/175.png",
-        "description":{
-            "skill1":"Increase active skill damage efficiency (40, 90, 150, 220, 300)",
-            "skill2":"Increase defense power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
-            "skill3":"Receive Legendary Artifact"
+    "Dark Sorceress": {
+        "img": "img/pets/162.png",
+        "description": {
+            "skill1": "Increases resistance against darkness (100, 400, 800, 1600, 3200)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             138
         ]
     },
-    "Dark Sorceress":{
-        "img":"img/pets/162.png",
-        "description":{
-            "skill1":"Increases resistance against darkness (100, 400, 800, 1600, 3200)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
-            "skill3":"Receive Legendary Artifact"
+    "Nephthys": {
+        "img": "img/pets/178.png",
+        "description": {
+            "skill1": "Increases resistance against darkness (120, 450, 900, 1800, 3600)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             139
         ]
     },
-    "Nephthys":{
-        "img":"img/pets/178.png",
-        "description":{
-            "skill1":"Increases resistance against darkness (120, 450, 900, 1800, 3600)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Khnum": {
+        "img": "img/pets/181.png",
+        "description": {
+            "skill1": "Increase Maximum Quest level (20000%, 2000000%, 200000000%, 20000000000%, 2000000000000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             140
         ]
     },
-    "Khnum":{
-        "img":"img/pets/181.png",
-        "description":{
-            "skill1":"Increase Maximum Quest level (20000%, 2000000%, 200000000%, 20000000000%, 2000000000000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Atum": {
+        "img": "img/pets/173.png",
+        "description": {
+            "skill1": "Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)",
+            "skill2": "Increase attack power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             141
         ]
     },
-    "Atum":{
-        "img":"img/pets/173.png",
-        "description":{
-            "skill1":"Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)",
-            "skill2":"Increase attack power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)",
-            "skill3":"Receive Legendary Artifact"
+    "Hathor": {
+        "img": "img/pets/176.png",
+        "description": {
+            "skill1": "Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 3200000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             142
         ]
     },
-    "Hathor":{
-        "img":"img/pets/176.png",
-        "description":{
-            "skill1":"Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 3200000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Anubis": {
+        "img": "img/pets/179.png",
+        "description": {
+            "skill1": "Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             143
         ]
     },
-    "Anubis":{
-        "img":"img/pets/179.png",
-        "description":{
-            "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Satis": {
+        "img": "img/pets/182.png",
+        "description": {
+            "skill1": "Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (800%, 1600%, 2400%, 3200%, 4000%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
+            "skill3": "Receive Legendary Artifact"
         },
         "pp_per_star": 7,
-        "from":[
+        "from": [
             144
         ]
     },
-    "Satis":{
-        "img":"img/pets/182.png",
-        "description":{
-            "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (800%, 1600%, 2400%, 3200%, 4000%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)",
-            "skill3":"Receive Legendary Artifact"
+    "Baby Igni": {
+        "img": "img/pets/247.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
+            "skill2": "Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Human units (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Tablet 41"
+        },
+        "pp_per_star": 4,
+        "from": [
+            145,
+            158
+        ]
+    },
+    "Baby Groot": {
+        "img": "img/pets/248.png",
+        "description": {
+            "skill1": "Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)",
+            "skill2": "Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Elf units (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Tablet 42"
+        },
+        "pp_per_star": 4,
+        "from": [
+            146,
+            159
+        ]
+    },
+    "Baby Darkie": {
+        "img": "img/pets/249.png",
+        "description": {
+            "skill1": "Increase Maximum Quest level (2200%, 220000%, 22000000%, 2200000000%, 220000000000%)",
+            "skill2": "Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Undead units (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Tablet 43"
+        },
+        "pp_per_star": 4,
+        "from": [
+            147,
+            160
+        ]
+    },
+    "Baby Frozen": {
+        "img": "img/pets/250.png",
+        "description": {
+            "skill1": "Reduce the quest open gold (1000%, 2000%, 4000%, 8000%, 16000%)",
+            "skill2": "Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Orc units (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Tablet 44"
+        },
+        "pp_per_star": 4,
+        "from": [
+            148,
+            161
+        ]
+    },
+    "Fireball": {
+        "img": "img/pets/251.png",
+        "description": {
+            "skill1": "Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
+            "skill2": "When you are Human, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
+            "skill3": "Receive Tablet 45"
+        },
+        "pp_per_star": 4,
+        "from": [
+            150,
+            162
+        ]
+    },
+    "Windball": {
+        "img": "img/pets/252.png",
+        "description": {
+            "skill1": "Decrease quest level up cost (3520%, 17600%, 88000%, 440000%, 2200000%)",
+            "skill2": "When you are an Elf, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
+            "skill3": "Receive Tablet 46"
+        },
+        "pp_per_star": 4,
+        "from": [
+            151,
+            163
+        ]
+    },
+    "Darkball": {
+        "img": "img/pets/253.png",
+        "description": {
+            "skill1": "Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)",
+            "skill2": "When you are an Undead, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
+            "skill3": "Receive Tablet 47"
+        },
+        "pp_per_star": 4,
+        "from": [
+            152,
+            164
+        ]
+    },
+    "Waterball": {
+        "img": "img/pets/254.png",
+        "description": {
+            "skill1": "Reduce the quest time (100%, 150%, 200%, 250%, 300%)",
+            "skill2": "When you are an Orc, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
+            "skill3": "Receive Tablet 48"
+        },
+        "pp_per_star": 4,
+        "from": [
+            153,
+            165
+        ]
+    },
+    "Fuego": {
+        "img": "img/pets/255.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
+            "skill2": "Increase basic game speed (0%, 0%, 2%, 3%, 4%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Ancient Fire Crown"
         },
         "pp_per_star": 7,
-        "from":[
-            145
+        "from": [
+            154,
+            166
         ]
     },
-    "Baby Igni":{
-        "img":"img/pets/247.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
-            "skill2":"Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Human units (0%, 0%, 4%, 6%, 8%)",
-            "skill3":"Receive Tablet 41"
-        },
-        "pp_per_star": 4,
-        "from":[
-            146, 158
-        ]
-    },
-    "Baby Groot":{
-        "img":"img/pets/248.png",
-        "description":{
-            "skill1":"Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)",
-            "skill2":"Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Elf units (0%, 0%, 4%, 6%, 8%)",
-            "skill3":"Receive Tablet 42"
-        },
-        "pp_per_star": 4,
-        "from":[
-            147, 159
-        ]
-    },
-    "Baby Darkie":{
-        "img":"img/pets/249.png",
-        "description":{
-            "skill1":"Increase Maximum Quest level (2200%, 220000%, 22000000%, 2200000000%, 220000000000%)",
-            "skill2":"Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Undead units (0%, 0%, 4%, 6%, 8%)",
-            "skill3":"Receive Tablet 43"
-        },
-        "pp_per_star": 4,
-        "from":[
-            148, 160
-        ]
-    },
-    "Baby Frozen":{
-        "img":"img/pets/250.png",
-        "description":{
-            "skill1":"Reduce the quest open gold (1000%, 2000%, 4000%, 8000%, 16000%)",
-            "skill2":"Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Orc units (0%, 0%, 4%, 6%, 8%)",
-            "skill3":"Receive Tablet 44"
-        },
-        "pp_per_star": 4,
-        "from":[
-            149, 161
-        ]
-    },
-    "Fireball":{
-        "img":"img/pets/251.png",
-        "description":{
-            "skill1":"Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)",
-            "skill2":"When you are Human, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
-            "skill3":"Receive Tablet 45"
-        },
-        "pp_per_star": 4,
-        "from":[
-            150, 162
-        ]
-    },
-    "Windball":{
-        "img":"img/pets/252.png",
-        "description":{
-            "skill1":"Decrease quest level up cost (3520%, 17600%, 88000%, 440000%, 2200000%)",
-            "skill2":"When you are an Elf, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
-            "skill3":"Receive Tablet 46"
-        },
-        "pp_per_star": 4,
-        "from":[
-            151, 163
-        ]
-    },
-    "Darkball":{
-        "img":"img/pets/253.png",
-        "description":{
-            "skill1":"Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)",
-            "skill2":"When you are an Undead, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
-            "skill3":"Receive Tablet 47"
-        },
-        "pp_per_star": 4,
-        "from":[
-            152, 164
-        ]
-    },
-    "Waterball":{
-        "img":"img/pets/254.png",
-        "description":{
-            "skill1":"Reduce the quest time (100%, 150%, 200%, 250%, 300%)",
-            "skill2":"When you are an Orc, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)",
-            "skill3":"Receive Tablet 48"
-        },
-        "pp_per_star": 4,
-        "from":[
-            153, 165
-        ]
-    },
-    "Fuego":{
-        "img":"img/pets/255.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
-            "skill2":"Increase basic game speed (0%, 0%, 2%, 3%, 4%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Ancient Fire Crown"
+    "Biento": {
+        "img": "img/pets/256.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
+            "skill2": "Increase Artifact Limit Break (0, 0, 1, 2, 3)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Ancient Wind Crown"
         },
         "pp_per_star": 7,
-        "from":[
-            154, 166
+        "from": [
+            155,
+            167
         ]
     },
-    "Biento":{
-        "img":"img/pets/256.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
-            "skill2":"Increase Artifact Limit Break (0, 0, 1, 2, 3)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Ancient Wind Crown"
+    "Ranoche": {
+        "img": "img/pets/257.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
+            "skill2": "Increase basic game speed (0%, 0%, 2%, 3%, 4%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Ancient Shadow Crown"
         },
         "pp_per_star": 7,
-        "from":[
-            155, 167
+        "from": [
+            156,
+            168
         ]
     },
-    "Ranoche":{
-        "img":"img/pets/257.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
-            "skill2":"Increase basic game speed (0%, 0%, 2%, 3%, 4%)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Ancient Shadow Crown"
+    "Elagua": {
+        "img": "img/pets/258.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
+            "skill2": "Increase Artifact Limit Break (0, 0, 1, 2, 3)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Ancient Water Crown"
         },
         "pp_per_star": 7,
-        "from":[
-            156, 168
+        "from": [
+            157,
+            169
         ]
     },
-    "Elagua":{
-        "img":"img/pets/258.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)",
-            "skill2":"Increase Artifact Limit Break (0, 0, 1, 2, 3)",
-            "skill3":"Receive Legendary Artifact",
-            "artifact":"Ancient Water Crown"
+    "Duru": {
+        "img": "img/pets/259.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Duru's Snorkeling Gear"
+        },
+        "pp_per_star": 4,
+        "from": [
+            183
+        ]
+    },
+    "Dutu": {
+        "img": "img/pets/260.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Duru's Snorkeling Gear"
+        },
+        "pp_per_star": 4,
+        "from": [
+            186
+        ]
+    },
+    "Ancient Sorceress": {
+        "img": "img/pets/260.png",
+        "description": {
+            "skill1": "Increase Ancient Blessing (100, 400, 800, 1600, 3200))",
+            "skill2": "Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Duru's Snorkeling Gear"
         },
         "pp_per_star": 7,
-        "from":[
-            157, 169
+        "from": [
+            186
         ]
     },
-    "Hallokin":{
-        "img":"img/pets/44.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)"
+    "Forest Ant": {
+        "img": "img/pets/316.png",
+        "description": {
+            "skill1": "Decrease the unit upgrade cost (270000%, 540000%, 1080000%, 2160000%, 4320000%)",
+            "skill2": "When Elf tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)",
+            "skill3": "Receive Tablet 50"
+        },
+        "pp_per_star": 4,
+        "from": [
+            171,
+            200
+        ]
+    },
+    "Shadow Ant": {
+        "img": "img/pets/317.png",
+        "description": {
+            "skill1": "Increase quest gold buff (81000%, 216000%, 810000%, 2160000%, 4050000%)",
+            "skill2": "When Undead tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)",
+            "skill3": "Receive Tablet 51"
+        },
+        "pp_per_star": 4,
+        "from": [
+            172,
+            201
+        ]
+    },
+    "Freeze Ant": {
+        "img": "img/pets/318.png",
+        "description": {
+            "skill1": "Decrease quest level up cost (3000%, 15000%, 30000%, 300000%, 3000000%)",
+            "skill2": "When Orc tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)",
+            "skill3": "Receive Tablet 52"
+        },
+        "pp_per_star": 4,
+        "from": [
+            173,
+            202
+        ]
+    },
+    "Dori Petra": {
+        "img": "img/pets/320.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)",
+            "skill2": "Increase basic game speed (0%, 0%, 3%, 4%, 5%)",
+            "skill3": "Receive Tablet 54"
+        },
+        "pp_per_star": 4,
+        "from": [
+            174,
+            204
+        ]
+    },
+    "Yuni Petra": {
+        "img": "img/pets/321.png",
+        "description": {
+            "skill1": "Increase Maximum Quest level (3000%, 300000%, 30000000%, 3000000000%, 300000000000%)",
+            "skill2": "Increase basic game speed (0%, 0%, 3%, 4%, 5%)",
+            "skill3": "Receive Tablet 55"
+        },
+        "pp_per_star": 4,
+        "from": [
+            175,
+            205
+        ]
+    },
+    "Mobi Petra": {
+        "img": "img/pets/322.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)",
+            "skill2": "Increase basic game speed (0%, 0%, 3%, 4%, 5%)",
+            "skill3": "Receive Tablet 56"
+        },
+        "pp_per_star": 4,
+        "from": [
+            176,
+            206
+        ]
+    },
+    "Saleana": {
+        "img": "img/pets/323.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)",
+            "skill2": "Increase basic game speed (0%, 0%, 3%, 4%, 5%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Essence of Fire"
+        },
+        "pp_per_star": 7,
+        "from": [
+            177,
+            207
+        ]
+    },
+    "Nymph": {
+        "img": "img/pets/324.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)",
+            "skill2": "Increase Artifact Limit Break (0, 0, 1, 2, 3)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Essence of Wood"
+        },
+        "pp_per_star": 7,
+        "from": [
+            178,
+            208
+        ]
+    },
+    "Shade": {
+        "img": "img/pets/325.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)",
+            "skill2": "Increase basic game speed (0%, 0%, 3%, 4%, 5%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Essence of Darkness"
+        },
+        "pp_per_star": 7,
+        "from": [
+            179,
+            209
+        ]
+    },
+    "Flow": {
+        "img": "img/pets/326.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)",
+            "skill2": "Increase Artifact Limit Break (0, 0, 1, 2, 3)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Essence of the Sea"
+        },
+        "pp_per_star": 7,
+        "from": [
+            180,
+            210
+        ]
+    },
+    "Pipi": {
+        "img": "img/pets/217.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Lucky Pig Ornament"
+        },
+        "pp_per_star": 4,
+        "from": [
+            181
+        ]
+    },
+    "Daddy Bear": {
+        "img": "img/pets/241.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Daddy Bear Treasure"
+        },
+        "pp_per_star": 4,
+        "from": [
+            182
+        ]
+    },
+    "Popo": {
+        "img": "img/pets/218.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Golden Pig Statue"
+        },
+        "pp_per_star": 4,
+        "from": [
+            184
+        ]
+    },
+    "Mommy Bear": {
+        "img": "img/pets/242.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Mommy Bear Treasure"
+        },
+        "pp_per_star": 4,
+        "from": [
+            185
+        ]
+    },
+    "Brahma": {
+        "img": "img/pets/229.png",
+        "description": {
+            "skill1": "Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+            "skill2": "Increase movement speed of human unit in Guild Raid (0%, 0%, 6%, 8%, 10%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Shining Amrita"
+        },
+        "pp_per_star": 7,
+        "from": [
+            187
+        ]
+    },
+    "Parvati": {
+        "img": "img/pets/232.png",
+        "description": {
+            "skill1": "Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)",
+            "skill2": "Increase movement speed of elf unit in Guild Raid (0%, 0%, 6%, 8%, 10%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Golden Crown of Goddess"
+        },
+        "pp_per_star": 7,
+        "from": [
+            188
+        ]
+    },
+    "Shiva": {
+        "img": "img/pets/235.png",
+        "description": {
+            "skill1": "Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+            "skill2": "Increase movement speed of undead unit in Guild Raid (0%, 0%, 6%, 8%, 10%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Trishula of Supreme Destroyer"
+        },
+        "pp_per_star": 7,
+        "from": [
+            189
+        ]
+    },
+    "Vishnu": {
+        "img": "img/pets/238.png",
+        "description": {
+            "skill1": "Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)",
+            "skill2": "Increase movement speed of orc unit in Guild Raid (0%, 0%, 6%, 8%, 10%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Parashu of Peace God"
+        },
+        "pp_per_star": 7,
+        "from": [
+            190
+        ]
+    },
+    "Surya": {
+        "img": "img/pets/230.png",
+        "description": {
+            "skill1": "Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Shining Sun Wheel"
+        },
+        "pp_per_star": 7,
+        "from": [
+            191
+        ]
+    },
+    "Saraswati": {
+        "img": "img/pets/233.png",
+        "description": {
+            "skill1": "Permanently increases the beginning stage after being revived (20, 40, 60, 80, 100)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Veena of Goddess"
+        },
+        "pp_per_star": 7,
+        "from": [
+            192
+        ]
+    },
+    "Frost Sorceress": {
+        "img": "img/pets/228.png",
+        "description": {
+            "skill1": "Increases resistance against cold (100, 400, 800, 1600, 3200)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Arctic Hail Dragon Earrings"
+        },
+        "pp_per_star": 7,
+        "from": [
+            193
+        ]
+    },
+    "Indra": {
+        "img": "img/pets/236.png",
+        "description": {
+            "skill1": "Increase active skill damage efficiency (80, 130, 200, 300, 450)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Vasavi, the Thunder Spear"
+        },
+        "pp_per_star": 7,
+        "from": [
+            194
+        ]
+    },
+    "Varuna": {
+        "img": "img/pets/239.png",
+        "description": {
+            "skill1": "Increases resistance against cold (120, 450, 900, 1800, 3600)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Lasso of Varuna"
+        },
+        "pp_per_star": 7,
+        "from": [
+            195
+        ]
+    },
+    "Garuda": {
+        "img": "img/pets/231.png",
+        "description": {
+            "skill1": "Increases the Tribe Friendliness for Human (1000, 1500, 2000, 2500, 3000)",
+            "skill2": "Increase attack speed of human unit in Guild Raid (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Shining Wing Accessory"
+        },
+        "pp_per_star": 7,
+        "from": [
+            196
+        ]
+    },
+    "Lakshmi": {
+        "img": "img/pets/234.png",
+        "description": {
+            "skill1": "Increases the Tribe Friendliness for Elf (1000, 1500, 2000, 2500, 3000)",
+            "skill2": "Increase attack speed of elf unit in Guild Raid (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Earrings of Goddess"
+        },
+        "pp_per_star": 7,
+        "from": [
+            197
+        ]
+    },
+    "Chandra": {
+        "img": "img/pets/237.png",
+        "description": {
+            "skill1": "Increases the Tribe Friendliness for Undead (1000, 1500, 2000, 2500, 3000)",
+            "skill2": "Increase attack speed of undead unit in Guild Raid (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Chandrahas, the Lunar Sword"
+        },
+        "pp_per_star": 7,
+        "from": [
+            198
+        ]
+    },
+    "Ganesha": {
+        "img": "img/pets/240.png",
+        "description": {
+            "skill1": "Increases the Tribe Friendliness for Orc (1000, 1500, 2000, 2500, 3000)",
+            "skill2": "Increase attack speed of orc unit in Guild Raid (0%, 0%, 4%, 6%, 8%)",
+            "skill3": "Receive Legendary Artifact",
+            "artifact": "Scripture of Knowledge"
+        },
+        "pp_per_star": 7,
+        "from": [
+            199
+        ]
+    },
+    "Hallokin": {
+        "img": "img/pets/44.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)"
         },
         "pp_per_star": 3,
-        "from":[
-            13,40,75,102
+        "from": [
+            37,
+            72,
+            99
         ]
     },
-    "Nills":{
-        "img":"img/pets/52.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)"
+    "Nills": {
+        "img": "img/pets/52.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)"
         },
         "pp_per_star": 3,
-        "from":[
-            14,41,76,103
+        "from": [
+            38,
+            73,
+            100
         ]
     },
-    "Rudolph":{
-        "img":"img/pets/53.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)"
+    "Rudolph": {
+        "img": "img/pets/53.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)"
         },
         "pp_per_star": 4,
-        "from":[
-            15,42,77,104
+        "from": [
+            39,
+            74,
+            101
         ]
     },
-    "Cookoo":{
-        "img":"img/pets/54.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase basic game speed (1%, 2%, 3%, 4%, 5%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)"
+    "Cookoo": {
+        "img": "img/pets/54.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase basic game speed (1%, 2%, 3%, 4%, 5%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)"
         },
         "pp_per_star": 4,
-        "from":[
-            16,43,78,105
+        "from": [
+            13,
+            40,
+            75,
+            102
         ]
     },
-    "Lime":{
-        "img":"img/pets/59.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)"
+    "Lime": {
+        "img": "img/pets/59.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)"
         },
         "pp_per_star": 4,
-        "from":[
-            17,44,79,106
+        "from": [
+            14,
+            41,
+            76,
+            103
         ]
     },
-    "Green":{
-        "img":"img/pets/97.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Green": {
+        "img": "img/pets/97.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            18,45,80,107
+        "from": [
+            15,
+            42,
+            77,
+            104
         ]
     },
-    "Blue":{
-        "img":"img/pets/98.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Blue": {
+        "img": "img/pets/98.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            19,46,81,108
+        "from": [
+            16,
+            43,
+            78,
+            105
         ]
     },
-    "Red":{
-        "img":"img/pets/99.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Red": {
+        "img": "img/pets/99.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            20,47,82,109
+        "from": [
+            17,
+            44,
+            79,
+            106
         ]
     },
-    "Purple":{
-        "img":"img/pets/100.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Purple": {
+        "img": "img/pets/100.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            21,48,83,110
+        "from": [
+            18,
+            45,
+            80,
+            107
         ]
     },
-    "Celeste":{
-        "img":"img/pets/104.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Celeste": {
+        "img": "img/pets/104.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            22,49,84,111
+        "from": [
+            19,
+            46,
+            81,
+            108
         ]
     },
-    "Bunnette":{
-        "img":"img/pets/128.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Bunnette": {
+        "img": "img/pets/128.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            23,50,85,112
+        "from": [
+            20,
+            47,
+            82,
+            109
         ]
     },
-    "Toby":{
-        "img":"img/pets/129.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Toby": {
+        "img": "img/pets/129.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            24,51,86,113
+        "from": [
+            21,
+            48,
+            83,
+            110
         ]
     },
-    "H-Reaper":{
-        "img":"img/pets/134.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "H-Reaper": {
+        "img": "img/pets/134.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            25,52,87,114
+        "from": [
+            22,
+            49,
+            84,
+            111
         ]
     },
-    "Christy":{
-        "img":"img/pets/135.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
-            "skill2":"Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Christy": {
+        "img": "img/pets/135.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
+            "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            26,53,88,115
+        "from": [
+            23,
+            50,
+            85,
+            112
         ]
     },
-    "Jindo":{
-        "img":"img/pets/140.png",
-        "description":{
-            "skill1":"Increase additional medals obtained (5%, 10%, 20%, 30%, 40%)",
-            "skill2":"Increase basic game speed (0%, 0%, 1.5%, 2%, 2.5%)",
-            "skill3":"Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
+    "Jindo": {
+        "img": "img/pets/140.png",
+        "description": {
+            "skill1": "Increase additional medals obtained (5%, 10%, 20%, 30%, 40%)",
+            "skill2": "Increase basic game speed (0%, 0%, 1.5%, 2%, 2.5%)",
+            "skill3": "Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)"
         },
         "pp_per_star": 4,
-        "from":[
-            27,54,89,116
+        "from": [
+            24,
+            51,
+            86,
+            113
         ]
     }
 }

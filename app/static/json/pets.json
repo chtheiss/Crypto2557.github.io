@@ -1,236 +1,321 @@
 {
-    "Hellfly": {
-        "additional_buffs": [],
-        "buffs": [],
-        "description": {
-            "hidden_abilites": [],
-            "skill1": "Upon reviving as a Human, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
-            "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Flame Sibyl ]"
-        },
-        "from": [
-            376,
-            735
-        ],
-        "img": "img/pets/277.png",
-        "pp_per_star": [
-            4
-        ]
+ "Hellfly": {
+    "additional_buffs": [],
+    "buffs": [         {
+            "name":"Weaken Crystal (Human)",
+            "description":"Upon reviving as a Human, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+            "multiplier":0.5,
+            "requirement":15,
+            "amount":30
+         },
+         {
+            "name":"Might of Fire",
+            "description":"Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 250 levels. (However, [Might of Fire] is only applied in stage battles.)",
+            "multiplier":0.4666666,
+            "requirement":17,
+            "amount":250
+         }],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases its movement speed by 10%, and its attack range by 9%.",
+        "Increases the movement speed of all units by 7%, and the attack speed of all units by 9%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Weaken Crystal (Human) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Human) is increased up to 30%.",
+        "Might of Fire Limit Break : The max value of the effects of Might of Fire by Flame Sibyl increases from 150 to 250."
+      ],
+      "skill1": "Upon reviving as a Human, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
+      "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Flame Sibyl ]"
     },
-    "Leafwiz": {
-        "additional_buffs": [],
-        "buffs": [],
-        "description": {
-            "hidden_abilites": [],
-            "skill1": "Upon reviving as an Elf, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
-            "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Mystic Archer ]"
-        },
-        "from": [
-            381,
-            745
-        ],
-        "img": "img/pets/278.png",
-        "pp_per_star": [
-            4
-        ]
+    "from": [
+      376,
+      735
+    ],
+    "img": "img/pets/277.png",
+    "pp_per_star": [
+      4
+    ]
+  },
+  "Leafwiz": {
+    "additional_buffs": [],
+    "buffs": [         {
+            "name":"Weaken Crystal (Elf)",
+            "description":"Upon reviving as an Elf, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+            "multiplier":0.5,
+            "requirement":15,
+            "amount":30
+         },
+         {
+            "name":"Additional Attack (High Elf Archer)",
+            "description":"With the command of the Mystic Archer, the chance of the [High Elf Archer] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 3% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 40%.",
+            "multiplier":0.333333,
+            "requirement":14,
+            "amount":40
+         }],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases its movement speed by 10%, and its attack speed by 10%.",
+        "Increases the attack range and the critical damage of all units by 6%, and the movement speed of all units by 5%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Weaken Crystal (Elf) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Elf) is increased up to 30%.",
+        "Additional Attack (High Elf Archer) Limit Break : the chance of the High Elf Archer making an additional cast will increase up to 40% and the chance of making an additional Skill attack increases up to 30%."
+      ],
+      "skill1": "Upon reviving as an Elf, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
+      "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Mystic Archer ]"
     },
-    "Eye Captain": {
-        "additional_buffs": [],
-        "buffs": [],
-        "description": {
-            "hidden_abilites": [],
-            "skill1": "Upon reviving as an Undead, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
-            "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Skeleton General ]"
-        },
-        "from": [
-            386,
-            755
-        ],
-        "img": "img/pets/279.png",
-        "pp_per_star": [
-            4
-        ]
+    "from": [
+      381,
+      745
+    ],
+    "img": "img/pets/278.png",
+    "pp_per_star": [
+      4
+    ]
+  },
+  "Eye Captain": {
+    "additional_buffs": [],
+    "buffs": [         {
+            "name":"Weaken Crystal (Undead)",
+            "description":"Upon reviving as an Undead, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+            "multiplier":0.5,
+            "requirement":15,
+            "amount":30
+         },
+         {
+            "name":"Additional Attack (Skeleton Warrior)",
+            "description":"With the command of the Skeleton General, the chance of the [Skeleton Warrior] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 2% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 25%. The chance of making an additional Skill attack increases up to 20%",
+            "multiplier":0.5,
+            "requirement":13,
+            "amount":25
+         }],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases its movement speed and attack power by 10%.",
+        "Increases the movement speed of all units by 7%, and the critical damage of all units by 9%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Weaken Crystal (Undead) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Undead) is increased up to 30%.",
+        "Additional Attack (Skeleton Warrior) Limit Break : the chance of the Skeleton Warrior making an additional cast will increase up to 25% and the chance of making an additional Skill attack increases up to 20%."
+      ],
+      "skill1": "Upon reviving as an Undead, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
+      "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Skeleton General ]"
     },
-    "Ice Slime": {
-        "additional_buffs": [],
-        "buffs": [],
-        "description": {
-            "hidden_abilites": [],
-            "skill1": "Upon reviving as an Orc, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
-            "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Frozen Witch ]"
-        },
-        "from": [
-            391,
-            765
-        ],
-        "img": "img/pets/280.png",
-        "pp_per_star": [
-            4
-        ]
+    "from": [
+      386,
+      755
+    ],
+    "img": "img/pets/279.png",
+    "pp_per_star": [
+      4
+    ]
+  },
+  "Ice Slime": {
+    "additional_buffs": [],
+    "buffs": [         {
+            "name":"Weaken Crystal (Orc)",
+            "description":"Upon reviving as an Orc, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+            "multiplier":0.5,
+            "requirement":15,
+            "amount":30
+         },
+         {
+            "name":"Pact of the Grand Chief",
+            "description":"Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 250 levels. Pact of the Grand Chief only applies to Stage Combat (main game mode)",
+            "multiplier":0.4666666,
+            "requirement":17,
+            "amount":250
+         }],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases its movement speed by 9%, and its attack power by 10%.",
+        "Increases the attack range of all units by 7%, and the movement speed of all units by 9%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Weaken Crystal (Orc) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Orc) is increased up to 30%.",
+        "Pact of the Grand Chief Limit Break : The max value of the effects of Pact of the Grand Chief by Frozen Witch increases from 150 to 250."
+      ],
+      "skill1": "Upon reviving as an Orc, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
+      "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Frozen Witch ]"
     },
-    "Monkey Robin": {
-        "additional_buffs": [],
-        "buffs": [
-            {
-                "name": "Tribe Friendliness (Human)",
-                "description": "Increases Human Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Fire Ranger cannot exceed 1,000.",
-                "multiplier": 0.5,
-                "requirement": 18.75,
-                "amount": 1500
-            }
-        ],
-        "description": {
-            "hidden_abilites": [
-                "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
-                "Increases basic game speed by 7%.",
-                "Increases its movement speed by 10%, and its attack speed by 10%.",
-                "Increases the movement speed and the attack range of all units by 6%, and the critical damage of all units by 5%.",
-                "Significantly increases attack power and critical hit rate against enemy crystal.",
-                "Tribe Friendliness for Human can be increased up to 1,500 by Fire Ranger.",
-                "Increase Efficiency for Token Enhancement (Human): The efficiency for Token Enhancement (Human) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop."
-            ],
-            "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
-            "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Fire Ranger ]"
-        },
-        "from": [
-            356,
-            695,
-            740,
-            751
-        ],
-        "img": "img/pets/262.png",
-        "pp_per_star": [
-            4
-        ]
+    "from": [
+      391,
+      765
+    ],
+    "img": "img/pets/280.png",
+    "pp_per_star": [
+      4
+    ]
+  },
+  "Monkey Robin": {
+    "additional_buffs": [],
+    "buffs": [
+      {
+        "name": "Tribe Friendliness (Human)",
+        "description": "Increases Human Tribe Friendliness. 40 for every 5-star and 100 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Fire Ranger cannot exceed 1,500.",
+        "multiplier": 0.5,
+        "requirement": 18.75,
+        "amount": 1500
+      }
+    ],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases its movement speed by 10%, and its attack speed by 10%.",
+        "Increases the movement speed and the attack range of all units by 6%, and the critical damage of all units by 5%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Tribe Friendliness for Human can be increased up to 1,500 by Fire Ranger.",
+        "Increase Efficiency for Token Enhancement (Human): The efficiency for Token Enhancement (Human) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop."
+      ],
+      "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
+      "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Fire Ranger ]"
     },
-    "Owl": {
-        "additional_buffs": [],
-        "buffs": [
-            {
-                "name": "Tribe Friendliness (Elf)",
-                "description": "Increases Elf Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Forest Knight cannot exceed 1,000.",
-                "multiplier": 0.5,
-                "requirement": 18.75,
-                "amount": 1500
-            },
-            {
-                "name": "Ancient Blessing",
-                "description": "Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 2,000.",
-                "multiplier": 0.5,
-                "requirement": 40,
-                "amount": 4000
-            }
-        ],
-        "description": {
-            "hidden_abilites": [
-                "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
-                "Increases basic game speed by 7%.",
-                "Increases its movement speed by 10%, and its attack power by 10%.",
-                "Increases the movement speed of all units by 7%, and the critical damage of all units by 9%.",
-                "Significantly increases attack power and critical hit rate against enemy crystal.",
-                "Tribe Friendliness for Elf can be increased up to 1,500 by Forest Knight.",
-                "Increase Efficiency for Token Enhancement (Elf): The efficiency for Token Enhancement (Elf) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.",
-                "Ancient Blessings increase by 75 for each Forest Knight and by 150 for each Senior Forest Knight. The MAX amount of Ancient Blessings from Forest Knight increased from 2,000 to 4,000."
-            ],
-            "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
-            "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Forest Knight ]"
-        },
-        "from": [
-            361,
-            705,
-            750,
-            756
-        ],
-        "img": "img/pets/263.png",
-        "pp_per_star": [
-            4
-        ]
+    "from": [
+      356,
+      695,
+      740,
+      751
+    ],
+    "img": "img/pets/262.png",
+    "pp_per_star": [
+      4
+    ]
+  },
+  "Owl": {
+    "additional_buffs": [],
+    "buffs": [
+      {
+        "name": "Tribe Friendliness (Elf)",
+        "description": "Increases Elf Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Forest Knight cannot exceed 1,000.",
+        "multiplier": 0.5,
+        "requirement": 18.75,
+        "amount": 1500
+      },
+      {
+        "name": "Ancient Blessing",
+        "description": "Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 4,000.",
+        "multiplier": 0.5,
+        "requirement": 40,
+        "amount": 4000
+      }
+    ],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases its movement speed by 10%, and its attack power by 10%.",
+        "Increases the movement speed of all units by 7%, and the critical damage of all units by 9%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Tribe Friendliness for Elf can be increased up to 1,500 by Forest Knight.",
+        "Increase Efficiency for Token Enhancement (Elf): The efficiency for Token Enhancement (Elf) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.",
+        "Ancient Blessings increase by 75 for each Forest Knight and by 150 for each Senior Forest Knight. The MAX amount of Ancient Blessings from Forest Knight increased from 2,000 to 4,000."
+      ],
+      "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
+      "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Forest Knight ]"
     },
-    "Hornbat": {
-        "additional_buffs": [],
-        "buffs": [
-            {
-                "name": "Tribe Friendliness (Undead)",
-                "description": "Increases Undead Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Devil Mage cannot exceed 1,000.",
-                "multiplier": 0.5,
-                "requirement": 18.75,
-                "amount": 1500
-            }
-        ],
-        "description": {
-            "hidden_abilites": [
-                "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
-                "Increases basic game speed by 7%.",
-                "Increases movement speed of self by 10% and attack range by 10%.",
-                "Increases the movement speed and attack range of all units by 6% and attack by 8%.",
-                "Significantly increases attack power and critical hit rate against enemy crystal.",
-                "Tribe Friendliness for Undead can be increased up to 1,500 by Devil Mage.",
-                "Increase Efficiency for Token Enhancement (Undead): The efficiency for Token Enhancement (Undead) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop."
-            ],
-            "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
-            "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Devil Mage ]"
-        },
-        "from": [
-            366,
-            715,
-            760,
-            761
-        ],
-        "img": "img/pets/264.png",
-        "pp_per_star": [
-            4
-        ]
+    "from": [
+      361,
+      705,
+      750,
+      756
+    ],
+    "img": "img/pets/263.png",
+    "pp_per_star": [
+      4
+    ]
+  },
+  "Hornbat": {
+    "additional_buffs": [],
+    "buffs": [
+      {
+        "name": "Tribe Friendliness (Undead)",
+        "description": "Increases Undead Tribe Friendliness. 40 for every 5-star and 100 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Devil Mage cannot exceed 1,500.",
+        "multiplier": 0.5,
+        "requirement": 18.75,
+        "amount": 1500
+      }
+    ],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases movement speed of self by 10% and attack range by 10%.",
+        "Increases the movement speed and attack range of all units by 6% and attack by 8%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Tribe Friendliness for Undead can be increased up to 1,500 by Devil Mage.",
+        "Increase Efficiency for Token Enhancement (Undead): The efficiency for Token Enhancement (Undead) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop."
+      ],
+      "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
+      "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Devil Mage ]"
     },
+    "from": [
+      366,
+      715,
+      760,
+      761
+    ],
+    "img": "img/pets/264.png",
+    "pp_per_star": [
+      4
+    ]
+  },
+
     "Tau": {
-        "additional_buffs": [],
-        "buffs": [
-            {
-                "name": "Tribe Friendliness (Orc)",
-                "description": "Increases Orc Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Storm Warrior cannot exceed 1,000.",
-                "multiplier": 0.5,
-                "requirement": 18.75,
-                "amount": 1500
-            },
-            {
-                "name": "Enhance Active Skill",
-                "description": "Enhance Active Skill: Efficiency of Active skills(Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword) are improved by 20/40 stages. (Effects can stack but cannot be applied when in time shop)",
-                "multiplier": 0.5,
-                "requirement": 24,
-                "amount": 480
-            }
-        ],
-        "description": {
-            "hidden_abilites": [
-                "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
-                "Increases basic game speed by 7%.",
-                "Increases its movement speed by 10%, and its attack speed by 9%.",
-                "Increases the movement speed of all units by 7%, and the attack speed of all units by 9%.",
-                "Significantly increases attack power and critical hit rate against enemy crystal.",
-                "Tribe Friendliness for Orc can be increased up to 1,500 by Storm Warrior.",
-                "Increase Efficiency for Token Enhancement (Orc): The efficiency for Token Enhancement (Orc) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.",
-                "Even if the Storm Warrior is in Time Shop, efficiency of active skill increases. (However, if the Storm Warrior is in Time Shop, efficiency increased by 10 stages increased for each 5-star and 20 stages for each 6-star. The efficiency increased by Storm Warriors cannot exceed the maximum of 480 stages.)"
-            ],
-            "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
-            "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Storm Warrior ]"
-        },
-        "from": [
-            371,
-            725,
-            766,
-            770
-        ],
-        "img": "img/pets/265.png",
-        "pp_per_star": [
-            4
-        ]
+    "additional_buffs": [],
+    "buffs": [
+      {
+        "name": "Tribe Friendliness (Orc)",
+        "description": "Increases Orc Tribe Friendliness. 40 for every 5-star and 100 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Storm Warrior cannot exceed 1,500.",
+        "multiplier": 0.5,
+        "requirement": 18.75,
+        "amount": 1500
+      },
+      {
+        "name": "Enhance Active Skill",
+        "description": "Even if the Storm Warrior is in Time Shop, efficiency of active skill increases. (However, if the Storm Warrior is in Time Shop, efficiency increased by 10 stages increased for each 5-star and 20 stages for each 6-star. The efficiency increased by Storm Warriors cannot exceed the maximum of 480 stages.)",
+        "multiplier": 0.5,
+        "requirement": 24,
+        "amount": 480
+      }
+    ],
+    "description": {
+      "hidden_abilites": [
+        "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+        "Increases basic game speed by 7%.",
+        "Increases its movement speed by 10%, and its attack speed by 9%.",
+        "Increases the movement speed of all units by 7%, and the attack speed of all units by 9%.",
+        "Significantly increases attack power and critical hit rate against enemy crystal.",
+        "Tribe Friendliness for Orc can be increased up to 1,500 by Storm Warrior.",
+        "Increase Efficiency for Token Enhancement (Orc): The efficiency for Token Enhancement (Orc) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.",
+        "Even if the Storm Warrior is in Time Shop, efficiency of active skill increases. (However, if the Storm Warrior is in Time Shop, efficiency increased by 10 stages increased for each 5-star and 20 stages for each 6-star. The efficiency increased by Storm Warriors cannot exceed the maximum of 480 stages.)"
+      ],
+      "skill1": "Increase Artifact Limit Break (1, 2, 3, 4, 5)",
+      "skill2": "Increase basic game speed (0%, 0%, 1%, 3%, 5%)",
+      "skill3": "Awakens the hidden special ability of [ Senior Storm Warrior ]"
     },
+    "from": [
+      371,
+      725,
+      766,
+      770
+    ],
+    "img": "img/pets/265.png",
+    "pp_per_star": [
+      4
+    ]
+  },
     "Selda": {
         "img": "img/pets/243.png",
         "description": {

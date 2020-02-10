@@ -1,5 +1,5 @@
 import os
-import urllib
+import urllib.request
 import json
 from bs4 import BeautifulSoup
 
@@ -10,14 +10,14 @@ def remove_values_from_list(the_list, val):
 
 level = 1
 
-for page in range(1,21):
-    url = f'http://endlessfrontierdata.com/spirithighlands/easy/{page}'
+for page in range(1, 7):
+    url = f'http://endlessfrontierdata.com/spirithighlands/hard/{page}'
     fp = urllib.request.urlopen(url)
     mybytes = fp.read()
     html = mybytes.decode("utf8")
     fp.close()
 
-    soup = BeautifulSoup(html, features="lxml")
+    soup = BeautifulSoup(html)
     divs = soup('a', {'style': 'text-decoration:none;color:white;'})
     tuples = []
     for div in divs:
@@ -28,8 +28,7 @@ for page in range(1,21):
         level += 1
     ids += tuples
 
-filename = 'app/static/json/pets.json'
-
+filename = '../app/static/json/hard_sh_pets.json'
 with open(filename, 'r') as json_file:
     data = json.load(json_file)
     for key, items in data.items():
