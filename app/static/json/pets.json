@@ -2812,7 +2812,7 @@
         ],
         "additional_buffs": []
     },
-    "Tinky": {
+    "Tinkey": {
         "img": "img/pets/6.png",
         "description": {
             "skill1": "Increase basic game speed (0.5%, 1%, 1.5%, 2%, 2.5%)",

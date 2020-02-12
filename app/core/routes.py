@@ -33,7 +33,7 @@ def pets_hard():
 
     pets_url = os.path.join(current_app.root_path, "static/json", "hard_sh_pets.json")
     pets = json.load(open(pets_url))
-
+    
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
         pets[item]["KL"] = (50 + (np.array(pets[item]["from"])-1)*4).astype(int).tolist()

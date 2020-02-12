@@ -13,7 +13,12 @@
       			 	<div class="row">
       			 		<div class="col-12">Skill1: {{pet['description']['skill1']}}</div>
       			 		<div class="col-12">Skill2: {{pet['description']['skill2']}}</div>
-      			 		<div class="col-12">Skill3: {{pet['description']['skill3']}}</div>
+                {% if('artifact' in pet['description'].keys()) %}
+      			 		  <div class="col-12">Skill3: {{pet['description']['skill3']}} [ <img class="pet-modal-image" src="../static/img/artifacts/{{pet['description']['id']}}.png"> {{pet['description']['artifact']}} ] 
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                {% else %}
+                  <div class="col-12">Skill3: {{pet['description']['skill3']}}</div>
+                {% endif %}
       			 		<div class="col-12">
       			 			<ul>
                                                 {% for ability in pet['description']['hidden_abilites'] %}

@@ -397,10 +397,13 @@ h2{
 
 .navbar-nav > li > .dropdown-menu{
   background-color: #343a40!important;
+  width:100px
+  height:50px;
 }
 
 .navbar-nav > li > .dropdown-menu > .dropdown-item{
   color: #ccc!important;
+  font-size: 1.5rem
 }
 
 .navbar-nav > li > .dropdown-menu > .dropdown-item:hover{
