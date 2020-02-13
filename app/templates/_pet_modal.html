@@ -9,13 +9,16 @@
         </button>
       		</div>
       		<div class="modal-body">
-      			 <div class="container-fluid">
+      			 <div class="container-flduid">
       			 	<div class="row">
       			 		<div class="col-12">Skill1: {{pet['description']['skill1']}}</div>
       			 		<div class="col-12">Skill2: {{pet['description']['skill2']}}</div>
                 {% if('artifact' in pet['description'].keys()) %}
       			 		  <div class="col-12">Skill3: {{pet['description']['skill3']}} [ <img class="pet-modal-image" src="../static/img/artifacts/{{pet['description']['id']}}.png"> {{pet['description']['artifact']}} ] 
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                {% elif('couple' in pet.keys()) %}
+                  <div class="col-12">Skill3: {{pet['description']['skill3'].split("[")[0]}} [ <img class="pet-modal-image" src="../static/img/units/{{pet['couple']}}.png"> {{pet['description']['skill3'].split("[")[1]}}  
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
                 {% else %}
                   <div class="col-12">Skill3: {{pet['description']['skill3']}}</div>
                 {% endif %}
