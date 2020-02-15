@@ -1,9 +1,32 @@
 {
     "Hellfly": {
         "additional_buffs": [],
-        "buffs": [],
+        "buffs": [
+            {
+                "name": "Weaken Crystal (Human)",
+                "description": "Upon reviving as a Human, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+                "multiplier": 0.5,
+                "requirement": 15,
+                "amount": 30
+            },
+            {
+                "name": "Might of Fire",
+                "description": "Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 250 levels. (However, [Might of Fire] is only applied in stage battles.)",
+                "multiplier": 0.4666666,
+                "requirement": 17,
+                "amount": 250
+            }
+        ],
         "description": {
-            "hidden_abilites": [],
+            "hidden_abilites": [
+                "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+                "Increases basic game speed by 7%.",
+                "Increases its movement speed by 10%, and its attack range by 9%.",
+                "Increases the movement speed of all units by 7%, and the attack speed of all units by 9%.",
+                "Significantly increases attack power and critical hit rate against enemy crystal.",
+                "Weaken Crystal (Human) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Human) is increased up to 30%.",
+                "Might of Fire Limit Break : The max value of the effects of Might of Fire by Flame Sibyl increases from 150 to 250."
+            ],
             "skill1": "Upon reviving as a Human, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
             "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
             "skill3": "Awakens the hidden special ability of [ Senior Flame Sibyl ]"
@@ -15,13 +38,37 @@
         "img": "img/pets/277.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "231"
     },
     "Leafwiz": {
         "additional_buffs": [],
-        "buffs": [],
+        "buffs": [
+            {
+                "name": "Weaken Crystal (Elf)",
+                "description": "Upon reviving as an Elf, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+                "multiplier": 0.5,
+                "requirement": 15,
+                "amount": 30
+            },
+            {
+                "name": "Additional Attack (High Elf Archer)",
+                "description": "With the command of the Mystic Archer, the chance of the [High Elf Archer] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 3% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 40%.",
+                "multiplier": 0.333333,
+                "requirement": 14,
+                "amount": 40
+            }
+        ],
         "description": {
-            "hidden_abilites": [],
+            "hidden_abilites": [
+                "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
+                "Increases basic game speed by 7%.",
+                "Increases its movement speed by 10%, and its attack speed by 10%.",
+                "Increases the attack range and the critical damage of all units by 6%, and the movement speed of all units by 5%.",
+                "Significantly increases attack power and critical hit rate against enemy crystal.",
+                "Weaken Crystal (Elf) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Elf) is increased up to 30%.",
+                "Additional Attack (High Elf Archer) Limit Break : the chance of the High Elf Archer making an additional cast will increase up to 40% and the chance of making an additional Skill attack increases up to 30%."
+            ],
             "skill1": "Upon reviving as an Elf, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
             "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
             "skill3": "Awakens the hidden special ability of [ Senior Mystic Archer ]"
@@ -33,13 +80,37 @@
         "img": "img/pets/278.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "233"
     },
     "Eye Captain": {
         "additional_buffs": [],
-        "buffs": [],
+        "buffs": [
+            {
+                "name": "Weaken Crystal (Undead)",
+                "description": "Upon reviving as an Undead, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+                "multiplier": 0.5,
+                "requirement": 15,
+                "amount": 30
+            },
+            {
+                "name": "Additional Attack (Skeleton Warrior)",
+                "description": "With the command of the Skeleton General, the chance of the [Skeleton Warrior] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 2% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 25%. The chance of making an additional Skill attack increases up to 20%",
+                "multiplier": 0.5,
+                "requirement": 13,
+                "amount": 25
+            }
+        ],
         "description": {
-            "hidden_abilites": [],
+            "hidden_abilites": [
+                "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+                "Increases basic game speed by 7%.",
+                "Increases its movement speed and attack power by 10%.",
+                "Increases the movement speed of all units by 7%, and the critical damage of all units by 9%.",
+                "Significantly increases attack power and critical hit rate against enemy crystal.",
+                "Weaken Crystal (Undead) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Undead) is increased up to 30%.",
+                "Additional Attack (Skeleton Warrior) Limit Break : the chance of the Skeleton Warrior making an additional cast will increase up to 25% and the chance of making an additional Skill attack increases up to 20%."
+            ],
             "skill1": "Upon reviving as an Undead, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
             "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
             "skill3": "Awakens the hidden special ability of [ Senior Skeleton General ]"
@@ -51,13 +122,37 @@
         "img": "img/pets/279.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "235"
     },
     "Ice Slime": {
         "additional_buffs": [],
-        "buffs": [],
+        "buffs": [
+            {
+                "name": "Weaken Crystal (Orc)",
+                "description": "Upon reviving as an Orc, the enemy's crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit's maximum crystal HP cannot be reduced by more than 30%.",
+                "multiplier": 0.5,
+                "requirement": 15,
+                "amount": 30
+            },
+            {
+                "name": "Pact of the Grand Chief",
+                "description": "Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 250 levels. Pact of the Grand Chief only applies to Stage Combat (main game mode)",
+                "multiplier": 0.4666666,
+                "requirement": 17,
+                "amount": 250
+            }
+        ],
         "description": {
-            "hidden_abilites": [],
+            "hidden_abilites": [
+                "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
+                "Increases basic game speed by 7%.",
+                "Increases its movement speed by 9%, and its attack power by 10%.",
+                "Increases the attack range of all units by 7%, and the movement speed of all units by 9%.",
+                "Significantly increases attack power and critical hit rate against enemy crystal.",
+                "Weaken Crystal (Orc) Limit Break : The reduction of enemy's crystal HP due to Weaken Crystal (Orc) is increased up to 30%.",
+                "Pact of the Grand Chief Limit Break : The max value of the effects of Pact of the Grand Chief by Frozen Witch increases from 150 to 250."
+            ],
             "skill1": "Upon reviving as an Orc, the enemy's crystal HP on the stage is reduced. (1%, 2%, 3%, 4%, 5%)",
             "skill2": "Increase additional medal buff by pets (0%, 0%, 3%, 5%, 7%)",
             "skill3": "Awakens the hidden special ability of [ Senior Frozen Witch ]"
@@ -69,14 +164,15 @@
         "img": "img/pets/280.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "237"
     },
     "Monkey Robin": {
         "additional_buffs": [],
         "buffs": [
             {
                 "name": "Tribe Friendliness (Human)",
-                "description": "Increases Human Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Fire Ranger cannot exceed 1,000.",
+                "description": "Increases Human Tribe Friendliness. 40 for every 5-star and 100 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Fire Ranger cannot exceed 1,500.",
                 "multiplier": 0.5,
                 "requirement": 18.75,
                 "amount": 1500
@@ -105,7 +201,8 @@
         "img": "img/pets/262.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "223"
     },
     "Owl": {
         "additional_buffs": [],
@@ -119,7 +216,7 @@
             },
             {
                 "name": "Ancient Blessing",
-                "description": "Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 2,000.",
+                "description": "Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 4,000.",
                 "multiplier": 0.5,
                 "requirement": 40,
                 "amount": 4000
@@ -149,14 +246,15 @@
         "img": "img/pets/263.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "225"
     },
     "Hornbat": {
         "additional_buffs": [],
         "buffs": [
             {
                 "name": "Tribe Friendliness (Undead)",
-                "description": "Increases Undead Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Devil Mage cannot exceed 1,000.",
+                "description": "Increases Undead Tribe Friendliness. 40 for every 5-star and 100 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Devil Mage cannot exceed 1,500.",
                 "multiplier": 0.5,
                 "requirement": 18.75,
                 "amount": 1500
@@ -185,21 +283,22 @@
         "img": "img/pets/264.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "227"
     },
     "Tau": {
         "additional_buffs": [],
         "buffs": [
             {
                 "name": "Tribe Friendliness (Orc)",
-                "description": "Increases Orc Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Storm Warrior cannot exceed 1,000.",
+                "description": "Increases Orc Tribe Friendliness. 40 for every 5-star and 100 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Storm Warrior cannot exceed 1,500.",
                 "multiplier": 0.5,
                 "requirement": 18.75,
                 "amount": 1500
             },
             {
                 "name": "Enhance Active Skill",
-                "description": "Enhance Active Skill: Efficiency of Active skills(Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword) are improved by 20/40 stages. (Effects can stack but cannot be applied when in time shop)",
+                "description": "Even if the Storm Warrior is in Time Shop, efficiency of active skill increases. (However, if the Storm Warrior is in Time Shop, efficiency increased by 10 stages increased for each 5-star and 20 stages for each 6-star. The efficiency increased by Storm Warriors cannot exceed the maximum of 480 stages.)",
                 "multiplier": 0.5,
                 "requirement": 24,
                 "amount": 480
@@ -229,7 +328,8 @@
         "img": "img/pets/265.png",
         "pp_per_star": [
             4
-        ]
+        ],
+        "couple": "229"
     },
     "Selda": {
         "img": "img/pets/243.png",
@@ -273,7 +373,8 @@
                 "requirement": 20,
                 "amount": 10
             }
-        ]
+        ],
+        "couple": "215"
     },
     "Ferry": {
         "img": "img/pets/244.png",
@@ -316,14 +417,15 @@
                 "amount": 1200
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "217"
     },
     "Cobri": {
         "img": "img/pets/245.png",
         "description": {
             "skill1": "Increase attack speed of undead unit in Guild Raid (1%, 2%, 4%, 6%, 8%)",
             "skill2": "Increase the World Tree energy (0, 0, 40, 60, 100)",
-            "skill3": "Awakens the hidden special ability of [ Senior Shadow Priestess ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Dark Priestess ]",
             "hidden_abilites": [
                 "At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.",
                 "Increases basic game speed by 7%.",
@@ -359,7 +461,8 @@
                 "amount": 30
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "219"
     },
     "Lobta": {
         "img": "img/pets/246.png",
@@ -402,7 +505,8 @@
                 "amount": 250
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "221"
     },
     "Shasha": {
         "img": "img/pets/219.png",
@@ -477,7 +581,8 @@
                 "requirement": 10,
                 "amount": 60
             }
-        ]
+        ],
+        "couple": "207"
     },
     "Choochoo": {
         "img": "img/pets/220.png",
@@ -551,7 +656,8 @@
                 "requirement": 10,
                 "amount": 60
             }
-        ]
+        ],
+        "couple": "209"
     },
     "Cask": {
         "img": "img/pets/221.png",
@@ -625,7 +731,8 @@
                 "requirement": 10,
                 "amount": 60
             }
-        ]
+        ],
+        "couple": "211"
     },
     "Pooh": {
         "img": "img/pets/222.png",
@@ -700,7 +807,8 @@
                 "requirement": 10,
                 "amount": 100
             }
-        ]
+        ],
+        "couple": "213"
     },
     "Combat": {
         "img": "img/pets/207.png",
@@ -755,7 +863,8 @@
                 "requirement": 5,
                 "amount": 25
             }
-        ]
+        ],
+        "couple": "199"
     },
     "Rolly": {
         "img": "img/pets/208.png",
@@ -789,7 +898,8 @@
                 "amount": 100
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "201"
     },
     "Scourge": {
         "img": "img/pets/209.png",
@@ -844,14 +954,15 @@
                 "requirement": 5,
                 "amount": 25
             }
-        ]
+        ],
+        "couple": "203"
     },
     "Lazy": {
         "img": "img/pets/210.png",
         "description": {
             "skill1": "Increase Auto-skill Efficiency (4%, 8%, 12%, 16%, 20%)",
             "skill2": "Increase additional medals obtained (0%, 0%, 30%, 40%, 50%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Battle Hornist]",
+            "skill3": "Awakens the hidden special ability of [ Senior Battle Hornist ]",
             "hidden_abilites": [
                 "Increases basic speed of the game by 7%.",
                 "Increases self movement speed and attack distance by 10%.",
@@ -887,7 +998,8 @@
                 "requirement": 15,
                 "amount": 300
             }
-        ]
+        ],
+        "couple": "205"
     },
     "Little Hawk": {
         "img": "img/pets/183.png",
@@ -922,7 +1034,8 @@
                 "amount": 60
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "191"
     },
     "Foxy": {
         "img": "img/pets/184.png",
@@ -958,7 +1071,8 @@
                 "amount": 30
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "193"
     },
     "Shadow": {
         "img": "img/pets/185.png",
@@ -993,21 +1107,22 @@
                 "amount": 720
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "195"
     },
     "Snow Bear": {
         "img": "img/pets/186.png",
         "description": {
             "skill1": "Increase basic game speed (0.5%, 1%, 1.5%, 2%, 2.5%)",
             "skill2": "Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (0%, 0%, 300%, 400%, 500%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Warbear Rider ]",
+            "skill3": "Awakens the hidden special ability of [ Senior War Bear Rider ]",
             "hidden_abilites": [
                 "Increases basic game speed by 7%.",
                 "Increases self movement speed and attack power by 10%.",
                 "Increases movement speed by 7% and attack speed by 9% for all units.",
                 "Attack power and critical damage probability increases greatly against enemy crystal.",
                 "[Frenzy] Skill Enhancement: Frenzy damage per attack increases from 3% to 4%, and limit increases from 300% to 400%.",
-                "Even if a Warbear rider is in the shop of time, the efficiency of active skill increases. (However, in the shop of time, the efficiency increases by 20 stages per 5-star unit, 40 stages per 6-star unit, and active skill enhancement by warbear riders can not exceed 1000 stages.)"
+                "Even if a War Bear rider is in the shop of time, the efficiency of active skill increases. (However, in the shop of time, the efficiency increases by 20 stages per 5-star unit, 40 stages per 6-star unit, and active skill enhancement by War Bear Riders can not exceed 1000 stages.)"
             ]
         },
         "pp_per_star": [
@@ -1028,14 +1143,15 @@
                 "amount": 1000
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "197"
     },
     "Athos": {
         "img": "img/pets/163.png",
         "description": {
             "skill1": "Increases the Human Tribe Friendliness gained from Human Unit Seals (10%, 30%, 50%, 70%, 100%)",
             "skill2": "Increase attack speed of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Muskatress ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Musketress ]",
             "hidden_abilites": [
                 "Increases basic game speed by 7%.",
                 "Increases its movement speed by 8%, and its attack range by 10%. ",
@@ -1062,7 +1178,8 @@
                 "amount": 150
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "183"
     },
     "Grizzle": {
         "img": "img/pets/164.png",
@@ -1096,7 +1213,8 @@
                 "amount": 150
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "185"
     },
     "Raven": {
         "img": "img/pets/165.png",
@@ -1138,7 +1256,8 @@
                 "amount": 4000
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "187"
     },
     "Leyak": {
         "img": "img/pets/166.png",
@@ -1172,14 +1291,15 @@
                 "amount": 150
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "189"
     },
     "Cat Knight": {
         "img": "img/pets/136.png",
         "description": {
             "skill1": "ncreases the Tribe Friendliness for Human (30%, 60%, 90%, 120%, 150%)",
             "skill2": "Increase attack power of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Cat Knight ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Winged Knight ]",
             "hidden_abilites": [
                 "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
                 "Increases basic game speed by 6% and increases its movement speed and attack power by 10%.",
@@ -1213,7 +1333,8 @@
                 "amount": 1.2
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "175"
     },
     "Mori": {
         "img": "img/pets/137.png",
@@ -1246,7 +1367,8 @@
                 "amount": 600
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "177"
     },
     "Cerbero": {
         "img": "img/pets/138.png",
@@ -1279,7 +1401,8 @@
                 "amount": 600
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "179"
     },
     "Octopa": {
         "img": "img/pets/139.png",
@@ -1312,7 +1435,8 @@
                 "amount": 600
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "181"
     },
     "Bernard": {
         "img": "img/pets/112.png",
@@ -1369,7 +1493,8 @@
                 "amount": 50
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "167"
     },
     "Chichi": {
         "img": "img/pets/113.png",
@@ -1425,7 +1550,8 @@
                 "amount": 4000
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "169"
     },
     "Chesher": {
         "img": "img/pets/114.png",
@@ -1474,14 +1600,15 @@
                 ]
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "171"
     },
     "Bamba": {
         "img": "img/pets/115.png",
         "description": {
             "skill1": "Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)",
             "skill2": "Increase HP of Orc units in Outland Battle. (0%, 0%, 12%, 16%, 21%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Bamba ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Frost Demon ]",
             "hidden_abilites": [
                 "At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.",
                 "Increases attack power, attack range and critical strike rate of all ally units by 3%.",
@@ -1530,7 +1657,8 @@
                 "amount": 480
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "173"
     },
     "Rena": {
         "img": "img/pets/93.png",
@@ -1563,7 +1691,8 @@
                 "amount": 4000
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "159"
     },
     "Hippong": {
         "img": "img/pets/94.png",
@@ -1603,7 +1732,8 @@
                 "amount": 30
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "161"
     },
     "Osma": {
         "img": "img/pets/95.png",
@@ -1648,7 +1778,8 @@
                 ]
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "163"
     },
     "Saul": {
         "img": "img/pets/96.png",
@@ -1694,7 +1825,8 @@
                 ]
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "165"
     },
     "Sarah": {
         "img": "img/pets/55.png",
@@ -1728,7 +1860,8 @@
                 "requirement": 10,
                 "amount": 100
             }
-        ]
+        ],
+        "couple": "143"
     },
     "Oscar": {
         "img": "img/pets/56.png",
@@ -1763,7 +1896,8 @@
                 "requirement": 10,
                 "amount": 100
             }
-        ]
+        ],
+        "couple": "145"
     },
     "Black": {
         "img": "img/pets/57.png",
@@ -1789,7 +1923,8 @@
             581
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "147"
     },
     "Juda": {
         "img": "img/pets/58.png",
@@ -1824,14 +1959,15 @@
                 "requirement": 10,
                 "amount": 100
             }
-        ]
+        ],
+        "couple": "149"
     },
     "E-77": {
         "img": "img/pets/48.png",
         "description": {
             "skill1": "Decrease the unit upgrade cost (3000%, 6000%, 12000%, 24000%, 48000%)",
             "skill2": "Increase HP of human unit in PvP (0%, 0%, 5%, 10%, 20%)",
-            "skill3": "Awakens the hidden special ability of [ Senior E-77 ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Steam Punk ]",
             "hidden_abilites": [
                 "When first appearing, movement speed and attack speed of allies increase significantly for a certain period of time.",
                 "Basic game speed increases by 4%.",
@@ -1888,7 +2024,8 @@
                 "requirement": 10,
                 "amount": 50
             }
-        ]
+        ],
+        "couple": "135"
     },
     "Windy": {
         "img": "img/pets/49.png",
@@ -1952,7 +2089,8 @@
                 "requirement": 10,
                 "amount": 50
             }
-        ]
+        ],
+        "couple": "137"
     },
     "Dark Snake": {
         "img": "img/pets/50.png",
@@ -2015,14 +2153,15 @@
                 "requirement": 10,
                 "amount": 50
             }
-        ]
+        ],
+        "couple": "139"
     },
     "Seahorse": {
         "img": "img/pets/51.png",
         "description": {
             "skill1": "Decrease the unit upgrade cost (3000%, 6000%, 12000%, 24000%, 48000%)",
             "skill2": "Increase HP of orc unit in PvP (0%, 0%, 5%, 10%, 20%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Seahorse ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Naga ]",
             "hidden_abilites": [
                 "When first appearing, significantly increases movement speed and attack speed of ally units for a certain period of time, while casting shield to become immune against magic attacks.",
                 "Increases basic speed of game by 4%.",
@@ -2078,7 +2217,8 @@
                 "requirement": 10,
                 "amount": 50
             }
-        ]
+        ],
+        "couple": "141"
     },
     "Winky": {
         "img": "img/pets/40.png",
@@ -2140,7 +2280,8 @@
                 "requirement": 5,
                 "amount": 25
             }
-        ]
+        ],
+        "couple": "125"
     },
     "Bunny": {
         "img": "img/pets/41.png",
@@ -2202,7 +2343,8 @@
                 "requirement": 5,
                 "amount": 25
             }
-        ]
+        ],
+        "couple": "127"
     },
     "Cora": {
         "img": "img/pets/42.png",
@@ -2265,7 +2407,8 @@
                 "requirement": 5,
                 "amount": 25
             }
-        ]
+        ],
+        "couple": "129"
     },
     "Wakong": {
         "img": "img/pets/43.png",
@@ -2328,7 +2471,8 @@
                 "requirement": 5,
                 "amount": 25
             }
-        ]
+        ],
+        "couple": "131"
     },
     "Mir": {
         "img": "img/pets/36.png",
@@ -2353,7 +2497,8 @@
             511
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "117"
     },
     "Nimbus": {
         "img": "img/pets/37.png",
@@ -2379,7 +2524,8 @@
             516
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "119"
     },
     "Jingger": {
         "img": "img/pets/38.png",
@@ -2405,7 +2551,8 @@
             521
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "121"
     },
     "Rapty": {
         "img": "img/pets/39.png",
@@ -2431,7 +2578,8 @@
             526
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "123"
     },
     "Griffy": {
         "img": "img/pets/29.png",
@@ -2464,14 +2612,15 @@
                 "requirement": 24,
                 "amount": 700
             }
-        ]
+        ],
+        "couple": "111"
     },
     "Leo": {
         "img": "img/pets/26.png",
         "description": {
             "skill1": "Increase attack power of elf unit in Guild War (4.2%, 8.4%, 12.6%, 16.8%, 21%)",
             "skill2": "Increase critical damage of elf unit in Guild War (4.2%, 8.4%, 12.6%, 16.8%, 21%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Leo ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Forest Guardian ]",
             "hidden_abilites": [
                 "Raise all units' attack speed by 5%, attack range by 3%.",
                 "When first appearing, casts magic immunity barrier to all ally units.",
@@ -2497,7 +2646,8 @@
                 "requirement": 24,
                 "amount": 700
             }
-        ]
+        ],
+        "couple": "113"
     },
     "Devil": {
         "img": "img/pets/27.png",
@@ -2529,7 +2679,8 @@
                 "requirement": 24,
                 "amount": 700
             }
-        ]
+        ],
+        "couple": "115"
     },
     "Totem": {
         "img": "img/pets/16.png",
@@ -2561,7 +2712,8 @@
                 "requirement": 24,
                 "amount": 700
             }
-        ]
+        ],
+        "couple": "101"
     },
     "Magic Lamp": {
         "img": "img/pets/13.png",
@@ -2602,7 +2754,8 @@
                 "requirement": 18,
                 "amount": 90
             }
-        ]
+        ],
+        "couple": "105"
     },
     "Squirrel": {
         "img": "img/pets/18.png",
@@ -2627,7 +2780,8 @@
             481
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "107"
     },
     "Sleepy": {
         "img": "img/pets/15.png",
@@ -2651,7 +2805,8 @@
             466
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "109"
     },
     "Boom Boom": {
         "img": "img/pets/28.png",
@@ -2693,14 +2848,15 @@
                 "requirement": 2250,
                 "amount": 45000
             }
-        ]
+        ],
+        "couple": "103"
     },
     "Icy": {
         "img": "img/pets/17.png",
         "description": {
             "skill1": "Increase basic game speed (0.6%, 1.2%, 1.8%, 2.4%, 3%)",
             "skill2": "Increase range dodge rate of range unit in PvP (0.6%, 1.2%, 1.8%, 2.4%, 3%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Preist ]",
+            "skill3": "Awakens the hidden special ability of [ Senior Priest ]",
             "hidden_abilites": [
                 "Even if the Priest is at the Time Shop, 5 times speed buff starts every 10th floor. ( 5-star 1%, 6-star 2.5% ) ",
                 "The chance for 5 times speed buff by Priests in the Time Shop cannot exceed 30%. ",
@@ -2725,9 +2881,10 @@
                 "amount": 30
             }
         ],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "95"
     },
-    "Tinky": {
+    "Tinkey": {
         "img": "img/pets/6.png",
         "description": {
             "skill1": "Increase basic game speed (0.5%, 1%, 1.5%, 2%, 2.5%)",
@@ -2756,7 +2913,8 @@
                 "requirement": 12,
                 "amount": 30
             }
-        ]
+        ],
+        "couple": "97"
     },
     "Moon": {
         "img": "img/pets/19.png",
@@ -2795,7 +2953,8 @@
                 "requirement": 30,
                 "amount": 30
             }
-        ]
+        ],
+        "couple": "99"
     },
     "Mambo": {
         "img": "img/pets/1.png",
@@ -2819,7 +2978,8 @@
             396
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "14"
     },
     "Joe": {
         "img": "img/pets/2.png",
@@ -2843,7 +3003,8 @@
             401
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "34"
     },
     "Mummy": {
         "img": "img/pets/3.png",
@@ -2867,7 +3028,8 @@
             406
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "54"
     },
     "Piggy": {
         "img": "img/pets/4.png",
@@ -2892,7 +3054,8 @@
             411
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "74"
     },
     "Potang": {
         "img": "img/pets/5.png",
@@ -2917,7 +3080,8 @@
             416
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "18"
     },
     "Uni": {
         "img": "img/pets/14.png",
@@ -2941,7 +3105,8 @@
             421
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "38"
     },
     "Joker": {
         "img": "img/pets/7.png",
@@ -2966,7 +3131,8 @@
             426
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "56"
     },
     "Snork": {
         "img": "img/pets/8.png",
@@ -2991,14 +3157,15 @@
             431
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "76"
     },
     "Phoenic": {
         "img": "img/pets/9.png",
         "description": {
             "skill1": "Increase attack speed of human unit in PvP (0.5%, 1%, 1.5%, 2%, 2.5%)",
             "skill2": "Increase attack power of human unit in Guild War (3.6%, 7.2%, 10.8%, 14.4%, 18%)",
-            "skill3": "Awakens the hidden special ability of [ Senior Fire Mage]",
+            "skill3": "Awakens the hidden special ability of [ Senior Fire Mage ]",
             "hidden_abilites": [
                 "Make air units attack themselves and increase skill attack damage(Fire Bird Damage) by 2 times.",
                 "Increase critical hit damage and rate of all units by 5% and increases the movement speed of all human units by 4%.",
@@ -3016,7 +3183,8 @@
             436
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "16"
     },
     "Indy": {
         "img": "img/pets/10.png",
@@ -3041,7 +3209,8 @@
             441
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "36"
     },
     "Grim": {
         "img": "img/pets/11.png",
@@ -3067,7 +3236,8 @@
             446
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "58"
     },
     "Woola": {
         "img": "img/pets/12.png",
@@ -3093,6 +3263,7 @@
             451
         ],
         "buffs": [],
-        "additional_buffs": []
+        "additional_buffs": [],
+        "couple": "78"
     }
 }

@@ -261,7 +261,7 @@ td:hover {
   padding: 0px;
 }
 
-.pet-image, .unit-image, .media-image { 
+.pet-image, .unit-image, .media-image {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -271,19 +271,20 @@ td:hover {
 .modal-title {
   margin-bottom: auto;
   margin-top: auto;
+  margin-right: 5px;
 }
 
 .unit-modal-image, .pet-modal-image{
   display: inline-block;
   margin-right: auto;
-  max-height: 40px; 
+  max-height: 40px;
 }
 
 .col-kl{
-  padding: 0px; 
+  padding: 0px;
   font-weight: bold;
   font-size: 12px;
-  color: #ce2323; 
+  color: #ce2323;
 }
 
 .sortable-ghost {
@@ -397,10 +398,13 @@ h2{
 
 .navbar-nav > li > .dropdown-menu{
   background-color: #343a40!important;
+  width:100px
+  height:50px;
 }
 
 .navbar-nav > li > .dropdown-menu > .dropdown-item{
   color: #ccc!important;
+  font-size: 1.5rem
 }
 
 .navbar-nav > li > .dropdown-menu > .dropdown-item:hover{
