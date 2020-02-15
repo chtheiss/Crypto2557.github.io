@@ -950,6 +950,19 @@
             186
         ]
     },
+    "Fire Ant": {
+        "img": "img/pets/315.png",
+        "description": {
+            "skill1": "Increase Blessing of the Flame (100, 300, 600, 900, 1200)",
+            "skill2": "When Human tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)",
+            "skill3": "Receive Tablet 49"
+        },
+        "pp_per_star": 4,
+        "from": [
+            118,
+            149
+        ]
+    },
     "Forest Ant": {
         "img": "img/pets/316.png",
         "description": {

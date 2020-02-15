@@ -1,6 +1,7 @@
-Flask
-Flask-Bootstrap
-Frozen-Flask
-Flask-JSGlue
-Flask-FlatPages
+# Requires python 3.7
+flask
+flask-bootstrap
+frozen-flask
+flask-jsglue
+flask-flatpages
 numpy
