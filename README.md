@@ -18,7 +18,7 @@ The Endless Farming Project is licensed under the terms of the GNU Affero Genera
 
 ### Run Locally
 - Set the path of the flask application:
-	-(Linux) `export FLASK_APP=app/farming.y`
-	-(Windows) `set FLASK_APP=app/farming.y`
+	-(Linux) `export FLASK_APP=app/farming.py`
+	-(Windows) `set FLASK_APP=app/farming.py`
 - Start the application: `flask run`
 - You can visit it in the browser at `localhost:5000`
