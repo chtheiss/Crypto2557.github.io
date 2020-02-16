@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.1] - 2020-02-16
+### Changed
+- Meta progression
+
 ## [1.4] - 2020-02-15
 ### Added
 - GNU Affero General Public License 3.0
