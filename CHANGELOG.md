@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.2] - 2020-02-20
+### Added
+- Future features poll
+- Added description for the website
+
+### Removed
+- Important notice on home page
+
 ## [1.4.1] - 2020-02-16
 ### Changed
 - Meta progression

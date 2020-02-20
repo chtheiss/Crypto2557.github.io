@@ -380,8 +380,10 @@ li {
 }
 
 p.col-12 {
-  font-size: 16px;
-  margin-bottom: 11px;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+  text-align: left
 }
 
 hr{
