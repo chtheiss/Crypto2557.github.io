@@ -1,79 +1,51 @@
 <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        		<h5 class="modal-title" id="exampleModalLongTitle">Endless Farming</h5>
-       			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
-        		</button>
-      		</div>
-      		<div class="modal-body">
-      			<div class="row super-row justify-content-start">
-      				<div id="welcome-text" class="col-12 col-centered padding-0">
-      					<b></b>
-      				</div>
-					<div class="col-12 col-centered padding-0">
-						<div class="row centered-row">
-							<div class="col-3 col-centered padding-sm">
-								Knightage Level
-							</div>
-							<div class="col-3 col-centered padding-sm">
-				 				<input id="KL-number" class="user-input" type="number" min="1" value="0" step="1"/>
-							</div>
-							<div class="col-6 col-centered custom-control custom-checkbox checkbox-lg">
-  								<input id="hide-five-star-pets" type="checkbox" class="custom-control-input" unchecked>
-  								<label class="custom-control-label" for="hide-five-star-pets">Hide 5* Pets</label>
-							</div>
-						</div>
-						<div class="row centered-row">
-							<div class="col-6 col-centered padding-sm">
-								Spirit Highlands Normal
-							</div>
-							<div class="col-6 col-centered padding-sm">
-								Spirit Highlands Hard
-							</div>
-						</div>
-						<div class="row centered-row">
-							<div class="col-3 col-centered padding-sm">
-								Tickets
-							</div>
-							<div class="col-3 col-centered padding-sm">
-								<input id="tickets-number" class="user-input" type="number" min="10" value="0" step="1"/>
-							</div>
-							<div class="col-3 col-centered padding-sm">
-								Tickets
-							</div>
-							<div class="col-3 col-centered padding-sm">
-								<input id="tickets_hard-number" class="user-input" type="number" min="5" value="0" step="1"/>
-							</div>
-						</div>
-						<div class="row centered-row">
-							<div class="col-3 col-centered padding-sm">
-								Refills
-							</div>
-							<div class="col-3 col-centered padding-sm">
-								<input id="refills-number" class="user-input" type="number" min="0" max="6" value="0" step="1"/>
-							</div>
-							<div class="col-3 col-centered padding-sm">
-								Refills
-							</div>
-							<div class="col-3 col-centered padding-sm">
-								<input id="refills_hard-number" class="user-input" type="number" min="0" max="3" value="0" step="1"/>
-							</div>
-						</div>
-						<div class="row centered-row">
-							<div class="col-6 col-centered padding-sm">
-								<img id="gem-image" src="../static/img/gem.png">
-								<label id="gem-label" for="gem-image">0</label>
-							</div>
-							<div class="col-6 col-centered padding-sm">
-								<img id="gem-hard-image" src="../static/img/gem.png">
-								<label id="gem-hard-label" for="gem-hard-image">0</label>
-							</div>
-						</div>
-					</div>
-				</div>
-      		</div>
-		</div>
-	</div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Endless Farming</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body stat-modal">
+                <div class="stat-modal-kl-label">
+                    Knightage Level
+                </div>
+                <input id="KL-number" class="user-input stat-modal-kl" type="number" min="1" value="0" step="1" />
+                <div class="custom-control custom-checkbox checkbox-lg stat-modal-hide">
+                    <input id="hide-five-star-pets" type="checkbox" class="custom-control-input" unchecked>
+                    <label class="custom-control-label" for="hide-five-star-pets">Hide 5* Pets</label>
+                </div>
+                <div class="stat-modal-shn-label">
+                    Spirit Highlands Normal
+                </div>
+                <div class="stat-modal-shh-label">
+                    Spirit Highlands Hard
+                </div>
+                <div class="stat-modal-shn-tickets-label">
+                    Tickets
+                </div>
+                <input id="tickets-number" class="user-input stat-modal-shn-tickets" type="number" min="10" value="0" step="1" />
+                <div class="stat-modal-shh-tickets-label">
+                    Tickets
+                </div>
+                <input id="tickets_hard-number" class="user-input stat-modal-shh-tickets" type="number" min="5" value="0" step="1" />
+                <div class="stat-modal-shn-refills-label">
+                    Refills
+                </div>
+                <input id="refills-number" class="user-input stat-modal-shn-refills" type="number" min="0" max="6" value="0" step="1" />
+                <div class="stat-modal-shh-refills-label">
+                    Refills
+                </div>
+                <input id="refills_hard-number" class="user-input stat-modal-shh-refills" type="number" min="0" max="3" value="0" step="1" />
+                <div class="stat-modal-shn-gems"> <img id="gem-image" src="../static/img/gem.png">
+                    <label id="gem-label" for="gem-image">0</label></div>
+                <div class="stat-modal-shh-gems"> <img id="gem-hard-image" src="../static/img/gem.png">
+                    <label id="gem-hard-label" for="gem-hard-image">0</label></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 </div>

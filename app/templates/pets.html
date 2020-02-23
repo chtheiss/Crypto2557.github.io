@@ -1,126 +1,40 @@
 {% extends 'base.html' %}
-
 {% block app_content %}
-<div class="row super-row">
-    <div class="col-12 col-centered">
+<div class="pet-container">
+    <div class="pet-buttons">
         <button id="reset-btn" class="btn btn-dark btn-md btn-margin">Reset Priority</button>
         <button id="add-all-btn" class="btn btn-dark btn-md btn-margin">Progress 1 Day</button>
     </div>
-    <div class="col-12 col-centered">
-        <div id="tracking" class="row justify-content-center" style="display:None;">
-                <div id="track-1" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
+    <div class="pet-trackers">
+        {% for _ in range(12) %}
+        {% set loop_index = loop.index %}
+        <div id="track-{{loop.index}}" data-empty="True">
+            <img class="pet-image" src="" />
+            <p></p>
         </div>
-                <div id="track-2" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-3" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-4" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-5" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-6" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-7" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-8" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-9" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-10" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-                <div id="track-11" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-            <div id="track-12" class="col-2" data-empty="True">
-            <img class="pet-image" src=""/><p></p>
-        </div>
-        </div>
+        {% endfor %}
     </div>
-    <div id="dragable-row" class="row super-row row-hidden justify-content-center">
-            {% for key, pet in pets.items() %}
-            {% set key_id=key.replace(" ", "_") %}
-                    <div id="{{key_id}}" data-id="{{loop.index-1}}" class="col-md-2 col-sm-3 col-5 border block padding-sm">
-                        <div class="row centered-row">
-                            <div class="col-md-5 padding-0">
-                                <span class="pet-modal" data-toggle="modal" data-target="#{{key_id}}-modal">
-                                    <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
-                                </span>
-                            </div>
-                            <div class="col-md-2 col-fragments padding-0">
-                                <p id="{{key_id}}-farmable-fragments" class="zero-fragments">0</p>
-                            </div>
-                            <div class="col-md-5 padding-0">
-                                <h3>{{ key }}</h3>
-                            </div>
-                        </div>
-                        <div class="row centered-row">
-                            <div class="col-12 padding-md">
-                                    <fieldset>
-                                        <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
-                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" value="10" data-stars="1"/>
-                                        </label>
-                                        <label class="image-checkbox" id="{{key_id}}-2star" data-pet="{{key_id}}">
-                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" value="30" data-stars="2"/>
-                                        </label>
-                                        <label class="image-checkbox" id="{{key_id}}-3star" data-pet="{{key_id}}">
-                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" value="80" data-stars="3"/>
-                                        </label>
-                                        <label class="image-checkbox" id="{{key_id}}-4star" data-pet="{{key_id}}">
-                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" value="180" data-stars="4"/>
-                                        </label>
-                                        <label class="image-checkbox" id="{{key_id}}-5star" data-pet="{{key_id}}">
-                                            <img class="img-responsive" src="../static/img/stargrey.png"/>
-                                            <input type="checkbox" value="330" data-stars="5"/>
-                                        </label>
-                                    </fieldset>
-                            </div>
-                            <div class="col-12 padding-sm">
-                                    <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="pet-input" type="number" min="0" value="0" step="1"/>
-                            </div>
-                        </div>
-                        <div class="row centered-row">
-                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][0]}}">{{pet["KL"][0]}}</div>
-                            {% if(pet["from"][1]) %}
-                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][1]}}">{{pet["KL"][1]}}</div>
-                            {% endif %}
-                            {% if(pet["from"][2]) %}
-                                <div class="col-3 col-kl col-red" data-from="{{pet['from'][2]}}">{{pet["KL"][2]}}</div>
-                            {% endif %}
-                            {% if(pet["from"][3]) %}
-                            <div class="col-3 col-kl col-red" data-from="{{pet['from'][3]}}">{{pet["KL"][3]}}</div>
-                            {% endif %}
-                        </div>
-                    </div>
-            {% endfor %}
+    <div id="dragable-row" class="pet-pets hidden">
+        {% for key, pet in pets.items() %}
+        {% set key_id=key.replace(" ", "_") %}
+        {% set loop_index = loop.index %}
+        {% include 'pet_card.html' %}
+        {% endfor %}
     </div>
+    <footer class="pet-footer page-footer">
+        This priority ranking was originally created by HarroweD and can be found <a href="http://bit.ly/HarroweD">here</a>.
+    </footer>
 </div>
 {% for key, pet in pets.items() %}
-    {% set key_id=key.replace(" ", "_") %}
-    {% set pet_name=key %}
-    {% include '_pet_modal.html' %}
+{% set key_id=key.replace(" ", "_") %}
+{% set pet_name=key %}
+{% include '_pet_modal.html' %}
 {% endfor %}
-<footer class="page-footer font-medium col-centered">
-        This priority ranking was originally created by HarroweD and can be found <a href="http://bit.ly/HarroweD">here</a>.
-</footer>
 {% endblock %}
 {% block scripts %}
-    {{ super() }}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
-    {% block pet_scripts %}
-        <script type="text/javascript" src="{{ url_for('static', filename='js/pets_normal.js') }}"></script>
-    {% endblock %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/pets.js') }}"></script>
+{% block pet_scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/pets_normal.js') }}"></script>
+{% endblock %}
 {% endblock %}

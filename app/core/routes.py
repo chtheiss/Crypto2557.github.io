@@ -22,10 +22,14 @@ def pets():
     pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
 
+    stages_per_two_kl = 5
+
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
         pets[item]["KL"] = (
-            (np.ceil(np.array(pets[item]["from"]) / 5) * 2).astype(int).tolist()
+            (np.ceil(np.array(pets[item]["from"]) / stages_per_two_kl) * 2)
+            .astype(int)
+            .tolist()
         )
 
     pets_ordered = json.loads(
@@ -78,6 +82,9 @@ def units():
     units = json.load(open(units_url))
     pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
+
+    number_of_rotations = 17
+
     max_buffs = [
         max(
             [
@@ -86,12 +93,10 @@ def units():
                 if (unit["rotation"] == i)
             ]
         )
-        for i in range(1, 18)
+        for i in range(1, number_of_rotations + 1)
     ]
     max_buffs.reverse()
-    max_buffs = np.repeat(
-        np.array(max_buffs), [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], axis=0
-    )
+    max_buffs = np.repeat(np.array(max_buffs), [4 for _ in range(17)], axis=0)
     max_add_buffs = [
         max(
             [
@@ -103,11 +108,7 @@ def units():
         for i in range(1, 18)
     ]
     max_add_buffs.reverse()
-    max_add_buffs = np.repeat(
-        np.array(max_add_buffs),
-        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-        axis=0,
-    )
+    max_add_buffs = np.repeat(np.array(max_add_buffs), [4 for _ in range(17)], axis=0)
     return render_template(
         "units.html",
         title="Units",

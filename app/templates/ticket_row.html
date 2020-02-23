@@ -1,0 +1,9 @@
+<div class="ticket-row">
+    <img class='ticket-row-image' src="../static/{{units[ticket['unit']]['img_sr']}}">
+    <div class="ticket-row-text">{{ ticket['unit'] }}</div>
+    <div class="ticket-row-progress" data-unit="{{ticket['unit']}}">
+        <div class="progress">
+            <div id="{{'prog-'+ticket['unit']}}" class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="{{ ticket['requirement'] }}"></div>
+        </div>
+    </div>
+</div>
