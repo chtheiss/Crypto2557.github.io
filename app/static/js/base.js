@@ -123,41 +123,42 @@ function hide_or_show_pet($pet, data, hide) {
             });
         });
 
-        $(".user-input").bind('change', function() {
+        $(".user-input").bind('change', async function() {
             $this = $(this);
-            request = idb.open('endless-farming-db');
-            request.then(function(db) {
-                var tx = db.transaction('player', 'readwrite');
-                var store = tx.objectStore('player');
-                var KL = store.put({
-                    name: this.attr("id").replace("-number", ""),
-                    value: this.val()
-                });
-                if ($this.attr("id") == "KL-number" && $("#dragable-row").length != 0) {
-                    updateStages(this.val());
-                }
-                if ($("#dragable-row").length != 0) {
-                    calculatePetFragmentsToFarm();
-                }
-            }.bind($this));
+            db = await idb.open('endless-farming-db');
+            var tx = await db.transaction('player', 'readwrite');
+            var store = await tx.objectStore('player');
+            var new_KL = $this.val()
+            var KL = store.put({
+                name: $this.attr("id").replace("-number", ""),
+                value: new_KL
+            });
+            if ($this.attr("id") == "KL-number" && $("#dragable-row").length != 0) {
+                console.log(new_KL)
+                updateStages(new_KL);
+            }
+            if ($("#dragable-row").length != 0) {
+                calculatePetFragmentsToFarm();
+            }
         });
 
-        $("#hide-five-star-pets").bind('change', function() {
+        $("#hide-five-star-pets").bind('change', async function() {
             $this = $(this);
-            request = idb.open('endless-farming-db');
-            request.then(function(db) {
-                var tx = db.transaction('player', 'readwrite');
-                var store = tx.objectStore('player');
-                var KL = store.put({
-                    name: 'hide_five_star_pets',
-                    value: $('#hide-five-star-pets').prop("checked")
-                });
-                $("#dragable-row").children('.block').each(function() {
-                    var col = $(this);
-                    var input = col.find(".pet-input");
-                    hide_or_show_pet(input, !$('#hide-five-star-pets').prop("checked"));
-                });
-            }.bind($this));
+            db = await idb.open('endless-farming-db');
+            request
+            var tx = await db.transaction('player', 'readwrite');
+            var store = await tx.objectStore('player');
+            var hide = $('#hide-five-star-pets').prop("checked")
+            var KL = store.put({
+                name: 'hide_five_star_pets',
+                value: hide
+            });
+            for (const pet of $("#dragable-row").children('.pet-card')) {
+                $pet = $(pet)
+                var input = $pet.find(".pet-input[type='number']");
+                hide_or_show_pet($pet, {fragments: input.val()}, hide);
+            }
+
         });
 
         $("#refills-number").bind('change', function() {

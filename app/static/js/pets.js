@@ -1,24 +1,30 @@
-async function load_pet(pet, store, hide, kl) {
-    $pet = $(pet)
-    var data = await store.get(pet.id);
-    hide_or_show_pet($pet, data, hide)
-    $pet.find(".pet-input[type='number']").val(data.fragments);
-
+function change_pet_image_background($pet, data){
     var $img = $pet.find(".pet-image")
     classes = ["five-star", "four-star", "three-star", "two-star", "one-star"]
     thresholds = [330, 180, 80, 30, 10];
     for (var idx of [0, 1, 2, 3, 4]) {
         if (data.fragments >= thresholds[idx]) {
-            $img.removeClass("zero-star");
+            remove_classes($img, ["pet-image"])
+            //$img.removeClass("zero-star");
             $img.addClass(classes[idx]);
-            break;
+            return;
         }
     }
+    $img.addClass("zero-star");    
+}
 
-    var checkboxes = $pet.find(".pet-card-stars").find('.image-checkbox');
-    for (var idx of [0, 1, 2, 3, 4]) {
-        if (data.fragments >= thresholds[4 - idx]) {
-            turn_star_on($(checkboxes[idx]))
+async function load_pet(pet, store, hide, kl) {
+    $pet = $(pet)
+    var data = await store.get(pet.id);
+    if (data != undefined) {
+        hide_or_show_pet($pet, data, hide)
+        $pet.find(".pet-input[type='number']").val(data.fragments);
+        change_pet_image_background($pet, data)
+        var checkboxes = $pet.find(".pet-card-stars").find('.image-checkbox');
+        for (var idx of [0, 1, 2, 3, 4]) {
+            if (data.fragments >= thresholds[4 - idx]) {
+                turn_star_on($(checkboxes[idx]))
+            }
         }
     }
 
@@ -83,14 +89,14 @@ function remove_classes($element, classes_not_to_remove) {
 }
 
 function updateStages(kl) {
-    $(".col-kl").each(function() {
+    $(".pet-card-kl-number").each(function() {
         var col = $(this);
         if (kl >= parseFloat(col.text())) {
-            col.removeClass('col-red');
-            col.addClass('col-green');
+            col.removeClass('red');
+            col.addClass('green');
         } else {
-            col.removeClass('col-green');
-            col.addClass('col-red');
+            col.removeClass('green');
+            col.addClass('red');
         }
     });
 }
@@ -110,10 +116,10 @@ function getPriority(hard) {
     });
 }
 
-async function sortPetsByPriority() {
+async function sortPetsByPriority(storage_name) {
     var db = await idb.open('endless-farming-db');
-    var tx = await db.transaction("pets", 'readwrite');
-    var store = await tx.objectStore("pets");
+    var tx = await db.transaction(storage_name, 'readwrite');
+    var store = await tx.objectStore(storage_name);
     var items = await store.getAll();
     for (let item of items) {
         $("#" + item.name).attr("data-id", item.priority);
@@ -133,10 +139,10 @@ async function sortPetsByPriority() {
     calculatePetFragmentsToFarm();
 }
 
-async function updatePriorities() {
+async function updatePriorities(storage_name) {
     var db = await idb.open('endless-farming-db');
-    var tx = await db.transaction("pets", 'readwrite');
-    var store = await tx.objectStore("pets");
+    var tx = await db.transaction(storage_name, 'readwrite');
+    var store = await tx.objectStore(storage_name);
     for (const child of $("#dragable-row").children()){
         $child = $(child);
         val = {
@@ -148,42 +154,34 @@ async function updatePriorities() {
     }
 }
 
-function on_pet_input_change($pet_input, storage_name) {
-    var request = idb.open('endless-farming-db');
-    request.then(function(db) {
-        var tx = db.transaction(storage_name, 'readwrite');
-        var store = tx.objectStore(storage_name);
-        var item = {
-            name: this.data("pet"),
-            fragments: parseInt(this.val()),
-            priority: parseInt(this.parents(".block").attr("data-id"))
-        };
-        var putRequest = store.put(item);
-        return tx.complete;
-    }.bind($pet_input)).then(function() {
-        val = idb.open('endless-farming-db').then(function(db) {
-            var tx = db.transaction(storage_name, 'readwrite');
-            var store = tx.objectStore(storage_name);
-            return store.get(this.data("pet"));
-        }.bind(this)).then(function(val) {
-            this.val(val.fragments);
-            change_stars(val);
-            calculatePetFragmentsToFarm();
-            if ($('#hide-five-star-pets').prop("checked")) {
-                hide_or_show_pet(this, false);
-            }
-        }.bind($pet_input));
-    }.bind($pet_input));
+async function on_pet_input_change($pet_input, storage_name) {
+    var item = {
+        name: $pet_input.data("pet"),
+        fragments: parseInt($pet_input.val()),
+        priority: parseInt($pet_input.parents(".block").attr("data-id"))
+    };
+
+    var db = await idb.open('endless-farming-db');
+    var tx = await db.transaction(storage_name, 'readwrite');
+    var store = await tx.objectStore(storage_name);
+    var putRequest = await store.put(item);
+    change_stars(item);
+    $pet = $pet_input.closest(".pet-card").first()
+    change_pet_image_background($pet, item)
+    calculatePetFragmentsToFarm();
+    if ($('#hide-five-star-pets').prop("checked")) {
+        hide_or_show_pet($pet, item, true);
+    }
 }
 
 function clear_tracking() {
-    $("#tracking").children().each(function() {
-        var track_col = $(this);
-        track_col.css("display", "none");
-        track_col.find("img").attr("src", "");
-        track_col.attr("data-empty", "True");
-        track_col.data("empty", "True");
-        track_col.find("p").text("");
+    $(".pet-trackers").children().each(function() {
+        var tracker = $(this);
+        tracker.css("display", "none");
+        tracker.find("img").attr("src", "");
+        tracker.attr("data-empty", "True");
+        tracker.data("empty", "True");
+        tracker.find("p").text("");
     });
 }
 
@@ -206,10 +204,10 @@ function clear_tracking() {
         });
 
         $("#add-all-btn").click(function() {
-            $("#dragable-row").children('.block').each(function() {
-                var col = $(this);
-                var frags_to_add = parseInt(col.find(".col-fragments p").text());
-                var input = col.find(".pet-input");
+            $("#dragable-row").children('.pet-card').each(function() {
+                var $pet = $(this);
+                var frags_to_add = parseInt($pet.find(".pet-card-frags").text());
+                var input = $pet.find(".pet-input");
                 var current_frags = handle_nan(parseInt(input.val()));
                 if (frags_to_add > 0) {
                     input.val(current_frags + frags_to_add);

@@ -40,22 +40,19 @@ function calculatePetFragmentsToFarm() {
         frag_text = col.find("p");
         frag_text.text(fragments);
 
-        var track_col = $('.col-2[data-empty="True"]').first();
-
+        var tracker = $(".pet-trackers").children('[data-empty="True"]').first();
         if (fragments > 0) {
             frag_text.removeClass('zero-fragments');
             var days = Math.ceil((330 - current_frags) / fragments);
-            track_col.css("display", "");
-            track_col.find("img").attr("src", col.find(".pet-image").attr("src"));
-            track_col.attr("data-empty", "False");
-            track_col.data("empty", "False");
-            track_col.find("p").text(days + " days");
-            track_col.parent(".justify-content-center").css("display", "");
+            tracker.css("display", "");
+            tracker.find("img").attr("src", col.find(".pet-image").attr("src"));
+            tracker.attr("data-empty", "False");
+            tracker.data("empty", "False");
+            tracker.find("p").text(days + " days");
 
         } else {
             frag_text.addClass('zero-fragments');
-            if (track_col.attr("id") == "track-1") {
-                track_col.parent(".justify-content-center").css("display", "none");
+            if (tracker.attr("id") == "track-1") {
             }
         }
     });
@@ -120,7 +117,7 @@ function calculatePetFragmentsToFarm() {
                 $(event.item).data("id", event.newIndex);
             },
             onEnd: async function(event) {
-                await updatePriorities(store);
+                await updatePriorities("pets");
                 calculatePetFragmentsToFarm();
             },
         });
@@ -137,11 +134,11 @@ function calculatePetFragmentsToFarm() {
                 col.attr("data-id", p - 1);
                 col.data("id", p - 1);
             }
-            await updatePriorities();
-            await sortPetsByPriority();
+            await updatePriorities('pets');
+            await sortPetsByPriority('pets');
         });
 
-        await sortPetsByPriority(store);
+        await sortPetsByPriority('pets');
         calculatePetFragmentsToFarm();
     });
 }));

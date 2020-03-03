@@ -8,6 +8,10 @@ body {
     height: 100vh;
 }
 
+p {
+    margin: 0px;
+}
+
 .meta {
     width: auto;
     height: 100%;
@@ -133,6 +137,10 @@ body {
     }
 }
 
+.index-container p {
+    font-size: 14px;
+}
+
 .index-title {
     grid-area: title;
     display: grid;
@@ -206,8 +214,18 @@ body {
 .pet-trackers {
     grid-area: trackers;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(6, minmax(min-content, 1fr));
     grid-template-rows: 1fr 1fr;
+    justify-self: center;
+    align-self: center;
+
+}
+
+.pet-tracker{
+    justify-self: center;
+    align-self: center;
 }
 
 .pet-footer {

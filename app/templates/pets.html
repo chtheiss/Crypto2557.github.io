@@ -8,7 +8,7 @@
     <div class="pet-trackers">
         {% for _ in range(12) %}
         {% set loop_index = loop.index %}
-        <div id="track-{{loop.index}}" data-empty="True">
+        <div id="track-{{loop.index}}" class="pet-tracker" data-empty="True">
             <img class="pet-image" src="" />
             <p></p>
         </div>
