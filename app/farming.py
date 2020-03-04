@@ -7,7 +7,7 @@ from app import create_app
 
 app, freezer, pages, _ = create_app()
 
-
+"""
 @freezer.register_generator
 def get_pet():
     pets_url = os.path.join(app.root_path, "static/json", "pets.json")
@@ -22,3 +22,4 @@ def get_unit():
     units = json.load(open(units_url))
     for unit in units.keys():
         yield url_for("core.get_unit", unitid=unit.replace(" ", "_"))
+"""
