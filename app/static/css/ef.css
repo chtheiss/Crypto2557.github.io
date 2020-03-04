@@ -96,12 +96,11 @@ p {
     height: calc(100% - 60px - 4em);
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr 2fr 4fr;
+    grid-template-rows: 1fr 2fr 2fr;
     grid-template-areas:
         "title title"
         "purpose pet-usage"
         "unit-usage impressum"
-        "poll poll"
 }
 
 @media screen and (max-width: 768px) {
@@ -117,7 +116,6 @@ p {
             "pet-usage"
             "unit-usage"
             "impressum"
-            "poll"
     }
 
     .index-purpose {
@@ -183,10 +181,6 @@ p {
     border-width: 2px;
     border-style: solid;
     padding: 1%;
-}
-
-.index-poll {
-    grid-area: poll;
 }
 
 .pet-container {
@@ -378,6 +372,18 @@ p {
     border: 1px solid #dee2e6 !important;
     border-radius: 5px;
     padding: 2%;
+}
+
+@media screen and (max-width: 600px) {
+    .unit-card {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1.7fr 0.7fr auto;
+        grid-template-areas:
+        "jr-unit sr-unit pet"
+        "jr-input jr-input pet"
+        "sr-input sr-input ."
+        "buffs buffs buffs";
+    }
 }
 
 .unit-card-jr-unit {

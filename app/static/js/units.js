@@ -10,7 +10,7 @@ function change_progress_bar_value($bar, value, max) {
   }
 }
 
-async function update_progress_bar_values($progress_bar, buff){
+function update_progress_bar_values($progress_bar, buff){
   $progress_bar
     .attr("aria-valuemax", buff.requirement)
     .text($progress_bar.attr("aria-valuenow")+"/"+$progress_bar.attr("aria-valuemax"))
@@ -24,7 +24,7 @@ async function update_progress_bar_values($progress_bar, buff){
     $progress_bar.attr("data-linked-multiplier", buff.linked_multiplier.toString())
       .data("linked-multiplier", buff.linked_multiplier.toString());
   }
-  await update_progress_bar($progress_bar, $progress_bar.parents(".unit-card").find(".unit-input[type='number']").first());
+  update_progress_bar($progress_bar, $progress_bar.parents(".unit-card").find(".unit-input[type='number']").first());
 }
 
 function get_unit_input_values($input) {
@@ -43,7 +43,7 @@ function get_unit_input_values($input) {
   };
 }
 
-async function update_progress_bar($bar, $input){
+function update_progress_bar($bar, $input){
 
   var unit_values = get_unit_input_values($input);
   var multiplier = parseFloat($bar.attr("data-multiplier"));
@@ -109,44 +109,21 @@ async function load_input_value($unit_input) {
     } else {
       $unit_input.val(val.nsr);
     }
-    await update_all_progress_bars_of_input($unit_input);
+    update_all_progress_bars_of_input($unit_input);
   }
 }
 
-async function update_all_progress_bars_of_input($input) {
-  console.log($input)
+function update_all_progress_bars_of_input($input) {
   var $unit_cell = $("#" + $input.data("unit"));
   for (const bar of $unit_cell.find('[role="progressbar"]')) {
-    await update_progress_bar($(bar), $input);
+    update_progress_bar($(bar), $input);
   }
-}
-
-function getPet(petid) {
-  return $.ajax({
-    type: "GET",
-    url: Flask.url_for("core.get_pet", {
-      "petid": petid
-    }),
-    dataType: "json",
-    async: true
-  });
 }
 
 function getPets() {
   return $.ajax({
     type: "GET",
     url: Flask.url_for("core.get_pets"),
-    dataType: "json",
-    async: true
-  });
-}
-
-function getUnit(unitid) {
-  return $.ajax({
-    type: "GET",
-    url: Flask.url_for("core.get_unit", {
-      "unitid": unitid
-    }),
     dataType: "json",
     async: true
   });
@@ -161,55 +138,28 @@ function getUnits() {
   });
 }
 
-function getLinkedActivePets(buff, items) {
+function getLinkedActivePets(buff, pets) {
   var linked_active_pets = [];
-  for (let item of items) {
-    if (item.fragments >= 330 && buff.linked_pets.includes(item.name.replace("_", " "))) {
-      linked_active_pets.push(item.name);
-    }
+  if(buff.linked_pets != undefined){
+    linked_active_pets = pets.filter(pet => pet.fragments >=330 &
+       buff.linked_pets.includes(pet.name.replace("_", " ")))
   }
   return linked_active_pets;
 }
 
-function updateBuffRequirement(buff, id, items) {
-  var linked_active_pets = getLinkedActivePets(buff, items);
-  buff.requirement = buff.requirement[linked_active_pets.length];
-  var $progbar = $("#" + id + "-image").parents("unit-card").find('[data-original-title="' + buff.name + '"]').find(".progress-bar");
-  update_progress_bar_values($progbar, buff);
+function updateBuffRequirement($unit_card, buff, id, pets) {
+  var linked_active_pets = getLinkedActivePets(buff, pets);
+  if(Array.isArray(buff.requirement)){
+    buff.requirement = buff.requirement[linked_active_pets.length];
+    var $progbar = $unit_card.find('[title="' + buff.name + '"]').find(".progress-bar");
+    update_progress_bar_values($progbar, buff);
+  }
 }
 
-async function updateBuffs($petImage, items) {
-  for (let item of items) {
-    if (item.name == $petImage.data("pet") & item.fragments >= 330) {
-      $petImage.addClass("five-star-pet");
-      var data = await getPet($petImage.data("pet"));
-      const $unit_cell = $("#" + $petImage.data("unit"));
-      var $prog_bar_add_buff = $unit_cell.find(".additional_buff");
-      $prog_bar_add_buff.removeClass("progress-bar-hidden");
-      $prog_bar_add_buff.parent().popover();
-      for (let buff of data.pet.buffs) {
-        var $buff_span = $unit_cell.find('[data-original-title="' + buff.name + '"]');
-        $buff_span.attr("data-content", buff["description"]);
-        if (buff.linked_pets == undefined) {
-          update_progress_bar_values($buff_span.find(".progress-bar"), buff);
-        }else{
-          var linked_active_pets = getLinkedActivePets(buff, items);
-          updateBuffRequirement(buff, data.petid, items);
-          for (let linked_pet of buff.linked_pets) {
-            var linked_pet_info = await getPet(linked_pet.replaceAll(" ", "_"));
-            var linked_pet_buffs = linked_pet_info.pet.buffs;
-            for (let linked_pet_buff of linked_pet_buffs) {
-              if (linked_pet_buff.name == buff.name) {
-                var nr = getLinkedActivePets(linked_pet_buff, items).length - 1;
-                linked_pet_buff.requirement = linked_pet_buff.requirement[nr];
-                update_progress_bar_values($("#" + linked_pet_info.petid.replace(" ", "_") + "-image").parents("unit-card").find('[data-original-title="' + linked_pet_buff.name + '"]').find(".progress-bar"), linked_pet_buff);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+function showAdditionalBuffProgressBars($unit_card){
+  var $prog_bar_add_buff = $unit_card.find(".additional_buff");
+  $prog_bar_add_buff.removeClass("progress-bar-hidden");
+  $prog_bar_add_buff.parent().popover();
 }
 
 (function(yourcode) {
@@ -230,37 +180,68 @@ async function updateBuffs($petImage, items) {
     db = await idb.open("endless-farming-db")
     var tx = await db.transaction('pets', 'readwrite');
     var store = await tx.objectStore('pets');
-    var items = await store.getAll();
+    var pets = await store.getAll();
 
-    var pets = await getPets()
-    var units = await getUnits()
-    console.log(pets)
-    console.log(units)
-    
-    for (const unit_card of $('unit-card')){
+    var pets_info = await getPets()
+    var units_info = await getUnits()
+
+    console.log(pets_info)
+
+    for (const unit_card of $('.unit-card')){
       $unit_card = $(unit_card);
+      // updates all progress bars
       for (let bar of $unit_card.find('[role="progressbar"]')) {
         for (let input of $unit_card.find(".unit-input[type='number']")) {
-          console.log($(input))
-          await update_progress_bar($(bar), $(input));
+          update_progress_bar($(bar), $(input));
+        }
+      }
+
+      unit_name = unit_card.id.replaceAll("_", " ")
+      unit = units_info[unit_name]
+
+      // Change Unit card if own pet is 5*
+      $pet_image = $unit_card.find('.pet-image')
+      pet_name = $pet_image.data("pet")
+      five_star_pet = pets.filter(pet => pet.name == pet_name & pet.fragments >= 330)
+      if(five_star_pet.length){
+        // Highlight pet
+        $pet_image.addClass("five-star-pet");
+        // Add additional buffs
+        showAdditionalBuffProgressBars($unit_card)
+        // Change buff descriptions
+        for(buff of unit.buffs){
+          var $buff_span = $unit_card.find('[data-title="' + buff.name + '"]');
+          $buff_span.attr("data-content", buff["description"]);
+        }
+      }
+      // Update Buff Progressbar based on the active linked pets
+      for(let buff of unit.buffs){
+        updateBuffRequirement($unit_card , buff, unit_name, pets);
+        if(buff.linked_units != undefined){
+          pet_buff = pets_info[units_info[unit_name].pet].buffs.filter(pet_buff => pet_buff.name == buff.name)
+          linked_units_with_active_pet = buff.linked_units.filter(
+            linked_unit => pets.filter(
+              pet => pet.name == units_info[linked_unit].pet && pet.fragments >= 330
+            ).length > 0
+          )
+          var req = five_star_pet.length+linked_units_with_active_pet.length
+          if(req != 0){
+            if(five_star_pet && pet_buff.length > 0){
+              buff = pet_buff[0]
+            }
+            if(Array.isArray(buff.requirement)){
+              buff.requirement = pet_buff[0].requirement[req-1]
+              var $progbar = $unit_card.find('[title="' + buff.name + '"]').find(".progress-bar");
+              update_progress_bar_values($progbar, buff);
+            }
+          }
         }
       }
     }
 
-    for (const pet_image of $('.pet-image')){
-      $pet_image = $(pet_image)
-      var unit = await getUnit($pet_image.parents('.unit-card')[0].id)
-      for (buff of unit.unit.buffs){
-          if (buff.linked_pets != undefined){
-            updateBuffRequirement(buff, $pet_image.data("unit"), items)
-          }
-      }
-      updateBuffs($pet_image, items);
-    }
-    /*
     $(".unit-input[type='number']").bind('change', async function() {
       $this = $(this);
-      await update_all_progress_bars_of_input($this);
+      update_all_progress_bars_of_input($this);
       db = await idb.open('endless-farming-db')
       var tx = await db.transaction('units', 'readwrite');
       var store = await tx.objectStore('units');
@@ -272,7 +253,6 @@ async function updateBuffs($petImage, items) {
       };
       store.put(item);
     });
-    */
 
     for (const unit_input of $(".unit-input[type='number']")){
       load_input_value($(unit_input));
