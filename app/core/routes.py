@@ -22,7 +22,7 @@ def pets():
     pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
 
-    stages_per_two_kl = 5
+    stages_per_two_kl = 10
 
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
@@ -145,18 +145,19 @@ def get_unit(unitid):
     units = json.load(open(units_url))
     return jsonify(unit=units[unitid.replace("_", " ")])
 
+
 @bp.route("/static/json/pets/", methods=["GET", "POST"])
 def get_pets():
     pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
-    return jsonify(pets)#jsonify({"petid": petid, "pet": pets[petid.replace("_", " ")]})
+    return jsonify(pets)
 
 
 @bp.route("/static/json/units/", methods=["GET", "POST"])
 def get_units():
     units_url = os.path.join(current_app.root_path, "static/json", "units.json")
     units = json.load(open(units_url))
-    return jsonify(units) #jsonify(unit=units[unitid.replace("_", " ")])
+    return jsonify(units)
 
 
 @bp.route("/static/json/pet_priority.json", methods=["GET", "POST"])

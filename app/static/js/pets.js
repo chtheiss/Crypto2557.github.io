@@ -1,4 +1,4 @@
-function change_pet_image_background($pet, data){
+function change_pet_image_background($pet, data) {
     var $img = $pet.find(".pet-image")
     classes = ["five-star", "four-star", "three-star", "two-star", "one-star"]
     thresholds = [330, 180, 80, 30, 10];
@@ -10,7 +10,7 @@ function change_pet_image_background($pet, data){
             return;
         }
     }
-    $img.addClass("zero-star");    
+    $img.addClass("zero-star");
 }
 
 async function load_pet(pet, store, hide, kl) {
@@ -143,7 +143,7 @@ async function updatePriorities(storage_name) {
     var db = await idb.open('endless-farming-db');
     var tx = await db.transaction(storage_name, 'readwrite');
     var store = await tx.objectStore(storage_name);
-    for (const child of $("#dragable-row").children()){
+    for (const child of $("#dragable-row").children()) {
         $child = $(child);
         val = {
             name: $child.attr("id"),

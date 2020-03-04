@@ -75,7 +75,7 @@ function calculatePetFragmentsToFarm() {
 
         var hide = $('#hide-five-star-pets').prop("checked");
 
-        for (const pet of $(".pet-card")){
+        for (const pet of $(".pet-card")) {
             await load_pet(pet, store, hide, kl.value);
         }
 

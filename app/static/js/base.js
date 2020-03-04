@@ -156,7 +156,7 @@ function hide_or_show_pet($pet, data, hide) {
             for (const pet of $("#dragable-row").children('.pet-card')) {
                 $pet = $(pet)
                 var input = $pet.find(".pet-input[type='number']");
-                hide_or_show_pet($pet, {fragments: input.val()}, hide);
+                hide_or_show_pet($pet, { fragments: input.val() }, hide);
             }
 
         });

@@ -10,6 +10,17 @@ The Endless Farming Project is licensed under the terms of the GNU Affero Genera
 
 [AGPL for humans](<https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)>)
 
+## Work in Progress
+
+- [ ] Ob tracking (show rotation time, days till 5* based on current max stage, possibly best team based on owned units)
+- [ ] Add Information for non sh pets
+- [ ] Slab tracking
+- [ ] Integration of Spirit Highland solutions
+- [ ] Normal Registration/Login and authentication with Discord to access and edit your data everywhere
+- [ ] Design and Layout Rework
+- [ ] Connected Discord bot with shared functionality
+- [x] Performance optimization
+
 ## Running it
 ### Setup
 - (Optional) Create a virtual environment: `conda create -f environment.yml` or install Python 3
