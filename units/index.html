@@ -52,7 +52,7 @@ Endless Farming
   <body>
     
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Endless Farming</a>
+    <a class="navbar-brand" href="/">Endless Farming</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -80,6 +80,7 @@ Endless Farming
         </ul>
         <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none" />
+        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.3</button>
         <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
         <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
@@ -136,10 +137,140 @@ Endless Farming
 </div>
 </div>
 </div>
+<div class="modal fade" id="version-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLongTitle">Patch Notes</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body version-modal">
+                <div class="row version-underline">
+                    <div class="col-1"><b><i>Future</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>Future</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>New Pets for H1 of 7 star Units</li>
+                                <li>Version display and changelog for website</li>
+                                <li>Visual cue for units similar to in-game look</li>
+                                <li>Task list to README</li>
+                            </ul></li>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Templates to work with css grid instead of bootstrap (that made the code much for readable)</li>
+                                <li>Css to work with all the new classes</li>
+                                <li>Js code to work with the restructured website</li>
+                                <li>Performance optimizations for the entire codebase</li>
+                                <li>Made the import button reload the page after successfully loading the data</li>
+                             </ul></li>
+                            <li><b>Fixed</b>
+                            <ul>
+                                <li>A bug where not the correct number of requirement units was shown for units which rely on pets of
+                    other units to determine their requirement</li>
+                                <li>A bug that shrank the pet area when only very few pets remained for tracking (almost all pets 5 star)</li>
+                                <li>A bug with the navbar on the Metas page</li>
+                                <li>A bug where the "Endless Farming" link in the navbar did not redirect to the index page</li>
+                            </ul></li>
+                            <li><b>Removed</b>
+                            <ul>
+                                <li>Poll from main page</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row version-underline">
+                    <div class="col-1"><b><i>1.4.2</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>2020-02-20</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>Future features poll</li>
+                                <li>Description for the website</li>
+                            </ul></li>
+                            <li><b>Removed</b>
+                            <ul>
+                                <li>Important notice on home page</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row version-underline">
+                    <div class="col-1"><b><i>1.4.1</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>2020-02-16</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Meta progression</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+               <div class="row version-underline">
+                    <div class="col-1"><b><i>1.4</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>2020-02-15</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>GNU Affero General Public License 3.0</li>
+                                <li>Changelog</li>
+                                <li>Code of Conduct</li>
+                                <li>Readme</li>
+                                <li>Development Dependencies</li>
+                                <li>Deployment script</li>
+                                <li>Config file for formatters</li>
+                                <li>Various development tools</li>
+                            </ul></li>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Formatted all Python code with black</li>
+                                <li>Removed build/ from .gitignore</li>
+                                <li>Email contact on main page</li>
+                                <li>Trimmed environment.yml</li>
+                             </ul></li>
+                            <li><b>Fixed</b>
+                            <ul>
+                                <li>Hard Spirit Highland pets and priority</li>
+                            </ul></li>
+                            <li><b>Removed</b>
+                            <ul>
+                                <li>File to only freeze the flask application</li>
+                                <li>Unnecessary _config.yml</li>
+                                <li>Unnecessary main.py</li>
+                                <li>Old reddit link (will add new one next patch)</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
 
     
 
-<div class="unit-container">
+<div class="unit-container hidden">
     
     
     
@@ -272,20 +403,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Weaken Crystal (Human)" data-content="Upon reviving as a Human, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Weaken Crystal (Human)" data-content="Upon reviving as a Human, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Might of Fire" data-content="Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. (However, [Might of Fire] is only applied in stage battles.)" data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Might of Fire" data-content="Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. (However, [Might of Fire] is only applied in stage battles.)" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4666666" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -427,20 +560,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Weaken Crystal (Elf)" data-content="Upon reviving as an Elf, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Weaken Crystal (Elf)" data-content="Upon reviving as an Elf, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Additional Attack (High Elf Archer)" data-content="With the command of the Mystic Archer, the chance of the [High Elf Archer] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 3% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 30%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Additional Attack (High Elf Archer)" data-content="With the command of the Mystic Archer, the chance of the [High Elf Archer] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 3% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 30%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.333333" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -582,20 +717,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Weaken Crystal (Undead)" data-content="Upon reviving as an Undead, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Weaken Crystal (Undead)" data-content="Upon reviving as an Undead, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Additional Attack (Skeleton Warrior)" data-content="With the command of the Skeleton General, the chance of the [Skeleton Warrior] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 2% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 20%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Additional Attack (Skeleton Warrior)" data-content="With the command of the Skeleton General, the chance of the [Skeleton Warrior] making an additional cast will increase. Increases the efficiency by 1% per 5-star unit and 2% per 6-star unit. Applies even when the unit is in time shop and effects can be increased up to 20%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -737,20 +874,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Weaken Crystal (Orc)" data-content="Upon reviving as an Orc, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Weaken Crystal (Orc)" data-content="Upon reviving as an Orc, the enemy&#39;s crystal HP on the stage battle is partly reduced. Reduced by 1% for every 5-star unit and 2% for every 6 star unit. Applied even when in Time Shop, and the unit&#39;s maximum crystal HP cannot be reduced by more than 20%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Pact of the Grand Chief" data-content="Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. Pact of the Grand Chief only applies to Stage Combat (main game mode)" data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Pact of the Grand Chief" data-content="Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. Pact of the Grand Chief only applies to Stage Combat (main game mode)" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4666666" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -888,12 +1027,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness (Human)" data-content="Increases Human Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Fire Ranger cannot exceed 1,000." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness (Human)" data-content="Increases Human Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Fire Ranger cannot exceed 1,000." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12.5" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12.5
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -1047,20 +1187,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness (Elf)" data-content="Increases Elf Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Forest Knight cannot exceed 1,000." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness (Elf)" data-content="Increases Elf Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Forest Knight cannot exceed 1,000." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12.5" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12.5
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Ancient Blessing" data-content="Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 2,000." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Ancient Blessing" data-content="Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 2,000." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -1198,12 +1340,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness (Undead)" data-content="Increases Undead Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Devil Mage cannot exceed 1,000." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness (Undead)" data-content="Increases Undead Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Devil Mage cannot exceed 1,000." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12.5" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12.5
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -1357,20 +1500,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness (Orc)" data-content="Increases Orc Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Storm Warrior cannot exceed 1,000." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness (Orc)" data-content="Increases Orc Tribe Friendliness. 40 for every 5-star and 80 for every 6-star. Effects are applied even when the unit is in Time Shop. The Tribe Friendliness increased by the Storm Warrior cannot exceed 1,000." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12.5" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12.5
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Enhance Active Skill" data-content="Enhance Active Skill: Efficiency of Active skills(Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword) are improved by 20/40 stages. (Effects can stack but cannot be applied when in time shop)" data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Enhance Active Skill" data-content="Enhance Active Skill: Efficiency of Active skills(Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword) are improved by 20/40 stages. (Effects can stack but cannot be applied when in time shop)" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -1506,12 +1651,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Senior Instructor (Human)" data-content=" Increases the production speed of Human guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Senior Instructor (Human)" data-content=" Increases the production speed of Human guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4666666" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -1661,20 +1807,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Senior Instructor (Elf)" data-content=" Increases the production speed of Elf guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Senior Instructor (Elf)" data-content=" Increases the production speed of Elf guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4666666" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="World Tree Blessing" data-content="Drawing from the World Tree Energy, increases the number of stages skipped by Elf Secret and Legend of Ancient Forest by 1. World Tree Energy increases by 15 for every 5-star, 30 for every 6-star unit. (Applies in Time Shop, High Fairys World Tree Energy cannot exceed 900)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="World Tree Blessing" data-content="Drawing from the World Tree Energy, increases the number of stages skipped by Elf Secret and Legend of Ancient Forest by 1. World Tree Energy increases by 15 for every 5-star, 30 for every 6-star unit. (Applies in Time Shop, High Fairys World Tree Energy cannot exceed 900)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/30
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -1816,20 +1964,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Senior Instructor (Undead)" data-content=" Increases the production speed of Undead guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Senior Instructor (Undead)" data-content=" Increases the production speed of Undead guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4666666" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Dark Lord Blessing" data-content="Every 10th stage, applies a 5% chance to increase game speed by 5x for 2 minutes. (if [Blessings of God] is active, game speed will increase by 6x. Does not apply in Time Shop)" data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Dark Lord Blessing" data-content="Every 10th stage, applies a 5% chance to increase game speed by 5x for 2 minutes. (if [Blessings of God] is active, game speed will increase by 6x. Does not apply in Time Shop)" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="2" data-multiplier="0" data-linked-units="" data-linked-multiplier="">0/2
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -1971,20 +2121,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Senior Instructor (Orc)" data-content=" Increases the production speed of Orc guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Senior Instructor (Orc)" data-content=" Increases the production speed of Orc guild unit by 7% per 5-star unit, 15% per 6-star unit. Applies in Time Shop, but can not exceed 150%." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4666666" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Pact of the Grand Chief" data-content="Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. Pact of the Grand Chief only applies to Stage Combat (main game mode)" data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Pact of the Grand Chief" data-content="Increases stats of all soldiers (Attack / Defense / HP) by 7 levels for ever 5-star unit, 15 for every 6-star unit. Applies in Time Shop, but cannot exceed 150 levels. Pact of the Grand Chief only applies to Stage Combat (main game mode)" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4666666" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -2136,20 +2288,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="[14, 17]" data-multiplier="0.333333" data-linked-units="[&#39;Champion&#39;, &#39;Undertaker&#39;, &#39;Barbarian&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/[14, 17]
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Battle Cry (Human)" data-content="Increases the attack, defense and HP of human units in Guild Invasion even if Sindbad is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Battle Cry (Human)" data-content="Increases the attack, defense and HP of human units in Guild Invasion even if Sindbad is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.4" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -2309,20 +2463,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="[14, 17]" data-multiplier="0.333333" data-linked-units="[&#39;Sindbad&#39;, &#39;Undertaker&#39;, &#39;Barbarian&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/[14, 17]
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Battle Cry (Elf)" data-content="Increases the attack, defense and HP of elf units in Guild Invasion even if Champion is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Battle Cry (Elf)" data-content="Increases the attack, defense and HP of elf units in Guild Invasion even if Champion is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.4" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -2482,20 +2638,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Undertaker is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Undertaker is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="[14, 17]" data-multiplier="0.333333" data-linked-units="[&#39;Sindbad&#39;, &#39;Champion&#39;, &#39;Barbarian&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/[14, 17]
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Battle Cry (Undead)" data-content="Increases the attack, defense and HP of undead units in Guild Invasion even if Undertaker is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Battle Cry (Undead)" data-content="Increases the attack, defense and HP of undead units in Guild Invasion even if Undertaker is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.4" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -2655,28 +2813,31 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Barbarian is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate 3" data-content="Decreases cooldown of Guild Invasion skills even if Barbarian is in the Time Shop (5-star 1%, 6-star 3%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="[14, 17]" data-multiplier="0.333333" data-linked-units="[&#39;Sindbad&#39;, &#39;Undertaker&#39;, &#39;Champion&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/[14, 17]
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Battle Cry (Orc)" data-content="Increases the attack, defense and HP of elf units in Guild Invasion even if Barbarian is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Battle Cry (Orc)" data-content="Increases the attack, defense and HP of elf units in Guild Invasion even if Barbarian is in the Time Shop (5-star 1%, 6-star 2.5%, Max 30%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.4" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Cold Resistance" data-content="Increases cold resistance even if Barbarian is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Cold Resistance" data-content="Increases cold resistance even if Barbarian is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -2822,20 +2983,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Spirit Awakening 2" data-content="Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Spirit Awakening 2" data-content="Maximum level-up increases for all units even if Paladin is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" data-multiplier="0.5" data-linked-units="[&#39;Skeleton Master&#39;]" data-linked-multiplier="[1.0]">0/5
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Offline Limit Break" data-content="Increase the maximum stage of offline march even if Paladin is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Offline Limit Break" data-content="Increase the maximum stage of offline march even if Paladin is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -2971,12 +3134,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Elf&#39;s Secret Skill of Space-Time" data-content="For every 100 stages, there is a chance to skip 20 stages. (5-star 3%, 6-star 5%, only applied when they are in the team)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Elf&#39;s Secret Skill of Space-Time" data-content="For every 100 stages, there is a chance to skip 20 stages. (5-star 3%, 6-star 5%, only applied when they are in the team)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.6" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -3120,20 +3284,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Spirit Awakening 2" data-content="Maximum level-up increases for all units even if Skeleton Master is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Spirit Awakening 2" data-content="Maximum level-up increases for all units even if Skeleton Master is in the Time Shop (5-star 5 levels, 6 star 10 levels, Max 50 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" data-multiplier="0.5" data-linked-units="[&#39;Paladin&#39;]" data-linked-multiplier="[1.0]">0/5
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Offline Limit Break" data-content="Increase the maximum stage of offline march even if Skeleton Master is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Offline Limit Break" data-content="Increase the maximum stage of offline march even if Skeleton Master is in the Time Shop (5-star 0.2%, 6-star 0.4%, Max 4%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -3275,20 +3441,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Increase Auto-skill Efficiency" data-content="There is a chance to reduce the cooldown of skills when using auto-skill. Applies even if Battle Hornist is in the Time Shop (5-star 1%, 6-star 2%, Max 20%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Increase Auto-skill Efficiency" data-content="There is a chance to reduce the cooldown of skills when using auto-skill. Applies even if Battle Hornist is in the Time Shop (5-star 1%, 6-star 2%, Max 20%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Mental Stimulation" data-content="When active skills are used, there is a certain chance that the cooldown is reset (5-star 0.25%, 6-star 0.5%, Max 5%, Only applied in scenarios)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Mental Stimulation" data-content="When active skills are used, there is a certain chance that the cooldown is reset (5-star 0.25%, 6-star 0.5%, Max 5%, Only applied in scenarios)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -3426,12 +3594,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Surprise Attack" data-content="Each Crimson Hawk Rider on the team increases chance of flying fast towards enemy crystal (5-star 3%, 6-star 5%, Max 30%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Surprise Attack" data-content="Each Crimson Hawk Rider on the team increases chance of flying fast towards enemy crystal (5-star 3%, 6-star 5%, Max 30%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="6" data-multiplier="0.6" data-linked-units="" data-linked-multiplier="">0/6
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -3567,12 +3736,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Airship VIP" data-content="Airship fuel purchase costs are reduced even if Astral Captain is in the Time Shop (5-star 1%, 6-star 2%, Max 20%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Airship VIP" data-content="Airship fuel purchase costs are reduced even if Astral Captain is in the Time Shop (5-star 1%, 6-star 2%, Max 20%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -3710,12 +3880,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Revival Team for Spirit Rest Runs" data-content="When included in team, receive 30% additional medals during revival." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Revival Team for Spirit Rest Runs" data-content="When included in team, receive 30% additional medals during revival." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -3849,12 +4020,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Enhance active skill" data-content="Increases efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword (not applied from time shop) (5-star 20 stages, 6-star 40 stages)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Enhance active skill" data-content="Increases efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword (not applied from time shop) (5-star 20 stages, 6-star 40 stages)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -3986,12 +4158,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Human Token" data-content="Increases the Human tribe friendliness that is gained from Human unit seals even if Musketress is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Human Token" data-content="Increases the Human tribe friendliness that is gained from Human unit seals even if Musketress is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -4129,12 +4302,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Elf Token" data-content="Increases the Elf tribe friendliness that is gained from Elf unit seals even if Elf Sage is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Elf Token" data-content="Increases the Elf tribe friendliness that is gained from Elf unit seals even if Elf Sage is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -4282,20 +4456,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Undead Token" data-content="Increases the Undead tribe friendliness that is gained from Undead unit seals even if Crow Knight is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Undead Token" data-content="Increases the Undead tribe friendliness that is gained from Undead unit seals even if Crow Knight is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Darkness Resistance" data-content="Increases darkness resistance even if Crow Knight is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Darkness Resistance" data-content="Increases darkness resistance even if Crow Knight is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -4427,12 +4603,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Orc Token" data-content="Increases the Orc tribe friendliness that is gained from Orc unit seals even if Rangda is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Orc Token" data-content="Increases the Orc tribe friendliness that is gained from Orc unit seals even if Rangda is in the Time Shop (5-star 5%, 6-star 10%, Max 100%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -4574,20 +4751,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Human even if Winged Knight is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Human even if Winged Knight is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Wings of Zephyrus" data-content="Increases the effieciency of boosting game speed when Winged Knight is included in your team (5-star 0.05, 6-star 0.1). For example, if you have four 5-star Winged Knights and three 6-star Winged Knights in your current team, then the game speed(x2,x3,x5) will be x2.5, x3.5 and x5.5, respectively." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Wings of Zephyrus" data-content="Increases the effieciency of boosting game speed when Winged Knight is included in your team (5-star 0.05, 6-star 0.1). For example, if you have four 5-star Winged Knights and three 6-star Winged Knights in your current team, then the game speed(x2,x3,x5) will be x2.5, x3.5 and x5.5, respectively." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -4721,12 +4900,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Elf even if Windwalker is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Elf even if Windwalker is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -4866,12 +5046,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Undead even if Abyss Mage is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Undead even if Abyss Mage is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -5007,12 +5188,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Orc even if Siren is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Friendliness" data-content="Increases the Tribe Friendliness for Orc even if Siren is in the Time Shop (5-star 10, 6 star 20, Max 400)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -5156,28 +5338,31 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Dimensional Binding (Human and Orc)" data-content="Increase the attack power, HP, and defense power of Human and Orc units in the Outland battle even if Cleric is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Dimensional Binding (Human and Orc)" data-content="Increase the attack power, HP, and defense power of Human and Orc units in the Outland battle even if Cleric is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/15
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Tribe Fortification (Human and Orc)" data-content="Increases the Human unit&#39;s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Orc unit&#39;s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Fortification (Human and Orc)" data-content="Increases the Human unit&#39;s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Orc unit&#39;s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.5" data-linked-units="[&#39;Frost Demon&#39;, &#39;Elementalist&#39;]" data-linked-multiplier="[0.0, 0.4]">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Innervate 2" data-content="Reduces Outland Battle skill cool time even if Cleric is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate 2" data-content="Reduces Outland Battle skill cool time even if Cleric is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14" data-multiplier="0.333333" data-linked-units="" data-linked-multiplier="">0/14
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -5317,28 +5502,31 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Dimensional Binding 2 (Elf and Human)" data-content="Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle even if Elementalist is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Dimensional Binding 2 (Elf and Human)" data-content="Increase the attack speed, movement speed, and critical damage of Elf and Human units in the Outland battle even if Elementalist is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/15
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Tribe Fortification (Elf and Human)" data-content="Increases the Elf unit&#39;s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Human unit&#39;s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Fortification (Elf and Human)" data-content="Increases the Elf unit&#39;s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Human unit&#39;s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.4666666" data-linked-units="[&#39;Cleric&#39;, &#39;Dark Elf&#39;]" data-linked-multiplier="[0.0, 0.666666]">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Nature Resistance" data-content="Increases nature resistance even if Elementalist is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Nature Resistance" data-content="Increases nature resistance even if Elementalist is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -5476,20 +5664,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Dimensional Binding 1 (Undead and Elf)" data-content="Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle even if Dark Elf is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Dimensional Binding 1 (Undead and Elf)" data-content="Increase the attack power, HP, and defense power of Undead and Elf units in the Outland battle even if Dark Elf is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/15
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Tribe Fortification (Undead and Elf)" data-content="Increases the Undead unit&#39;s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Elf unit&#39;s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Fortification (Undead and Elf)" data-content="Increases the Undead unit&#39;s ability (attack power/defense power/HP) (5-star 10 levels, 6-star 20 levels), and Elf unit&#39;s ability (5-star 5 levels, 6-star 10 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.5" data-linked-units="[&#39;Elementalist&#39;, &#39;Frost Demon&#39;]" data-linked-multiplier="[0.0, 0.4]">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -5637,28 +5827,31 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Dimensional Binding 2 (Orc and Undead)" data-content="Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle even if Elementalist is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Dimensional Binding 2 (Orc and Undead)" data-content="Increase the attack speed, movement speed, and critical damage of Orc and Undead units in the Outland battle even if Elementalist is in the Time Shop (5-star 5%, 6-star 10%, Max 150%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="15" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/15
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Tribe Fortification (Orc and Undead)" data-content="Increases the Orc unit&#39;s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Undead unit&#39;s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Tribe Fortification (Orc and Undead)" data-content="Increases the Orc unit&#39;s ability (attack power/defense power/HP) (5-star 7 levels, 6-star 15 levels), and Undead unit&#39;s ability (5-star 4 levels, 6-star 8 levels) when included in the team (Max 150 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.4666666" data-linked-units="[&#39;Dark Elf&#39;, &#39;Cleric&#39;]" data-linked-multiplier="[0.0, 0.666666]">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Enhance Active Skill" data-content="Increases efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword (not applied from time shop) (5-star 20 stages, 6-star 40 stages)" data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Enhance Active Skill" data-content="Increases efficiency of The Explosion Shaking Heaven and Earth, Tower of Babel and Skyward Sword (not applied from time shop) (5-star 20 stages, 6-star 40 stages)" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -5788,12 +5981,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Fire Resistance" data-content="Increases fire resistance even if Flame Spirit is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Fire Resistance" data-content="Increases fire resistance even if Flame Spirit is in the Time Shop (5-star 50, 6-star 100, Max 2000)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.5" data-linked-units="" data-linked-multiplier="">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -5929,20 +6123,22 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Elf&#39;s Secret Skill 2" data-content="Increases the chance of elf&#39;s secret skill (not applied from Time Shop)(5-star 2%, 6-star 5%, Max 30%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Elf&#39;s Secret Skill 2" data-content="Increases the chance of elf&#39;s secret skill (not applied from Time Shop)(5-star 2%, 6-star 5%, Max 30%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="6" data-multiplier="0.4" data-linked-units="" data-linked-multiplier="">0/6
                 </div>
             </div>
-            </span>
+        </span>
             
             
-          <span data-toggle="popover" title="Legend of Ancient Forest" data-content="When elf&#39;s secret skill is cast, this has a chance to pass 2 stages at a time (not applied from Time Shop)(5-star 2%, 6-star 5%, Max 50%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Legend of Ancient Forest" data-content="When elf&#39;s secret skill is cast, this has a chance to pass 2 stages at a time (not applied from Time Shop)(5-star 2%, 6-star 5%, Max 50%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.4" data-linked-units="" data-linked-multiplier="">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -6072,12 +6268,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Limit Break of Spirit Rest" data-content="Increases Spirit Rest efficiency even if Dark Spirit is in the Time Shop (5-star 0.3%, 6-star 0.7%, Max 10%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Limit Break of Spirit Rest" data-content="Increases Spirit Rest efficiency even if Dark Spirit is in the Time Shop (5-star 0.3%, 6-star 0.7%, Max 10%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14.28" data-multiplier="0.42857" data-linked-units="[&#39;Blade Master&#39;]" data-linked-multiplier="[1.0]">0/14.28
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -6219,12 +6416,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Limit Break of Spirit Rest" data-content="Increases Spirit Rest efficiency even if Blade Master is in the Time Shop (5-star 0.3%, 6-star 0.7%, Max 10%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Limit Break of Spirit Rest" data-content="Increases Spirit Rest efficiency even if Blade Master is in the Time Shop (5-star 0.3%, 6-star 0.7%, Max 10%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14.28" data-multiplier="0.42857" data-linked-units="[&#39;Dark Spirit&#39;]" data-linked-multiplier="[1.0]">0/14.28
                 </div>
             </div>
-            </span>
+        </span>
             
             
         
@@ -6362,12 +6560,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Valkyrie is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Valkyrie is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14" data-multiplier="0.333333" data-linked-units="[&#39;Sword Dancer&#39;, &#39;Incubus&#39;, &#39;Ice Spirit&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/14
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -6509,12 +6708,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Sword Dancer is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Sword Dancer is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14" data-multiplier="0.333333" data-linked-units="[&#39;Valkyrie&#39;, &#39;Incubus&#39;, &#39;Ice Spirit&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/14
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -6650,12 +6850,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Incubus is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Incubus is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14" data-multiplier="0.333333" data-linked-units="[&#39;Sword Dancer&#39;, &#39;Valkyrie&#39;, &#39;Ice Spirit&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/14
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -6795,12 +6996,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Ice Spirit is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Innervate" data-content="Reduces raid skill cool-time even if Ice Spirit is in the Time Shop (5-star 1%, 6-star 3%, Max 40%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14" data-multiplier="0.333333" data-linked-units="[&#39;Sword Dancer&#39;, &#39;Incubus&#39;, &#39;Valkyrie&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/14
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -6940,12 +7142,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Steam Punk is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Steam Punk is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.4" data-linked-units="[&#39;Sylphid&#39;, &#39;Medusa&#39;, &#39;Naga&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -7085,12 +7288,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Sylphid is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Sylphid is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.4" data-linked-units="[&#39;Steam Punk&#39;, &#39;Medusa&#39;, &#39;Naga&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -7224,12 +7428,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Medusa is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Medusa is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.4" data-linked-units="[&#39;Sylphid&#39;, &#39;Steam Punk&#39;, &#39;Naga&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -7371,12 +7576,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Naga is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Inner Passion" data-content="Increases all abilities (attack/defense/HP) of units even if Naga is in the Time Shop. (Only applies to stages) (5-star 2 levels, 6-star 5 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" data-multiplier="0.4" data-linked-units="[&#39;Sylphid&#39;, &#39;Medusa&#39;, &#39;Steam Punk&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/20
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -7512,12 +7718,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Pilot is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Pilot is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="[&#39;Alchemist&#39;, &#39;Lich&#39;, &#39;Wyvern Rider&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -7649,12 +7856,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Alchemist is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Alchemist is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="[&#39;Pilot&#39;, &#39;Lich&#39;, &#39;Wyvern Rider&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -7792,12 +8000,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Cora is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Cora is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="[&#39;Alchemist&#39;, &#39;Pilot&#39;, &#39;Wyvern Rider&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -7939,12 +8148,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Wyvern Rider is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Spirit Awakening" data-content="Maximum level-up increases for all units even if Wyvern Rider is in the Time Shop. (5-star 5 levels, 6-star 10 levels, Max 100 levels)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="0.5" data-linked-units="[&#39;Alchemist&#39;, &#39;Lich&#39;, &#39;Pilot&#39;]" data-linked-multiplier="[1.0, 1.0, 1.0]">0/10
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -8070,12 +8280,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Instructor (Human)" data-content="Increases the production speed of Human guild unit." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Instructor (Human)" data-content="Increases the production speed of Human guild unit." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/5
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -8195,12 +8406,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Instructor (Elf)" data-content="Increases the production speed of Elf guild unit." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Instructor (Elf)" data-content="Increases the production speed of Elf guild unit." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/5
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -8320,12 +8532,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Instructor (Undead)" data-content="Increases the production speed of Undead guild unit." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Instructor (Undead)" data-content="Increases the production speed of Undead guild unit." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/5
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -8445,12 +8658,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Instructor (Orc)" data-content="Increases the production speed of Orc guild unit." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Instructor (Orc)" data-content="Increases the production speed of Orc guild unit." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/5
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -9074,12 +9288,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Human&#39;s Secret Skill" data-content="When operating Human&#39;s Secret Skill, the amount of gold given increases by 10 times by 15% possibility." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Human&#39;s Secret Skill" data-content="When operating Human&#39;s Secret Skill, the amount of gold given increases by 10 times by 15% possibility." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1" data-multiplier="0.333333" data-linked-units="" data-linked-multiplier="">0/1
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -9205,12 +9420,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="None" data-content="This unit has no particular buffs but is good to have as a one of for Tower of Trials and Spirit Highlands." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="None" data-content="This unit has no particular buffs but is good to have as a one of for Tower of Trials and Spirit Highlands." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/1
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -9336,12 +9552,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="None" data-content="This unit has no particular buffs but is good to have as a one of for Tower of Trials and Spirit Highlands." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="None" data-content="This unit has no particular buffs but is good to have as a one of for Tower of Trials and Spirit Highlands." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/1
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -9483,12 +9700,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Revival Team for Spirit Rest Runs" data-content="Increase medals earned at the time of revival (not applied from Time Shop)(5-star 5%, 6-star 10%)." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Revival Team for Spirit Rest Runs" data-content="Increase medals earned at the time of revival (not applied from Time Shop)(5-star 5%, 6-star 10%)." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -9608,12 +9826,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="God&#39;s Blessing" data-content="There is a chance for a 5 times speedup for 2 minutes on every 10th floor (not applied from Time Shop)(5-star 2%, 6-star 5%)" data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="God&#39;s Blessing" data-content="There is a chance for a 5 times speedup for 2 minutes on every 10th floor (not applied from Time Shop)(5-star 2%, 6-star 5%)" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" data-multiplier="0.0" data-linked-units="" data-linked-multiplier="">0/5
                 </div>
             </div>
-            </span>
+        </span>
             
             
             
@@ -9850,12 +10069,13 @@ Endless Farming
 </div>
     <div class="unit-card-buffs">
         
-          <span data-toggle="popover" title="Elevates the first Stage after the Revival" data-content="When Reviving, start at a percentage of the previously reached level. (not applied from Time Shop)(5-star 2%, 6-star 5%) For Example, if you previously reached staged 100 and you had 2 5-star Dark Archers and 3 6-star Dark Archers included in your team you would revive at stage 19." data-trigger="hover" data-placement="top">
+          
+        <span data-toggle="popover" title="Elevates the first Stage after the Revival" data-content="When Reviving, start at a percentage of the previously reached level. (not applied from Time Shop)(5-star 2%, 6-star 5%) For Example, if you previously reached staged 100 and you had 2 5-star Dark Archers and 3 6-star Dark Archers included in your team you would revive at stage 19." data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12" data-multiplier="0.4" data-linked-units="" data-linked-multiplier="">0/12
                 </div>
             </div>
-            </span>
+        </span>
             
             
             

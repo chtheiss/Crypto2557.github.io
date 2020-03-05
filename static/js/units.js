@@ -138,24 +138,6 @@ function getUnits() {
     });
 }
 
-function getLinkedActivePets(buff, pets) {
-    var linked_active_pets = [];
-    if (buff.linked_pets != undefined) {
-        linked_active_pets = pets.filter(pet => pet.fragments >= 330 &
-            buff.linked_pets.includes(pet.name.replace("_", " ")))
-    }
-    return linked_active_pets;
-}
-
-function updateBuffRequirement($unit_card, buff, id, pets) {
-    var linked_active_pets = getLinkedActivePets(buff, pets);
-    if (Array.isArray(buff.requirement)) {
-        buff.requirement = buff.requirement[linked_active_pets.length];
-        var $progbar = $unit_card.find('[title="' + buff.name + '"]').find(".progress-bar");
-        update_progress_bar_values($progbar, buff);
-    }
-}
-
 function showAdditionalBuffProgressBars($unit_card) {
     var $prog_bar_add_buff = $unit_card.find(".additional_buff");
     $prog_bar_add_buff.removeClass("progress-bar-hidden");
@@ -172,6 +154,13 @@ function showAdditionalBuffProgressBars($unit_card) {
 
         $(".unit-input[type='number']").inputSpinner();
 
+        $('[data-toggle="popover"]').each(function() {
+            prog_bar = $(this).children().first();
+            if (!$(prog_bar).attr('class').split(/\s+/).includes("progress-bar-hidden")) {
+                $(this).popover();
+            }
+        });
+
         $(".modal").on('shown.bs.modal', function(e) {
             var tab = e.relatedTarget.hash;
             $('.nav-tabs a[href="' + tab + '"]').tab('show');
@@ -185,8 +174,6 @@ function showAdditionalBuffProgressBars($unit_card) {
         var pets_info = await getPets()
         var units_info = await getUnits()
 
-        console.log(pets_info)
-
         for (const unit_card of $('.unit-card')) {
             $unit_card = $(unit_card);
             // updates all progress bars
@@ -196,45 +183,46 @@ function showAdditionalBuffProgressBars($unit_card) {
                 }
             }
 
-            unit_name = unit_card.id.replaceAll("_", " ")
-            unit = units_info[unit_name]
+            var unit_name = unit_card.id.replaceAll("_", " ")
+            var unit = units_info[unit_name]
 
             // Change Unit card if own pet is 5*
-            $pet_image = $unit_card.find('.pet-image')
-            pet_name = $pet_image.data("pet")
-            five_star_pet = pets.filter(pet => pet.name == pet_name & pet.fragments >= 330)
+            var $pet_image = $unit_card.find('.pet-image')
+            var pet_name = $pet_image.data("pet")
+            var five_star_pet = pets.filter(pet => pet.name == pet_name & pet.fragments >= 330)
             if (five_star_pet.length) {
                 // Highlight pet
                 $pet_image.addClass("five-star-pet");
                 // Add additional buffs
                 showAdditionalBuffProgressBars($unit_card)
-                // Change buff descriptions
-                for (buff of unit.buffs) {
-                    var $buff_span = $unit_card.find('[data-title="' + buff.name + '"]');
-                    $buff_span.attr("data-content", buff["description"]);
-                }
             }
-            // Update Buff Progressbar based on the active linked pets
-            for (let buff of unit.buffs) {
-                updateBuffRequirement($unit_card, buff, unit_name, pets);
-                if (buff.linked_units != undefined) {
-                    pet_buff = pets_info[units_info[unit_name].pet].buffs.filter(pet_buff => pet_buff.name == buff.name)
-                    linked_units_with_active_pet = buff.linked_units.filter(
-                        linked_unit => pets.filter(
-                            pet => pet.name.replaceAll("_", " ") == units_info[linked_unit].pet && pet.fragments >= 330
-                        ).length > 0
-                    )
-                    var req = five_star_pet.length + linked_units_with_active_pet.length
-                    if (req != 0) {
-                        if (five_star_pet && pet_buff.length > 0) {
-                            buff = pet_buff[0]
-                        }
-                        if (Array.isArray(buff.requirement)) {
-                            buff.requirement = pet_buff[0].requirement[req - 1]
-                            var $progbar = $unit_card.find('[title="' + buff.name + '"]').find(".progress-bar");
-                            update_progress_bar_values($progbar, buff);
-                        }
+
+            for (var buff of unit.buffs) {
+                var pet_buff = pets_info[unit.pet].buffs.filter(pet_buff => pet_buff.name == buff.name)[0]
+                // Change the description of buffs based on pet
+                if (five_star_pet.length & pet_buff != undefined) {
+                    var $buff_span = $unit_card.find('[data-original-title="' + buff.name + '"]');
+                    $buff_span.attr("data-content", pet_buff.description);
+                }
+                
+                if (buff.linked_units != undefined & pet_buff != undefined) {
+                    var linked_active_pets = pet_buff.linked_pets.filter(linked_pet_name =>
+                            pets.filter(pet => pet.name == linked_pet_name.replaceAll(" ", "_") & pet.fragments >= 330).length > 0
+                        )                
+                    var req = five_star_pet.length + linked_active_pets.length
+                    if (req > 0 & Array.isArray(pet_buff.requirement)) {
+                        buff.requirement = pet_buff.requirement[req - 1]
+                        var $progbar = $unit_card.find('[data-original-title="' + buff.name + '"]').find(".progress-bar");
+                        update_progress_bar_values($progbar, buff);
+                    } else if(Array.isArray(buff.requirement)){
+                        buff.requirement = buff.requirement[0]
+                        var $progbar = $unit_card.find('[data-original-title="' + buff.name + '"]').find(".progress-bar");
+                        update_progress_bar_values($progbar, buff);
                     }
+                } else if(five_star_pet.length & pet_buff != undefined) {
+                    buff.requirement = pet_buff.requirement
+                    var $progbar = $unit_card.find('[data-original-title="' + buff.name + '"]').find(".progress-bar");
+                    update_progress_bar_values($progbar, buff);
                 }
             }
         }
@@ -254,16 +242,12 @@ function showAdditionalBuffProgressBars($unit_card) {
             store.put(item);
         });
 
+        $(".unit-container").removeClass("hidden");
+        
         for (const unit_input of $(".unit-input[type='number']")) {
             load_input_value($(unit_input));
         }
 
         $('[data-toggle="tooltip"]').tooltip();
-        $('[data-toggle="popover"]').each(function() {
-            prog_bar = $(this).children().first();
-            if (!$(prog_bar).attr('class').split(/\s+/).includes("progress-bar-hidden")) {
-                $(this).popover();
-            }
-        });
     });
 }));

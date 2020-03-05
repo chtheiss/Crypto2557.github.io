@@ -633,6 +633,7 @@
                 "multiplier": 0.333333,
                 "requirement": [
                     14,
+                    17,
                     17
                 ],
                 "amount": 40,
@@ -647,6 +648,7 @@
                     1.0
                 ],
                 "linked_pets": [
+                    "Cask",
                     "Cask"
                 ]
             },
@@ -707,7 +709,8 @@
                 "name": "Innervate 3",
                 "description": "Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
                 "multiplier": 0.333333,
-                "requirement": [
+                "requirement": [14,
+                    17,
                     17
                 ],
                 "amount": 40,
@@ -722,6 +725,7 @@
                     1.0
                 ],
                 "linked_pets": [
+                    "Cask",
                     "Cask"
                 ]
             },
@@ -782,8 +786,8 @@
                 "name": "Innervate 3",
                 "description": "Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
                 "multiplier": 0.333333,
-                "requirement": [
-                    17
+                "requirement": [14,
+                    17, 17
                 ],
                 "amount": 40,
                 "linked_units": [
@@ -797,6 +801,7 @@
                     1.0
                 ],
                 "linked_pets": [
+                    "Cask",
                     "Cask"
                 ]
             },
@@ -859,7 +864,7 @@
                 "multiplier": 0.333333,
                 "requirement": [
                     14,
-                    17
+                    17, 17
                 ],
                 "amount": 40,
                 "linked_units": [
@@ -873,6 +878,7 @@
                     1.0
                 ],
                 "linked_pets": [
+                    "Cask",
                     "Cask"
                 ]
             },
@@ -1076,7 +1082,7 @@
         "buffs": [
             {
                 "name": "Increase Auto-skill Efficiency",
-                "description": " Increases maximum value of automatic skill cooldown reduction to 30%.",
+                "description": "Increases maximum value of automatic skill cooldown reduction to 30%.",
                 "multiplier": 0.5,
                 "requirement": 15,
                 "amount": 30

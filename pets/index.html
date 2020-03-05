@@ -52,7 +52,7 @@ Endless Farming
   <body>
     
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Endless Farming</a>
+    <a class="navbar-brand" href="/">Endless Farming</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -80,6 +80,7 @@ Endless Farming
         </ul>
         <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none" />
+        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.3</button>
         <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
         <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
@@ -130,6 +131,136 @@ Endless Farming
                 <div class="stat-modal-shh-gems"> <img id="gem-hard-image" src="../static/img/gem.png">
                     <label id="gem-hard-label" for="gem-hard-image">0</label></div>
             </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="version-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLongTitle">Patch Notes</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body version-modal">
+                <div class="row version-underline">
+                    <div class="col-1"><b><i>Future</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>Future</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>New Pets for H1 of 7 star Units</li>
+                                <li>Version display and changelog for website</li>
+                                <li>Visual cue for units similar to in-game look</li>
+                                <li>Task list to README</li>
+                            </ul></li>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Templates to work with css grid instead of bootstrap (that made the code much for readable)</li>
+                                <li>Css to work with all the new classes</li>
+                                <li>Js code to work with the restructured website</li>
+                                <li>Performance optimizations for the entire codebase</li>
+                                <li>Made the import button reload the page after successfully loading the data</li>
+                             </ul></li>
+                            <li><b>Fixed</b>
+                            <ul>
+                                <li>A bug where not the correct number of requirement units was shown for units which rely on pets of
+                    other units to determine their requirement</li>
+                                <li>A bug that shrank the pet area when only very few pets remained for tracking (almost all pets 5 star)</li>
+                                <li>A bug with the navbar on the Metas page</li>
+                                <li>A bug where the "Endless Farming" link in the navbar did not redirect to the index page</li>
+                            </ul></li>
+                            <li><b>Removed</b>
+                            <ul>
+                                <li>Poll from main page</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row version-underline">
+                    <div class="col-1"><b><i>1.4.2</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>2020-02-20</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>Future features poll</li>
+                                <li>Description for the website</li>
+                            </ul></li>
+                            <li><b>Removed</b>
+                            <ul>
+                                <li>Important notice on home page</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row version-underline">
+                    <div class="col-1"><b><i>1.4.1</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>2020-02-16</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Meta progression</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+               <div class="row version-underline">
+                    <div class="col-1"><b><i>1.4</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>2020-02-15</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>GNU Affero General Public License 3.0</li>
+                                <li>Changelog</li>
+                                <li>Code of Conduct</li>
+                                <li>Readme</li>
+                                <li>Development Dependencies</li>
+                                <li>Deployment script</li>
+                                <li>Config file for formatters</li>
+                                <li>Various development tools</li>
+                            </ul></li>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Formatted all Python code with black</li>
+                                <li>Removed build/ from .gitignore</li>
+                                <li>Email contact on main page</li>
+                                <li>Trimmed environment.yml</li>
+                             </ul></li>
+                            <li><b>Fixed</b>
+                            <ul>
+                                <li>Hard Spirit Highland pets and priority</li>
+                            </ul></li>
+                            <li><b>Removed</b>
+                            <ul>
+                                <li>File to only freeze the flask application</li>
+                                <li>Unnecessary _config.yml</li>
+                                <li>Unnecessary main.py</li>
+                                <li>Old reddit link (will add new one next patch)</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
         </div>
     </div>
 </div>

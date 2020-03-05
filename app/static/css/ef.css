@@ -25,6 +25,9 @@ p {
     padding-top: .5rem!important;
 }
 
+.mb-4 {
+    margin-bottom: 1.5rem!important;
+}
 .meta {
     width: min(100%, 1349px);
     align-self: center;
