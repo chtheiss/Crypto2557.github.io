@@ -16,12 +16,13 @@
     {% include '_pet_modal.html' %}
     <div class="unit-card-buffs">
         {% for i in range(max_buff) %}
-        {%if i < unit["buffs"]|length %} {% set buff=unit["buffs"][i] %} <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
+        {%if i < unit["buffs"]|length %} {% set buff=unit["buffs"][i] %} 
+        <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}" data-linked-multiplier="{{buff['linked_multiplier']}}">0/{{buff["requirement"]}}
                 </div>
             </div>
-            </span>
+        </span>
             {% else %}
             <div class='progress progress-bar-hidden'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-linked-units=""></div>

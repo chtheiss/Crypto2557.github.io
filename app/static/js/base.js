@@ -49,7 +49,8 @@ function hide_or_show_pet($pet, data, hide) {
                             importFromJsonString(idb_db, result, function(err) {
                                 if (!err) {
                                     console.log("Imported data successfully");
-                                    window.location.reload();
+                                    location.reload();
+                                    return false;
                                 }
                             });
                         }

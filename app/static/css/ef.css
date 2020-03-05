@@ -12,9 +12,21 @@ p {
     margin: 0px;
 }
 
+.version-underline {
+    border-bottom: 1px solid hsla(0,0%,100%,.8);
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.pt-1 {
+    padding-top: .5rem!important;
+}
+
 .meta {
-    width: auto;
-    height: 100%;
+    width: min(100%, 1349px);
     align-self: center;
     justify-self: center;
 }
