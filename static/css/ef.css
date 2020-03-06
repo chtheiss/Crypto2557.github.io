@@ -1,11 +1,34 @@
 html,
 body {
-    background-color: #111;
+    background-color: #26292C;
     font-family: Arial, Helvetica, sans-serif;
-    color: #ccc;
+    color: #C2D4D5;
     font-size: 10px;
     margin: 0;
     height: 100vh;
+}
+
+.btn-outline-secondary {
+    border-radius: 5px;
+}
+
+.btn-outline-light{
+    border-color: #999999;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.pet-buttons>.btn {
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+input {
+    color: #FFF!important;
+    font-size: 12px!important;
+    background: #999999!important;
 }
 
 p {
@@ -13,7 +36,7 @@ p {
 }
 
 .version-underline {
-    border-bottom: 1px solid hsla(0,0%,100%,.8);
+    border-bottom: 2px solid #999999;
 }
 
 .row {
@@ -81,7 +104,7 @@ p {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 2fr 2fr 5fr;
-    border: 1px solid #dee2e6 !important;
+    border: 2px solid #999999 !important;
     border-radius: 5px;
 }
 
@@ -95,6 +118,7 @@ p {
     align-self: center;
     justify-self: center;
     font-size: 14px;
+    color: #C2D4D5;
 }
 
 .ticket-row-progress {
@@ -168,32 +192,36 @@ p {
 
 .index-purpose {
     grid-area: purpose;
-    border: white;
+    border: 2px solid #999999!important;
     border-width: 2px;
+    border-radius: 5px;
     border-style: solid;
     padding: 1%;
 }
 
 .index-pet-usage {
     grid-area: pet-usage;
-    border: white;
+    border: 2px solid #999999!important;
     border-width: 2px;
+    border-radius: 5px;
     border-style: solid;
     padding: 1%;
 }
 
 .index-unit-usage {
     grid-area: unit-usage;
-    border: white;
+    border: 2px solid #999999!important;
     border-width: 2px;
+    border-radius: 5px;
     border-style: solid;
     padding: 1%;
 }
 
 .index-impressum {
     grid-area: impressum;
-    border: white;
+    border: 2px solid #999999!important;
     border-width: 2px;
+    border-radius: 5px;
     border-style: solid;
     padding: 1%;
 }
@@ -289,7 +317,7 @@ p {
         "stars stars stars"
         "input input input"
         "kl kl kl";
-    border: 1px solid #dee2e6 !important;
+    border: 2px solid #999999!important;
     border-radius: 5px;
     padding: 5% 2% 1% 2%;
 }
@@ -297,7 +325,7 @@ p {
 
 #dragable-row .pet-card:hover {
     background-color: #555;
-    border: 1px solid #111 !important;
+    border: 2px solid #999999!important;
     cursor: pointer;
 }
 
@@ -374,6 +402,47 @@ p {
     }
 }
 
+.ex-unit-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.7fr 0.7fr auto;
+    grid-template-areas:
+        "unit pet"
+        "input ."
+        "buffs buffs";
+    grid-gap: 5px;
+    border: 2px solid #999999!important;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.ex-unit-card-unit {
+    grid-area: unit;
+    justify-self: center;
+    align-self: center;
+}
+
+.ex-unit-card-pet {
+    grid-area: pet;
+    justify-self: center;
+    align-self: center;
+}
+
+.ex-unit-card-input {
+    grid-area: input;
+    justify-self: center;
+    align-self: center;
+}
+
+.ex-unit-card-buffs {
+    grid-area: buffs;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 3px;
+    justify-content: center;
+    align-content: center;
+}
+
 
 .unit-card {
     display: grid;
@@ -384,7 +453,7 @@ p {
         "jr-input sr-input ."
         "buffs buffs buffs";
     grid-gap: 5px;
-    border: 1px solid #dee2e6 !important;
+    border: 2px solid #999999!important;
     border-radius: 5px;
     padding: 2%;
 }
@@ -438,6 +507,11 @@ p {
     grid-gap: 3px;
     justify-content: center;
     align-content: center;
+}
+
+.seven-star-unit {
+    outline: 2px solid #F70294;
+    background: radial-gradient(circle, #333 0%, #333 0%, rgba(247, 2, 148, 0.3));
 }
 
 .six-star-unit {
@@ -595,7 +669,7 @@ p {
 }
 
 .five-star-pet {
-    filter: drop-shadow(rgb(50, 250, 50) 1px 1px 10px);
+    filter: drop-shadow(rgb(28,165,28) 1px 1px 10px);
 }
 
 h3 {
@@ -653,8 +727,8 @@ fieldset {
 }
 
 .zero-star {
-    opacity: 0.6;
-    filter: brightness(60%);
+    opacity: 0.8;
+    filter: brightness(90%);
     border-color: rgb(85, 85, 85);
     background: #292929;
 }
@@ -689,6 +763,10 @@ fieldset {
     text-shadow: 0 1px 0 #000;
 }
 
+.modal-header{
+    border-bottom: 2px solid #999999;
+}
+
 .pet-modal:hover,
 .unit-modal:hover {
     cursor: pointer;
@@ -696,9 +774,9 @@ fieldset {
 
 .modal-content {
     text-align: left;
-    background-color: #111;
+    background-color: #26292C;
     font-size: 14px;
-    border: white;
+    border: 2px solid #999999!important;
     border-width: 1px;
     border-style: solid;
 }
@@ -750,7 +828,10 @@ td:hover {
 
 .navbar {
     min-height: 50px;
+    background-color: #17191A!important;
 }
+
+
 
 .navbar-collapse button {
     min-height: inherit;
@@ -763,9 +844,19 @@ td:hover {
     min-height: inherit;
 }
 
+.navbar-dark .navbar-nav .nav-link{
+    color: #C2D4D5 ;
+}
+
 .nav-link {
     font-size: 14px;
     font-weight: 600;
+}
+
+.navbar-brand{
+    font-weight: bold;
+    font-size: 16px;
+    color: #C2D4D5;
 }
 
 li {
@@ -784,10 +875,11 @@ h2 {
 .navbar-nav>li>.dropdown-menu {
     background-color: #343a40 !important;
     width: 100px height:50px;
+    border-radius: 5px;
 }
 
 .navbar-nav>li>.dropdown-menu>.dropdown-item {
-    color: #ccc !important;
+    color: #C2D4D5 !important;
     font-size: 1.5rem
 }
 

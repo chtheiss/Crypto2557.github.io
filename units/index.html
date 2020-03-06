@@ -80,7 +80,7 @@ Endless Farming
         </ul>
         <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none" />
-        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.3</button>
+        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.4</button>
         <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
         <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
@@ -146,8 +146,28 @@ Endless Farming
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <div class="modal-body version-modal">
+                <div class="row version-underline">
+                    <div class="col-1"><b><i>1.4.4</i></b></div>
+                    <div class="col"></div>
+                    <div class="col-3"><b><i>2020-03-07</i></b></div>
+                </div>
+                <div class="row pt-1 mb-4">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>New H1 of 7 star units</li>
+                                <li>Hidden skills to H1 7 star pets</li>
+                            </ul></li>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Visual revision of the website (color scheme, unification, etc.)</li>
+                                <li>Made dragging pets a bit more responsive for Chrome users</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="row version-underline">
                     <div class="col-1"><b><i>1.4.3</i></b></div>
                     <div class="col"></div>
@@ -271,11 +291,456 @@ Endless Farming
     
 
 <div class="unit-container hidden">
+
     
     
     
     
-       <div id="Flame_Sibyl" class="unit-card">
+    
+    	<div id="Extreme_Fire_Mage" class="ex-unit-card">
+    <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Fire_Mage" data-toggle="modal" data-target="#Extreme_Fire_Mage-modal">
+        <img id="Extreme_Fire_Mage-image" class="unit-image seven-star-unit" src="../static/img/units/238.png" data-toggle="tooltip" data-placement="top" title="Extreme Fire Mage">
+    </a>
+    <div class="modal fade" id="Extreme_Fire_Mage-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-offset-top">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Extreme Fire Mage</h5>
+                
+                <img class="unit-modal-image" src="../static/img/units/238.png">
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+                <h2>Unit Attacks and Abilities</h2>
+                <ul>
+                    
+                    <li>Normal Attack: Casts several fireballs that damage enemies and stun them by certain chance.</li>
+                    
+                    <li>Skill Attack: Casts several Fire Birds that damage enemies and stun them by certain chance.</li>
+                    
+                    <li>Special Ability 1: Increases the game speed by 15%, movement speed of Human units by 12% and attack range by 11%.</li>
+                    
+                    <li>Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.</li>
+                    
+                    <li>Special Ability 3: Unaffected by attacks by terrain above stage 10,000.</li>
+                    
+                    <li>Special Ability 4: Cannot be paralyzed and is immune to freeze and blow.</li>
+                    
+                    <li>Fire Resistance : Increases Fire Resistance by 300. (Also applied in Time Shop and can be applied repeatedly.)</li>
+                    
+                </ul>
+            
+            </div>
+        </div>
+    </div>
+</div>
+    <input id="Extreme_Fire_Mage-number" data-unit="Extreme_Fire_Mage" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Ragna-modal">
+        <img id="Ragna-image" class='pet-image' src="../static/img/pets/327.png" data-pet="Ragna" data-unit="Extreme_Fire_Mage" data-toggle="tooltip" data-placement="top" title="Ragna">
+    </span>
+    
+    
+    <div id="Ragna-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Ragna</h5>
+                <img class="pet-modal-image" src="../static/img/animated_pets/327.png">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase basic game speed (1.2%, 2.4%, 3.6%, 4.8%, 6%)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
+                        
+                        <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="pet-modal-image" src="../static/img/units/238.png">  Extreme Fire Mage ]
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                        
+                        <div class="col-12">
+                            <ul>
+                                
+                                <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                
+                                <li>Increases basic game speed by 9%.</li>
+                                
+                                <li>Increases its movement speed by 12%, and its attack power by 11%.</li>
+                                
+                                <li>Increases the attack range of all units by 10%, and the movement speed of all units by 8%.</li>
+                                
+                                <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                
+                                <li>Fire resistance increases by 500 for every Extreme Fire Mage. Additionally, the maximum fire resistance is increased to 5000 by the Extreme Fire Mage.</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="ex-unit-card-buffs">
+        
+             
+                <span data-toggle="popover" title="Fire Resistance" data-content="Increases Fire Resistance by 300. (Also applied in Time Shop and can be applied repeatedly.)" data-trigger="hover" data-placement="top">
+                    <div class='progress'>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="1" data-linked-units="" data-linked-multiplier="">0/10
+                        </div>
+                    </div>
+                </span>
+            
+        
+    </div>
+</div>
+    
+
+    
+    
+    
+    
+    
+    	<div id="Extreme_Unicorn_Knight" class="ex-unit-card">
+    <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Unicorn_Knight" data-toggle="modal" data-target="#Extreme_Unicorn_Knight-modal">
+        <img id="Extreme_Unicorn_Knight-image" class="unit-image seven-star-unit" src="../static/img/units/239.png" data-toggle="tooltip" data-placement="top" title="Extreme Unicorn Knight">
+    </a>
+    <div class="modal fade" id="Extreme_Unicorn_Knight-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-offset-top">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Extreme Unicorn Knight</h5>
+                
+                <img class="unit-modal-image" src="../static/img/units/239.png">
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+                <h2>Unit Attacks and Abilities</h2>
+                <ul>
+                    
+                    <li>Normal Attack: Fires multiple arrows that damage and knock the enemy back.</li>
+                    
+                    <li>Skill Attack: Fires multiple arrows, creating a rain of arrows that damages and knocks back enemy.</li>
+                    
+                    <li>Special Ability 1: Increases the game speed by 15%, movement speed of Elf units by 11% and attack range by 12%.</li>
+                    
+                    <li>Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.</li>
+                    
+                    <li>Special Ability 3: Unaffected by attacks by terrain above stage 10,000</li>
+                    
+                    <li>Special Ability 4: Detects stealth(cloaked) units.</li>
+                    
+                    <li>Special Ability 5: Never gets paralyzed. Never gets knocked back. Never gets stunned.</li>
+                    
+                    <li>Blessing of Sylphid : Reduces Attack range decreasing defect in Outland Distortion by 7%. (Applied cumulatively, and not applied when in Time Shop.)</li>
+                    
+                </ul>
+            
+            </div>
+        </div>
+    </div>
+</div>
+    <input id="Extreme_Unicorn_Knight-number" data-unit="Extreme_Unicorn_Knight" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Pegasus-modal">
+        <img id="Pegasus-image" class='pet-image' src="../static/img/pets/328.png" data-pet="Pegasus" data-unit="Extreme_Unicorn_Knight" data-toggle="tooltip" data-placement="top" title="Pegasus">
+    </span>
+    
+    
+    <div id="Pegasus-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Pegasus</h5>
+                <img class="pet-modal-image" src="../static/img/animated_pets/328.png">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase basic game speed (1.2%, 2.4%, 3.6%, 4.8%, 6%)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
+                        
+                        <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="pet-modal-image" src="../static/img/units/239.png">  Extreme Unicorn Knight ]
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                        
+                        <div class="col-12">
+                            <ul>
+                                
+                                <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                
+                                <li>Increases basic game speed by 9%.</li>
+                                
+                                <li>Increases its movement speed by 12%, and its attack power by 11%.</li>
+                                
+                                <li>Increases the attack range of all units by 8%, and the movement speed of all units by 10%.</li>
+                                
+                                <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                
+                                <li>Blessing of Sylphid Limit Break: Even when the Extreme Unicorn Knight is in the Time Shop, the attack range decreasing effect due to the Outland Distortion is reduced. (However, when in the Time Shop, it is increased by 3% per Extreme Unicorn Knight, and the attack range decreasing effect cannot be reduced more than 30%.)</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="ex-unit-card-buffs">
+        
+             
+                <span data-toggle="popover" title="Blessing of Sylphid" data-content="Reduces Attack range decreasing defect in Outland Distortion by 7%. (Applied cumulatively, and not applied when in Time Shop.)" data-trigger="hover" data-placement="top">
+                    <div class='progress'>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="1" data-linked-units="" data-linked-multiplier="">0/10
+                        </div>
+                    </div>
+                </span>
+            
+        
+    </div>
+</div>
+    
+
+    
+    
+    
+    
+    
+    	<div id="Extreme_Death_Knight" class="ex-unit-card">
+    <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Death_Knight" data-toggle="modal" data-target="#Extreme_Death_Knight-modal">
+        <img id="Extreme_Death_Knight-image" class="unit-image seven-star-unit" src="../static/img/units/240.png" data-toggle="tooltip" data-placement="top" title="Extreme Death Knight">
+    </a>
+    <div class="modal fade" id="Extreme_Death_Knight-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-offset-top">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Extreme Death Knight</h5>
+                
+                <img class="unit-modal-image" src="../static/img/units/240.png">
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+                <h2>Unit Attacks and Abilities</h2>
+                <ul>
+                    
+                    <li>Normal Attack: Swings sword 3 times to damage enemies and stun them by certain chance. Each attack recovers a small amount of HP.</li>
+                    
+                    <li>Skill Attack: Summons a colossal magic sword from the sky that deals high damage to faraway enemies and blows them into the air.</li>
+                    
+                    <li>Special Ability 1: Increases the game speed by 15%, movement speed of Undead units by 12% and attack range by 11%.</li>
+                    
+                    <li>Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.</li>
+                    
+                    <li>Special Ability 3: Unaffected by attacks by terrain above stage 10,000</li>
+                    
+                    <li>Special Ability 4: Instantly move to first attack target (dash).</li>
+                    
+                    <li>Special Ability 5: Cannot be interrupted by attacks and is immune to stun and blow.</li>
+                    
+                    <li>Increased Medals : Increases medals earned at the time of revival by 300%.</li>
+                    
+                </ul>
+            
+            </div>
+        </div>
+    </div>
+</div>
+    <input id="Extreme_Death_Knight-number" data-unit="Extreme_Death_Knight" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Dark_Unicorn-modal">
+        <img id="Dark_Unicorn-image" class='pet-image' src="../static/img/pets/329.png" data-pet="Dark_Unicorn" data-unit="Extreme_Death_Knight" data-toggle="tooltip" data-placement="top" title="Dark Unicorn">
+    </span>
+    
+    
+    <div id="Dark_Unicorn-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Dark Unicorn</h5>
+                <img class="pet-modal-image" src="../static/img/animated_pets/329.png">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase basic game speed (1.2%, 2.4%, 3.6%, 4.8%, 6%)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
+                        
+                        <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="pet-modal-image" src="../static/img/units/240.png">  Extreme Death Knight ]
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                        
+                        <div class="col-12">
+                            <ul>
+                                
+                                <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                
+                                <li>Increases basic game speed by 9%.</li>
+                                
+                                <li>Increases its movement speed by 12%, and its attack power by 12%.</li>
+                                
+                                <li>Increases the attack range of all units by 10%, and the movement speed of all units by 8%.</li>
+                                
+                                <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                
+                                <li>When included in the team, Medal Buff is increased by 200%. ([Increased Medals] increases from 300% to 500%)</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="ex-unit-card-buffs">
+        
+             
+                <span data-toggle="popover" title="Increased Medals" data-content="Increases medals earned at the time of revival by 300%." data-trigger="hover" data-placement="top">
+                    <div class='progress'>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="1" data-linked-units="" data-linked-multiplier="">0/10
+                        </div>
+                    </div>
+                </span>
+            
+        
+    </div>
+</div>
+    
+
+    
+    
+    
+    
+    
+    	<div id="Extreme_Wolf_Rider" class="ex-unit-card">
+    <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Wolf_Rider" data-toggle="modal" data-target="#Extreme_Wolf_Rider-modal">
+        <img id="Extreme_Wolf_Rider-image" class="unit-image seven-star-unit" src="../static/img/units/241.png" data-toggle="tooltip" data-placement="top" title="Extreme Wolf Rider">
+    </a>
+    <div class="modal fade" id="Extreme_Wolf_Rider-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-offset-top">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Extreme Wolf Rider</h5>
+                
+                <img class="unit-modal-image" src="../static/img/units/241.png">
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+                <h2>Unit Attacks and Abilities</h2>
+                <ul>
+                    
+                    <li>Normal Attack: Swings a giant axe 3 times to damage enemies and knock them back. Each attack recovers a small amount of HP.</li>
+                    
+                    <li>Skill Attack: Summons several wolf spirits that attack and stun enemies straight ahead. Upon the casting the skill, receive the wolves&#39; blessing that lasts for a period of time to greatly increase nearby ally&#39;s movement and attack speed.</li>
+                    
+                    <li>Special Ability 1: Increases the game speed by 15%, movement speed of orc units by 11% and attack range by 12%.</li>
+                    
+                    <li>Special Ability 2: Appears near the enemies at its first appearance, and casts a buff to increase its own movement speed and attack speed.</li>
+                    
+                    <li>Special Ability 3: Unaffected by attacks by terrain above stage 10,000.</li>
+                    
+                    <li>Special Ability 4: Instantly move to first attack target (dash).</li>
+                    
+                    <li>Special Ability 5: Never gets disturbed by enemy&#39;s attacks. Never gets frozen. Never gets knocked back.</li>
+                    
+                    <li>Howl of the Frost Wolf : Increases base game speed by 20%. (Applied cumulatively, and not applied when in Time Shop.)</li>
+                    
+                </ul>
+            
+            </div>
+        </div>
+    </div>
+</div>
+    <input id="Extreme_Wolf_Rider-number" data-unit="Extreme_Wolf_Rider" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Fenris-modal">
+        <img id="Fenris-image" class='pet-image' src="../static/img/pets/330.png" data-pet="Fenris" data-unit="Extreme_Wolf_Rider" data-toggle="tooltip" data-placement="top" title="Fenris">
+    </span>
+    
+    
+    <div id="Fenris-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Fenris</h5>
+                <img class="pet-modal-image" src="../static/img/animated_pets/330.png">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase basic game speed (1.2%, 2.4%, 3.6%, 4.8%, 6%)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
+                        
+                        <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="pet-modal-image" src="../static/img/units/241.png">  Extreme Wolf Rider ]
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                        
+                        <div class="col-12">
+                            <ul>
+                                
+                                <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                
+                                <li>Increases basic game speed by 9%.</li>
+                                
+                                <li>Increases its movement speed by 12%, and its attack power by 11%.</li>
+                                
+                                <li>Increases the attack range of all units by 8%, and the movement speed of all units by 10%.</li>
+                                
+                                <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                
+                                <li>Howl of the Frost Wolf Limit Break: Even when the Extreme Wolf Rider is in the Time Shop, the base game speed is increased. (However, it is increased by 5% per Extreme Wolf Rider in the Time Shop, and the base game speed can&#39;t increase over 50%)</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="ex-unit-card-buffs">
+        
+             
+                <span data-toggle="popover" title="Howl of the Frost Wolf " data-content="Increases base game speed by 20%. (Applied cumulatively, and not applied when in Time Shop.)" data-trigger="hover" data-placement="top">
+                    <div class='progress'>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" data-multiplier="1" data-linked-units="" data-linked-multiplier="">0/10
+                        </div>
+                    </div>
+                </span>
+            
+        
+    </div>
+</div>
+    
+
+    
+    
+    
+    
+    
+      
+      <div id="Flame_Sibyl" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Flame_Sibyl-normal" data-toggle="modal" data-target="#Flame_Sibyl-modal">
         <img id="Flame_Sibyl-image" class="unit-image five-star-unit" src="../static/img/units/230.png" data-toggle="tooltip" data-placement="top" title="Flame Sibyl">
     </a>
@@ -287,12 +752,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Flame Sibyl</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/231.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -346,6 +814,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -425,10 +894,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Mystic_Archer" class="unit-card">
+    
+    
+      
+      <div id="Mystic_Archer" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Mystic_Archer-normal" data-toggle="modal" data-target="#Mystic_Archer-modal">
         <img id="Mystic_Archer-image" class="unit-image five-star-unit" src="../static/img/units/232.png" data-toggle="tooltip" data-placement="top" title="Mystic Archer">
     </a>
@@ -440,12 +913,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mystic Archer</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/233.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -503,6 +979,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -582,10 +1059,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Skeleton_General" class="unit-card">
+    
+    
+      
+      <div id="Skeleton_General" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Skeleton_General-normal" data-toggle="modal" data-target="#Skeleton_General-modal">
         <img id="Skeleton_General-image" class="unit-image five-star-unit" src="../static/img/units/234.png" data-toggle="tooltip" data-placement="top" title="Skeleton General">
     </a>
@@ -597,12 +1078,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Skeleton General</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/235.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -660,6 +1144,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -739,10 +1224,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Frozen_Witch" class="unit-card">
+    
+    
+      
+      <div id="Frozen_Witch" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Frozen_Witch-normal" data-toggle="modal" data-target="#Frozen_Witch-modal">
         <img id="Frozen_Witch-image" class="unit-image five-star-unit" src="../static/img/units/236.png" data-toggle="tooltip" data-placement="top" title="Frozen Witch">
     </a>
@@ -754,12 +1243,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Frozen Witch</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/237.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -817,6 +1309,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -896,10 +1389,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Fire_Ranger" class="unit-card">
+    
+    
+      
+      <div id="Fire_Ranger" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Fire_Ranger-normal" data-toggle="modal" data-target="#Fire_Ranger-modal">
         <img id="Fire_Ranger-image" class="unit-image five-star-unit" src="../static/img/units/222.png" data-toggle="tooltip" data-placement="top" title="Fire Ranger">
     </a>
@@ -911,12 +1408,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Fire Ranger</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/223.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -970,6 +1470,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -1046,10 +1547,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Forest_Knight" class="unit-card">
+    
+    
+      
+      <div id="Forest_Knight" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Forest_Knight-normal" data-toggle="modal" data-target="#Forest_Knight-modal">
         <img id="Forest_Knight-image" class="unit-image five-star-unit" src="../static/img/units/224.png" data-toggle="tooltip" data-placement="top" title="Forest Knight">
     </a>
@@ -1061,12 +1566,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Forest Knight</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/225.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -1128,6 +1636,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -1209,10 +1718,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Devil_Mage" class="unit-card">
+    
+    
+      
+      <div id="Devil_Mage" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Devil_Mage-normal" data-toggle="modal" data-target="#Devil_Mage-modal">
         <img id="Devil_Mage-image" class="unit-image five-star-unit" src="../static/img/units/226.png" data-toggle="tooltip" data-placement="top" title="Devil Mage">
     </a>
@@ -1224,12 +1737,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Devil Mage</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/227.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -1283,6 +1799,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -1359,10 +1876,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Storm_Warrior" class="unit-card">
+    
+    
+      
+      <div id="Storm_Warrior" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Storm_Warrior-normal" data-toggle="modal" data-target="#Storm_Warrior-modal">
         <img id="Storm_Warrior-image" class="unit-image five-star-unit" src="../static/img/units/228.png" data-toggle="tooltip" data-placement="top" title="Storm Warrior">
     </a>
@@ -1374,12 +1895,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Storm Warrior</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/229.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -1441,6 +1965,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -1522,10 +2047,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Salamander_Rider" class="unit-card">
+    
+    
+      
+      <div id="Salamander_Rider" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Salamander_Rider-normal" data-toggle="modal" data-target="#Salamander_Rider-modal">
         <img id="Salamander_Rider-image" class="unit-image five-star-unit" src="../static/img/units/214.png" data-toggle="tooltip" data-placement="top" title="Salamander Rider">
     </a>
@@ -1537,12 +2066,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Salamander Rider</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/215.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -1594,6 +2126,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -1678,10 +2211,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="High_Fairy" class="unit-card">
+    
+    
+      
+      <div id="High_Fairy" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-High_Fairy-normal" data-toggle="modal" data-target="#High_Fairy-modal">
         <img id="High_Fairy-image" class="unit-image five-star-unit" src="../static/img/units/216.png" data-toggle="tooltip" data-placement="top" title="High Fairy">
     </a>
@@ -1693,12 +2230,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">High Fairy</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/217.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -1750,6 +2290,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -1835,10 +2376,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Dark_Priestess" class="unit-card">
+    
+    
+      
+      <div id="Dark_Priestess" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Dark_Priestess-normal" data-toggle="modal" data-target="#Dark_Priestess-modal">
         <img id="Dark_Priestess-image" class="unit-image five-star-unit" src="../static/img/units/218.png" data-toggle="tooltip" data-placement="top" title="Dark Priestess">
     </a>
@@ -1850,12 +2395,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Dark Priestess</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/219.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -1907,6 +2455,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -1992,10 +2541,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Naga_Knight" class="unit-card">
+    
+    
+      
+      <div id="Naga_Knight" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Naga_Knight-normal" data-toggle="modal" data-target="#Naga_Knight-modal">
         <img id="Naga_Knight-image" class="unit-image five-star-unit" src="../static/img/units/220.png" data-toggle="tooltip" data-placement="top" title="Naga Knight">
     </a>
@@ -2007,12 +2560,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Naga Knight</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/221.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -2064,6 +2620,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -2149,10 +2706,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Sindbad" class="unit-card">
+    
+    
+      
+      <div id="Sindbad" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Sindbad-normal" data-toggle="modal" data-target="#Sindbad-modal">
         <img id="Sindbad-image" class="unit-image five-star-unit" src="../static/img/units/206.png" data-toggle="tooltip" data-placement="top" title="Sindbad">
     </a>
@@ -2164,12 +2725,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Sindbad</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/207.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -2229,6 +2793,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -2332,10 +2897,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Champion" class="unit-card">
+    
+    
+      
+      <div id="Champion" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Champion-normal" data-toggle="modal" data-target="#Champion-modal">
         <img id="Champion-image" class="unit-image five-star-unit" src="../static/img/units/208.png" data-toggle="tooltip" data-placement="top" title="Champion">
     </a>
@@ -2347,12 +2916,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Champion</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/209.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -2404,6 +2976,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -2507,10 +3080,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Undertaker" class="unit-card">
+    
+    
+      
+      <div id="Undertaker" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Undertaker-normal" data-toggle="modal" data-target="#Undertaker-modal">
         <img id="Undertaker-image" class="unit-image five-star-unit" src="../static/img/units/210.png" data-toggle="tooltip" data-placement="top" title="Undertaker">
     </a>
@@ -2522,12 +3099,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Undertaker</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/211.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -2579,6 +3159,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -2682,10 +3263,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Barbarian" class="unit-card">
+    
+    
+      
+      <div id="Barbarian" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Barbarian-normal" data-toggle="modal" data-target="#Barbarian-modal">
         <img id="Barbarian-image" class="unit-image five-star-unit" src="../static/img/units/212.png" data-toggle="tooltip" data-placement="top" title="Barbarian">
     </a>
@@ -2697,12 +3282,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Barbarian</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/213.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -2754,6 +3342,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -2858,10 +3447,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Paladin" class="unit-card">
+    
+    
+      
+      <div id="Paladin" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Paladin-normal" data-toggle="modal" data-target="#Paladin-modal">
         <img id="Paladin-image" class="unit-image five-star-unit" src="../static/img/units/198.png" data-toggle="tooltip" data-placement="top" title="Paladin">
     </a>
@@ -2873,12 +3466,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Paladin</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/199.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -2930,6 +3526,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -3013,10 +3610,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Royal_Druid" class="unit-card">
+    
+    
+      
+      <div id="Royal_Druid" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Royal_Druid-normal" data-toggle="modal" data-target="#Royal_Druid-modal">
         <img id="Royal_Druid-image" class="unit-image five-star-unit" src="../static/img/units/200.png" data-toggle="tooltip" data-placement="top" title="Royal Druid">
     </a>
@@ -3028,12 +3629,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Royal Druid</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/201.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -3081,6 +3685,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -3159,10 +3764,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Skeleton_Master" class="unit-card">
+    
+    
+      
+      <div id="Skeleton_Master" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Skeleton_Master-normal" data-toggle="modal" data-target="#Skeleton_Master-modal">
         <img id="Skeleton_Master-image" class="unit-image five-star-unit" src="../static/img/units/202.png" data-toggle="tooltip" data-placement="top" title="Skeleton Master">
     </a>
@@ -3174,12 +3783,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Skeleton Master</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/203.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -3231,6 +3843,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -3314,10 +3927,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Battle_Hornist" class="unit-card">
+    
+    
+      
+      <div id="Battle_Hornist" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Battle_Hornist-normal" data-toggle="modal" data-target="#Battle_Hornist-modal">
         <img id="Battle_Hornist-image" class="unit-image five-star-unit" src="../static/img/units/204.png" data-toggle="tooltip" data-placement="top" title="Battle Hornist">
     </a>
@@ -3329,12 +3946,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Battle Hornist</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/205.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -3386,6 +4006,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -3471,10 +4092,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Crimson_Hawk_Rider" class="unit-card">
+    
+    
+      
+      <div id="Crimson_Hawk_Rider" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Crimson_Hawk_Rider-normal" data-toggle="modal" data-target="#Crimson_Hawk_Rider-modal">
         <img id="Crimson_Hawk_Rider-image" class="unit-image five-star-unit" src="../static/img/units/190.png" data-toggle="tooltip" data-placement="top" title="Crimson Hawk Rider">
     </a>
@@ -3486,12 +4111,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Crimson Hawk Rider</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/191.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -3539,6 +4167,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -3607,10 +4236,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Astral_Captain" class="unit-card">
+    
+    
+      
+      <div id="Astral_Captain" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Astral_Captain-normal" data-toggle="modal" data-target="#Astral_Captain-modal">
         <img id="Astral_Captain-image" class="unit-image five-star-unit" src="../static/img/units/192.png" data-toggle="tooltip" data-placement="top" title="Astral Captain">
     </a>
@@ -3622,12 +4255,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Astral Captain</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/193.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -3679,6 +4315,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -3749,10 +4386,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Shadow_Knight" class="unit-card">
+    
+    
+      
+      <div id="Shadow_Knight" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Shadow_Knight-normal" data-toggle="modal" data-target="#Shadow_Knight-modal">
         <img id="Shadow_Knight-image" class="unit-image five-star-unit" src="../static/img/units/194.png" data-toggle="tooltip" data-placement="top" title="Shadow Knight">
     </a>
@@ -3764,12 +4405,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Shadow Knight</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/195.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -3825,6 +4469,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -3893,10 +4538,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="War_Bear_Rider" class="unit-card">
+    
+    
+      
+      <div id="War_Bear_Rider" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-War_Bear_Rider-normal" data-toggle="modal" data-target="#War_Bear_Rider-modal">
         <img id="War_Bear_Rider-image" class="unit-image five-star-unit" src="../static/img/units/196.png" data-toggle="tooltip" data-placement="top" title="War Bear Rider">
     </a>
@@ -3908,12 +4557,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">War Bear Rider</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/197.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -3965,6 +4617,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -4033,10 +4686,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Musketress" class="unit-card">
+    
+    
+      
+      <div id="Musketress" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Musketress-normal" data-toggle="modal" data-target="#Musketress-modal">
         <img id="Musketress-image" class="unit-image five-star-unit" src="../static/img/units/182.png" data-toggle="tooltip" data-placement="top" title="Musketress">
     </a>
@@ -4048,12 +4705,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Musketress</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/183.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -4105,6 +4765,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -4177,10 +4838,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Elf_Sage" class="unit-card">
+    
+    
+      
+      <div id="Elf_Sage" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Elf_Sage-normal" data-toggle="modal" data-target="#Elf_Sage-modal">
         <img id="Elf_Sage-image" class="unit-image five-star-unit" src="../static/img/units/184.png" data-toggle="tooltip" data-placement="top" title="Elf Sage">
     </a>
@@ -4192,12 +4857,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Elf Sage</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/185.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -4249,6 +4917,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -4321,10 +4990,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Crow_Knight" class="unit-card">
+    
+    
+      
+      <div id="Crow_Knight" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Crow_Knight-normal" data-toggle="modal" data-target="#Crow_Knight-modal">
         <img id="Crow_Knight-image" class="unit-image five-star-unit" src="../static/img/units/186.png" data-toggle="tooltip" data-placement="top" title="Crow Knight">
     </a>
@@ -4336,12 +5009,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Crow Knight</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/187.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -4401,6 +5077,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -4478,10 +5155,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Rangda" class="unit-card">
+    
+    
+      
+      <div id="Rangda" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Rangda-normal" data-toggle="modal" data-target="#Rangda-modal">
         <img id="Rangda-image" class="unit-image five-star-unit" src="../static/img/units/188.png" data-toggle="tooltip" data-placement="top" title="Rangda">
     </a>
@@ -4493,12 +5174,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Rangda</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/189.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -4550,6 +5234,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -4622,10 +5307,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Winged_Knight" class="unit-card">
+    
+    
+      
+      <div id="Winged_Knight" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Winged_Knight-normal" data-toggle="modal" data-target="#Winged_Knight-modal">
         <img id="Winged_Knight-image" class="unit-image five-star-unit" src="../static/img/units/174.png" data-toggle="tooltip" data-placement="top" title="Winged Knight">
     </a>
@@ -4637,12 +5326,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Winged Knight</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/175.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -4698,6 +5390,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -4773,10 +5466,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Windwalker" class="unit-card">
+    
+    
+      
+      <div id="Windwalker" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Windwalker-normal" data-toggle="modal" data-target="#Windwalker-modal">
         <img id="Windwalker-image" class="unit-image five-star-unit" src="../static/img/units/176.png" data-toggle="tooltip" data-placement="top" title="Windwalker">
     </a>
@@ -4788,12 +5485,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Windwalker</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/177.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -4849,6 +5549,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -4919,10 +5620,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Abyss_Mage" class="unit-card">
+    
+    
+      
+      <div id="Abyss_Mage" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Abyss_Mage-normal" data-toggle="modal" data-target="#Abyss_Mage-modal">
         <img id="Abyss_Mage-image" class="unit-image five-star-unit" src="../static/img/units/178.png" data-toggle="tooltip" data-placement="top" title="Abyss Mage">
     </a>
@@ -4934,12 +5639,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Abyss Mage</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/179.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -4995,6 +5703,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -5065,10 +5774,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Siren" class="unit-card">
+    
+    
+      
+      <div id="Siren" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Siren-normal" data-toggle="modal" data-target="#Siren-modal">
         <img id="Siren-image" class="unit-image five-star-unit" src="../static/img/units/180.png" data-toggle="tooltip" data-placement="top" title="Siren">
     </a>
@@ -5080,12 +5793,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Siren</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/181.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -5137,6 +5853,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -5207,10 +5924,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Cleric" class="unit-card">
+    
+    
+      
+      <div id="Cleric" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Cleric-normal" data-toggle="modal" data-target="#Cleric-modal">
         <img id="Cleric-image" class="unit-image five-star-unit" src="../static/img/units/166.png" data-toggle="tooltip" data-placement="top" title="Cleric">
     </a>
@@ -5222,12 +5943,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Cleric</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/167.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -5285,6 +6009,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -5369,10 +6094,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Elementalist" class="unit-card">
+    
+    
+      
+      <div id="Elementalist" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Elementalist-normal" data-toggle="modal" data-target="#Elementalist-modal">
         <img id="Elementalist-image" class="unit-image five-star-unit" src="../static/img/units/168.png" data-toggle="tooltip" data-placement="top" title="Elementalist">
     </a>
@@ -5384,12 +6113,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Elementalist</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/169.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -5451,6 +6183,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -5533,10 +6266,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Dark_Elf" class="unit-card">
+    
+    
+      
+      <div id="Dark_Elf" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Dark_Elf-normal" data-toggle="modal" data-target="#Dark_Elf-modal">
         <img id="Dark_Elf-image" class="unit-image five-star-unit" src="../static/img/units/170.png" data-toggle="tooltip" data-placement="top" title="Dark Elf">
     </a>
@@ -5548,12 +6285,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Dark Elf</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/171.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -5613,6 +6353,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -5692,10 +6433,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Frost_Demon" class="unit-card">
+    
+    
+      
+      <div id="Frost_Demon" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Frost_Demon-normal" data-toggle="modal" data-target="#Frost_Demon-modal">
         <img id="Frost_Demon-image" class="unit-image five-star-unit" src="../static/img/units/172.png" data-toggle="tooltip" data-placement="top" title="Frost Demon">
     </a>
@@ -5707,12 +6452,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Frost Demon</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/173.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -5776,6 +6524,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -5858,10 +6607,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Flame_Spirit" class="unit-card">
+    
+    
+      
+      <div id="Flame_Spirit" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Flame_Spirit-normal" data-toggle="modal" data-target="#Flame_Spirit-modal">
         <img id="Flame_Spirit-image" class="unit-image five-star-unit" src="../static/img/units/158.png" data-toggle="tooltip" data-placement="top" title="Flame Spirit">
     </a>
@@ -5873,12 +6626,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Flame Spirit</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/159.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -5930,6 +6686,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -6000,10 +6757,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Hippogriff" class="unit-card">
+    
+    
+      
+      <div id="Hippogriff" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Hippogriff-normal" data-toggle="modal" data-target="#Hippogriff-modal">
         <img id="Hippogriff-image" class="unit-image five-star-unit" src="../static/img/units/160.png" data-toggle="tooltip" data-placement="top" title="Hippogriff">
     </a>
@@ -6015,12 +6776,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Hippogriff</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/161.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -6072,6 +6836,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -6145,10 +6910,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Dark_Spirit" class="unit-card">
+    
+    
+      
+      <div id="Dark_Spirit" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Dark_Spirit-normal" data-toggle="modal" data-target="#Dark_Spirit-modal">
         <img id="Dark_Spirit-image" class="unit-image five-star-unit" src="../static/img/units/162.png" data-toggle="tooltip" data-placement="top" title="Dark Spirit">
     </a>
@@ -6160,12 +6929,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Dark Spirit</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/163.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -6217,6 +6989,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -6287,10 +7060,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Blade_Master" class="unit-card">
+    
+    
+      
+      <div id="Blade_Master" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Blade_Master-normal" data-toggle="modal" data-target="#Blade_Master-modal">
         <img id="Blade_Master-image" class="unit-image five-star-unit" src="../static/img/units/164.png" data-toggle="tooltip" data-placement="top" title="Blade Master">
     </a>
@@ -6302,12 +7079,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Blade Master</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/165.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -6363,6 +7143,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -6435,10 +7216,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Valkyrie" class="unit-card">
+    
+    
+      
+      <div id="Valkyrie" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Valkyrie-normal" data-toggle="modal" data-target="#Valkyrie-modal">
         <img id="Valkyrie-image" class="unit-image five-star-unit" src="../static/img/units/142.png" data-toggle="tooltip" data-placement="top" title="Valkyrie">
     </a>
@@ -6450,12 +7235,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Valkyrie</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/143.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -6507,6 +7295,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -6581,10 +7370,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Sword_Dancer" class="unit-card">
+    
+    
+      
+      <div id="Sword_Dancer" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Sword_Dancer-normal" data-toggle="modal" data-target="#Sword_Dancer-modal">
         <img id="Sword_Dancer-image" class="unit-image five-star-unit" src="../static/img/units/144.png" data-toggle="tooltip" data-placement="top" title="Sword Dancer">
     </a>
@@ -6596,12 +7389,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Sword Dancer</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/145.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -6653,6 +7449,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -6729,10 +7526,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Incubus" class="unit-card">
+    
+    
+      
+      <div id="Incubus" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Incubus-normal" data-toggle="modal" data-target="#Incubus-modal">
         <img id="Incubus-image" class="unit-image five-star-unit" src="../static/img/units/146.png" data-toggle="tooltip" data-placement="top" title="Incubus">
     </a>
@@ -6744,12 +7545,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Incubus</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/147.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -6797,6 +7601,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -6869,10 +7674,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Ice_Spirit" class="unit-card">
+    
+    
+      
+      <div id="Ice_Spirit" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Ice_Spirit-normal" data-toggle="modal" data-target="#Ice_Spirit-modal">
         <img id="Ice_Spirit-image" class="unit-image five-star-unit" src="../static/img/units/148.png" data-toggle="tooltip" data-placement="top" title="Ice Spirit">
     </a>
@@ -6884,12 +7693,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Ice Spirit</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/149.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -6941,6 +7753,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -7017,10 +7830,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Steam_Punk" class="unit-card">
+    
+    
+      
+      <div id="Steam_Punk" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Steam_Punk-normal" data-toggle="modal" data-target="#Steam_Punk-modal">
         <img id="Steam_Punk-image" class="unit-image five-star-unit" src="../static/img/units/134.png" data-toggle="tooltip" data-placement="top" title="Steam Punk">
     </a>
@@ -7032,12 +7849,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Steam Punk</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/135.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -7085,6 +7905,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -7163,10 +7984,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Sylphid" class="unit-card">
+    
+    
+      
+      <div id="Sylphid" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Sylphid-normal" data-toggle="modal" data-target="#Sylphid-modal">
         <img id="Sylphid-image" class="unit-image five-star-unit" src="../static/img/units/136.png" data-toggle="tooltip" data-placement="top" title="Sylphid">
     </a>
@@ -7178,12 +8003,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Sylphid</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/137.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -7231,6 +8059,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -7309,10 +8138,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Medusa" class="unit-card">
+    
+    
+      
+      <div id="Medusa" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Medusa-normal" data-toggle="modal" data-target="#Medusa-modal">
         <img id="Medusa-image" class="unit-image five-star-unit" src="../static/img/units/138.png" data-toggle="tooltip" data-placement="top" title="Medusa">
     </a>
@@ -7324,12 +8157,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Medusa</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/139.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -7373,6 +8209,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -7449,10 +8286,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Naga" class="unit-card">
+    
+    
+      
+      <div id="Naga" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Naga-normal" data-toggle="modal" data-target="#Naga-modal">
         <img id="Naga-image" class="unit-image five-star-unit" src="../static/img/units/140.png" data-toggle="tooltip" data-placement="top" title="Naga">
     </a>
@@ -7464,12 +8305,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Naga</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/141.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -7521,6 +8365,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -7597,10 +8442,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Pilot" class="unit-card">
+    
+    
+      
+      <div id="Pilot" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Pilot-normal" data-toggle="modal" data-target="#Pilot-modal">
         <img id="Pilot-image" class="unit-image five-star-unit" src="../static/img/units/124.png" data-toggle="tooltip" data-placement="top" title="Pilot">
     </a>
@@ -7612,12 +8461,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Pilot</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/125.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -7665,6 +8517,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -7739,10 +8592,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Alchemist" class="unit-card">
+    
+    
+      
+      <div id="Alchemist" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Alchemist-normal" data-toggle="modal" data-target="#Alchemist-modal">
         <img id="Alchemist-image" class="unit-image five-star-unit" src="../static/img/units/126.png" data-toggle="tooltip" data-placement="top" title="Alchemist">
     </a>
@@ -7754,12 +8611,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Alchemist</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/127.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -7803,6 +8663,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -7877,10 +8738,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Lich" class="unit-card">
+    
+    
+      
+      <div id="Lich" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Lich-normal" data-toggle="modal" data-target="#Lich-modal">
         <img id="Lich-image" class="unit-image five-star-unit" src="../static/img/units/128.png" data-toggle="tooltip" data-placement="top" title="Lich">
     </a>
@@ -7892,12 +8757,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Lich</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/129.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -7945,6 +8813,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8021,10 +8890,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Wyvern_Rider" class="unit-card">
+    
+    
+      
+      <div id="Wyvern_Rider" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Wyvern_Rider-normal" data-toggle="modal" data-target="#Wyvern_Rider-modal">
         <img id="Wyvern_Rider-image" class="unit-image five-star-unit" src="../static/img/units/130.png" data-toggle="tooltip" data-placement="top" title="Wyvern Rider">
     </a>
@@ -8036,12 +8909,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Wyvern Rider</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/131.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8093,6 +8969,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8169,10 +9046,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Hot-Blooded_Xuanzang" class="unit-card">
+    
+    
+      
+      <div id="Hot-Blooded_Xuanzang" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Hot-Blooded_Xuanzang-normal" data-toggle="modal" data-target="#Hot-Blooded_Xuanzang-modal">
         <img id="Hot-Blooded_Xuanzang-image" class="unit-image five-star-unit" src="../static/img/units/116.png" data-toggle="tooltip" data-placement="top" title="Hot-Blooded Xuanzang">
     </a>
@@ -8184,12 +9065,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Hot-Blooded Xuanzang</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/117.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8229,6 +9113,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8293,10 +9178,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Hoyden_Goku" class="unit-card">
+    
+    
+      
+      <div id="Hoyden_Goku" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Hoyden_Goku-normal" data-toggle="modal" data-target="#Hoyden_Goku-modal">
         <img id="Hoyden_Goku-image" class="unit-image five-star-unit" src="../static/img/units/118.png" data-toggle="tooltip" data-placement="top" title="Hoyden Goku">
     </a>
@@ -8308,12 +9197,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Hoyden Goku</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/119.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8353,6 +9245,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8419,10 +9312,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Dark_Admiral" class="unit-card">
+    
+    
+      
+      <div id="Dark_Admiral" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Dark_Admiral-normal" data-toggle="modal" data-target="#Dark_Admiral-modal">
         <img id="Dark_Admiral-image" class="unit-image five-star-unit" src="../static/img/units/120.png" data-toggle="tooltip" data-placement="top" title="Dark Admiral">
     </a>
@@ -8434,12 +9331,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Dark Admiral</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/121.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8479,6 +9379,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8545,10 +9446,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Raptor_Rider" class="unit-card">
+    
+    
+      
+      <div id="Raptor_Rider" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Raptor_Rider-normal" data-toggle="modal" data-target="#Raptor_Rider-modal">
         <img id="Raptor_Rider-image" class="unit-image five-star-unit" src="../static/img/units/122.png" data-toggle="tooltip" data-placement="top" title="Raptor Rider">
     </a>
@@ -8560,12 +9465,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Raptor Rider</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/123.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8605,6 +9513,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8671,10 +9580,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Griffin_Rider" class="unit-card">
+    
+    
+      
+      <div id="Griffin_Rider" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Griffin_Rider-normal" data-toggle="modal" data-target="#Griffin_Rider-modal">
         <img id="Griffin_Rider-image" class="unit-image five-star-unit" src="../static/img/units/110.png" data-toggle="tooltip" data-placement="top" title="Griffin Rider">
     </a>
@@ -8686,12 +9599,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Griffin Rider</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/111.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8737,6 +9653,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8800,10 +9717,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Forest_Guardian" class="unit-card">
+    
+    
+      
+      <div id="Forest_Guardian" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Forest_Guardian-normal" data-toggle="modal" data-target="#Forest_Guardian-modal">
         <img id="Forest_Guardian-image" class="unit-image five-star-unit" src="../static/img/units/112.png" data-toggle="tooltip" data-placement="top" title="Forest Guardian">
     </a>
@@ -8815,12 +9736,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Forest Guardian</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/113.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8864,6 +9788,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -8927,10 +9852,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Succubus" class="unit-card">
+    
+    
+      
+      <div id="Succubus" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Succubus-normal" data-toggle="modal" data-target="#Succubus-modal">
         <img id="Succubus-image" class="unit-image five-star-unit" src="../static/img/units/114.png" data-toggle="tooltip" data-placement="top" title="Succubus">
     </a>
@@ -8942,12 +9871,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Succubus</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/115.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -8991,6 +9923,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9052,10 +9985,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Sorcerer" class="unit-card">
+    
+    
+      
+      <div id="Sorcerer" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Sorcerer-normal" data-toggle="modal" data-target="#Sorcerer-modal">
         <img id="Sorcerer-image" class="unit-image five-star-unit" src="../static/img/units/100.png" data-toggle="tooltip" data-placement="top" title="Sorcerer">
     </a>
@@ -9067,12 +10004,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Sorcerer</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/101.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -9116,6 +10056,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9177,10 +10118,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Aladdin" class="unit-card">
+    
+    
+      
+      <div id="Aladdin" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Aladdin-normal" data-toggle="modal" data-target="#Aladdin-modal">
         <img id="Aladdin-image" class="unit-image five-star-unit" src="../static/img/units/104.png" data-toggle="tooltip" data-placement="top" title="Aladdin">
     </a>
@@ -9192,12 +10137,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Aladdin</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/105.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -9237,6 +10185,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9309,10 +10258,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Druid" class="unit-card">
+    
+    
+      
+      <div id="Druid" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Druid-normal" data-toggle="modal" data-target="#Druid-modal">
         <img id="Druid-image" class="unit-image five-star-unit" src="../static/img/units/106.png" data-toggle="tooltip" data-placement="top" title="Druid">
     </a>
@@ -9324,12 +10277,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Druid</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/107.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -9369,6 +10325,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9439,10 +10396,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Dark_Ninja" class="unit-card">
+    
+    
+      
+      <div id="Dark_Ninja" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Dark_Ninja-normal" data-toggle="modal" data-target="#Dark_Ninja-modal">
         <img id="Dark_Ninja-image" class="unit-image five-star-unit" src="../static/img/units/108.png" data-toggle="tooltip" data-placement="top" title="Dark Ninja">
     </a>
@@ -9454,12 +10415,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Dark Ninja</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/109.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -9503,6 +10467,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9571,10 +10536,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Battle_Drummer" class="unit-card">
+    
+    
+      
+      <div id="Battle_Drummer" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Battle_Drummer-normal" data-toggle="modal" data-target="#Battle_Drummer-modal">
         <img id="Battle_Drummer-image" class="unit-image five-star-unit" src="../static/img/units/102.png" data-toggle="tooltip" data-placement="top" title="Battle Drummer">
     </a>
@@ -9586,12 +10555,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Battle Drummer</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/103.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -9647,6 +10619,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9721,10 +10694,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Priest" class="unit-card">
+    
+    
+      
+      <div id="Priest" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Priest-normal" data-toggle="modal" data-target="#Priest-modal">
         <img id="Priest-image" class="unit-image five-star-unit" src="../static/img/units/94.png" data-toggle="tooltip" data-placement="top" title="Priest">
     </a>
@@ -9736,12 +10713,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Priest</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/95.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -9777,6 +10757,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9845,10 +10826,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Fairy" class="unit-card">
+    
+    
+      
+      <div id="Fairy" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Fairy-normal" data-toggle="modal" data-target="#Fairy-modal">
         <img id="Fairy-image" class="unit-image five-star-unit" src="../static/img/units/96.png" data-toggle="tooltip" data-placement="top" title="Fairy">
     </a>
@@ -9860,12 +10845,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Fairy</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/97.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -9901,6 +10889,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -9966,10 +10955,14 @@ Endless Farming
     </div>
 </div>
     
+
     
     
     
-       <div id="Dark_Archer" class="unit-card">
+    
+    
+      
+      <div id="Dark_Archer" class="unit-card">
     <a class="unit-modal unit-card-jr-unit" href="#tab-Dark_Archer-normal" data-toggle="modal" data-target="#Dark_Archer-modal">
         <img id="Dark_Archer-image" class="unit-image five-star-unit" src="../static/img/units/98.png" data-toggle="tooltip" data-placement="top" title="Dark Archer">
     </a>
@@ -9981,12 +10974,15 @@ Endless Farming
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Dark Archer</h5>
+                
                 <img class="unit-modal-image" src="../static/img/units/99.png">
+                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -10022,6 +11018,7 @@ Endless Farming
                         </form>
                     </div>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -10089,6 +11086,8 @@ Endless Farming
                 
     </div>
 </div>
+    
+
     
 </div>
 

@@ -82,7 +82,8 @@ function calculatePetFragmentsToFarm() {
         row = $("#dragable-row").get()[0];
         sortable = Sortable.create(row, {
             cursor: 'move',
-            animation: 150,
+            animation: 50,
+            delayOnTouchOnly: true,
             onUpdate: function(event) {
                 change = $("#dragable-row").children().filter(function() {
                     id = parseInt($(this).attr("data-id"));

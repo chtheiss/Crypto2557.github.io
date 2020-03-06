@@ -87,7 +87,8 @@ function calculatePetFragmentsToFarm() {
 
         Sortable.create(row, {
             cursor: 'move',
-            animation: 150,
+            delayOnTouchOnly: true,
+            animation: 50,
             draggable: ".pet-card",
             forceFallback: true,
             onChange: function(event) {
