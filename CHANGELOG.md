@@ -1,9 +1,32 @@
 # Changelog
 
+## [1.4.3] - 2020-03-06
+### Added
+- New Pets for H1 of 7* Units
+- Visual cue for units similar to in-game look
+- Task list to README
+
+### Changed
+- Templates to work with css grid instead of bootstrap (that made the code much for readable)
+- Css to work with all the new classes
+- Js code to work with the restructured website
+- Performance optimizations for the entire codebase
+- Made the import button reload the page after successfully loading the data
+
+### Fixed
+- A bug where not the correct number of requirement units was shown for units which rely on pets of
+other units to determine their requirement
+- A bug that shrank the pet area when only very few pets remained for tracking (almost all pets 5 star)
+- A bug with the navbar on the Metas page
+- A bug where the "Endless Farming" link in the navbar did not redirect to the index page
+
+### Removed
+- Poll from main page
+
 ## [1.4.2] - 2020-02-20
 ### Added
 - Future features poll
-- Added description for the website
+- Description for the website
 
 ### Removed
 - Important notice on home page

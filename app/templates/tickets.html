@@ -1,28 +1,15 @@
 {% extends 'base.html' %}
-
 {% block app_content %}
-    <div class="row super-row">
-        <div class="col-sm-7 col-centered">
-            {% for key, ticket in tickets.items() %}
-                <div class="row border centered-row" data-meta="{{ticket['meta']}}">
-                    <div class="col-md-4">
-                        <img class='unit-image' src="../static/{{units[ticket['unit']]['img_sr']}}">
-                    </div>
-                    <div class="col-md-4"><h3>{{ ticket['unit'] }}</h3></div>
-                    <div class="col-md-4 requirement col-padding-mobile" data-unit="{{ticket['unit']}}">
-                        <div class="progress col-centered">
-                            <div id="{{'prog-'+ticket['unit']}}" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ ticket['requirement'] }}"></div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-    <footer class="page-footer font-medium col-centered">
+<div class="ticket-container">
+    {% for key, ticket in tickets.items() %}
+    {% include 'ticket_row.html' %}
+    {% endfor %}
+    <footer class="page-footer">
         Based on the original Unit Selection Ticket priority ranking by CheezyBob</a>.
     </footer>
+</div>
 {% endblock %}
 {% block scripts %}
-    {{ super() }}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/tickets.js') }}"></script>
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/tickets.js') }}"></script>
 {% endblock %}

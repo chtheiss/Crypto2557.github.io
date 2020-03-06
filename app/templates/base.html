@@ -1,14 +1,12 @@
 {% extends 'bootstrap/base.html' %}
-
 {% block title %}
-    Endless Farming
+Endless Farming
 {% endblock %}
-
 {% block head %}
-    {{super()}}
-    <!-- Google Analytics -->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+{{super()}}
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
@@ -16,31 +14,27 @@
         ga('create', 'UA-133454964-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <!-- End Google Analytics -->
-
-    {{ JSGlue.include() }}
-
-    {% block metas %}
-        {{ super() }}
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="author" content="">
-    {% endblock %}
-
-    {% block styles %}
-        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" >
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/ef.css') }}" >
-    {% endblock styles %}
+<!-- End Google Analytics -->
+{{ JSGlue.include() }}
+{% block metas %}
+{{ super() }}
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
 {% endblock %}
-
+{% block styles %}
+<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ef.css') }}">
+{% endblock styles %}
+{% endblock %}
 {% block navbar %}
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Endless Farming</a>
+    <a class="navbar-brand" href="{{ url_for('core.index') }}">Endless Farming</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,7 +45,7 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
-                 <div class="dropdown-menu">
+                <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url_for('core.pets') }}">Normal</a>
                     <a class="dropdown-item" href="{{ url_for('core.pets_hard') }}">Hard</a>
                 </div>
@@ -67,32 +61,30 @@
             </li>
         </ul>
         <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
-        <input type="file" id="dbupload" value="Import" style="display:none"/>
+        <input type="file" id="dbupload" value="Import" style="display:none" />
+        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.3</button>
         <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
         <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
         <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
     </div>
 </nav>
 {% include '_my_stats_modal.html' %}
+{% include '_version_modal.html' %}
 {% endblock %}
-
 {% block content %}
-    <div id="content" class="container">{% block app_content %}{% endblock %}</div>
+{% block app_content %}{% endblock %}
 {% endblock %}
-
 {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dexie/2.0.4/dexie.min.js"></script>
 
-    <script type="text/javascript" src="{{ url_for('static', filename='js/extern/lodash.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/extern/sortable.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/extern/idb.js') }}"></script>
-    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/extern/index.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/extern/jquery.sortable.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/extern/bootstrap-input-spinner.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/extern/idb.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/extern/index.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/extern/sortable.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/extern/bootstrap-input-spinner.js') }}"></script>
 
-    <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
 {% endblock %}

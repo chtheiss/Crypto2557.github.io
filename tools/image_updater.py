@@ -99,8 +99,8 @@ def main():
 
     # Default values for the range to pull
     MAX_ARTIFACTS: int = 310
-    MAX_PETS: int = 326
-    MAX_UNITS: int = 237
+    MAX_PETS: int = 330
+    MAX_UNITS: int = 241
 
     if args.artifacts:
         print("Will pull artifacts.")
