@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% block app_content %}
 <div class="unit-container hidden">
+
     {% for key, unit in units.items() %}
     {% set key_id=key.replace(" ", "_") %}
     {% set max_buff=max_buffs[loop.index-1] %}
-    {% set max_add_buff=max_add_buffs[loop.index-1] %}
-       {% include 'unit_card.html' %}
+    {% set loop_index = loop.index %}
+    {% if loop_index < 5 %}
+    	{% include 'ex_unit_card.html' %}
+    {% else %}
+      {% set max_add_buff=max_add_buffs[loop.index-1] %}
+      {% include 'unit_card.html' %}
+    {% endif %}
+
     {% endfor %}
 </div>
 {% endblock %}
