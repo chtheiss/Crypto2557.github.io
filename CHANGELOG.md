@@ -1,6 +1,6 @@
 # Changelog
 
-## Future
+## [1.4.3] - 2020-03-06
 ### Added
 - New Pets for H1 of 7* Units
 - Visual cue for units similar to in-game look
