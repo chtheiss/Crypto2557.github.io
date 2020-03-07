@@ -51,7 +51,7 @@ Endless Farming
   </head>
   <body>
     
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="/">Endless Farming</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -78,20 +78,19 @@ Endless Farming
                 <a class="nav-link" href="/meta_progression/">Metas</a>
             </li>
         </ul>
-        <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none" />
-        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.4</button>
-        <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
-        <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
-        <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.4.4</button>
+        <button id="import-button" class="btn bordered">Import</button>
+        <button id="export-button" class="btn bordered">Export</button>
+        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
     </div>
 </nav>
 <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content bordered">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Endless Farming</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -126,31 +125,28 @@ Endless Farming
                     Refills
                 </div>
                 <input id="refills_hard-number" class="user-input stat-modal-shh-refills" type="number" min="0" max="3" value="0" step="1" />
-                <div class="stat-modal-shn-gems"> <img id="gem-image" src="../static/img/gem.png">
+                <div class="stat-modal-shn-gems"> <img class="gem-image" id="gem-image" src="../static/img/gem.png">
                     <label id="gem-label" for="gem-image">0</label></div>
-                <div class="stat-modal-shh-gems"> <img id="gem-hard-image" src="../static/img/gem.png">
+                <div class="stat-modal-shh-gems"> <img class="gem-image" id="gem-hard-image" src="../static/img/gem.png">
                     <label id="gem-hard-label" for="gem-hard-image">0</label></div>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
-</div>
 <div class="modal fade" id="version-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content bordered">
             <div class="modal-header">
                 <h2 class="modal-title" id="exampleModalLongTitle">Patch Notes</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body version-modal">
                 <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4.4</i></b></div>
+                    <div class="col-1 version-header">1.4.4</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-03-07</i></b></div>
+                    <div class="col-3 version-header">2020-03-07</div>
                 </div>
                 <div class="row pt-1 mb-4">
                     <div class="col-12">
@@ -169,9 +165,9 @@ Endless Farming
                     </div>
                 </div>
                 <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4.3</i></b></div>
+                    <div class="col-1 version-header">1.4.3</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-03-06</i></b></div>
+                    <div class="col-3 version-header">2020-03-06</div>
                 </div>
                 <div class="row pt-1 mb-4">
                     <div class="col-12">
@@ -207,9 +203,9 @@ Endless Farming
                     </div>
                 </div>
                 <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4.2</i></b></div>
+                    <div class="col-1 version-header">1.4.2</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-02-20</i></b></div>
+                    <div class="col-3 version-header">2020-02-20</div>
                 </div>
                 <div class="row pt-1 mb-4">
                     <div class="col-12">
@@ -227,9 +223,9 @@ Endless Farming
                     </div>
                 </div>
                 <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4.1</i></b></div>
+                    <div class="col-1 version-header">1.4.1</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-02-16</i></b></div>
+                    <div class="col-3 version-header">2020-02-16</div>
                 </div>
                 <div class="row pt-1 mb-4">
                     <div class="col-12">
@@ -242,9 +238,9 @@ Endless Farming
                     </div>
                 </div>
                <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4</i></b></div>
+                    <div class="col-1 version-header">1.4</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-02-15</i></b></div>
+                    <div class="col-3 version-header">2020-02-15</div>
                 </div>
                 <div class="row pt-1 mb-4">
                     <div class="col-12">
@@ -283,8 +279,6 @@ Endless Farming
                 </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 </div>
 

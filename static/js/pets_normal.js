@@ -42,7 +42,7 @@ function calculatePetFragmentsToFarm() {
 
         var tracker = $(".pet-trackers").children('[data-empty="True"]').first();
         if (fragments > 0) {
-            frag_text.removeClass('zero-fragments');
+            frag_text.removeClass('invisible');
             var days = Math.ceil((330 - current_frags) / fragments);
             tracker.css("display", "");
             tracker.find("img").attr("src", col.find(".pet-image").attr("src"));
@@ -51,7 +51,7 @@ function calculatePetFragmentsToFarm() {
             tracker.find("p").text(days + " days");
 
         } else {
-            frag_text.addClass('zero-fragments');
+            frag_text.addClass('invisible');
             if (tracker.attr("id") == "track-1") {}
         }
     });
