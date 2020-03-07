@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.6] - 2020-03-08
+### Fixed
+- A bug where the multiplier for the normal units was not adjusted correctly when you had the coupled 5 star pet
+
 ## [1.4.5] - 2020-03-07
 ### Fixed
 - A bug that prevented own priorities to be saved to the IndexedDB (please reset and reorder if you used that feature)
