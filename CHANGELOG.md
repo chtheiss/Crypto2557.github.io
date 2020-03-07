@@ -5,10 +5,12 @@
 - New H1 of 7* units
 - Hidden skills to H1 7* pets
 
-###Changed
+### Changed
 - Visual revision of the website (color scheme, unification, etc.)
 - Made dragging pets a bit more responsive for Chrome users
 
+### Fixed
+- A bug where the days to complete the pets were not shown for hard sh
 
 ## [1.4.3] - 2020-03-06
 ### Added
