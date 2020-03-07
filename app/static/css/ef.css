@@ -8,6 +8,7 @@ body {
     height: 100vh;
 }
 
+
 .btn-outline-secondary {
     border-radius: 5px;
 }
@@ -22,17 +23,18 @@ body {
 
 .pet-buttons>.btn {
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 input {
     color: #FFF!important;
-    font-size: 12px!important;
+    font-size: 14px!important;
     background: #999999!important;
 }
 
 p {
     margin: 0px;
+    font-size: 14px;
 }
 
 .version-underline {
@@ -109,7 +111,7 @@ p {
 }
 
 .ticket-row-image {
-    max-height: 40px;
+    max-height: 45px;
     align-self: center;
     justify-self: center;
 }
@@ -350,6 +352,7 @@ p {
     justify-self: center;
     align-self: center;
     text-align: center;
+    font-size: 14px;
 }
 
 .pet-card-stars {
@@ -360,6 +363,7 @@ p {
 
 .pet-card-input {
     width: 80%;
+    font-size: 14px!important;
     grid-area: input;
     justify-content: center;
     align-content: center;
@@ -377,7 +381,7 @@ p {
 
 .pet-card-kl div {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     color: #ce2323;
     justify-self: center;
 }
@@ -618,7 +622,7 @@ p {
 
     .unit-image,
     .pet-image {
-        max-width: 35px;
+        max-width: 40px;
     }
 }
 
@@ -646,7 +650,7 @@ p {
 
 .progress {
     height: 1.75rem;
-    font-size: 1.5rem;
+    font-size: 14px;
     background-color: #999999;
 }
 
@@ -781,6 +785,10 @@ fieldset {
     border-style: solid;
 }
 
+.modal-content h2{
+    font-size: 15px;
+}
+
 #gem-image,
 #gem-hard-image {
     max-width: 20px;
@@ -798,10 +806,11 @@ td:hover {
 .unit-image,
 .media-image {
     margin: auto;
-    max-height: 40px;
+    max-height: 45px;
 }
 
 .modal-title {
+    font-size: 16px;
     margin-bottom: auto;
     margin-top: auto;
     margin-right: 5px;
@@ -811,7 +820,7 @@ td:hover {
 .pet-modal-image {
     display: inline-block;
     margin-right: auto;
-    max-height: 40px;
+    max-height: 45px;
 }
 
 .sortable-ghost {
@@ -831,7 +840,9 @@ td:hover {
     background-color: #17191A!important;
 }
 
-
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(194,212,213,.65);
+}
 
 .navbar-collapse button {
     min-height: inherit;
@@ -845,7 +856,7 @@ td:hover {
 }
 
 .navbar-dark .navbar-nav .nav-link{
-    color: #C2D4D5 ;
+    color: #C2D4D5;
 }
 
 .nav-link {
@@ -856,7 +867,7 @@ td:hover {
 .navbar-brand{
     font-weight: bold;
     font-size: 16px;
-    color: #C2D4D5;
+    color: #C2D4D5 !important;
 }
 
 li {
@@ -869,6 +880,7 @@ li {
 }
 
 h2 {
+    font-size: 16px;
     text-decoration: underline;
 }
 
