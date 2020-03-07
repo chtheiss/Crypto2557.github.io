@@ -17,7 +17,7 @@ The Endless Farming Project is licensed under the terms of the GNU Affero Genera
 - [ ] Slab tracking
 - [ ] Integration of Spirit Highland solutions
 - [ ] Normal Registration/Login and authentication with Discord to access and edit your data everywhere
-- [ ] Design and Layout Rework
+- [x] Design and Layout Rework
 - [ ] Connected Discord bot with shared functionality
 - [x] Performance optimization
 
