@@ -5,7 +5,6 @@ function change_pet_image_background($pet, data) {
     for (var idx of [0, 1, 2, 3, 4]) {
         if (data.fragments >= thresholds[idx]) {
             remove_classes($img, ["pet-image"])
-            //$img.removeClass("zero-star");
             $img.addClass(classes[idx]);
             return;
         }

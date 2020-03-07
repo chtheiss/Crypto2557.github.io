@@ -140,7 +140,7 @@ function getUnits() {
 
 function showAdditionalBuffProgressBars($unit_card) {
     var $prog_bar_add_buff = $unit_card.find(".additional_buff");
-    $prog_bar_add_buff.removeClass("progress-bar-hidden");
+    $prog_bar_add_buff.removeClass("hidden");
     $prog_bar_add_buff.parent().popover();
 }
 
