@@ -51,16 +51,13 @@ Endless Farming
   </head>
   <body>
     
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="/">Endless Farming</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
                 <div class="dropdown-menu">
@@ -78,20 +75,19 @@ Endless Farming
                 <a class="nav-link" href="/meta_progression/">Metas</a>
             </li>
         </ul>
-        <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none" />
-        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.3</button>
-        <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
-        <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
-        <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.4.4</button>
+        <button id="import-button" class="btn bordered">Import</button>
+        <button id="export-button" class="btn bordered">Export</button>
+        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
     </div>
 </nav>
 <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content bordered">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Endless Farming</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -126,34 +122,59 @@ Endless Farming
                     Refills
                 </div>
                 <input id="refills_hard-number" class="user-input stat-modal-shh-refills" type="number" min="0" max="3" value="0" step="1" />
-                <div class="stat-modal-shn-gems"> <img id="gem-image" src="../static/img/gem.png">
+                <div class="stat-modal-shn-gems"> <img class="gem-image" id="gem-image" src="../static/img/gem.png">
                     <label id="gem-label" for="gem-image">0</label></div>
-                <div class="stat-modal-shh-gems"> <img id="gem-hard-image" src="../static/img/gem.png">
+                <div class="stat-modal-shh-gems"> <img class="gem-image" id="gem-hard-image" src="../static/img/gem.png">
                     <label id="gem-hard-label" for="gem-hard-image">0</label></div>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
-</div>
 <div class="modal fade" id="version-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content bordered">
             <div class="modal-header">
-                <h2 class="modal-title" id="exampleModalLongTitle">Patch Notes</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h4 class="modal-title" id="exampleModalLongTitle">Patch Notes</h4>
+                <button type="button" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <div class="modal-body version-modal">
                 <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4.3</i></b></div>
+                    <div class="col-1 version-header">1.4.4</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-03-06</i></b></div>
+                    <div class="col-3 version-header">2020-03-07</div>
                 </div>
-                <div class="row pt-1 mb-4">
+                <div class="row pt-1">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>New H1 of 7 star units</li>
+                                <li>Hidden skills to H1 7 star pets</li>
+                            </ul></li>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>Visual revision of the website (color scheme, unification, etc.)</li>
+                                <li>Made dragging pets a bit more responsive for Chrome users</li>
+                            </ul></li>
+                            <li><b>Fixed</b>
+                            <ul>
+                                <li>A bug where the days to complete the pets were not shown for hard sh</li>
+                            </ul></li>
+                            <li><b>Removed</b>
+                            <ul>
+                                <li>Home nav link</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row version-underline">
+                    <div class="col-1 version-header">1.4.3</div>
+                    <div class="col"></div>
+                    <div class="col-3 version-header">2020-03-06</div>
+                </div>
+                <div class="row pt-1">
                     <div class="col-12">
                         <ul>
                             <li><b>Added</b>
@@ -187,11 +208,11 @@ Endless Farming
                     </div>
                 </div>
                 <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4.2</i></b></div>
+                    <div class="col-1 version-header">1.4.2</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-02-20</i></b></div>
+                    <div class="col-3 version-header">2020-02-20</div>
                 </div>
-                <div class="row pt-1 mb-4">
+                <div class="row pt-1">
                     <div class="col-12">
                         <ul>
                             <li><b>Added</b>
@@ -207,11 +228,11 @@ Endless Farming
                     </div>
                 </div>
                 <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4.1</i></b></div>
+                    <div class="col-1 version-header">1.4.1</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-02-16</i></b></div>
+                    <div class="col-3 version-header">2020-02-16</div>
                 </div>
-                <div class="row pt-1 mb-4">
+                <div class="row pt-1">
                     <div class="col-12">
                         <ul>
                             <li><b>Changed</b>
@@ -222,11 +243,11 @@ Endless Farming
                     </div>
                 </div>
                <div class="row version-underline">
-                    <div class="col-1"><b><i>1.4</i></b></div>
+                    <div class="col-1 version-header">1.4</div>
                     <div class="col"></div>
-                    <div class="col-3"><b><i>2020-02-15</i></b></div>
+                    <div class="col-3 version-header">2020-02-15</div>
                 </div>
-                <div class="row pt-1 mb-4">
+                <div class="row pt-1">
                     <div class="col-12">
                         <ul>
                             <li><b>Added</b>
@@ -265,47 +286,43 @@ Endless Farming
     </div>
 </div>
 </div>
-</div>
-</div>
 
     
 
-<div class="text-center">
-    <div class="index-container">
-        <div class="index-title">
-            <h1>Endless Farming</h1>
-        </div>
-        <div class="index-purpose">
-            <h2 class="col-12"><b>The Purpose of This Site:</b></h2>
-            <p class="col-12"><b>1.</b> Provide a priority system for farming Spirit Highlands (SH) pets that will maximize growth based on your current Knightage Level (KL) and available tickets.</p>
-            <p class="col-12"><b>2.</b> Provide a priority system for using Unit Selection Tickets to maximize useful buffs.</p>
-            <p class="col-12"><b>3.</b> Provide a method for tracking the number of units you currently have to help decide which units you can afford to sacrifice when transcending artifacts.</p>
-            <p class="col-12"><b>4.</b> Provide a meta page with the latest team progression guide because it just makes sense to include on a site that helps you track useful pets and units.</p>
-        </div>
-        <div class="index-pet-usage">
-            <h2 class="col-12"><b>How to Use This Site For Pets:</b></h2>
-            <p class="col-12"><b>1.</b> Click the “My Stats” button at the top right of the page and enter the relevant data into each field. You should update this information every time your stats change.</p>
-            <p class="col-12"><b>2.</b> Click on the “Pets” tab at the top left of the page and select either “Normal” or “Hard” SH pets from the dropdown. On the next page, add all relevant pet data from SH.</p>
-            <p class="col-12"><b>3.</b> You will see the pet farming suggestions across the top of the page along with the number of days until completion. You will also see a green number appear on the pet card showing how many tickets should be spent per day on that pet.</p>
-            <p class="col-12"><b>4.</b> Numbers on the bottom of the pet card indicate what KL is needed to access that pet.</p>
-            <p class="col-12"><b>5.</b> Please note that the site will save your data on this device, but will need to be manually entered on another device. Alternatively, you can export and import data to make transfering data easier.</p>
-        </div>
-        <div class="index-unit-usage">
-            <h2 class="col-12"><b>How to Use This Site For Units:</b></h2>
-            <p class="col-12"><b>1.</b> Click on the “Units” tab at the top left of the page and enter all relevant unit data.</p>
-            <p class="col-12"><b>2.</b> Pay attention to the difference between senior and non-senior units when entering numbers.</p>
-            <p class="col-12"><b>3.</b> The buff bars below the units will fill up as you add units. Some of the buff bars will fill slowly or not fill at all until the coupled pet reaches 5*.</p>
-            <p class="col-12"><b>4.</b> The information you add here is crucial to providing you with an accurate priority guide for Unit Selection Tickets found when you click on the “Tickets” tab at the top of the page.</p>
-        </div>
-        <div class="index-impressum">
-            <h2><b>Additional Information:</b></h2>
-            <p class="col-12">This application was created and is maintained by Crypto.</p>
-            <p class="col-12">A huge shoutout to <a href="https://www.endlessfrontierdata.com/index">Endless Frontier Data</a> for their unit and pet images as well as data, to HarroweD for writing an awesome <a href="http://bit.ly/HarroweD">pet guide</a>, CheezyBob for thinking up the original unit selection list and CryBenihime and SxeSpanky for keeping the meta progression up-to-date.</p>
-            <p class="col-12">Feel free to give feedback on <a href="https://www.reddit.com/r/EndlessFrontier/comments/f4j323/endless_farming_update/">Reddit</a>, by mail <b>endlessfarmingtracker@gmail.com</b>, or directly via Discord at <b>Crypto2557#1163</b> or <b>HarroweD#0666</b></p>
-            <p class="col-12">The source code is available at <a href="https://github.com/Crypto2557/Crypto2557.github.io">GitHub</a>!</p>
-            <p class="col-12">Happy Farming!</p>
-            <p class="col-12">If you like this tool and want to support this project, feel free to <a href="https://paypal.me/crypto2557">donate</a>! Thanks!</p>
-        </div>
+<div class="index-container">
+    <div class="index-title">
+        <h1>Endless Farming</h1>
+    </div>
+    <div class="index-purpose bordered">
+        <h2 class="col-12">The Purpose of This Site:</h2>
+        <p class="col-12"><b>1.</b> Provide a priority system for farming Spirit Highlands (SH) pets that will maximize growth based on your current Knightage Level (KL) and available tickets.</p>
+        <p class="col-12"><b>2.</b> Provide a priority system for using Unit Selection Tickets to maximize useful buffs.</p>
+        <p class="col-12"><b>3.</b> Provide a method for tracking the number of units you currently have to help decide which units you can afford to sacrifice when transcending artifacts.</p>
+        <p class="col-12"><b>4.</b> Provide a meta page with the latest team progression guide because it just makes sense to include on a site that helps you track useful pets and units.</p>
+    </div>
+    <div class="index-pet-usage bordered">
+        <h2 class="col-12">How to Use This Site For Pets:</h2>
+        <p class="col-12"><b>1.</b> Click the “My Stats” button at the top right of the page and enter the relevant data into each field. You should update this information every time your stats change.</p>
+        <p class="col-12"><b>2.</b> Click on the “Pets” tab at the top left of the page and select either “Normal” or “Hard” SH pets from the dropdown. On the next page, add all relevant pet data from SH.</p>
+        <p class="col-12"><b>3.</b> You will see the pet farming suggestions across the top of the page along with the number of days until completion. You will also see a green number appear on the pet card showing how many tickets should be spent per day on that pet.</p>
+        <p class="col-12"><b>4.</b> Numbers on the bottom of the pet card indicate what KL is needed to access that pet.</p>
+        <p class="col-12"><b>5.</b> Please note that the site will save your data on this device, but will need to be manually entered on another device. Alternatively, you can export and import data to make transfering data easier.</p>
+    </div>
+    <div class="index-unit-usage bordered">
+        <h2 class="col-12">How to Use This Site For Units:</h2>
+        <p class="col-12"><b>1.</b> Click on the “Units” tab at the top left of the page and enter all relevant unit data.</p>
+        <p class="col-12"><b>2.</b> Pay attention to the difference between senior and non-senior units when entering numbers.</p>
+        <p class="col-12"><b>3.</b> The buff bars below the units will fill up as you add units. Some of the buff bars will fill slowly or not fill at all until the coupled pet reaches 5*.</p>
+        <p class="col-12"><b>4.</b> The information you add here is crucial to providing you with an accurate priority guide for Unit Selection Tickets found when you click on the “Tickets” tab at the top of the page.</p>
+    </div>
+    <div class="index-addition bordered">
+        <h2 class="col-12">Additional Information:</h2>
+        <p class="col-12">This application was created and is maintained by Crypto.</p>
+        <p class="col-12">A huge shoutout to <a href="https://www.endlessfrontierdata.com/index">Endless Frontier Data</a> for their unit and pet images as well as data, to HarroweD for writing an awesome <a href="http://bit.ly/HarroweD">pet guide</a>, CheezyBob for thinking up the original unit selection list and CryBenihime and SxeSpanky for keeping the meta progression up-to-date.</p>
+        <p class="col-12">Feel free to give feedback on <a href="https://www.reddit.com/r/EndlessFrontier/comments/f4j323/endless_farming_update/">Reddit</a>, by mail <b>endlessfarmingtracker@gmail.com</b>, or directly via Discord at <b>Crypto2557#1163</b> or <b>HarroweD#0666</b></p>
+        <p class="col-12">The source code is available at <a href="https://github.com/Crypto2557/Crypto2557.github.io">GitHub</a>!</p>
+        <p class="col-12">Happy Farming!</p>
+        <p class="col-12">If you like this tool and want to support this project, feel free to <a href="https://paypal.me/crypto2557">donate</a>! Thanks!</p>
     </div>
 </div>
 

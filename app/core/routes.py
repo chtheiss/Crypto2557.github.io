@@ -83,7 +83,7 @@ def units():
     pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
     pets = json.load(open(pets_url))
 
-    number_of_rotations = 17
+    number_of_rotations = 18
 
     max_buffs = [
         max(
@@ -96,7 +96,9 @@ def units():
         for i in range(1, number_of_rotations + 1)
     ]
     max_buffs.reverse()
-    max_buffs = np.repeat(np.array(max_buffs), [4 for _ in range(17)], axis=0)
+    max_buffs = np.repeat(
+        np.array(max_buffs), [4 for _ in range(number_of_rotations)], axis=0
+    )
     max_add_buffs = [
         max(
             [
@@ -105,10 +107,12 @@ def units():
                 if (unit["rotation"] == i)
             ]
         )
-        for i in range(1, 18)
+        for i in range(1, number_of_rotations + 1)
     ]
     max_add_buffs.reverse()
-    max_add_buffs = np.repeat(np.array(max_add_buffs), [4 for _ in range(17)], axis=0)
+    max_add_buffs = np.repeat(
+        np.array(max_add_buffs), [4 for _ in range(number_of_rotations)], axis=0
+    )
     return render_template(
         "units.html",
         title="Units",

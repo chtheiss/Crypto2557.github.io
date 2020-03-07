@@ -32,23 +32,18 @@ function calculatePetFragmentsToFarm() {
         frag_text = col.find("p");
         frag_text.text(fragments);
 
-        var track_col = $('.col-2[data-empty="True"]').first();
-
+        var tracker = $(".pet-trackers").children('[data-empty="True"]').first();
         if (fragments > 0) {
-            frag_text.removeClass('zero-fragments');
+            frag_text.removeClass('invisible');
             var days = Math.ceil((330 - current_frags) / fragments);
-            track_col.css("display", "");
-            track_col.find("img").attr("src", col.find(".pet-image").attr("src"));
-            track_col.attr("data-empty", "False");
-            track_col.data("empty", "False");
-            track_col.find("p").text(days + " days");
-            track_col.parent(".justify-content-center").css("display", "");
+            tracker.css("display", "");
+            tracker.find("img").attr("src", col.find(".pet-image").attr("src"));
+            tracker.attr("data-empty", "False");
+            tracker.data("empty", "False");
+            tracker.find("p").text(days + " days");
 
         } else {
-            frag_text.addClass('zero-fragments');
-            if (track_col.attr("id") == "track-1") {
-                track_col.parent(".justify-content-center").css("display", "none");
-            }
+            frag_text.addClass('invisible');
         }
     });
 }
@@ -82,7 +77,8 @@ function calculatePetFragmentsToFarm() {
         row = $("#dragable-row").get()[0];
         sortable = Sortable.create(row, {
             cursor: 'move',
-            animation: 150,
+            animation: 50,
+            delayOnTouchOnly: true,
             onUpdate: function(event) {
                 change = $("#dragable-row").children().filter(function() {
                     id = parseInt($(this).attr("data-id"));

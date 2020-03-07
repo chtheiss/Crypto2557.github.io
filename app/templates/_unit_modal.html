@@ -1,14 +1,25 @@
 <div class="modal fade" id="{{key_id}}-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-offset-top">
-        <div class="modal-content">
+        <div class="modal-content bordered">
             <div class="modal-header">
-                <h5 class="modal-title">{{key}}</h5>
-                <img class="unit-modal-image" src="../static/{{unit['img_sr']}}">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h4 class="modal-title">{{key}}</h4>
+                {% if loop_index < 5 %}
+                <img class="unit-image" src="../static/{{unit['img']}}">
+                {% else %}
+                <img class="unit-image" src="../static/{{unit['img_sr']}}">
+                {% endif %}
+                <button type="button" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+            {% if loop_index < 5 %}
+                <ul>
+                    {% for ability in unit['atk_abil'] %}
+                    <li>{{ability}}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
                 <div class="sd-tabs sd-tab-interaction">
                     <ul class="nav nav-tabs">
                         <li class="nav-item active">
@@ -20,7 +31,6 @@
                     </ul>
                     <div class="tab-content">
                         <form id="tab-{{key_id}}-normal" class="tab-pane active" action="" method="post">
-                            <h2>Unit Attacks and Abilities</h2>
                             <ul>
                                 {% for ability in unit['atk_abil'] %}
                                 <li>{{ability}}</li>
@@ -28,7 +38,6 @@
                             </ul>
                         </form>
                         <form id="tab-{{key_id}}-senior" class="tab-pane">
-                            <h2>Unit Attacks and Abilities</h2>
                             <ul>
                                 {% for ability in unit['atk_abil_sr'] %}
                                 <li>{{ability}}</li>
@@ -36,6 +45,7 @@
                         </form>
                     </div>
                 </div>
+            {% endif %}
             </div>
         </div>
     </div>

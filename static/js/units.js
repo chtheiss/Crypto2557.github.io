@@ -24,7 +24,7 @@ function update_progress_bar_values($progress_bar, buff) {
         $progress_bar.attr("data-linked-multiplier", buff.linked_multiplier.toString())
             .data("linked-multiplier", buff.linked_multiplier.toString());
     }
-    update_progress_bar($progress_bar, $progress_bar.parents(".unit-card").find(".unit-input[type='number']").first());
+    update_progress_bar($progress_bar, $progress_bar.parents(".unit-card, .ex-unit-card").find(".unit-input[type='number']").first());
 }
 
 function get_unit_input_values($input) {
@@ -86,9 +86,9 @@ function update_progress_bar($bar, $input) {
             change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax"));
         } else {
             if ($add_bar.parents("unit-card").attr("id") == linked_units[0].replaceAll(" ", "_") &&
-                $bar.parents(".unit-card").find(".pet-image.five-star-pet").length > 0) {
+                $bar.parents(".unit-card, .ex-unit-card").find(".pet-image.five-star-pet").length > 0) {
                 var linked_multiplier = $add_bar.attr("data-linked-multiplier").replace("]", "").replace("[", "").replace(" ", "").split(",").map(Number);
-                var other_unit_values = get_unit_input_values($add_bar.parents(".unit-card").find(".unit-input[type='number']").first());
+                var other_unit_values = get_unit_input_values($add_bar.parents(".unit-card, .ex-unit-card").find(".unit-input[type='number']").first());
                 var _current_progress = multiplier * other_unit_values.nsr + other_unit_values.sr + linked_multiplier[linked_multiplier.length - 1] * (multiplier * unit_values.nsr + unit_values.sr);
                 change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax"));
             }
@@ -140,7 +140,7 @@ function getUnits() {
 
 function showAdditionalBuffProgressBars($unit_card) {
     var $prog_bar_add_buff = $unit_card.find(".additional_buff");
-    $prog_bar_add_buff.removeClass("progress-bar-hidden");
+    $prog_bar_add_buff.removeClass("hidden");
     $prog_bar_add_buff.parent().popover();
 }
 
@@ -174,7 +174,7 @@ function showAdditionalBuffProgressBars($unit_card) {
         var pets_info = await getPets()
         var units_info = await getUnits()
 
-        for (const unit_card of $('.unit-card')) {
+        for (const unit_card of $('.unit-card, .ex-unit-card')) {
             $unit_card = $(unit_card);
             // updates all progress bars
             for (let bar of $unit_card.find('[role="progressbar"]')) {
@@ -204,11 +204,11 @@ function showAdditionalBuffProgressBars($unit_card) {
                     var $buff_span = $unit_card.find('[data-original-title="' + buff.name + '"]');
                     $buff_span.attr("data-content", pet_buff.description);
                 }
-                
+
                 if (buff.linked_units != undefined & pet_buff != undefined) {
                     var linked_active_pets = pet_buff.linked_pets.filter(linked_pet_name =>
                             pets.filter(pet => pet.name == linked_pet_name.replaceAll(" ", "_") & pet.fragments >= 330).length > 0
-                        )                
+                        )
                     var req = five_star_pet.length + linked_active_pets.length
                     if (req > 0 & Array.isArray(pet_buff.requirement)) {
                         buff.requirement = pet_buff.requirement[req - 1]

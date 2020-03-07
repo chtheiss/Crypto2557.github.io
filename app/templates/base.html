@@ -33,16 +33,13 @@ Endless Farming
 {% endblock styles %}
 {% endblock %}
 {% block navbar %}
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="{{ url_for('core.index') }}">Endless Farming</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('core.index') }}">Home</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
                 <div class="dropdown-menu">
@@ -60,12 +57,11 @@ Endless Farming
                 <a class="nav-link" href="{{ url_for('core.meta_progression') }}">Metas</a>
             </li>
         </ul>
-        <!-- <button id="info-button" class="btn btn-dark btn-outline-light">Info</button> -->
         <input type="file" id="dbupload" value="Import" style="display:none" />
-        <button id="version-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#version-modal">v1.4.3</button>
-        <button id="import-button" class="btn btn-dark btn-outline-light">Import</button>
-        <button id="export-button" class="btn btn-dark btn-outline-light">Export</button>
-        <button id="stats-button" class="btn btn-dark btn-outline-light" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.4.4</button>
+        <button id="import-button" class="btn bordered">Import</button>
+        <button id="export-button" class="btn bordered">Export</button>
+        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
     </div>
 </nav>
 {% include '_my_stats_modal.html' %}

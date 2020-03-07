@@ -1,4 +1,4 @@
-<div id="{{key_id}}" class="unit-card">
+<div id="{{key_id}}" class="unit-card bordered">
     <a class="unit-modal unit-card-jr-unit" href="#tab-{{key_id}}-normal" data-toggle="modal" data-target="#{{key_id}}-modal">
         <img id="{{key_id}}-image" class="unit-image five-star-unit" src="../static/{{unit['img']}}" data-toggle="tooltip" data-placement="top" title="{{key}}">
     </a>
@@ -16,7 +16,7 @@
     {% include '_pet_modal.html' %}
     <div class="unit-card-buffs">
         {% for i in range(max_buff) %}
-        {%if i < unit["buffs"]|length %} {% set buff=unit["buffs"][i] %} 
+        {%if i < unit["buffs"]|length %} {% set buff=unit["buffs"][i] %}
         <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
             <div class='progress'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}" data-linked-multiplier="{{buff['linked_multiplier']}}">0/{{buff["requirement"]}}
@@ -24,20 +24,20 @@
             </div>
         </span>
             {% else %}
-            <div class='progress progress-bar-hidden'>
+            <div class='progress hidden'>
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-linked-units=""></div>
             </div>
             {% endif %}
             {% endfor %}
             {% for i in range(max_add_buff) %}
             {%if i < pets[unit["pet"]]["additional_buffs"]|length %} {% set buff=pets[unit["pet"]]["additional_buffs"][i] %} <span data-toggle="popover" title="{{buff['name']}}" data-content="{{buff['description']}}" data-trigger="hover" data-placement="top">
-                <div class='progress progress-bar-hidden additional_buff'>
+                <div class='progress hidden additional_buff'>
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{buff['requirement']}}" data-multiplier="{{buff['multiplier']}}" data-linked-units="{{buff['linked_units']}}" data-linked-multiplier="{{buff['linked_multiplier']}}">0/{{buff["requirement"]}}
                     </div>
                 </div>
                 </span>
                 {% else %}
-                <div class='progress progress-bar-hidden'>
+                <div class='progress hidden'>
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-linked-units=""></div>
                 </div>
                 {% endif %}
