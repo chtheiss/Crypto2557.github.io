@@ -52,7 +52,6 @@ function calculatePetFragmentsToFarm() {
 
         } else {
             frag_text.addClass('invisible');
-            if (tracker.attr("id") == "track-1") {}
         }
     });
 }

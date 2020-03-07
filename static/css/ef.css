@@ -328,7 +328,7 @@ h4{
     width:80%;
     grid-gap:5px;
     grid-template-columns:1fr;
-    grid-template-rows:50px 100px 1fr 12px;
+    grid-template-rows:50px minmax(min-content, 150px) 1fr 12px;
     grid-template-areas:"buttons" "trackers" "pets" "footer";
     justify-content:center;
     align-content:center;
@@ -504,6 +504,11 @@ img.img-responsive{
         grid-template-areas:"jr-unit sr-unit pet" "jr-input jr-input pet" "sr-input sr-input ." "buffs buffs buffs";
     }
 }
+@media screen and (max-width:768px){
+    .unit-card{
+        grid-template-columns:1fr 1fr 0.5fr;
+    }
+}
 .unit-card>*{
     justify-self:center;
     align-self:center;
@@ -541,9 +546,21 @@ img.img-responsive{
     grid-template-areas:
         "unit pet"
         "input ."
-        "ex-buffs ex-buffs";
+        "ex-buffs ex-buffs"
+        ;
     grid-gap: 5px;
     padding: 2%;
+}
+/* Define changes for mobile ex unit card grid */
+@media screen and (max-width:600px){
+    .ex-unit-card{
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows:1.7fr .7fr auto;
+        grid-template-areas:
+        "unit unit pet"
+        "input input ."
+        "ex-buffs ex-buffs ex-buffs";
+    }
 }
 .ex-unit-card>*{
     justify-self:center;
