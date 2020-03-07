@@ -12,6 +12,9 @@
 ### Fixed
 - A bug where the days to complete the pets were not shown for hard sh
 
+### Removed
+- Home nav link
+
 ## [1.4.3] - 2020-03-06
 ### Added
 - New Pets for H1 of 7* units
