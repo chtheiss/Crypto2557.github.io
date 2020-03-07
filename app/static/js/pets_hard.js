@@ -75,11 +75,14 @@ function calculatePetFragmentsToFarm() {
         }
 
         row = $("#dragable-row").get()[0];
+
         sortable = Sortable.create(row, {
             cursor: 'move',
-            animation: 50,
             delayOnTouchOnly: true,
-            onUpdate: function(event) {
+            animation: 50,
+            draggable: ".pet-card",
+            forceFallback: true,
+            onUpdate: async function(event) {
                 change = $("#dragable-row").children().filter(function() {
                     id = parseInt($(this).attr("data-id"));
                     if (event.newIndex < event.oldIndex) {
@@ -104,7 +107,7 @@ function calculatePetFragmentsToFarm() {
                 $(event.item).attr("data-id", event.newIndex);
                 $(event.item).data("id", event.newIndex);
 
-                updatePriorities("pets_hard");
+                await updatePriorities("pets_hard");
                 calculatePetFragmentsToFarm();
             },
         });

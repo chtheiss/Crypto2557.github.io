@@ -90,7 +90,7 @@ function calculatePetFragmentsToFarm() {
             animation: 50,
             draggable: ".pet-card",
             forceFallback: true,
-            onChange: function(event) {
+            onUpdate: async function(event) {
                 change = $("#dragable-row").children().filter(function() {
                     id = parseInt($(this).attr("data-id"));
                     if (event.newIndex < event.oldIndex) {
@@ -114,8 +114,7 @@ function calculatePetFragmentsToFarm() {
 
                 $(event.item).attr("data-id", event.newIndex);
                 $(event.item).data("id", event.newIndex);
-            },
-            onEnd: async function(event) {
+
                 await updatePriorities("pets");
                 calculatePetFragmentsToFarm();
             },
