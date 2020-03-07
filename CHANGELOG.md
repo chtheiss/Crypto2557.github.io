@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.5] - 2020-03-07
+### Fixed
+- A bug that prevented own priorities to be saved to the IndexedDB (please reset and reorder if you used that feature)
+
 ## [1.4.4] - 2020-03-07
 ### Added
 - New H1 of 7* units
