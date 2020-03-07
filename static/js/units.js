@@ -202,6 +202,7 @@ function showAdditionalBuffProgressBars($unit_card) {
                 // Change the description of buffs based on pet
                 if (five_star_pet.length & pet_buff != undefined) {
                     var $buff_span = $unit_card.find('[data-original-title="' + buff.name + '"]');
+                    buff.multiplier = pet_buff.multiplier;
                     $buff_span.attr("data-content", pet_buff.description);
                 }
 
