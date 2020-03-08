@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block app_content %}
+<div class="pet-container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="ss1-tab" data-toggle="tab" href="#ss1" role="tab" aria-controls="ss1" aria-selected="true">Secret Shop 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ss2-tab" data-toggle="tab" href="#ss2" role="tab" aria-controls="ss2" aria-selected="false">Secret Shop 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ss3-tab" data-toggle="tab" href="#ss3" role="tab" aria-controls="ss3" aria-selected="false">Secret Shop 3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ss4-tab" data-toggle="tab" href="#ss4" role="tab" aria-controls="ss4" aria-selected="true">Secret Shop 4</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ss5-tab" data-toggle="tab" href="#ss5" role="tab" aria-controls="ss5" aria-selected="true">Secret Shop 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="greek-tab" data-toggle="tab" href="#greek" role="tab" aria-controls="greek" aria-selected="true">Greek</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="zodiac-tab" data-toggle="tab" href="#zodiac" role="tab" aria-controls="zodiac" aria-selected="true">Zodiac</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="ss1" role="tabpanel" aria-labelledby="ss1-tab">
+        <div id="dragable-row" class="pet-pets">
+            {% for key, pet in pets.items() %}
+            {% set key_id=key.replace(" ", "_") %}
+            {% set loop_index = loop.index %}
+            {% include 'pet_card_other.html' %}
+            {% endfor %}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="ss2" role="tabpanel" aria-labelledby="ss2-tab">...</div>
+      <div class="tab-pane fade" id="ss3" role="tabpanel" aria-labelledby="ss3-tab">...</div>
+      <div class="tab-pane fade" id="ss4" role="tabpanel" aria-labelledby="ss4-tab">...</div>
+      <div class="tab-pane fade" id="ss5" role="tabpanel" aria-labelledby="ss5-tab">...</div>
+      <div class="tab-pane fade" id="greek" role="tabpanel" aria-labelledby="greek-tab">...</div>
+      <div class="tab-pane fade" id="zodiac" role="tabpanel" aria-labelledby="zodiac-tab">...</div>
+    </div>
+</div>
+{% for key, pet in pets.items() %}
+{% set key_id=key.replace(" ", "_") %}
+{% set pet_name=key %}
+{% include '_pet_modal.html' %}
+{% endfor %}
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+{% block pet_scripts %}
+{% endblock %}
+{% endblock %}

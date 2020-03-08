@@ -44,6 +44,39 @@ def pets():
     )
     return render_template("pets.html", title="Pets", pets=pets_ordered, ceil=np.ceil)
 
+@bp.route("/pets_others/", methods=["GET", "POST"])
+def pets_others():
+    pet_priority_url = os.path.join(
+        current_app.root_path, "static/json", "pet_priority.json"
+    )
+    pet_priority = json.load(open(pet_priority_url))
+
+    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
+    pets = json.load(open(pets_url))
+
+    stages_per_two_kl = 10
+
+    for key, item in pet_priority.items():
+        pets[item]["priority"] = key
+        pets[item]["KL"] = (
+            (np.ceil(np.array(pets[item]["from"]) / stages_per_two_kl) * 2)
+            .astype(int)
+            .tolist()
+        )
+
+    pets_ordered = json.loads(
+        json.dumps(
+            dict(
+                [
+                    (pet, pets[pet])
+                    for pet in sorted(pets, key=lambda d: int(pets[d]["priority"]))
+                ]
+            )
+        )
+    )
+    return render_template("pets_others.html", title="Pets", pets=pets_ordered, ceil=np.ceil)
+
+
 
 @bp.route("/pets_hard/", methods=["GET", "POST"])
 def pets_hard():

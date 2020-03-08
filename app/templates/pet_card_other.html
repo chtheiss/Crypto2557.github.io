@@ -1,0 +1,30 @@
+<div id="{{key_id}}" data-id="{{loop_index-1}}" class="pet-card bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#{{key_id}}-modal">
+        <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
+    </span>
+    <p id="{{key_id}}-farmable-fragments" class="pet-card-frags invisible">0</p>
+    <h4 class="pet-card-name">{{ key }}</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="{{key_id}}-2star" data-pet="{{key_id}}">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="{{key_id}}-3star" data-pet="{{key_id}}">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="{{key_id}}-4star" data-pet="{{key_id}}">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="{{key_id}}-5star" data-pet="{{key_id}}">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>

@@ -1,0 +1,2872 @@
+[
+   {
+      "_id":20,
+      "name":"Bellial",
+      "skill1":"Increase additional medals obtained (15, 30, 45, 60, 75)",
+      "skill2":"Increase attack power of all units in Guild Raid (0, 0, 5, 10, 20)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Belial's Hammer",
+      "artifact_id":"131",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":45,
+      "name":"Skole",
+      "skill1":"Increase additional medals obtained (10, 20, 30, 40, 50)",
+      "skill2":"Increase defense power of all units in Guild Raid (0, 0, 5, 10, 20)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Essence of Negligence",
+      "artifact_id":"128",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":46,
+      "name":"Harping",
+      "skill1":"Increase additional medals obtained (10, 20, 30, 40, 50)",
+      "skill2":"Increase movement speed of all units in Guild Raid (0, 0, 2, 3, 4)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Essence of Laziness",
+      "artifact_id":"129",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":47,
+      "name":"Gnome",
+      "skill1":"Increase additional medals obtained (10, 20, 30, 40, 50)",
+      "skill2":"Increase HP of all units in Guild Raid (0, 0, 5, 10, 20)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Essence of Arrogance",
+      "artifact_id":"130",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":88,
+      "name":"Lavark",
+      "skill1":"Increase additional medals obtained (15, 25, 35, 45, 60)",
+      "skill2":"Increase critical rate of all units in Guild Raid (4, 8, 12, 16, 20)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Basilisk's Spear",
+      "artifact_id":"132",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":89,
+      "name":"Hellyme",
+      "skill1":"Increase additional medals obtained (15, 25, 35, 45, 60)",
+      "skill2":"Increases resistance against fire (0, 0, 500, 1000, 1500)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Salim's Claw",
+      "artifact_id":"133",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":90,
+      "name":"Furion",
+      "skill1":"Increase additional medals obtained (15, 25, 35, 45, 60)",
+      "skill2":"Increase attack speed of all units in Guild Raid (1, 2, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ignis' Sword",
+      "artifact_id":"134",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":91,
+      "name":"Bahat",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase critical damage of all units in Guild Raid (4, 8, 12, 16, 20)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Bahamut's Hammer",
+      "artifact_id":"135",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":92,
+      "name":"Flame Sorceress",
+      "skill1":"Increases resistance against fire (100, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 35, 45, 60)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Sun Ring",
+      "artifact_id":"144",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":102,
+      "name":"Senior Skole",
+      "skill1":"Increase additional medals obtained (15, 25, 35, 45, 60)",
+      "skill2":"Increase defense power of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Poison-Impervious Cloak",
+      "artifact_id":"146",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":103,
+      "name":"Senior Harping",
+      "skill1":"Increase additional medals obtained (15, 25, 35, 45, 60)",
+      "skill2":"Increase movement speed of all units in Guild Raid (0, 0, 3, 4, 5)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Armor of Sandstorm",
+      "artifact_id":"147",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":105,
+      "name":"Senior Gnome",
+      "skill1":"Increase additional medals obtained (15, 25, 35, 45, 60)",
+      "skill2":"Increase HP of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Boots of Iron Wall",
+      "artifact_id":"149",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":106,
+      "name":"Senior Bellial",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase attack power of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Lord’s Helmet",
+      "artifact_id":"148",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":107,
+      "name":"Tarad",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 50, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Taratoad's Wand",
+      "artifact_id":"151",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":108,
+      "name":"Neru",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase resistance to nature attacks. (0, 0, 500, 1000, 1500)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Nerugal's Spear",
+      "artifact_id":"152",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":109,
+      "name":"Gorgon",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 50, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Axe of Gorgos",
+      "artifact_id":"153",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":110,
+      "name":"Beel",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 50, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Beelzebub's Sword",
+      "artifact_id":"154",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":111,
+      "name":"Forest Sorceress",
+      "skill1":"Increase resistance to nature attacks. (100, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 35, 45, 60)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Gaia's Rage",
+      "artifact_id":"155",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":130,
+      "name":"Senior Lavark",
+      "skill1":"Increases efficiency of [Unit attack power 10 times] skill from the shop. (200, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 50, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Flaming Boots of Retribution",
+      "artifact_id":"171",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":131,
+      "name":"Senior Hellyme",
+      "skill1":"Increases efficiency of [Unit attack power 10 times] skill from the shop. (200, 400, 800, 1600, 3200)",
+      "skill2":"Increases resistance against fire (0, 0, 600, 1200, 1800)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Flaming Cloak of Retribution",
+      "artifact_id":"170",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":132,
+      "name":"Senior Furion",
+      "skill1":"Increases efficiency of [Unit attack power 10 times] skill from the shop. (200, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 50, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Flaming Armor of Retribution",
+      "artifact_id":"169",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":133,
+      "name":"Senior Bahat",
+      "skill1":"Increases efficiency of [Unit attack power 10 times] skill from the shop. (200, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 55, 70, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Flaming Mask of Retribution",
+      "artifact_id":"168",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":153,
+      "name":"Senior Tarad",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 50, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Fallen Forest Master's Armor",
+      "artifact_id":"190",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":154,
+      "name":"Senior Neru",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase resistance to nature attacks. (0, 0, 600, 1200, 1800)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Fallen Forest Master's Mask",
+      "artifact_id":"191",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":155,
+      "name":"Senior Gorgon",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 50, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Fallen Forest Master's Shield",
+      "artifact_id":"192",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":156,
+      "name":"Senior Beel",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Fallen Forest Master's Wand",
+      "artifact_id":"193",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":157,
+      "name":"Heliffin",
+      "skill1":"Elevates the first Stage after the Revival (0.2, 0.4, 0.6, 0.8, 1)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hell Lord's Winged Cape",
+      "artifact_id":"184",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":158,
+      "name":"Horn-Boar",
+      "skill1":"Elevates the first Stage after the Revival (0.2, 0.4, 0.6, 0.8, 1)",
+      "skill2":"Increases resistance against darkness (0, 0, 500, 1000, 1500)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hell Lord's Bone Boots",
+      "artifact_id":"185",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":159,
+      "name":"Twin Skulls",
+      "skill1":"Elevates the first Stage after the Revival (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hell Lord's Bone Armor",
+      "artifact_id":"186",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":160,
+      "name":"Dread",
+      "skill1":"Elevates the first Stage after the Revival (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hell Lord's Twin Swords",
+      "artifact_id":"187",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":161,
+      "name":"Amaymon",
+      "skill1":"Elevates the first Stage after the Revival (0.4, 0.8, 1.2, 1.6, 2)",
+      "skill2":"Increase additional medals obtained (0, 0, 70, 90, 120)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hell Lord's Horned Skull",
+      "artifact_id":"188",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":162,
+      "name":"Dark Sorceress",
+      "skill1":"Increases resistance against darkness (100, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 35, 45, 60)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hell Lord's Amulet",
+      "artifact_id":"189",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":201,
+      "name":"Extreme Skoll",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Necklace of the Unleashed Ancient Priest",
+      "artifact_id":"256",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":202,
+      "name":"Extreme Harping",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase Ancient Blessing (0, 0, 500, 1000, 1500)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Earrings of the Unleashed Ancient Priest",
+      "artifact_id":"257",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":203,
+      "name":"Extreme Gnome",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Bracelet of the Unleashed Ancient Priest",
+      "artifact_id":"258",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":204,
+      "name":"Extreme Veli",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Circlet of the Unleashed Ancient Priest",
+      "artifact_id":"259",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":211,
+      "name":"Senior Heliffin",
+      "skill1":"Elevates the first Stage after the Revival (0.2, 0.4, 0.6, 0.8, 1)",
+      "skill2":"Increase additional medals obtained (0, 0, 70, 90, 110)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Fan of Fierce Ghost King",
+      "artifact_id":"218",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":212,
+      "name":"Senior Horn-Boar",
+      "skill1":"Elevates the first Stage after the Revival (0.2, 0.4, 0.6, 0.8, 1)",
+      "skill2":"Increases resistance against darkness (0, 0, 600, 1200, 1800)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Spiked Club of Fierce Ghost King",
+      "artifact_id":"219",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":213,
+      "name":"Senior Twin Skulls",
+      "skill1":"Elevates the first Stage after the Revival (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase additional medals obtained (0, 0, 70, 90, 110)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Greatbow of Fierce Ghost King",
+      "artifact_id":"220",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":214,
+      "name":"Senior Dread",
+      "skill1":"Elevates the first Stage after the Revival (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase additional medals obtained (0, 0, 70, 90, 110)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Gloves of Fierce Ghost King",
+      "artifact_id":"221",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":215,
+      "name":"Senior Amaymon",
+      "skill1":"Elevates the first Stage after the Revival (0.4, 0.8, 1.2, 1.6, 2)",
+      "skill2":"Increase additional medals obtained (0, 0, 78, 100, 130)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Whip of Fierce Ghost King",
+      "artifact_id":"222",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":216,
+      "name":"Sahara",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (30, 60, 90, 120, 150)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Axe of the Unleashed Ancient Dragon Knight",
+      "artifact_id":"260",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":223,
+      "name":"Ursha",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 500, 700, 1000)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Hail Dragon Boots",
+      "artifact_id":"225",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":224,
+      "name":"Peruru",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increases resistance against cold (0, 0, 500, 1000, 1500)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Hail Dragon Helm",
+      "artifact_id":"226",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":225,
+      "name":"Everes",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 500, 700, 1000)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Hail Dragon Bracers",
+      "artifact_id":"227",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":226,
+      "name":"Skaka",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 500, 700, 1000)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Hail Dragon Manteau",
+      "artifact_id":"228",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":227,
+      "name":"Levthan",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 500, 700, 1000)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Hail Dragon Armor",
+      "artifact_id":"229",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":228,
+      "name":"Frost Sorceress",
+      "skill1":"Increases resistance against cold (100, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 35, 45, 60)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Hail Dragon Earrings",
+      "artifact_id":"230",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":261,
+      "name":"Ancient Sorceress",
+      "skill1":"Increase Ancient Blessing (100, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 35, 45, 60)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Talisman of the Unleashed Ancient Sorceress",
+      "artifact_id":"261",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":268,
+      "name":"Senior Ursha",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 600, 900, 1200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Urubos Blade of Niflheim",
+      "artifact_id":"264",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":269,
+      "name":"Senior Peruru",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increases resistance against cold (0, 0, 600, 1200, 1800)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Fenril Claw of Niflheim",
+      "artifact_id":"265",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":270,
+      "name":"Senior Everes",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 600, 900, 1200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Destroyer Shield of Niflheim",
+      "artifact_id":"266",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":271,
+      "name":"Senior Skaka",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 600, 900, 1200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Skashka Scythe of Niflheim",
+      "artifact_id":"267",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":272,
+      "name":"Senior Levthan",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 600, 900, 1200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Leviathan Hammer of Niflheim",
+      "artifact_id":"268",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":309,
+      "name":"Extreme Lavark",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ring of Basilisk",
+      "artifact_id":"301",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":310,
+      "name":"Extreme Hellyme",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase Blessing of the Flame (0, 0, 500, 1000, 1500)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Bracelets of Salim",
+      "artifact_id":"302",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":311,
+      "name":"Extreme Furion",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Earrings of Ignis",
+      "artifact_id":"303",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":312,
+      "name":"Extreme Bahat",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (20, 40, 60, 80, 100)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Crown of Bahamut",
+      "artifact_id":"304",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":313,
+      "name":"Surtr",
+      "skill1":"Increase stats(Attack/Defense/HP) of all units in the Stage (30, 60, 90, 120, 150)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Spiked Club of Ancient Flame Knight",
+      "artifact_id":"305",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":314,
+      "name":"Senior Flame Sorceress",
+      "skill1":"Increase Blessing of the Flame (100, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 35, 45, 60)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Talisman of Senior Flame Sorceress",
+      "artifact_id":"306",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"raid"
+   },
+   {
+      "_id":293,
+      "name":"Chicken King",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 170, 220, 280)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"General’s Flame Helmet",
+      "artifact_id":"285",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":294,
+      "name":"Horse King",
+      "skill1":"Decrease quest level up cost (40000, 200000, 400000, 4000000, 40000000)",
+      "skill2":"Increase movement speed of human unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Flame Boots of Bravery",
+      "artifact_id":"286",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":295,
+      "name":"Tiger King",
+      "skill1":"Increase basic game speed (1.5, 3, 4.5, 6, 7.5)",
+      "skill2":"Increase attack power of human unit in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Flame Sword of Courage",
+      "artifact_id":"287",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":296,
+      "name":"Dragon King",
+      "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (800, 1600, 2400, 3200, 4000)",
+      "skill2":"Increase additional medals obtained (0, 0, 170, 220, 280)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Dragon Ring of Transformation",
+      "artifact_id":"288",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":297,
+      "name":"Sheep King",
+      "skill1":"Decrease the unit upgrade cost (360000, 720000, 1440000, 2880000, 5760000)",
+      "skill2":"Increase movement speed of elf unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Sheep Cloak of Understanding",
+      "artifact_id":"289",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":298,
+      "name":"Rabbit King",
+      "skill1":"Increase Ancient Blessing (120, 450, 900, 1800, 3600)",
+      "skill2":"Increase attack power of elf unit in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Rabbit Jade Mirror of Realization",
+      "artifact_id":"290",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":299,
+      "name":"Snake King",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 170, 220, 280)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Commander’s Staff of Revolution",
+      "artifact_id":"291",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":300,
+      "name":"Rat King",
+      "skill1":"Increase quest gold buff (108000, 288000, 1080000, 2880000, 5400000)",
+      "skill2":"Increase movement speed of undead unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Cane of Cunningness",
+      "artifact_id":"292",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":301,
+      "name":"Monkey King",
+      "skill1":"Reduce the quest time (100, 150, 200, 250, 300)",
+      "skill2":"Increase attack power of undead unit in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Golden Crown of Adventure",
+      "artifact_id":"293",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":302,
+      "name":"Ox King",
+      "skill1":"Increase active skill damage efficiency (80, 130, 200, 300, 450)",
+      "skill2":"Increase additional medals obtained (0, 0, 170, 220, 280)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Golden Dagger of Wealth",
+      "artifact_id":"294",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":303,
+      "name":"Dog King",
+      "skill1":"Increase Maximum Quest level (40000, 4000000, 400000000, 40000000000, 4000000000000)",
+      "skill2":"Increase movement speed of orc unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Seal of Trust",
+      "artifact_id":"295",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":304,
+      "name":"Pig King",
+      "skill1":"Increase basic game speed (1.5, 3, 4.5, 6, 7.5)",
+      "skill2":"Increase attack power of orc unit in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Lucky Witch Broom",
+      "artifact_id":"296",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss5"
+   },
+   {
+      "_id":60,
+      "name":"Puppy",
+      "skill1":"Increase quest gold buff (200, 550, 2100, 5500, 11000)",
+      "skill2":"Increase HP of human unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":61,
+      "name":"Coby",
+      "skill1":"Increase melee dodge rate of human unit in Guild Raid (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase HP of human unit in Guild War (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":62,
+      "name":"Hotbee",
+      "skill1":"Increase basic game speed (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase attack power of human unit in Guild War (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":63,
+      "name":"Pangpang",
+      "skill1":"Increase attack power of human unit in Guild War (2, 4, 6, 8, 10)",
+      "skill2":"Increase attack speed of human unit in Guild War (0, 0, 0.9, 1.2, 1.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":64,
+      "name":"Lye",
+      "skill1":"Increase offline marching speed (6, 12, 18, 24, 30)",
+      "skill2":"Increase attack power of human unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":65,
+      "name":"Hot Pony",
+      "skill1":"Increase movement speed of human unit in Guild Raid (0.4, 0.8, 1.2, 1.6, 2)",
+      "skill2":"Increase movement speed of human unit in Guild War (0, 0, 1.2, 1.6, 2)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":66,
+      "name":"Jelly",
+      "skill1":"Increase attack speed of elf unit in Guild War (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase attack speed of elf unit in PvP (0, 0, 0.9, 1.2, 1.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":67,
+      "name":"Opener",
+      "skill1":"Increase offline marching speed (6, 12, 18, 24, 30)",
+      "skill2":"Increase HP of elf unit in Guild War (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":68,
+      "name":"Boongboong",
+      "skill1":"Increase attack power of elf unit in Guild War (2, 4, 6, 8, 10)",
+      "skill2":"Increase attack power of elf unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":69,
+      "name":"Nepen-quiver",
+      "skill1":"Increase attack power of elf unit in Guild Raid (2, 4, 6, 8, 10)",
+      "skill2":"Increase attack speed of elf unit in Guild War (0, 0, 0.9, 1.2, 1.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":70,
+      "name":"Greenbee",
+      "skill1":"Increase basic game speed (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase attack power of elf unit in Guild War (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":71,
+      "name":"Gently",
+      "skill1":"Increase quest gold buff (250, 650, 2500, 6500, 12000)",
+      "skill2":"Increase attack power of range unit in Guild Raid (0, 0, 7.5, 10, 12.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":72,
+      "name":"Big Eye",
+      "skill1":"Increase HP of undead unit in Guild War (2, 4, 6, 8, 10)",
+      "skill2":"Increase HP of undead unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":73,
+      "name":"Clapper",
+      "skill1":"Increase quest gold buff (200, 550, 2100, 5500, 11000)",
+      "skill2":"Increase movement speed of undead unit in PvP (0, 0, 0.9, 1.2, 1.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":74,
+      "name":"Black Jack",
+      "skill1":"Increase basic game speed (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase attack power of undead unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":75,
+      "name":"Eye Bye",
+      "skill1":"Increase HP of undead unit in Guild Raid (2, 4, 6, 8, 10)",
+      "skill2":"Increase attack power of undead unit in Guild War (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":76,
+      "name":"Red Horn",
+      "skill1":"Increase HP of undead unit in Guild War (2, 4, 6, 8, 10)",
+      "skill2":"Increase attack power of undead unit in Guild War (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":77,
+      "name":"Pallabook",
+      "skill1":"Increase offline marching speed (7, 14, 21, 28, 35)",
+      "skill2":"Increase attack power of range unit in Guild War (0, 0, 7.5, 10, 12.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":78,
+      "name":"Punpun",
+      "skill1":"Increase HP of orc unit in Guild War (2, 4, 6, 8, 10)",
+      "skill2":"Increase attack power of orc unit in Guild War (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":79,
+      "name":"Celt",
+      "skill1":"Increase attack power of orc unit in Guild Raid (2, 4, 6, 8, 10)",
+      "skill2":"Increase melee dodge rate of orc unit in Guild War (0, 0, 0.9, 1.2, 1.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":80,
+      "name":"Chilly",
+      "skill1":"Increase offline marching speed (6, 12, 18, 24, 30)",
+      "skill2":"Increase attack power of orc unit in Guild War (0, 0, 7.5, 10, 12.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":81,
+      "name":"Wingvel",
+      "skill1":"Increase basic game speed (0.3, 0.6, 0.9, 1.2, 1.5)",
+      "skill2":"Increase attack speed of air unit in Guild War (0, 0, 0.9, 1.2, 1.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":82,
+      "name":"Teaser",
+      "skill1":"Increase quest gold buff (200, 550, 2100, 5500, 11000)",
+      "skill2":"Increase HP of melee unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":83,
+      "name":"Jason",
+      "skill1":"Increase attack power of orc unit in Guild Raid (2.5, 5, 7.5, 10, 12.5)",
+      "skill2":"Increase attack power of orc unit in Guild War (0, 0, 7.5, 10, 12.5)",
+      "skill3":"- Increases the Trans Point of the coupled unit by 100%.- Increases the Tribe Friendliness gained from the Unit Seal of the coupled unit by 10%.- Increases basic game speed by 1%.- Increases attack power, defense power and HP of the coupled unit in Outland Battle by 1.5% for each pet fragment ( previously 1%, no maximum limitation )- The remaining fragments of this pet cannot be exchanged in Secret Shop. ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ob"
+   },
+   {
+      "_id":44,
+      "name":"Hallokin",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 30)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 40 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":52,
+      "name":"Nills",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 30)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 40 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":53,
+      "name":"Rudolph",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 30)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 50 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":54,
+      "name":"Cookoo",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase basic game speed (1, 2, 3, 4, 5)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 50 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":59,
+      "name":"Lime",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 30)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 50 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":97,
+      "name":"Green",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":98,
+      "name":"Blue",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":99,
+      "name":"Red",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":100,
+      "name":"Purple",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":104,
+      "name":"Celeste",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":128,
+      "name":"Bunnette",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":129,
+      "name":"Toby",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":134,
+      "name":"H-Reaper",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":135,
+      "name":"Christy",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 10, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 30, 40, 40)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":140,
+      "name":"Jindo",
+      "skill1":"Increase additional medals obtained (5, 10, 20, 30, 40)",
+      "skill2":"Increase basic game speed (0, 0, 1.5, 2, 2.5)",
+      "skill3":"Increase additional medals obtained ( 0, 0, 0, 0, 60 ) ",
+      "artifact_name":"",
+      "artifact_id":"0",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":195,
+      "name":"Lunar Rabbit",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Lunar Goddess' Amulet",
+      "artifact_id":"206",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":196,
+      "name":"Scarecrow",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Lunar Goddess' Crystal Ball",
+      "artifact_id":"207",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":197,
+      "name":"Lesser Panda",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ancient Lesser Panda's Claws",
+      "artifact_id":"208",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":198,
+      "name":"Panda",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ancient Panda's Claws",
+      "artifact_id":"209",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":199,
+      "name":"Witch",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Broom of Halloween Night",
+      "artifact_id":"210",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":200,
+      "name":"Franken",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Novel of Halloween Night",
+      "artifact_id":"211",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":205,
+      "name":"Snow Jack",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Christmas Magician Hat",
+      "artifact_id":"216",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":206,
+      "name":"Snow Peng",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Christmas Magician Staff",
+      "artifact_id":"217",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":217,
+      "name":"Pipi",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Lucky Pig Ornament",
+      "artifact_id":"223",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":218,
+      "name":"Popo",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Golden Pig Statue",
+      "artifact_id":"224",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":241,
+      "name":"Daddy Bear",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Daddy Bear Treasure",
+      "artifact_id":"243",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":242,
+      "name":"Mommy Bear",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Mommy Bear Treasure",
+      "artifact_id":"244",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":259,
+      "name":"Duru",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Duru's Snorkeling Gear",
+      "artifact_id":"249",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":260,
+      "name":"Dutu",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Dutu's Surfing Gear",
+      "artifact_id":"250",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":266,
+      "name":"Leaf",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Autumn Leaves Earrings",
+      "artifact_id":"262",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":267,
+      "name":"Pavo",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Autumn Feathered Headdress",
+      "artifact_id":"263",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":273,
+      "name":"Porcue",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Radiant Porcupine Helm",
+      "artifact_id":"269",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":274,
+      "name":"Hammie",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Radiant Hamster Helm",
+      "artifact_id":"270",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":275,
+      "name":"Lycan",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Necklace of Lycan",
+      "artifact_id":"271",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":276,
+      "name":"Dracu",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Bed of Dracu",
+      "artifact_id":"272",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":305,
+      "name":"Polar",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Gloves",
+      "artifact_id":"297",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":306,
+      "name":"Arctic",
+      "skill1":"Increase additional medals obtained (5, 10, 10, 20, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 40, 70)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Arctic Muffler",
+      "artifact_id":"298",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":307,
+      "name":"Ratto",
+      "skill1":"Increase additional medals obtained (10, 20, 20, 30, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"New-Year Rice Cake",
+      "artifact_id":"299",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":308,
+      "name":"Ratti",
+      "skill1":"Increase additional medals obtained (10, 20, 20, 30, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"New-Year Dumpling",
+      "artifact_id":"300",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"event"
+   },
+   {
+      "_id":116,
+      "name":"Dionysus",
+      "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (200, 400, 600, 800, 1000)",
+      "skill2":"Increase additional medals obtained (0, 0, 55, 70, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Potion of Dionysus",
+      "artifact_id":"164",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":117,
+      "name":"Zeus",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase attack power of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Spear of Zeus",
+      "artifact_id":"161",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":118,
+      "name":"Aphrodite",
+      "skill1":"Decrease quest level up cost (1000, 5000, 10000, 100000, 1000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 55, 70, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Mirror of Venus",
+      "artifact_id":"165",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":119,
+      "name":"Ares",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase HP of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Plate Armor of Ares",
+      "artifact_id":"156",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":120,
+      "name":"Athena",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase defense power of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Athena's Shield",
+      "artifact_id":"157",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":121,
+      "name":"Artemis",
+      "skill1":"Increase Maximum Quest level (1000, 100000, 10000000, 1000000000, 100000000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 55, 70, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Bow of Artemis",
+      "artifact_id":"160",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":122,
+      "name":"Apollo",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase attack speed of all units in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Harp of Apollo",
+      "artifact_id":"166",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":123,
+      "name":"Demeter",
+      "skill1":"Increase Maximum Quest level (1000, 100000, 10000000, 1000000000, 100000000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 55, 70, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Statue of Goddess of Fertility",
+      "artifact_id":"167",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":124,
+      "name":"Poseidon",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase critical rate of all units in Guild Raid (0, 0, 12, 16, 20)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Trident of Poseidon",
+      "artifact_id":"162",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":125,
+      "name":"Hephaistos",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase critical damage of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hammer of Hephaistos",
+      "artifact_id":"163",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":126,
+      "name":"Hermes",
+      "skill1":"Increase additional medals obtained (20, 35, 55, 70, 90)",
+      "skill2":"Increase movement speed of all units in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Winged Boots of Hermes",
+      "artifact_id":"159",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":127,
+      "name":"Hera",
+      "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (200, 400, 600, 800, 1000)",
+      "skill2":"Increase additional medals obtained (0, 0, 55, 70, 90)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Hera's Ring",
+      "artifact_id":"158",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"greek"
+   },
+   {
+      "_id":31,
+      "name":"Black Tortoise",
+      "skill1":"Increase active skill damage efficiency (40, 90, 150, 220, 300)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Black Turtle Shield",
+      "artifact_id":"139",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":32,
+      "name":"Phoenix",
+      "skill1":"Decrease 2nd active skill cool-time (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Phoenix Cloak",
+      "artifact_id":"138",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":33,
+      "name":"Blue Dragon",
+      "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (200, 400, 600, 800, 1000)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Blue Dragon Armor",
+      "artifact_id":"137",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":34,
+      "name":"White Tiger",
+      "skill1":"Decrease 3rd active skill cool-time (3, 6, 10, 15, 20)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"White Tiger Helmet",
+      "artifact_id":"136",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":35,
+      "name":"Gold Dragon",
+      "skill1":"Decrease quest level up cost (1000, 5000, 10000, 100000, 1000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Yellow Dragon Saber",
+      "artifact_id":"150",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":84,
+      "name":"Human Guardian",
+      "skill1":"Increase Medal Buff from transcended Human Unit (20, 45, 75, 110, 150)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 40)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Human Hero's Sword",
+      "artifact_id":"140",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":85,
+      "name":"Elf Guardian",
+      "skill1":"Increase Medal Buff from transcended Elf Unit (20, 45, 75, 110, 150)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 40)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Elf Hero's Bow",
+      "artifact_id":"141",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":86,
+      "name":"Undead Guardian",
+      "skill1":"Increase Medal Buff from transcended Undead Unit (20, 45, 75, 110, 150)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 40)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Undead Hero's Staff",
+      "artifact_id":"142",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":87,
+      "name":"Orc Guardian",
+      "skill1":"Increase Medal Buff from transcended Orc Unit (20, 45, 75, 110, 150)",
+      "skill2":"Increase additional medals obtained (0, 0, 20, 30, 40)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Orc Hero's Axe",
+      "artifact_id":"143",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":101,
+      "name":"Cleo",
+      "skill1":"Increase Maximum Quest level (1000, 100000, 10000000, 1000000000, 100000000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 40, 60, 80)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Horus’s Greatsword",
+      "artifact_id":"145",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ss1"
+   },
+   {
+      "_id":141,
+      "name":"Loki",
+      "skill1":"Decrease the unit upgrade cost (18000, 36000, 72000, 144000, 288000)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Loki's Trickster Card",
+      "artifact_id":"172",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":142,
+      "name":"Verdandi",
+      "skill1":"Increase quest gold buff (5400, 14400, 54000, 144000, 270000)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Wheel of Fate",
+      "artifact_id":"176",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":143,
+      "name":"Freyr",
+      "skill1":"Increases resistance against fire (80, 300, 600, 1200, 2400)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Laevateinn",
+      "artifact_id":"180",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":144,
+      "name":"Freya",
+      "skill1":"Increase basic game speed (1, 2, 3, 4, 5)",
+      "skill2":"Increase HP of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Freya's Necklace",
+      "artifact_id":"173",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":145,
+      "name":"Skuld",
+      "skill1":"Decrease quest level up cost (2000, 10000, 20000, 200000, 2000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Scissors of Fate",
+      "artifact_id":"177",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":146,
+      "name":"Baldur",
+      "skill1":"Increase resistance to nature attacks. (80, 300, 600, 1200, 2400)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Mistilteinn",
+      "artifact_id":"181",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":147,
+      "name":"Odin",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Odin's Spear",
+      "artifact_id":"174",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":148,
+      "name":"Urd",
+      "skill1":"Increase Maximum Quest level (2000, 200000, 20000000, 2000000000, 200000000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Thread of Fate",
+      "artifact_id":"178",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":149,
+      "name":"Tyr",
+      "skill1":"Increase basic game speed (1, 2, 3, 4, 5)",
+      "skill2":"Increase attack power of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Tyrfing",
+      "artifact_id":"182",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":150,
+      "name":"Thor",
+      "skill1":"Increases efficiency of [Unit attack power 10 times] skill from the shop. (200, 400, 800, 1600, 3200)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Thor's Hammer",
+      "artifact_id":"175",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":151,
+      "name":"Skadi",
+      "skill1":"Increase quest gold buff (5400, 14400, 54000, 144000, 320000)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Avalanche Bow",
+      "artifact_id":"183",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":152,
+      "name":"Heimdall",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 60, 80, 100)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Horn of Warning",
+      "artifact_id":"179",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":171,
+      "name":"Khepri",
+      "skill1":"Increase quest gold buff (54000, 144000, 540000, 1440000, 2700000)",
+      "skill2":"Increase HP of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Jeweled Sword of the Sun",
+      "artifact_id":"194",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":172,
+      "name":"Ra",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Helm of the Sun",
+      "artifact_id":"195",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":173,
+      "name":"Atum",
+      "skill1":"Increase basic game speed (1.5, 3, 4.5, 6, 7.5)",
+      "skill2":"Increase attack power of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Armor of the Sun",
+      "artifact_id":"196",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":174,
+      "name":"Nefertem",
+      "skill1":"Decrease the unit upgrade cost (180000, 360000, 720000, 1440000, 2880000)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Blessed Bracelets of Regeneration",
+      "artifact_id":"197",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":175,
+      "name":"Osiris",
+      "skill1":"Increase active skill damage efficiency (40, 90, 150, 220, 300)",
+      "skill2":"Increase defense power of all units in Guild Raid (0, 0, 10, 20, 30)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Blessed Necklace of Regeneration",
+      "artifact_id":"198",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":176,
+      "name":"Hathor",
+      "skill1":"Increase quest gold buff (54000, 144000, 540000, 1440000, 3200000)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Blessed Ring of Regeneration",
+      "artifact_id":"199",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":177,
+      "name":"Seth",
+      "skill1":"Increase basic game speed (1.5, 3, 4.5, 6, 7.5)",
+      "skill2":"Increase attack speed of all units in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Staff of Death",
+      "artifact_id":"200",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":178,
+      "name":"Nephthys",
+      "skill1":"Increases resistance against darkness (120, 450, 900, 1800, 3600)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Spellbook of Death",
+      "artifact_id":"201",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":179,
+      "name":"Anubis",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Scales of Death",
+      "artifact_id":"202",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":180,
+      "name":"Sobek",
+      "skill1":"Decrease quest level up cost (20000, 100000, 200000, 2000000, 20000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Khopesh of Flooding",
+      "artifact_id":"203",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":181,
+      "name":"Khnum",
+      "skill1":"Increase Maximum Quest level (20000, 2000000, 200000000, 20000000000, 2000000000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Bow of Flooding",
+      "artifact_id":"204",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":182,
+      "name":"Satis",
+      "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (800, 1600, 2400, 3200, 4000)",
+      "skill2":"Increase additional medals obtained (0, 0, 110, 150, 200)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Spear of Flooding",
+      "artifact_id":"205",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"shh"
+   },
+   {
+      "_id":229,
+      "name":"Brahma",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase movement speed of human unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Shining Amrita",
+      "artifact_id":"231",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":230,
+      "name":"Surya",
+      "skill1":"Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)",
+      "skill2":"Increase additional medals obtained (0, 0, 160, 200, 250)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Shining Sun Wheel",
+      "artifact_id":"232",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":231,
+      "name":"Garuda",
+      "skill1":"Increases the Tribe Friendliness for Human (1000, 1500, 2000, 2500, 3000)",
+      "skill2":"Increase attack speed of human unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Shining Wing Accessory",
+      "artifact_id":"233",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":232,
+      "name":"Parvati",
+      "skill1":"Increase basic game speed (1.5, 3, 4.5, 6, 7.5)",
+      "skill2":"Increase movement speed of elf unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Golden Crown of Goddess",
+      "artifact_id":"234",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":233,
+      "name":"Saraswati",
+      "skill1":"Permanently increases the beginning stage after being revived (20, 40, 60, 80, 100)",
+      "skill2":"Increase additional medals obtained (0, 0, 160, 200, 250)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Veena of Goddess",
+      "artifact_id":"235",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":234,
+      "name":"Lakshmi",
+      "skill1":"Increases the Tribe Friendliness for Elf (1000, 1500, 2000, 2500, 3000)",
+      "skill2":"Increase attack speed of elf unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Earrings of Goddess",
+      "artifact_id":"236",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":235,
+      "name":"Shiva",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase movement speed of undead unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Trishula of Supreme Destroyer",
+      "artifact_id":"237",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":236,
+      "name":"Indra",
+      "skill1":"Increase active skill damage efficiency (80, 130, 200, 300, 450)",
+      "skill2":"Increase additional medals obtained (0, 0, 160, 200, 250)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Vasavi, the Thunder Spear",
+      "artifact_id":"238",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":237,
+      "name":"Chandra",
+      "skill1":"Increases the Tribe Friendliness for Undead (1000, 1500, 2000, 2500, 3000)",
+      "skill2":"Increase attack speed of undead unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Chandrahas, the Lunar Sword",
+      "artifact_id":"239",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":238,
+      "name":"Vishnu",
+      "skill1":"Increase basic game speed (1.5, 3, 4.5, 6, 7.5)",
+      "skill2":"Increase movement speed of orc unit in Guild Raid (0, 0, 6, 8, 10)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Parashu of Peace God",
+      "artifact_id":"240",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":239,
+      "name":"Varuna",
+      "skill1":"Increases resistance against cold (120, 450, 900, 1800, 3600)",
+      "skill2":"Increase additional medals obtained (0, 0, 160, 200, 250)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Lasso of Varuna",
+      "artifact_id":"241",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":240,
+      "name":"Ganesha",
+      "skill1":"Increases the Tribe Friendliness for Orc (1000, 1500, 2000, 2500, 3000)",
+      "skill2":"Increase attack speed of orc unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Scripture of Knowledge",
+      "artifact_id":"242",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"ssh"
+   },
+   {
+      "_id":281,
+      "name":"Guanna",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ring of Taurus",
+      "artifact_id":"273",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":282,
+      "name":"Mashtaba",
+      "skill1":"Increase quest gold buff (27000, 72000, 270000, 720000, 1350000)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Earrings of Gemini",
+      "artifact_id":"274",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":283,
+      "name":"Pabil",
+      "skill1":"Increase additional medals obtained (30, 60, 90, 120, 150)",
+      "skill2":"Increase attack speed of human unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Necklace of Sagittarius",
+      "artifact_id":"275",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":284,
+      "name":"Kumal",
+      "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (300, 600, 900, 1200, 1500)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ring of Aries",
+      "artifact_id":"276",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":285,
+      "name":"Suhurmash",
+      "skill1":"Decrease quest level up cost (10000, 50000, 100000, 1000000, 10000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Necklace of Capricorn",
+      "artifact_id":"278",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":286,
+      "name":"Absin",
+      "skill1":"Increase additional medals obtained (30, 60, 90, 120, 150)",
+      "skill2":"Increase attack speed of elf unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Earrings of Virgo",
+      "artifact_id":"277",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":287,
+      "name":"Girtab",
+      "skill1":"Increase Artifact Limit Break (2, 4, 6, 8, 10)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ring of Scorpio",
+      "artifact_id":"279",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":288,
+      "name":"Urgula",
+      "skill1":"Increase Maximum Quest level (10000, 1000000, 100000000, 10000000000, 1000000000000)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Necklace of Leo",
+      "artifact_id":"281",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":289,
+      "name":"Zibaanna",
+      "skill1":"Increase additional medals obtained (30, 60, 90, 120, 150)",
+      "skill2":"Increase attack speed of undead unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Earrings of Libra",
+      "artifact_id":"280",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":290,
+      "name":"Gu",
+      "skill1":"Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (300, 600, 900, 1200, 1500)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Ring of Aquarius",
+      "artifact_id":"282",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":291,
+      "name":"Simmah",
+      "skill1":"Decrease the unit upgrade cost (81000, 162000, 324000, 648000, 1440000)",
+      "skill2":"Increase additional medals obtained (0, 0, 90, 120, 150)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Necklace of Pisces",
+      "artifact_id":"284",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   },
+   {
+      "_id":292,
+      "name":"Dub",
+      "skill1":"Increase additional medals obtained (30, 60, 90, 120, 150)",
+      "skill2":"Increase attack speed of orc unit in Guild Raid (0, 0, 4, 6, 8)",
+      "skill3":"You can get legendary artifact",
+      "artifact_name":"Earrings of Cancer",
+      "artifact_id":"283",
+      "pp_per_star":7,
+      "stages":[
+
+      ],
+      "origin":"zodiac"
+   }
+]
