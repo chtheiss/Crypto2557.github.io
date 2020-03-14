@@ -682,14 +682,12 @@ img.img-responsive{
     display:grid;
     height:calc(100% - 60px - 4em);
     margin:2em;
-    grid-template-rows:19fr 1fr;
-    grid-template-columns:1fr;
 }
 /* Define changes for mobile grid */
 @media screen and (max-width:768px){
     .meta-container{
         height:calc(100% - 50px - 2em);
-        margin:2em 2em 0 2em;
+        margin:5px 5px 0 5px;
     }
 }
 /* Fix the size and location of the meta progression image */
