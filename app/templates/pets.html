@@ -6,7 +6,7 @@
         <button id="add-all-btn" class="btn btn-dark btn-md btn-margin">Progress 1 Day</button>
     </div>
     <div class="pet-trackers">
-        {% for _ in range(12) %}
+        {% for _ in range(number_of_trackers) %}
         {% set loop_index = loop.index %}
         <div id="track-{{loop.index}}" class="pet-tracker" data-empty="True">
             <img class="pet-image" src="" />

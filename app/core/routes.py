@@ -24,7 +24,7 @@ def pets():
     pets = get_json("pets.json")
 
     stages_per_two_kl = 10
-
+    number_of_trackers = 12
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
         pets[item]["KL"] = (
@@ -43,7 +43,13 @@ def pets():
             )
         )
     )
-    return render_template("pets.html", title="Pets", pets=pets_ordered, ceil=np.ceil)
+    return render_template(
+        "pets.html",
+        title="Pets",
+        pets=pets_ordered,
+        ceil=np.ceil,
+        number_of_trackers=number_of_trackers,
+    )
 
 
 @bp.route("/pets_others/", methods=["GET", "POST"])
@@ -78,6 +84,8 @@ def pets_hard():
     pet_priority = get_json("hard_sh_pet_priority.json")
     pets = get_json("hard_sh_pets.json")
 
+    number_of_trackers = 18
+
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
         pets[item]["KL"] = (
@@ -95,7 +103,11 @@ def pets_hard():
         )
     )
     return render_template(
-        "pets_hard.html", title="Hard Pets", pets=pets_ordered, ceil=np.ceil
+        "pets_hard.html",
+        title="Hard Pets",
+        pets=pets_ordered,
+        ceil=np.ceil,
+        number_of_trackers=number_of_trackers,
     )
 
 
