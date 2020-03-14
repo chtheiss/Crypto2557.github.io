@@ -287,10 +287,13 @@ h4{
 }
 /* Pet Pages
    ========================================================================== */
+.nav-tabs{
+    border: none;
+}
 .pet-card-kl div.green {
     color: #1ca51c;
 }
-.pet-card.invisible{
+.pet-card.invisible, .pet-card-other.invisible{
     display:none
 }
 .five-star,.four-star,.one-star,.three-star,.two-star,.zero-star{
@@ -334,10 +337,29 @@ h4{
     align-content:center;
     margin:auto
 }
-.pet-container>*, .pet-tracker{
+
+.pet-container-other{
+    display:grid;
+    width:80%;
+    grid-gap:5px;
+    grid-template-columns:1fr;
+    grid-template-rows:minmax(min-content, 150px) 1fr 12px;
+    grid-template-areas: "nav" "pets" "footer";
+    justify-content:center;
+    align-content:center;
+    margin:auto
+}
+
+.pet-container>*, .pet-tracker, .pet-container-other>*{
     justify-self:center;
     align-self:center;
 }
+
+.pet-nav-other{
+    margin-top: 10px;
+    grid-area: nav;
+}
+
 .pet-buttons{
     grid-area:buttons;
 }
@@ -393,10 +415,20 @@ h4{
     grid-template-areas:"pet frags name" "stars stars stars" "input input input" "kl kl kl";
     padding:5% 2% 1% 2%;
 }
-.pet-card>*{
+.pet-card>*, .pet-card-other>*{
     justify-self:center;
     align-self:center;
 }
+
+.pet-card-other{
+    display:grid;
+    grid-gap:1px;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1.5fr 1fr 1fr;
+    grid-template-areas:"pet name" "stars stars" "input input";
+    padding:5% 2% 1% 2%;
+}
+
 .pet-card-pet{
     grid-area:pet;
 }

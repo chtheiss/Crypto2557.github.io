@@ -20,6 +20,7 @@ async function load_pet(pet, store, hide, kl) {
         $pet.find(".pet-input[type='number']").val(data.fragments);
         change_pet_image_background($pet, data)
         var checkboxes = $pet.find(".pet-card-stars").find('.image-checkbox');
+        thresholds = [330, 180, 80, 30, 10];
         for (var idx of [0, 1, 2, 3, 4]) {
             if (data.fragments >= thresholds[4 - idx]) {
                 turn_star_on($(checkboxes[idx]))
@@ -154,20 +155,29 @@ async function updatePriorities(storage_name) {
 }
 
 async function on_pet_input_change($pet_input, storage_name) {
-    var item = {
-        name: $pet_input.data("pet"),
-        fragments: parseInt($pet_input.val()),
-        priority: parseInt($pet_input.parents(".block").attr("data-id"))
-    };
-
+    $pet = $pet_input.closest(".pet-card,.pet-card-other").first()
+    if($pet.hasClass(".pet-card")){
+        var item = {
+            name: $pet_input.data("pet"),
+            fragments: parseInt($pet_input.val()),
+            priority: parseInt($pet_input.parents(".pet-card,.pet-card-other").attr("data-id"))
+        };
+    } else {
+        var item = {
+            name: $pet_input.data("pet"),
+            fragments: parseInt($pet_input.val())
+        };
+    }
     var db = await idb.open('endless-farming-db');
     var tx = await db.transaction(storage_name, 'readwrite');
     var store = await tx.objectStore(storage_name);
     var putRequest = await store.put(item);
     change_stars(item);
-    $pet = $pet_input.closest(".pet-card").first()
-    change_pet_image_background($pet, item)
-    calculatePetFragmentsToFarm();
+
+    change_pet_image_background($pet, item);
+    if($pet.hasClass(".pet-card")){
+        calculatePetFragmentsToFarm();
+    }
     if ($('#hide-five-star-pets').prop("checked")) {
         hide_or_show_pet($pet, item, true);
     }

@@ -185,7 +185,7 @@ function hide_or_show_pet($pet, data, hide) {
             console.log('This browser doesn\'t support IndexedDB');
             return;
         }
-        var dbPromise = idb.open('endless-farming-db', 4, function(upgradeDb) {
+        var dbPromise = idb.open('endless-farming-db', 5, function(upgradeDb) {
             switch (upgradeDb.oldVersion) {
                 case 0:
                     if (!upgradeDb.objectStoreNames.contains('units')) {
@@ -284,6 +284,15 @@ function hide_or_show_pet($pet, data, hide) {
                             });
                         }
                     });
+                case 4:
+                    if (!upgradeDb.objectStoreNames.contains('pets_other')) {
+                        var pets_hardOS = upgradeDb.createObjectStore('pets_other', {
+                            keyPath: 'name'
+                        });
+                        pets_hardOS.createIndex('fragments', 'fragments', {
+                            unique: false
+                        });
+                    }
             }
         });
     })();

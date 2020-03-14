@@ -23,9 +23,10 @@ The Endless Farming Project is licensed under the terms of the GNU Affero Genera
 
 ## Running it
 ### Setup
-- (Optional) Create a virtual environment: `conda create -f environment.yml` or install Python 3
+- (Optional) Create a virtual environment: `conda env create -f environment.yml` or install Python 3
 - (Optional) Activate your environment: `conda activate endlessfarming`
 - Install general and developer requirements: `pip install -r requirements.txt -r requirements-dev.txt`
+- (Development) pre-commit install
 
 ### Run Locally
 - Set the path of the flask application:

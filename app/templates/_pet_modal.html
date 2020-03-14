@@ -3,7 +3,7 @@
         <div class="modal-content bordered">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">{{pet_name}}</h5>
-                <img class="pet-image" src="../static/{{pet['img'].replace('pets', 'animated_pets')}}">
+                <img class="pet-image" src="../static/img/animated_pets/{{pet['_id']}}.png">
                 <button type="button" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,24 +11,24 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">Skill 1: {{pet['description']['skill1']}}</div>
-                        <div class="col-12">Skill 2: {{pet['description']['skill2']}}</div>
-                        {% if('artifact' in pet['description'].keys()) %}
-                        <div class="col-12">Skill 3: {{pet['description']['skill3']}} [ <img class="artifact-image" src="../static/img/artifacts/{{pet['description']['id']}}.png"> {{pet['description']['artifact']}} ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                        <div class="col-12">Skill 1: {{pet['skill1']}}</div>
+                        <div class="col-12">Skill 2: {{pet['skill2']}}</div>
+                        {% if('artifact_name' in pet.keys()) %}
+                            <div class="col-12">Skill 3: {{pet['skill3']}} [ <img class="artifact-image" src="../static/img/artifacts/{{pet['artifact_id']}}.png"> {{pet['artifact_name']}} ]</div>
                         {% elif('couple' in pet.keys()) %}
-                        <div class="col-12">Skill 3: {{pet['description']['skill3'].split("[")[0]}} [ <img class="unit-image" src="../static/img/units/{{pet['couple']}}.png"> {{pet['description']['skill3'].split("[")[1]}}
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: {{pet['skill3'].split("[")[0]}} [ <img class="unit-image" src="../static/img/units/{{pet['couple']}}.png"> {{pet['skill3'].split("[")[1]}}</div>
                         {% else %}
-                        <div class="col-12">Skill 3: {{pet['description']['skill3']}}</div>
+                            <div class="col-12">Skill 3: {{pet['skill3']}}</div>
                         {% endif %}
-                        <div class="col-12">
-                            <ul>
-                                {% for ability in pet['description']['hidden_abilites'] %}
-                                <li>{{ability}}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+                        {% if('hidden_abilites' in pet.keys()) %}
+                            <div class="col-12">
+                                <ul>
+                                    {% for ability in pet['hidden_abilites'] %}
+                                    <li>{{ability}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

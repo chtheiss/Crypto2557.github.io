@@ -1,9 +1,8 @@
-<div id="{{key_id}}" data-id="{{loop_index-1}}" class="pet-card bordered">
+<div id="{{key_id}}" data-id="{{loop_index-1}}" data-origins="{{pet['origin']}}" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#{{key_id}}-modal">
-        <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
+        <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/img/pets/{{pet['_id']}}.png">
     </span>
-    <p id="{{key_id}}-farmable-fragments" class="pet-card-frags invisible">0</p>
-    <h4 class="pet-card-name">{{ key }}</h4>
+    <h4 class="pet-card-name">{{ pet["name"] }}</h4>
     <fieldset class="pet-card-stars">
         <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
             <img class="img-responsive" src="../static/img/stargrey.png" />

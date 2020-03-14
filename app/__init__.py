@@ -2,7 +2,7 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 
-from flask import Flask, current_app
+from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
