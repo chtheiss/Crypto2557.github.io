@@ -8,6 +8,9 @@ body, html{
     margin:0;
     height:100vh;
 }
+#discord-image{
+    height:35.17px;
+}
 .input-group{
     height: 1.75rem;
 }
