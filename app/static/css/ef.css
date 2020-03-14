@@ -178,6 +178,30 @@ h4{
 .stat-modal-shh-gems{
     grid-area:shh-gems
 }
+
+@media screen and (max-width:600px){
+    .stat-modal{
+        grid-template-columns:repeat(2,1fr);
+        grid-template-rows:repeat(10,1fr);
+        grid-template-areas:
+        "kl-label kl"
+        "hide hide"
+        "shn-label shn-label"
+        "shn-tickets-label shn-tickets"
+        "shn-refills-label shn-refills"
+        "shn-gems shn-gems"
+        "shh-label shh-label"
+        "shh-tickets-label shh-tickets"
+        "shh-refills-label shh-refills"
+        "shh-gems shh-gems"
+    }
+    .stat-modal-kl-label,
+    .stat-modal-shn-tickets-label, .stat-modal-shh-tickets-label,
+    .stat-modal-shn-refills-label, .stat-modal-shh-refills-label{
+        justify-self:left;
+    }
+}
+
 .checkbox-lg .custom-control-label{
     margin: auto 0;
     padding: 0 5px;
