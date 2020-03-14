@@ -8,7 +8,13 @@ body, html{
     margin:0;
     height:100vh;
 }
-#discord-image{
+#discord-button, #paypal-button{
+    padding:0px;
+}
+#paypal-button>a{
+    padding-right: 10.5px;
+}
+#discord-image, #paypal-image{
     height:31.17px;
 }
 .input-group{
@@ -254,6 +260,10 @@ h4{
     border-color:#c2d4d5;
     color:#17191a;
 }
+.navbar .btn{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 /* Home Page
    ========================================================================== */
 /* Define desktop grid */
@@ -381,7 +391,15 @@ h4{
     justify-self:center;
     align-self:center;
 }
-
+.pet-tracker{
+    display: grid;
+}
+.pet-tracker>*{
+    justify-self:center;
+}
+.pet-tracker>p{
+    text-align: center;
+}
 .pet-nav-other{
     margin-top: 10px;
     grid-area: nav;
@@ -396,7 +414,6 @@ h4{
     width:100%;
     height:100%;
     grid-template-columns:repeat(6,minmax(min-content,1fr));
-    grid-template-rows:1fr 1fr;
 }
 .pet-pets{
     grid-area:pets;
