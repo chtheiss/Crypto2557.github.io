@@ -12,11 +12,16 @@ function change_pet_image_background($pet, data) {
     $img.addClass("zero-star");
 }
 
-async function load_pet(pet, store, hide, kl) {
+async function load_pet(pet, store, hide, unattainable, kl) {
     $pet = $(pet)
     var data = await store.get(pet.id);
+    kl_numbers = $pet.find(".pet-card-kl-number")
+    let no_stage_available = (kl_numbers.length == kl_numbers.filter(function( index ) {
+        return $("#KL-number").val() < parseFloat($(this).text());
+    }).length)
+    hide_or_show_unattainable_pet($pet, no_stage_available && unattainable)
     if (data != undefined) {
-        hide_or_show_pet($pet, data, hide)
+        hide_or_show_pet($pet, data.fragments >= 330 && hide)
         $pet.find(".pet-input[type='number']").val(data.fragments);
         change_pet_image_background($pet, data)
         var checkboxes = $pet.find(".pet-card-stars").find('.image-checkbox');
@@ -75,16 +80,6 @@ function change_stars(val) {
         turn_star_on($("#" + val.name.replace(" ", "-") + "-5star"));
     } else {
         turn_star_off($("#" + val.name.replace(" ", "_") + "-5star"));
-    }
-}
-
-function remove_classes($element, classes_not_to_remove) {
-    var classes = $($element).attr('class').split(/\s+/);
-    for (i = 0; i < classes.length; i += 1) {
-        if (classes_not_to_remove.includes(classes[i])) {
-            continue;
-        }
-        $element.removeClass(classes[i]);
     }
 }
 
@@ -179,7 +174,7 @@ async function on_pet_input_change($pet_input, storage_name) {
         calculatePetFragmentsToFarm();
     }
     if ($('#hide-five-star-pets').prop("checked")) {
-        hide_or_show_pet($pet, item, true);
+        hide_or_show_pet($pet, item.fragments >= 330);
     }
 }
 

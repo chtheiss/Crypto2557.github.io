@@ -69,17 +69,20 @@ function calculatePetFragmentsToFarm() {
 
         var player_tx = await db.transaction("player", 'readwrite');
         var player_store = await player_tx.objectStore("player");
+        var hide_unattainable_pets = await player_store.get("hide_unattainable_pets");
         var hide_five_star_pets = await player_store.get("hide_five_star_pets");
         var kl = await player_store.get("KL");
+
+        $('#hide-unattainable-pets').prop("checked", hide_unattainable_pets.value);
+        var unattainable = $('#hide-unattainable-pets').prop("checked");
         $('#hide-five-star-pets').prop("checked", hide_five_star_pets.value);
+        var hide = $('#hide-five-star-pets').prop("checked");
 
         var tx = await db.transaction("pets", 'readwrite');
         var store = await tx.objectStore("pets");
 
-        var hide = $('#hide-five-star-pets').prop("checked");
-
         for (const pet of $(".pet-card")) {
-            await load_pet(pet, store, hide, kl.value);
+            await load_pet(pet, store, hide, unattainable, kl.value);
         }
 
         row = $("#dragable-row").get()[0];

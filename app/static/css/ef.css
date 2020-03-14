@@ -135,14 +135,20 @@ h4{
 .stat-modal{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    grid-template-rows:repeat(5,1fr);
-    grid-template-areas:"kl-label kl hide hide" "shn-label shn-label shh-label shh-label" "shn-tickets-label shn-tickets shh-tickets-label shh-tickets" "shn-refills-label shn-refills shh-refills-label shh-refills" "shn-gems shn-gems shh-gems shh-gems"
+    grid-template-rows:repeat(6,1fr);
+    grid-template-areas:
+    ". kl-label kl ."
+    "hide hide unattainable unattainable"
+    "shn-label shn-label shh-label shh-label"
+    "shn-tickets-label shn-tickets shh-tickets-label shh-tickets"
+    "shn-refills-label shn-refills shh-refills-label shh-refills"
+    "shn-gems shn-gems shh-gems shh-gems"
 }
 .stat-modal>*{
     justify-self:center;
     align-self:center
 }
-.stat-modal-kl{
+.stat-modal-kl-label{
     grid-area:kl-label
 }
 .stat-modal-kl{
@@ -150,6 +156,9 @@ h4{
 }
 .stat-modal-hide{
     grid-area:hide
+}
+.stat-modal-unattainable{
+    grid-area:unattainable
 }
 .stat-modal-shn-label{
     grid-area:shn-label
@@ -191,10 +200,11 @@ h4{
 @media screen and (max-width:600px){
     .stat-modal{
         grid-template-columns:repeat(2,1fr);
-        grid-template-rows:repeat(10,1fr);
+        grid-template-rows:repeat(11,1fr);
         grid-template-areas:
         "kl-label kl"
         "hide hide"
+        "unattainable unattainable"
         "shn-label shn-label"
         "shn-tickets-label shn-tickets"
         "shn-refills-label shn-refills"
@@ -330,7 +340,8 @@ h4{
 .pet-card-kl div.green {
     color: #1ca51c;
 }
-.pet-card.invisible, .pet-card-other.invisible{
+.pet-card.invisible, .pet-card-other.invisible,
+.pet-card.unattainable, .pet-card-other.unattainable{
     display:none
 }
 .five-star,.four-star,.one-star,.three-star,.two-star,.zero-star{

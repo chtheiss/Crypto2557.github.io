@@ -3,6 +3,7 @@
 ## Future
 ### Added
 - New feature to track other pets besides shn and shh
+- Checkbox to hide or show pets that are unattainable due to KL constraints
 - Button that links to the new Discord support server
 - Button that links to HarroweD pet guide
 - Button for donations
