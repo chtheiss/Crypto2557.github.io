@@ -2,6 +2,7 @@
    ========================================================================== */
 body, html{
     background-color:#26292c;
+    /*background: linear-gradient(to right, #26292c, #393C3F);*/
     font-family:Arial,Helvetica,sans-serif;
     color:#c2d4d5;
     font-size:14px;
@@ -10,6 +11,12 @@ body, html{
 }
 #discord-button, #paypal-button{
     padding:0px;
+}
+#discord-button:hover, #paypal-button:hover{
+    background-color:#17191a;
+}
+#discord-button a:hover, #paypal-button a:hover{
+    text-decoration: none;
 }
 #paypal-button>a{
     padding-right: 10.5px;
@@ -274,6 +281,54 @@ h4{
     margin-top: 2px;
     margin-bottom: 2px;
 }
+.navbar .dropdown-menu>.btn:hover{
+    background-color:#17191a;
+    border-color:none;
+    color:rgba(194,212,213,.65);
+}
+
+.animate {
+animation-duration: 0.3s;
+-webkit-animation-duration: 0.3s;
+animation-fill-mode: both;
+-webkit-animation-fill-mode: both;
+}
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(-1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
 /* Home Page
    ========================================================================== */
 /* Define desktop grid */
@@ -374,16 +429,20 @@ h4{
     border-color:#e03106;
     background:radial-gradient(circle,#333 0,#333 0,rgba(224,49,6,.3))
 }
+#dragable-row{
+    background-color:#26292c;
+    padding:5px;
+}
 .pet-container{
     display:grid;
-    width:80%;
+    width:70%;
     grid-gap:5px;
     grid-template-columns:1fr;
     grid-template-rows:50px minmax(min-content, 150px) 1fr 12px;
     grid-template-areas:"buttons" "trackers" "pets" "footer";
     justify-content:center;
     align-content:center;
-    margin:auto
+    margin:auto;
 }
 
 .pet-container-other{
