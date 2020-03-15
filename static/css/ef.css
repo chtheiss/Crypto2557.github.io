@@ -2,11 +2,27 @@
    ========================================================================== */
 body, html{
     background-color:#26292c;
+    /*background: linear-gradient(to right, #26292c, #393C3F);*/
     font-family:Arial,Helvetica,sans-serif;
     color:#c2d4d5;
     font-size:14px;
     margin:0;
     height:100vh;
+}
+#discord-button, #paypal-button{
+    padding:0px;
+}
+#discord-button:hover, #paypal-button:hover{
+    background-color:#17191a;
+}
+#discord-button a:hover, #paypal-button a:hover{
+    text-decoration: none;
+}
+#paypal-button>a{
+    padding-right: 10.5px;
+}
+#discord-image, #paypal-image{
+    height:31.17px;
 }
 .input-group{
     height: 1.75rem;
@@ -126,14 +142,20 @@ h4{
 .stat-modal{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    grid-template-rows:repeat(5,1fr);
-    grid-template-areas:"kl-label kl hide hide" "shn-label shn-label shh-label shh-label" "shn-tickets-label shn-tickets shh-tickets-label shh-tickets" "shn-refills-label shn-refills shh-refills-label shh-refills" "shn-gems shn-gems shh-gems shh-gems"
+    grid-template-rows:repeat(6,1fr);
+    grid-template-areas:
+    ". kl-label kl ."
+    "hide hide unattainable unattainable"
+    "shn-label shn-label shh-label shh-label"
+    "shn-tickets-label shn-tickets shh-tickets-label shh-tickets"
+    "shn-refills-label shn-refills shh-refills-label shh-refills"
+    "shn-gems shn-gems shh-gems shh-gems"
 }
 .stat-modal>*{
     justify-self:center;
     align-self:center
 }
-.stat-modal-kl{
+.stat-modal-kl-label{
     grid-area:kl-label
 }
 .stat-modal-kl{
@@ -141,6 +163,9 @@ h4{
 }
 .stat-modal-hide{
     grid-area:hide
+}
+.stat-modal-unattainable{
+    grid-area:unattainable
 }
 .stat-modal-shn-label{
     grid-area:shn-label
@@ -178,6 +203,31 @@ h4{
 .stat-modal-shh-gems{
     grid-area:shh-gems
 }
+
+@media screen and (max-width:600px){
+    .stat-modal{
+        grid-template-columns:repeat(2,1fr);
+        grid-template-rows:repeat(11,1fr);
+        grid-template-areas:
+        "kl-label kl"
+        "hide hide"
+        "unattainable unattainable"
+        "shn-label shn-label"
+        "shn-tickets-label shn-tickets"
+        "shn-refills-label shn-refills"
+        "shn-gems shn-gems"
+        "shh-label shh-label"
+        "shh-tickets-label shh-tickets"
+        "shh-refills-label shh-refills"
+        "shh-gems shh-gems"
+    }
+    .stat-modal-kl-label,
+    .stat-modal-shn-tickets-label, .stat-modal-shh-tickets-label,
+    .stat-modal-shn-refills-label, .stat-modal-shh-refills-label{
+        justify-self:left;
+    }
+}
+
 .checkbox-lg .custom-control-label{
     margin: auto 0;
     padding: 0 5px;
@@ -226,6 +276,58 @@ h4{
     background-color:#c2d4d5;
     border-color:#c2d4d5;
     color:#17191a;
+}
+.navbar .btn{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.navbar .dropdown-menu>.btn:hover{
+    background-color:#17191a;
+    border-color:none;
+    color:rgba(194,212,213,.65);
+}
+
+.animate {
+animation-duration: 0.3s;
+-webkit-animation-duration: 0.3s;
+animation-fill-mode: both;
+-webkit-animation-fill-mode: both;
+}
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(-1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
 }
 /* Home Page
    ========================================================================== */
@@ -287,10 +389,14 @@ h4{
 }
 /* Pet Pages
    ========================================================================== */
+.nav-tabs{
+    border: none;
+}
 .pet-card-kl div.green {
     color: #1ca51c;
 }
-.pet-card.invisible{
+.pet-card.invisible, .pet-card-other.invisible,
+.pet-card.unattainable, .pet-card-other.unattainable{
     display:none
 }
 .five-star,.four-star,.one-star,.three-star,.two-star,.zero-star{
@@ -323,21 +429,52 @@ h4{
     border-color:#e03106;
     background:radial-gradient(circle,#333 0,#333 0,rgba(224,49,6,.3))
 }
+#dragable-row{
+    background-color:#26292c;
+    padding:5px;
+}
 .pet-container{
     display:grid;
-    width:80%;
+    width:70%;
     grid-gap:5px;
     grid-template-columns:1fr;
     grid-template-rows:50px minmax(min-content, 150px) 1fr 12px;
     grid-template-areas:"buttons" "trackers" "pets" "footer";
     justify-content:center;
     align-content:center;
+    margin:auto;
+}
+
+.pet-container-other{
+    display:grid;
+    width:80%;
+    grid-gap:5px;
+    grid-template-columns:1fr;
+    grid-template-rows:minmax(min-content, 150px) 1fr 12px;
+    grid-template-areas: "nav" "pets" "footer";
+    justify-content:center;
+    align-content:center;
     margin:auto
 }
-.pet-container>*, .pet-tracker{
+
+.pet-container>*, .pet-tracker, .pet-container-other>*{
     justify-self:center;
     align-self:center;
 }
+.pet-tracker{
+    display: grid;
+}
+.pet-tracker>*{
+    justify-self:center;
+}
+.pet-tracker>p{
+    text-align: center;
+}
+.pet-nav-other{
+    margin-top: 10px;
+    grid-area: nav;
+}
+
 .pet-buttons{
     grid-area:buttons;
 }
@@ -347,7 +484,6 @@ h4{
     width:100%;
     height:100%;
     grid-template-columns:repeat(6,minmax(min-content,1fr));
-    grid-template-rows:1fr 1fr;
 }
 .pet-pets{
     grid-area:pets;
@@ -393,10 +529,20 @@ h4{
     grid-template-areas:"pet frags name" "stars stars stars" "input input input" "kl kl kl";
     padding:5% 2% 1% 2%;
 }
-.pet-card>*{
+.pet-card>*, .pet-card-other>*{
     justify-self:center;
     align-self:center;
 }
+
+.pet-card-other{
+    display:grid;
+    grid-gap:1px;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1.5fr 1fr 1fr;
+    grid-template-areas:"pet name" "stars stars" "input input";
+    padding:5% 2% 1% 2%;
+}
+
 .pet-card-pet{
     grid-area:pet;
 }
@@ -650,14 +796,12 @@ img.img-responsive{
     display:grid;
     height:calc(100% - 60px - 4em);
     margin:2em;
-    grid-template-rows:19fr 1fr;
-    grid-template-columns:1fr;
 }
 /* Define changes for mobile grid */
 @media screen and (max-width:768px){
     .meta-container{
         height:calc(100% - 50px - 2em);
-        margin:2em 2em 0 2em;
+        margin:5px 5px 0 5px;
     }
 }
 /* Fix the size and location of the meta progression image */

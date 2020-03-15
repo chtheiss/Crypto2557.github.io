@@ -10,8 +10,8 @@ Endless Farming
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="Endless Farming: The Pet and Unit Tracker for Endless Frontier">
+<meta name="author" content="Crypto2557">
 
 <link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -37,8 +37,8 @@ Endless Farming
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="Endless Farming: The Pet and Unit Tracker for Endless Frontier">
+<meta name="author" content="Crypto2557">
 
 
 <link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
@@ -60,9 +60,10 @@ Endless Farming
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu animate slideIn">
                     <a class="dropdown-item" href="/pets/">Normal</a>
                     <a class="dropdown-item" href="/pets_hard/">Hard</a>
+                    <a class="dropdown-item" href="/pets_others/">Others</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -74,11 +75,28 @@ Endless Farming
             <li class="nav-item">
                 <a class="nav-link" href="/meta_progression/">Metas</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data Transfer</a>
+                <div class="dropdown-menu animate slideIn">
+                    <button id="import-button" class="btn dropdown-item">Import</button>
+                    <button id="export-button" class="btn dropdown-item">Export</button>
+                </div>
+            </li>
         </ul>
         <input type="file" id="dbupload" value="Import" style="display:none" />
-        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.4.6</button>
-        <button id="import-button" class="btn bordered">Import</button>
-        <button id="export-button" class="btn bordered">Export</button>
+        <button id="paypal-button" class="btn bordered">
+            <a href="https://discord.gg/U5sUGbc">
+                <img id="paypal-image" src="../static/img/media/paypal.svg" alt="Paypal">
+                Donate
+            </a>
+        </button>
+        <button id="discord-button" class="btn bordered">
+            <a href="https://discord.gg/U5sUGbc">
+                <img id="discord-image" src="../static/img/media/Discord-Logo+Wordmark-Color.svg" alt="Discord">
+            </a>
+        </button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.0</button>
+        <a href="http://bit.ly/HarroweD" class="btn bordered" role="button">Pet Guide</a>
         <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
     </div>
 </nav>
@@ -99,6 +117,10 @@ Endless Farming
                 <div class="custom-control custom-checkbox checkbox-lg stat-modal-hide">
                     <input id="hide-five-star-pets" type="checkbox" class="custom-control-input" unchecked>
                     <label class="custom-control-label" for="hide-five-star-pets">Hide 5* Pets</label>
+                </div>
+                <div class="custom-control custom-checkbox checkbox-lg stat-modal-unattainable">
+                    <input id="hide-unattainable-pets" type="checkbox" class="custom-control-input" unchecked>
+                    <label class="custom-control-label" for="hide-unattainable-pets">Hide unattainable Pets</label>
                 </div>
                 <div class="stat-modal-shn-label">
                     Spirit Highlands Normal
@@ -140,6 +162,39 @@ Endless Farming
                 </button>
             </div>
             <div class="modal-body version-modal">
+                <div class="row version-underline">
+                    <div class="col-1 version-header">1.5.0</div>
+                    <div class="col"></div>
+                    <div class="col-3 version-header">2020-03-15</div>
+                </div>
+                <div class="row pt-1">
+                    <div class="col-12">
+                        <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>New feature to track other pets besides shn and shh</li>
+                                <li>Checkbox to hide or show pets that are unattainable due to KL constraints</li>
+                                <li>Button that links to the new Discord support server</li>
+                                <li>Button that links to HarroweD pet guide</li>
+                                <li>Button for donations</li>
+                                <li>Animation to dropdown menus in the navbar</li>
+                            </ul></li>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>The layout for the stat modal for mobile devices</li>
+                                <li>Changed the size of the meta progression image for vertical rotated mobile devices</li>
+                                <li>The location of the import and export buttons. They are now under the "Data Transfer" dropdown.</li>
+                                <li>The amount of space on mobile that is available to scroll pets</li>
+                            </ul></li>
+                            <li><b>Fixed</b>
+                            <ul>
+                                <li>Slight misaligment of pet image and number of day display for the trackers</li>
+                                <li>A typo for the Barbarian Battle Cry (Orc) buff</li>
+                            </ul></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="row version-underline">
                     <div class="col-1 version-header">1.4.6</div>
                     <div class="col"></div>
@@ -273,7 +328,7 @@ Endless Farming
                     </div>
                 </div>
                <div class="row version-underline">
-                    <div class="col-1 version-header">1.4</div>
+                    <div class="col-1 version-header">1.4.0</div>
                     <div class="col"></div>
                     <div class="col-3 version-header">2020-02-15</div>
                 </div>
@@ -394,6 +449,42 @@ Endless Farming
         
         
         <div id="track-12" class="pet-tracker" data-empty="True">
+            <img class="pet-image" src="" />
+            <p></p>
+        </div>
+        
+        
+        <div id="track-13" class="pet-tracker" data-empty="True">
+            <img class="pet-image" src="" />
+            <p></p>
+        </div>
+        
+        
+        <div id="track-14" class="pet-tracker" data-empty="True">
+            <img class="pet-image" src="" />
+            <p></p>
+        </div>
+        
+        
+        <div id="track-15" class="pet-tracker" data-empty="True">
+            <img class="pet-image" src="" />
+            <p></p>
+        </div>
+        
+        
+        <div id="track-16" class="pet-tracker" data-empty="True">
+            <img class="pet-image" src="" />
+            <p></p>
+        </div>
+        
+        
+        <div id="track-17" class="pet-tracker" data-empty="True">
+            <img class="pet-image" src="" />
+            <p></p>
+        </div>
+        
+        
+        <div id="track-18" class="pet-tracker" data-empty="True">
             <img class="pet-image" src="" />
             <p></p>
         </div>
@@ -4952,13 +5043,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Blessing of the Flame (100, 300, 600, 900, 1200)</div>
                         <div class="col-12">Skill 2: When Human tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 49</div>
+                            <div class="col-12">Skill 3: Receive Tablet 49</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4984,13 +5071,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease the unit upgrade cost (270000%, 540000%, 1080000%, 2160000%, 4320000%)</div>
                         <div class="col-12">Skill 2: When Elf tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 50</div>
+                            <div class="col-12">Skill 3: Receive Tablet 50</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5016,13 +5099,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase quest gold buff (81000%, 216000%, 810000%, 2160000%, 4050000%)</div>
                         <div class="col-12">Skill 2: When Undead tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 51</div>
+                            <div class="col-12">Skill 3: Receive Tablet 51</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5048,13 +5127,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease quest level up cost (3000%, 15000%, 30000%, 300000%, 3000000%)</div>
                         <div class="col-12">Skill 2: When Orc tribe revives, additional medal buff by pets increases (0%, 0%, 9%, 12%, 15%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 52</div>
+                            <div class="col-12">Skill 3: Receive Tablet 52</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5080,13 +5155,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Blessing of the Flame (100, 300, 600, 900, 1200)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 3%, 4%, 5%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 53</div>
+                            <div class="col-12">Skill 3: Receive Tablet 53</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5112,13 +5183,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 3%, 4%, 5%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 54</div>
+                            <div class="col-12">Skill 3: Receive Tablet 54</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5144,13 +5211,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Maximum Quest level (3000%, 300000%, 30000000%, 3000000000%, 300000000000%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 3%, 4%, 5%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 55</div>
+                            <div class="col-12">Skill 3: Receive Tablet 55</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5176,13 +5239,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 3%, 4%, 5%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 56</div>
+                            <div class="col-12">Skill 3: Receive Tablet 56</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5208,14 +5267,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)</div>
                         <div class="col-12">Skill 2: Increase Artifact Limit Break (0, 0, 1, 2, 3)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/308.png"> Essence of Wood ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/308.png"> Essence of Wood ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5241,14 +5295,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)</div>
                         <div class="col-12">Skill 2: Increase Artifact Limit Break (0, 0, 1, 2, 3)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/310.png"> Essence of the Sea ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/310.png"> Essence of the Sea ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5274,14 +5323,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 3%, 4%, 5%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/307.png"> Essence of Fire ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/307.png"> Essence of Fire ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5307,14 +5351,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (60%, 80%, 110%, 150%, 200%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 3%, 4%, 5%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/309.png"> Essence of Darkness ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/309.png"> Essence of Darkness ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5340,13 +5379,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)</div>
                         <div class="col-12">Skill 2: Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Human units (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 41</div>
+                            <div class="col-12">Skill 3: Receive Tablet 41</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5372,13 +5407,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)</div>
                         <div class="col-12">Skill 2: Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Elf units (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 42</div>
+                            <div class="col-12">Skill 3: Receive Tablet 42</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5404,13 +5435,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Maximum Quest level (2200%, 220000%, 22000000%, 2200000000%, 220000000000%)</div>
                         <div class="col-12">Skill 2: Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Undead units (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 43</div>
+                            <div class="col-12">Skill 3: Receive Tablet 43</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5436,13 +5463,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Reduce the quest open gold (1000%, 2000%, 4000%, 8000%, 16000%)</div>
                         <div class="col-12">Skill 2: Increase the maximum limitation of the buff for Attack Power/Defense Power/HP by Trans Points of Orc units (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 44</div>
+                            <div class="col-12">Skill 3: Receive Tablet 44</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5468,13 +5491,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)</div>
                         <div class="col-12">Skill 2: When you are Human, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 45</div>
+                            <div class="col-12">Skill 3: Receive Tablet 45</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5500,13 +5519,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease quest level up cost (3520%, 17600%, 88000%, 440000%, 2200000%)</div>
                         <div class="col-12">Skill 2: When you are an Elf, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 46</div>
+                            <div class="col-12">Skill 3: Receive Tablet 46</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5532,13 +5547,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)</div>
                         <div class="col-12">Skill 2: When you are an Undead, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 47</div>
+                            <div class="col-12">Skill 3: Receive Tablet 47</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5564,13 +5575,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Reduce the quest time (100%, 150%, 200%, 250%, 300%)</div>
                         <div class="col-12">Skill 2: When you are an Orc, increase number of stages skipped when using Warp (0, 0, 40, 60, 100)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 48</div>
+                            <div class="col-12">Skill 3: Receive Tablet 48</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5596,13 +5603,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)</div>
                         <div class="col-12">Skill 2: Increase attack power of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 37</div>
+                            <div class="col-12">Skill 3: Receive Tablet 37</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5628,13 +5631,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)</div>
                         <div class="col-12">Skill 2: Increase attack power of Elf units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 38</div>
+                            <div class="col-12">Skill 3: Receive Tablet 38</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5660,13 +5659,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Maximum Quest level (2000%, 200000%, 20000000%, 2000000000%, 200000000000%)</div>
                         <div class="col-12">Skill 2: Increase attack power of Undead units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 39</div>
+                            <div class="col-12">Skill 3: Receive Tablet 39</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5692,13 +5687,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease quest level up cost (2000%, 10000%, 20000%, 200000%, 2000000%)</div>
                         <div class="col-12">Skill 2: Increase attack power of Orc units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 40</div>
+                            <div class="col-12">Skill 3: Receive Tablet 40</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5724,13 +5715,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)</div>
                         <div class="col-12">Skill 2: Increase critical damage of Human units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 33</div>
+                            <div class="col-12">Skill 3: Receive Tablet 33</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5756,13 +5743,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)</div>
                         <div class="col-12">Skill 2: Increase critical damage of Elf units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 34</div>
+                            <div class="col-12">Skill 3: Receive Tablet 34</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5788,13 +5771,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)</div>
                         <div class="col-12">Skill 2: Increase critical damage of Undead units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 35</div>
+                            <div class="col-12">Skill 3: Receive Tablet 35</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5820,13 +5799,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 1.5%, 2%, 2.5%, 3%)</div>
                         <div class="col-12">Skill 2: Increase critical damage of Orc units in Outland Battle. (0%, 0%, 4%, 7%, 14%)</div>
                         
-                        <div class="col-12">Skill 3: Receive Tablet 36</div>
+                            <div class="col-12">Skill 3: Receive Tablet 36</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5852,14 +5827,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)</div>
                         <div class="col-12">Skill 2: Increase Artifact Limit Break (0, 0, 1, 2, 3)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/246.png"> Ancient Wind Crown ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/246.png"> Ancient Wind Crown ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5885,14 +5855,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)</div>
                         <div class="col-12">Skill 2: Increase Artifact Limit Break (0, 0, 1, 2, 3)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/248.png"> Ancient Water Crown ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/248.png"> Ancient Water Crown ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5918,14 +5883,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 2%, 3%, 4%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/247.png"> Ancient Shadow Crown ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/247.png"> Ancient Shadow Crown ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5951,14 +5911,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (30%, 50%, 80%, 120%, 170%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 2%, 3%, 4%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/245.png"> Ancient Fire Crown ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/245.png"> Ancient Fire Crown ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5984,14 +5939,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase active skill damage efficiency (80, 130, 200, 300, 450)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/238.png"> Vasavi, the Thunder Spear ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/238.png"> Vasavi, the Thunder Spear ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6017,14 +5967,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/223.png"> Lucky Pig Ornament ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/223.png"> Lucky Pig Ornament ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6050,14 +5995,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Artifact Limit Break (2, 4, 6, 8, 10)</div>
                         <div class="col-12">Skill 2: Increase movement speed of undead unit in Guild Raid (0%, 0%, 6%, 8%, 10%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/237.png"> Trishula of Supreme Destroyer ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/237.png"> Trishula of Supreme Destroyer ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6083,14 +6023,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Artifact Limit Break (2, 4, 6, 8, 10)</div>
                         <div class="col-12">Skill 2: Increase movement speed of human unit in Guild Raid (0%, 0%, 6%, 8%, 10%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/231.png"> Shining Amrita ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/231.png"> Shining Amrita ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6116,14 +6051,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases the Tribe Friendliness for Undead (1000, 1500, 2000, 2500, 3000)</div>
                         <div class="col-12">Skill 2: Increase attack speed of undead unit in Guild Raid (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/239.png"> Chandrahas, the Lunar Sword ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/239.png"> Chandrahas, the Lunar Sword ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6149,14 +6079,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases the number of stages skipped when using warp (10, 15, 20, 25, 30)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/232.png"> Shining Sun Wheel ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/232.png"> Shining Sun Wheel ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6182,14 +6107,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases the Tribe Friendliness for Human (1000, 1500, 2000, 2500, 3000)</div>
                         <div class="col-12">Skill 2: Increase attack speed of human unit in Guild Raid (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/233.png"> Shining Wing Accessory ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/233.png"> Shining Wing Accessory ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6215,14 +6135,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases the Tribe Friendliness for Orc (1000, 1500, 2000, 2500, 3000)</div>
                         <div class="col-12">Skill 2: Increase attack speed of orc unit in Guild Raid (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/242.png"> Scripture of Knowledge ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/242.png"> Scripture of Knowledge ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6248,14 +6163,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)</div>
                         <div class="col-12">Skill 2: Increase movement speed of orc unit in Guild Raid (0%, 0%, 6%, 8%, 10%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/240.png"> Parashu of Peace God ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/240.png"> Parashu of Peace God ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6281,14 +6191,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases resistance against cold (120, 450, 900, 1800, 3600)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/241.png"> Lasso of Varuna ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/241.png"> Lasso of Varuna ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6314,14 +6219,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Permanently increases the beginning stage after being revived (20, 40, 60, 80, 100)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 160%, 200%, 250%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/235.png"> Veena of Goddess ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/235.png"> Veena of Goddess ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6347,14 +6247,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases the Tribe Friendliness for Elf (1000, 1500, 2000, 2500, 3000)</div>
                         <div class="col-12">Skill 2: Increase attack speed of elf unit in Guild Raid (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/236.png"> Earrings of Goddess ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/236.png"> Earrings of Goddess ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6380,14 +6275,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)</div>
                         <div class="col-12">Skill 2: Increase movement speed of elf unit in Guild Raid (0%, 0%, 6%, 8%, 10%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/234.png"> Golden Crown of Goddess ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/234.png"> Golden Crown of Goddess ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6413,14 +6303,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 2700000%)</div>
                         <div class="col-12">Skill 2: Increase HP of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/194.png"> Jeweled Sword of the Sun ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/194.png"> Jeweled Sword of the Sun ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6446,14 +6331,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase active skill damage efficiency (40, 90, 150, 220, 300)</div>
                         <div class="col-12">Skill 2: Increase defense power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/198.png"> Blessed Necklace of Regeneration ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/198.png"> Blessed Necklace of Regeneration ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6479,14 +6359,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Artifact Limit Break (2, 4, 6, 8, 10)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/202.png"> Scales of Death ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/202.png"> Scales of Death ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6512,14 +6387,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Artifact Limit Break (2, 4, 6, 8, 10)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/195.png"> Helm of the Sun ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/195.png"> Helm of the Sun ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6545,14 +6415,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (800%, 1600%, 2400%, 3200%, 4000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/205.png"> Spear of Flooding ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/205.png"> Spear of Flooding ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6578,14 +6443,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase quest gold buff (54000%, 144000%, 540000%, 1440000%, 3200000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/199.png"> Blessed Ring of Regeneration ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/199.png"> Blessed Ring of Regeneration ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6611,14 +6471,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease quest level up cost (20000%, 100000%, 200000%, 2000000%, 20000000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/203.png"> Khopesh of Flooding ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/203.png"> Khopesh of Flooding ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6644,14 +6499,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Maximum Quest level (20000%, 2000000%, 200000000%, 20000000000%, 2000000000000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/204.png"> Bow of Flooding ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/204.png"> Bow of Flooding ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6677,14 +6527,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease the unit upgrade cost (180000%, 360000%, 720000%, 1440000%, 2880000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/197.png"> Blessed Bracelets of Regeneration ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/197.png"> Blessed Bracelets of Regeneration ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6710,14 +6555,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)</div>
                         <div class="col-12">Skill 2: Increase attack speed of all units in Guild Raid (0%, 0%, 4%, 6%, 8%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/200.png"> Staff of Death ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/200.png"> Staff of Death ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6743,14 +6583,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1.5%, 3%, 4.5%, 6%, 7.5%)</div>
                         <div class="col-12">Skill 2: Increase attack power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/196.png"> Armor of the Sun ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/196.png"> Armor of the Sun ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6776,14 +6611,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases resistance against darkness (120, 450, 900, 1800, 3600)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 110%, 150%, 200%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/201.png"> Spellbook of Death ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/201.png"> Spellbook of Death ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6809,14 +6639,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Artifact Limit Break (2, 4, 6, 8, 10)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/174.png"> Odin&#39;s Spear ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/174.png"> Odin&#39;s Spear ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6842,14 +6667,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Artifact Limit Break (2, 4, 6, 8, 10)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/179.png"> Horn of Warning ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/179.png"> Horn of Warning ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6875,14 +6695,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease quest level up cost (2000%, 10000%, 20000%, 200000%, 2000000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/177.png"> Scissors of Fate ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/177.png"> Scissors of Fate ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6908,14 +6723,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Maximum Quest level (2000%, 200000%, 20000000%, 2000000000%, 200000000000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/178.png"> Thread of Fate ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/178.png"> Thread of Fate ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6941,14 +6751,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase quest gold buff (5400%, 14400%, 54000%, 144000%, 270000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/176.png"> Wheel of Fate ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/176.png"> Wheel of Fate ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6974,14 +6779,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 2%, 3%, 4%, 5%)</div>
                         <div class="col-12">Skill 2: Increase attack power of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/182.png"> Tyrfing ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/182.png"> Tyrfing ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7007,14 +6807,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase quest gold buff (5400%, 14400%, 54000%, 144000%, 320000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/183.png"> Avalanche Bow ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/183.png"> Avalanche Bow ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7040,14 +6835,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases resistance against fire (80, 300, 600, 1200, 2400)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/180.png"> Laevateinn ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/180.png"> Laevateinn ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7073,14 +6863,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase resistance to nature attacks. (80, 300, 600, 1200, 2400)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/181.png"> Mistilteinn ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/181.png"> Mistilteinn ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7106,14 +6891,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases efficiency of [Unit attack power 10 times] skill from the shop. (200%, 400%, 800%, 1600%, 3200%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/175.png"> Thor&#39;s Hammer ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/175.png"> Thor&#39;s Hammer ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7139,14 +6919,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease the unit upgrade cost (18000%, 36000%, 72000%, 144000%, 288000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 60%, 80%, 100%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/172.png"> Loki&#39;s Trickster Card ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/172.png"> Loki&#39;s Trickster Card ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7172,14 +6947,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase basic game speed (1%, 2%, 3%, 4%, 5%)</div>
                         <div class="col-12">Skill 2: Increase HP of all units in Guild Raid (0%, 0%, 10%, 20%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/173.png"> Freya&#39;s Necklace ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/173.png"> Freya&#39;s Necklace ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7205,14 +6975,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease quest level up cost (1000%, 5000%, 10000%, 100000%, 1000000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/150.png"> Yellow Dragon Saber ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/150.png"> Yellow Dragon Saber ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7238,14 +7003,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase active skill damage efficiency (40, 90, 150, 220, 300)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/139.png"> Black Turtle Shield ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/139.png"> Black Turtle Shield ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7271,14 +7031,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Medal Buff from transcended Undead Unit (20%, 45%, 75%, 110%, 150%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/142.png"> Undead Hero&#39;s Staff ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/142.png"> Undead Hero&#39;s Staff ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7304,14 +7059,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease 3rd active skill cool-time (3%, 6%, 10%, 15%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/136.png"> White Tiger Helmet ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/136.png"> White Tiger Helmet ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7337,14 +7087,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Medal Buff from transcended Human Unit (20%, 45%, 75%, 110%, 150%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/140.png"> Human Hero&#39;s Sword ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/140.png"> Human Hero&#39;s Sword ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7370,14 +7115,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Medal Buff from transcended Elf Unit (20%, 45%, 75%, 110%, 150%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/141.png"> Elf Hero&#39;s Bow ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/141.png"> Elf Hero&#39;s Bow ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7403,14 +7143,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Medal Buff from transcended Orc Unit (20%, 45%, 75%, 110%, 150%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/143.png"> Orc Hero&#39;s Axe ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/143.png"> Orc Hero&#39;s Axe ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7436,14 +7171,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Reach limit break of Maximum Medal Buff from transcended Unit in Time Shop (200%, 400%, 600%, 800%, 1000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/137.png"> Blue Dragon Armor ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/137.png"> Blue Dragon Armor ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7469,14 +7199,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Decrease 2nd active skill cool-time (2%, 4%, 6%, 8%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/138.png"> Phoenix Cloak ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/138.png"> Phoenix Cloak ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7502,14 +7227,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase Maximum Quest level (1000%, 100000%, 10000000%, 1000000000%, 100000000000%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 40%, 60%, 80%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/145.png"> Horus&#39;s Greatsword ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/145.png"> Horus&#39;s Greatsword ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7535,14 +7255,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/224.png"> Golden Pig Statue ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/224.png"> Golden Pig Statue ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7568,14 +7283,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/206.png"> Lunar Goddess&#39; Amulet ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/206.png"> Lunar Goddess&#39; Amulet ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7601,14 +7311,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/207.png"> Lunar Goddess&#39; Crystal Ball ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/207.png"> Lunar Goddess&#39; Crystal Ball ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7634,14 +7339,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/211.png"> Novel of Halloween Night ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/211.png"> Novel of Halloween Night ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7667,14 +7367,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/210.png"> Broom of Halloween Night ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/210.png"> Broom of Halloween Night ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7700,14 +7395,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/217.png"> Christmas Magician Staff ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/217.png"> Christmas Magician Staff ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7733,14 +7423,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/216.png"> Christmas Magician Hat ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/216.png"> Christmas Magician Hat ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7766,14 +7451,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/209.png"> Ancient Panda&#39;s Claws ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/209.png"> Ancient Panda&#39;s Claws ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7799,14 +7479,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/208.png"> Ancient Lesser Panda&#39;s Claws ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/208.png"> Ancient Lesser Panda&#39;s Claws ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7832,14 +7507,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/249.png"> Duru&#39;s Snorkeling Gear ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/249.png"> Duru&#39;s Snorkeling Gear ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7865,14 +7535,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/250.png"> Dutu&#39;s Surfing Gear ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/250.png"> Dutu&#39;s Surfing Gear ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7898,14 +7563,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/243.png"> Daddy Bear Treasure ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/243.png"> Daddy Bear Treasure ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7931,14 +7591,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 20%, 20%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 40%, 70%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/244.png"> Mommy Bear Treasure ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/244.png"> Mommy Bear Treasure ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7964,14 +7619,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases resistance against fire (100, 400, 800, 1600, 3200)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/144.png"> Sun Ring ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/144.png"> Sun Ring ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -7997,14 +7647,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase resistance to nature attacks. (100, 400, 800, 1600, 3200)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/155.png"> Gaia&#39;s Rage ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/155.png"> Gaia&#39;s Rage ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8030,14 +7675,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases resistance against darkness (100, 400, 800, 1600, 3200)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/189.png"> Hell Lord&#39;s Amulet ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/189.png"> Hell Lord&#39;s Amulet ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8063,14 +7703,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increases resistance against cold (100, 400, 800, 1600, 3200)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 35%, 45%, 60%)</div>
                         
-                        <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/230.png"> Arctic Hail Dragon Earrings ]
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></div>
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/230.png"> Arctic Hail Dragon Earrings ]</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8096,13 +7731,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (1%, 2%, 3%, 4%, 5%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8128,13 +7759,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 20%, 30%, 40%)</div>
                         <div class="col-12">Skill 2: Increase basic game speed (0%, 0%, 1.5%, 2%, 2.5%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8160,13 +7787,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8192,13 +7815,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 40%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8224,13 +7843,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8256,13 +7871,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 20%, 30%, 30%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 50%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8288,13 +7899,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8320,13 +7927,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8352,13 +7955,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8384,13 +7983,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8416,13 +8011,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8448,13 +8039,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8480,13 +8067,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8512,13 +8095,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8544,13 +8123,9 @@ Endless Farming
                         <div class="col-12">Skill 1: Increase additional medals obtained (5%, 10%, 10%, 10%, 10%)</div>
                         <div class="col-12">Skill 2: Increase additional medals obtained (0%, 0%, 30%, 40%, 40%)</div>
                         
-                        <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
+                            <div class="col-12">Skill 3: Increase additional medals obtained (0%, 0%, 0%, 0%, 60%)</div>
                         
-                        <div class="col-12">
-                            <ul>
-                                
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -8574,6 +8149,7 @@ Endless Farming
 <script type="text/javascript" src="/static/js/extern/index.js"></script>
 <script type="text/javascript" src="/static/js/extern/sortable.js"></script>
 <script type="text/javascript" src="/static/js/extern/bootstrap-input-spinner.js"></script>
+<script type="text/javascript" src="/static/js/extern/html2canvas.min.js"></script>
 
 <script type="text/javascript" src="/static/js/base.js"></script>
 

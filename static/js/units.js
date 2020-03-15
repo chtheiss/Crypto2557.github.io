@@ -244,7 +244,7 @@ function showAdditionalBuffProgressBars($unit_card) {
         });
 
         $(".unit-container").removeClass("hidden");
-        
+
         for (const unit_input of $(".unit-input[type='number']")) {
             load_input_value($(unit_input));
         }
