@@ -38,11 +38,8 @@
         			on_pet_input_change($pet_input, "pets_other");
         		}
         });
-    });
-    $(window).on('load', function() {
-        $(".pet-container-other").removeClass("hidden");
-    });
-    $(document).on('load', function() {
-        $(".pet-container-other").removeClass("hidden");
+        $(window).on('load', function() {
+            $(".pet-container-other").removeClass("hidden");
+        });
     });
 }));
