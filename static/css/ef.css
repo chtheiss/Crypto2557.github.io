@@ -435,7 +435,7 @@ animation-fill-mode: both;
 }
 .pet-container{
     display:grid;
-    width:70%;
+    width:80%;
     grid-gap:5px;
     grid-template-columns:1fr;
     grid-template-rows:50px minmax(min-content, 150px) 1fr 12px;
@@ -444,7 +444,11 @@ animation-fill-mode: both;
     align-content:center;
     margin:auto;
 }
-
+@media screen and (max-width:600px){
+    .pet-container{
+        width:70%;
+    }
+}
 .pet-container-other{
     display:grid;
     width:80%;
