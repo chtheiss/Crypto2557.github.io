@@ -496,27 +496,37 @@ animation-fill-mode: both;
     justify-content:center;
     align-content:center;
 }
-@media screen and (max-width:600px){
+@media screen and (max-width:630px){
     .pet-pets{
         grid-template-columns:repeat(2,1fr);
     }
 }
-@media screen and (min-width:600px){
+@media screen and (min-width:630px){
     .pet-pets{
         grid-template-columns:repeat(3,1fr);
     }
 }
-@media screen and (min-width:768px){
+@media screen and (min-width:840px){
     .pet-pets{
         grid-template-columns:repeat(4,1fr);
     }
 }
-@media screen and (min-width:992px){
+@media screen and (min-width:1050px){
+    .pet-pets{
+        grid-template-columns:repeat(5,1fr);
+    }
+}
+@media screen and (min-width:1260px){
     .pet-pets{
         grid-template-columns:repeat(6,1fr);
     }
 }
-@media screen and (min-width:1200px){
+@media screen and (min-width:1470px){
+    .pet-pets{
+        grid-template-columns:repeat(7,1fr);
+    }
+}
+@media screen and (min-width:1680px){
     .pet-pets{
         grid-template-columns:repeat(8,1fr);
     }
@@ -533,6 +543,19 @@ animation-fill-mode: both;
     grid-template-areas:"pet frags name" "stars stars stars" "input input input" "kl kl kl";
     padding:5% 2% 1% 2%;
 }
+@media screen and (max-width:630px){
+    .pet-card{
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1.5fr 0.8fr 0.5fr 1fr 0.5fr;
+        grid-template-areas:
+            "pet frags"
+            "name name"
+            "stars stars"
+            "input input"
+            "kl kl";
+    }
+}
+
 .pet-card>*, .pet-card-other>*{
     justify-self:center;
     align-self:center;
