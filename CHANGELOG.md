@@ -7,10 +7,13 @@
 - Button that links to the new Discord support server
 - Button that links to HarroweD pet guide
 - Button for donations
+- Animation to dropdown menus in the navbar
 
 ### Changed
 - The layout for the stat modal for mobile devices
-- Changed the size of the meta progression image for vertical rotated mobile devices
+- The size of the meta progression image for vertical rotated mobile devices
+- The location of the import and export buttons. They are now under the "Data Transfer" dropdown.
+- The amount of space on mobile that is available to scroll pets
 
 ### Fixed
 - Slight misaligment of pet image and number of day display for the trackers
