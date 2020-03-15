@@ -1,14 +1,14 @@
 {
-   "0":"Loki",
-   "1":"Verdandi",
-   "2":"Freyr",
-   "3":"Freya",
-   "4":"Skuld",
-   "5":"Baldur",
-   "6":"Odin",
-   "7":"Urd",
-   "8":"Tyr",
+   "0":"Odin",
+   "1":"Heimdall",
+   "2":"Skuld",
+   "3":"Urd",
+   "4":"Verdandi",
+   "5":"Tyr",
+   "6":"Skadi",
+   "7":"Freyr",
+   "8":"Baldur",
    "9":"Thor",
-   "10":"Skadi",
-   "11":"Heimdall"
+   "10":"Loki",
+   "11":"Freya"
 }

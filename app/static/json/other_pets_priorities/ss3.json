@@ -1,14 +1,14 @@
 {
    "0":"Khepri",
-   "1":"Ra",
-   "2":"Atum",
-   "3":"Nefertem",
-   "4":"Osiris",
+   "1":"Osiris",
+   "2":"Anubis",
+   "3":"Ra",
+   "4":"Satis",
    "5":"Hathor",
-   "6":"Seth",
-   "7":"Nephthys",
-   "8":"Anubis",
-   "9":"Sobek",
-   "10":"Khnum",
-   "11":"Satis"
+   "6":"Sobek",
+   "7":"Khnum",
+   "8":"Nefertem",
+   "9":"Seth",
+   "10":"Atum",
+   "11":"Nephthys"
 }
