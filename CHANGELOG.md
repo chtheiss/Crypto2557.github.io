@@ -16,8 +16,9 @@
 - The amount of space on mobile that is available to scroll pets
 
 ### Fixed
-- Slight misaligment of pet image and number of day display for the trackers
+- Slight misaligment of pet image and number of days display for the trackers
 - A typo for the Barbarian Battle Cry (Orc) buff
+- A bug where the width of the pet cards was not calculated properly for all screen sizes
 
 ## [1.4.6] - 2020-03-08
 ### Fixed
