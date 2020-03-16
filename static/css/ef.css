@@ -139,6 +139,7 @@ h4{
 .nav-tabs .nav-link{
     border: 2px solid #999;
     color: #c2d4d5;
+    margin: 2px;
 }
 .nav-tabs .nav-link.active{
     background-color: #c2d4d5;
@@ -295,6 +296,13 @@ h4{
 .navbar-dark .navbar-nav .show>.nav-link{
     color:rgba(194,212,213,.65);
 }
+@media screen and (min-width: 992px){
+    .navbar-collapse>.btn{
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+}
+
 .animate {
 animation-duration: 0.3s;
 -webkit-animation-duration: 0.3s;

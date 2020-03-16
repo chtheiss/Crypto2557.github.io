@@ -151,7 +151,7 @@ async function updatePriorities(storage_name) {
 
 async function on_pet_input_change($pet_input, storage_name) {
     $pet = $pet_input.closest(".pet-card,.pet-card-other").first()
-    if($pet.hasClass(".pet-card")){
+    if($pet.hasClass("pet-card")){
         var item = {
             name: $pet_input.data("pet"),
             fragments: parseInt($pet_input.val()),
@@ -170,7 +170,7 @@ async function on_pet_input_change($pet_input, storage_name) {
     change_stars(item);
 
     change_pet_image_background($pet, item);
-    if($pet.hasClass(".pet-card")){
+    if($pet.hasClass("pet-card")){
         calculatePetFragmentsToFarm();
     }
     if ($('#hide-five-star-pets').prop("checked")) {
