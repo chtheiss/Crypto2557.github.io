@@ -36,6 +36,12 @@ body, html{
     border-color: #999;
     color: #c2d4d5;
     border-radius: 5px;
+    min-width:2.5rem;
+}
+@media all and (max-width:630px){
+    .input-group-append button, .input-group-prepend button{
+        min-width:2rem;
+    }
 }
 .form-control{
     background-color: #999;
@@ -286,7 +292,9 @@ h4{
     border-color:none;
     color:rgba(194,212,213,.65);
 }
-
+.navbar-dark .navbar-nav .show>.nav-link{
+    color:rgba(194,212,213,.65);
+}
 .animate {
 animation-duration: 0.3s;
 -webkit-animation-duration: 0.3s;

@@ -199,6 +199,7 @@ function clear_tracking() {
     $(function() {
 
         $(".pet-input[type='number']").inputSpinner();
+        $(".input-group-append button, .input-group-prepend button").removeAttr('style');
 
         $(".image-checkbox").on("click", function(e) {
             var $checkbox = $(this).find('input[type="checkbox"]');
