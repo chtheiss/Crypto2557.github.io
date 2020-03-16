@@ -40,7 +40,6 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
     }
 }
 
-
 (function(yourcode) {
 
     yourcode(window.jQuery, window.indexedDB, window, document);
@@ -55,9 +54,10 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
             $('#dbupload').trigger('click');
         });
 
-        $("#dbupload").change(function(e) {
+        $("#dbupload").change(async function(e) {
             var files = document.getElementById('dbupload').files;
             var fr = new FileReader();
+            f = files.item(0)
             fr.onload = function(e) {
                 var result = JSON.parse(e.target.result);
                 var db = new Dexie('endless-farming-db');
@@ -65,18 +65,54 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                     var idb_db = db.backendDB();
                     clearDatabase(idb_db, function(err) {
                         if (!err) {
-                            importFromJsonString(idb_db, result, function(err) {
+                            importFromJsonString(idb_db, result, async function(err) {
                                 if (!err) {
                                     console.log("Imported data successfully");
+                                    console.log("Fixing compatibility issues with version <=1.4.6");
+                                    var db = await idb.open('endless-farming-db');
+                                    var tx = await db.transaction("player", 'readwrite');
+                                    var store = await tx.objectStore("player");
+                                    var hide_five_star_pets = await store.get("hide_five_star_pets")
+                                    if (hide_five_star_pets != undefined){
+                                        if (typeof hide_five_star_pets.value === "boolean"){
+                                            await store.put({
+                                                "name": "hide_five_star_pets",
+                                                "value": hide_five_star_pets.value & 1 
+                                            })
+                                        }
+                                    } else{
+                                        await store.put({
+                                                "name": "hide_five_star_pets",
+                                                "value": 0
+                                        })
+                                    }
+                                    var hide_unattainable_pets = await store.get("hide_unattainable_pets")
+                                    if (hide_unattainable_pets != undefined){
+                                        if (typeof hide_unattainable_pets.value === "boolean"){
+                                            await store.put({
+                                                "name": "hide_unattainable_pets",
+                                                "value": hide_unattainable_pets.value & 1 
+                                            })
+                                        }
+                                    } else{
+                                        await store.put({
+                                                "name": "hide_unattainable_pets",
+                                                "value": 0
+                                        })
+                                    }
                                     location.reload();
                                     return false;
+                                } else {
+                                    console.log("Encountered error while importing")
                                 }
                             });
+                        } else {
+                            console.log("Encountered error while clearing database")
                         }
                     });
                 });
             };
-            fr.readAsText(files.item(0));
+            fr.readAsText(f)
         });
 
         $("#export-button").on("click", function(e) {
@@ -163,7 +199,7 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
             var hide = $('#hide-five-star-pets').prop("checked")
             var KL = store.put({
                 name: 'hide_five_star_pets',
-                value: hide
+                value: hide & 1
             });
             for (const pet of $("#dragable-row,.pet-table").children('.pet-card,.pet-card-other')) {
                 $pet = $(pet)
@@ -181,7 +217,7 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
             var hide = $('#hide-unattainable-pets').prop("checked")
             var KL = store.put({
                 name: 'hide_unattainable_pets',
-                value: hide
+                value: hide & 1
             });
             for (const pet of $("#dragable-row").children('.pet-card,.pet-card-other')) {
                     $pet = $(pet)
@@ -307,7 +343,7 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                         if (val == undefined) {
                             playerOS.put({
                                 "name": "hide_five_star_pets",
-                                "value": false
+                                "value": 0
                             });
                         }
                     });
@@ -321,11 +357,11 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                         });
                     }
                     var playerOS = upgradeDb.transaction.objectStore('player');
-                    playerOS.get("hide_unattainable_pets").then(function(val) {
+                    playerOS.get("hide_unattainable_pets").then(async function(val) {
                         if (val == undefined) {
-                            playerOS.put({
+                            await playerOS.put({
                                 "name": "hide_unattainable_pets",
-                                "value": false
+                                "value": 0
                             });
                         }
                     });
