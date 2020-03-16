@@ -153,6 +153,7 @@ function showAdditionalBuffProgressBars($unit_card) {
     $(async function() {
 
         $(".unit-input[type='number']").inputSpinner();
+        $(".input-group-append button, .input-group-prepend button").removeAttr('style');
 
         $('[data-toggle="popover"]').each(function() {
             prog_bar = $(this).children().first();
