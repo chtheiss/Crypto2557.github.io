@@ -541,7 +541,8 @@ animation-fill-mode: both;
     grid-template-columns:1fr 1fr 1fr;
     grid-template-rows:1.5fr 1fr 1fr .8fr;
     grid-template-areas:"pet frags name" "stars stars stars" "input input input" "kl kl kl";
-    padding:5% 2% 1% 2%;
+    padding: 5% 1% 1% 1%;
+    margin: 1%;
 }
 @media screen and (max-width:630px){
     .pet-card{
@@ -567,7 +568,8 @@ animation-fill-mode: both;
     grid-template-columns:1fr 1fr;
     grid-template-rows:1.5fr 1fr 1fr;
     grid-template-areas:"pet name" "stars stars" "input input";
-    padding:5% 2% 1% 2%;
+    padding: 5% 1% 1% 1%;
+    margin: 1%;
 }
 
 .pet-card-pet{
