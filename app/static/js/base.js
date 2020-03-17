@@ -1,5 +1,5 @@
 String.prototype.replaceAll = function(search, replacement) {
-    var target = this;
+    let target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
@@ -8,7 +8,7 @@ function handle_nan(val) {
 }
 
 function remove_classes($element, classes_not_to_remove) {
-    var classes = $($element).attr('class').split(/\s+/);
+    let classes = $($element).attr('class').split(/\s+/);
     for (i = 0; i < classes.length; i += 1) {
         if (classes_not_to_remove.includes(classes[i])) {
             continue;
@@ -40,6 +40,131 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
     }
 }
 
+function load_file_into_indexedDB(file){
+    let fr = new FileReader();
+    fr.onload = function(e) {
+        let result = JSON.parse(e.target.result);
+        let db = new Dexie('endless-farming-db');
+        db.open().then(function() {
+            let idb_db = db.backendDB();
+            clearDatabase(idb_db, function(err) {
+                if (!err) {
+                    importFromJsonString(idb_db, result, async function(err) {
+                        if (!err) {
+                            console.log("Imported data successfully");
+                            console.log("Fixing compatibility issues with version <=1.4.6");
+                            let db = await idb.open('endless-farming-db');
+                            let tx = await db.transaction("player", 'readwrite');
+                            let store = await tx.objectStore("player");
+                            let hide_five_star_pets = await store.get("hide_five_star_pets")
+                            if (hide_five_star_pets != undefined){
+                                if (typeof hide_five_star_pets.value === "boolean"){
+                                    await store.put({
+                                        "name": "hide_five_star_pets",
+                                        "value": hide_five_star_pets.value & 1 
+                                    })
+                                }
+                            } else{
+                                await store.put({
+                                        "name": "hide_five_star_pets",
+                                        "value": 0
+                                })
+                            }
+                            let hide_unattainable_pets = await store.get("hide_unattainable_pets")
+                            if (hide_unattainable_pets != undefined){
+                                if (typeof hide_unattainable_pets.value === "boolean"){
+                                    await store.put({
+                                        "name": "hide_unattainable_pets",
+                                        "value": hide_unattainable_pets.value & 1 
+                                    })
+                                }
+                            } else{
+                                await store.put({
+                                        "name": "hide_unattainable_pets",
+                                        "value": 0
+                                })
+                            }
+                            location.reload();
+                            return false;
+                        } else {
+                            console.log("Encountered error while importing")
+                        }
+                    });
+                } else {
+                    console.log("Encountered error while clearing database")
+                }
+            });
+        });
+    };
+    fr.readAsText(file)
+}
+
+async function load_user_stats_from_db(){
+    const db = await idb.open('endless-farming-db');
+    const tx = await db.transaction('player', 'readwrite');
+    const store = await tx.objectStore('player');
+
+    const knightage_level = store.get("KL");
+    const tickets = store.get("tickets");
+    const refills = store.get("refills");
+    const tickets_hard = store.get("tickets_hard");
+    const refills_hard = store.get("refills_hard");
+    const hide_five_star_pets = store.get("hide_five_star_pets");
+    const hide_unattainable_pets = store.get("hide_unattainable_pets");
+
+    const knightage_level_result = await knightage_level;
+    const tickets_result = await tickets;
+    const refills_result = await refills;
+    const tickets_hard_result = await tickets_hard;
+    const refills_hard_result = await refills_hard;
+    const hide_five_star_pets_result = await hide_five_star_pets;
+    const hide_unattainable_pets_result = await hide_unattainable_pets;
+
+    if (knightage_level_result !== undefined) {
+        $("#KL-number").val(knightage_level_result.value);
+    }
+    if (tickets_result !== undefined) {
+        $("#tickets-number").val(tickets_result.value);
+    }
+    if (refills_result !== undefined) {
+        $("#refills-number").val(refills_result.value);
+        change_gem_label($("#refills-number"), $("#gem-label"), [0, 100, 200, 400, 800, 1200, 1600]);
+    }
+    if (tickets_hard_result !== undefined) {
+        $("#tickets_hard-number").val(tickets_hard_result.value);
+    }
+    if (refills_hard_result !== undefined) {
+        $("#refills_hard-number").val(refills_hard_result.value);
+        change_gem_label($("#refills_hard-number"), $("#gem-hard-label"), [0, 200, 400, 800]);
+    }
+    if (hide_five_star_pets_result !== undefined) {
+        $('#hide-five-star-pets').prop("checked", hide_five_star_pets_result.value);
+    }
+    if (hide_unattainable_pets_result !== undefined) {
+        $('#hide-unattainable-pets').prop("checked", hide_unattainable_pets_result.value);
+    }
+}
+
+function download_file_from_indexedDB(){
+    let db = new Dexie('endless-farming-db');
+    db.open().then(function() {
+        let idb_db = db.backendDB();
+        exportToJsonString(idb_db, function(err, jsonString) {
+            if (err) {
+                console.error(err);
+            } else {
+                let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonString));
+                let downloadAnchorNode = document.createElement('a');
+                downloadAnchorNode.setAttribute("href", dataStr);
+                downloadAnchorNode.setAttribute("download", "endless_farming.json");
+                document.body.appendChild(downloadAnchorNode); // required for firefox
+                downloadAnchorNode.click();
+                downloadAnchorNode.remove();
+            }
+        });
+    });    
+}
+
 (function(yourcode) {
 
     yourcode(window.jQuery, window.indexedDB, window, document);
@@ -50,139 +175,36 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
 
         $(".user-input[type='number']").inputSpinner();
 
+        await load_user_stats_from_db()
+
         $("#import-button").click(function() {
             $('#dbupload').trigger('click');
         });
 
         $("#dbupload").change(async function(e) {
-            var files = document.getElementById('dbupload').files;
-            var fr = new FileReader();
-            f = files.item(0)
-            fr.onload = function(e) {
-                var result = JSON.parse(e.target.result);
-                var db = new Dexie('endless-farming-db');
-                db.open().then(function() {
-                    var idb_db = db.backendDB();
-                    clearDatabase(idb_db, function(err) {
-                        if (!err) {
-                            importFromJsonString(idb_db, result, async function(err) {
-                                if (!err) {
-                                    console.log("Imported data successfully");
-                                    console.log("Fixing compatibility issues with version <=1.4.6");
-                                    var db = await idb.open('endless-farming-db');
-                                    var tx = await db.transaction("player", 'readwrite');
-                                    var store = await tx.objectStore("player");
-                                    var hide_five_star_pets = await store.get("hide_five_star_pets")
-                                    if (hide_five_star_pets != undefined){
-                                        if (typeof hide_five_star_pets.value === "boolean"){
-                                            await store.put({
-                                                "name": "hide_five_star_pets",
-                                                "value": hide_five_star_pets.value & 1 
-                                            })
-                                        }
-                                    } else{
-                                        await store.put({
-                                                "name": "hide_five_star_pets",
-                                                "value": 0
-                                        })
-                                    }
-                                    var hide_unattainable_pets = await store.get("hide_unattainable_pets")
-                                    if (hide_unattainable_pets != undefined){
-                                        if (typeof hide_unattainable_pets.value === "boolean"){
-                                            await store.put({
-                                                "name": "hide_unattainable_pets",
-                                                "value": hide_unattainable_pets.value & 1 
-                                            })
-                                        }
-                                    } else{
-                                        await store.put({
-                                                "name": "hide_unattainable_pets",
-                                                "value": 0
-                                        })
-                                    }
-                                    location.reload();
-                                    return false;
-                                } else {
-                                    console.log("Encountered error while importing")
-                                }
-                            });
-                        } else {
-                            console.log("Encountered error while clearing database")
-                        }
-                    });
-                });
-            };
-            fr.readAsText(f)
+            let files = document.getElementById('dbupload').files;
+            file = files.item(0)
+            load_file_into_indexedDB(file)
         });
 
         $("#export-button").on("click", function(e) {
-            var db = new Dexie('endless-farming-db');
-            db.open().then(function() {
-                var idb_db = db.backendDB();
-                exportToJsonString(idb_db, function(err, jsonString) {
-                    if (err) {
-                        console.error(err);
-                    } else {
-                        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonString));
-                        var downloadAnchorNode = document.createElement('a');
-                        downloadAnchorNode.setAttribute("href", dataStr);
-                        downloadAnchorNode.setAttribute("download", "endless_farming.json");
-                        document.body.appendChild(downloadAnchorNode); // required for firefox
-                        downloadAnchorNode.click();
-                        downloadAnchorNode.remove();
-                    }
-                });
-            });
+            download_file_from_indexedDB()
         });
 
-        db = await idb.open('endless-farming-db');
-        var tx = await db.transaction('player', 'readwrite');
-        var store = await tx.objectStore('player');
-        var KL = await store.get("KL");
-        if (KL !== undefined) {
-            $("#KL-number").val(KL.value);
-        }
-        var tickets = await store.get("tickets");
-        if (tickets !== undefined) {
-            $("#tickets-number").val(tickets.value);
-        }
-        var refills = await store.get("refills");
-        if (refills !== undefined) {
-            $("#refills-number").val(refills.value);
-            change_gem_label($("#refills-number"), $("#gem-label"), [0, 100, 200, 400, 800, 1200, 1600]);
-        }
-
-        var tickets_hard = await store.get("tickets_hard");
-        if (tickets_hard !== undefined) {
-            $("#tickets_hard-number").val(tickets_hard.value);
-        }
-
-        var refills_hard = await store.get("refills_hard");
-        if (refills_hard !== undefined) {
-            $("#refills_hard-number").val(refills_hard.value);
-            change_gem_label($("#refills_hard-number"), $("#gem-hard-label"), [0, 200, 400, 800]);
-        }
-
-        var hide_five_star_pets = await store.get("hide_five_star_pets");
-        if (hide_five_star_pets !== undefined) {
-            $('#hide-five-star-pets').prop("checked", hide_five_star_pets.value);
-        }
-
-        var hide_unattainable_pets = await store.get("hide_unattainable_pets");
-        if (hide_unattainable_pets !== undefined) {
-            $('#hide-unattainable-pets').prop("checked", hide_unattainable_pets.value);
-        }
 
         $(".user-input").bind('change', async function() {
             $this = $(this);
-            db = await idb.open('endless-farming-db');
-            var tx = await db.transaction('player', 'readwrite');
-            var store = await tx.objectStore('player');
-            var new_KL = $this.val()
-            var KL = store.put({
+            const new_KL = $this.val();
+
+            const db = await idb.open('endless-farming-db');
+            const tx = await db.transaction('player', 'readwrite');
+            const store = await tx.objectStore('player');
+
+            store.put({
                 name: $this.attr("id").replace("-number", ""),
                 value: new_KL
             });
+
             if ($this.attr("id") == "KL-number" && $("#dragable-row").length != 0) {
                 updateStages(new_KL);
             }
@@ -192,18 +214,20 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
         });
 
         $("#hide-five-star-pets").bind('change', async function() {
-            $this = $(this);
-            db = await idb.open('endless-farming-db');
-            var tx = await db.transaction('player', 'readwrite');
-            var store = await tx.objectStore('player');
-            var hide = $('#hide-five-star-pets').prop("checked")
-            var KL = store.put({
+            const db = await idb.open('endless-farming-db');
+            const tx = await db.transaction('player', 'readwrite');
+            const store = await tx.objectStore('player');
+
+            const hide = $(this).prop("checked");
+
+            store.put({
                 name: 'hide_five_star_pets',
                 value: hide & 1
             });
+
             for (const pet of $("#dragable-row,.pet-table").children('.pet-card,.pet-card-other')) {
-                $pet = $(pet)
-                var input = $pet.find(".pet-input[type='number']");
+                let $pet = $(pet)
+                let input = $pet.find(".pet-input[type='number']");
                 hide_or_show_pet($pet, input.val() >= 330 && hide);
             }
 
@@ -211,23 +235,26 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
 
         $("#hide-unattainable-pets").bind('change', async function() {
             $this = $(this);
-            db = await idb.open('endless-farming-db');
-            var tx = await db.transaction('player', 'readwrite');
-            var store = await tx.objectStore('player');
-            var hide = $('#hide-unattainable-pets').prop("checked")
-            var KL = store.put({
+            const db = await idb.open('endless-farming-db');
+            const tx = await db.transaction('player', 'readwrite');
+            const store = await tx.objectStore('player');
+
+            const hide = $(this).prop("checked");
+
+             store.put({
                 name: 'hide_unattainable_pets',
                 value: hide & 1
             });
+
             for (const pet of $("#dragable-row").children('.pet-card,.pet-card-other')) {
-                    $pet = $(pet)
-                    kl_numbers = $pet.find(".pet-card-kl-number")
-                    let unattainable = (kl_numbers.length == kl_numbers.filter(function( index ) {
-                        return $("#KL-number").val() < parseFloat($(this).text());
-                    }).length)
-                    if(unattainable){
-                        hide_or_show_unattainable_pet($pet, unattainable && hide)
-                    }
+                let $pet = $(pet);
+                let kl_numbers = $pet.find(".pet-card-kl-number");
+                let unattainable = (kl_numbers.length == kl_numbers.filter(function( index ) {
+                    return $("#KL-number").val() < parseFloat($(this).text());
+                }).length)
+                if(unattainable){
+                    hide_or_show_unattainable_pet($pet, unattainable && hide);
+                }
             }
 
         });
@@ -241,18 +268,18 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
         });
     });
 
-    (function() {
+    (async function() {
         'use strict';
         //check for support
         if (!('indexedDB' in window)) {
             console.log('This browser doesn\'t support IndexedDB');
             return;
         }
-        var dbPromise = idb.open('endless-farming-db', 5, function(upgradeDb) {
+        const dbPromise = idb.open('endless-farming-db', 5, function(upgradeDb) {
             switch (upgradeDb.oldVersion) {
-                case 0:
+                case 0:{
                     if (!upgradeDb.objectStoreNames.contains('units')) {
-                        var unitsOS = upgradeDb.createObjectStore('units', {
+                        let unitsOS = upgradeDb.createObjectStore('units', {
                             keyPath: 'name'
                         });
                         unitsOS.createIndex('nsr', 'nsr', {
@@ -263,16 +290,17 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                         });
                     }
                     if (!upgradeDb.objectStoreNames.contains('pets')) {
-                        var petsOS = upgradeDb.createObjectStore('pets', {
+                        let petsOS = upgradeDb.createObjectStore('pets', {
                             keyPath: 'name'
                         });
                         petsOS.createIndex('fragments', 'fragments', {
                             unique: false
                         });
                     }
-                case 1:
+                }
+                case 1:{
                     if (!upgradeDb.objectStoreNames.contains('player')) {
-                        var playerOS = upgradeDb.createObjectStore('player', {
+                        let playerOS = upgradeDb.createObjectStore('player', {
                             keyPath: 'name',
                             autoIncrement: true
                         });
@@ -304,13 +332,14 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                             }
                         });
                     }
-                    var petsOS = upgradeDb.transaction.objectStore('pets');
+                    let petsOS = upgradeDb.transaction.objectStore('pets');
                     petsOS.createIndex('priority', 'priority', {
                         unique: false
                     });
-                case 2:
+                }
+                case 2:{
                     if (!upgradeDb.objectStoreNames.contains('pets_hard')) {
-                        var pets_hardOS = upgradeDb.createObjectStore('pets_hard', {
+                        let pets_hardOS = upgradeDb.createObjectStore('pets_hard', {
                             keyPath: 'name'
                         });
                         pets_hardOS.createIndex('fragments', 'fragments', {
@@ -320,7 +349,7 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                             unique: false
                         });
                     }
-                    var playerOS = upgradeDb.transaction.objectStore('player');
+                    let playerOS = upgradeDb.transaction.objectStore('player');
                     playerOS.get("tickets_hard").then(function(val) {
                         if (val == undefined) {
                             playerOS.put({
@@ -337,8 +366,9 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                             });
                         }
                     });
-                case 3:
-                    var playerOS = upgradeDb.transaction.objectStore('player');
+                }
+                case 3:{
+                    let playerOS = upgradeDb.transaction.objectStore('player');
                     playerOS.get("hide_five_star_pets").then(function(val) {
                         if (val == undefined) {
                             playerOS.put({
@@ -347,16 +377,17 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                             });
                         }
                     });
-                case 4:
+                }
+                case 4:{
                     if (!upgradeDb.objectStoreNames.contains('pets_other')) {
-                        var pets_hardOS = upgradeDb.createObjectStore('pets_other', {
+                        let pets_hardOS = upgradeDb.createObjectStore('pets_other', {
                             keyPath: 'name'
                         });
                         pets_hardOS.createIndex('fragments', 'fragments', {
                             unique: false
                         });
                     }
-                    var playerOS = upgradeDb.transaction.objectStore('player');
+                    let playerOS = upgradeDb.transaction.objectStore('player');
                     playerOS.get("hide_unattainable_pets").then(async function(val) {
                         if (val == undefined) {
                             await playerOS.put({
@@ -365,7 +396,9 @@ function hide_or_show_unattainable_pet($pet, unattainable) {
                             });
                         }
                     });
+                }
             }
         });
+        await dbPromise;
     })();
 }));
