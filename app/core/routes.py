@@ -75,7 +75,6 @@ def pets_others():
             list(filter(lambda x: origin in x["origin"], pets)),
             key=lambda pet: int(pet["priority"]),
         )
-    print(pets_by_origin["event"])
     return render_template("pets_others.html", title="Other Pets", pets=pets_by_origin)
 
 
