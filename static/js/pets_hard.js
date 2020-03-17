@@ -74,7 +74,6 @@ function calculatePetFragmentsToFarm() {
             for (const pet of $(".pet-card")) {
                 let $pet = $(pet);
                 let frags_to_add = parseInt($pet.find(".pet-card-frags").text());
-                console.log(frags_to_add);
                 let input = $pet.find(".pet-input");
                 let current_frags = handle_nan(parseInt(input.val()));
                 if (frags_to_add > 0) {
