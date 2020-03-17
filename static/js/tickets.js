@@ -7,16 +7,16 @@
     $(async function() {
         for (const progress of $(".ticket-row-progress")) {
             $this = $(progress);
-            var db = await idb.open('endless-farming-db')
-            var tx = await db.transaction('units', 'readwrite');
-            var store = await tx.objectStore('units');
+            let db = await idb.open('endless-farming-db')
+            let tx = await db.transaction('units', 'readwrite');
+            let store = await tx.objectStore('units');
             let unit = $this.data("unit").replaceAll(" ", "_")
-            var val = await store.get(unit);
-            var progressbar = $this.find(".progress-bar");
-            var requirement = progressbar.attr('aria-valuemax');
+            let val = await store.get(unit);
+            let progressbar = $this.find(".progress-bar");
+            let requirement = progressbar.attr('aria-valuemax');
 
-            var value = 0;
-            var val_text = 0;
+            let value = 0;
+            let val_text = 0;
             if (val != undefined) {
                 value = 100 * ((val.nsr + val.sr) / parseFloat(requirement));
                 val_text = val.nsr + val.sr;
