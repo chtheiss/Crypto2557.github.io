@@ -4,7 +4,7 @@ body, html{
     background-color:#26292c;
     /*background: linear-gradient(to right, #26292c, #393C3F);*/
     font-family:Arial,Helvetica,sans-serif;
-    color:#c2d4d5;
+    color:#fff;
     font-size:14px;
     margin:0;
     height:100vh;
@@ -37,7 +37,7 @@ body, html{
 }
 .input-group-append button, .input-group-prepend button{
     border-color: #999;
-    color: #c2d4d5;
+    color: #fff;
     border-radius: 5px;
     min-width:2.5rem;
 }
@@ -107,7 +107,7 @@ h4{
 }
 .modal-header{
     padding: 5px;
-    color:#c2d4d5;
+    color:#fff;
     background-color:#17191a;
     font-size:16px;
     border-bottom: 1px solid #999;
@@ -117,7 +117,7 @@ h4{
 .modal-header button{
     padding: 0;
     margin: 5px 5px 5px auto;
-    color: #c2d4d5;
+    color: #fff;
     background-color: #17191a;
     border: none;
     cursor: pointer;
@@ -134,18 +134,18 @@ h4{
     margin: auto 5px;
 }
 .modal-content{
-    color:#c2d4d5;
+    color:#fff;
     background-color:#26292c;
     font-size:14px;
     max-width:100%;
 }
 .nav-tabs .nav-link{
     border: 2px solid #999;
-    color: #c2d4d5;
+    color: #fff;
     margin: 2px;
 }
 .nav-tabs .nav-link.active{
-    background-color: #c2d4d5;
+    background-color: #fff;
     border: 2px solid #999;
     color: #17191a;
 }
@@ -263,12 +263,12 @@ h4{
 }
 /* Fixes the text for all elements in the navbar */
 .navbar-dark.navbar *{
-    color: #c2d4d5;
+    color: #fff;
     font-weight: bold;
 }
 /* Changes default color for links in a .navbar-dark */
 .navbar-dark .navbar-nav .nav-link{
-    color:#c2d4d5;
+    color:#fff;
 }
 /* Changes default hover color for links and dropdown-items and brand in a .navbar-dark */
 .navbar-dark .navbar-nav .nav-link:hover, .dropdown-menu>.dropdown-item:hover, .navbar-dark .navbar-brand:hover{
@@ -283,8 +283,8 @@ h4{
     background-color:#17191a;
 }
 .navbar .btn:hover {
-    background-color:#c2d4d5;
-    border-color:#c2d4d5;
+    background-color:#fff;
+    border-color:#fff;
     color:#17191a;
 }
 .navbar .btn{
@@ -786,13 +786,13 @@ img.img-responsive{
     border-radius: 5px;
 }
 .popover-header{
-    color:#c2d4d5;
+    color:#fff;
     background-color:#17191a;
     font-size:16px;
     border-bottom: 1px solid #999;
 }
 .popover-body{
-    color:#c2d4d5;
+    color:#fff;
     background-color:#26292c;
     font-size:14px;
     max-width:100%;
