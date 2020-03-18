@@ -72,20 +72,34 @@ function calculatePetFragmentsToFarm() {
             on_pet_input_change($(this), storage_name);
         });
 
-        $("#reset-btn").click(async function() {
-            await reset_priority(storage_name);
+        $("#reset-btn").click(async function(evt) {
+            evt.stopImmediatePropagation();
+            if (!$(this).hasClass("disabled")){
+                $('#reset-btn').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
+                await reset_priority(storage_name);
+                $('#reset-btn>span').remove();
+                $('#reset-btn').removeClass('disabled');
+                $('#reset-btn').text("Reset Priority");
+            }
         });
 
-        $("#add-all-btn").click(async function() {
-            for (const pet of $(".pet-card")) {
-                let $pet = $(pet);
-                let frags_to_add = parseInt($pet.find(".pet-card-frags").text());
-                let input = $pet.find(".pet-input");
-                let current_frags = handle_nan(parseInt(input.val()));
-                if (frags_to_add > 0) {
-                    input.val(current_frags + frags_to_add);
-                    await on_pet_input_change($(input), storage_name);
-                }                
+        $("#add-all-btn").click(async function(evt) {
+            evt.stopImmediatePropagation();
+            if (!$(this).hasClass("disabled")){
+                $('#add-all-btn').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Calculating...').addClass('disabled');
+                for (const pet of $(".pet-card")) {
+                    let $pet = $(pet);
+                    let frags_to_add = parseInt($pet.find(".pet-card-frags").text());
+                    let input = $pet.find(".pet-input");
+                    let current_frags = handle_nan(parseInt(input.val()));
+                    if (frags_to_add > 0) {
+                        input.val(current_frags + frags_to_add);
+                        await on_pet_input_change($(input), storage_name);
+                    }                
+                }
+                $('#add-all-btn>span').remove();
+                $('#add-all-btn').removeClass('disabled');
+                $('#add-all-btn').text("Progress 1 Day");
             }
         });
 
