@@ -9,6 +9,9 @@ body, html{
     margin:0;
     height:100vh;
 }
+#logo-image{
+    max-width: 100px;
+}
 #discord-button, #paypal-button{
     padding:0px;
 }
