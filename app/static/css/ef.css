@@ -12,6 +12,10 @@ body, html{
 #logo-image{
     max-width: 100px;
 }
+#logo{
+    max-width: 80%;
+    justify-self: center;
+}
 #discord-button, #paypal-button{
     padding:0px;
 }
