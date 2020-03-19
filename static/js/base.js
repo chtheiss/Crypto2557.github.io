@@ -266,67 +266,6 @@ function download_file_from_indexedDB(){
         $("#refills_hard-number").bind('change', function() {
             change_gem_label($(this), $("#gem-hard-label"), [0, 200, 400, 800]);
         });
-
-        const pickr1 = new Pickr({
-              el: '#color-picker-1',
-              default: "303030",
-              components: {
-                preview: true,
-                opacity: true,
-                hue: true,
-
-                interaction: {
-                  hex: true,
-                  rgba: true,
-                  hsla: true,
-                  hsva: true,
-                  cmyk: true,
-                  input: true,
-                  clear: true,
-                  save: true
-                }
-              }
-            });
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutationRecord) {
-                console.log('Background changed!');
-                $(document.body).css('background-color', $('.pcr-picker').first().css("background-color"));
-            });    
-        });
-
-        var target = $('.pcr-picker')[0];
-        observer.observe(target, { attributes : true, attributeFilter : ['style'] });
-
-        const pickr2 = new Pickr({
-              el: '#color-picker-2',
-              default: "ffffff",
-              components: {
-                preview: true,
-                opacity: true,
-                hue: true,
-
-                interaction: {
-                  hex: true,
-                  rgba: true,
-                  hsla: true,
-                  hsva: true,
-                  cmyk: true,
-                  input: true,
-                  clear: true,
-                  save: true
-                }
-              }
-            });
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutationRecord) {
-                console.log('Color changed!');
-               $("*").css('color', $($('.pcr-picker').get(3)).css("background-color"))
-            });    
-        });
-
-        var target = $('.pcr-picker')[3];
-        observer.observe(target, { attributes : true, attributeFilter : ['style'] });
-
     });
 
     (async function() {
