@@ -17,13 +17,17 @@ async function load_pet(pet, db, storage_name, hide, unattainable, kl) {
     const pet_store = await pet_tx.objectStore(storage_name);
     const data = await pet_store.get(pet.id);
 
-    let $pet = $(pet)
-    let kl_numbers = $pet.find(".pet-card-kl-number")
-    const no_stage_available = (kl_numbers.length == kl_numbers.filter(function( index ) {
-        return $("#KL-number").val() < parseFloat($(this).text());
-    }).length);
-
-    hide_or_show_unattainable_pet($pet, no_stage_available && unattainable);
+    let $pet = $(pet);
+    let kl_numbers = $pet.find(".pet-card-kl-number");
+    let no_stage_available;
+    if (kl_numbers.length > 0){
+        no_stage_available = (kl_numbers.length == kl_numbers.filter(function( index ) {
+            return $("#KL-number").val() < parseFloat($(this).text());
+        }).length);
+    } else {
+        no_stage_available = false;
+    }
+    hide_or_show_unattainable_pet($pet, no_stage_available & unattainable);
     if (data != undefined) {
         hide_or_show_pet($pet, data.fragments >= 330 && hide)
         $pet.find(".pet-input[type='number']").val(data.fragments);
@@ -338,8 +342,6 @@ function create_sortable(storage_name){
     $(function() {
 
         $(".pet-input[type='number']").inputSpinner();
-
-        $(".input-group-append button, .input-group-prepend button").removeAttr('style');
 
         $(".image-checkbox").on("click", function(e) {
             let $checkbox = $(this).find('input[type="checkbox"]');
