@@ -161,7 +161,7 @@ Endless Farming
                 <div class="row version-underline">
                     <div class="col-1 version-header">1.5.0</div>
                     <div class="col"></div>
-                    <div class="col-3 version-header">2020-03-15</div>
+                    <div class="col-3 version-header">2020-03-20</div>
                 </div>
                 <div class="row pt-1">
                     <div class="col-12">
@@ -174,19 +174,25 @@ Endless Farming
                                 <li>Button that links to HarroweD pet guide</li>
                                 <li>Button for donations</li>
                                 <li>Animation to dropdown menus in the navbar</li>
+                                <li>A logo for the website</li>
                             </ul></li>
                             <li><b>Changed</b>
                             <ul>
+                                <li>Ticket priority to be up-to-date with H17 units</li>
+                                <li>Reset priority and progress 1 day buttons are now disabled while website is busy executing them</li>
                                 <li>The layout for the stat modal for mobile devices</li>
                                 <li>Changed the size of the meta progression image for vertical rotated mobile devices</li>
                                 <li>The location of the import and export buttons. They are now under the "Data Transfer" dropdown.</li>
                                 <li>The amount of space on mobile that is available to scroll pets</li>
+                                <li>Various other styles</li>
                             </ul></li>
                             <li><b>Fixed</b>
                             <ul>
                                 <li>Slight misaligment of pet image and number of day display for the trackers</li>
                                 <li>A typo for the Barbarian Battle Cry (Orc) buff</li>
                                 <li>A bug where the width of the pet cards was not calculated properly for all screen sizes</li>
+                                <li>Various bugs that were introduced by an earlier version regardin asyncronious behavoir</li>
+                                <li>A problem when importing older versions due to IndexedDB not being able to handle booleans correctly</li>
                             </ul></li>
                         </ul>
                     </div>
@@ -3063,743 +3069,7 @@ Endless Farming
             
             
             
-            <div id="Hallokin" data-id="0" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hallokin-modal">
-        <img id="Hallokin-image" class='pet-image zero-star' src="../static/img/pets/44.png">
-    </span>
-    <h4 class="pet-card-name">Hallokin</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Hallokin-1star" data-pet="Hallokin">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Hallokin-2star" data-pet="Hallokin">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Hallokin-3star" data-pet="Hallokin">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Hallokin-4star" data-pet="Hallokin">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Hallokin-5star" data-pet="Hallokin">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Hallokin-fragments" data-pet="Hallokin" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Nills" data-id="1" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Nills-modal">
-        <img id="Nills-image" class='pet-image zero-star' src="../static/img/pets/52.png">
-    </span>
-    <h4 class="pet-card-name">Nills</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Nills-1star" data-pet="Nills">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Nills-2star" data-pet="Nills">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Nills-3star" data-pet="Nills">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Nills-4star" data-pet="Nills">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Nills-5star" data-pet="Nills">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Nills-fragments" data-pet="Nills" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Rudolph" data-id="2" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Rudolph-modal">
-        <img id="Rudolph-image" class='pet-image zero-star' src="../static/img/pets/53.png">
-    </span>
-    <h4 class="pet-card-name">Rudolph</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Rudolph-1star" data-pet="Rudolph">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Rudolph-2star" data-pet="Rudolph">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Rudolph-3star" data-pet="Rudolph">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Rudolph-4star" data-pet="Rudolph">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Rudolph-5star" data-pet="Rudolph">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Rudolph-fragments" data-pet="Rudolph" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Cookoo" data-id="3" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Cookoo-modal">
-        <img id="Cookoo-image" class='pet-image zero-star' src="../static/img/pets/54.png">
-    </span>
-    <h4 class="pet-card-name">Cookoo</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Cookoo-1star" data-pet="Cookoo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Cookoo-2star" data-pet="Cookoo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Cookoo-3star" data-pet="Cookoo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Cookoo-4star" data-pet="Cookoo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Cookoo-5star" data-pet="Cookoo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Cookoo-fragments" data-pet="Cookoo" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Lime" data-id="4" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lime-modal">
-        <img id="Lime-image" class='pet-image zero-star' src="../static/img/pets/59.png">
-    </span>
-    <h4 class="pet-card-name">Lime</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Lime-1star" data-pet="Lime">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Lime-2star" data-pet="Lime">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Lime-3star" data-pet="Lime">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Lime-4star" data-pet="Lime">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Lime-5star" data-pet="Lime">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Lime-fragments" data-pet="Lime" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Green" data-id="5" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Green-modal">
-        <img id="Green-image" class='pet-image zero-star' src="../static/img/pets/97.png">
-    </span>
-    <h4 class="pet-card-name">Green</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Green-1star" data-pet="Green">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Green-2star" data-pet="Green">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Green-3star" data-pet="Green">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Green-4star" data-pet="Green">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Green-5star" data-pet="Green">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Green-fragments" data-pet="Green" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Blue" data-id="6" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Blue-modal">
-        <img id="Blue-image" class='pet-image zero-star' src="../static/img/pets/98.png">
-    </span>
-    <h4 class="pet-card-name">Blue</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Blue-1star" data-pet="Blue">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Blue-2star" data-pet="Blue">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Blue-3star" data-pet="Blue">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Blue-4star" data-pet="Blue">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Blue-5star" data-pet="Blue">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Blue-fragments" data-pet="Blue" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Red" data-id="7" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Red-modal">
-        <img id="Red-image" class='pet-image zero-star' src="../static/img/pets/99.png">
-    </span>
-    <h4 class="pet-card-name">Red</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Red-1star" data-pet="Red">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Red-2star" data-pet="Red">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Red-3star" data-pet="Red">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Red-4star" data-pet="Red">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Red-5star" data-pet="Red">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Red-fragments" data-pet="Red" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Purple" data-id="8" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Purple-modal">
-        <img id="Purple-image" class='pet-image zero-star' src="../static/img/pets/100.png">
-    </span>
-    <h4 class="pet-card-name">Purple</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Purple-1star" data-pet="Purple">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Purple-2star" data-pet="Purple">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Purple-3star" data-pet="Purple">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Purple-4star" data-pet="Purple">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Purple-5star" data-pet="Purple">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Purple-fragments" data-pet="Purple" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Celeste" data-id="9" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Celeste-modal">
-        <img id="Celeste-image" class='pet-image zero-star' src="../static/img/pets/104.png">
-    </span>
-    <h4 class="pet-card-name">Celeste</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Celeste-1star" data-pet="Celeste">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Celeste-2star" data-pet="Celeste">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Celeste-3star" data-pet="Celeste">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Celeste-4star" data-pet="Celeste">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Celeste-5star" data-pet="Celeste">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Celeste-fragments" data-pet="Celeste" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Bunnette" data-id="10" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Bunnette-modal">
-        <img id="Bunnette-image" class='pet-image zero-star' src="../static/img/pets/128.png">
-    </span>
-    <h4 class="pet-card-name">Bunnette</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Bunnette-1star" data-pet="Bunnette">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Bunnette-2star" data-pet="Bunnette">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Bunnette-3star" data-pet="Bunnette">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Bunnette-4star" data-pet="Bunnette">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Bunnette-5star" data-pet="Bunnette">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Bunnette-fragments" data-pet="Bunnette" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Toby" data-id="11" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Toby-modal">
-        <img id="Toby-image" class='pet-image zero-star' src="../static/img/pets/129.png">
-    </span>
-    <h4 class="pet-card-name">Toby</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Toby-1star" data-pet="Toby">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Toby-2star" data-pet="Toby">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Toby-3star" data-pet="Toby">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Toby-4star" data-pet="Toby">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Toby-5star" data-pet="Toby">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Toby-fragments" data-pet="Toby" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="H-Reaper" data-id="12" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#H-Reaper-modal">
-        <img id="H-Reaper-image" class='pet-image zero-star' src="../static/img/pets/134.png">
-    </span>
-    <h4 class="pet-card-name">H-Reaper</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="H-Reaper-1star" data-pet="H-Reaper">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="H-Reaper-2star" data-pet="H-Reaper">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="H-Reaper-3star" data-pet="H-Reaper">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="H-Reaper-4star" data-pet="H-Reaper">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="H-Reaper-5star" data-pet="H-Reaper">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="H-Reaper-fragments" data-pet="H-Reaper" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Christy" data-id="13" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Christy-modal">
-        <img id="Christy-image" class='pet-image zero-star' src="../static/img/pets/135.png">
-    </span>
-    <h4 class="pet-card-name">Christy</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Christy-1star" data-pet="Christy">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Christy-2star" data-pet="Christy">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Christy-3star" data-pet="Christy">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Christy-4star" data-pet="Christy">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Christy-5star" data-pet="Christy">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Christy-fragments" data-pet="Christy" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Jindo" data-id="14" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Jindo-modal">
-        <img id="Jindo-image" class='pet-image zero-star' src="../static/img/pets/140.png">
-    </span>
-    <h4 class="pet-card-name">Jindo</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Jindo-1star" data-pet="Jindo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Jindo-2star" data-pet="Jindo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Jindo-3star" data-pet="Jindo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Jindo-4star" data-pet="Jindo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Jindo-5star" data-pet="Jindo">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Jindo-fragments" data-pet="Jindo" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Lunar_Rabbit" data-id="15" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lunar_Rabbit-modal">
-        <img id="Lunar_Rabbit-image" class='pet-image zero-star' src="../static/img/pets/195.png">
-    </span>
-    <h4 class="pet-card-name">Lunar Rabbit</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Lunar_Rabbit-1star" data-pet="Lunar_Rabbit">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Lunar_Rabbit-2star" data-pet="Lunar_Rabbit">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Lunar_Rabbit-3star" data-pet="Lunar_Rabbit">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Lunar_Rabbit-4star" data-pet="Lunar_Rabbit">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Lunar_Rabbit-5star" data-pet="Lunar_Rabbit">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Lunar_Rabbit-fragments" data-pet="Lunar_Rabbit" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Scarecrow" data-id="16" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Scarecrow-modal">
-        <img id="Scarecrow-image" class='pet-image zero-star' src="../static/img/pets/196.png">
-    </span>
-    <h4 class="pet-card-name">Scarecrow</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Scarecrow-1star" data-pet="Scarecrow">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Scarecrow-2star" data-pet="Scarecrow">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Scarecrow-3star" data-pet="Scarecrow">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Scarecrow-4star" data-pet="Scarecrow">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Scarecrow-5star" data-pet="Scarecrow">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Scarecrow-fragments" data-pet="Scarecrow" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Lesser_Panda" data-id="17" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lesser_Panda-modal">
-        <img id="Lesser_Panda-image" class='pet-image zero-star' src="../static/img/pets/197.png">
-    </span>
-    <h4 class="pet-card-name">Lesser Panda</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Lesser_Panda-1star" data-pet="Lesser_Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Lesser_Panda-2star" data-pet="Lesser_Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Lesser_Panda-3star" data-pet="Lesser_Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Lesser_Panda-4star" data-pet="Lesser_Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Lesser_Panda-5star" data-pet="Lesser_Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Lesser_Panda-fragments" data-pet="Lesser_Panda" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Panda" data-id="18" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Panda-modal">
-        <img id="Panda-image" class='pet-image zero-star' src="../static/img/pets/198.png">
-    </span>
-    <h4 class="pet-card-name">Panda</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Panda-1star" data-pet="Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Panda-2star" data-pet="Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Panda-3star" data-pet="Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Panda-4star" data-pet="Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Panda-5star" data-pet="Panda">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Panda-fragments" data-pet="Panda" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Witch" data-id="19" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Witch-modal">
-        <img id="Witch-image" class='pet-image zero-star' src="../static/img/pets/199.png">
-    </span>
-    <h4 class="pet-card-name">Witch</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Witch-1star" data-pet="Witch">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Witch-2star" data-pet="Witch">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Witch-3star" data-pet="Witch">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Witch-4star" data-pet="Witch">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Witch-5star" data-pet="Witch">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Witch-fragments" data-pet="Witch" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Franken" data-id="20" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Franken-modal">
-        <img id="Franken-image" class='pet-image zero-star' src="../static/img/pets/200.png">
-    </span>
-    <h4 class="pet-card-name">Franken</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Franken-1star" data-pet="Franken">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Franken-2star" data-pet="Franken">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Franken-3star" data-pet="Franken">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Franken-4star" data-pet="Franken">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Franken-5star" data-pet="Franken">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Franken-fragments" data-pet="Franken" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Snow_Jack" data-id="21" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Snow_Jack-modal">
-        <img id="Snow_Jack-image" class='pet-image zero-star' src="../static/img/pets/205.png">
-    </span>
-    <h4 class="pet-card-name">Snow Jack</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Snow_Jack-1star" data-pet="Snow_Jack">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Jack-2star" data-pet="Snow_Jack">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Jack-3star" data-pet="Snow_Jack">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Jack-4star" data-pet="Snow_Jack">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Jack-5star" data-pet="Snow_Jack">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Snow_Jack-fragments" data-pet="Snow_Jack" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Snow_Peng" data-id="22" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
-    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Snow_Peng-modal">
-        <img id="Snow_Peng-image" class='pet-image zero-star' src="../static/img/pets/206.png">
-    </span>
-    <h4 class="pet-card-name">Snow Peng</h4>
-    <fieldset class="pet-card-stars">
-        <label class="image-checkbox" id="Snow_Peng-1star" data-pet="Snow_Peng">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="10"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Peng-2star" data-pet="Snow_Peng">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="30"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Peng-3star" data-pet="Snow_Peng">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="80"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Peng-4star" data-pet="Snow_Peng">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="180"/>
-        </label>
-        <label class="image-checkbox" id="Snow_Peng-5star" data-pet="Snow_Peng">
-            <img class="img-responsive" src="../static/img/stargrey.png" />
-            <input type="checkbox" value="330"/>
-        </label>
-    </fieldset>
-    <input id="Snow_Peng-fragments" data-pet="Snow_Peng" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
-</div>
-            
-            
-            
-            <div id="Pipi" data-id="23" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+            <div id="Pipi" data-id="0" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pipi-modal">
         <img id="Pipi-image" class='pet-image zero-star' src="../static/img/pets/217.png">
     </span>
@@ -3831,7 +3101,7 @@ Endless Farming
             
             
             
-            <div id="Popo" data-id="24" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+            <div id="Popo" data-id="1" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Popo-modal">
         <img id="Popo-image" class='pet-image zero-star' src="../static/img/pets/218.png">
     </span>
@@ -3863,7 +3133,263 @@ Endless Farming
             
             
             
-            <div id="Daddy_Bear" data-id="25" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+            <div id="Lunar_Rabbit" data-id="2" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lunar_Rabbit-modal">
+        <img id="Lunar_Rabbit-image" class='pet-image zero-star' src="../static/img/pets/195.png">
+    </span>
+    <h4 class="pet-card-name">Lunar Rabbit</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Lunar_Rabbit-1star" data-pet="Lunar_Rabbit">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Lunar_Rabbit-2star" data-pet="Lunar_Rabbit">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Lunar_Rabbit-3star" data-pet="Lunar_Rabbit">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Lunar_Rabbit-4star" data-pet="Lunar_Rabbit">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Lunar_Rabbit-5star" data-pet="Lunar_Rabbit">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Lunar_Rabbit-fragments" data-pet="Lunar_Rabbit" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Scarecrow" data-id="3" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Scarecrow-modal">
+        <img id="Scarecrow-image" class='pet-image zero-star' src="../static/img/pets/196.png">
+    </span>
+    <h4 class="pet-card-name">Scarecrow</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Scarecrow-1star" data-pet="Scarecrow">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Scarecrow-2star" data-pet="Scarecrow">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Scarecrow-3star" data-pet="Scarecrow">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Scarecrow-4star" data-pet="Scarecrow">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Scarecrow-5star" data-pet="Scarecrow">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Scarecrow-fragments" data-pet="Scarecrow" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Lesser_Panda" data-id="4" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lesser_Panda-modal">
+        <img id="Lesser_Panda-image" class='pet-image zero-star' src="../static/img/pets/197.png">
+    </span>
+    <h4 class="pet-card-name">Lesser Panda</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Lesser_Panda-1star" data-pet="Lesser_Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Lesser_Panda-2star" data-pet="Lesser_Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Lesser_Panda-3star" data-pet="Lesser_Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Lesser_Panda-4star" data-pet="Lesser_Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Lesser_Panda-5star" data-pet="Lesser_Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Lesser_Panda-fragments" data-pet="Lesser_Panda" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Panda" data-id="5" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Panda-modal">
+        <img id="Panda-image" class='pet-image zero-star' src="../static/img/pets/198.png">
+    </span>
+    <h4 class="pet-card-name">Panda</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Panda-1star" data-pet="Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Panda-2star" data-pet="Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Panda-3star" data-pet="Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Panda-4star" data-pet="Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Panda-5star" data-pet="Panda">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Panda-fragments" data-pet="Panda" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Witch" data-id="6" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Witch-modal">
+        <img id="Witch-image" class='pet-image zero-star' src="../static/img/pets/199.png">
+    </span>
+    <h4 class="pet-card-name">Witch</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Witch-1star" data-pet="Witch">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Witch-2star" data-pet="Witch">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Witch-3star" data-pet="Witch">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Witch-4star" data-pet="Witch">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Witch-5star" data-pet="Witch">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Witch-fragments" data-pet="Witch" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Franken" data-id="7" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Franken-modal">
+        <img id="Franken-image" class='pet-image zero-star' src="../static/img/pets/200.png">
+    </span>
+    <h4 class="pet-card-name">Franken</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Franken-1star" data-pet="Franken">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Franken-2star" data-pet="Franken">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Franken-3star" data-pet="Franken">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Franken-4star" data-pet="Franken">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Franken-5star" data-pet="Franken">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Franken-fragments" data-pet="Franken" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Snow_Jack" data-id="8" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Snow_Jack-modal">
+        <img id="Snow_Jack-image" class='pet-image zero-star' src="../static/img/pets/205.png">
+    </span>
+    <h4 class="pet-card-name">Snow Jack</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Snow_Jack-1star" data-pet="Snow_Jack">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Jack-2star" data-pet="Snow_Jack">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Jack-3star" data-pet="Snow_Jack">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Jack-4star" data-pet="Snow_Jack">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Jack-5star" data-pet="Snow_Jack">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Snow_Jack-fragments" data-pet="Snow_Jack" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Snow_Peng" data-id="9" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Snow_Peng-modal">
+        <img id="Snow_Peng-image" class='pet-image zero-star' src="../static/img/pets/206.png">
+    </span>
+    <h4 class="pet-card-name">Snow Peng</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Snow_Peng-1star" data-pet="Snow_Peng">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Peng-2star" data-pet="Snow_Peng">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Peng-3star" data-pet="Snow_Peng">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Peng-4star" data-pet="Snow_Peng">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Snow_Peng-5star" data-pet="Snow_Peng">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Snow_Peng-fragments" data-pet="Snow_Peng" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Daddy_Bear" data-id="10" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Daddy_Bear-modal">
         <img id="Daddy_Bear-image" class='pet-image zero-star' src="../static/img/pets/241.png">
     </span>
@@ -3895,7 +3421,7 @@ Endless Farming
             
             
             
-            <div id="Mommy_Bear" data-id="26" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+            <div id="Mommy_Bear" data-id="11" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Mommy_Bear-modal">
         <img id="Mommy_Bear-image" class='pet-image zero-star' src="../static/img/pets/242.png">
     </span>
@@ -3927,7 +3453,7 @@ Endless Farming
             
             
             
-            <div id="Duru" data-id="27" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+            <div id="Duru" data-id="12" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Duru-modal">
         <img id="Duru-image" class='pet-image zero-star' src="../static/img/pets/259.png">
     </span>
@@ -3959,7 +3485,7 @@ Endless Farming
             
             
             
-            <div id="Dutu" data-id="28" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+            <div id="Dutu" data-id="13" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dutu-modal">
         <img id="Dutu-image" class='pet-image zero-star' src="../static/img/pets/260.png">
     </span>
@@ -3991,7 +3517,7 @@ Endless Farming
             
             
             
-            <div id="Leaf" data-id="29" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Leaf" data-id="14" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Leaf-modal">
         <img id="Leaf-image" class='pet-image zero-star' src="../static/img/pets/266.png">
     </span>
@@ -4023,7 +3549,7 @@ Endless Farming
             
             
             
-            <div id="Pavo" data-id="30" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Pavo" data-id="15" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pavo-modal">
         <img id="Pavo-image" class='pet-image zero-star' src="../static/img/pets/267.png">
     </span>
@@ -4055,7 +3581,7 @@ Endless Farming
             
             
             
-            <div id="Porcue" data-id="31" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Porcue" data-id="16" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Porcue-modal">
         <img id="Porcue-image" class='pet-image zero-star' src="../static/img/pets/273.png">
     </span>
@@ -4087,7 +3613,7 @@ Endless Farming
             
             
             
-            <div id="Hammie" data-id="32" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Hammie" data-id="17" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hammie-modal">
         <img id="Hammie-image" class='pet-image zero-star' src="../static/img/pets/274.png">
     </span>
@@ -4119,7 +3645,7 @@ Endless Farming
             
             
             
-            <div id="Lycan" data-id="33" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Lycan" data-id="18" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lycan-modal">
         <img id="Lycan-image" class='pet-image zero-star' src="../static/img/pets/275.png">
     </span>
@@ -4151,7 +3677,7 @@ Endless Farming
             
             
             
-            <div id="Dracu" data-id="34" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Dracu" data-id="19" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dracu-modal">
         <img id="Dracu-image" class='pet-image zero-star' src="../static/img/pets/276.png">
     </span>
@@ -4183,7 +3709,7 @@ Endless Farming
             
             
             
-            <div id="Polar" data-id="35" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Polar" data-id="20" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Polar-modal">
         <img id="Polar-image" class='pet-image zero-star' src="../static/img/pets/305.png">
     </span>
@@ -4215,7 +3741,7 @@ Endless Farming
             
             
             
-            <div id="Arctic" data-id="36" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Arctic" data-id="21" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Arctic-modal">
         <img id="Arctic-image" class='pet-image zero-star' src="../static/img/pets/306.png">
     </span>
@@ -4247,7 +3773,7 @@ Endless Farming
             
             
             
-            <div id="Ratto" data-id="37" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Ratto" data-id="22" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ratto-modal">
         <img id="Ratto-image" class='pet-image zero-star' src="../static/img/pets/307.png">
     </span>
@@ -4279,7 +3805,7 @@ Endless Farming
             
             
             
-            <div id="Ratti" data-id="38" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Ratti" data-id="23" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ratti-modal">
         <img id="Ratti-image" class='pet-image zero-star' src="../static/img/pets/308.png">
     </span>
@@ -4307,6 +3833,486 @@ Endless Farming
         </label>
     </fieldset>
     <input id="Ratti-fragments" data-pet="Ratti" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Hallokin" data-id="24" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hallokin-modal">
+        <img id="Hallokin-image" class='pet-image zero-star' src="../static/img/pets/44.png">
+    </span>
+    <h4 class="pet-card-name">Hallokin</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Hallokin-1star" data-pet="Hallokin">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Hallokin-2star" data-pet="Hallokin">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Hallokin-3star" data-pet="Hallokin">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Hallokin-4star" data-pet="Hallokin">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Hallokin-5star" data-pet="Hallokin">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Hallokin-fragments" data-pet="Hallokin" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Nills" data-id="25" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Nills-modal">
+        <img id="Nills-image" class='pet-image zero-star' src="../static/img/pets/52.png">
+    </span>
+    <h4 class="pet-card-name">Nills</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Nills-1star" data-pet="Nills">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Nills-2star" data-pet="Nills">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Nills-3star" data-pet="Nills">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Nills-4star" data-pet="Nills">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Nills-5star" data-pet="Nills">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Nills-fragments" data-pet="Nills" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Rudolph" data-id="26" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Rudolph-modal">
+        <img id="Rudolph-image" class='pet-image zero-star' src="../static/img/pets/53.png">
+    </span>
+    <h4 class="pet-card-name">Rudolph</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Rudolph-1star" data-pet="Rudolph">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Rudolph-2star" data-pet="Rudolph">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Rudolph-3star" data-pet="Rudolph">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Rudolph-4star" data-pet="Rudolph">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Rudolph-5star" data-pet="Rudolph">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Rudolph-fragments" data-pet="Rudolph" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Cookoo" data-id="27" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Cookoo-modal">
+        <img id="Cookoo-image" class='pet-image zero-star' src="../static/img/pets/54.png">
+    </span>
+    <h4 class="pet-card-name">Cookoo</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Cookoo-1star" data-pet="Cookoo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Cookoo-2star" data-pet="Cookoo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Cookoo-3star" data-pet="Cookoo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Cookoo-4star" data-pet="Cookoo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Cookoo-5star" data-pet="Cookoo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Cookoo-fragments" data-pet="Cookoo" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Lime" data-id="28" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lime-modal">
+        <img id="Lime-image" class='pet-image zero-star' src="../static/img/pets/59.png">
+    </span>
+    <h4 class="pet-card-name">Lime</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Lime-1star" data-pet="Lime">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Lime-2star" data-pet="Lime">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Lime-3star" data-pet="Lime">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Lime-4star" data-pet="Lime">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Lime-5star" data-pet="Lime">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Lime-fragments" data-pet="Lime" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Green" data-id="29" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Green-modal">
+        <img id="Green-image" class='pet-image zero-star' src="../static/img/pets/97.png">
+    </span>
+    <h4 class="pet-card-name">Green</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Green-1star" data-pet="Green">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Green-2star" data-pet="Green">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Green-3star" data-pet="Green">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Green-4star" data-pet="Green">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Green-5star" data-pet="Green">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Green-fragments" data-pet="Green" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Blue" data-id="30" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Blue-modal">
+        <img id="Blue-image" class='pet-image zero-star' src="../static/img/pets/98.png">
+    </span>
+    <h4 class="pet-card-name">Blue</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Blue-1star" data-pet="Blue">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Blue-2star" data-pet="Blue">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Blue-3star" data-pet="Blue">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Blue-4star" data-pet="Blue">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Blue-5star" data-pet="Blue">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Blue-fragments" data-pet="Blue" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Red" data-id="31" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Red-modal">
+        <img id="Red-image" class='pet-image zero-star' src="../static/img/pets/99.png">
+    </span>
+    <h4 class="pet-card-name">Red</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Red-1star" data-pet="Red">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Red-2star" data-pet="Red">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Red-3star" data-pet="Red">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Red-4star" data-pet="Red">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Red-5star" data-pet="Red">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Red-fragments" data-pet="Red" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Purple" data-id="32" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Purple-modal">
+        <img id="Purple-image" class='pet-image zero-star' src="../static/img/pets/100.png">
+    </span>
+    <h4 class="pet-card-name">Purple</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Purple-1star" data-pet="Purple">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Purple-2star" data-pet="Purple">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Purple-3star" data-pet="Purple">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Purple-4star" data-pet="Purple">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Purple-5star" data-pet="Purple">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Purple-fragments" data-pet="Purple" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Celeste" data-id="33" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Celeste-modal">
+        <img id="Celeste-image" class='pet-image zero-star' src="../static/img/pets/104.png">
+    </span>
+    <h4 class="pet-card-name">Celeste</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Celeste-1star" data-pet="Celeste">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Celeste-2star" data-pet="Celeste">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Celeste-3star" data-pet="Celeste">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Celeste-4star" data-pet="Celeste">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Celeste-5star" data-pet="Celeste">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Celeste-fragments" data-pet="Celeste" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Bunnette" data-id="34" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Bunnette-modal">
+        <img id="Bunnette-image" class='pet-image zero-star' src="../static/img/pets/128.png">
+    </span>
+    <h4 class="pet-card-name">Bunnette</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Bunnette-1star" data-pet="Bunnette">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Bunnette-2star" data-pet="Bunnette">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Bunnette-3star" data-pet="Bunnette">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Bunnette-4star" data-pet="Bunnette">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Bunnette-5star" data-pet="Bunnette">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Bunnette-fragments" data-pet="Bunnette" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Toby" data-id="35" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Toby-modal">
+        <img id="Toby-image" class='pet-image zero-star' src="../static/img/pets/129.png">
+    </span>
+    <h4 class="pet-card-name">Toby</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Toby-1star" data-pet="Toby">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Toby-2star" data-pet="Toby">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Toby-3star" data-pet="Toby">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Toby-4star" data-pet="Toby">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Toby-5star" data-pet="Toby">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Toby-fragments" data-pet="Toby" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="H-Reaper" data-id="36" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#H-Reaper-modal">
+        <img id="H-Reaper-image" class='pet-image zero-star' src="../static/img/pets/134.png">
+    </span>
+    <h4 class="pet-card-name">H-Reaper</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="H-Reaper-1star" data-pet="H-Reaper">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="H-Reaper-2star" data-pet="H-Reaper">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="H-Reaper-3star" data-pet="H-Reaper">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="H-Reaper-4star" data-pet="H-Reaper">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="H-Reaper-5star" data-pet="H-Reaper">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="H-Reaper-fragments" data-pet="H-Reaper" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Christy" data-id="37" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Christy-modal">
+        <img id="Christy-image" class='pet-image zero-star' src="../static/img/pets/135.png">
+    </span>
+    <h4 class="pet-card-name">Christy</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Christy-1star" data-pet="Christy">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Christy-2star" data-pet="Christy">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Christy-3star" data-pet="Christy">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Christy-4star" data-pet="Christy">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Christy-5star" data-pet="Christy">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Christy-fragments" data-pet="Christy" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
+</div>
+            
+            
+            
+            <div id="Jindo" data-id="38" data-origins="[&#39;event&#39;, &#39;shh&#39;]" class="pet-card-other bordered">
+    <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Jindo-modal">
+        <img id="Jindo-image" class='pet-image zero-star' src="../static/img/pets/140.png">
+    </span>
+    <h4 class="pet-card-name">Jindo</h4>
+    <fieldset class="pet-card-stars">
+        <label class="image-checkbox" id="Jindo-1star" data-pet="Jindo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="10"/>
+        </label>
+        <label class="image-checkbox" id="Jindo-2star" data-pet="Jindo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="30"/>
+        </label>
+        <label class="image-checkbox" id="Jindo-3star" data-pet="Jindo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="80"/>
+        </label>
+        <label class="image-checkbox" id="Jindo-4star" data-pet="Jindo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="180"/>
+        </label>
+        <label class="image-checkbox" id="Jindo-5star" data-pet="Jindo">
+            <img class="img-responsive" src="../static/img/stargrey.png" />
+            <input type="checkbox" value="330"/>
+        </label>
+    </fieldset>
+    <input id="Jindo-fragments" data-pet="Jindo" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
 </div>
             
         </div>
@@ -6627,6 +6633,678 @@ Endless Farming
   
     
     
+    <div id="Pipi-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Pipi</h5>
+                <img class="pet-image" src="../static/img/animated_pets/217.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/223.png"> Lucky Pig Ornament ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Popo-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Popo</h5>
+                <img class="pet-image" src="../static/img/animated_pets/218.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/224.png"> Golden Pig Statue ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Lunar_Rabbit-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Lunar Rabbit</h5>
+                <img class="pet-image" src="../static/img/animated_pets/195.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/206.png"> Lunar Goddess&#39; Amulet ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Scarecrow-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Scarecrow</h5>
+                <img class="pet-image" src="../static/img/animated_pets/196.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/207.png"> Lunar Goddess&#39; Crystal Ball ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Lesser_Panda-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Lesser Panda</h5>
+                <img class="pet-image" src="../static/img/animated_pets/197.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/208.png"> Ancient Lesser Panda&#39;s Claws ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Panda-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Panda</h5>
+                <img class="pet-image" src="../static/img/animated_pets/198.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/209.png"> Ancient Panda&#39;s Claws ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Witch-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Witch</h5>
+                <img class="pet-image" src="../static/img/animated_pets/199.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/210.png"> Broom of Halloween Night ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Franken-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Franken</h5>
+                <img class="pet-image" src="../static/img/animated_pets/200.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/211.png"> Novel of Halloween Night ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Snow_Jack-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Snow Jack</h5>
+                <img class="pet-image" src="../static/img/animated_pets/205.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/216.png"> Christmas Magician Hat ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Snow_Peng-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Snow Peng</h5>
+                <img class="pet-image" src="../static/img/animated_pets/206.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/217.png"> Christmas Magician Staff ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Daddy_Bear-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Daddy Bear</h5>
+                <img class="pet-image" src="../static/img/animated_pets/241.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/243.png"> Daddy Bear Treasure ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Mommy_Bear-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Mommy Bear</h5>
+                <img class="pet-image" src="../static/img/animated_pets/242.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/244.png"> Mommy Bear Treasure ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Duru-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Duru</h5>
+                <img class="pet-image" src="../static/img/animated_pets/259.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/249.png"> Duru&#39;s Snorkeling Gear ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Dutu-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Dutu</h5>
+                <img class="pet-image" src="../static/img/animated_pets/260.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/250.png"> Dutu&#39;s Surfing Gear ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Leaf-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Leaf</h5>
+                <img class="pet-image" src="../static/img/animated_pets/266.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/262.png"> Autumn Leaves Earrings ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Pavo-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Pavo</h5>
+                <img class="pet-image" src="../static/img/animated_pets/267.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/263.png"> Autumn Feathered Headdress ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Porcue-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Porcue</h5>
+                <img class="pet-image" src="../static/img/animated_pets/273.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/269.png"> Radiant Porcupine Helm ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Hammie-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Hammie</h5>
+                <img class="pet-image" src="../static/img/animated_pets/274.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/270.png"> Radiant Hamster Helm ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Lycan-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Lycan</h5>
+                <img class="pet-image" src="../static/img/animated_pets/275.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/271.png"> Necklace of Lycan ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Dracu-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Dracu</h5>
+                <img class="pet-image" src="../static/img/animated_pets/276.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/272.png"> Bed of Dracu ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Polar-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Polar</h5>
+                <img class="pet-image" src="../static/img/animated_pets/305.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/297.png"> Arctic Gloves ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Arctic-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Arctic</h5>
+                <img class="pet-image" src="../static/img/animated_pets/306.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/298.png"> Arctic Muffler ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Ratto-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Ratto</h5>
+                <img class="pet-image" src="../static/img/animated_pets/307.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (10, 20, 20, 30, 30)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 40, 60, 90)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/299.png"> New-Year Rice Cake ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
+    <div id="Ratti-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Ratti</h5>
+                <img class="pet-image" src="../static/img/animated_pets/308.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">Skill 1: Increase additional medals obtained (10, 20, 20, 30, 30)</div>
+                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 40, 60, 90)</div>
+                        
+                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/300.png"> New-Year Dumpling ]</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+    
     <div id="Hallokin-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content bordered">
@@ -7036,678 +7714,6 @@ Endless Farming
                         <div class="col-12">Skill 2: Increase basic game speed (0, 0, 1.5, 2, 2.5)</div>
                         
                             <div class="col-12">Skill 3: Increase additional medals obtained ( 0, 0, 0, 0, 60 ) </div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Lunar_Rabbit-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Lunar Rabbit</h5>
-                <img class="pet-image" src="../static/img/animated_pets/195.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/206.png"> Lunar Goddess&#39; Amulet ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Scarecrow-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Scarecrow</h5>
-                <img class="pet-image" src="../static/img/animated_pets/196.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/207.png"> Lunar Goddess&#39; Crystal Ball ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Lesser_Panda-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Lesser Panda</h5>
-                <img class="pet-image" src="../static/img/animated_pets/197.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/208.png"> Ancient Lesser Panda&#39;s Claws ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Panda-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Panda</h5>
-                <img class="pet-image" src="../static/img/animated_pets/198.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/209.png"> Ancient Panda&#39;s Claws ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Witch-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Witch</h5>
-                <img class="pet-image" src="../static/img/animated_pets/199.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/210.png"> Broom of Halloween Night ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Franken-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Franken</h5>
-                <img class="pet-image" src="../static/img/animated_pets/200.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/211.png"> Novel of Halloween Night ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Snow_Jack-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Snow Jack</h5>
-                <img class="pet-image" src="../static/img/animated_pets/205.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/216.png"> Christmas Magician Hat ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Snow_Peng-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Snow Peng</h5>
-                <img class="pet-image" src="../static/img/animated_pets/206.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/217.png"> Christmas Magician Staff ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Pipi-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Pipi</h5>
-                <img class="pet-image" src="../static/img/animated_pets/217.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/223.png"> Lucky Pig Ornament ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Popo-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Popo</h5>
-                <img class="pet-image" src="../static/img/animated_pets/218.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/224.png"> Golden Pig Statue ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Daddy_Bear-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Daddy Bear</h5>
-                <img class="pet-image" src="../static/img/animated_pets/241.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/243.png"> Daddy Bear Treasure ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Mommy_Bear-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Mommy Bear</h5>
-                <img class="pet-image" src="../static/img/animated_pets/242.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/244.png"> Mommy Bear Treasure ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Duru-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Duru</h5>
-                <img class="pet-image" src="../static/img/animated_pets/259.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/249.png"> Duru&#39;s Snorkeling Gear ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Dutu-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Dutu</h5>
-                <img class="pet-image" src="../static/img/animated_pets/260.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/250.png"> Dutu&#39;s Surfing Gear ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Leaf-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Leaf</h5>
-                <img class="pet-image" src="../static/img/animated_pets/266.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/262.png"> Autumn Leaves Earrings ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Pavo-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Pavo</h5>
-                <img class="pet-image" src="../static/img/animated_pets/267.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/263.png"> Autumn Feathered Headdress ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Porcue-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Porcue</h5>
-                <img class="pet-image" src="../static/img/animated_pets/273.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/269.png"> Radiant Porcupine Helm ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Hammie-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hammie</h5>
-                <img class="pet-image" src="../static/img/animated_pets/274.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/270.png"> Radiant Hamster Helm ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Lycan-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Lycan</h5>
-                <img class="pet-image" src="../static/img/animated_pets/275.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/271.png"> Necklace of Lycan ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Dracu-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Dracu</h5>
-                <img class="pet-image" src="../static/img/animated_pets/276.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/272.png"> Bed of Dracu ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Polar-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Polar</h5>
-                <img class="pet-image" src="../static/img/animated_pets/305.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/297.png"> Arctic Gloves ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Arctic-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Arctic</h5>
-                <img class="pet-image" src="../static/img/animated_pets/306.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (5, 10, 10, 20, 20)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 20, 40, 70)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/298.png"> Arctic Muffler ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Ratto-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Ratto</h5>
-                <img class="pet-image" src="../static/img/animated_pets/307.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (10, 20, 20, 30, 30)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 40, 60, 90)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/299.png"> New-Year Rice Cake ]</div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-    
-    
-    <div id="Ratti-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bordered">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Ratti</h5>
-                <img class="pet-image" src="../static/img/animated_pets/308.png">
-                <button type="button" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">Skill 1: Increase additional medals obtained (10, 20, 20, 30, 30)</div>
-                        <div class="col-12">Skill 2: Increase additional medals obtained (0, 0, 40, 60, 90)</div>
-                        
-                            <div class="col-12">Skill 3: You can get legendary artifact [ <img class="artifact-image" src="../static/img/artifacts/300.png"> New-Year Dumpling ]</div>
                         
                         
                     </div>
