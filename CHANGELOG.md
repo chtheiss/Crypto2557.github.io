@@ -8,17 +8,23 @@
 - Button that links to HarroweD pet guide
 - Button for donations
 - Animation to dropdown menus in the navbar
+- A logo for the website
 
 ### Changed
+- Ticket priority to be up-to-date with H17 units
+- Reset priority and progress 1 day buttons are now disabled while website is busy executing them
 - The layout for the stat modal for mobile devices
 - The size of the meta progression image for vertical rotated mobile devices
 - The location of the import and export buttons. They are now under the "Data Transfer" dropdown.
 - The amount of space on mobile that is available to scroll pets
+- Various other styles
 
 ### Fixed
 - Slight misaligment of pet image and number of days display for the trackers
 - A typo for the Barbarian Battle Cry (Orc) buff
 - A bug where the width of the pet cards was not calculated properly for all screen sizes
+- Various bugs that were introduced by an earlier version regardin asyncronious behavoir
+- A problem when importing older versions due to IndexedDB not being able to handle booleans correctly
 
 ## [1.4.6] - 2020-03-08
 ### Fixed
