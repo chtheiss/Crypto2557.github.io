@@ -1,16 +1,29 @@
 /* All pages
    ========================================================================== */
+:root{
+    --text-normal: #d3d4d5;
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-link: #00b0f4;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #dcddde;
+    --interactive-active: #fff;
+    --background-primary: #36393f;
+    --background-secondary: #2f3136;
+    --background-modifier-hover: #29abe2;
+}
+
 body, html{
-    background-color:#26292c;
-    /*background: linear-gradient(to right, #26292c, #393C3F);*/
-    font-family:Arial,Helvetica,sans-serif;
-    color:#fff;
+    background-color:#26292f;
+    font-family: Arial,Helvetica,sans-serif;
+    color: var(--text-normal);
     font-size:14px;
     margin:0;
     height:100vh;
 }
+
 #logo-image{
-    max-width: 100px;
+    max-height: 38.5px;
 }
 #logo{
     max-width: 80%;
@@ -28,8 +41,11 @@ body, html{
 #paypal-button>a{
     padding-right: 10.5px;
 }
-#discord-image, #paypal-image{
-    height:31.17px;
+#discord-image{
+    height:34.5px;
+}
+#paypal-image{
+    height:  24px;
 }
 .input-group{
     height: 1.75rem;
@@ -41,7 +57,7 @@ body, html{
 }
 .input-group-append button, .input-group-prepend button{
     border-color: #999;
-    color: #fff;
+    color: var(--text-normal);
     border-radius: 5px;
     min-width:2.5rem;
 }
@@ -107,11 +123,11 @@ h4{
 }
 .modal{
     max-width:70%
-    background-color:#26292c;
+    background-color:#26292f;
 }
 .modal-header{
     padding: 5px;
-    color:#fff;
+    color:var(--text-normal);
     background-color:#17191a;
     font-size:16px;
     border-bottom: 1px solid #999;
@@ -121,7 +137,7 @@ h4{
 .modal-header button{
     padding: 0;
     margin: 5px 5px 5px auto;
-    color: #fff;
+    color: var(--text-normal);
     background-color: #17191a;
     border: none;
     cursor: pointer;
@@ -137,19 +153,23 @@ h4{
 .modal-title, .modal-header>img{
     margin: auto 5px;
 }
+.modal-title{
+    color: #fff;
+    font-weight: bold;
+}
 .modal-content{
-    color:#fff;
-    background-color:#26292c;
+    color:var(--text-normal);
+    background-color:#26292f;
     font-size:14px;
     max-width:100%;
 }
 .nav-tabs .nav-link{
     border: 2px solid #999;
-    color: #fff;
+    color: var(--text-normal);
     margin: 2px;
 }
 .nav-tabs .nav-link.active{
-    background-color: #fff;
+    background-color: var(--text-normal);
     border: 2px solid #999;
     color: #17191a;
 }
@@ -267,12 +287,13 @@ h4{
 }
 /* Fixes the text for all elements in the navbar */
 .navbar-dark.navbar *{
-    color: #fff;
+    color: var(--text-normal);
     font-weight: bold;
+    font-size: 16px;
 }
 /* Changes default color for links in a .navbar-dark */
 .navbar-dark .navbar-nav .nav-link{
-    color:#fff;
+    color:var(--text-normal);
 }
 /* Changes default hover color for links and dropdown-items and brand in a .navbar-dark */
 .navbar-dark .navbar-nav .nav-link:hover, .dropdown-menu>.dropdown-item:hover, .navbar-dark .navbar-brand:hover{
@@ -287,8 +308,8 @@ h4{
     background-color:#17191a;
 }
 .navbar .btn:hover {
-    background-color:#fff;
-    border-color:#fff;
+    background-color:var(--text-normal);
+    border-color:var(--text-normal);
     color:#17191a;
 }
 .navbar .btn{
@@ -361,7 +382,8 @@ animation-fill-mode: both;
     grid-gap:5px;
     grid-template-columns:1fr 1fr;
     grid-template-rows:1fr 2fr 2fr;
-    grid-template-areas:"title title" "purpose pet-usage" "unit-usage addition"
+    grid-template-areas:"title title" "purpose pet-usage" "unit-usage addition";
+    padding-top: 10px;
 }
 /* Define changes for mobile grid */
 @media screen and (max-width:768px){
@@ -407,8 +429,11 @@ animation-fill-mode: both;
 .index-container h2.col-12{
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
     text-align: center;
+    color: #fff;
+}
+p.col-12>b {
+    color: #fff;
 }
 /* Pet Pages
    ========================================================================== */
@@ -453,7 +478,7 @@ animation-fill-mode: both;
     background:radial-gradient(circle,#333 0,#333 0,rgba(224,49,6,.3))
 }
 #dragable-row{
-    background-color:#26292c;
+    background-color:#26292f;
     padding:5px;
 }
 .pet-container{
@@ -785,19 +810,19 @@ img.img-responsive{
 /* Popover for the progress bars*/
 .popover{
     max-width:70%
-    background-color:#26292c;
+    background-color:#26292f;
     border:2px solid #999;
     border-radius: 5px;
 }
 .popover-header{
-    color:#fff;
+    color:var(--text-normal);
     background-color:#17191a;
     font-size:16px;
     border-bottom: 1px solid #999;
 }
 .popover-body{
-    color:#fff;
-    background-color:#26292c;
+    color:var(--text-normal);
+    background-color:#26292f;
     font-size:14px;
     max-width:100%;
 }
