@@ -87,7 +87,7 @@ function calculatePetFragmentsToFarm() {
                     if (frags_to_add > 0) {
                         input.val(current_frags + frags_to_add);
                         await on_pet_input_change($(input), storage_name);
-                    }                
+                    }
                 }
                 $('#add-all-btn>span').remove();
                 $('#add-all-btn').removeClass('disabled');

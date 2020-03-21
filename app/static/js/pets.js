@@ -18,16 +18,7 @@ async function load_pet(pet, db, storage_name, hide, unattainable, kl) {
     const data = await pet_store.get(pet.id);
 
     let $pet = $(pet);
-    let kl_numbers = $pet.find(".pet-card-kl-number");
-    let no_stage_available;
-    if (kl_numbers.length > 0){
-        no_stage_available = (kl_numbers.length == kl_numbers.filter(function( index ) {
-            return $("#KL-number").val() < parseFloat($(this).text());
-        }).length);
-    } else {
-        no_stage_available = false;
-    }
-    hide_or_show_unattainable_pet($pet, no_stage_available & unattainable);
+    change_display_of_unattainable_pet($pet, unattainable)
     if (data != undefined) {
         hide_or_show_pet($pet, data.fragments >= 330 && hide)
         $pet.find(".pet-input[type='number']").val(data.fragments);
@@ -198,9 +189,8 @@ async function on_pet_input_change($pet_input, storage_name) {
                     name: $pet_input.data("pet"),
                     fragments: parseInt($pet_input.val()),
                     priority: data.priority
-                };                  
+                };
             }else{
-                //TODO Figure out what to do if data is undefined
                 const data = await getPriority(storage_name == "pets_hard");
                 const prio_tx = await db.transaction(storage_name, 'readwrite');
                 const prio_store = await prio_tx.objectStore(storage_name);
@@ -214,7 +204,7 @@ async function on_pet_input_change($pet_input, storage_name) {
                             fragments: parseInt($pet.find(".pet-input").val()),
                             priority: p
                         };
-                        prioPromises.push(prio_store.put(prio_item));                       
+                        prioPromises.push(prio_store.put(prio_item));
                     }
                 }
                 await Promise.all(prioPromises);
@@ -226,14 +216,14 @@ async function on_pet_input_change($pet_input, storage_name) {
                     name: $pet_input.data("pet"),
                     fragments: parseInt($pet_input.val()),
                     priority: pet_data.priority
-                };                      
+                };
             }
-    
+
         } else {
             item = {
                 name: $pet_input.data("pet"),
                 fragments: parseInt($pet_input.val())
-            };           
+            };
         }
     }
     await store.put(item);
@@ -281,11 +271,11 @@ async function load_all_pets(storage_name){
     for (const pet of $(".pet-card,.pet-card-other")) {
         petPromises.push(
             load_pet(
-                pet, 
+                pet,
                 db,
-                storage_name, 
-                hide_five_star_pets_result.value, 
-                hide_unattainable_pets_result.value, 
+                storage_name,
+                hide_five_star_pets_result.value,
+                hide_unattainable_pets_result.value,
                 knightage_level_result.value
             )
         );
