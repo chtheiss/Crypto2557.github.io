@@ -643,7 +643,7 @@
       "buffs":[
          {
             "name":"Innervate 3",
-            "description":"Decreases cooldown of Guild Invasion skills even if Sindbad is in the Time Shop (5-star 1%, 6-star 3%).",
+            "description":"Decreases cooldown of Guild Invasion skills even if Champion is in the Time Shop (5-star 1%, 6-star 3%).",
             "multiplier":0.333333,
             "requirement":[
                14,

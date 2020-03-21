@@ -165,6 +165,26 @@ function download_file_from_indexedDB(){
     });
 }
 
+function change_display_of_unattainable_pet($pet, unattainable){
+    let kl_numbers = $pet.find(".pet-card-kl-number");
+    let no_stage_available;
+    if(kl_numbers.length>0){
+        no_stage_available = (kl_numbers.length == kl_numbers.filter(function( index ) {
+            return $("#KL-number").val() < parseFloat($(this).text());
+        }).length)
+
+    } else {
+        no_stage_available = false;
+    }
+    hide_or_show_unattainable_pet($pet, no_stage_available & unattainable);
+}
+
+function change_display_of_unattainable_pets(unattainable){
+    for (const pet of $("#dragable-row,.pet-table").children('.pet-card,.pet-card-other')) {
+        change_display_of_unattainable_pet($(pet), unattainable)
+    }
+}
+
 (function(yourcode) {
 
     yourcode(window.jQuery, window.indexedDB, window, document);
@@ -194,22 +214,23 @@ function download_file_from_indexedDB(){
 
         $(".user-input").bind('change', async function() {
             $this = $(this);
-            const new_KL = $this.val();
+            if (!$this.hasClass("input-group")){
+                const new_value = $this.val();
+                const db = await idb.open('endless-farming-db');
+                const tx = await db.transaction('player', 'readwrite');
+                const store = await tx.objectStore('player');
+                store.put({
+                    name: $this.attr("id").replace("-number", ""),
+                    value: new_value
+                });
 
-            const db = await idb.open('endless-farming-db');
-            const tx = await db.transaction('player', 'readwrite');
-            const store = await tx.objectStore('player');
-
-            store.put({
-                name: $this.attr("id").replace("-number", ""),
-                value: new_KL
-            });
-
-            if ($this.attr("id") == "KL-number" && $("#dragable-row").length != 0) {
-                updateStages(new_KL);
-            }
-            if ($("#dragable-row").length != 0) {
-                calculatePetFragmentsToFarm();
+                if ($this.attr("id") == "KL-number" && $("#dragable-row").length != 0) {
+                    updateStages(new_value);
+                    change_display_of_unattainable_pets($("#hide-unattainable-pets").prop("checked"));
+                }
+                if ($("#dragable-row").length != 0) {
+                    calculatePetFragmentsToFarm();
+                }
             }
         });
 
@@ -233,7 +254,8 @@ function download_file_from_indexedDB(){
 
         });
 
-        $("#hide-unattainable-pets").bind('change', async function() {
+        $("#hide-unattainable-pets").bind('change', async function(evt) {
+            evt.stopImmediatePropagation();
             $this = $(this);
             const db = await idb.open('endless-farming-db');
             const tx = await db.transaction('player', 'readwrite');
@@ -246,23 +268,7 @@ function download_file_from_indexedDB(){
                 value: unattainable & 1
             });
 
-            for (const pet of $("#dragable-row,.pet-table").children('.pet-card,.pet-card-other')) {
-                let $pet = $(pet);
-                let kl_numbers = $pet.find(".pet-card-kl-number");
-                let no_stage_available;
-                if(kl_numbers.length>0){
-                    no_stage_available = (kl_numbers.length == kl_numbers.filter(function( index ) {
-                        return $("#KL-number").val() < parseFloat($(this).text());
-                    }).length)
-
-                } else {
-                    no_stage_available = false;
-                }
-                if(no_stage_available){
-                    hide_or_show_unattainable_pet($pet, no_stage_available & unattainable);
-                }
-            }
-
+            change_display_of_unattainable_pets(unattainable);
         });
 
         $("#refills-number").bind('change', function() {
@@ -272,7 +278,7 @@ function download_file_from_indexedDB(){
         $("#refills_hard-number").bind('change', function() {
             change_gem_label($(this), $("#gem-hard-label"), [0, 200, 400, 800]);
         });
-        
+
         $(".input-group-append button, .input-group-prepend button").removeAttr('style');
     });
 
