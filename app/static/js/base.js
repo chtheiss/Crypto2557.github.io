@@ -176,9 +176,7 @@ function change_display_of_unattainable_pet($pet, unattainable){
     } else {
         no_stage_available = false;
     }
-    if(no_stage_available){
-        hide_or_show_unattainable_pet($pet, no_stage_available & unattainable);
-    }
+    hide_or_show_unattainable_pet($pet, no_stage_available & unattainable);
 }
 
 function change_display_of_unattainable_pets(unattainable){
@@ -216,14 +214,11 @@ function change_display_of_unattainable_pets(unattainable){
 
         $(".user-input").bind('change', async function() {
             $this = $(this);
-            console.log(!$this.hasClass("input-group"));
-            console.log($this);
             if (!$this.hasClass("input-group")){
                 const new_value = $this.val();
                 const db = await idb.open('endless-farming-db');
                 const tx = await db.transaction('player', 'readwrite');
                 const store = await tx.objectStore('player');
-                console.log($this)
                 store.put({
                     name: $this.attr("id").replace("-number", ""),
                     value: new_value
