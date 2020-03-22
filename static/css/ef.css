@@ -12,7 +12,15 @@
     --background-secondary: #2f3136;
     --background-modifier-hover: #29abe2;
 }
-
+ .noselect {
+ -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+           user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+}
 body, html{
     background-color:#26292f;
     font-family: Arial,Helvetica,sans-serif;
