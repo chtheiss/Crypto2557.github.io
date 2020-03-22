@@ -1,6 +1,6 @@
 # Changelog
 
-## Future
+## [1.5.0] - 2020-03-22
 ### Added
 - New feature to track other pets besides shn and shh
 - Checkbox to hide or show pets that are unattainable due to KL constraints
@@ -22,6 +22,7 @@
 ### Fixed
 - Slight misaligment of pet image and number of days display for the trackers
 - A typo for the Barbarian Battle Cry (Orc) buff
+- A typo for the Innervate 3 buff
 - A bug where the width of the pet cards was not calculated properly for all screen sizes
 - Various bugs that were introduced by an earlier version regardin asyncronious behavoir
 - A problem when importing older versions due to IndexedDB not being able to handle booleans correctly
