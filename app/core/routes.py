@@ -71,9 +71,9 @@ def pets_others():
 
     pets_by_origin = {}
     for origin in origins:
+        pets_of_origin = list(filter(lambda x: origin in x["origin"], pets))
         pets_by_origin[origin] = sorted(
-            list(filter(lambda x: origin in x["origin"], pets)),
-            key=lambda pet: int(pet["priority"]),
+            pets_of_origin, key=lambda pet: int(pet["priority"])
         )
     return render_template("pets_others.html", title="Other Pets", pets=pets_by_origin)
 

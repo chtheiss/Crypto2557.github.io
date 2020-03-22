@@ -17,6 +17,5 @@
     			on_pet_input_change($pet_input, "pets_other");
     		}
         });
-        
     });
 }));
