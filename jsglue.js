@@ -2,7 +2,7 @@
 var Flask = new (function(){
     'use strict';
     return {
-        '_endpoints': [["core.get_unit", ["/static/json/units/", ".json"], ["unitid"]], ["core.get_pet", ["/static/json/pets/", ".json"], ["petid"]], ["bootstrap.static", ["/static/bootstrap/", ""], ["filename"]], ["static", ["/static/", ""], ["filename"]], ["core.get_hard_sh_priority", ["/static/json/hard_sh_pet_priority.json"], []], ["core.get_priority", ["/static/json/pet_priority.json"], []], ["core.get_units", ["/static/json/units/"], []], ["core.get_pets", ["/static/json/pets/"], []], ["core.meta_progression", ["/meta_progression/"], []], ["serve_js", ["/jsglue.js"], []], ["core.pets_hard", ["/pets_hard/"], []], ["core.tickets", ["/tickets/"], []], ["core.units", ["/units/"], []], ["core.pets", ["/pets/"], []], ["core.index", ["/"], []]],
+        '_endpoints': [["core.get_unit", ["/static/json/units/", ".json"], ["unitid"]], ["core.get_pet", ["/static/json/pets/", ".json"], ["petid"]], ["bootstrap.static", ["/static/bootstrap/", ""], ["filename"]], ["static", ["/static/", ""], ["filename"]], ["core.get_hard_sh_priority", ["/static/json/hard_sh_pet_priority.json"], []], ["core.get_priority", ["/static/json/pet_priority.json"], []], ["core.get_units", ["/static/json/units/"], []], ["core.get_pets", ["/static/json/pets/"], []], ["core.meta_progression", ["/meta_progression/"], []], ["core.pets_others", ["/pets_others/"], []], ["serve_js", ["/jsglue.js"], []], ["core.pets_hard", ["/pets_hard/"], []], ["core.tickets", ["/tickets/"], []], ["core.units", ["/units/"], []], ["core.pets", ["/pets/"], []], ["core.index", ["/"], []]],
         'url_for': function(endpoint, rule) {
             if(typeof rule === "undefined") rule = {};
 

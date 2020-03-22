@@ -21,8 +21,8 @@ Endless Farming
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="Endless Farming: The Pet and Unit Tracker for Endless Frontier">
+<meta name="author" content="Crypto2557">
 {% endblock %}
 {% block styles %}
 <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -34,7 +34,8 @@ Endless Farming
 {% endblock %}
 {% block navbar %}
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="{{ url_for('core.index') }}">Endless Farming</a>
+    <a class="navbar-brand" href="{{ url_for('core.index') }}">
+    <img id="logo-image" target="_blank" src="../static/img/media/logo.svg" alt="Endless Farming"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,9 +43,10 @@ Endless Farming
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pets</a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu animate slideIn">
                     <a class="dropdown-item" href="{{ url_for('core.pets') }}">Normal</a>
                     <a class="dropdown-item" href="{{ url_for('core.pets_hard') }}">Hard</a>
+                    <a class="dropdown-item" href="{{ url_for('core.pets_others') }}">Others</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -56,11 +58,23 @@ Endless Farming
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('core.meta_progression') }}">Metas</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data Transfer</a>
+                <div class="dropdown-menu animate slideIn">
+                    <button id="import-button" class="btn dropdown-item">Import</button>
+                    <button id="export-button" class="btn dropdown-item">Export</button>
+                </div>
+            </li>
         </ul>
         <input type="file" id="dbupload" value="Import" style="display:none" />
-        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.4.6</button>
-        <button id="import-button" class="btn bordered">Import</button>
-        <button id="export-button" class="btn bordered">Export</button>
+        <a id="paypal-button" href="https://www.paypal.me/crypto2557" target="_blank" class="btn bordered" role="button"><img id="paypal-image" target="_blank" src="../static/img/media/paypal.svg" alt="Paypal">Donate</a>
+        <button id="discord-button" class="btn bordered">
+            <a href="https://discord.gg/U5sUGbc" target="_blank">
+                <img id="discord-image" target="_blank" src="../static/img/media/Discord-Logo+Wordmark-Color.svg" alt="Discord">
+            </a>
+        </button>
+        <a href="http://bit.ly/HarroweD" target="_blank" class="btn bordered" role="button">Pet Guide</a>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.0</button>
         <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
     </div>
 </nav>
@@ -81,6 +95,7 @@ Endless Farming
 <script type="text/javascript" src="{{ url_for('static', filename='js/extern/index.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/extern/sortable.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/extern/bootstrap-input-spinner.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/extern/html2canvas.min.js') }}"></script>
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
 {% endblock %}

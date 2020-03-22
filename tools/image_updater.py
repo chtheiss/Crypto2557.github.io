@@ -1,7 +1,8 @@
+import argparse
 import os
 import urllib.request
-import argparse
 from enum import Enum
+
 from tqdm import tqdm
 
 parser = argparse.ArgumentParser(
@@ -72,11 +73,11 @@ def download_images(
         filename = os.path.join(base_path, f"{i}.png")
         try:
             download_and_write_image(filename, imagetype, i, animated)
-        except:
+        except Exception:
             if animated:
                 try:
                     download_and_write_image(filename, imagetype, i)
-                except:
+                except Exception:
                     print(f"failed {i}")
                     failed_files.append(filename)
             else:

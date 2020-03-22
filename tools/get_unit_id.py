@@ -21,11 +21,11 @@ with open(unit_file, "r") as json_file:
 
 unit_names = []
 for key, items in pets.items():
-    m = re.search("\[.*\]", items["description"]["skill3"])
+    m = re.search(r"\[.*\]", items["description"]["skill3"])
     unit_name = m.group(0)[9:-2]
     try:
         items["couple"] = units[unit_name]["img_sr"].split("/")[-1].split(".")[0]
-    except:
+    except Exception:
         print(unit_name)
 
 os.remove(pet_file)

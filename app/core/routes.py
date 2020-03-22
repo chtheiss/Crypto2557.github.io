@@ -2,9 +2,15 @@ import json
 import os
 
 import numpy as np
-from flask import current_app, jsonify, render_template, Blueprint
+from flask import Blueprint, current_app, jsonify, render_template
 
 bp = Blueprint("core", __name__)
+
+
+def get_json(filename):
+    absolute_filename = os.path.join(current_app.root_path, "static/json", filename)
+    with open(absolute_filename) as file:
+        return json.load(file)
 
 
 @bp.route("/", methods=["GET", "POST"])
@@ -14,16 +20,11 @@ def index():
 
 @bp.route("/pets/", methods=["GET", "POST"])
 def pets():
-    pet_priority_url = os.path.join(
-        current_app.root_path, "static/json", "pet_priority.json"
-    )
-    pet_priority = json.load(open(pet_priority_url))
-
-    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
-    pets = json.load(open(pets_url))
+    pet_priority = get_json("pet_priority.json")
+    pets = get_json("pets.json")
 
     stages_per_two_kl = 10
-
+    number_of_trackers = 12
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
         pets[item]["KL"] = (
@@ -42,18 +43,47 @@ def pets():
             )
         )
     )
-    return render_template("pets.html", title="Pets", pets=pets_ordered, ceil=np.ceil)
+    return render_template(
+        "pets.html",
+        title="Pets",
+        pets=pets_ordered,
+        ceil=np.ceil,
+        number_of_trackers=number_of_trackers,
+    )
+
+
+@bp.route("/pets_others/", methods=["GET", "POST"])
+def pets_others():
+    origins = ["ss1", "ss2", "ss3", "ss4", "ss5", "greek", "zodiac", "event"]
+    pets = get_json("other_pets.json")
+
+    prioritites = {}
+    for origin in origins:
+        prioritites[origin] = get_json(f"other_pets_priorities/{origin}.json")
+
+    for pet in pets:
+        origin = pet["origin"][0]
+        if origin != "raid" and origin != "ob":
+            priority = prioritites[origin]
+            pet["priority"] = list(priority.keys())[
+                list(priority.values()).index(pet["name"])
+            ]
+
+    pets_by_origin = {}
+    for origin in origins:
+        pets_of_origin = list(filter(lambda x: origin in x["origin"], pets))
+        pets_by_origin[origin] = sorted(
+            pets_of_origin, key=lambda pet: int(pet["priority"])
+        )
+    return render_template("pets_others.html", title="Other Pets", pets=pets_by_origin)
 
 
 @bp.route("/pets_hard/", methods=["GET", "POST"])
 def pets_hard():
-    pet_priority_url = os.path.join(
-        current_app.root_path, "static/json", "hard_sh_pet_priority.json"
-    )
-    pet_priority = json.load(open(pet_priority_url))
+    pet_priority = get_json("hard_sh_pet_priority.json")
+    pets = get_json("hard_sh_pets.json")
 
-    pets_url = os.path.join(current_app.root_path, "static/json", "hard_sh_pets.json")
-    pets = json.load(open(pets_url))
+    number_of_trackers = 18
 
     for key, item in pet_priority.items():
         pets[item]["priority"] = key
@@ -72,16 +102,18 @@ def pets_hard():
         )
     )
     return render_template(
-        "pets_hard.html", title="Pets", pets=pets_ordered, ceil=np.ceil
+        "pets_hard.html",
+        title="Hard Pets",
+        pets=pets_ordered,
+        ceil=np.ceil,
+        number_of_trackers=number_of_trackers,
     )
 
 
 @bp.route("/units/", methods=["GET", "POST"])
 def units():
-    units_url = os.path.join(current_app.root_path, "static/json", "units.json")
-    units = json.load(open(units_url))
-    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
-    pets = json.load(open(pets_url))
+    units = get_json("units.json")
+    pets = get_json("pets.json")
 
     number_of_rotations = 18
 
@@ -125,12 +157,8 @@ def units():
 
 @bp.route("/tickets/", methods=["GET", "POST"])
 def tickets():
-    units_url = os.path.join(current_app.root_path, "static/json", "units.json")
-    units = json.load(open(units_url))
-    tickets_url = os.path.join(
-        current_app.root_path, "static/json", "ticket_order.json"
-    )
-    tickets = json.load(open(tickets_url))
+    units = get_json("units.json")
+    tickets = get_json("ticket_order.json")
     return render_template(
         "tickets.html", title="Tickets", units=units, tickets=tickets
     )
@@ -138,47 +166,37 @@ def tickets():
 
 @bp.route("/static/json/pets/<petid>.json", methods=["GET", "POST"])
 def get_pet(petid):
-    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
-    pets = json.load(open(pets_url))
+    pets = get_json("pets.json")
     return jsonify({"petid": petid, "pet": pets[petid.replace("_", " ")]})
 
 
 @bp.route("/static/json/units/<unitid>.json", methods=["GET", "POST"])
 def get_unit(unitid):
-    units_url = os.path.join(current_app.root_path, "static/json", "units.json")
-    units = json.load(open(units_url))
+    units = get_json("units.json")
     return jsonify(unit=units[unitid.replace("_", " ")])
 
 
 @bp.route("/static/json/pets/", methods=["GET", "POST"])
 def get_pets():
-    pets_url = os.path.join(current_app.root_path, "static/json", "pets.json")
-    pets = json.load(open(pets_url))
+    pets = get_json("pets.json")
     return jsonify(pets)
 
 
 @bp.route("/static/json/units/", methods=["GET", "POST"])
 def get_units():
-    units_url = os.path.join(current_app.root_path, "static/json", "units.json")
-    units = json.load(open(units_url))
+    units = get_json("units.json")
     return jsonify(units)
 
 
 @bp.route("/static/json/pet_priority.json", methods=["GET", "POST"])
 def get_priority():
-    pet_priority_url = os.path.join(
-        current_app.root_path, "static/json", "pet_priority.json"
-    )
-    pet_priority = json.load(open(pet_priority_url))
+    pet_priority = get_json("pet_priority.json")
     return jsonify(priority=pet_priority)
 
 
 @bp.route("/static/json/hard_sh_pet_priority.json", methods=["GET", "POST"])
 def get_hard_sh_priority():
-    pet_priority_url = os.path.join(
-        current_app.root_path, "static/json", "hard_sh_pet_priority.json"
-    )
-    pet_priority = json.load(open(pet_priority_url))
+    pet_priority = get_json("hard_sh_pet_priority.json")
     return jsonify(priority=pet_priority)
 
 

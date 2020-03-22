@@ -1,6 +1,6 @@
 <div id="{{key_id}}" data-id="{{loop_index-1}}" class="pet-card bordered">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#{{key_id}}-modal">
-        <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/{{pet['img']}}">
+        <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/img/pets/{{pet['_id']}}.png">
     </span>
     <p id="{{key_id}}-farmable-fragments" class="pet-card-frags invisible">0</p>
     <h4 class="pet-card-name">{{ key }}</h4>

@@ -24,7 +24,15 @@ def main():
     farming.freezer.freeze()
 
     # Remove the old version
-    subfolders = ["pets", "pets_hard", "static", "tickets", "units", "meta_progression"]
+    subfolders = [
+        "pets",
+        "pets_hard",
+        "pets_others",
+        "static",
+        "tickets",
+        "units",
+        "meta_progression",
+    ]
     for folder in subfolders:
         savermtree(folder)
     saveremove("index.html")

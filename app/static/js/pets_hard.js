@@ -1,16 +1,16 @@
 function calculatePetFragmentsToFarm() {
-    var KL = parseInt($("#KL-number").val());
-    var tickets = parseInt($("#tickets_hard-number").val()) + parseInt(3 * $("#refills_hard-number").val());
-    var row = $("#dragable-row");
+    let KL = parseInt($("#KL-number").val());
+    let tickets = parseInt($("#tickets_hard-number").val()) + parseInt(3 * $("#refills_hard-number").val());
+    let row = $("#dragable-row");
 
     clear_tracking();
 
     row.children().each(function() {
-        var col = $(this);
-        var possible_stages = [];
-        var from_stage = [];
-        var fragments = 0;
-        var current_frags = 0;
+        let col = $(this);
+        let possible_stages = [];
+        let from_stage = [];
+        let fragments = 0;
+        let current_frags = 0;
         col.find('.pet-card-kl-number.green').each(function() {
             possible_stages.push(parseInt($(this).text()));
             from_stage.push(parseInt($(this).data("from")));
@@ -22,7 +22,7 @@ function calculatePetFragmentsToFarm() {
                 break;
             }
             if (tickets > 0) {
-                var add = 1;
+                let add = 1;
                 fragments += (tickets >= add) ? add : tickets;
                 tickets -= (tickets >= add) ? add : tickets;
             }
@@ -32,10 +32,10 @@ function calculatePetFragmentsToFarm() {
         frag_text = col.find("p");
         frag_text.text(fragments);
 
-        var tracker = $(".pet-trackers").children('[data-empty="True"]').first();
+        let tracker = $(".pet-trackers").children('[data-empty="True"]').first();
         if (fragments > 0) {
             frag_text.removeClass('invisible');
-            var days = Math.ceil((330 - current_frags) / fragments);
+            let days = Math.ceil((330 - current_frags) / fragments);
             tracker.css("display", "");
             tracker.find("img").attr("src", col.find(".pet-image").attr("src"));
             tracker.attr("data-empty", "False");
@@ -56,79 +56,46 @@ function calculatePetFragmentsToFarm() {
 }(function($, indexedDB, window, document) {
 
     $(async function() {
-
-        var db = await idb.open('endless-farming-db');
-
-        var player_tx = await db.transaction("player", 'readwrite');
-        var player_store = await player_tx.objectStore("player");
-        var hide_five_star_pets = await player_store.get("hide_five_star_pets");
-        var kl = await player_store.get("KL");
-        $('#hide-five-star-pets').prop("checked", hide_five_star_pets.value);
-
-        var tx = await db.transaction("pets_hard", 'readwrite');
-        var store = await tx.objectStore("pets_hard");
-
-        var hide = $('#hide-five-star-pets').prop("checked");
-
-        for (const pet of $(".pet-card")) {
-            await load_pet(pet, store, hide, kl.value);
-        }
-
-        row = $("#dragable-row").get()[0];
-
-        sortable = Sortable.create(row, {
-            cursor: 'move',
-            delayOnTouchOnly: true,
-            animation: 50,
-            draggable: ".pet-card",
-            forceFallback: true,
-            onUpdate: async function(event) {
-                change = $("#dragable-row").children().filter(function() {
-                    id = parseInt($(this).attr("data-id"));
-                    if (event.newIndex < event.oldIndex) {
-                        return id >= event.newIndex && id <= event.oldIndex;
-                    } else {
-                        return id >= event.oldIndex && id <= event.newIndex;
-                    }
-
-                });
-
-                change.each(function() {
-                    var $col = $(this);
-                    if (event.newIndex < event.oldIndex) {
-                        $col.attr("data-id", parseInt($col.attr("data-id")) + 1);
-                        $col.data("id", parseInt($col.attr("id")) + 1);
-                    } else {
-                        $col.attr("data-id", parseInt($col.attr("data-id")) - 1);
-                        $col.data("id", parseInt($col.attr("id")) - 1);
-                    }
-                });
-
-                $(event.item).attr("data-id", event.newIndex);
-                $(event.item).data("id", event.newIndex);
-
-                await updatePriorities("pets_hard");
-                calculatePetFragmentsToFarm();
-            },
-        });
+        let storage_name = "pets_hard";
+        await load_all_pets(storage_name);
+        create_sortable(storage_name);
 
         $(".pet-input[type='number']").bind('change', function() {
-            on_pet_input_change($(this), "pets_hard");
+            on_pet_input_change($(this), storage_name);
         });
 
-        $("#reset-btn").click(async function() {
-            data = await getPriority(true);
-            var priority = data.priority;
-
-            for (let p in priority) {
-                col = $("#" + priority["" + p].replaceAll(" ", "_"));
-                col.attr("data-id", p - 1);
-                col.data("id", p - 1);
+        $("#reset-btn").click(async function(evt) {
+            evt.stopImmediatePropagation();
+            if (!$(this).hasClass("disabled")){
+                $('#reset-btn').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
+                await reset_priority(storage_name);
+                $('#reset-btn>span').remove();
+                $('#reset-btn').removeClass('disabled');
+                $('#reset-btn').text("Reset Priority");
             }
-            await updatePriorities('pets_hard');
-            await sortPetsByPriority('pets_hard');
         });
 
-        sortPetsByPriority("pets_hard");
+        $("#add-all-btn").on("click", async function(evt) {
+            evt.stopImmediatePropagation();
+            if (!$(this).hasClass("disabled")){
+                $('#add-all-btn').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Calculating...').addClass('disabled');
+                for (const pet of $(".pet-card")) {
+                    let $pet = $(pet);
+                    let frags_to_add = parseInt($pet.find(".pet-card-frags").text());
+                    let input = $pet.find(".pet-input");
+                    let current_frags = handle_nan(parseInt(input.val()));
+                    if (frags_to_add > 0) {
+                        input.val(current_frags + frags_to_add);
+                        await on_pet_input_change($(input), storage_name);
+                    }
+                }
+                $('#add-all-btn>span').remove();
+                $('#add-all-btn').removeClass('disabled');
+                $('#add-all-btn').text("Progress 1 Day");
+            }
+        });
+
+        await sortPetsByPriority(storage_name);
+        calculatePetFragmentsToFarm();
     });
 }));
