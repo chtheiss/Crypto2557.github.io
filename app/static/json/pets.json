@@ -380,7 +380,7 @@
                 "name": "Ancient Blessing",
                 "description": "Ancient Blessing: Increases the Ancient Blessings by 50. (Effects are applied even when in Time Shop and are stackable. However, Ancient Blessings increased by the [Forest Knight] cannot exceed 4,000.",
                 "multiplier": 0.5,
-                "requirement": 40,
+                "requirement": 27,
                 "amount": 4000
             }
         ],
