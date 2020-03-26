@@ -7,10 +7,12 @@ from flask_bootstrap import Bootstrap
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from flask_jsglue import JSGlue
+from flask_caching import Cache
 
 from app.config import Config
 
 bootstrap = Bootstrap()
+cache = Cache(config={"CACHE_TYPE": "simple"})
 
 
 def create_app(config_class=Config):
@@ -21,6 +23,7 @@ def create_app(config_class=Config):
     freezer = Freezer(app)
     jsglue = JSGlue(app)
     bootstrap.init_app(app)
+    cache.init_app(app)
 
     from app.core.routes import bp as core_bp
 

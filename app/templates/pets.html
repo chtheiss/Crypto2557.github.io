@@ -15,8 +15,9 @@
         {% endfor %}
     </div>
     <div id="dragable-row" class="pet-pets hidden">
-        {% for key, pet in pets.items() %}
-        {% set key_id=key.replace(" ", "_") %}
+        {% for pet in pets %}
+        {% set key_id=pet["name"].replace(" ", "_") %}
+        {% set pet_name=pet["name"] %}
         {% set loop_index = loop.index %}
         {% include 'pet_card.html' %}
         {% endfor %}
@@ -25,9 +26,9 @@
         This priority ranking was originally created by HarroweD.
     </footer>
 </div>
-{% for key, pet in pets.items() %}
-{% set key_id=key.replace(" ", "_") %}
-{% set pet_name=key %}
+{% for pet in pets %}
+{% set key_id=pet["name"].replace(" ", "_") %}
+{% set pet_name=pet["name"] %}
 {% include '_pet_modal.html' %}
 {% endfor %}
 {% endblock %}

@@ -3,7 +3,7 @@
         <img id="{{key_id}}-image" class='pet-image zero-star' src="../static/img/pets/{{pet['_id']}}.png">
     </span>
     <p id="{{key_id}}-farmable-fragments" class="pet-card-frags invisible">0</p>
-    <h4 class="pet-card-name">{{ key }}</h4>
+    <h4 class="pet-card-name">{{ pet_name }}</h4>
     <fieldset class="pet-card-stars">
         <label class="image-checkbox" id="{{key_id}}-1star" data-pet="{{key_id}}">
             <img class="img-responsive" src="../static/img/stargrey.png" />
@@ -28,15 +28,15 @@
     </fieldset>
     <input id="{{key_id}}-fragments" data-pet="{{key_id}}" class="pet-card-input pet-input" type="number" min="0" value="0" step="1" />
     <div class="pet-card-kl">
-        <div class="pet-card-kl-number" data-from="{{pet['from'][0]}}">{{pet["KL"][0]}}</div>
-        {% if(pet["from"][1]) %}
-        <div class="pet-card-kl-number" data-from="{{pet['from'][1]}}">{{pet["KL"][1]}}</div>
+        <div class="pet-card-kl-number" data-from="{{pet['stages'][0]}}">{{pet["KL"][0]}}</div>
+        {% if(pet["stages"][1]) %}
+        <div class="pet-card-kl-number" data-from="{{pet['stages'][1]}}">{{pet["KL"][1]}}</div>
         {% endif %}
-        {% if(pet["from"][2]) %}
-        <div class="pet-card-kl-number" data-from="{{pet['from'][2]}}">{{pet["KL"][2]}}</div>
+        {% if(pet["stages"][2]) %}
+        <div class="pet-card-kl-number" data-from="{{pet['stages'][2]}}">{{pet["KL"][2]}}</div>
         {% endif %}
-        {% if(pet["from"][3]) %}
-        <div class="pet-card-kl-number" data-from="{{pet['from'][3]}}">{{pet["KL"][3]}}</div>
+        {% if(pet["stages"][3]) %}
+        <div class="pet-card-kl-number" data-from="{{pet['stages'][3]}}">{{pet["KL"][3]}}</div>
         {% endif %}
     </div>
 </div>
