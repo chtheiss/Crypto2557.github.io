@@ -1,9 +1,9 @@
 <div id="unit-{{unit_jr['_id']}}" class="unit-card bordered">
-    <a class="unit-modal unit-card-jr-unit" href="#tab-{{unit_jr    ['name'].replace(' ', '_')}}-normal" data-toggle="modal" data-target="#{{unit_jr['name'].replace(' ', '_')}}-modal">
+    <a class="unit-modal unit-card-jr-unit" href="#tab-{{unit_jr['name'].replace(' ', '_')}}-normal" data-toggle="modal" data-target="#{{unit_jr['name'].replace(' ', '_')}}-modal">
         <img id="{{unit_jr['_id']}}-image" class="unit-image five-star-unit" src="../static/img/units/{{unit_jr['_id']}}.png" data-toggle="tooltip" data-placement="top" title="{{unit_jr['name']}}">
     </a>
     <a class="unit-modal unit-card-sr-unit" href="#tab-{{unit_sr['name'].replace(' ', '_')}}-senior" data-toggle="modal" data-target="#{{unit_jr['name'].replace(' ', '_')}}-modal">
-        <img id="{{unit_jr['_id']}}-image" class="unit-image six-star-unit" src="../static/img/units/{{unit_jr['_id']}}.png" data-toggle="tooltip" data-placement="top" title="Senior {{unit_sr['name']}}">
+        <img id="{{unit_jr['_id']}}-image" class="unit-image six-star-unit" src="../static/img/units/{{unit_sr['_id']}}.png" data-toggle="tooltip" data-placement="top" title="Senior {{unit_sr['name']}}">
     </a>
     <input id="{{unit_jr['_id']}}-number" data-unit="{{unit_jr['_id']}}" data-unit-name="{{unit_jr['name']}}" class="unit-input unit-card-jr-input" type="number" min="0" value="0" step="1" />
     <input id="{{unit_jr['_id']}}-number-sr" data-unit="{{unit_jr['_id']}}" data-unit-name="{{unit_jr['name']}}" class="unit-input unit-card-sr-input" type="number" min="0" value="0" step="1" />
