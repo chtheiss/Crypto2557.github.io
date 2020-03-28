@@ -117,7 +117,6 @@ def tickets():
     response = urllib.request.urlopen(url)
     data = json.loads(response.read())
     tickets = data["data"]
-    print(tickets)
     return render_template("tickets.html", title="Tickets", tickets=tickets)
 
 

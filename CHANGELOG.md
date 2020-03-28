@@ -1,6 +1,10 @@
 # Changelog
 
-## [1.5.1] - 2020-03-25
+## Future
+### Changed
+- The whole backend structure
+- The layout of the unit page to split the units by tribe
+
 ### Fixed
 - Requirement for Ancient Blessing (Forest Knight) when pet active
 - Fixed highlighting of the text of the website while dragging the pet cards
