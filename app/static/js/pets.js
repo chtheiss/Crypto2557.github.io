@@ -268,7 +268,6 @@ async function load_all_pets(storage_name){
     $('#hide-five-star-pets').prop("checked", hide_five_star_pets_result.value);
 
     petPromises = [];
-
     for (const pet of $(".pet-card,.pet-card-other")) {
         petPromises.push(
             load_pet(

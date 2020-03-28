@@ -147,14 +147,17 @@ function changeBuffRequirement(buff, pet_buff, pets, petData, five_star_pet){
     if(buff.linked_pets.length == 0){
         buff.requirement = buff.requirement[0]
     }
-        else {
+    else {
         let linked_active_pets = pet_buff.linked_pets.filter(linked_pet_id =>
                 pets.filter(pet =>
                     pet.name == petData.data.filter(p =>
                         p._id == linked_pet_id)[0].name.replaceAll(" ", "_") & pet.fragments >= 330).length > 0
             )
         let req = five_star_pet + linked_active_pets.length
-        buff.requirement = pet_buff.requirement[req - 1]
+        if(req == 0){
+            req = 1;
+        }
+        buff.requirement = buff.requirement[req-1]
     }
     return buff
 }
