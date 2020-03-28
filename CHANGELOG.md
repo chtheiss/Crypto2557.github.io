@@ -10,7 +10,8 @@
 
 ### Fixed
 - Requirement for Ancient Blessing (Forest Knight) when pet active
-- Fixed highlighting of the text of the website while dragging the pet cards
+- Highlighting of the text of the website while dragging the pet cards
+- A bug that prevented shared buffs to be calculated properly
 
 ## [1.5.0] - 2020-03-22
 ### Added
