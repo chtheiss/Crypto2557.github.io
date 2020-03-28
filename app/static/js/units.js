@@ -1,3 +1,21 @@
+function getUnits() {
+    return $.ajax({
+        type: "GET",
+        url: "https://endless-farming-backend.herokuapp.com/api/v1/units/",
+        dataType: "json",
+        async: true
+    });
+}
+
+function getPets() {
+    return $.ajax({
+        type: "GET",
+        url: "https://endless-farming-backend.herokuapp.com/api/v1/pets/origin/shn",
+        dataType: "json",
+        async: true
+    });
+}
+
 function change_progress_bar_value($bar, value, max) {
     let siz = (value / max * 100).toFixed(2);
     $bar.css("width", siz + "%")
@@ -43,56 +61,31 @@ function get_unit_input_values($input) {
 }
 
 function update_progress_bar($bar, $input) {
-
+    let linked_units = $bar.data("linked-units");
     let unit_values = get_unit_input_values($input);
     let multiplier = parseFloat($bar.attr("data-multiplier"));
-
-    let linked_units = $bar.data("linked-units");
-    let val_linked = 0;
-    let val_sr_linked = 0;
-    let additional_bars_to_update = [];
-
+    let max = $bar.attr("aria-valuemax");
+    let current_progress;
     if (linked_units != "") {
         linked_units = linked_units.toString().split(",").map(Number);
-        let linked_multiplier = ($bar.attr("data-linked-multiplier") == undefined) ?
-            Array(linked_units.length).fill().map(function() { return 1.0 }) :
-            $bar.attr("data-linked-multiplier").replace("]", "").replace("[", "").replace(" ", "").split(",").map(Number);
-        let i = 0;
-        for (let unit_id of linked_units) {
-            let $unit_cell = $("#unit-" + unit_id);
+        let linked_multiplier = $bar.attr("data-linked-multiplier").split(",").map(Number);
+        let val_linked = 0;
+        let val_sr_linked = 0;
+        let add_progress_bars;
+        for (i = 0; i < linked_units.length; i++) {
+            let $unit_cell = $("#unit-" + linked_units[i]);
             let other_unit_values = get_unit_input_values($unit_cell.find(".unit-input[type='number']").first());
             val_linked += linked_multiplier[i] * other_unit_values.nsr;
             val_sr_linked += linked_multiplier[i] * other_unit_values.sr;
-            let add_progress_bars = $unit_cell.find(
+            add_progress_bars = $unit_cell.find(
                     ".progress-bar[data-linked-units*=" + $input.data("unit") + "]")
-            for (let add_buff of add_progress_bars) {
-                additional_bars_to_update.push(add_buff);
-            }
-
-            i += 1;
         }
+        current_progress = multiplier * unit_values.nsr + unit_values.sr + (multiplier * val_linked + val_sr_linked);
+    } else {
+        current_progress = multiplier * unit_values.nsr + unit_values.sr;
     }
-    let current_progress = multiplier * unit_values.nsr + unit_values.sr + (multiplier * val_linked + val_sr_linked);
-    let max = $bar.attr("aria-valuemax");
     change_progress_bar_value($bar, current_progress, max);
-
-    for (let add_bar of additional_bars_to_update) {
-        let $add_bar = $(add_bar);
-        if ($add_bar.attr("data-linked-multiplier").replace("]", "").replace("[", "").replace(" ", "").split(",").map(Number).every(v => v === 1.0)) {
-            let _current_progress = current_progress;
-            change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax"));
-        } else {
-            if ($add_bar.parents(".unit-card").attr("id").replace("unit-", "") == linked_units[0] &&
-                $bar.parents(".unit-card, .ex-unit-card").find(".pet-image.five-star-pet").length > 0) {
-                let linked_multiplier = $add_bar.attr("data-linked-multiplier").replace("]", "").replace("[", "").replace(" ", "").split(",").map(Number);
-                let other_unit_values = get_unit_input_values($add_bar.parents(".unit-card, .ex-unit-card").find(".unit-input[type='number']").first());
-                let _current_progress = multiplier * other_unit_values.nsr + other_unit_values.sr + linked_multiplier[linked_multiplier.length - 1] * (multiplier * unit_values.nsr + unit_values.sr);
-                change_progress_bar_value($(add_bar), _current_progress, $(add_bar).attr("aria-valuemax"));
-            }
-        }
-    }
 }
-
 async function load_input_values($unit_input) {
     db = await idb.open('endless-farming-db');
     let tx = await db.transaction('units', 'readwrite');
@@ -114,27 +107,27 @@ async function load_input_values($unit_input) {
 
 function update_all_progress_bars_of_input($input) {
     let $unit_cell = $("#unit-" + $input.data("unit"));
+
     for (const bar of $unit_cell.find('[role="progressbar"]')) {
         update_progress_bar($(bar), $input);
     }
-}
 
-function getUnits() {
-    return $.ajax({
-        type: "GET",
-        url: "https://endless-farming-backend.herokuapp.com/api/v1/units/",
-        dataType: "json",
-        async: true
-    });
-}
-
-function getPets() {
-    return $.ajax({
-        type: "GET",
-        url: "https://endless-farming-backend.herokuapp.com/api/v1/pets/origin/shn",
-        dataType: "json",
-        async: true
-    });
+    all_unit_ids = []
+    for (const bar of $unit_cell.find('[role="progressbar"]')) {
+        let linked_units = $(bar).data("linked-units");
+        if (linked_units != "") {
+            linked_units = linked_units.toString().split(",").map(Number);
+            all_unit_ids.push(...linked_units)
+        }
+    }
+    for (let unit_card of $(all_unit_ids.map(id => "#unit-" + id).join())){
+        $unit_card = $(unit_card)
+        for (let bar of $unit_card.find('[role="progressbar"]')) {
+            for (let input of $unit_card.find(".unit-input[type='number']")) {
+                update_progress_bar($(bar), $(input));
+            }
+        }
+    }
 }
 
 function showAdditionalBuffProgressBars($unit_card) {
@@ -235,7 +228,8 @@ function changeBuffRequirement(buff, pet_buff, pets, petData, five_star_pet){
             }
         }
 
-        $(".unit-input[type='number']").bind('change', async function() {
+        $(".unit-input[type='number']").bind('change', async function(evt) {
+            evt.stopImmediatePropagation();
             $this = $(this);
             update_all_progress_bars_of_input($this);
             db = await idb.open('endless-farming-db')
