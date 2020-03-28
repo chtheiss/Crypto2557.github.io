@@ -60,7 +60,7 @@ def pets_hard():
 @bp.route("/pets_others/", methods=["GET"])
 @cache.cached(timeout=50)
 def pets_others():
-    origins = ["ss1", "ss2", "ss3", "ss4", "ss5", "greek", "zodiac", "event"]
+    origins = ["ss1", "ss2", "ss3", "ss4", "ss5", "greek", "zodiac", "event", "raid", "ob"]
 
     pets = {}
 

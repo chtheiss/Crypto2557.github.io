@@ -17,6 +17,16 @@
                             <div class="col-12">Skill 3: {{pet['skill3']}} [ <img class="artifact-image" src="../static/img/artifacts/{{pet['artifact']['_id']}}.png"> {{pet['artifact']['name']}} ]</div>
                         {% elif('couple' in pet.keys()) %}
                             <div class="col-12">Skill 3: {{pet['skill3'].split("[")[0]}} [ <img class="unit-image" src="../static/img/units/{{pet['couple']}}.png"> {{pet['skill3'].split("[")[1]}}</div>
+                        {% elif('ob' in pet['origin']) %}
+                            {% set skill_list = pet['skill3'].split('-') %}
+                            <div class="col-12">
+                            Skill 3:
+                            <ul>
+                                {% for skill in skill_list[1:] %}
+                                    <li>{{skill}}</li>
+                                {% endfor %}
+                            </ul>
+                           </div>
                         {% else %}
                             <div class="col-12">Skill 3: {{pet['skill3']}}</div>
                         {% endif %}

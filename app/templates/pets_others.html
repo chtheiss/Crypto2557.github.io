@@ -26,6 +26,12 @@
       <li class="nav-item">
         <a class="nav-link" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Event</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" id="raid-tab" data-toggle="tab" href="#raid" role="tab" aria-controls="raid" aria-selected="true">Raid</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ob-tab" data-toggle="tab" href="#ob" role="tab" aria-controls="ob" aria-selected="true">Outland</a>
+      </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="ss1" role="tabpanel" aria-labelledby="ss1-tab">
@@ -94,6 +100,24 @@
       <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
           <div class="pet-pets pet-table">
             {% for pet in pets["event"] %}
+            {% set key_id=pet["name"].replace(" ", "_") %}
+            {% set loop_index = loop.index %}
+            {% include 'cards/pet_card_other.html' %}
+            {% endfor %}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="raid" role="tabpanel" aria-labelledby="raid-tab">
+          <div class="pet-pets pet-table">
+            {% for pet in pets["raid"] %}
+            {% set key_id=pet["name"].replace(" ", "_") %}
+            {% set loop_index = loop.index %}
+            {% include 'cards/pet_card_other.html' %}
+            {% endfor %}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="ob" role="tabpanel" aria-labelledby="ob-tab">
+          <div class="pet-pets pet-table">
+            {% for pet in pets["ob"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
             {% include 'cards/pet_card_other.html' %}
