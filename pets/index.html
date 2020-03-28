@@ -80,6 +80,8 @@ Endless Farming
                 <div class="dropdown-menu animate slideIn">
                     <button id="import-button" class="btn dropdown-item">Import</button>
                     <button id="export-button" class="btn dropdown-item">Export</button>
+                    <div class="dropdown-divider"></div>
+                    <button id="delete-button" class="btn dropdown-item" data-toggle="modal" data-target="#delete-modal">Delete All Data</button>
                 </div>
             </li>
         </ul>
@@ -91,10 +93,30 @@ Endless Farming
             </a>
         </button>
         <a href="http://bit.ly/HarroweD" target="_blank" class="btn bordered" role="button">Pet Guide</a>
-        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.6</button>
-        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.7</button>
+        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal">My Stats</button>
     </div>
 </nav>
+
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure that you want to delete everything?
+            </div>
+                  <div class="modal-footer">
+        <button id="delete-yes" type="button" class="btn btn-success" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+      </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content bordered">
@@ -165,6 +187,10 @@ Endless Farming
                 <div class="row pt-1">
                     <div class="col-12">
                         <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>The option to delete all your data under the transfer data menu</li>
+                            </ul></li>
                             <li><b>Changed</b>
                             <ul>
                                 <li>The whole backend structure</li>

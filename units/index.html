@@ -80,6 +80,8 @@ Endless Farming
                 <div class="dropdown-menu animate slideIn">
                     <button id="import-button" class="btn dropdown-item">Import</button>
                     <button id="export-button" class="btn dropdown-item">Export</button>
+                    <div class="dropdown-divider"></div>
+                    <button id="delete-button" class="btn dropdown-item" data-toggle="modal" data-target="#delete-modal">Delete All Data</button>
                 </div>
             </li>
         </ul>
@@ -91,10 +93,30 @@ Endless Farming
             </a>
         </button>
         <a href="http://bit.ly/HarroweD" target="_blank" class="btn bordered" role="button">Pet Guide</a>
-        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.6</button>
-        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.7</button>
+        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal">My Stats</button>
     </div>
 </nav>
+
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure that you want to delete everything?
+            </div>
+                  <div class="modal-footer">
+        <button id="delete-yes" type="button" class="btn btn-success" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+      </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content bordered">
@@ -165,6 +187,10 @@ Endless Farming
                 <div class="row pt-1">
                     <div class="col-12">
                         <ul>
+                            <li><b>Added</b>
+                            <ul>
+                                <li>The option to delete all your data under the transfer data menu</li>
+                            </ul></li>
                             <li><b>Changed</b>
                             <ul>
                                 <li>The whole backend structure</li>
@@ -422,11 +448,11 @@ Endless Farming
   <div class="tab-pane fade show active" id="orc" role="tabpanel" aria-labelledby="orc-tab">
     <div class="unit-container hidden">
       
-        <div id="241" class="ex-unit-card bordered">
+        <div id="unit-241" class="ex-unit-card bordered">
     <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Wolf_Rider" data-toggle="modal" data-target="#Extreme_Wolf_Rider-modal">
         <img id="241-image" class="unit-image seven-star-unit" src="../static/img/units/241.png" data-toggle="tooltip" data-placement="top" title="">
     </a>
-    <input id="241-number" data-unit="241" data-unit-name="Extreme Wolf Rider" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <input id="241-number" data-unit="241" data-unit-name="Extreme Wolf Rider" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1"/>
     <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Fenris-modal">
         <img id="Fenris-image" class='pet-image' src="../static/img/pets/330.png" data-pet="Fenris" data-unit="241" data-toggle="tooltip" data-placement="top" title="Fenris">
     </span>
@@ -1000,11 +1026,11 @@ Endless Farming
   <div class="tab-pane fade" id="undead" role="tabpanel" aria-labelledby="undead-tab">
     <div class="unit-container hidden">
       
-        <div id="240" class="ex-unit-card bordered">
+        <div id="unit-240" class="ex-unit-card bordered">
     <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Death_Knight" data-toggle="modal" data-target="#Extreme_Death_Knight-modal">
         <img id="240-image" class="unit-image seven-star-unit" src="../static/img/units/240.png" data-toggle="tooltip" data-placement="top" title="">
     </a>
-    <input id="240-number" data-unit="240" data-unit-name="Extreme Death Knight" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <input id="240-number" data-unit="240" data-unit-name="Extreme Death Knight" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1"/>
     <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Dark_Unicorn-modal">
         <img id="Dark_Unicorn-image" class='pet-image' src="../static/img/pets/329.png" data-pet="Dark_Unicorn" data-unit="240" data-toggle="tooltip" data-placement="top" title="Dark Unicorn">
     </span>
@@ -1589,11 +1615,11 @@ Endless Farming
   <div class="tab-pane fade" id="elf" role="tabpanel" aria-labelledby="elf-tab">
     <div class="unit-container hidden">
       
-        <div id="239" class="ex-unit-card bordered">
+        <div id="unit-239" class="ex-unit-card bordered">
     <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Unicorn_Knight" data-toggle="modal" data-target="#Extreme_Unicorn_Knight-modal">
         <img id="239-image" class="unit-image seven-star-unit" src="../static/img/units/239.png" data-toggle="tooltip" data-placement="top" title="">
     </a>
-    <input id="239-number" data-unit="239" data-unit-name="Extreme Unicorn Knight" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <input id="239-number" data-unit="239" data-unit-name="Extreme Unicorn Knight" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1"/>
     <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Pegasus-modal">
         <img id="Pegasus-image" class='pet-image' src="../static/img/pets/328.png" data-pet="Pegasus" data-unit="239" data-toggle="tooltip" data-placement="top" title="Pegasus">
     </span>
@@ -2178,11 +2204,11 @@ Endless Farming
   <div class="tab-pane fade" id="human" role="tabpanel" aria-labelledby="human-tab">
     <div class="unit-container hidden">
       
-        <div id="238" class="ex-unit-card bordered">
+        <div id="unit-238" class="ex-unit-card bordered">
     <a class="unit-modal ex-unit-card-unit" href="#tab-Extreme_Fire_Mage" data-toggle="modal" data-target="#Extreme_Fire_Mage-modal">
         <img id="238-image" class="unit-image seven-star-unit" src="../static/img/units/238.png" data-toggle="tooltip" data-placement="top" title="">
     </a>
-    <input id="238-number" data-unit="238" data-unit-name="Extreme Fire Mage" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1" />
+    <input id="238-number" data-unit="238" data-unit-name="Extreme Fire Mage" class="unit-input ex-unit-card-input" type="number" min="0" value="0" max="10" step="1"/>
     <span class="pet-modal ex-unit-card-pet" data-toggle="modal" data-target="#Ragna-modal">
         <img id="Ragna-image" class='pet-image' src="../static/img/pets/327.png" data-pet="Ragna" data-unit="238" data-toggle="tooltip" data-placement="top" title="Ragna">
     </span>
