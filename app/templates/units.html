@@ -1,19 +1,72 @@
 {% extends 'base.html' %}
 {% block app_content %}
-<div class="unit-container hidden">
-    {% for key, unit in units.items() %}
-    {% set key_id=key.replace(" ", "_") %}
-    {% set max_buff=max_buffs[loop.index-1] %}
-    {% set loop_index = loop.index %}
-    {% if loop_index < 5 %}
-    	{% include 'ex_unit_card.html' %}
-    {% else %}
-      {% set max_add_buff=max_add_buffs[loop.index-1] %}
-      {% include 'unit_card.html' %}
-    {% endif %}
-
-    {% endfor %}
+<div class="unit-nav-container">
+    <ul class="nav nav-tabs unit-nav" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="orc-tab" data-toggle="tab" href="#orc" role="tab" aria-controls="orc" aria-selected="true">Orc</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="undead-tab" data-toggle="tab" href="#undead" role="tab" aria-controls="undead" aria-selected="false">Undead</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="elf-tab" data-toggle="tab" href="#elf" role="tab" aria-controls="elf" aria-selected="false">Elf</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="human-tab" data-toggle="tab" href="#human" role="tab" aria-controls="human" aria-selected="true">Human</a>
+      </li>
+    </ul>
 </div>
+{% macro unit_card(unit_sr, unit_jr) -%}
+    {% include 'cards/unit_card.html' %}
+{%- endmacro %}
+
+{% macro extreme_unit_card(unit, max_buff) -%}
+    {% include 'cards/ex_unit_card.html' %}
+{%- endmacro %}
+
+{% macro units_table(units_by_tribe) -%}
+    {% for unit in units_by_tribe[0] %}
+        {{extreme_unit_card(unit)}}
+    {% endfor %}
+    {% for unit_sr, unit_jr in units_by_tribe[1] %}
+        {{unit_card(unit_sr, unit_jr)}}
+    {% endfor %}
+{%- endmacro %}
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="orc" role="tabpanel" aria-labelledby="orc-tab">
+    <div class="unit-container hidden">
+      {{units_table(units_by_tribe[3])}}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="undead" role="tabpanel" aria-labelledby="undead-tab">
+    <div class="unit-container hidden">
+      {{units_table(units_by_tribe[2])}}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="elf" role="tabpanel" aria-labelledby="elf-tab">
+    <div class="unit-container hidden">
+      {{units_table(units_by_tribe[1])}}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="human" role="tabpanel" aria-labelledby="human-tab">
+    <div class="unit-container hidden">
+      {{units_table(units_by_tribe[0])}}
+    </div>
+  </div>
+</div>
+{% for tribe in units_by_tribe %}
+    {% for unit_sr, unit_jr in tribe[1] %}
+        {% set unit=unit_sr %}
+        {% include 'modals/_unit_modal.html' %}
+        {% set pet=unit_sr['pet'] %}
+        {% include 'modals/_pet_modal.html' %}
+    {% endfor %}
+    {% for unit in tribe[0] %}
+        {% include 'modals/_unit_modal.html' %}
+        {% set pet=unit['pet'] %}
+        {% include 'modals/_pet_modal.html' %}
+    {% endfor %}
+{% endfor %}
 {% endblock %}
 {% block scripts %}
 {{ super() }}

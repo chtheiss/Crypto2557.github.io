@@ -19,7 +19,7 @@
         {% set key_id=pet["name"].replace(" ", "_") %}
         {% set pet_name=pet["name"] %}
         {% set loop_index = loop.index %}
-        {% include 'pet_card.html' %}
+        {% include 'cards/pet_card.html' %}
         {% endfor %}
     </div>
     <footer class="page-footer pet-footer">
@@ -29,7 +29,7 @@
 {% for pet in pets %}
 {% set key_id=pet["name"].replace(" ", "_") %}
 {% set pet_name=pet["name"] %}
-{% include '_pet_modal.html' %}
+{% include 'modals/_pet_modal.html' %}
 {% endfor %}
 {% endblock %}
 {% block scripts %}

@@ -701,6 +701,10 @@ img.img-responsive{
 .five-star-pet{
     filter:drop-shadow(#1ca51c 1px 1px 10px);
 }
+.unit-nav-container{
+    display: grid;
+    justify-content: center;
+}
 /* Define desktop grid */
 .unit-container{
     display:grid;

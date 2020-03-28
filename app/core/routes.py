@@ -79,52 +79,44 @@ def pets_others():
     return render_template("pets_others.html", title="Other Pets", pets=pets)
 
 
-@bp.route("/units/", methods=["GET", "POST"])
+@bp.route("/units/", methods=["GET"])
+@cache.cached(timeout=50)
 def units():
-    units = get_json("units.json")
-    pets = get_json("pets.json")
+    units_by_tribe = []
 
-    number_of_rotations = 18
-
-    max_buffs = [
-        max(
-            [
-                len(unit["buffs"])
-                for key, unit in units.items()
-                if (unit["rotation"] == i)
-            ]
+    for tribe in range(4):
+        url = os.path.join(Config.API_URL, f"units/tribe/{tribe}")
+        response = urllib.request.urlopen(url)
+        data = json.loads(response.read())
+        units_tribe = data["data"]
+        units_tribe_seven_star = [
+            unit
+            for unit in units_tribe
+            if unit["stars"] == 7 and unit["evolveGem"] == -1
+        ]
+        units_tribe_six_star = [
+            unit
+            for unit in units_tribe
+            if unit["stars"] == 6 and unit["evolveGem"] == -1
+        ]
+        units_tribe_five_star = [
+            unit
+            for unit in units_tribe
+            if unit["stars"] == 5 and unit["evolveGem"] == 2800
+        ]
+        units_tribe_six_star.sort(key=lambda d: d["rotation"], reverse=True)
+        units_tribe_five_star.sort(key=lambda d: d["rotation"], reverse=True)
+        units_by_tribe.append(
+            (
+                units_tribe_seven_star,
+                list(zip(units_tribe_six_star, units_tribe_five_star)),
+            )
         )
-        for i in range(1, number_of_rotations + 1)
-    ]
-    max_buffs.reverse()
-    max_buffs = np.repeat(
-        np.array(max_buffs), [4 for _ in range(number_of_rotations)], axis=0
-    )
-    max_add_buffs = [
-        max(
-            [
-                len(pets[unit["pet"]]["additional_buffs"])
-                for key, unit in units.items()
-                if (unit["rotation"] == i)
-            ]
-        )
-        for i in range(1, number_of_rotations + 1)
-    ]
-    max_add_buffs.reverse()
-    max_add_buffs = np.repeat(
-        np.array(max_add_buffs), [4 for _ in range(number_of_rotations)], axis=0
-    )
-    return render_template(
-        "units.html",
-        title="Units",
-        units=units,
-        pets=pets,
-        max_buffs=max_buffs,
-        max_add_buffs=max_add_buffs,
-    )
+
+    return render_template("units.html", title="Units", units_by_tribe=units_by_tribe)
 
 
-@bp.route("/tickets/", methods=["GET", "POST"])
+@bp.route("/tickets/", methods=["GET"])
 @cache.cached(timeout=50)
 def tickets():
     url = os.path.join(Config.API_URL, "tickets")
@@ -135,31 +127,7 @@ def tickets():
     return render_template("tickets.html", title="Tickets", tickets=tickets)
 
 
-@bp.route("/meta_progression/", methods=["GET", "POST"])
+@bp.route("/meta_progression/", methods=["GET"])
 @cache.cached(timeout=50)
 def meta_progression():
     return render_template("meta_progression.html")
-
-
-@bp.route("/static/json/pets/", methods=["GET", "POST"])
-def get_pets():
-    pets = get_json("pets.json")
-    return jsonify(pets)
-
-
-@bp.route("/static/json/units/", methods=["GET", "POST"])
-def get_units():
-    units = get_json("units.json")
-    return jsonify(units)
-
-
-@bp.route("/static/json/pet_priority.json", methods=["GET", "POST"])
-def get_priority():
-    pet_priority = get_json("pet_priority.json")
-    return jsonify(priority=pet_priority)
-
-
-@bp.route("/static/json/hard_sh_pet_priority.json", methods=["GET", "POST"])
-def get_hard_sh_priority():
-    pet_priority = get_json("hard_sh_pet_priority.json")
-    return jsonify(priority=pet_priority)

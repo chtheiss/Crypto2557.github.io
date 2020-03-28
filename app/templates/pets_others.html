@@ -33,7 +33,7 @@
             {% for pet in pets["ss1"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -42,7 +42,7 @@
             {% for pet in pets["ss2"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -51,7 +51,7 @@
             {% for pet in pets["ss3"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -60,7 +60,7 @@
             {% for pet in pets["ss4"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -69,7 +69,7 @@
             {% for pet in pets["ss5"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -78,7 +78,7 @@
             {% for pet in pets["greek"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -87,7 +87,7 @@
             {% for pet in pets["zodiac"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -96,7 +96,7 @@
             {% for pet in pets["event"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -106,7 +106,7 @@
   {% for pet in origin %}
     {% set key_id=pet["name"].replace(" ", "_") %}
     {% set pet_name=pet["name"] %}
-    {% include '_pet_modal.html' %}
+    {% include 'modals/_pet_modal.html' %}
   {% endfor %}
 {% endfor %}
 {% endblock %}
