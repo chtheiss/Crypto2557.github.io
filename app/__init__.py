@@ -6,7 +6,6 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
-from flask_jsglue import JSGlue
 from flask_caching import Cache
 
 from app.config import Config
@@ -21,7 +20,6 @@ def create_app(config_class=Config):
 
     pages = FlatPages(app)
     freezer = Freezer(app)
-    jsglue = JSGlue(app)
     bootstrap.init_app(app)
     cache.init_app(app)
 
@@ -46,4 +44,4 @@ def create_app(config_class=Config):
         app.logger.setLevel(logging.INFO)
         app.logger.info("Endless farming startup")
 
-    return app, freezer, pages, jsglue
+    return app, freezer, pages

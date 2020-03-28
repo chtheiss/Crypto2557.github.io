@@ -1,7 +1,7 @@
 from app import create_app
 from livereload import Server
 
-app, freezer, pages, _ = create_app()
+app, freezer, pages = create_app()
 app.debug = True
 
 if __name__ == "__main__":

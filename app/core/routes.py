@@ -9,14 +9,8 @@ from app import cache
 
 bp = Blueprint("core", __name__)
 
-
-def get_json(filename):
-    absolute_filename = os.path.join(current_app.root_path, "static/json", filename)
-    with open(absolute_filename) as file:
-        return json.load(file)
-
-
 @bp.route("/", methods=["GET"])
+@cache.cached(timeout=50)
 def index():
     return render_template("index.html")
 
