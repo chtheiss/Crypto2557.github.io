@@ -2,6 +2,7 @@
 
 ## Future
 ### Added
+- Raid and outland battle pets
 - The option to delete all your data under the transfer data menu
 
 ### Changed
