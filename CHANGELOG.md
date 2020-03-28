@@ -1,6 +1,9 @@
 # Changelog
 
 ## Future
+### Added
+- The option to delete all your data under the transfer data menu
+
 ### Changed
 - The whole backend structure
 - The layout of the unit page to split the units by tribe
