@@ -30,7 +30,6 @@ Endless Farming
         ga('send', 'pageview');
     </script>
 <!-- End Google Analytics -->
-<script src="/jsglue.js" type="text/javascript"></script>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,7 +91,7 @@ Endless Farming
             </a>
         </button>
         <a href="http://bit.ly/HarroweD" target="_blank" class="btn bordered" role="button">Pet Guide</a>
-        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.4</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.5</button>
         <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
     </div>
 </nav>
@@ -159,13 +158,18 @@ Endless Farming
             </div>
             <div class="modal-body version-modal">
                 <div class="row version-underline">
-                    <div class="col-1 version-header">1.5.1</div>
+                    <div class="col-1 version-header">Future</div>
                     <div class="col"></div>
-                    <div class="col-3 version-header">2020-03-25</div>
+                    <div class="col-3 version-header">TBA</div>
                 </div>
                 <div class="row pt-1">
                     <div class="col-12">
                         <ul>
+                            <li><b>Changed</b>
+                            <ul>
+                                <li>The whole backend structure</li>
+                                <li>The layout of the unit page to split the units by tribe</li>
+                            </ul></li>
                             <li><b>Fixed</b>
                             <ul>
                                 <li>Requirement for Ancient Blessing (Forest Knight) when pet is active</li>
@@ -4304,6 +4308,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/161.png">  Senior Hippogriff ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases the basic speed of the game by 4%, and increases the attack range and movement speed by 7%. </li>
+                                    
+                                    <li>When first appearing, helps ally units use skill attacks faster. </li>
+                                    
+                                    <li>Increases the attack speed and attack power of all units by 6%. </li>
+                                    
+                                    <li>Legend of Ancient Forest Awakening: Even if Hippogriff is in Time Shop, Elf&#39;s Secret Skill and the Legend of Ancient Forest are applied. Increases by 1% for each 5-star and 2.5% for each 6-star. (However, the increase of Elf&#39;s Secret Skill by Hippogriffs cannot exceed 30%, and the increase of the Legend of Ancient Forest cannot exceed 50%.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4331,6 +4349,16 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/97.png">  Senior Fairy ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Even if Fairy is at the Time Shop, chance for Elf&#39;s secret skill to be used increases. (Increases by 1% per 5-star and 2.5% per 6-star. When in the Time Shop, the max Elf&#39;s secret skill enhancement by Fairy is 30%.)</li>
+                                    
+                                    <li>Upon first appearing, greatly increases movement speed of all ally units and casts a barrier that defends against 99% of damage for a short period.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4360,6 +4388,18 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/95.png">  Senior Priest ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Even if the Priest is at the Time Shop, 5 times speed buff starts every 10th floor. ( 5-star 1%, 6-star 2.5% ) </li>
+                                    
+                                    <li>The chance for 5 times speed buff by Priests in the Time Shop cannot exceed 30%. </li>
+                                    
+                                    <li>Even when passing 10 floors with elves&#39; Secret Skill (from 9th to 11th), the 5 times speed buff can start.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4387,6 +4427,18 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/101.png">  Senior Sorcerer ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Active skill (Explosion Shaking Heaven and Earth, Tower of Babel, Skyward Sword) efficiency improves. (Limit for damage to enemies has been upgraded. Basic 200 stages increasedâ€” increases 15 levels per 5-star and 30 levels per 6-starâ€”up to a +900 stage limit. Even applies if Sorcerer is in the Time Shop.)</li>
+                                    
+                                    <li>Upon first appearing, cancels stun, knockback, freeze, mutation (into rabbits) of all ally units, and becomes immune for a short period. </li>
+                                    
+                                    <li>Increases Totem time by 50% and cancels mutation.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4416,6 +4468,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/201.png">  Senior Royal Druid ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic speed of the game by 7%.</li>
+                                    
+                                    <li>Increases self movement speed by 9% and attack distance by 10%.</li>
+                                    
+                                    <li>Increases movement speed and attack distance of all soldiers by 6% and attack power by 8%.</li>
+                                    
+                                    <li>Damage and critical damage chance against enemy crystal increased greatly.</li>
+                                    
+                                    <li>[Elf Space-Time Skill]: Even when Royal Druid is in the timeshop, elf space-time skill is applied. (5-star gives 2% probability and 6-star give 4%), but maximum probability of Space-Time Skill from timeshop can not exceed 90%.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4443,6 +4511,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/173.png">  Senior Frost Demon ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases attack power, attack range and critical strike rate of all ally units by 3%.</li>
+                                    
+                                    <li>Active skill efficiency increases even when Frost Demon is in Time Shop. ( However, when in Time shop, the efficiency is increased by 10 stages for each 5-star Frost Demon and 20 stages for each 6 star Frost Demon. Active Skill enhancements through Frost Demon cannot exceed a maximum of 480 stages. )</li>
+                                    
+                                    <li>[Tribe Fortification] is applied even when Frost Demon is in the Time Shop, and can be increased up to 250 for orc units.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4472,6 +4554,24 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/197.png">  Senior War Bear Rider ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases self movement speed and attack power by 10%.</li>
+                                    
+                                    <li>Increases movement speed by 7% and attack speed by 9% for all units.</li>
+                                    
+                                    <li>Attack power and critical damage probability increases greatly against enemy crystal.</li>
+                                    
+                                    <li>[Frenzy] Skill Enhancement: Frenzy damage per attack increases from 3% to 4%, and limit increases from 300% to 400%.</li>
+                                    
+                                    <li>Even if a War Bear rider is in the shop of time, the efficiency of active skill increases. (However, in the shop of time, the efficiency increases by 20 stages per 5-star unit, 40 stages per 6-star unit, and active skill enhancement by War Bear Riders can not exceed 1000 stages.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4499,6 +4599,28 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/229.png">  Senior Storm Warrior ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack speed by 9%.</li>
+                                    
+                                    <li>Increases the movement speed of all units by 7%, and the attack speed of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Tribe Friendliness for Orc can be increased up to 1,500 by Storm Warrior.</li>
+                                    
+                                    <li>Increase Efficiency for Token Enhancement (Orc): The efficiency for Token Enhancement (Orc) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.</li>
+                                    
+                                    <li>Even if the Storm Warrior is in Time Shop, efficiency of active skill increases. (However, if the Storm Warrior is in Time Shop, efficiency increased by 10 stages increased for each 5-star and 20 stages for each 6-star. The efficiency increased by Storm Warriors cannot exceed the maximum of 480 stages.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4528,6 +4650,24 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/205.png">  Senior Battle Hornist ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic speed of the game by 7%.</li>
+                                    
+                                    <li>Increases self movement speed and attack distance by 10%.</li>
+                                    
+                                    <li>Increases movement speed and attack distance of all soldiers by 6% and critical damage by 5%.</li>
+                                    
+                                    <li>Damage and critical damage chance against enemy crystal increased greatly.</li>
+                                    
+                                    <li>[Automatic Skill Efficiency Breakthrough]: Increases maximum value of automatic skill cooldown reduction to 30%.</li>
+                                    
+                                    <li>[Enhanced Active Skill Efficiency]: Increases efficiency of Active Skills. (Raise the limit by 10 floors per 5-star Unit, 20 floors per 6-star unit, up to +300, works from timeshop.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4555,6 +4695,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/187.png">  Senior Crow Knight ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 8%, and its attack range by 10%. </li>
+                                    
+                                    <li>Increases the movement speed and attack power of all units by 5%, and the attack range of all units by 6%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Increases darkness resistance by 75 for each Crow Knight, and 150 for each Senior Crow Knight. Also increases max darkness resistance through Crown Knights from 2,000 to 4,000</li>
+                                    
+                                    <li>[ Limit Break of Undead Token ] : The undead tribe friendliness can be increased up to 150% by undead unit seals.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4584,6 +4742,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/171.png">  Senior Dark Elf ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases game speed by 5% and increases its attack speed and movement speed by 7%.</li>
+                                    
+                                    <li>Increases attack range, movement speed and critical damage of all units by 5%.</li>
+                                    
+                                    <li>[Tribe Fortification] is applied even when Dark Elf is in Time Shop, and can be increased up to 250 for undead units.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4611,6 +4783,26 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/221.png">  Senior Naga Knight ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases the game speed by 7%.</li>
+                                    
+                                    <li>Increases movement speed of self by 10% and attack range by 9%.</li>
+                                    
+                                    <li>Increases the movement speed and attack range of all units by 6% and attack by 8%.</li>
+                                    
+                                    <li>Attack and critical chance towards enemy Crystal greatly increases.</li>
+                                    
+                                    <li>Senior Instructor(Orc) Limit Break : The production speed of Orc Guild Units affected by the Senior Instructor(Orc) increase up to 200%.</li>
+                                    
+                                    <li>Pact of the Grand Chief Limit Break : The max value of the effects of Pact of the Grand Chief increases from 150 to 250.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4640,6 +4832,26 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/237.png">  Senior Frozen Witch ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 9%, and its attack power by 10%.</li>
+                                    
+                                    <li>Increases the attack range of all units by 7%, and the movement speed of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Weaken Crystal (Orc) Limit Break : The reduction of enemy&#39;s crystal HP due to Weaken Crystal (Orc) is increased up to 30%.</li>
+                                    
+                                    <li>Pact of the Grand Chief Limit Break : The max value of the effects of Pact of the Grand Chief by Frozen Witch increases from 150 to 250.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4667,6 +4879,26 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/231.png">  Senior Flame Sibyl ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack range by 9%.</li>
+                                    
+                                    <li>Increases the movement speed of all units by 7%, and the attack speed of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Weaken Crystal (Human) Limit Break : The reduction of enemy&#39;s crystal HP due to Weaken Crystal (Human) is increased up to 30%.</li>
+                                    
+                                    <li>Might of Fire Limit Break : The max value of the effects of Might of Fire by Flame Sibyl increases from 150 to 250.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4696,6 +4928,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/183.png">  Senior Musketress ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 8%, and its attack range by 10%. </li>
+                                    
+                                    <li>Increases the attack range and the critical damage of all units by 5%, and the movement speed of all units by 6%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>[ Limit Break of Human Token ] : The human tribe friendliness can be increased up to 150% by human unit seals.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4723,6 +4971,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/195.png">  Senior Shadow Knight ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic speed of the game by 7%.</li>
+                                    
+                                    <li>Increases self movement speed by 10% and attack distance by 9%.</li>
+                                    
+                                    <li>Increases movement speed by 7% and critical damage by 9% for all units.</li>
+                                    
+                                    <li>Attack power and critical damage probability increases greatly against enemy crystal.</li>
+                                    
+                                    <li>When put in revival team, medal buff increases by 70%. (Increases bonus medals gained from revival from 30% to 100%)</li>
+                                    
+                                    <li>[Mark of Death] Skill Enhancement: Enemy with mark of death applied receives 30% additional damage. (For raid boss, there is a 30% chance of recieving 7% additional damage.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4752,6 +5018,16 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/99.png">  Senior Dark Archer ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Even if Dark Archer is in the Time Shop, revives at the floor corresponding to #% of the current floor. (When in Time Shop, 2.5% bonus per 6-star and 1% per 5-star is applied. However, max revival floor buff cannot exceed 60%.) </li>
+                                    
+                                    <li>Increases chance of Undead&#39;s secret skill. (Increased by 1% per 6-star for a maximum of 30%, and is applied even when in Time Shop.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4779,6 +5055,26 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/217.png">  Senior High Fairy ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed and attack power by 10%.</li>
+                                    
+                                    <li>Increases the movement speed and the attack range of all units by 6%, and the critical damage of all units by 5%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Senior Instructor(Elf) Limit Break : The production speed of Elf Guild Units affected by the Senior Instructor(Elf) increase up to 200%.</li>
+                                    
+                                    <li>World Tree Blessing Limit Break : The max value of the World Tree Energy increases from 900 to 1,200.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4808,6 +5104,26 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/137.png">  Senior Sylphid ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, movement speed and attack speed of allies increase significantly for a certain period of time. This also delays enemy skill casting.</li>
+                                    
+                                    <li>Basic game speed increases by 4%.</li>
+                                    
+                                    <li>Unit&#39;s attack range and movement speed increases by 5%, and attack power, attack range, and critical hit rate of all units increase by 5%.</li>
+                                    
+                                    <li>Does not freeze due to cold attacks.</li>
+                                    
+                                    <li>Normal attacks paralyze enemies for a longer time, and they ricochet to attack more enemies.</li>
+                                    
+                                    <li>Increases skill attack duration.</li>
+                                    
+                                    <li>Inner Passion limit break: Inner passion max increases by 5 per Senior Sylphid. (However, this value cannot exceed 50.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4835,6 +5151,26 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/135.png">  Senior Steam Punk ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, movement speed and attack speed of allies increase significantly for a certain period of time.</li>
+                                    
+                                    <li>Basic game speed increases by 4%.</li>
+                                    
+                                    <li>Unit&#39;s attack range and movement speed increases by 5%, and attack power, critical hit rate, and critical damage of all units increase by 5%.</li>
+                                    
+                                    <li>Significantly increases normal attack power and skill attack speed.</li>
+                                    
+                                    <li>Upon dying, stuns/paralyzes nearby enemies and inflicts major damage.</li>
+                                    
+                                    <li>Immune to stun and is not interrupted by enemy attacks.</li>
+                                    
+                                    <li>Inner Passion limit break: Inner passion max increases by 5 per Senior Steam Punk. (However, this value cannot exceed 50.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4864,6 +5200,24 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/139.png">  Senior Medusa ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, significantly increases movement speed and attack speed of ally units for a certain period of time, while casting physical shield to become immune against physical attacks.</li>
+                                    
+                                    <li>Increases basic speed of game by 4%.</li>
+                                    
+                                    <li>Increases attack range and movement speed by 5%, and increases all units&#39; attack range, movement speed, and critical hit rate by 5%.</li>
+                                    
+                                    <li>Does not become stunned and is not interrupted by enemy attacks.</li>
+                                    
+                                    <li>Curse duration of arrow attacks increases.</li>
+                                    
+                                    <li>Inner Passion limit break: Inner passion max increases by 5 per Senior Medusa . (However, this value cannot exceed 50.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4891,6 +5245,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/141.png">  Senior Naga ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, significantly increases movement speed and attack speed of ally units for a certain period of time, while casting shield to become immune against magic attacks.</li>
+                                    
+                                    <li>Increases basic speed of game by 4%.</li>
+                                    
+                                    <li>Increases attack range and movement speed by 5%, and increases all units&#39; attack range, movement speed, and critical hit rate by 5%.</li>
+                                    
+                                    <li>significantly increases attack power and critical hit rate against enemy crystals.</li>
+                                    
+                                    <li>Does not freeze from frost attacks.</li>
+                                    
+                                    <li>Inner Passion limit break: Inner passion max increases by 5 per Senior Naga. (However, this value cannot exceed 50.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4920,6 +5292,26 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/219.png">  Senior Dark Priestess ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack speed by 10%.</li>
+                                    
+                                    <li>Increases the movement speed of all units by 7%, and the attack speed of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Senior Instructor(Undead) Limit Break : The production speed of Undead Guild Units affected by the Senior Instructor(Undead) increase up to 200%.</li>
+                                    
+                                    <li>Dark Lord Blessing Limit Break : There is a 1% chance for each 5-star, and 2.5% chance for each 6-star Dark Priestess that Dark Lord Blessing activates. In case 10 stages are being skipped using the Elf&#39;s Secret Skill, 5x game speed buff can still be activated on the 9th and 11th floor. (However, the chance to activate 5x game speed buff from the Dark Priestesses in Time Shop cannot exceed 30%.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -4947,6 +5339,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/175.png">  Senior Winged Knight ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 6% and increases its movement speed and attack power by 10%.</li>
+                                    
+                                    <li>Increases movement speed and attack power of all units by 6%.</li>
+                                    
+                                    <li>Tribe Friendliness for Human can be increased up to 600 by Winged Knight.</li>
+                                    
+                                    <li>[Wings of Zephyrus] is activated even if Winged Knight is in Time Shop. (The effect of [Wings of Zephyrus] is increased by 0.02 for each 5-star Winged Knight in Time shop and 0.04 for each 6-star. And this effect does not exceed 1.2.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -4976,6 +5384,26 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/215.png">  Senior Salamander Rider ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 9%, and its attack range by 10%.</li>
+                                    
+                                    <li>Increases the attack range of all units by 7%, and the movement speed of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Senior Instructor(Human) Limit Break : The production speed of Human Guild Units affected by the Senior Instructor(Human) increase up to 200%.</li>
+                                    
+                                    <li>Raging Dash Limit Break : [Raging Dash] will be activated even when Salamander Rider is in Time Shop. The effects stack at 0.25% for each 5-star, and 0.5% for each 6-star. (However, the effects of [Raging Dash] cannot exceed over 10%.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5003,6 +5431,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/105.png">  Senior Aladdin ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Even if Aladdin is at the Time Shop, this has an increased chance to get 10x gold. (Basic 10%, +2% per 5-star, +5% per 6-star) when using human secret skills.</li>
+                                    
+                                    <li>The five lowest quests from those most recently opened is instantly cleared by human&#39;s secret skill. (Example: When the last quest is number 20, quests between 16 and 20 are cleared instantly.)</li>
+                                    
+                                    <li>Automatically opens golden treasure chests containing gold at a certain percentage. (Basic 10%, +2% per 5-star and +5% per 6-star)</li>
+                                    
+                                    <li>Upon first appearing, helps ally unit perform skill attacks faster.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5032,6 +5474,26 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/193.png">  Senior Astral Captain ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases self movement speed by 10% and attack power by 10%.</li>
+                                    
+                                    <li>Increases attack distance and critical damage by 6% and movement speed by 5% for all units.</li>
+                                    
+                                    <li>Attack power and critical damage probability increases greatly against enemy crystal.</li>
+                                    
+                                    <li>Can not be stunned.</li>
+                                    
+                                    <li>[Laser Beam] Additional Summon: Push enemy back, stun them and summon another AI .</li>
+                                    
+                                    <li>The maximum value of [Airship VIP] can be increased up to 30%. In other words, it can reduce the cost of purchasing fuel by up to 30%</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5059,6 +5521,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/189.png">  Senior Rangda ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 8%, and its attack range by 10%. </li>
+                                    
+                                    <li>Increases the movement speed and attack range of all units by 5%, and the attack power of all units by 8%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>[ Limit Break of Orc Token ] : The orc tribe friendliness can be increased up to 150% by orc unit seals.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5088,6 +5566,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/185.png">  Senior Elf Sage ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 8%, and its attack range by 10%. </li>
+                                    
+                                    <li>Increases the attack range of all units by 7%, and the movement speed of all units by 8%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>[ Limit Break of Elf Token ] : The elf tribe friendliness can be increased up to 150% by elf unit seals.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5115,6 +5609,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/179.png">  Senior Abyss Mage ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that absorbs 99% of the damage.</li>
+                                    
+                                    <li>Increases basic game speed by 7% and increases its attack range by 10%, and its movement speed by 7%.</li>
+                                    
+                                    <li>Increases attack range and movement speed of all units by 7%.</li>
+                                    
+                                    <li>Tribe Friendliness for Undead can be increased up to 600 by Abyss Mage.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5144,6 +5652,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/199.png">  Senior Paladin ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic speed of the game by 7%.</li>
+                                    
+                                    <li>Increases self movement speed and attack speed by 10%.</li>
+                                    
+                                    <li>Increases movement speed of all soldiers by 7% and critical damage by 9%.</li>
+                                    
+                                    <li>Damage and critical damage chance against enemy crystal increased greatly.</li>
+                                    
+                                    <li>[Spirit Awakening 2 Limit Break]: Increases value by 5 per 6-star Paladin, up to 25.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5171,6 +5695,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/203.png">  Senior Skeleton Master ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic speed of the game by 7%.</li>
+                                    
+                                    <li>Increases self movement speed and attack speed by 10%.</li>
+                                    
+                                    <li>Increases movement speed of all soldiers by 7% and critical damage by 9%.</li>
+                                    
+                                    <li>Damage and critical damage chance against enemy crystal increased greatly.</li>
+                                    
+                                    <li>[Spirit Awakening 2 Limit Break]: Increases value by 5 per 6-star Skeleton Master, up to 25.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5200,6 +5740,26 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/223.png">  Senior Fire Ranger ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack speed by 10%.</li>
+                                    
+                                    <li>Increases the movement speed and the attack range of all units by 6%, and the critical damage of all units by 5%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Tribe Friendliness for Human can be increased up to 1,500 by Fire Ranger.</li>
+                                    
+                                    <li>Increase Efficiency for Token Enhancement (Human): The efficiency for Token Enhancement (Human) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5227,6 +5787,26 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/227.png">  Senior Devil Mage ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases movement speed of self by 10% and attack range by 10%.</li>
+                                    
+                                    <li>Increases the movement speed and attack range of all units by 6% and attack by 8%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Tribe Friendliness for Undead can be increased up to 1,500 by Devil Mage.</li>
+                                    
+                                    <li>Increase Efficiency for Token Enhancement (Undead): The efficiency for Token Enhancement (Undead) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5256,6 +5836,28 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/225.png">  Senior Forest Knight ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack power by 10%.</li>
+                                    
+                                    <li>Increases the movement speed of all units by 7%, and the critical damage of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Tribe Friendliness for Elf can be increased up to 1,500 by Forest Knight.</li>
+                                    
+                                    <li>Increase Efficiency for Token Enhancement (Elf): The efficiency for Token Enhancement (Elf) is increased. Increase Tribe Friendliness by 40 for each 5-star, 100 for each 6-star. Effects are applied even when in Time Shop.</li>
+                                    
+                                    <li>Ancient Blessings increase by 75 for each Forest Knight and by 150 for each Senior Forest Knight. The MAX amount of Ancient Blessings from Forest Knight increased from 2,000 to 4,000.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5283,6 +5885,26 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/235.png">  Senior Skeleton General ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed and attack power by 10%.</li>
+                                    
+                                    <li>Increases the movement speed of all units by 7%, and the critical damage of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Weaken Crystal (Undead) Limit Break : The reduction of enemy&#39;s crystal HP due to Weaken Crystal (Undead) is increased up to 30%.</li>
+                                    
+                                    <li>Additional Attack (Skeleton Warrior) Limit Break : the chance of the Skeleton Warrior making an additional cast will increase up to 25% and the chance of making an additional Skill attack increases up to 20%.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5312,6 +5934,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/177.png">  Senior Windwalker ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 8% and increases its attack speed and movement speed by 10%.</li>
+                                    
+                                    <li>Increases attack range, movement speed and critical damage of all units by 7%.</li>
+                                    
+                                    <li>Tribe Friendliness for Elf can be increased up to 600 by Windwalker.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5339,6 +5975,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/181.png">  Senior Siren ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and it makes the Skill Attack faster.</li>
+                                    
+                                    <li>Increases basic game speed by 7% and increases its attack range and movement speed by 7%.</li>
+                                    
+                                    <li>Increases attack range, movement speed and critical damage of all units by 5%.</li>
+                                    
+                                    <li>Tribe Friendliness for Orc can be increased up to 600 by Siren.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5368,6 +6018,24 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/191.png">  Senior Crimson Hawk Rider ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases self movement speed by 9% and attack distance by 10%.</li>
+                                    
+                                    <li>Increases movement speed and attack distance by 6% and critical damage by 5% for all units.</li>
+                                    
+                                    <li>Attack power and critical damage probability increased greatly against enemy crystal.</li>
+                                    
+                                    <li>Become invisible (cloaking), silently go into enemy base and destroy the base.</li>
+                                    
+                                    <li>Even if the Crimson Hawk Rider is in the shop of time, the surprise attack is triggered with a 1% chance for 5-star unit and a 3% chance for 6-star unit. However, the probability of surprise attack can not exceed 60%</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5395,6 +6063,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/103.png">  Senior Battle Drummer ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases attack range, critical damage, and critical rate of all units by 5%.</li>
+                                    
+                                    <li>Increases movement speed and attack speed of all units by 3%.</li>
+                                    
+                                    <li>On first appearing, increases the movement and attack speed of all ally units and randomly casts physical immunity shield or magic immunity shield.</li>
+                                    
+                                    <li>When included in a team, medal buff increases by 30%. (Special skill 6 raises 10% to 40%)</li>
+                                    
+                                    <li>Max medal buff increases by transcend units in Time Shop.(Every 5-star Battle Drummer increases by 10% and 6-star increases by 20%. =&gt; For example, when there are seven 5-star and ten 6-star Battle Drummers, the max medal buff of transcend units in Time Shop increases from 1,000% to 1,270%.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5424,6 +6108,26 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/233.png">  Senior Mystic Archer ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack speed by 10%.</li>
+                                    
+                                    <li>Increases the attack range and the critical damage of all units by 6%, and the movement speed of all units by 5%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Weaken Crystal (Elf) Limit Break : The reduction of enemy&#39;s crystal HP due to Weaken Crystal (Elf) is increased up to 30%.</li>
+                                    
+                                    <li>Additional Attack (High Elf Archer) Limit Break : the chance of the High Elf Archer making an additional cast will increase up to 40% and the chance of making an additional Skill attack increases up to 30%.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5451,6 +6155,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/143.png">  Senior Valkyrie ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases game speed by 4%.</li>
+                                    
+                                    <li>Increases the attack range and movement speed by 7%, and increases all units&#39; attack power, critical damage, and critical rate by 5%.</li>
+                                    
+                                    <li>Affected less by terrain at stage 10,000 and higher.</li>
+                                    
+                                    <li>When first appearing, the movement speed and attack speed is increased for a certain amount of time, and casts a powerful Valkyrie buff that increases the attack power, movement speed, and attack speed of all nearby units for a certain amount of time.</li>
+                                    
+                                    <li>[Hero Sword] Strengthen skills: Every 5 star Valkyrie raises attack power by 5% and every 6 star Valkyrie raises attack power by 10% with [Hero Sword]. (Effective even if Valkyrie is at the Time Shop and can increase up to 100%. [Hero Sword]: Skill that increases ally unit&#39;s attack power for a certain amount of time during raid)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5480,6 +6200,24 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/145.png">  Senior Sword Dancer ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases game speed by 4%.</li>
+                                    
+                                    <li>Increases the attack range and movement speed by 7%, and increases all units&#39; attack power, movement speed, and critical damage rate by 5%.</li>
+                                    
+                                    <li>When first appearing, the movement speed and attack speed is increased for a certain amount of time.</li>
+                                    
+                                    <li>Affected less by terrain at stage 10,000 and higher.</li>
+                                    
+                                    <li>Quickly teleports to an attack target (unlimited dash). </li>
+                                    
+                                    <li>[Fast Sword] Strengthen skills: Every 5 star Sword Dancer raises attack speed by 5% and every 6 star Sword Dancer raises attack speed by 10% with [Fast Sword]. (Effective even if Sword Dancer is at the Time Shop and can increase up to 100%. [Fast Sword]: Skill that increases ally unit&#39;s attack speed for a certain amount of time during raid.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5507,6 +6245,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/149.png">  Senior Ice Spirit ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases the basic speed of the game by 4%. </li>
+                                    
+                                    <li>Increases the attack range and movement speed by 7%, and increases all units&#39; attack speed, movement speed, and critical hit damage by 5%. </li>
+                                    
+                                    <li>Affected less by terrain at stage 10,000 and higher. </li>
+                                    
+                                    <li>When first appearing, increases movement speed and attack speed of ally units for a certain period of time, while casting magic shield to become immune against magic attacks. </li>
+                                    
+                                    <li>The ability to distort space increases, and transports the enemies farther away. </li>
+                                    
+                                    <li>[Fast Shoes] Strengthen skills: Every 5 star Ice Spirit raises movement speed by 5% and every 6 star Ice Spirit raises movement speed by 10% with [Fast Shoes]. (Effective even if Ice Spirit is at the Time Shop and can increase up to 100%.) [Fast Shoes]: Skill that increases ally unit&#39;s movement speed for a certain amount of time during raid.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5536,6 +6292,28 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/207.png">  Senior Sindbad ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed and attack power by 10%.</li>
+                                    
+                                    <li>Increases the movement speed and the attack range of all units by 6%, and the critical damage of all units by 5%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Battle Cry (Human) Limit Break: Effect of Battle Cry (Human) increased from 30% to 40%.</li>
+                                    
+                                    <li>[Heros Sword (Guild Invasion)]: Increases the attack power increased by Heros Sword in Guild Invasion. 5% increase for 5-star, and 10% increase for 6-star. Effects are applied even when in Time Shop and can be increased up to 100%.</li>
+                                    
+                                    <li>Change Tribe cooldown reduction : Cooldown of Change Tribe is decreased by 3 minutes for every 5-star, and 6-minutes for every 6-star. Effects are applied even when in Time Shop and cooldown reductions based on Sinbad cannot exceed 1 hour.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5563,6 +6341,28 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/209.png">  Senior Champion ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack speed by 9%.</li>
+                                    
+                                    <li>Increases the attack range of all units by 7%, and the movement speed of all units by 9%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Battle Cry (Elf) Limit Break: Effect of Battle Cry (Elf) increased from 30% to 40%.</li>
+                                    
+                                    <li>[Fast Sword (Guild Invasion)]: Increases the attack power increased by Fast Sword in Guild Invasion. 5% increase for 5-star, and 10% increase for 6-star. Effects are applied even when in Time Shop and can be increased up to 100%.</li>
+                                    
+                                    <li>Change Tribe cooldown reduction : Cooldown of Change Tribe is decreased by 3 minutes for every 5-star, and 6-minutes for every 6-star. Effects are applied even when in Time Shop and cooldown reductions based on Champion cannot exceed 1 hour</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5592,6 +6392,28 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/211.png">  Senior Undertaker ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 10%, and its attack range by 10%.</li>
+                                    
+                                    <li>Increases the attack range and the critical damage of all units by 6%, and the movement speed of all units by 5%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Battle Cry (Undead) Limit Break: Effect of Battle Cry (Undead) increased from 30% to 40%.</li>
+                                    
+                                    <li>Innervate3 Limit Break: Cooldown of Guild Invasion skills are decreased by 0.5% for every 5-star, and 1% for every 6-star. Effects are applied even when Undertake is in Time Shop and can be reduced by up to 10%.</li>
+                                    
+                                    <li>Change Tribe cooldown reduction : Cooldown of Change Tribe is decreased by 3 minutes for every 5-star, and 6-minutes for every 6-star. Effects are applied even when in Time Shop and cooldown reductions based on Undertaker cannot exceed 1 hour.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5619,6 +6441,28 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/213.png">  Senior Barbarian ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 7%.</li>
+                                    
+                                    <li>Increases its movement speed by 9%, and its attack speed by 10%.</li>
+                                    
+                                    <li>Increases the movement speed of all units by 7%, and the critical damage by 9%</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Battle Cry (Orc) Limit Break: Effect of Battle Cry (Orc) increased from 30% to 40%.</li>
+                                    
+                                    <li>Cold resistance based on Barbarian is increased by 50%. (5-star 50=&gt;75, 6-star 100=&gt;150) Additionally, cold resistance based on Barbarian can be increased up to 4,000.</li>
+                                    
+                                    <li>[Fast Shoes (Guild Invasion)]: Increases the attack power increased by Fast Shoes in Guild Invasion. 5% increase for 5-star, and 10% increase for 6-star. Effects are applied even when in Time Shop and can be increased up to 100%.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5648,6 +6492,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/165.png">  Senior Blade Master ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases the basic speed of the game by 4%, and increases the attack range and movement speed by 7%. </li>
+                                    
+                                    <li>When first appearing, increases attack speed and movement speed of ally units for a certain period of time. </li>
+                                    
+                                    <li>Increases movement speed, attack power, and critical hit damage of all units by 4%. </li>
+                                    
+                                    <li>Unlimited dash can be done, and is less affected by knock back, freeze, and blow attack. </li>
+                                    
+                                    <li>The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -&gt; 12.5%.) In addition, when Dark Spirit is awakened, the maximum efficiency increases to 15%.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5675,6 +6535,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/163.png">  Senior Dark Spirit ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases the basic speed of the game by 4%, and increases the attack range and movement speed by 7%. </li>
+                                    
+                                    <li>When first appearing, increases attack speed and movement speed of ally units for a certain period of time. </li>
+                                    
+                                    <li>Increases attack range, attack power, and critical hit damage of all units by 4%. </li>
+                                    
+                                    <li>The maximum value of Spirit Rest increases more by 2.5%, increasing maximum efficiency up to 12.5%. (The maximum efficiency of current Spirit Rest increases 10% -&gt; 12.5%. In addition, when Blade Master is awakened, the maximum efficiency increases 12.5%- &gt; 15%.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5704,6 +6578,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/159.png">  Senior Flame Spirit ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases the basic speed of the game by 4%, and increases the attack range and movement speed by 7%. </li>
+                                    
+                                    <li>When first appearing, increases attack speed and movement speed of ally units for a certain period of time. </li>
+                                    
+                                    <li>Increases all units&#39; movement speed and critical hit damage by 6%. </li>
+                                    
+                                    <li>Every Flame Spirit&#39;s fire resistance increases by 75 and every Senior Flame Spirit&#39;s fire resistance increases by 150. Also, the maximum value of resistance against fire from Flame Spirit increases from 2000 to 4000.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5731,6 +6619,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/131.png">  Senior Wyvern Rider ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, movement speed and attack speed of allies increase significantly for a certain period of time.</li>
+                                    
+                                    <li>Basic game speed increases by 3%.</li>
+                                    
+                                    <li>Unit&#39;s attack range increases by 6%, and attack range, critical hit rate, and critical damage of all units increase by 4%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Dodge 100% of initial attack, and have random physical or magic immunity.</li>
+                                    
+                                    <li>Spirit awakening limit break: Spirit awakening max increases by 5 per Senior Wyvern Rider. (However, this value cannot exceed 25.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5760,6 +6666,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/125.png">  Senior Pilot ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, the movement speed and attack speed of ally units are significantly increased for a period of time. </li>
+                                    
+                                    <li>Basic game speed increases by 3%. </li>
+                                    
+                                    <li>Does not attack ground melee units. </li>
+                                    
+                                    <li>Increases movement speed, attack speed, and critical hit damage of all units by 4%. </li>
+                                    
+                                    <li>Spirit Awakening Limit Break: Max value of Spirit Awakening increases by 5 each per Senior Pilot. (However, this value cannot exceed 25.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5787,6 +6709,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/129.png">  Senior Lich ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, movement speed and attack speed of allies increase significantly for a certain period of time.</li>
+                                    
+                                    <li>Basic game speed increases by 3%.</li>
+                                    
+                                    <li>Movement speed, attack speed, and attack range of all units increase by 4%.</li>
+                                    
+                                    <li>normal attacks hit up to 5 enemies simultaneously and paralyze enemies for a little longer.</li>
+                                    
+                                    <li>Immune to stun.</li>
+                                    
+                                    <li>Spirit awakening limit break: Spirit awakening max increases by 5 per Senior Lich. (However, this value cannot exceed 25.)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5816,6 +6756,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/127.png">  Senior Alchemist ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When first appearing, the movement speed and attack speed of ally units are significantly increased for a period of time. Also helps ally units quickly cast skills.</li>
+                                    
+                                    <li>Basic game speed increases by 3%. </li>
+                                    
+                                    <li>Immune to paralyze. </li>
+                                    
+                                    <li>Increases movement speed and attack speed by 6%. </li>
+                                    
+                                    <li>Spirit Awakening Limit Break: Max value of Spirit Awakening increases by 5 for each Senior Alchemist. (However, this value cannot exceed 25.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5843,6 +6799,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/169.png">  Senior Elementalist ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases attack power, attack range and critical strike rate of all units by 4%.</li>
+                                    
+                                    <li>Increases nature resistance by 75 for each Elementalist, and 150 nature resistance for each Senior Elementalist. Also increases max nature resistance through Elementalists from 2,000 to 4,000.</li>
+                                    
+                                    <li>[Tribe Fortification] is applied even when Elementalist is in Time Shop, and can be increased up to 250 for elf units.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5872,6 +6842,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/121.png">  Senior Dark Admiral ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>For normal attacks, increases number of dark energy blasts and attack range.</li>
+                                    
+                                    <li>Appears quickly to cast a shield to block 99% of damage for all friendly units for a short period.</li>
+                                    
+                                    <li>Attack speed increases by 4% and critical damage increases by 6% for all units.</li>
+                                    
+                                    <li>Immune to stun.</li>
+                                    
+                                    <li>Upgrades undead units from guild barrack by 1. (Regular, evolved, evolved +, evolved ++, evolved +++) ==&gt; (evolved, evolved +, evolved ++, evolved +++, evolved ++++ )</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5899,6 +6885,18 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/115.png">  Senior Succubus ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Raise all units&#39; attack speed by 3%, critical damage by 7%.</li>
+                                    
+                                    <li>When first appearing, casts madness buff that raises movement speed and attack speed of all male ally units.</li>
+                                    
+                                    <li>Raise offline march buff by 300%, and even if Succubus is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Succubus is 1,000%.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5928,6 +6926,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/147.png">  Senior Incubus ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases the attack range and movement speed by 7% and increases all units&#39; attack power, critical damage, and critical rate by 5%.</li>
+                                    
+                                    <li>Affected less by terrain at stage 10,000 and higher.</li>
+                                    
+                                    <li>When first appearing, buff is casted that increases the movement speed and attack speed of nearby units for a certain amount of time, and a shield makes immune against physical attacks.</li>
+                                    
+                                    <li>When casting a skill, becomes invincible, and once skill is cast, HP recovered by 7% and creates shield that absorbs 99% of damage for a certain amount of time.</li>
+                                    
+                                    <li>Raid skill cool-time reduction limit break: Every 5 star Incubus lowers skill cool-time by 0.5% and every 6 star Incubus lowers skill cool-time by 1%. (Effective even if the Incubus is at the Shop and can reduce up to 10%)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -5955,6 +6969,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/113.png">  Senior Forest Guardian ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Raise all units&#39; attack speed by 5%, attack range by 3%.</li>
+                                    
+                                    <li>When first appearing, casts magic immunity barrier to all ally units.</li>
+                                    
+                                    <li>When casting skills, increases movement speed and attack speed of nearby ally units for a period of time.</li>
+                                    
+                                    <li>Raise offline march buff by 300%, and even if Forest Guardian is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Forest Guardian is 1,000%.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -5984,6 +7012,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/117.png">  Senior Hot-Blooded Xuanzang ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>For normal attacks, launches two electric bolts to attack and stun up to 5 units.</li>
+                                    
+                                    <li>Appears quickly to cast a shield to make all friendly units immune to magic for a short period.</li>
+                                    
+                                    <li>Attack speed increases by 4% and critical damage increases by 6% for all units.</li>
+                                    
+                                    <li>Upgrades human units from guild barrack by 1. (Regular, evolved, evolved +, evolved ++, evolved +++) ==&gt; (evolved, evolved +, evolved ++, evolved +++, evolved ++++ )</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6011,6 +7053,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/119.png">  Senior Hoyden Goku ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases wind wave attack range and attacks more enemies.</li>
+                                    
+                                    <li>Restores more HP during skill attacks. Once attack ends, casts a shield to block 99% of damage for a short period.</li>
+                                    
+                                    <li>Appears quickly to cast a shield to make all friendly units immune to physical attacks for a short period.</li>
+                                    
+                                    <li>Attack speed increases by 4% and critical damage increases by 6% for all units.</li>
+                                    
+                                    <li>Upgrades elf units from guild barrack by 1. (Regular, evolved, evolved +, evolved ++, evolved +++) ==&gt; (evolved, evolved +, evolved ++, evolved +++, evolved ++++ )</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6040,6 +7098,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/123.png">  Senior Raptor Rider ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>For normal attacks, increases number of spears thrown and attack range.</li>
+                                    
+                                    <li>For skill attacks, increases number of frozen spears and attack range.</li>
+                                    
+                                    <li>Appears quickly to cast a shield to block 99% of damage for all friendly units for a short period..</li>
+                                    
+                                    <li>Attack speed increases by 4% and critical damage increases by 6% for all units.</li>
+                                    
+                                    <li>Upgrades orc units from guild barrack by 1. (Regular, evolved, evolved +, evolved ++, evolved +++) ==&gt; (evolved, evolved +, evolved ++, evolved +++, evolved ++++ )</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6067,6 +7141,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/167.png">  Senior Cleric ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases game speed by 4% and increases its movement speed by 7%.</li>
+                                    
+                                    <li>Increases all unit&#39;s movement speed, attack power and critical damage by 4%.</li>
+                                    
+                                    <li>[Tribe Fortification] is applied even when Cleric is in Time Shop, and can be increased up to 250 for human units.</li>
+                                    
+                                    <li>Increases the maximum value of [Innervate 2] to 50%. Thus, reducing skill cool time (Outland Battle) by up to 50%.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6096,6 +7186,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/111.png">  Senior Griffin Rider ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Raise all units&#39; attack speed by 3%, attack power by 5%.</li>
+                                    
+                                    <li>When first appearing, casts buff that raises movement speed and attack speed of ally units.</li>
+                                    
+                                    <li>When casting skills, increases movement speed and attack speed of nearby ally units for a period of time.</li>
+                                    
+                                    <li>Raise offline march buff by 300%, and even if Griffin Rider is at the Time Shop, the offline march buff increases. (5-Star 10%, 6-Star 30%) However, the max buff of the offline march through Griffin Rider is 1,000%.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6123,6 +7227,18 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of   [ <img class="unit-image" src="../static/img/units/109.png">  Senior Dark Ninja ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Quickly moves (infinite dash) to the attack target, and when dashing with a regular attack, can attack boss as a target at a certain rate.</li>
+                                    
+                                    <li>When there are few enemy units in the skill&#39;s random strike attack, boss can be attacked.</li>
+                                    
+                                    <li>Engage quickly in battle.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6152,6 +7268,18 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/34.png">  Senior Ent ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Quickly moves (dashes) to first target and quickly engages in battle.</li>
+                                    
+                                    <li>Upon first appearing, casts a barrier that defends against 99% of damage for a period of time.</li>
+                                    
+                                    <li>Increases splash damage of regular attack, and during skill attacks, becomes immune to stun</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6179,6 +7307,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/76.png">  Senior Ice Wizard ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Regular attacks hit air units. (Air attack possible)</li>
+                                    
+                                    <li>Raises Orc units&#39; critical hit rate by 3%.</li>
+                                    
+                                    <li>Upon first appearing, can freeze all the enemies in the screen for a certain time at the rate of 50%. </li>
+                                    
+                                    <li>Movement speed increases and summons 2 ice prisons during regular attacks; ice prisons can attack air units.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6208,6 +7350,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/74.png">  Senior Big Foot ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases resistance against knock-back by 70% and makes it pushed back less.</li>
+                                    
+                                    <li>Quickly moves (dash) to first attack target, and when attacked by a ranged unit, has a chance to approach it immediately.</li>
+                                    
+                                    <li>Engages in battle quickly.</li>
+                                    
+                                    <li>Raises HP and defense of Orc units by 15%.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6235,6 +7391,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/107.png">  Senior Druid ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Increases unit&#39;s attack range by 20%. </li>
+                                    
+                                    <li>Increases the attack speed and movement speed of all units by 5% </li>
+                                    
+                                    <li>Slows enemies, lowers accuracy, summons another Eagle that detects invisible units, and increases the attack speed and attack range of Eagles. </li>
+                                    
+                                    <li>On first appearing, increases the movement speed and attack speed of all ally units, and casts shield to grant immunity against physical attacks for a certain period of time.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6264,6 +7434,20 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/16.png">  Senior Fire Mage ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Make air units attack themselves and increase skill attack damage(Fire Bird Damage) by 2 times.</li>
+                                    
+                                    <li>Increase critical hit damage and rate of all units by 5% and increases the movement speed of all human units by 4%.</li>
+                                    
+                                    <li>Upon first appearing, can help ally units use skill attacks faster.</li>
+                                    
+                                    <li>When attacked, has a chance to make skill attack, and casts a barrier that defends against 99% of damage for a short period of time.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6291,6 +7475,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/36.png">  Senior Wolf Warrior ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Quickly moves (dashes) to first target, quickly engages in battle, and casts a barrier that defends against 99% of damage for a short period.</li>
+                                    
+                                    <li>When HP is under 30%, has a 70% chance to dodge enemy attacks. </li>
+                                    
+                                    <li>Upon first appearing, increases movement and attack speed of all ally units.</li>
+                                    
+                                    <li>Increases movement speed and attack speed of all units by 5%.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6320,6 +7518,18 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/54.png">  Senior Hands Of Death ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Quickly moves (dashes) to first target and quickly engages in battle.</li>
+                                    
+                                    <li>Upon first appearing, heals 10% of all ally unit HP, and casts magic barrier for a period of time. </li>
+                                    
+                                    <li>Becomes immune to stun, restores more HP during regular attacks, and when HP falls under 30%, becomes immune to knockback.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6347,6 +7557,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/18.png">  Senior Gunner ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>During regular attacks, launch two cannons at once. </li>
+                                    
+                                    <li>Increase human ranged units&#39; attack range by 3%.</li>
+                                    
+                                    <li>Increases movement speed and makes it become immune to stun</li>
+                                    
+                                    <li>Upon first appearing, greatly increases movement speed and attack speed of ally units for a period of time.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6376,6 +7600,18 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/38.png">  Senior Unicorn Knight ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Marksmanship improves allowing to attack multiple units simultaneously, and for skill attacks, arrow damage increases by 50%. </li>
+                                    
+                                    <li>Arrow attacks push back enemies slightly.</li>
+                                    
+                                    <li>Movement speed and attack speed of Elf units increase by 5%.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6403,6 +7639,20 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/56.png">  Senior Bomb Unit ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>Movement speed increases and throws up to 4 bombs during regular attacks. </li>
+                                    
+                                    <li>Splash range of large bombs increase and damage increases by 150%. </li>
+                                    
+                                    <li>Upon first appearing, greatly increases movement and attack speed of ally units for a period of time and casts a barrier that defends against 99% of damage for a short period.</li>
+                                    
+                                    <li>When killed, has an increased chance to revive on the spot.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6432,6 +7682,22 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/58.png">  Senior Death Knight ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Quickly moves (dashes) to first target and casts a barrier that defends against 99% of damage for a period of time.</li>
+                                    
+                                    <li>Upon first appearing, casts a magic barrier to protect all the allies from magic attack and restores HP by 10%.</li>
+                                    
+                                    <li>When HP falls under 50%, becomes immune to stun.</li>
+                                    
+                                    <li>Increases ally unit attack power by 10% and movement speed by 5%.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6459,6 +7725,22 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/78.png">  Senior Wolf Rider ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it increases the attack speed and movement speed of all ally units, and casts a shield that temporarily grants immunity against magical attacks.</li>
+                                    
+                                    <li>Increases resistance against knock-back by 70% and makes it pushed back less.</li>
+                                    
+                                    <li> Quickly moves (dash) to first attack target, and when attacked by a ranged unit, has a chance to approach it immediately.</li>
+                                    
+                                    <li>Engages in battle quickly.</li>
+                                    
+                                    <li>Raises HP and defense of Orc units by 15%.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6488,6 +7770,18 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/14.png">  Senior Golem ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>When HP is under 30%, immune against all decrease skills (frost, druid vine, Lich paralyze, etc.).</li>
+                                    
+                                    <li>Move quickly (dash) to the first attack target and engage in battle quickly. </li>
+                                    
+                                    <li>Increase HP and defense of all units by 10%.</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6515,6 +7809,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/238.png">  Extreme Fire Mage ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 9%.</li>
+                                    
+                                    <li>Increases its movement speed by 12%, and its attack power by 11%.</li>
+                                    
+                                    <li>Increases the attack range of all units by 10%, and the movement speed of all units by 8%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Fire resistance increases by 500 for every Extreme Fire Mage. Additionally, the maximum fire resistance is increased to 5000 by the Extreme Fire Mage.</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
@@ -6544,6 +7856,24 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/239.png">  Extreme Unicorn Knight ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 9%.</li>
+                                    
+                                    <li>Increases its movement speed by 12%, and its attack power by 11%.</li>
+                                    
+                                    <li>Increases the attack range of all units by 8%, and the movement speed of all units by 10%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Blessing of Sylphid Limit Break: Even when the Extreme Unicorn Knight is in the Time Shop, the attack range decreasing effect due to the Outland Distortion is reduced. (However, when in the Time Shop, it is increased by 3% per Extreme Unicorn Knight, and the attack range decreasing effect cannot be reduced more than 30%.)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6572,6 +7902,24 @@ Endless Farming
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/240.png">  Extreme Death Knight ]</div>
                         
                         
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 9%.</li>
+                                    
+                                    <li>Increases its movement speed by 12%, and its attack power by 12%.</li>
+                                    
+                                    <li>Increases the attack range of all units by 10%, and the movement speed of all units by 8%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>When included in the team, Medal Buff is increased by 200%. ([Increased Medals] increases from 300% to 500%)</li>
+                                    
+                                </ul>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -6599,6 +7947,24 @@ Endless Farming
                         
                             <div class="col-12">Skill 3: Awakens the hidden special ability of  [ <img class="unit-image" src="../static/img/units/241.png">  Extreme Wolf Rider ]</div>
                         
+                        
+                            <div class="col-12">
+                                <ul>
+                                    
+                                    <li>At its first appearance, it Increases the Attack speed and movement speed of all ally units, and casts a shield that temporarily Grants immunity against physical attacks.</li>
+                                    
+                                    <li>Increases basic game speed by 9%.</li>
+                                    
+                                    <li>Increases its movement speed by 12%, and its attack power by 11%.</li>
+                                    
+                                    <li>Increases the attack range of all units by 8%, and the movement speed of all units by 10%.</li>
+                                    
+                                    <li>Significantly increases attack power and critical hit rate against enemy crystal.</li>
+                                    
+                                    <li>Howl of the Frost Wolf Limit Break: Even when the Extreme Wolf Rider is in the Time Shop, the base game speed is increased. (However, it is increased by 5% per Extreme Wolf Rider in the Time Shop, and the base game speed can&#39;t increase over 50%)</li>
+                                    
+                                </ul>
+                            </div>
                         
                     </div>
                 </div>
