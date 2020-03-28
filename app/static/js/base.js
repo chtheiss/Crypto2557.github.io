@@ -211,6 +211,16 @@ function change_display_of_unattainable_pets(unattainable){
             download_file_from_indexedDB()
         });
 
+        $("#delete-yes").on("click", function(e) {
+            let db = new Dexie('endless-farming-db');
+            db.open().then(function() {
+                let idb_db = db.backendDB();
+                clearDatabase(idb_db, function(err) {
+                    location.reload();
+                    return false;
+                });
+            });
+        });
 
         $(".user-input").bind('change', async function() {
             $this = $(this);
