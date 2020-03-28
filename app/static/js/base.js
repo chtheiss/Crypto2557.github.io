@@ -61,7 +61,7 @@ function load_file_into_indexedDB(file){
                                 if (typeof hide_five_star_pets.value === "boolean"){
                                     await store.put({
                                         "name": "hide_five_star_pets",
-                                        "value": hide_five_star_pets.value & 1 
+                                        "value": hide_five_star_pets.value & 1
                                     })
                                 }
                             } else{
@@ -75,7 +75,7 @@ function load_file_into_indexedDB(file){
                                 if (typeof hide_unattainable_pets.value === "boolean"){
                                     await store.put({
                                         "name": "hide_unattainable_pets",
-                                        "value": hide_unattainable_pets.value & 1 
+                                        "value": hide_unattainable_pets.value & 1
                                     })
                                 }
                             } else{
@@ -185,6 +185,134 @@ function change_display_of_unattainable_pets(unattainable){
     }
 }
 
+async function create_db(){
+    const dbPromise = idb.open('endless-farming-db', 5, function(upgradeDb) {
+    switch (upgradeDb.oldVersion) {
+        case 0:{
+            if (!upgradeDb.objectStoreNames.contains('units')) {
+                let unitsOS = upgradeDb.createObjectStore('units', {
+                    keyPath: 'name'
+                });
+                unitsOS.createIndex('nsr', 'nsr', {
+                    unique: false
+                });
+                unitsOS.createIndex('sr', 'sr', {
+                    unique: false
+                });
+            }
+            if (!upgradeDb.objectStoreNames.contains('pets')) {
+                let petsOS = upgradeDb.createObjectStore('pets', {
+                    keyPath: 'name'
+                });
+                petsOS.createIndex('fragments', 'fragments', {
+                    unique: false
+                });
+            }
+        }
+        case 1:{
+            if (!upgradeDb.objectStoreNames.contains('player')) {
+                let playerOS = upgradeDb.createObjectStore('player', {
+                    keyPath: 'name',
+                    autoIncrement: true
+                });
+                playerOS.createIndex('value', 'value', {
+                    unique: false
+                });
+                playerOS.get("KL").then(function(val) {
+                    if (val == undefined) {
+                        playerOS.put({
+                            "name": "KL",
+                            "value": 1
+                        });
+                    }
+                });
+                playerOS.get("tickets").then(function(val) {
+                    if (val == undefined) {
+                        playerOS.put({
+                            "name": "tickets",
+                            "value": 10
+                        });
+                    }
+                });
+                playerOS.get("refills").then(function(val) {
+                    if (val == undefined) {
+                        playerOS.put({
+                            "name": "refills",
+                            "value": 0
+                        });
+                    }
+                });
+            }
+            let petsOS = upgradeDb.transaction.objectStore('pets');
+            petsOS.createIndex('priority', 'priority', {
+                unique: false
+            });
+        }
+        case 2:{
+            if (!upgradeDb.objectStoreNames.contains('pets_hard')) {
+                let pets_hardOS = upgradeDb.createObjectStore('pets_hard', {
+                    keyPath: 'name'
+                });
+                pets_hardOS.createIndex('fragments', 'fragments', {
+                    unique: false
+                });
+                pets_hardOS.createIndex('priority', 'priority', {
+                    unique: false
+                });
+            }
+            let playerOS = upgradeDb.transaction.objectStore('player');
+            playerOS.get("tickets_hard").then(function(val) {
+                if (val == undefined) {
+                    playerOS.put({
+                        "name": "tickets_hard",
+                        "value": 5
+                    });
+                }
+            });
+            playerOS.get("refills_hard").then(function(val) {
+                if (val == undefined) {
+                    playerOS.put({
+                        "name": "refills_hard",
+                        "value": 0
+                    });
+                }
+            });
+        }
+        case 3:{
+            let playerOS = upgradeDb.transaction.objectStore('player');
+            playerOS.get("hide_five_star_pets").then(function(val) {
+                if (val == undefined) {
+                    playerOS.put({
+                        "name": "hide_five_star_pets",
+                        "value": 0
+                    });
+                }
+            });
+        }
+        case 4:{
+            if (!upgradeDb.objectStoreNames.contains('pets_other')) {
+                let pets_hardOS = upgradeDb.createObjectStore('pets_other', {
+                    keyPath: 'name'
+                });
+                pets_hardOS.createIndex('fragments', 'fragments', {
+                    unique: false
+                });
+            }
+            let playerOS = upgradeDb.transaction.objectStore('player');
+            playerOS.get("hide_unattainable_pets").then(async function(val) {
+                if (val == undefined) {
+                    await playerOS.put({
+                        "name": "hide_unattainable_pets",
+                        "value": 0
+                    });
+                }
+            });
+        }
+    }
+    });
+    await dbPromise;
+}
+
 (function(yourcode) {
 
     yourcode(window.jQuery, window.indexedDB, window, document);
@@ -195,7 +323,7 @@ function change_display_of_unattainable_pets(unattainable){
 
         $(".user-input[type='number']").inputSpinner();
 
-        await load_user_stats_from_db()
+        await load_user_stats_from_db();
 
         $("#import-button").click(function() {
             $('#dbupload').trigger('click');
@@ -208,18 +336,12 @@ function change_display_of_unattainable_pets(unattainable){
         });
 
         $("#export-button").on("click", function(e) {
-            download_file_from_indexedDB()
+            download_file_from_indexedDB();
         });
 
         $("#delete-yes").on("click", function(e) {
-            let db = new Dexie('endless-farming-db');
-            db.open().then(function() {
-                let idb_db = db.backendDB();
-                clearDatabase(idb_db, function(err) {
-                    location.reload();
-                    return false;
-                });
-            });
+            window.indexedDB.deleteDatabase("endless-farming-db");
+            location.reload();
         });
 
         $(".user-input").bind('change', async function() {
@@ -299,130 +421,6 @@ function change_display_of_unattainable_pets(unattainable){
             console.log('This browser doesn\'t support IndexedDB');
             return;
         }
-        const dbPromise = idb.open('endless-farming-db', 5, function(upgradeDb) {
-            switch (upgradeDb.oldVersion) {
-                case 0:{
-                    if (!upgradeDb.objectStoreNames.contains('units')) {
-                        let unitsOS = upgradeDb.createObjectStore('units', {
-                            keyPath: 'name'
-                        });
-                        unitsOS.createIndex('nsr', 'nsr', {
-                            unique: false
-                        });
-                        unitsOS.createIndex('sr', 'sr', {
-                            unique: false
-                        });
-                    }
-                    if (!upgradeDb.objectStoreNames.contains('pets')) {
-                        let petsOS = upgradeDb.createObjectStore('pets', {
-                            keyPath: 'name'
-                        });
-                        petsOS.createIndex('fragments', 'fragments', {
-                            unique: false
-                        });
-                    }
-                }
-                case 1:{
-                    if (!upgradeDb.objectStoreNames.contains('player')) {
-                        let playerOS = upgradeDb.createObjectStore('player', {
-                            keyPath: 'name',
-                            autoIncrement: true
-                        });
-                        playerOS.createIndex('value', 'value', {
-                            unique: false
-                        });
-                        playerOS.get("KL").then(function(val) {
-                            if (val == undefined) {
-                                playerOS.put({
-                                    "name": "KL",
-                                    "value": 1
-                                });
-                            }
-                        });
-                        playerOS.get("tickets").then(function(val) {
-                            if (val == undefined) {
-                                playerOS.put({
-                                    "name": "tickets",
-                                    "value": 10
-                                });
-                            }
-                        });
-                        playerOS.get("refills").then(function(val) {
-                            if (val == undefined) {
-                                playerOS.put({
-                                    "name": "refills",
-                                    "value": 0
-                                });
-                            }
-                        });
-                    }
-                    let petsOS = upgradeDb.transaction.objectStore('pets');
-                    petsOS.createIndex('priority', 'priority', {
-                        unique: false
-                    });
-                }
-                case 2:{
-                    if (!upgradeDb.objectStoreNames.contains('pets_hard')) {
-                        let pets_hardOS = upgradeDb.createObjectStore('pets_hard', {
-                            keyPath: 'name'
-                        });
-                        pets_hardOS.createIndex('fragments', 'fragments', {
-                            unique: false
-                        });
-                        pets_hardOS.createIndex('priority', 'priority', {
-                            unique: false
-                        });
-                    }
-                    let playerOS = upgradeDb.transaction.objectStore('player');
-                    playerOS.get("tickets_hard").then(function(val) {
-                        if (val == undefined) {
-                            playerOS.put({
-                                "name": "tickets_hard",
-                                "value": 5
-                            });
-                        }
-                    });
-                    playerOS.get("refills_hard").then(function(val) {
-                        if (val == undefined) {
-                            playerOS.put({
-                                "name": "refills_hard",
-                                "value": 0
-                            });
-                        }
-                    });
-                }
-                case 3:{
-                    let playerOS = upgradeDb.transaction.objectStore('player');
-                    playerOS.get("hide_five_star_pets").then(function(val) {
-                        if (val == undefined) {
-                            playerOS.put({
-                                "name": "hide_five_star_pets",
-                                "value": 0
-                            });
-                        }
-                    });
-                }
-                case 4:{
-                    if (!upgradeDb.objectStoreNames.contains('pets_other')) {
-                        let pets_hardOS = upgradeDb.createObjectStore('pets_other', {
-                            keyPath: 'name'
-                        });
-                        pets_hardOS.createIndex('fragments', 'fragments', {
-                            unique: false
-                        });
-                    }
-                    let playerOS = upgradeDb.transaction.objectStore('player');
-                    playerOS.get("hide_unattainable_pets").then(async function(val) {
-                        if (val == undefined) {
-                            await playerOS.put({
-                                "name": "hide_unattainable_pets",
-                                "value": 0
-                            });
-                        }
-                    });
-                }
-            }
-        });
-        await dbPromise;
+        await create_db();
     })();
 }));
