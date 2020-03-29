@@ -14,7 +14,9 @@ The Endless Farming Project is licensed under the terms of the GNU Affero Genera
 
 - [ ] Ob tracking (show rotation time, days till 5* based on current max stage, possibly best team based on owned units)
 - [ ] Artifact builder
-- [x] Add Information for non sh pets
+- [ ] Daily Reward and Quest?
+- [ ] World Boss? 
+- [x] Information for non sh pets
 - [ ] Slab tracking
 - [ ] Integration of Spirit Highland solutions
 - [ ] Normal Registration/Login and authentication with Discord to access and edit your data everywhere
