@@ -24,9 +24,11 @@ function change_gem_label($refill_number, $gem_label, costs) {
     $gem_label.text(costs.slice(0, handle_nan(parseInt($refill_number.val())) + 1).reduce(getSum));
 }
 
-function hide_or_show_pet($pet,hide) {
+function hide_or_show_pet($pet, hide) {
     if (hide) {
-        $pet.addClass('invisible');
+        if (!$pet.hasClass('invisible')){
+            $pet.addClass('invisible');
+        }
     } else {
         $pet.removeClass('invisible');
     }

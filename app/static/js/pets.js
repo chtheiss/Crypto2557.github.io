@@ -12,11 +12,7 @@ function change_pet_image_background($pet, data) {
     $img.addClass("zero-star");
 }
 
-async function load_pet(pet, db, storage_name, hide, unattainable, kl) {
-    const pet_tx = await db.transaction(storage_name, 'readwrite');
-    const pet_store = await pet_tx.objectStore(storage_name);
-    const data = await pet_store.get(pet.id);
-
+async function load_pet(pet, data, hide, unattainable, kl) {
     let $pet = $(pet);
     change_display_of_unattainable_pet($pet, unattainable)
     if (data != undefined) {
@@ -30,6 +26,8 @@ async function load_pet(pet, db, storage_name, hide, unattainable, kl) {
                 turn_star_on($(checkboxes[idx]))
             }
         }
+    }else{
+        hide_or_show_pet($pet, false)
     }
 
     for (const kl_div of $pet.find(".pet-card-kl").find('div')) {
@@ -249,7 +247,7 @@ function clear_tracking() {
     });
 }
 
-async function load_all_pets(storage_name){
+async function load_all_pets(storage_names){
     const db = await idb.open('endless-farming-db');
 
     const player_tx = await db.transaction("player", 'readwrite');
@@ -263,17 +261,25 @@ async function load_all_pets(storage_name){
     const hide_five_star_pets_result = await hide_five_star_pets;
     const knightage_level_result = await knightage_level;
 
+    let pets = [];
+    for (const storage_name of storage_names){
+        const pet_tx = await db.transaction(storage_name, 'readwrite');
+        const pet_store = await pet_tx.objectStore(storage_name);
+        const pets_storage = await pet_store.getAll();
+        pets.push(pets_storage);
+    }
+    pets = Object.assign(...pets);
+
     $('#hide-unattainable-pets').prop("checked", hide_unattainable_pets_result.value);
 
     $('#hide-five-star-pets').prop("checked", hide_five_star_pets_result.value);
-
     petPromises = [];
     for (const pet of $(".pet-card,.pet-card-other")) {
+        pet_data = pets.filter(p => p.name == pet.id)[0]
         petPromises.push(
             load_pet(
                 pet,
-                db,
-                storage_name,
+                pet_data,
                 hide_five_star_pets_result.value,
                 hide_unattainable_pets_result.value,
                 knightage_level_result.value
