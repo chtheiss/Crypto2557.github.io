@@ -4,3 +4,4 @@ flask-bootstrap
 frozen-flask
 flask-flatpages
 numpy
+Flask-Caching
