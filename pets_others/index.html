@@ -93,7 +93,7 @@ Endless Farming
             </a>
         </button>
         <a href="http://bit.ly/HarroweD" target="_blank" class="btn bordered" role="button">Pet Guide</a>
-        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.11</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.12</button>
         <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal">My Stats</button>
     </div>
 </nav>
@@ -202,6 +202,7 @@ Endless Farming
                                 <li>Requirement for Ancient Blessing (Forest Knight) when pet is active</li>
                                 <li>Highlighting of the text of the website while dragging the pet cards in some browsers</li>
                                 <li>A bug that prevented shared buffs to be calculated properly</li>
+                                <li>A bug that produced a diminishing scroll bar effect for pet pages</li>
                             </ul></li>
                         </ul>
                     </div>
@@ -464,7 +465,7 @@ Endless Farming
             
             
             
-            <div id="Gold_Dragon" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Gold_Dragon" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Gold_Dragon-modal">
         <img id="Gold_Dragon-image" class='pet-image zero-star' src="../static/img/pets/35.png">
     </span>
@@ -496,7 +497,7 @@ Endless Farming
             
             
             
-            <div id="Black_Tortoise" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Black_Tortoise" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Black_Tortoise-modal">
         <img id="Black_Tortoise-image" class='pet-image zero-star' src="../static/img/pets/31.png">
     </span>
@@ -528,7 +529,7 @@ Endless Farming
             
             
             
-            <div id="Undead_Guardian" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Undead_Guardian" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Undead_Guardian-modal">
         <img id="Undead_Guardian-image" class='pet-image zero-star' src="../static/img/pets/86.png">
     </span>
@@ -560,7 +561,7 @@ Endless Farming
             
             
             
-            <div id="White_Tiger" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="White_Tiger" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#White_Tiger-modal">
         <img id="White_Tiger-image" class='pet-image zero-star' src="../static/img/pets/34.png">
     </span>
@@ -592,7 +593,7 @@ Endless Farming
             
             
             
-            <div id="Human_Guardian" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Human_Guardian" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Human_Guardian-modal">
         <img id="Human_Guardian-image" class='pet-image zero-star' src="../static/img/pets/84.png">
     </span>
@@ -624,7 +625,7 @@ Endless Farming
             
             
             
-            <div id="Elf_Guardian" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Elf_Guardian" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Elf_Guardian-modal">
         <img id="Elf_Guardian-image" class='pet-image zero-star' src="../static/img/pets/85.png">
     </span>
@@ -656,7 +657,7 @@ Endless Farming
             
             
             
-            <div id="Orc_Guardian" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Orc_Guardian" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Orc_Guardian-modal">
         <img id="Orc_Guardian-image" class='pet-image zero-star' src="../static/img/pets/87.png">
     </span>
@@ -688,7 +689,7 @@ Endless Farming
             
             
             
-            <div id="Blue_Dragon" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Blue_Dragon" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Blue_Dragon-modal">
         <img id="Blue_Dragon-image" class='pet-image zero-star' src="../static/img/pets/33.png">
     </span>
@@ -720,7 +721,7 @@ Endless Farming
             
             
             
-            <div id="Phoenix" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Phoenix" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Phoenix-modal">
         <img id="Phoenix-image" class='pet-image zero-star' src="../static/img/pets/32.png">
     </span>
@@ -752,7 +753,7 @@ Endless Farming
             
             
             
-            <div id="Cleo" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered">
+            <div id="Cleo" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss1&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Cleo-modal">
         <img id="Cleo-image" class='pet-image zero-star' src="../static/img/pets/101.png">
     </span>
@@ -789,7 +790,7 @@ Endless Farming
             
             
             
-            <div id="Odin" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Odin" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Odin-modal">
         <img id="Odin-image" class='pet-image zero-star' src="../static/img/pets/147.png">
     </span>
@@ -821,7 +822,7 @@ Endless Farming
             
             
             
-            <div id="Heimdall" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Heimdall" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Heimdall-modal">
         <img id="Heimdall-image" class='pet-image zero-star' src="../static/img/pets/152.png">
     </span>
@@ -853,7 +854,7 @@ Endless Farming
             
             
             
-            <div id="Skuld" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Skuld" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Skuld-modal">
         <img id="Skuld-image" class='pet-image zero-star' src="../static/img/pets/145.png">
     </span>
@@ -885,7 +886,7 @@ Endless Farming
             
             
             
-            <div id="Urd" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Urd" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Urd-modal">
         <img id="Urd-image" class='pet-image zero-star' src="../static/img/pets/148.png">
     </span>
@@ -917,7 +918,7 @@ Endless Farming
             
             
             
-            <div id="Verdandi" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Verdandi" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Verdandi-modal">
         <img id="Verdandi-image" class='pet-image zero-star' src="../static/img/pets/142.png">
     </span>
@@ -949,7 +950,7 @@ Endless Farming
             
             
             
-            <div id="Tyr" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Tyr" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Tyr-modal">
         <img id="Tyr-image" class='pet-image zero-star' src="../static/img/pets/149.png">
     </span>
@@ -981,7 +982,7 @@ Endless Farming
             
             
             
-            <div id="Skadi" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Skadi" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Skadi-modal">
         <img id="Skadi-image" class='pet-image zero-star' src="../static/img/pets/151.png">
     </span>
@@ -1013,7 +1014,7 @@ Endless Farming
             
             
             
-            <div id="Freyr" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Freyr" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Freyr-modal">
         <img id="Freyr-image" class='pet-image zero-star' src="../static/img/pets/143.png">
     </span>
@@ -1045,7 +1046,7 @@ Endless Farming
             
             
             
-            <div id="Baldur" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Baldur" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Baldur-modal">
         <img id="Baldur-image" class='pet-image zero-star' src="../static/img/pets/146.png">
     </span>
@@ -1077,7 +1078,7 @@ Endless Farming
             
             
             
-            <div id="Thor" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Thor" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Thor-modal">
         <img id="Thor-image" class='pet-image zero-star' src="../static/img/pets/150.png">
     </span>
@@ -1109,7 +1110,7 @@ Endless Farming
             
             
             
-            <div id="Loki" data-id="10" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Loki" data-id="10" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Loki-modal">
         <img id="Loki-image" class='pet-image zero-star' src="../static/img/pets/141.png">
     </span>
@@ -1141,7 +1142,7 @@ Endless Farming
             
             
             
-            <div id="Freya" data-id="11" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered">
+            <div id="Freya" data-id="11" data-origins="[&#39;shh&#39;, &#39;ss2&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Freya-modal">
         <img id="Freya-image" class='pet-image zero-star' src="../static/img/pets/144.png">
     </span>
@@ -1178,7 +1179,7 @@ Endless Farming
             
             
             
-            <div id="Khepri" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Khepri" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Khepri-modal">
         <img id="Khepri-image" class='pet-image zero-star' src="../static/img/pets/171.png">
     </span>
@@ -1210,7 +1211,7 @@ Endless Farming
             
             
             
-            <div id="Osiris" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Osiris" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Osiris-modal">
         <img id="Osiris-image" class='pet-image zero-star' src="../static/img/pets/175.png">
     </span>
@@ -1242,7 +1243,7 @@ Endless Farming
             
             
             
-            <div id="Anubis" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Anubis" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Anubis-modal">
         <img id="Anubis-image" class='pet-image zero-star' src="../static/img/pets/179.png">
     </span>
@@ -1274,7 +1275,7 @@ Endless Farming
             
             
             
-            <div id="Ra" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Ra" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ra-modal">
         <img id="Ra-image" class='pet-image zero-star' src="../static/img/pets/172.png">
     </span>
@@ -1306,7 +1307,7 @@ Endless Farming
             
             
             
-            <div id="Satis" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Satis" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Satis-modal">
         <img id="Satis-image" class='pet-image zero-star' src="../static/img/pets/182.png">
     </span>
@@ -1338,7 +1339,7 @@ Endless Farming
             
             
             
-            <div id="Hathor" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Hathor" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hathor-modal">
         <img id="Hathor-image" class='pet-image zero-star' src="../static/img/pets/176.png">
     </span>
@@ -1370,7 +1371,7 @@ Endless Farming
             
             
             
-            <div id="Sobek" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Sobek" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Sobek-modal">
         <img id="Sobek-image" class='pet-image zero-star' src="../static/img/pets/180.png">
     </span>
@@ -1402,7 +1403,7 @@ Endless Farming
             
             
             
-            <div id="Khnum" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Khnum" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Khnum-modal">
         <img id="Khnum-image" class='pet-image zero-star' src="../static/img/pets/181.png">
     </span>
@@ -1434,7 +1435,7 @@ Endless Farming
             
             
             
-            <div id="Nefertem" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Nefertem" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Nefertem-modal">
         <img id="Nefertem-image" class='pet-image zero-star' src="../static/img/pets/174.png">
     </span>
@@ -1466,7 +1467,7 @@ Endless Farming
             
             
             
-            <div id="Seth" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Seth" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Seth-modal">
         <img id="Seth-image" class='pet-image zero-star' src="../static/img/pets/177.png">
     </span>
@@ -1498,7 +1499,7 @@ Endless Farming
             
             
             
-            <div id="Atum" data-id="10" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Atum" data-id="10" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Atum-modal">
         <img id="Atum-image" class='pet-image zero-star' src="../static/img/pets/173.png">
     </span>
@@ -1530,7 +1531,7 @@ Endless Farming
             
             
             
-            <div id="Nephthys" data-id="11" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered">
+            <div id="Nephthys" data-id="11" data-origins="[&#39;shh&#39;, &#39;ss3&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Nephthys-modal">
         <img id="Nephthys-image" class='pet-image zero-star' src="../static/img/pets/178.png">
     </span>
@@ -1567,7 +1568,7 @@ Endless Farming
             
             
             
-            <div id="Indra" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Indra" data-id="0" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Indra-modal">
         <img id="Indra-image" class='pet-image zero-star' src="../static/img/pets/236.png">
     </span>
@@ -1599,7 +1600,7 @@ Endless Farming
             
             
             
-            <div id="Shiva" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Shiva" data-id="1" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Shiva-modal">
         <img id="Shiva-image" class='pet-image zero-star' src="../static/img/pets/235.png">
     </span>
@@ -1631,7 +1632,7 @@ Endless Farming
             
             
             
-            <div id="Brahma" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Brahma" data-id="2" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Brahma-modal">
         <img id="Brahma-image" class='pet-image zero-star' src="../static/img/pets/229.png">
     </span>
@@ -1663,7 +1664,7 @@ Endless Farming
             
             
             
-            <div id="Chandra" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Chandra" data-id="3" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Chandra-modal">
         <img id="Chandra-image" class='pet-image zero-star' src="../static/img/pets/237.png">
     </span>
@@ -1695,7 +1696,7 @@ Endless Farming
             
             
             
-            <div id="Surya" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Surya" data-id="4" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Surya-modal">
         <img id="Surya-image" class='pet-image zero-star' src="../static/img/pets/230.png">
     </span>
@@ -1727,7 +1728,7 @@ Endless Farming
             
             
             
-            <div id="Garuda" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Garuda" data-id="5" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Garuda-modal">
         <img id="Garuda-image" class='pet-image zero-star' src="../static/img/pets/231.png">
     </span>
@@ -1759,7 +1760,7 @@ Endless Farming
             
             
             
-            <div id="Ganesha" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Ganesha" data-id="6" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ganesha-modal">
         <img id="Ganesha-image" class='pet-image zero-star' src="../static/img/pets/240.png">
     </span>
@@ -1791,7 +1792,7 @@ Endless Farming
             
             
             
-            <div id="Vishnu" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Vishnu" data-id="7" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Vishnu-modal">
         <img id="Vishnu-image" class='pet-image zero-star' src="../static/img/pets/238.png">
     </span>
@@ -1823,7 +1824,7 @@ Endless Farming
             
             
             
-            <div id="Varuna" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Varuna" data-id="8" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Varuna-modal">
         <img id="Varuna-image" class='pet-image zero-star' src="../static/img/pets/239.png">
     </span>
@@ -1855,7 +1856,7 @@ Endless Farming
             
             
             
-            <div id="Saraswati" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Saraswati" data-id="9" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Saraswati-modal">
         <img id="Saraswati-image" class='pet-image zero-star' src="../static/img/pets/233.png">
     </span>
@@ -1887,7 +1888,7 @@ Endless Farming
             
             
             
-            <div id="Lakshmi" data-id="10" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Lakshmi" data-id="10" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lakshmi-modal">
         <img id="Lakshmi-image" class='pet-image zero-star' src="../static/img/pets/234.png">
     </span>
@@ -1919,7 +1920,7 @@ Endless Farming
             
             
             
-            <div id="Parvati" data-id="11" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered">
+            <div id="Parvati" data-id="11" data-origins="[&#39;shh&#39;, &#39;ss4&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Parvati-modal">
         <img id="Parvati-image" class='pet-image zero-star' src="../static/img/pets/232.png">
     </span>
@@ -1956,7 +1957,7 @@ Endless Farming
             
             
             
-            <div id="Ox_King" data-id="0" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Ox_King" data-id="0" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ox_King-modal">
         <img id="Ox_King-image" class='pet-image zero-star' src="../static/img/pets/302.png">
     </span>
@@ -1988,7 +1989,7 @@ Endless Farming
             
             
             
-            <div id="Snake_King" data-id="1" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Snake_King" data-id="1" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Snake_King-modal">
         <img id="Snake_King-image" class='pet-image zero-star' src="../static/img/pets/299.png">
     </span>
@@ -2020,7 +2021,7 @@ Endless Farming
             
             
             
-            <div id="Chicken_King" data-id="2" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Chicken_King" data-id="2" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Chicken_King-modal">
         <img id="Chicken_King-image" class='pet-image zero-star' src="../static/img/pets/293.png">
     </span>
@@ -2052,7 +2053,7 @@ Endless Farming
             
             
             
-            <div id="Dragon_King" data-id="3" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Dragon_King" data-id="3" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dragon_King-modal">
         <img id="Dragon_King-image" class='pet-image zero-star' src="../static/img/pets/296.png">
     </span>
@@ -2084,7 +2085,7 @@ Endless Farming
             
             
             
-            <div id="Horse_King" data-id="4" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Horse_King" data-id="4" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Horse_King-modal">
         <img id="Horse_King-image" class='pet-image zero-star' src="../static/img/pets/294.png">
     </span>
@@ -2116,7 +2117,7 @@ Endless Farming
             
             
             
-            <div id="Tiger_King" data-id="5" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Tiger_King" data-id="5" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Tiger_King-modal">
         <img id="Tiger_King-image" class='pet-image zero-star' src="../static/img/pets/295.png">
     </span>
@@ -2148,7 +2149,7 @@ Endless Farming
             
             
             
-            <div id="Sheep_King" data-id="6" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Sheep_King" data-id="6" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Sheep_King-modal">
         <img id="Sheep_King-image" class='pet-image zero-star' src="../static/img/pets/297.png">
     </span>
@@ -2180,7 +2181,7 @@ Endless Farming
             
             
             
-            <div id="Rabbit_King" data-id="7" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Rabbit_King" data-id="7" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Rabbit_King-modal">
         <img id="Rabbit_King-image" class='pet-image zero-star' src="../static/img/pets/298.png">
     </span>
@@ -2212,7 +2213,7 @@ Endless Farming
             
             
             
-            <div id="Rat_King" data-id="8" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Rat_King" data-id="8" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Rat_King-modal">
         <img id="Rat_King-image" class='pet-image zero-star' src="../static/img/pets/300.png">
     </span>
@@ -2244,7 +2245,7 @@ Endless Farming
             
             
             
-            <div id="Monkey_King" data-id="9" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Monkey_King" data-id="9" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Monkey_King-modal">
         <img id="Monkey_King-image" class='pet-image zero-star' src="../static/img/pets/301.png">
     </span>
@@ -2276,7 +2277,7 @@ Endless Farming
             
             
             
-            <div id="Dog_King" data-id="10" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Dog_King" data-id="10" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dog_King-modal">
         <img id="Dog_King-image" class='pet-image zero-star' src="../static/img/pets/303.png">
     </span>
@@ -2308,7 +2309,7 @@ Endless Farming
             
             
             
-            <div id="Pig_King" data-id="11" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered">
+            <div id="Pig_King" data-id="11" data-origins="[&#39;ss5&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pig_King-modal">
         <img id="Pig_King-image" class='pet-image zero-star' src="../static/img/pets/304.png">
     </span>
@@ -2345,7 +2346,7 @@ Endless Farming
             
             
             
-            <div id="Dionysus" data-id="0" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Dionysus" data-id="0" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dionysus-modal">
         <img id="Dionysus-image" class='pet-image zero-star' src="../static/img/pets/116.png">
     </span>
@@ -2377,7 +2378,7 @@ Endless Farming
             
             
             
-            <div id="Hera" data-id="1" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Hera" data-id="1" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hera-modal">
         <img id="Hera-image" class='pet-image zero-star' src="../static/img/pets/127.png">
     </span>
@@ -2409,7 +2410,7 @@ Endless Farming
             
             
             
-            <div id="Apollo" data-id="2" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Apollo" data-id="2" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Apollo-modal">
         <img id="Apollo-image" class='pet-image zero-star' src="../static/img/pets/122.png">
     </span>
@@ -2441,7 +2442,7 @@ Endless Farming
             
             
             
-            <div id="Hermes" data-id="3" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Hermes" data-id="3" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hermes-modal">
         <img id="Hermes-image" class='pet-image zero-star' src="../static/img/pets/126.png">
     </span>
@@ -2473,7 +2474,7 @@ Endless Farming
             
             
             
-            <div id="Artemis" data-id="4" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Artemis" data-id="4" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Artemis-modal">
         <img id="Artemis-image" class='pet-image zero-star' src="../static/img/pets/121.png">
     </span>
@@ -2505,7 +2506,7 @@ Endless Farming
             
             
             
-            <div id="Demeter" data-id="5" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Demeter" data-id="5" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Demeter-modal">
         <img id="Demeter-image" class='pet-image zero-star' src="../static/img/pets/123.png">
     </span>
@@ -2537,7 +2538,7 @@ Endless Farming
             
             
             
-            <div id="Hephaistos" data-id="6" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Hephaistos" data-id="6" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hephaistos-modal">
         <img id="Hephaistos-image" class='pet-image zero-star' src="../static/img/pets/125.png">
     </span>
@@ -2569,7 +2570,7 @@ Endless Farming
             
             
             
-            <div id="Zeus" data-id="7" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Zeus" data-id="7" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Zeus-modal">
         <img id="Zeus-image" class='pet-image zero-star' src="../static/img/pets/117.png">
     </span>
@@ -2601,7 +2602,7 @@ Endless Farming
             
             
             
-            <div id="Poseidon" data-id="8" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Poseidon" data-id="8" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Poseidon-modal">
         <img id="Poseidon-image" class='pet-image zero-star' src="../static/img/pets/124.png">
     </span>
@@ -2633,7 +2634,7 @@ Endless Farming
             
             
             
-            <div id="Athena" data-id="9" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Athena" data-id="9" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Athena-modal">
         <img id="Athena-image" class='pet-image zero-star' src="../static/img/pets/120.png">
     </span>
@@ -2665,7 +2666,7 @@ Endless Farming
             
             
             
-            <div id="Ares" data-id="10" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Ares" data-id="10" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ares-modal">
         <img id="Ares-image" class='pet-image zero-star' src="../static/img/pets/119.png">
     </span>
@@ -2697,7 +2698,7 @@ Endless Farming
             
             
             
-            <div id="Aphrodite" data-id="11" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered">
+            <div id="Aphrodite" data-id="11" data-origins="[&#39;greek&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Aphrodite-modal">
         <img id="Aphrodite-image" class='pet-image zero-star' src="../static/img/pets/118.png">
     </span>
@@ -2734,7 +2735,7 @@ Endless Farming
             
             
             
-            <div id="Guanna" data-id="0" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Guanna" data-id="0" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Guanna-modal">
         <img id="Guanna-image" class='pet-image zero-star' src="../static/img/pets/281.png">
     </span>
@@ -2766,7 +2767,7 @@ Endless Farming
             
             
             
-            <div id="Girtab" data-id="1" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Girtab" data-id="1" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Girtab-modal">
         <img id="Girtab-image" class='pet-image zero-star' src="../static/img/pets/287.png">
     </span>
@@ -2798,7 +2799,7 @@ Endless Farming
             
             
             
-            <div id="Kumal" data-id="2" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Kumal" data-id="2" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Kumal-modal">
         <img id="Kumal-image" class='pet-image zero-star' src="../static/img/pets/284.png">
     </span>
@@ -2830,7 +2831,7 @@ Endless Farming
             
             
             
-            <div id="Gu" data-id="3" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Gu" data-id="3" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Gu-modal">
         <img id="Gu-image" class='pet-image zero-star' src="../static/img/pets/290.png">
     </span>
@@ -2862,7 +2863,7 @@ Endless Farming
             
             
             
-            <div id="Mashtaba" data-id="4" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Mashtaba" data-id="4" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Mashtaba-modal">
         <img id="Mashtaba-image" class='pet-image zero-star' src="../static/img/pets/282.png">
     </span>
@@ -2894,7 +2895,7 @@ Endless Farming
             
             
             
-            <div id="Pabil" data-id="5" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Pabil" data-id="5" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pabil-modal">
         <img id="Pabil-image" class='pet-image zero-star' src="../static/img/pets/283.png">
     </span>
@@ -2926,7 +2927,7 @@ Endless Farming
             
             
             
-            <div id="Suhurmash" data-id="6" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Suhurmash" data-id="6" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Suhurmash-modal">
         <img id="Suhurmash-image" class='pet-image zero-star' src="../static/img/pets/285.png">
     </span>
@@ -2958,7 +2959,7 @@ Endless Farming
             
             
             
-            <div id="Absin" data-id="7" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Absin" data-id="7" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Absin-modal">
         <img id="Absin-image" class='pet-image zero-star' src="../static/img/pets/286.png">
     </span>
@@ -2990,7 +2991,7 @@ Endless Farming
             
             
             
-            <div id="Urgula" data-id="8" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Urgula" data-id="8" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Urgula-modal">
         <img id="Urgula-image" class='pet-image zero-star' src="../static/img/pets/288.png">
     </span>
@@ -3022,7 +3023,7 @@ Endless Farming
             
             
             
-            <div id="Zibaanna" data-id="9" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Zibaanna" data-id="9" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Zibaanna-modal">
         <img id="Zibaanna-image" class='pet-image zero-star' src="../static/img/pets/289.png">
     </span>
@@ -3054,7 +3055,7 @@ Endless Farming
             
             
             
-            <div id="Simmah" data-id="10" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Simmah" data-id="10" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Simmah-modal">
         <img id="Simmah-image" class='pet-image zero-star' src="../static/img/pets/291.png">
     </span>
@@ -3086,7 +3087,7 @@ Endless Farming
             
             
             
-            <div id="Dub" data-id="11" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered">
+            <div id="Dub" data-id="11" data-origins="[&#39;zodiac&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dub-modal">
         <img id="Dub-image" class='pet-image zero-star' src="../static/img/pets/292.png">
     </span>
@@ -3123,7 +3124,7 @@ Endless Farming
             
             
             
-            <div id="Pipi" data-id="0" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Pipi" data-id="0" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pipi-modal">
         <img id="Pipi-image" class='pet-image zero-star' src="../static/img/pets/217.png">
     </span>
@@ -3155,7 +3156,7 @@ Endless Farming
             
             
             
-            <div id="Popo" data-id="1" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Popo" data-id="1" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Popo-modal">
         <img id="Popo-image" class='pet-image zero-star' src="../static/img/pets/218.png">
     </span>
@@ -3187,7 +3188,7 @@ Endless Farming
             
             
             
-            <div id="Lunar_Rabbit" data-id="2" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Lunar_Rabbit" data-id="2" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lunar_Rabbit-modal">
         <img id="Lunar_Rabbit-image" class='pet-image zero-star' src="../static/img/pets/195.png">
     </span>
@@ -3219,7 +3220,7 @@ Endless Farming
             
             
             
-            <div id="Scarecrow" data-id="3" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Scarecrow" data-id="3" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Scarecrow-modal">
         <img id="Scarecrow-image" class='pet-image zero-star' src="../static/img/pets/196.png">
     </span>
@@ -3251,7 +3252,7 @@ Endless Farming
             
             
             
-            <div id="Lesser_Panda" data-id="4" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Lesser_Panda" data-id="4" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lesser_Panda-modal">
         <img id="Lesser_Panda-image" class='pet-image zero-star' src="../static/img/pets/197.png">
     </span>
@@ -3283,7 +3284,7 @@ Endless Farming
             
             
             
-            <div id="Panda" data-id="5" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Panda" data-id="5" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Panda-modal">
         <img id="Panda-image" class='pet-image zero-star' src="../static/img/pets/198.png">
     </span>
@@ -3315,7 +3316,7 @@ Endless Farming
             
             
             
-            <div id="Witch" data-id="6" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Witch" data-id="6" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Witch-modal">
         <img id="Witch-image" class='pet-image zero-star' src="../static/img/pets/199.png">
     </span>
@@ -3347,7 +3348,7 @@ Endless Farming
             
             
             
-            <div id="Franken" data-id="7" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Franken" data-id="7" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Franken-modal">
         <img id="Franken-image" class='pet-image zero-star' src="../static/img/pets/200.png">
     </span>
@@ -3379,7 +3380,7 @@ Endless Farming
             
             
             
-            <div id="Snow_Jack" data-id="8" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Snow_Jack" data-id="8" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Snow_Jack-modal">
         <img id="Snow_Jack-image" class='pet-image zero-star' src="../static/img/pets/205.png">
     </span>
@@ -3411,7 +3412,7 @@ Endless Farming
             
             
             
-            <div id="Snow_Peng" data-id="9" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Snow_Peng" data-id="9" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Snow_Peng-modal">
         <img id="Snow_Peng-image" class='pet-image zero-star' src="../static/img/pets/206.png">
     </span>
@@ -3443,7 +3444,7 @@ Endless Farming
             
             
             
-            <div id="Daddy_Bear" data-id="10" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Daddy_Bear" data-id="10" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Daddy_Bear-modal">
         <img id="Daddy_Bear-image" class='pet-image zero-star' src="../static/img/pets/241.png">
     </span>
@@ -3475,7 +3476,7 @@ Endless Farming
             
             
             
-            <div id="Mommy_Bear" data-id="11" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Mommy_Bear" data-id="11" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Mommy_Bear-modal">
         <img id="Mommy_Bear-image" class='pet-image zero-star' src="../static/img/pets/242.png">
     </span>
@@ -3507,7 +3508,7 @@ Endless Farming
             
             
             
-            <div id="Duru" data-id="12" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Duru" data-id="12" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Duru-modal">
         <img id="Duru-image" class='pet-image zero-star' src="../static/img/pets/259.png">
     </span>
@@ -3539,7 +3540,7 @@ Endless Farming
             
             
             
-            <div id="Dutu" data-id="13" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Dutu" data-id="13" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dutu-modal">
         <img id="Dutu-image" class='pet-image zero-star' src="../static/img/pets/260.png">
     </span>
@@ -3571,7 +3572,7 @@ Endless Farming
             
             
             
-            <div id="Leaf" data-id="14" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Leaf" data-id="14" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Leaf-modal">
         <img id="Leaf-image" class='pet-image zero-star' src="../static/img/pets/266.png">
     </span>
@@ -3603,7 +3604,7 @@ Endless Farming
             
             
             
-            <div id="Pavo" data-id="15" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Pavo" data-id="15" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pavo-modal">
         <img id="Pavo-image" class='pet-image zero-star' src="../static/img/pets/267.png">
     </span>
@@ -3635,7 +3636,7 @@ Endless Farming
             
             
             
-            <div id="Porcue" data-id="16" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Porcue" data-id="16" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Porcue-modal">
         <img id="Porcue-image" class='pet-image zero-star' src="../static/img/pets/273.png">
     </span>
@@ -3667,7 +3668,7 @@ Endless Farming
             
             
             
-            <div id="Hammie" data-id="17" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Hammie" data-id="17" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hammie-modal">
         <img id="Hammie-image" class='pet-image zero-star' src="../static/img/pets/274.png">
     </span>
@@ -3699,7 +3700,7 @@ Endless Farming
             
             
             
-            <div id="Lycan" data-id="18" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Lycan" data-id="18" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lycan-modal">
         <img id="Lycan-image" class='pet-image zero-star' src="../static/img/pets/275.png">
     </span>
@@ -3731,7 +3732,7 @@ Endless Farming
             
             
             
-            <div id="Dracu" data-id="19" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Dracu" data-id="19" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dracu-modal">
         <img id="Dracu-image" class='pet-image zero-star' src="../static/img/pets/276.png">
     </span>
@@ -3763,7 +3764,7 @@ Endless Farming
             
             
             
-            <div id="Polar" data-id="20" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Polar" data-id="20" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Polar-modal">
         <img id="Polar-image" class='pet-image zero-star' src="../static/img/pets/305.png">
     </span>
@@ -3795,7 +3796,7 @@ Endless Farming
             
             
             
-            <div id="Arctic" data-id="21" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Arctic" data-id="21" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Arctic-modal">
         <img id="Arctic-image" class='pet-image zero-star' src="../static/img/pets/306.png">
     </span>
@@ -3827,7 +3828,7 @@ Endless Farming
             
             
             
-            <div id="Ratto" data-id="22" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Ratto" data-id="22" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ratto-modal">
         <img id="Ratto-image" class='pet-image zero-star' src="../static/img/pets/307.png">
     </span>
@@ -3859,7 +3860,7 @@ Endless Farming
             
             
             
-            <div id="Ratti" data-id="23" data-origins="[&#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Ratti" data-id="23" data-origins="[&#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ratti-modal">
         <img id="Ratti-image" class='pet-image zero-star' src="../static/img/pets/308.png">
     </span>
@@ -3891,7 +3892,7 @@ Endless Farming
             
             
             
-            <div id="Hallokin" data-id="24" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Hallokin" data-id="24" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hallokin-modal">
         <img id="Hallokin-image" class='pet-image zero-star' src="../static/img/pets/44.png">
     </span>
@@ -3923,7 +3924,7 @@ Endless Farming
             
             
             
-            <div id="Nills" data-id="25" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Nills" data-id="25" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Nills-modal">
         <img id="Nills-image" class='pet-image zero-star' src="../static/img/pets/52.png">
     </span>
@@ -3955,7 +3956,7 @@ Endless Farming
             
             
             
-            <div id="Rudolph" data-id="26" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Rudolph" data-id="26" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Rudolph-modal">
         <img id="Rudolph-image" class='pet-image zero-star' src="../static/img/pets/53.png">
     </span>
@@ -3987,7 +3988,7 @@ Endless Farming
             
             
             
-            <div id="Cookoo" data-id="27" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Cookoo" data-id="27" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Cookoo-modal">
         <img id="Cookoo-image" class='pet-image zero-star' src="../static/img/pets/54.png">
     </span>
@@ -4019,7 +4020,7 @@ Endless Farming
             
             
             
-            <div id="Lime" data-id="28" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Lime" data-id="28" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lime-modal">
         <img id="Lime-image" class='pet-image zero-star' src="../static/img/pets/59.png">
     </span>
@@ -4051,7 +4052,7 @@ Endless Farming
             
             
             
-            <div id="Green" data-id="29" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Green" data-id="29" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Green-modal">
         <img id="Green-image" class='pet-image zero-star' src="../static/img/pets/97.png">
     </span>
@@ -4083,7 +4084,7 @@ Endless Farming
             
             
             
-            <div id="Blue" data-id="30" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Blue" data-id="30" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Blue-modal">
         <img id="Blue-image" class='pet-image zero-star' src="../static/img/pets/98.png">
     </span>
@@ -4115,7 +4116,7 @@ Endless Farming
             
             
             
-            <div id="Red" data-id="31" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Red" data-id="31" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Red-modal">
         <img id="Red-image" class='pet-image zero-star' src="../static/img/pets/99.png">
     </span>
@@ -4147,7 +4148,7 @@ Endless Farming
             
             
             
-            <div id="Purple" data-id="32" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Purple" data-id="32" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Purple-modal">
         <img id="Purple-image" class='pet-image zero-star' src="../static/img/pets/100.png">
     </span>
@@ -4179,7 +4180,7 @@ Endless Farming
             
             
             
-            <div id="Celeste" data-id="33" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Celeste" data-id="33" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Celeste-modal">
         <img id="Celeste-image" class='pet-image zero-star' src="../static/img/pets/104.png">
     </span>
@@ -4211,7 +4212,7 @@ Endless Farming
             
             
             
-            <div id="Bunnette" data-id="34" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Bunnette" data-id="34" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Bunnette-modal">
         <img id="Bunnette-image" class='pet-image zero-star' src="../static/img/pets/128.png">
     </span>
@@ -4243,7 +4244,7 @@ Endless Farming
             
             
             
-            <div id="Toby" data-id="35" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Toby" data-id="35" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Toby-modal">
         <img id="Toby-image" class='pet-image zero-star' src="../static/img/pets/129.png">
     </span>
@@ -4275,7 +4276,7 @@ Endless Farming
             
             
             
-            <div id="H-Reaper" data-id="36" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="H-Reaper" data-id="36" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#H-Reaper-modal">
         <img id="H-Reaper-image" class='pet-image zero-star' src="../static/img/pets/134.png">
     </span>
@@ -4307,7 +4308,7 @@ Endless Farming
             
             
             
-            <div id="Christy" data-id="37" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Christy" data-id="37" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Christy-modal">
         <img id="Christy-image" class='pet-image zero-star' src="../static/img/pets/135.png">
     </span>
@@ -4339,7 +4340,7 @@ Endless Farming
             
             
             
-            <div id="Jindo" data-id="38" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered">
+            <div id="Jindo" data-id="38" data-origins="[&#39;shh&#39;, &#39;event&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Jindo-modal">
         <img id="Jindo-image" class='pet-image zero-star' src="../static/img/pets/140.png">
     </span>
@@ -4376,7 +4377,7 @@ Endless Farming
             
             
             
-            <div id="Bellial" data-id="0" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Bellial" data-id="0" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Bellial-modal">
         <img id="Bellial-image" class='pet-image zero-star' src="../static/img/pets/20.png">
     </span>
@@ -4408,7 +4409,7 @@ Endless Farming
             
             
             
-            <div id="Skole" data-id="1" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Skole" data-id="1" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Skole-modal">
         <img id="Skole-image" class='pet-image zero-star' src="../static/img/pets/45.png">
     </span>
@@ -4440,7 +4441,7 @@ Endless Farming
             
             
             
-            <div id="Harping" data-id="2" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Harping" data-id="2" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Harping-modal">
         <img id="Harping-image" class='pet-image zero-star' src="../static/img/pets/46.png">
     </span>
@@ -4472,7 +4473,7 @@ Endless Farming
             
             
             
-            <div id="Gnome" data-id="3" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Gnome" data-id="3" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Gnome-modal">
         <img id="Gnome-image" class='pet-image zero-star' src="../static/img/pets/47.png">
     </span>
@@ -4504,7 +4505,7 @@ Endless Farming
             
             
             
-            <div id="Lavark" data-id="4" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Lavark" data-id="4" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lavark-modal">
         <img id="Lavark-image" class='pet-image zero-star' src="../static/img/pets/88.png">
     </span>
@@ -4536,7 +4537,7 @@ Endless Farming
             
             
             
-            <div id="Hellyme" data-id="5" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Hellyme" data-id="5" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hellyme-modal">
         <img id="Hellyme-image" class='pet-image zero-star' src="../static/img/pets/89.png">
     </span>
@@ -4568,7 +4569,7 @@ Endless Farming
             
             
             
-            <div id="Furion" data-id="6" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Furion" data-id="6" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Furion-modal">
         <img id="Furion-image" class='pet-image zero-star' src="../static/img/pets/90.png">
     </span>
@@ -4600,7 +4601,7 @@ Endless Farming
             
             
             
-            <div id="Bahat" data-id="7" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Bahat" data-id="7" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Bahat-modal">
         <img id="Bahat-image" class='pet-image zero-star' src="../static/img/pets/91.png">
     </span>
@@ -4632,7 +4633,7 @@ Endless Farming
             
             
             
-            <div id="Flame_Sorceress" data-id="8" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Flame_Sorceress" data-id="8" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Flame_Sorceress-modal">
         <img id="Flame_Sorceress-image" class='pet-image zero-star' src="../static/img/pets/92.png">
     </span>
@@ -4664,7 +4665,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Skole" data-id="9" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Skole" data-id="9" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Skole-modal">
         <img id="Senior_Skole-image" class='pet-image zero-star' src="../static/img/pets/102.png">
     </span>
@@ -4696,7 +4697,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Harping" data-id="10" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Harping" data-id="10" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Harping-modal">
         <img id="Senior_Harping-image" class='pet-image zero-star' src="../static/img/pets/103.png">
     </span>
@@ -4728,7 +4729,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Gnome" data-id="11" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Gnome" data-id="11" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Gnome-modal">
         <img id="Senior_Gnome-image" class='pet-image zero-star' src="../static/img/pets/105.png">
     </span>
@@ -4760,7 +4761,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Bellial" data-id="12" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Bellial" data-id="12" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Bellial-modal">
         <img id="Senior_Bellial-image" class='pet-image zero-star' src="../static/img/pets/106.png">
     </span>
@@ -4792,7 +4793,7 @@ Endless Farming
             
             
             
-            <div id="Tarad" data-id="13" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Tarad" data-id="13" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Tarad-modal">
         <img id="Tarad-image" class='pet-image zero-star' src="../static/img/pets/107.png">
     </span>
@@ -4824,7 +4825,7 @@ Endless Farming
             
             
             
-            <div id="Neru" data-id="14" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Neru" data-id="14" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Neru-modal">
         <img id="Neru-image" class='pet-image zero-star' src="../static/img/pets/108.png">
     </span>
@@ -4856,7 +4857,7 @@ Endless Farming
             
             
             
-            <div id="Gorgon" data-id="15" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Gorgon" data-id="15" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Gorgon-modal">
         <img id="Gorgon-image" class='pet-image zero-star' src="../static/img/pets/109.png">
     </span>
@@ -4888,7 +4889,7 @@ Endless Farming
             
             
             
-            <div id="Beel" data-id="16" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Beel" data-id="16" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Beel-modal">
         <img id="Beel-image" class='pet-image zero-star' src="../static/img/pets/110.png">
     </span>
@@ -4920,7 +4921,7 @@ Endless Farming
             
             
             
-            <div id="Forest_Sorceress" data-id="17" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Forest_Sorceress" data-id="17" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Forest_Sorceress-modal">
         <img id="Forest_Sorceress-image" class='pet-image zero-star' src="../static/img/pets/111.png">
     </span>
@@ -4952,7 +4953,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Lavark" data-id="18" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Lavark" data-id="18" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Lavark-modal">
         <img id="Senior_Lavark-image" class='pet-image zero-star' src="../static/img/pets/130.png">
     </span>
@@ -4984,7 +4985,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Hellyme" data-id="19" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Hellyme" data-id="19" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Hellyme-modal">
         <img id="Senior_Hellyme-image" class='pet-image zero-star' src="../static/img/pets/131.png">
     </span>
@@ -5016,7 +5017,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Furion" data-id="20" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Furion" data-id="20" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Furion-modal">
         <img id="Senior_Furion-image" class='pet-image zero-star' src="../static/img/pets/132.png">
     </span>
@@ -5048,7 +5049,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Bahat" data-id="21" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Bahat" data-id="21" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Bahat-modal">
         <img id="Senior_Bahat-image" class='pet-image zero-star' src="../static/img/pets/133.png">
     </span>
@@ -5080,7 +5081,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Tarad" data-id="22" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Tarad" data-id="22" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Tarad-modal">
         <img id="Senior_Tarad-image" class='pet-image zero-star' src="../static/img/pets/153.png">
     </span>
@@ -5112,7 +5113,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Neru" data-id="23" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Neru" data-id="23" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Neru-modal">
         <img id="Senior_Neru-image" class='pet-image zero-star' src="../static/img/pets/154.png">
     </span>
@@ -5144,7 +5145,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Gorgon" data-id="24" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Gorgon" data-id="24" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Gorgon-modal">
         <img id="Senior_Gorgon-image" class='pet-image zero-star' src="../static/img/pets/155.png">
     </span>
@@ -5176,7 +5177,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Beel" data-id="25" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Beel" data-id="25" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Beel-modal">
         <img id="Senior_Beel-image" class='pet-image zero-star' src="../static/img/pets/156.png">
     </span>
@@ -5208,7 +5209,7 @@ Endless Farming
             
             
             
-            <div id="Heliffin" data-id="26" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Heliffin" data-id="26" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Heliffin-modal">
         <img id="Heliffin-image" class='pet-image zero-star' src="../static/img/pets/157.png">
     </span>
@@ -5240,7 +5241,7 @@ Endless Farming
             
             
             
-            <div id="Horn-Boar" data-id="27" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Horn-Boar" data-id="27" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Horn-Boar-modal">
         <img id="Horn-Boar-image" class='pet-image zero-star' src="../static/img/pets/158.png">
     </span>
@@ -5272,7 +5273,7 @@ Endless Farming
             
             
             
-            <div id="Twin_Skulls" data-id="28" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Twin_Skulls" data-id="28" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Twin_Skulls-modal">
         <img id="Twin_Skulls-image" class='pet-image zero-star' src="../static/img/pets/159.png">
     </span>
@@ -5304,7 +5305,7 @@ Endless Farming
             
             
             
-            <div id="Dread" data-id="29" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Dread" data-id="29" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dread-modal">
         <img id="Dread-image" class='pet-image zero-star' src="../static/img/pets/160.png">
     </span>
@@ -5336,7 +5337,7 @@ Endless Farming
             
             
             
-            <div id="Amaymon" data-id="30" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Amaymon" data-id="30" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Amaymon-modal">
         <img id="Amaymon-image" class='pet-image zero-star' src="../static/img/pets/161.png">
     </span>
@@ -5368,7 +5369,7 @@ Endless Farming
             
             
             
-            <div id="Dark_Sorceress" data-id="31" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Dark_Sorceress" data-id="31" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Dark_Sorceress-modal">
         <img id="Dark_Sorceress-image" class='pet-image zero-star' src="../static/img/pets/162.png">
     </span>
@@ -5400,7 +5401,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Skoll" data-id="32" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Skoll" data-id="32" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Skoll-modal">
         <img id="Extreme_Skoll-image" class='pet-image zero-star' src="../static/img/pets/201.png">
     </span>
@@ -5432,7 +5433,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Harping" data-id="33" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Harping" data-id="33" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Harping-modal">
         <img id="Extreme_Harping-image" class='pet-image zero-star' src="../static/img/pets/202.png">
     </span>
@@ -5464,7 +5465,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Gnome" data-id="34" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Gnome" data-id="34" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Gnome-modal">
         <img id="Extreme_Gnome-image" class='pet-image zero-star' src="../static/img/pets/203.png">
     </span>
@@ -5496,7 +5497,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Veli" data-id="35" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Veli" data-id="35" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Veli-modal">
         <img id="Extreme_Veli-image" class='pet-image zero-star' src="../static/img/pets/204.png">
     </span>
@@ -5528,7 +5529,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Heliffin" data-id="36" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Heliffin" data-id="36" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Heliffin-modal">
         <img id="Senior_Heliffin-image" class='pet-image zero-star' src="../static/img/pets/211.png">
     </span>
@@ -5560,7 +5561,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Horn-Boar" data-id="37" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Horn-Boar" data-id="37" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Horn-Boar-modal">
         <img id="Senior_Horn-Boar-image" class='pet-image zero-star' src="../static/img/pets/212.png">
     </span>
@@ -5592,7 +5593,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Twin_Skulls" data-id="38" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Twin_Skulls" data-id="38" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Twin_Skulls-modal">
         <img id="Senior_Twin_Skulls-image" class='pet-image zero-star' src="../static/img/pets/213.png">
     </span>
@@ -5624,7 +5625,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Dread" data-id="39" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Dread" data-id="39" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Dread-modal">
         <img id="Senior_Dread-image" class='pet-image zero-star' src="../static/img/pets/214.png">
     </span>
@@ -5656,7 +5657,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Amaymon" data-id="40" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Amaymon" data-id="40" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Amaymon-modal">
         <img id="Senior_Amaymon-image" class='pet-image zero-star' src="../static/img/pets/215.png">
     </span>
@@ -5688,7 +5689,7 @@ Endless Farming
             
             
             
-            <div id="Sahara" data-id="41" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Sahara" data-id="41" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Sahara-modal">
         <img id="Sahara-image" class='pet-image zero-star' src="../static/img/pets/216.png">
     </span>
@@ -5720,7 +5721,7 @@ Endless Farming
             
             
             
-            <div id="Ursha" data-id="42" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Ursha" data-id="42" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ursha-modal">
         <img id="Ursha-image" class='pet-image zero-star' src="../static/img/pets/223.png">
     </span>
@@ -5752,7 +5753,7 @@ Endless Farming
             
             
             
-            <div id="Peruru" data-id="43" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Peruru" data-id="43" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Peruru-modal">
         <img id="Peruru-image" class='pet-image zero-star' src="../static/img/pets/224.png">
     </span>
@@ -5784,7 +5785,7 @@ Endless Farming
             
             
             
-            <div id="Everes" data-id="44" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Everes" data-id="44" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Everes-modal">
         <img id="Everes-image" class='pet-image zero-star' src="../static/img/pets/225.png">
     </span>
@@ -5816,7 +5817,7 @@ Endless Farming
             
             
             
-            <div id="Skaka" data-id="45" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Skaka" data-id="45" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Skaka-modal">
         <img id="Skaka-image" class='pet-image zero-star' src="../static/img/pets/226.png">
     </span>
@@ -5848,7 +5849,7 @@ Endless Farming
             
             
             
-            <div id="Levthan" data-id="46" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Levthan" data-id="46" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Levthan-modal">
         <img id="Levthan-image" class='pet-image zero-star' src="../static/img/pets/227.png">
     </span>
@@ -5880,7 +5881,7 @@ Endless Farming
             
             
             
-            <div id="Frost_Sorceress" data-id="47" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Frost_Sorceress" data-id="47" data-origins="[&#39;shh&#39;, &#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Frost_Sorceress-modal">
         <img id="Frost_Sorceress-image" class='pet-image zero-star' src="../static/img/pets/228.png">
     </span>
@@ -5912,7 +5913,7 @@ Endless Farming
             
             
             
-            <div id="Ancient_Sorceress" data-id="48" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Ancient_Sorceress" data-id="48" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Ancient_Sorceress-modal">
         <img id="Ancient_Sorceress-image" class='pet-image zero-star' src="../static/img/pets/261.png">
     </span>
@@ -5944,7 +5945,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Ursha" data-id="49" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Ursha" data-id="49" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Ursha-modal">
         <img id="Senior_Ursha-image" class='pet-image zero-star' src="../static/img/pets/268.png">
     </span>
@@ -5976,7 +5977,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Peruru" data-id="50" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Peruru" data-id="50" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Peruru-modal">
         <img id="Senior_Peruru-image" class='pet-image zero-star' src="../static/img/pets/269.png">
     </span>
@@ -6008,7 +6009,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Everes" data-id="51" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Everes" data-id="51" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Everes-modal">
         <img id="Senior_Everes-image" class='pet-image zero-star' src="../static/img/pets/270.png">
     </span>
@@ -6040,7 +6041,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Skaka" data-id="52" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Skaka" data-id="52" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Skaka-modal">
         <img id="Senior_Skaka-image" class='pet-image zero-star' src="../static/img/pets/271.png">
     </span>
@@ -6072,7 +6073,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Levthan" data-id="53" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Levthan" data-id="53" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Levthan-modal">
         <img id="Senior_Levthan-image" class='pet-image zero-star' src="../static/img/pets/272.png">
     </span>
@@ -6104,7 +6105,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Lavark" data-id="54" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Lavark" data-id="54" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Lavark-modal">
         <img id="Extreme_Lavark-image" class='pet-image zero-star' src="../static/img/pets/309.png">
     </span>
@@ -6136,7 +6137,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Hellyme" data-id="55" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Hellyme" data-id="55" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Hellyme-modal">
         <img id="Extreme_Hellyme-image" class='pet-image zero-star' src="../static/img/pets/310.png">
     </span>
@@ -6168,7 +6169,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Furion" data-id="56" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Furion" data-id="56" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Furion-modal">
         <img id="Extreme_Furion-image" class='pet-image zero-star' src="../static/img/pets/311.png">
     </span>
@@ -6200,7 +6201,7 @@ Endless Farming
             
             
             
-            <div id="Extreme_Bahat" data-id="57" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Extreme_Bahat" data-id="57" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Extreme_Bahat-modal">
         <img id="Extreme_Bahat-image" class='pet-image zero-star' src="../static/img/pets/312.png">
     </span>
@@ -6232,7 +6233,7 @@ Endless Farming
             
             
             
-            <div id="Surtr" data-id="58" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Surtr" data-id="58" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Surtr-modal">
         <img id="Surtr-image" class='pet-image zero-star' src="../static/img/pets/313.png">
     </span>
@@ -6264,7 +6265,7 @@ Endless Farming
             
             
             
-            <div id="Senior_Flame_Sorceress" data-id="59" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered">
+            <div id="Senior_Flame_Sorceress" data-id="59" data-origins="[&#39;raid&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Senior_Flame_Sorceress-modal">
         <img id="Senior_Flame_Sorceress-image" class='pet-image zero-star' src="../static/img/pets/314.png">
     </span>
@@ -6301,7 +6302,7 @@ Endless Farming
             
             
             
-            <div id="Puppy" data-id="0" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Puppy" data-id="0" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Puppy-modal">
         <img id="Puppy-image" class='pet-image zero-star' src="../static/img/pets/60.png">
     </span>
@@ -6333,7 +6334,7 @@ Endless Farming
             
             
             
-            <div id="Coby" data-id="1" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Coby" data-id="1" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Coby-modal">
         <img id="Coby-image" class='pet-image zero-star' src="../static/img/pets/61.png">
     </span>
@@ -6365,7 +6366,7 @@ Endless Farming
             
             
             
-            <div id="Hotbee" data-id="2" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Hotbee" data-id="2" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hotbee-modal">
         <img id="Hotbee-image" class='pet-image zero-star' src="../static/img/pets/62.png">
     </span>
@@ -6397,7 +6398,7 @@ Endless Farming
             
             
             
-            <div id="Pangpang" data-id="3" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Pangpang" data-id="3" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pangpang-modal">
         <img id="Pangpang-image" class='pet-image zero-star' src="../static/img/pets/63.png">
     </span>
@@ -6429,7 +6430,7 @@ Endless Farming
             
             
             
-            <div id="Lye" data-id="4" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Lye" data-id="4" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Lye-modal">
         <img id="Lye-image" class='pet-image zero-star' src="../static/img/pets/64.png">
     </span>
@@ -6461,7 +6462,7 @@ Endless Farming
             
             
             
-            <div id="Hot_Pony" data-id="5" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Hot_Pony" data-id="5" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Hot_Pony-modal">
         <img id="Hot_Pony-image" class='pet-image zero-star' src="../static/img/pets/65.png">
     </span>
@@ -6493,7 +6494,7 @@ Endless Farming
             
             
             
-            <div id="Jelly" data-id="6" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Jelly" data-id="6" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Jelly-modal">
         <img id="Jelly-image" class='pet-image zero-star' src="../static/img/pets/66.png">
     </span>
@@ -6525,7 +6526,7 @@ Endless Farming
             
             
             
-            <div id="Opener" data-id="7" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Opener" data-id="7" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Opener-modal">
         <img id="Opener-image" class='pet-image zero-star' src="../static/img/pets/67.png">
     </span>
@@ -6557,7 +6558,7 @@ Endless Farming
             
             
             
-            <div id="Boongboong" data-id="8" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Boongboong" data-id="8" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Boongboong-modal">
         <img id="Boongboong-image" class='pet-image zero-star' src="../static/img/pets/68.png">
     </span>
@@ -6589,7 +6590,7 @@ Endless Farming
             
             
             
-            <div id="Nepen-quiver" data-id="9" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Nepen-quiver" data-id="9" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Nepen-quiver-modal">
         <img id="Nepen-quiver-image" class='pet-image zero-star' src="../static/img/pets/69.png">
     </span>
@@ -6621,7 +6622,7 @@ Endless Farming
             
             
             
-            <div id="Greenbee" data-id="10" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Greenbee" data-id="10" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Greenbee-modal">
         <img id="Greenbee-image" class='pet-image zero-star' src="../static/img/pets/70.png">
     </span>
@@ -6653,7 +6654,7 @@ Endless Farming
             
             
             
-            <div id="Gently" data-id="11" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Gently" data-id="11" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Gently-modal">
         <img id="Gently-image" class='pet-image zero-star' src="../static/img/pets/71.png">
     </span>
@@ -6685,7 +6686,7 @@ Endless Farming
             
             
             
-            <div id="Big_Eye" data-id="12" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Big_Eye" data-id="12" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Big_Eye-modal">
         <img id="Big_Eye-image" class='pet-image zero-star' src="../static/img/pets/72.png">
     </span>
@@ -6717,7 +6718,7 @@ Endless Farming
             
             
             
-            <div id="Clapper" data-id="13" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Clapper" data-id="13" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Clapper-modal">
         <img id="Clapper-image" class='pet-image zero-star' src="../static/img/pets/73.png">
     </span>
@@ -6749,7 +6750,7 @@ Endless Farming
             
             
             
-            <div id="Black_Jack" data-id="14" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Black_Jack" data-id="14" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Black_Jack-modal">
         <img id="Black_Jack-image" class='pet-image zero-star' src="../static/img/pets/74.png">
     </span>
@@ -6781,7 +6782,7 @@ Endless Farming
             
             
             
-            <div id="Eye_Bye" data-id="15" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Eye_Bye" data-id="15" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Eye_Bye-modal">
         <img id="Eye_Bye-image" class='pet-image zero-star' src="../static/img/pets/75.png">
     </span>
@@ -6813,7 +6814,7 @@ Endless Farming
             
             
             
-            <div id="Red_Horn" data-id="16" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Red_Horn" data-id="16" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Red_Horn-modal">
         <img id="Red_Horn-image" class='pet-image zero-star' src="../static/img/pets/76.png">
     </span>
@@ -6845,7 +6846,7 @@ Endless Farming
             
             
             
-            <div id="Pallabook" data-id="17" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Pallabook" data-id="17" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Pallabook-modal">
         <img id="Pallabook-image" class='pet-image zero-star' src="../static/img/pets/77.png">
     </span>
@@ -6877,7 +6878,7 @@ Endless Farming
             
             
             
-            <div id="Punpun" data-id="18" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Punpun" data-id="18" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Punpun-modal">
         <img id="Punpun-image" class='pet-image zero-star' src="../static/img/pets/78.png">
     </span>
@@ -6909,7 +6910,7 @@ Endless Farming
             
             
             
-            <div id="Celt" data-id="19" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Celt" data-id="19" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Celt-modal">
         <img id="Celt-image" class='pet-image zero-star' src="../static/img/pets/79.png">
     </span>
@@ -6941,7 +6942,7 @@ Endless Farming
             
             
             
-            <div id="Chilly" data-id="20" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Chilly" data-id="20" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Chilly-modal">
         <img id="Chilly-image" class='pet-image zero-star' src="../static/img/pets/80.png">
     </span>
@@ -6973,7 +6974,7 @@ Endless Farming
             
             
             
-            <div id="Wingvel" data-id="21" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Wingvel" data-id="21" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Wingvel-modal">
         <img id="Wingvel-image" class='pet-image zero-star' src="../static/img/pets/81.png">
     </span>
@@ -7005,7 +7006,7 @@ Endless Farming
             
             
             
-            <div id="Teaser" data-id="22" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Teaser" data-id="22" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Teaser-modal">
         <img id="Teaser-image" class='pet-image zero-star' src="../static/img/pets/82.png">
     </span>
@@ -7037,7 +7038,7 @@ Endless Farming
             
             
             
-            <div id="Jason" data-id="23" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered">
+            <div id="Jason" data-id="23" data-origins="[&#39;ob&#39;]" class="pet-card-other bordered invisible">
     <span class="pet-modal pet-card-pet" data-toggle="modal" data-target="#Jason-modal">
         <img id="Jason-image" class='pet-image zero-star' src="../static/img/pets/83.png">
     </span>
