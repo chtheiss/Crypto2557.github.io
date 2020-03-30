@@ -266,7 +266,11 @@ async function load_all_pets(storage_names){
         const pet_tx = await db.transaction(storage_name, 'readwrite');
         const pet_store = await pet_tx.objectStore(storage_name);
         const pets_storage = await pet_store.getAll();
-        pets.push(pets_storage);
+        let dict = {}
+        for(var key in pets_storage) {
+            dict[pets_storage[key].name] = pets_storage[key]
+        }
+        pets.push(dict);
     }
     pets = Object.assign(...pets);
 
@@ -275,7 +279,7 @@ async function load_all_pets(storage_names){
     $('#hide-five-star-pets').prop("checked", hide_five_star_pets_result.value);
     petPromises = [];
     for (const pet of $(".pet-card,.pet-card-other")) {
-        pet_data = pets.filter(p => p.name == pet.id)[0]
+        pet_data = Object.values(pets).filter(p => p.name == pet.id)[0]
         petPromises.push(
             load_pet(
                 pet,
