@@ -1,0 +1,193 @@
+<template>
+  <div class="home">
+    <div class="index-container">
+      <div class="index-title">
+        <v-img
+          :src="require('../assets/img/media/logo_text.svg')"
+          class="my-3"
+          contain
+          height="200"
+        />
+      </div>
+      <div class="index-purpose bordered">
+        <h2 class="col-12 pa-0 mb-3 text-center" color="red--text">
+          The Purpose of This Site
+        </h2>
+        <p class="col-12 pa-0 ma-0">
+          <b>1.</b> Provide a priority system for farming Spirit Highlands (SH)
+          pets that will maximize growth based on your current Knightage Level
+          (KL) and available tickets.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>2.</b> Provide a priority system for using Unit Selection Tickets
+          to maximize useful buffs.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>3.</b> Provide a method for tracking the number of units you
+          currently have to help decide which units you can afford to sacrifice
+          when transcending artifacts.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>4.</b> Provide a meta page with the latest team progression guide
+          because it just makes sense to include on a site that helps you track
+          useful pets and units.
+        </p>
+      </div>
+      <div class="index-pet-usage bordered">
+        <h2 class="col-12 pa-0 mb-3 text-center">
+          How to Use This Site For Pets
+        </h2>
+        <p class="col-12 pa-0 ma-0">
+          <b>1.</b> Click the “My Stats” button at the top right of the page and
+          enter the relevant data into each field. You should update this
+          information every time your stats change.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>2.</b> Click on the “Pets” tab at the top left of the page and
+          select either “Normal” or “Hard” SH pets from the dropdown. On the
+          next page, add all relevant pet data from SH.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>3.</b> You will see the pet farming suggestions across the top of
+          the page along with the number of days until completion. You will also
+          see a green number appear on the pet card showing how many tickets
+          should be spent per day on that pet.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>4.</b> Numbers on the bottom of the pet card indicate what KL is
+          needed to access that pet.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>5.</b> Please note that the site will save your data on this
+          device, but will need to be manually entered on another device.
+          Alternatively, you can export and import data to make transfering data
+          easier.
+        </p>
+      </div>
+      <div class="index-unit-usage bordered">
+        <h2 class="col-12 pa-0 mb-3 text-center">
+          How to Use This Site For Units
+        </h2>
+        <p class="col-12 pa-0 ma-0">
+          <b>1.</b> Click on the “Units” tab at the top left of the page and
+          enter all relevant unit data.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>2.</b> Pay attention to the difference between senior and
+          non-senior units when entering numbers.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>3.</b> The buff bars below the units will fill up as you add units.
+          Some of the buff bars will fill slowly or not fill at all until the
+          coupled pet reaches 5*.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          <b>4.</b> The information you add here is crucial to providing you
+          with an accurate priority guide for Unit Selection Tickets found when
+          you click on the “Tickets” tab at the top of the page.
+        </p>
+      </div>
+      <div class="index-addition bordered">
+        <h2 class="col-12 pa-0 mb-3 text-center">Additional Information</h2>
+        <p class="col-12 pa-0 ma-0">
+          This application was created and is maintained by Crypto.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          A huge shoutout to
+          <a href="https://www.endlessfrontierdata.com/index"
+            >Endless Frontier Data</a
+          >
+          for their unit and pet images as well as data, to HarroweD for writing
+          an awesome <a href="http://bit.ly/HarroweD">pet guide</a>, CheezyBob
+          for thinking up the original unit selection list and CryBenihime and
+          SxeSpanky for keeping the meta progression up-to-date.
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          Feel free to give feedback on
+          <a
+            href="https://www.reddit.com/r/EndlessFrontier/comments/f4j323/endless_farming_update/"
+            >Reddit</a
+          >, by mail <b>endlessfarmingtracker@gmail.com</b>, or directly via
+          Discord at <b>Crypto2557#1163</b> or <b>HarroweD#0666</b>
+        </p>
+        <p class="col-12 pa-0 ma-0">
+          The source code is available at
+          <a href="https://github.com/Crypto2557/Crypto2557.github.io">GitHub</a
+          >!
+        </p>
+        <p class="col-12 pa-0 ma-0">Happy Farming!</p>
+        <p class="col-12 pa-0 ma-0">
+          If you like this tool and want to support this project, feel free to
+          <a href="https://paypal.me/crypto2557">donate</a>! Thanks!
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Home"
+};
+</script>
+
+<style scoped>
+.index-container {
+  display: grid;
+  height: calc(100% - 60px - 4em);
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas: "title title" "purpose pet-usage" "unit-usage addition";
+  padding-top: 10px;
+}
+/* Define changes for mobile grid */
+@media screen and (max-width: 768px) {
+  .index-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, min-content);
+    grid-template-areas: "title" "purpose" "pet-usage" "unit-usage" "addition";
+  }
+  .index-container > * {
+    border-style: hidden !important;
+  }
+}
+/* Define grid areas */
+.index-title {
+  grid-area: title;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.index-purpose {
+  grid-area: purpose;
+}
+.index-pet-usage {
+  grid-area: pet-usage;
+}
+.index-unit-usage {
+  grid-area: unit-usage;
+}
+.index-addition {
+  grid-area: addition;
+}
+.index-addition a {
+  color: #29abe2;
+}
+/* Styling the grid items that represent content */
+.index-purpose,
+.index-pet-usage,
+.index-unit-usage,
+.index-addition {
+  padding: 1%;
+}
+.index-container .index-title h1 {
+  margin: 0;
+  font-size: 40px;
+}
+.index-container h2.col-12 pa-0 ma-0 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
