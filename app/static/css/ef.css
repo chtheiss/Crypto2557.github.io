@@ -124,7 +124,7 @@ h4{
     font-weight: bold;
 }
 .modal{
-    max-width:70%
+    max-width:70%;
     background-color:#26292f;
 }
 .modal-header{
@@ -823,7 +823,7 @@ img.img-responsive{
 }
 /* Popover for the progress bars*/
 .popover{
-    max-width:70%
+    max-width:70%;
     background-color:#26292f;
     border:2px solid #999;
     border-radius: 5px;

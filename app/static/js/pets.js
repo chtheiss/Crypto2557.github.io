@@ -267,7 +267,7 @@ async function load_all_pets(storage_names){
         const pet_store = await pet_tx.objectStore(storage_name);
         const pets_storage = await pet_store.getAll();
         let dict = {}
-        for(var key in pets_storage) {
+        for(const key in pets_storage) {
             dict[pets_storage[key].name] = pets_storage[key]
         }
         pets.push(dict);
