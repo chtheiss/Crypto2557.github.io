@@ -64,8 +64,8 @@ function calculatePetFragmentsToFarm() {
 }(function($, indexedDB, window, document) {
 
     $(async function() {
-        const storage_name = "pets"
-        await load_all_pets(storage_name);
+        const storage_name = "pets";
+        await load_all_pets([storage_name]);
         create_sortable(storage_name);
 
         $(".pet-input[type='number']").bind("change", function() {

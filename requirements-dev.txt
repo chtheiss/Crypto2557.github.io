@@ -6,3 +6,4 @@ pylint
 tqdm
 bs4
 pre-commit
+livereload

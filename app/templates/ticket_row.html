@@ -1,9 +1,9 @@
 <div class="ticket-row bordered">
-    <img class='ticket-row-image unit-image' src="../static/{{units[ticket['unit']]['img_sr']}}">
-    <div class="ticket-row-text">{{ ticket['unit'] }}</div>
-    <div class="ticket-row-progress" data-unit="{{ticket['unit']}}">
+    <img class='ticket-row-image unit-image' src="../static/img/units/{{ticket['unit']['_id']}}.png">
+    <div class="ticket-row-text">{{ ticket['unit']['name'] }}</div>
+    <div class="ticket-row-progress" data-unit="{{ticket['unit']['name']}}">
         <div class="progress">
-            <div id="{{'prog-'+ticket['unit']}}" class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="{{ ticket['requirement'] }}"></div>
+            <div id="{{'prog-'+ticket['unit']['name']}}" class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="{{ ticket['requirement'] }}"></div>
         </div>
     </div>
 </div>

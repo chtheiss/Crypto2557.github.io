@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block app_content %}
 <div class="ticket-container">
-    {% for key, ticket in tickets.items() %}
+    {% for ticket in tickets %}
     {% include 'ticket_row.html' %}
     {% endfor %}
     <footer class="page-footer">

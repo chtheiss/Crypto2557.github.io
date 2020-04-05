@@ -2,6 +2,6 @@
 flask
 flask-bootstrap
 frozen-flask
-flask-jsglue
 flask-flatpages
 numpy
+Flask-Caching

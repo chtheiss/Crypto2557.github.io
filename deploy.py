@@ -36,14 +36,12 @@ def main():
     for folder in subfolders:
         savermtree(folder)
     saveremove("index.html")
-    saveremove("jsglue.js")
 
     # Move the new version to the base directory
     for folder in subfolders:
         shutil.move(os.path.join(build_dir, folder), folder)
 
     shutil.move(os.path.join(build_dir, "index.html"), "index.html")
-    shutil.move(os.path.join(build_dir, "jsglue.js"), "jsglue.js")
 
     # Remove the build directory
     savermtree("app/build")

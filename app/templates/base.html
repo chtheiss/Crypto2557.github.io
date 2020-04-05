@@ -15,7 +15,6 @@ Endless Farming
         ga('send', 'pageview');
     </script>
 <!-- End Google Analytics -->
-{{ JSGlue.include() }}
 {% block metas %}
 {{ super() }}
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -63,6 +62,8 @@ Endless Farming
                 <div class="dropdown-menu animate slideIn">
                     <button id="import-button" class="btn dropdown-item">Import</button>
                     <button id="export-button" class="btn dropdown-item">Export</button>
+                    <div class="dropdown-divider"></div>
+                    <button id="delete-button" class="btn dropdown-item" data-toggle="modal" data-target="#delete-modal">Delete All Data</button>
                 </div>
             </li>
         </ul>
@@ -74,12 +75,14 @@ Endless Farming
             </a>
         </button>
         <a href="http://bit.ly/HarroweD" target="_blank" class="btn bordered" role="button">Pet Guide</a>
-        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.0</button>
-        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal" data-welcome-text="">My Stats</button>
+        <button id="version-button" class="btn bordered" data-toggle="modal" data-target="#version-modal">v1.5.1.13</button>
+        <button id="stats-button" class="btn bordered" data-toggle="modal" data-target="#stats-modal">My Stats</button>
     </div>
 </nav>
-{% include '_my_stats_modal.html' %}
-{% include '_version_modal.html' %}
+
+{% include 'modals/_delete_modal.html' %}
+{% include 'modals/_my_stats_modal.html' %}
+{% include 'modals/_version_modal.html' %}
 {% endblock %}
 {% block content %}
 {% block app_content %}{% endblock %}

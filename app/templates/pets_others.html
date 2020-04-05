@@ -26,6 +26,12 @@
       <li class="nav-item">
         <a class="nav-link" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Event</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" id="raid-tab" data-toggle="tab" href="#raid" role="tab" aria-controls="raid" aria-selected="true">Raid</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ob-tab" data-toggle="tab" href="#ob" role="tab" aria-controls="ob" aria-selected="true">Outland</a>
+      </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="ss1" role="tabpanel" aria-labelledby="ss1-tab">
@@ -33,7 +39,7 @@
             {% for pet in pets["ss1"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -42,7 +48,7 @@
             {% for pet in pets["ss2"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -51,7 +57,7 @@
             {% for pet in pets["ss3"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -60,7 +66,7 @@
             {% for pet in pets["ss4"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -69,7 +75,7 @@
             {% for pet in pets["ss5"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -78,7 +84,7 @@
             {% for pet in pets["greek"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -87,7 +93,7 @@
             {% for pet in pets["zodiac"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -96,7 +102,25 @@
             {% for pet in pets["event"] %}
             {% set key_id=pet["name"].replace(" ", "_") %}
             {% set loop_index = loop.index %}
-            {% include 'pet_card_other.html' %}
+            {% include 'cards/pet_card_other.html' %}
+            {% endfor %}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="raid" role="tabpanel" aria-labelledby="raid-tab">
+          <div class="pet-pets pet-table">
+            {% for pet in pets["raid"] %}
+            {% set key_id=pet["name"].replace(" ", "_") %}
+            {% set loop_index = loop.index %}
+            {% include 'cards/pet_card_other.html' %}
+            {% endfor %}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="ob" role="tabpanel" aria-labelledby="ob-tab">
+          <div class="pet-pets pet-table">
+            {% for pet in pets["ob"] %}
+            {% set key_id=pet["name"].replace(" ", "_") %}
+            {% set loop_index = loop.index %}
+            {% include 'cards/pet_card_other.html' %}
             {% endfor %}
         </div>
       </div>
@@ -106,7 +130,7 @@
   {% for pet in origin %}
     {% set key_id=pet["name"].replace(" ", "_") %}
     {% set pet_name=pet["name"] %}
-    {% include '_pet_modal.html' %}
+    {% include 'modals/_pet_modal.html' %}
   {% endfor %}
 {% endfor %}
 {% endblock %}
