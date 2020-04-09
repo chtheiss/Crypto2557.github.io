@@ -3,21 +3,21 @@
     <div class="pet-container">
       <div class="pet-buttons">
         <v-btn light id="reset-btn" v-on:click="resetPriority">Reset Priority</v-btn>
-        <v-btn light id="add-all-btn">Progress 1 Day</v-btn>
+        <v-btn light id="add-all-btn" v-on:click="progressOneDay">Progress 1 Day</v-btn>
       </div>
       <div class="pet-trackers">
-        <div class="pet-tracker" data-empty="True" v-for="n in number_of_trackers" :key="n">
-          <img class="pet-image" />
-          <p></p>
+        <div class="pet-tracker" data-empty="True" v-for="(tracker,index) in trackers" :key="index">
+          <img class="pet-image" :src="require(`../assets/img/pets/${tracker.petid}.png`)" />
+          <p>{{tracker.days}} days</p>
         </div>
       </div>
-      <draggable class="pet-pets" v-model="petsData" group="pets" @end="changePriority">
+      <draggable class="pet-pets" v-model="petsData" group="pets" @end="changePriority" ref="pets">
         <PetCard
           v-for="(pet, index) in petsData"
           :key="pet.id"
           v-bind:pet="pet"
           v-bind:loop-index="index"
-          ref="pets"
+          @fragments-change="handleFragmentsChange"
         ></PetCard>
       </draggable>
       <footer
@@ -42,7 +42,8 @@ export default {
   name: "Pets",
   components: { PetCard, draggable },
   data: () => ({
-    number_of_trackers: 12
+    number_of_trackers: 12,
+    trackers: []
   }),
   methods: {
     changePriority: async function(evt) {
@@ -83,6 +84,75 @@ export default {
       for (const pet of mergedList) {
         await this.$store.dispatch("pets/saveValue", pet);
       }
+    },
+    calculateFragmentsToFarm: function() {
+      let tickets = this.availableTickets;
+      for (let petComponent of this.$refs.pets.$children) {
+        let fromStage = petComponent.pet.stages;
+        let possibleStages = petComponent.klRequirement
+          .map((req, idx) =>
+            req <= petComponent.knightageLevel ? fromStage[idx] : ""
+          )
+          .filter(String);
+        let fragments = 0;
+        let currentFrags = 0;
+        let firstPossibleStage = true;
+        for (let stage of possibleStages) {
+          currentFrags = petComponent.fragments;
+          currentFrags = currentFrags > 330 ? 330 : currentFrags;
+          if (currentFrags == 330) {
+            break;
+          }
+          if (tickets > 0) {
+            let add = 3;
+            if (stage >= 396 && stage % 5 != 0) {
+              add = 1;
+              firstPossibleStage = false;
+            } else if (firstPossibleStage) {
+              add = 6;
+              firstPossibleStage = false;
+            }
+            fragments += tickets >= add ? add : tickets;
+            tickets -= tickets >= add ? add : tickets;
+          }
+        }
+        tickets +=
+          fragments > 330 - currentFrags ? fragments - (330 - currentFrags) : 0;
+        fragments =
+          fragments > 330 - currentFrags ? 330 - currentFrags : fragments;
+        petComponent.farmableFragments = fragments;
+      }
+    },
+    progressOneDay: function() {
+      for (let petComponent of this.$refs.pets.$children.filter(
+        pet => pet.farmableFragments > 0
+      )) {
+        petComponent.fragments += petComponent.farmableFragments;
+      }
+    },
+    updateTrackers: function() {
+      let trackers = [];
+      for (let petComponent of this.$refs.pets.$children.filter(
+        pet => pet.farmableFragments > 0
+      )) {
+        trackers.push({
+          petid: petComponent.pet._id,
+          days: Math.ceil(
+            (330 - petComponent.fragments) / petComponent.farmableFragments
+          )
+        });
+      }
+      this.trackers = trackers;
+    },
+    handleFragmentsChange: function() {
+      this.calculateFragmentsToFarm();
+      this.updateTrackers();
+    }
+  },
+  watch: {
+    availableTickets: function() {
+      this.calculateFragmentsToFarm();
+      this.updateTrackers();
     }
   },
   computed: {
@@ -94,56 +164,20 @@ export default {
         this.$store.commit("pets/setPetsData", value);
       }
     },
-    calculatePetFragmentsToFarm: function() {
-      //let KL = this.$store.state.stats.KL;
-
-      return 0;
+    availableTickets: function() {
+      return (
+        this.$store.state.stats.tickets + 5 * this.$store.state.stats.refills
+      );
     }
   },
-  created: function() {
-    console.log(this.$route);
-    let tickets =
-      this.$store.state.stats.tickets + 5 * this.$store.state.stats.refills;
-
-    for (let petComponent of this.$refs.pets) {
-      //let possibleStages = petComponent.klRequirement.filter(
-      //  req => req <= petComponent.knightageLevel
-      //);
-      console.log(petComponent);
-      let fromStage = petComponent.pet.from;
-      let fragments = 0;
-      let currentFrags = 0;
-      let firstPossibleStage = true;
-      for (let stage of fromStage) {
-        currentFrags = petComponent.fragments;
-        currentFrags = currentFrags > 330 ? 330 : currentFrags;
-        if (currentFrags == 330) {
-          break;
-        }
-        if (tickets > 0) {
-          let add = 3;
-          if (stage >= 396 && stage % 5 != 0) {
-            add = 1;
-            firstPossibleStage = false;
-          } else if (firstPossibleStage) {
-            add = 6;
-            firstPossibleStage = false;
-          }
-          fragments += tickets >= add ? add : tickets;
-          tickets -= tickets >= add ? add : tickets;
-        }
-      }
-      tickets +=
-        fragments > 330 - currentFrags ? fragments - (330 - currentFrags) : 0;
-      fragments =
-        fragments > 330 - currentFrags ? 330 - currentFrags : fragments;
-      console.log(fragments);
-      petComponent.farmableFragments = fragments;
-    }
+  mounted: function() {
+    this.calculateFragmentsToFarm();
+    this.updateTrackers();
   },
-  mounted: function() {}
+  updated: function() {}
 };
 </script>
+      
 
 <style scoped>
 .pet-container {

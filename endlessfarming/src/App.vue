@@ -106,15 +106,6 @@ export default {
       {
         text: "Meta",
         route: "/meta"
-      },
-      {
-        text: "Data Transfer",
-        route: "",
-        subItems: [
-          { text: "Import", route: "/import" },
-          { text: "Export", route: "/export" },
-          { text: "Delete All Data", route: "/delete" }
-        ]
       }
     ],
     version: "v1.6"

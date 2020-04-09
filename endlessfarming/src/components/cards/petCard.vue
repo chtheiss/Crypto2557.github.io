@@ -9,7 +9,11 @@
         aspect-ratio="1"
       />
     </span>
-    <p v-bind:id="`${pet._id}-farmable-fragments`" class="pet-card-frags">{{farmableFragments}}</p>
+    <p
+      v-bind:id="`${pet._id}-farmable-fragments`"
+      class="pet-card-frags"
+      v-bind:class="{'availableStage':farmableFragments>0}"
+    >{{farmableFragments}}</p>
     <h4 class="pet-card-name">{{ pet.name }}</h4>
     <fieldset class="pet-card-stars">
       <label
@@ -104,6 +108,7 @@ export default {
       async set(value) {
         this.pet.fragments = value;
         await this.$store.dispatch("pets/saveValue", this.pet);
+        this.$emit('fragments-change');
       }
     },
     knightageLevel: function() {
@@ -135,7 +140,8 @@ export default {
 </script>
 
 <style>
-.pet-card-kl-number.availableStage {
+.pet-card-kl-number.availableStage,
+.pet-card > p.pet-card-frags.availableStage {
   color: #1ca51c;
 }
 .pet-card.invisible {
