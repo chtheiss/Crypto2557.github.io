@@ -14,7 +14,13 @@
             <template v-slot:activator>
               <v-list-item-title v-text="item.text"></v-list-item-title>
             </template>
-            <v-list-item v-for="(subItem, i) in item.subItems" :key="i" class="pl-8" router :to="subItem.route">
+            <v-list-item
+              v-for="(subItem, i) in item.subItems"
+              :key="i"
+              class="pl-8"
+              router
+              :to="subItem.route"
+            >
               <v-list-item-content>
                 <v-list-item-title v-text="subItem.text"></v-list-item-title>
               </v-list-item-content>
@@ -114,7 +120,8 @@ export default {
     version: "v1.6"
   }),
   created() {
-    this.$store.dispatch("stats/loadStats");
+    this.$store.dispatch("pets/getPetsData");
+    this.$store.dispatch("stats/getStats");
   }
 };
 </script>
@@ -141,7 +148,7 @@ html {
   background-color: #26292f;
   font-family: Arial, Helvetica, sans-serif;
   color: #d3d4d5;
-  font-size: 16px;
+  font-size: 14px;
   margin: 0;
 }
 #logo-image {

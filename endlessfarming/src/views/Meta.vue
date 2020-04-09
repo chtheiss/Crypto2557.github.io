@@ -1,12 +1,15 @@
 <template>
-  <v-container fluid >
-    <v-img contain src="../assets/img/meta_progression_v2.png" aspect-ratio="2"></v-img>
-    <p class="text-center">{{credit}}</p>
+  <v-container fluid>
+    <v-img
+      contain
+      src="../assets/img/meta_progression_v2.png"
+      aspect-ratio="2"
+    ></v-img>
+    <p class="text-center">{{ credit }}</p>
   </v-container>
 </template>
 
 <script>
-console.log(window.innerWidth)
 export default {
   name: "Meta",
   data: () => ({
@@ -17,7 +20,7 @@ export default {
 </script>
 
 <style scoped>
-p{
+p {
   font-size: 12px;
 }
 </style>

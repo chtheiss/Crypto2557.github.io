@@ -123,7 +123,7 @@ export default {
       async set(value) {
         value = value ? 1 : 0;
         let stat = { name: "hide_five_star_pets", value: value };
-        await this.$store.dispatch("stats/saveStat", stat);
+        await this.$store.dispatch("stats/saveValue", stat);
       }
     },
     hide_unattainable_pets: {
@@ -133,7 +133,7 @@ export default {
       async set(value) {
         value = value ? 1 : 0;
         let stat = { name: "hide_unattainable_pets", value: value };
-        await this.$store.dispatch("stats/saveStat", stat);
+        await this.$store.dispatch("stats/saveValue", stat);
       }
     }
   }

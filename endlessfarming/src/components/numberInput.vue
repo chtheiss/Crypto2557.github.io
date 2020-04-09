@@ -1,15 +1,8 @@
 <template>
-    <v-text-field
-      v-model.number="value"
-      step="1"
-      class="input-number"
-      dense
-      hide-details
-      filled
-    >
-      <v-icon slot="prepend" color="#fff" @click="down">mdi-minus</v-icon>
-      <v-icon slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
-    </v-text-field>
+  <v-text-field v-model.number="value" step="1" class="input-number" dense hide-details filled>
+    <v-icon slot="prepend" color="#fff" @click="down">mdi-minus</v-icon>
+    <v-icon slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
+  </v-text-field>
 </template>
 
 <script>
@@ -31,15 +24,15 @@ export default {
     }
   },
   computed: {
-  value: {
-    get () {
-      return this.$store.state.stats[this.valueName]
-    },
-    async set (value) {
-       let stat ={name:this.valueName, value:value}
-       await this.$store.dispatch("stats/saveStat", stat);
+    value: {
+      get() {
+        return this.$store.state.stats[this.valueName];
+      },
+      async set(value) {
+        let stat = { name: this.valueName, value: value };
+        await this.$store.dispatch("stats/saveValue", stat);
+      }
     }
-  }
   }
 };
 </script>
