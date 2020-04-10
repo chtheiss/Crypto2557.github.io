@@ -1,14 +1,6 @@
 <template>
   <div v-bind:id="pet._id" class="pet-card bordered noselect" v-bind:class="classObject">
-    <span class="pet-modal pet-card-pet">
-      <img
-        v-bind:id="`${pet._id}-image`"
-        class="pet-image"
-        v-bind:class="activeBackgroundClass"
-        :src="require(`../../assets/img/pets/${pet._id}.png`)"
-        aspect-ratio="1"
-      />
-    </span>
+    <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
     <p
       v-bind:id="`${pet._id}-farmable-fragments`"
       class="pet-card-frags"
@@ -50,23 +42,23 @@
 </template>
 
 <script>
-String.prototype.replaceAll = function(search, replacement) {
-  let target = this;
-  return target.replace(new RegExp(search, "g"), replacement);
-};
+import PetDialog from "../dialogs/petDialog";
 
 export default {
   name: "PetCard",
+  components: { PetDialog },
+
   data: () => ({
     starThresholds: [10, 30, 80, 180, 330],
     stagesPerTwoKl: 10,
     starActive: require("../../assets/img/star.png"),
-    starInactive: require("../../assets/img/stargrey.png"),
-    farmableFragments: 0
+    starInactive: require("../../assets/img/stargrey.png")
   }),
   props: {
     pet: Object,
-    loopIndex: Number
+    loopIndex: Number,
+    knightageLevel: Number,
+    farmableFragments: Number
   },
   methods: {
     changeValueByStar: function(index) {
@@ -103,16 +95,12 @@ export default {
     },
     fragments: {
       get() {
-        return this.pet.fragments | 0;
+        return this.pet.fragments;
       },
       async set(value) {
         this.pet.fragments = value;
         await this.$store.dispatch("pets/saveValue", this.pet);
-        this.$emit('fragments-change');
       }
-    },
-    knightageLevel: function() {
-      return this.$store.state.stats.KL;
     },
     activeBackgroundClass: function() {
       let trueIndex = this.starThresholds
@@ -199,14 +187,7 @@ h4 {
   margin: 0;
   font-weight: 400;
 }
-.pet-image {
-  max-height: 45px;
-}
-@media all and (max-width: 768px) {
-  .pet-image {
-    max-height: 40px;
-  }
-}
+
 .pet-pets .pet-card:hover {
   background-color: #393c3f;
   cursor: pointer;

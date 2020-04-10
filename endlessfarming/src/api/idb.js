@@ -90,7 +90,7 @@ export default {
           let playerOS = request.transaction.objectStore("player");
           playerOS.put({
             name: "hide_five_star_pets",
-            value: 1,
+            value: 0,
           });
         }
         if (e.oldVersion < 5) {

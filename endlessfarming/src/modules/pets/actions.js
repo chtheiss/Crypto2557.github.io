@@ -7,18 +7,10 @@ export const actions = {
     let idbValue = {
       name: value.name,
       fragments: value.fragments,
-      priority: value.priority
+      priority: value.priority,
     };
     await idb.savePet(idbValue);
     context.commit("updatePet", value);
-  },
-  async saveValueWithoutCommit(context, value) {
-    let idbValue = {
-      name: value.name,
-      fragments: value.fragments,
-      priority: value.priority
-    };
-    await idb.savePet(idbValue);
   },
   async getPetsData(context) {
     let petsData = await axios.get(
@@ -29,10 +21,24 @@ export const actions = {
       data[i].priority = i;
     }
     let pets = await idb.getPets();
-    let mergedList = _.map(data, function(item) {
+    let mergedList = _.map(data, function (item) {
       return _.extend(item, _.find(pets, { name: item.name }));
     });
+    let petPromises = [];
+    for (const pet of mergedList) {
+      if (pet.fragments == undefined) {
+        pet.fragments = 0;
+        petPromises.push(
+          idb.savePet({
+            name: pet.name,
+            fragments: pet.fragments,
+            priority: pet.priority,
+          })
+        );
+      }
+    }
+    await Promise.all(petPromises);
     mergedList = _.sortBy(mergedList, "priority");
     context.commit("setPetsData", mergedList);
-  }
+  },
 };

@@ -4,6 +4,7 @@ import { mutations } from "./mutations";
 
 const state = {
   KL: 0,
+  warp: 0,
   hide_five_star_pets: 0,
   hide_unattainable_pets: 0,
   refills: 0,
