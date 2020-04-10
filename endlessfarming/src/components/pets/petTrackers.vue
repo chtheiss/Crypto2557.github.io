@@ -10,19 +10,17 @@
 <script>
 export default {
   name: "PetTrackers",
+  props: ["fragmentsToFarm"],
   computed: {
     petsData: function() {
       return this.$store.state.pets.data;
     },
     trackers: function() {
-      let trackers = [];
-      for (let pet of this.petsData.filter(pet => pet.farmableFragments > 0)) {
-        trackers.push({
-          petid: pet._id,
-          days: Math.ceil((330 - pet.fragments) / pet.farmableFragments)
-        });
-      }
-      return trackers;
+      return this.fragmentsToFarm.filter(obj => obj.farmableFragments > 0).map(obj =>
+        Object.assign({}, obj, {
+          days: Math.ceil((330 - obj.fragments) / obj.farmableFragments)
+        })
+      );
     }
   }
 };

@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
     <div class="pet-container">
-      <PetButtons />
-      <PetTrackers />
+      <PetButtons :fragments-to-farm="fragmentsToFarm" />
+      <PetTrackers :fragments-to-farm="fragmentsToFarm" />
       <draggable class="pet-pets" v-model="petsData" group="pets" @end="changePriority" ref="pets">
         <PetCard
           v-for="(pet, index) in petsData"
@@ -10,7 +10,7 @@
           v-bind:pet="pet"
           v-bind:loop-index="index"
           :knightage-level="knightageLevel"
-          :farmable-fragments="fragmentsToFarm[index]"
+          :farmable-fragments="fragmentsToFarm[index].farmableFragments"
         ></PetCard>
       </draggable>
       <footer
@@ -108,8 +108,11 @@ export default {
           fragments > 330 - currentFrags ? fragments - (330 - currentFrags) : 0;
         fragments =
           fragments > 330 - currentFrags ? 330 - currentFrags : fragments;
-        pet.farmableFragments = fragments;
-        farmableFragments.push(fragments);
+        farmableFragments.push({
+          petid: pet._id,
+          farmableFragments: fragments,
+          fragments: pet.fragments
+        });
       }
       return farmableFragments;
     }

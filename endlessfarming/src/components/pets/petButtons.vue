@@ -10,6 +10,8 @@ import axios from "axios";
 import _ from "lodash";
 
 export default {
+  name: "PetButtons",
+  props: ["fragmentsToFarm"],
   methods: {
     resetPriority: async function() {
       let originalPetsData = await axios.get(
@@ -29,8 +31,11 @@ export default {
       }
     },
     progressOneDay: async function() {
-      for (let pet of this.petsData.filter(pet => pet.farmableFragments > 0)) {
-        pet.fragments += pet.farmableFragments;
+      for (let farmObj of this.fragmentsToFarm.filter(
+        obj => obj.farmableFragments > 0
+      )) {
+        let pet = this.petsData.filter(pet => pet._id == farmObj.petid)[0];
+        pet.fragments += farmObj.farmableFragments;
         this.$store.dispatch("pets/saveValue", pet);
       }
     }
