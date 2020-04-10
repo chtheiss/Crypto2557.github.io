@@ -7,6 +7,7 @@ const state = {
   warp: 0,
   hide_five_star_pets: 0,
   hide_unattainable_pets: 0,
+  edit_priorities: 0,
   refills: 0,
   refills_hard: 0,
   tickets: 0,

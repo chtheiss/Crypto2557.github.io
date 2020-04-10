@@ -112,6 +112,10 @@ export default {
             name: "warp",
             value: 0,
           });
+          playerOS.put({
+            name: "edit_priorities",
+            value: 0,
+          });
         }
       };
     });
