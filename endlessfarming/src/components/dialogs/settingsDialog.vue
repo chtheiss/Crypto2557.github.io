@@ -39,6 +39,30 @@
                 </v-list-item-content>
               </v-list-item>
             </v-list>
+            <v-list subheader>
+              <v-subheader>Data Transfer</v-subheader>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <v-btn light id="reset-btn">Import</v-btn>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <v-btn light id="reset-btn">Export</v-btn>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <v-btn light id="reset-btn">Delete All</v-btn>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
           </v-card>
         </v-tab-item>
         <v-tab-item :key="items[1]">
@@ -123,7 +147,7 @@ export default {
       async set(value) {
         value = value ? 1 : 0;
         let stat = { name: "hide_five_star_pets", value: value };
-        await this.$store.dispatch("stats/saveStat", stat);
+        await this.$store.dispatch("stats/saveValue", stat);
       }
     },
     hide_unattainable_pets: {
@@ -133,7 +157,7 @@ export default {
       async set(value) {
         value = value ? 1 : 0;
         let stat = { name: "hide_unattainable_pets", value: value };
-        await this.$store.dispatch("stats/saveStat", stat);
+        await this.$store.dispatch("stats/saveValue", stat);
       }
     }
   }

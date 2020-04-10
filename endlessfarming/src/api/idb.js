@@ -90,7 +90,7 @@ export default {
           let playerOS = request.transaction.objectStore("player");
           playerOS.put({
             name: "hide_five_star_pets",
-            value: 1,
+            value: 0,
           });
         }
         if (e.oldVersion < 5) {
@@ -206,6 +206,40 @@ export default {
         let cursor = e.target.result;
         if (cursor) {
           stats.push(cursor.value);
+          cursor.continue();
+        }
+      };
+    });
+  },
+  async savePet(pet) {
+    let db = await this.getDb();
+
+    return new Promise((resolve) => {
+      let trans = db.transaction(["pets"], "readwrite");
+      trans.oncomplete = () => {
+        resolve();
+      };
+
+      let store = trans.objectStore("pets");
+      store.put(pet);
+    });
+  },
+  async getPets() {
+    let db = await this.getDb();
+
+    return new Promise((resolve) => {
+      let trans = db.transaction(["pets"], "readonly");
+      trans.oncomplete = () => {
+        resolve(pets);
+      };
+
+      let store = trans.objectStore("pets");
+      let pets = [];
+
+      store.openCursor().onsuccess = (e) => {
+        let cursor = e.target.result;
+        if (cursor) {
+          pets.push(cursor.value);
           cursor.continue();
         }
       };
