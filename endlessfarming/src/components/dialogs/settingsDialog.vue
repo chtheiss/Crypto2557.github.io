@@ -85,6 +85,14 @@
                   <v-list-item-title>Hide Unattainable Pets</v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
+              <v-list-item>
+                <v-list-item-action>
+                  <v-checkbox color="blue" v-model="edit_priorities"></v-checkbox>
+                </v-list-item-action>
+                <v-list-item-content>
+                  <v-list-item-title>Enable Editing Pet Priorities</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
             </v-list>
             <v-divider></v-divider>
             <v-list subheader>
@@ -157,6 +165,16 @@ export default {
       async set(value) {
         value = value ? 1 : 0;
         let stat = { name: "hide_unattainable_pets", value: value };
+        await this.$store.dispatch("stats/saveValue", stat);
+      }
+    },
+    edit_priorities: {
+      get() {
+        return this.$store.state.stats.edit_priorities;
+      },
+      async set(value) {
+        value = value ? 1 : 0;
+        let stat = { name: "edit_priorities", value: value };
         await this.$store.dispatch("stats/saveValue", stat);
       }
     }

@@ -3,7 +3,7 @@
     <div class="pet-container">
       <PetButtons :fragments-to-farm="fragmentsToFarm" />
       <PetTrackers :fragments-to-farm="fragmentsToFarm" />
-      <draggable class="pet-pets" v-model="petsData" group="pets" @end="changePriority" ref="pets">
+      <draggable class="pet-pets" v-model="petsData" group="pets" @end="changePriority" ref="pets" :disabled="!editPriorities">
         <PetCard
           v-for="(pet, index) in petsData"
           :key="pet.id"
@@ -57,6 +57,9 @@ export default {
   computed: {
     knightageLevel: function() {
       return this.$store.state.stats.KL;
+    },
+    editPriorities:function(){
+      return this.$store.state.stats.edit_priorities;
     },
     petsData: {
       get() {
