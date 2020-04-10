@@ -130,7 +130,7 @@ export default {
   width: 90%;
   grid-gap: 5px;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px minmax(min-content, 150px) 1fr 12px;
+  grid-template-rows: min-content minmax(min-content, 150px) 1fr min-content;
   grid-template-areas: "buttons" "trackers" "pets" "footer";
   justify-content: center;
   align-content: center;
