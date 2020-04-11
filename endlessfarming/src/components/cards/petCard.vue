@@ -1,7 +1,8 @@
 <template>
-  <div v-bind:id="pet._id" class="pet-card bordered noselect" v-bind:class="classObject">
+  <div v-bind:id="pet._id" class="bordered noselect" v-bind:class="classObject">
     <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
     <p
+      v-if="farmableFragments>=0"
       v-bind:id="`${pet._id}-farmable-fragments`"
       class="pet-card-frags"
       v-bind:class="{'availableStage':farmableFragments>0}"
@@ -30,7 +31,7 @@
       <v-icon medium dense slot="prepend" color="#fff" @click="down">mdi-minus</v-icon>
       <v-icon medium dense slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
     </v-text-field>
-    <div class="pet-card-kl">
+    <div v-if="klRequirement.length" class="pet-card-kl">
       <div
         class="pet-card-kl-number"
         v-for="(req, index) in klRequirement"
@@ -42,12 +43,9 @@
 </template>
 
 <script>
-import PetDialog from "../dialogs/petDialog";
-
 export default {
   name: "PetCard",
-  components: { PetDialog },
-
+  components: { PetDialog: () => import("../dialogs/petDialog") },
   data: () => ({
     starThresholds: [10, 30, 80, 180, 330],
     stagesPerTwoKl: 10,
@@ -58,7 +56,11 @@ export default {
     pet: Object,
     loopIndex: Number,
     knightageLevel: Number,
-    farmableFragments: Number
+    farmableFragments: Number,
+    petType: {
+      type: String,
+      default: "shn"
+    }
   },
   methods: {
     changeValueByStar: function(index) {
@@ -90,7 +92,10 @@ export default {
           ((this.klRequirement.filter(req => req > this.knightageLevel)
             .length ==
             this.klRequirement.length) &
-            this.hideUnattainable)
+            this.hideUnattainable &
+            ((this.petType == "shn") | (this.petType == "shh"))),
+        "pet-card": (this.petType == "shn") | (this.petType == "shh"),
+        "pet-card-other": (this.petType != "shn") & (this.petType != "shh")
       };
     },
     fragments: {
@@ -118,9 +123,16 @@ export default {
       };
     },
     klRequirement: function() {
-      let requirements = this.pet.stages.map(stage => {
-        return Math.ceil(stage / this.stagesPerTwoKl) * 2;
-      });
+      let requirements = [];
+      if (this.petType == "shn") {
+        requirements = this.pet.stages.map(stage => {
+          return Math.ceil(stage / this.stagesPerTwoKl) * 2;
+        });
+      } else if (this.petType == "shh") {
+        requirements = this.pet.stages.map(stage => {
+          return 50 + (stage - 1) * 4;
+        });
+      }
       return requirements;
     }
   }
@@ -132,7 +144,8 @@ export default {
 .pet-card > p.pet-card-frags.availableStage {
   color: #1ca51c;
 }
-.pet-card.invisible {
+.pet-card.invisible,
+.pet-card-other.invisible {
   display: none;
 }
 .input-number.pet-card-input .v-input__append-outer {
@@ -188,7 +201,8 @@ h4 {
   font-weight: 400;
 }
 
-.pet-pets .pet-card:hover {
+.pet-pets .pet-card:hover,
+.pet-pets .pet-card-other:hover {
   background-color: #393c3f;
   cursor: pointer;
 }
@@ -270,5 +284,21 @@ img.img-responsive {
   font-weight: bold;
   color: #ce2323;
   justify-self: center;
+}
+.pet-card-other {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.5fr 0.5fr 1fr;
+  grid-template-areas: "pet name" "stars stars" "input input";
+  padding: 2% 1% 1% 1%;
+  margin: 1%;
+}
+.pet-card-other > * {
+  justify-self: center;
+  align-self: center;
+}
+.pet-card-other > .pet-card-input {
+  padding-bottom: 4px;
 }
 </style>

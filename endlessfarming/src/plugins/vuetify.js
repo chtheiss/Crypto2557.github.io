@@ -4,7 +4,7 @@ import Vuetify from "vuetify/lib";
 
 Vue.use(Vuetify);
 
-export default new Vuetify({
+const opts = {
   theme: {
     dark: true,
     themes: {
@@ -12,11 +12,13 @@ export default new Vuetify({
         primary: "#17191a",
         background: "#26292f",
         secondary: "#d4d5d5",
-        action: "#29abe2"
-      }
-    }
+        action: "#29abe2",
+      },
+    },
   },
   icons: {
-    iconfont: "fa"
-  }
-});
+    iconfont: "fa",
+  },
+};
+
+export default new Vuetify(opts);

@@ -1,5 +1,5 @@
 <template>
-  <v-app :style="{ background: $vuetify.theme.themes.dark.background }">
+  <v-app :style="{ background: '#26292f' }">
     <v-navigation-drawer v-model="drawer" app clipped color="primary">
       <v-list>
         <div v-for="(item, i) in items" :key="i">
@@ -69,7 +69,10 @@ import VersionDialog from "./components/dialogs/versionDialog.vue";
 import SettingsDialog from "./components/dialogs/settingsDialog.vue";
 
 export default {
-  components: { VersionDialog, SettingsDialog },
+  components: {
+    VersionDialog,
+    SettingsDialog
+  },
   props: {
     source: String
   },
@@ -92,7 +95,7 @@ export default {
         subItems: [
           { text: "Normal", route: "/pets/normal" },
           { text: "Hard", route: "/pets/hard" },
-          { text: "Others", route: "/pets/others" }
+          { text: "Others", route: "/pets/other" }
         ]
       },
       {
@@ -111,7 +114,6 @@ export default {
     version: "v1.6"
   }),
   created() {
-    this.$store.dispatch("pets/getPetsData");
     this.$store.dispatch("stats/getStats");
   }
 };

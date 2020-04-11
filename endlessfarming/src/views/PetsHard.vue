@@ -4,13 +4,15 @@
       <PetButtons
         :fragments-to-farm="fragmentsToFarm"
         :pets-data="petsData"
-        :storage-name="'pets'"
+        :storage-name="'pets_hard'"
+        :origin="petType"
       />
       <PetTrackers :fragments-to-farm="fragmentsToFarm" />
       <PetTable
         :edit-priorities="editPriorities"
         :knightage-level="knightageLevel"
         :fragments-to-farm="fragmentsToFarm"
+        :pet-type="petType"
       />
       <footer
         class="page-footer pet-footer"
@@ -25,9 +27,9 @@ import PetButtons from "../components/pets/petButtons";
 import PetTable from "../components/pets/petTable";
 
 export default {
-  name: "Pets",
+  name: "PetsHard",
+  data: () => ({ petType: "shh", storageName: "pets_hard" }),
   components: { PetTable, PetTrackers, PetButtons },
-  data: () => ({ petType: "shn" }),
   computed: {
     knightageLevel: function() {
       return this.$store.state.stats.KL;
@@ -37,18 +39,19 @@ export default {
     },
     petsData: {
       get() {
-        return this.$store.state.pets.data;
+        return this.$store.state.pets.dataHard;
       },
       async set(value) {
         this.$store.commit("pets/setPetsData", {
           pets: value,
-          storageName: "pets"
+          storageName: "pets_hard"
         });
       }
     },
     availableTickets: function() {
       return (
-        this.$store.state.stats.tickets + 5 * this.$store.state.stats.refills
+        this.$store.state.stats.tickets_hard +
+        3 * this.$store.state.stats.refills_hard
       );
     },
     fragmentsToFarm: function() {
@@ -57,29 +60,21 @@ export default {
       for (let pet of this.petsData) {
         let fromStage = pet.stages;
         let requirements = pet.stages.map(stage => {
-          return Math.ceil(stage / 10) * 2;
+          return 50 + (stage - 1) * 4;
         });
         let possibleStages = requirements
           .map((req, idx) => (req <= this.knightageLevel ? fromStage[idx] : ""))
           .filter(String);
         let fragments = 0;
         let currentFrags = 0;
-        let firstPossibleStage = true;
-        for (let stage of possibleStages) {
+        for (let i = 0; i < possibleStages.length; i++) {
           currentFrags = pet.fragments;
           currentFrags = currentFrags > 330 ? 330 : currentFrags;
           if (currentFrags == 330) {
             break;
           }
           if (tickets > 0) {
-            let add = 3;
-            if (stage >= 396 && stage % 5 != 0) {
-              add = 1;
-              firstPossibleStage = false;
-            } else if (firstPossibleStage) {
-              add = 6;
-              firstPossibleStage = false;
-            }
+            let add = 1;
             fragments += tickets >= add ? add : tickets;
             tickets -= tickets >= add ? add : tickets;
           }
@@ -97,13 +92,11 @@ export default {
       return farmableFragments;
     }
   },
-  mounted: function() {
-    if (!this.petsData.length) {
-      this.$store.dispatch("pets/getPetsData", {
-        origin: "shn",
-        storageName: "pets"
-      });
-    }
+  created: function() {
+    this.$store.dispatch("pets/getPetsData", {
+      origin: "shh",
+      storageName: "pets_hard"
+    });
   }
 };
 </script>

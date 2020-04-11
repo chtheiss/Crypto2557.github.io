@@ -1,31 +1,42 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import Meta from "../views/Meta.vue";
-import Pets from "../views/Pets.vue";
 
 Vue.use(VueRouter);
+
+function lazyLoad(view) {
+  return () => import(`@/views/${view}.vue`);
+}
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: lazyLoad("Home"),
   },
   {
     path: "/meta",
     name: "Meta",
-    component: Meta
+    component: lazyLoad("Meta"),
   },
   {
     path: "/pets/normal",
     name: "Pets",
-    component: Pets
-  }
+    component: lazyLoad("Pets"),
+  },
+  {
+    path: "/pets/hard",
+    name: "PetsHard",
+    component: lazyLoad("PetsHard"),
+  },
+  {
+    path: "/pets/other",
+    name: "PetsOther",
+    component: lazyLoad("PetsOther"),
+  },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
 
 export default router;

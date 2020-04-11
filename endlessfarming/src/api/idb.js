@@ -120,54 +120,6 @@ export default {
       };
     });
   },
-  async deleteCat(cat) {
-    let db = await this.getDb();
-
-    return new Promise((resolve) => {
-      let trans = db.transaction(["cats"], "readwrite");
-      trans.oncomplete = () => {
-        resolve();
-      };
-
-      let store = trans.objectStore("cats");
-      store.delete(cat.id);
-    });
-  },
-  async getCats() {
-    let db = await this.getDb();
-
-    return new Promise((resolve) => {
-      let trans = db.transaction(["cats"], "readonly");
-      trans.oncomplete = () => {
-        resolve(cats);
-      };
-
-      let store = trans.objectStore("cats");
-      let cats = [];
-
-      store.openCursor().onsuccess = (e) => {
-        let cursor = e.target.result;
-        if (cursor) {
-          cats.push(cursor.value);
-          cursor.continue();
-        }
-      };
-    });
-  },
-
-  async saveCat(cat) {
-    let db = await this.getDb();
-
-    return new Promise((resolve) => {
-      let trans = db.transaction(["cats"], "readwrite");
-      trans.oncomplete = () => {
-        resolve();
-      };
-
-      let store = trans.objectStore("cats");
-      store.put(cat);
-    });
-  },
   async saveStat(stat) {
     let db = await this.getDb();
 
@@ -215,29 +167,29 @@ export default {
       };
     });
   },
-  async savePet(pet) {
+  async savePet(pet, storageName) {
     let db = await this.getDb();
 
     return new Promise((resolve) => {
-      let trans = db.transaction(["pets"], "readwrite");
+      let trans = db.transaction([storageName], "readwrite");
       trans.oncomplete = () => {
         resolve();
       };
 
-      let store = trans.objectStore("pets");
+      let store = trans.objectStore(storageName);
       store.put(pet);
     });
   },
-  async getPets() {
+  async getPets(storageName) {
     let db = await this.getDb();
 
     return new Promise((resolve) => {
-      let trans = db.transaction(["pets"], "readonly");
+      let trans = db.transaction([storageName], "readonly");
       trans.oncomplete = () => {
         resolve(pets);
       };
 
-      let store = trans.objectStore("pets");
+      let store = trans.objectStore(storageName);
       let pets = [];
 
       store.openCursor().onsuccess = (e) => {
