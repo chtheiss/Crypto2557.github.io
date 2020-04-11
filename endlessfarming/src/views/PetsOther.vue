@@ -16,13 +16,11 @@
         </keep-alive>
       </v-tab-item>
     </v-tabs>
-
     <footer class="text-center">These priority ranking were originally created by HarroweD.</footer>
   </v-container>
 </template>
 
 <script>
-
 export default {
   name: "PetsOther",
   data: () => ({

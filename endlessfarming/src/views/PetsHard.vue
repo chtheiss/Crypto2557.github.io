@@ -93,10 +93,12 @@ export default {
     }
   },
   created: function() {
-    this.$store.dispatch("pets/getPetsData", {
-      origin: "shh",
-      storageName: "pets_hard"
-    });
+    if (!this.petsData.length) {
+      this.$store.dispatch("pets/getPetsData", {
+        origin: "shh",
+        storageName: "pets_hard"
+      });
+    }
   }
 };
 </script>

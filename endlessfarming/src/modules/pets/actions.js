@@ -7,7 +7,7 @@ export const actions = {
     let idbValue = {
       name: value.name,
       fragments: value.fragments,
-      priority: value.priority,
+      priority: value.priority
     };
     let storageName;
     if (value.origin.includes("shn")) {
@@ -41,7 +41,7 @@ export const actions = {
             {
               name: pet.name,
               fragments: pet.fragments,
-              priority: pet.priority,
+              priority: pet.priority
             },
             storageName
           )
@@ -50,9 +50,11 @@ export const actions = {
     }
     await Promise.all(petPromises);
     mergedList = _.sortBy(mergedList, "priority");
+
+    console.log("pets/getPetsData");
     context.commit("setPetsData", {
       pets: mergedList,
-      storageName: storageName,
+      storageName: storageName
     });
   },
   async getOtherPetsData(context, origins) {
@@ -94,7 +96,7 @@ export const actions = {
               {
                 name: pet.name,
                 fragments: pet.fragments,
-                priority: pet.priority,
+                priority: pet.priority
               },
               pet.origin.includes("shh") ? "pets_hard" : "pets_other"
             )
@@ -104,9 +106,10 @@ export const actions = {
       await Promise.all(petPromises);
       petsData[i] = data;
     }
+    console.log("pets/getOtherPetsData");
     context.commit("setPetsData", {
       pets: [].concat(...petsData),
-      storageName: undefined,
+      storageName: undefined
     });
-  },
+  }
 };

@@ -11,32 +11,42 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: lazyLoad("Home"),
+    component: lazyLoad("Home")
   },
   {
     path: "/meta",
     name: "Meta",
-    component: lazyLoad("Meta"),
+    component: lazyLoad("Meta")
   },
   {
     path: "/pets/normal",
     name: "Pets",
-    component: lazyLoad("Pets"),
+    component: lazyLoad("Pets")
   },
   {
     path: "/pets/hard",
     name: "PetsHard",
-    component: lazyLoad("PetsHard"),
+    component: lazyLoad("PetsHard")
   },
   {
     path: "/pets/other",
     name: "PetsOther",
-    component: lazyLoad("PetsOther"),
+    component: lazyLoad("PetsOther")
   },
+  {
+    path: "/units",
+    name: "Units",
+    component: lazyLoad("Units")
+  },
+  {
+    path: "/tickets",
+    name: "Tickets",
+    component: lazyLoad("Tickets")
+  }
 ];
 
 const router = new VueRouter({
-  routes,
+  routes
 });
 
 export default router;
