@@ -148,18 +148,6 @@ export default {
 .pet-card-other.invisible {
   display: none;
 }
-.input-number.pet-card-input .v-input__append-outer {
-  margin-top: 7px !important;
-  margin-left: 1px !important;
-}
-.input-number.pet-card-input .v-input__prepend-outer {
-  margin-top: 7px !important;
-  margin-right: 1px !important;
-}
-.input-number.pet-card-input .v-input__slot,
-.input-number.pet-card-input .v-input__control {
-  min-height: 30px !important;
-}
 .five-star,
 .four-star,
 .one-star,

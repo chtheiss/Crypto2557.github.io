@@ -123,6 +123,20 @@ export default {
 .v-list .v-list-item--active {
   color: #fff;
 }
+.pet-card-input .v-input__append-outer, .unit-card-input .v-input__append-outer {
+  margin-top: 7px !important;
+  margin-left: 1px !important;
+}
+.pet-card-input .v-input__prepend-outer, .unit-card-input .v-input__prepend-outer  {
+  margin-top: 7px !important;
+  margin-right: 1px !important;
+}
+.pet-card-input .v-input__slot,
+.pet-card-input .v-input__control,
+.unit-card-input .v-input__slot,
+.unit-card-input .v-input__control {
+  min-height: 30px !important;
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
