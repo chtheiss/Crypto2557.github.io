@@ -12,15 +12,14 @@ export default {
   name: "PetTrackers",
   props: ["fragmentsToFarm"],
   computed: {
-    petsData: function() {
-      return this.$store.state.pets.data;
-    },
     trackers: function() {
-      return this.fragmentsToFarm.filter(obj => obj.farmableFragments > 0).map(obj =>
-        Object.assign({}, obj, {
-          days: Math.ceil((330 - obj.fragments) / obj.farmableFragments)
-        })
-      );
+      return this.fragmentsToFarm
+        .filter(obj => obj.farmableFragments > 0)
+        .map(obj =>
+          Object.assign({}, obj, {
+            days: Math.ceil((330 - obj.fragments) / obj.farmableFragments)
+          })
+        );
     }
   }
 };

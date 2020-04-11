@@ -44,6 +44,12 @@
               />
               {{pet.skill3.split("[")[1]}}
             </v-col>
+            <v-col cols="12" v-else-if="pet.origin.includes('ob')" class="px-2 py-1">
+              Skill 3:
+              <ul>
+                <li v-for="(skill, index) in obSkills" :key="index">{{skill}}</li>
+              </ul>
+            </v-col>
             <v-col cols="12" v-if="pet.hidden_abilities" class="px-2 py-1">
               <ul>
                 <li v-for="(ability, index) in pet.hidden_abilities" :key="index">{{ability}}</li>
@@ -65,6 +71,9 @@ export default {
     };
   },
   computed: {
+    obSkills:function(){
+      return this.pet.skill3.split('-').slice(1)
+    },
     activeBackgroundClass: function() {
       let trueIndex = this.starThresholds
         .map(threshold => {

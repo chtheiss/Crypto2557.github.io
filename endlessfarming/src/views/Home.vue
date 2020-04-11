@@ -10,9 +10,7 @@
         />
       </div>
       <div class="index-purpose bordered">
-        <h2 class="col-12 pa-0 mb-3 text-center" color="red--text">
-          The Purpose of This Site
-        </h2>
+        <h2 class="col-12 pa-0 mb-3 text-center" color="red--text">The Purpose of This Site</h2>
         <p class="col-12 pa-0 ma-0">
           <b>1.</b> Provide a priority system for farming Spirit Highlands (SH)
           pets that will maximize growth based on your current Knightage Level
@@ -34,9 +32,7 @@
         </p>
       </div>
       <div class="index-pet-usage bordered">
-        <h2 class="col-12 pa-0 mb-3 text-center">
-          How to Use This Site For Pets
-        </h2>
+        <h2 class="col-12 pa-0 mb-3 text-center">How to Use This Site For Pets</h2>
         <p class="col-12 pa-0 ma-0">
           <b>1.</b> Click the “My Stats” button at the top right of the page and
           enter the relevant data into each field. You should update this
@@ -65,9 +61,7 @@
         </p>
       </div>
       <div class="index-unit-usage bordered">
-        <h2 class="col-12 pa-0 mb-3 text-center">
-          How to Use This Site For Units
-        </h2>
+        <h2 class="col-12 pa-0 mb-3 text-center">How to Use This Site For Units</h2>
         <p class="col-12 pa-0 ma-0">
           <b>1.</b> Click on the “Units” tab at the top left of the page and
           enter all relevant unit data.
@@ -89,16 +83,15 @@
       </div>
       <div class="index-addition bordered">
         <h2 class="col-12 pa-0 mb-3 text-center">Additional Information</h2>
-        <p class="col-12 pa-0 ma-0">
-          This application was created and is maintained by Crypto.
-        </p>
+        <p class="col-12 pa-0 ma-0">This application was created and is maintained by Crypto.</p>
         <p class="col-12 pa-0 ma-0">
           A huge shoutout to
-          <a href="https://www.endlessfrontierdata.com/index"
-            >Endless Frontier Data</a
-          >
+          <a
+            href="https://www.endlessfrontierdata.com/index"
+          >Endless Frontier Data</a>
           for their unit and pet images as well as data, to HarroweD for writing
-          an awesome <a href="http://bit.ly/HarroweD">pet guide</a>, CheezyBob
+          an awesome
+          <a href="http://bit.ly/HarroweD">pet guide</a>, CheezyBob
           for thinking up the original unit selection list and CryBenihime and
           SxeSpanky for keeping the meta progression up-to-date.
         </p>
@@ -106,19 +99,24 @@
           Feel free to give feedback on
           <a
             href="https://www.reddit.com/r/EndlessFrontier/comments/f4j323/endless_farming_update/"
-            >Reddit</a
-          >, by mail <b>endlessfarmingtracker@gmail.com</b>, or directly via
-          Discord at <b>Crypto2557#1163</b> or <b>HarroweD#0666</b>
+          >Reddit</a>, by mail
+          <b>endlessfarmingtracker@gmail.com</b>, or directly via
+          Discord at
+          <b>Crypto2557#1163</b> or
+          <b>HarroweD#0666</b>
         </p>
         <p class="col-12 pa-0 ma-0">
           The source code is available at
-          <a href="https://github.com/Crypto2557/Crypto2557.github.io">GitHub</a
-          >!
+          <a
+            href="https://github.com/Crypto2557/Crypto2557.github.io"
+          >GitHub</a>!
         </p>
         <p class="col-12 pa-0 ma-0">Happy Farming!</p>
         <p class="col-12 pa-0 ma-0">
           If you like this tool and want to support this project, feel free to
-          <a href="https://paypal.me/crypto2557">donate</a>! Thanks!
+          <a
+            href="https://paypal.me/crypto2557"
+          >donate</a>! Thanks!
         </p>
       </div>
     </div>
@@ -126,9 +124,8 @@
 </template>
 
 <script>
-
 export default {
-  name: "Home",
+  name: "Home"
 };
 </script>
 

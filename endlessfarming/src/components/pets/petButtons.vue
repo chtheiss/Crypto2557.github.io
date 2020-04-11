@@ -11,11 +11,22 @@ import _ from "lodash";
 
 export default {
   name: "PetButtons",
-  props: ["fragmentsToFarm"],
+  props: {
+    fragmentsToFarm: Array,
+    petsData: Array,
+    storageName: {
+      type: String,
+      default: "pets"
+    },
+    origin: {
+      type: String,
+      default: "shn"
+    }
+  },
   methods: {
     resetPriority: async function() {
       let originalPetsData = await axios.get(
-        "https://endless-farming-backend.herokuapp.com/api/v1/priority/shn"
+        `https://endless-farming-backend.herokuapp.com/api/v1/priority/${this.origin}`
       );
       let originalPets = originalPetsData.data.data[0].pets;
       let pets = this.petsData;
@@ -25,7 +36,10 @@ export default {
       for (let i = 0; i < mergedList.length; i++) {
         mergedList[i].priority = i;
       }
-      this.$store.commit("pets/setPetsData", mergedList);
+      this.$store.commit("pets/setPetsData", {
+        pets: mergedList,
+        storageName: this.storageName
+      });
       for (const pet of mergedList) {
         await this.$store.dispatch("pets/saveValue", pet);
       }
@@ -38,11 +52,6 @@ export default {
         pet.fragments += farmObj.farmableFragments;
         this.$store.dispatch("pets/saveValue", pet);
       }
-    }
-  },
-  computed: {
-    petsData: function() {
-      return this.$store.state.pets.data;
     }
   }
 };

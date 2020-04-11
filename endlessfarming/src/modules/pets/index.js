@@ -3,7 +3,9 @@ import { actions } from "./actions";
 import { mutations } from "./mutations";
 
 const state = {
-  data: []
+  data: [],
+  dataHard: [],
+  dataOther: [],
 };
 
 const namespaced = true;
@@ -13,5 +15,5 @@ export const pets = {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };
