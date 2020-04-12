@@ -13,12 +13,15 @@ The Endless Farming Project is licensed under the terms of the GNU Affero Genera
 ## Work in Progress
 
 - [ ] Ob tracking (show rotation time, days till 5* based on current max stage, possibly best team based on owned units)
-- [ ] Add Information for non sh pets
+- [ ] Artifact builder
+- [ ] Daily Reward and Quest?
+- [ ] World Boss? 
+- [x] Information for non sh pets
 - [ ] Slab tracking
 - [ ] Integration of Spirit Highland solutions
 - [ ] Normal Registration/Login and authentication with Discord to access and edit your data everywhere
 - [x] Design and Layout Rework
-- [ ] Connected Discord bot with shared functionality
+- [ ] ~~Connected Discord bot with shared functionality~~
 - [x] Performance optimization
 
 ## Running it

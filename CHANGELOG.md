@@ -1,5 +1,20 @@
 # Changelog
 
+## Future
+### Added
+- Raid and outland battle pets
+- The option to delete all your data under the transfer data menu
+
+### Changed
+- The whole backend structure
+- The layout of the unit page to split the units by tribe
+
+### Fixed
+- Requirement for Ancient Blessing (Forest Knight) when pet active
+- Highlighting of the text of the website while dragging the pet cards
+- A bug that prevented shared buffs to be calculated properly
+- A bug that produced a diminishing scroll bar effect for pet pages
+
 ## [1.5.0] - 2020-03-22
 ### Added
 - New feature to track other pets besides shn and shh

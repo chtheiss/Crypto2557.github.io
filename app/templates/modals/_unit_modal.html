@@ -1,0 +1,49 @@
+<div class="modal fade" id="{{unit['name'].replace(' ', '_')}}-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-offset-top">
+        <div class="modal-content bordered">
+            <div class="modal-header">
+                <h4 class="modal-title">{{unit['name']}}</h4>
+                <img class="unit-image" src="../static/img/units/{{unit['_id']}}.png">
+                <button type="button" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% if not unit_jr is defined %}
+                <ul>
+                    {% for ability in unit['abilities'] %}
+                    <li>{{ability}}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <div class="sd-tabs sd-tab-interaction">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tab-{{unit['name'].replace(' ', '_')}}-normal">Normal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tab-{{unit['name'].replace(' ', '_')}}-senior">Senior</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <form id="tab-{{unit['name'].replace(' ', '_')}}-normal" class="tab-pane" action="" method="post">
+                            <ul>
+                                {% for ability in unit_jr['abilities'] %}
+                                <li>{{ability}}</li>
+                                {% endfor %}
+                            </ul>
+                        </form>
+                        <form id="tab-{{unit['name'].replace(' ', '_')}}-senior" class="tab-pane">
+                            <ul>
+                                {% for ability in unit['abilities'] %}
+                                <li>{{ability}}</li>
+                                {% endfor %}
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

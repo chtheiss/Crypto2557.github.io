@@ -12,7 +12,15 @@
     --background-secondary: #2f3136;
     --background-modifier-hover: #29abe2;
 }
-
+ .noselect {
+ -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+           user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+}
 body, html{
     background-color:#26292f;
     font-family: Arial,Helvetica,sans-serif;
@@ -692,6 +700,10 @@ img.img-responsive{
 }
 .five-star-pet{
     filter:drop-shadow(#1ca51c 1px 1px 10px);
+}
+.unit-nav-container{
+    display: grid;
+    justify-content: center;
 }
 /* Define desktop grid */
 .unit-container{

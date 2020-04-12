@@ -1,3 +1,3 @@
 from app import create_app
 
-app, freezer, pages, _ = create_app()
+app, freezer, _ = create_app()
