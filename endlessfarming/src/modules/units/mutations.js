@@ -1,6 +1,10 @@
 import Vue from "vue";
+import getDefaultState from "./index.js";
 
 export const mutations = {
+  resetState(state) {
+    Object.assign(state, getDefaultState());
+  },
   updateUnit(state, unit) {
     let idx = state.data.indexOf(u => u._id == unit.id);
     let units = state.data;

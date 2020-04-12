@@ -2,10 +2,13 @@ import { getters } from "./getters";
 import { actions } from "./actions";
 import { mutations } from "./mutations.js";
 
-const state = {
-  data: [],
-  tickets: []
+const getDefaultState = () => {
+  return {
+    data: [],
+    tickets: []
+  };
 };
+const state = getDefaultState();
 
 const namespaced = true;
 
@@ -16,3 +19,5 @@ export const units = {
   actions,
   mutations
 };
+
+export default getDefaultState;

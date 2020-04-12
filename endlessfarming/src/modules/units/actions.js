@@ -3,6 +3,9 @@ import axios from "axios";
 import idb from "@/api/idb";
 
 export const actions = {
+  resetState({ commit }) {
+    commit("resetState");
+  },
   async saveValue(context, value) {
     let idbValue = {
       id: value._id,
