@@ -3,6 +3,9 @@ import axios from "axios";
 import _ from "lodash";
 
 export const actions = {
+  resetState({ commit }) {
+    commit("resetState");
+  },
   async saveValue(context, value) {
     let idbValue = {
       name: value.name,

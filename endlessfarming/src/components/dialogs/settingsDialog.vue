@@ -44,21 +44,36 @@
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>
-                    <v-btn light id="reset-btn">Import</v-btn>
+                    <v-row>
+                      <v-col cols="10">
+                        <v-file-input
+                          dense
+                          filled
+                          v-model="chosenFile"
+                          hide-details
+                          height="30px"
+                          accept=".json"
+                          label="Click here to select a .json file"
+                        ></v-file-input>
+                      </v-col>
+                      <v-col cols="2" class="d-flex align-center">
+                        <v-btn light id="reset-btn" @click="importJson">Import</v-btn>
+                      </v-col>
+                    </v-row>
                   </v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>
-                    <v-btn light id="reset-btn">Export</v-btn>
-                  </v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-content>
-                  <v-list-item-title>
-                    <v-btn light id="reset-btn">Delete All</v-btn>
+                    <v-row>
+                      <v-col cols="6" class="d-flex justify-center">
+                        <v-btn light id="reset-btn" @click="exportJson">Export</v-btn>
+                      </v-col>
+                      <v-col cols="6" class="d-flex justify-center">
+                        <v-btn light id="reset-btn" @click="clearDatabase">Delete All</v-btn>
+                      </v-col>
+                    </v-row>
                   </v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
@@ -144,8 +159,31 @@ export default {
     return {
       dialog: false,
       tab: null,
-      items: ["General", "Pets", "Artifacts"]
+      items: ["General", "Pets", "Artifacts"],
+      chosenFile: null,
+      fileData: null
     };
+  },
+  methods: {
+    async importJson() {
+      if (!this.chosenFile) {
+        this.fileData = "No File Chosen";
+      }
+      var reader = new FileReader();
+      reader.readAsText(this.chosenFile);
+      reader.onload = async () => {
+        this.fileData = reader.result;
+        await this.$store.dispatch("transfer/loadDataFromJson", this.fileData);
+        this.$router.go();
+      };
+    },
+    async exportJson() {
+      await this.$store.dispatch("transfer/downloadJsonFile", null);
+    },
+    async clearDatabase() {
+      await this.$store.dispatch("transfer/clearDatabase");
+      this.$router.go();
+    }
   },
   computed: {
     hide_five_star_pets: {
