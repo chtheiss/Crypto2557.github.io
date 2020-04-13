@@ -1,7 +1,7 @@
 <template>
   <v-container class="unit-card bordered">
     <UnitDialog :unit="unit" :extreme="true" />
-    <PetDialog :pet="pet" :unitDialog="true" />
+    <PetDialog v-if="pet!=undefined" :pet="pet" :unitDialog="true" />
     <v-text-field
       v-model="amount"
       step="1"

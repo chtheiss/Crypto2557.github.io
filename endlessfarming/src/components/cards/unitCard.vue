@@ -2,7 +2,7 @@
   <v-container class="unit-card bordered">
     <UnitDialog :unit="unitJunior" />
     <UnitDialog :unit="unitSenior" :senior="true" />
-    <PetDialog :pet="pet" :unitDialog="true" />
+    <PetDialog v-if="pet!=undefined" :pet="pet" :unitDialog="true" />
     <v-text-field
       step="1"
       v-model="amountJr"

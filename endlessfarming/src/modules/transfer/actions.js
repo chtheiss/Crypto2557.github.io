@@ -106,12 +106,13 @@ export const actions = {
         let unitsV2 = context.rootState.units.data
           .filter(unit => unit.name == data.units[i].name.replaceAll("_", " "))
           .sort((a, b) => a.stars - b.stars);
-        newUnits.push({ id: unitsV2[0].id, amount: data.units[i].nsr });
+        newUnits.push({ id: unitsV2[0]._id, amount: data.units[i].nsr });
         if (unitsV2[0].stars == 5) {
-          newUnits.push({ id: unitsV2[1].id, amount: data.units[i].sr });
+          newUnits.push({ id: unitsV2[1]._id, amount: data.units[i].sr });
         }
       }
       data.units = newUnits;
+      data.player.push({ name: "warp", value: 0 });
       data = JSON.stringify(data);
     }
     console.log("Clearing old database!");
