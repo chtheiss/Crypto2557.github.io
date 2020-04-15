@@ -28,6 +28,11 @@ export const actions = {
     for (let unit of mergedList) {
       if (unit.amount == undefined) {
         unit.amount = 0;
+
+        console.log({
+          id: unit._id,
+          amount: unit.amount
+        });
         unitPromises.push(
           idb.saveUnit(
             {
@@ -39,6 +44,7 @@ export const actions = {
         );
       }
     }
+    console.log("Done");
     await Promise.all(unitPromises);
     console.log("units/getUnitsData");
     context.commit("setUnitsData", mergedList);

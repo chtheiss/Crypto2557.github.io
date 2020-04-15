@@ -33,8 +33,8 @@ export default {
             (((unit.stars == 5) & (unit.evolveGem == 2800)) | (unit.stars >= 6))
         )
         .sort(function(a, b) {
-          if (a.rotation < b.rotation) return 1;
-          if (a.rotation > b.rotation) return -1;
+          if (a._id < b._id) return 1;
+          if (a._id > b._id) return -1;
           return 0;
         });
     },

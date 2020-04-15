@@ -71,7 +71,7 @@
                         <v-btn light id="reset-btn" @click="exportJson">Export</v-btn>
                       </v-col>
                       <v-col cols="6" class="d-flex justify-center">
-                        <v-btn light id="reset-btn" @click="clearDatabase">Delete All</v-btn>
+                        <v-btn light id="reset-btn" @click="deleteDatabase">Delete All</v-btn>
                       </v-col>
                     </v-row>
                   </v-list-item-title>
@@ -174,13 +174,13 @@ export default {
       reader.onload = async () => {
         this.fileData = reader.result;
         await this.$store.dispatch("transfer/loadDataFromJson", this.fileData);
-        this.$router.go();
+        //this.$router.go();
       };
     },
     async exportJson() {
       await this.$store.dispatch("transfer/downloadJsonFile", null);
     },
-    async clearDatabase() {
+    async deleteDatabase() {
       await this.$store.dispatch("transfer/clearDatabase");
       this.$router.go();
     }

@@ -14,24 +14,19 @@
       <v-icon medium dense slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
     </v-text-field>
     <div class="unit-card-buffs">
-      <v-progress-linear
-        v-for="buff in unit.buffs"
-        v-bind:key="buff._id"
-        height="25"
-        rounded
-        color="#29abe2"
-      >
-        <strong>{{0}}/{{10}}</strong>
-      </v-progress-linear>
+      <Buff v-for="buff in unit.buffs" v-bind:key="buff._id" v-bind:buff="buff" />
     </div>
   </v-container>
 </template>
 
 <script>
+import Buff from "./buff";
+
 export default {
   name: "UnitCardEx",
   props: ["unit"],
   components: {
+    Buff,
     PetDialog: () => import("../dialogs/petDialog"),
     UnitDialog: () => import("../dialogs/unitDialog")
   },
