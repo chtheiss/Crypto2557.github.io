@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <PetInfo />
     <div class="pet-container">
       <PetButtons
         :fragments-to-farm="fragmentsToFarm"
@@ -23,10 +24,11 @@
 import PetTrackers from "../components/pets/petTrackers";
 import PetButtons from "../components/pets/petButtons";
 import PetTable from "../components/pets/petTable";
+import PetInfo from "../components/dialogs/info/petInfo";
 
 export default {
   name: "Pets",
-  components: { PetTable, PetTrackers, PetButtons },
+  components: { PetTable, PetTrackers, PetButtons, PetInfo },
   data: () => ({ petType: "shn" }),
   computed: {
     knightageLevel: function() {

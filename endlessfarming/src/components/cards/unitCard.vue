@@ -2,7 +2,7 @@
   <v-container class="unit-card bordered">
     <UnitDialog :unit="unitJunior" />
     <UnitDialog :unit="unitSenior" :senior="true" />
-    <PetDialog v-if="pet!=undefined" :pet="pet" :unitDialog="true" />
+    <PetDialog v-if="pet!=undefined" :pet="petPet" :unitDialog="true" />
     <v-text-field
       step="1"
       v-model="amountJr"
@@ -11,8 +11,8 @@
       hide-details
       filled
     >
-      <v-icon medium dense slot="prepend" color="#fff" @click="downJr">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" color="#fff" @click="upJr">mdi-plus</v-icon>
+      <v-icon medium dense slot="prepend" @click="downJr">mdi-minus</v-icon>
+      <v-icon medium dense slot="append-outer" @click="upJr">mdi-plus</v-icon>
     </v-text-field>
     <v-text-field
       v-model="amountSr"
@@ -22,27 +22,38 @@
       hide-details
       filled
     >
-      <v-icon medium dense slot="prepend" color="#fff" @click="downSr">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" color="#fff" @click="upSr">mdi-plus</v-icon>
+      <v-icon medium dense slot="prepend" @click="downSr">mdi-minus</v-icon>
+      <v-icon medium dense slot="append-outer" @click="upSr">mdi-plus</v-icon>
     </v-text-field>
     <div class="unit-card-buffs">
-      <v-progress-linear
-        v-for="buff in unitSenior.buffs"
+      <Buff
+        v-for="buff of buffs"
         v-bind:key="buff._id"
-        height="25"
-        rounded
-        color="#29abe2"
-      >
-        <strong>{{0}}/{{10}}</strong>
-      </v-progress-linear>
+        v-bind:buff="buff"
+        v-bind:amount-jr="amountJr"
+        v-bind:amount-sr="amountSr"
+        v-bind:pet-active="fiveStarPet"
+      />
+      <Buff
+        v-for="buff of additionalBuffs"
+        v-bind:key="buff._id"
+        v-bind:buff="buff"
+        v-bind:amount-jr="amountJr"
+        v-bind:amount-sr="amountSr"
+        v-bind:pet-active="fiveStarPet"
+        v-bind:obtainable="fiveStarPet"
+      />
     </div>
   </v-container>
 </template>
 
 <script>
+import Buff from "./buff";
+
 export default {
   name: "UnitCard",
   components: {
+    Buff,
     PetDialog: () => import("../dialogs/petDialog"),
     UnitDialog: () => import("../dialogs/unitDialog")
   },
@@ -62,17 +73,20 @@ export default {
     }
   },
   computed: {
-    pet: function() {
+    petPet: function() {
       return this.$store.state.pets.data.filter(
         pet => pet._id == this.unitSenior.pet._id
       )[0];
+    },
+    pet: function() {
+      return this.unitSenior.pet;
     },
     amountSr: {
       get() {
         return this.unitSenior.amount;
       },
       async set(value) {
-        this.unitSenior.amount = value;
+        this.unitSenior.amount = parseInt(value) | 0;
         await this.$store.dispatch("units/saveValue", this.unitSenior);
       }
     },
@@ -81,9 +95,18 @@ export default {
         return this.unitJunior.amount;
       },
       async set(value) {
-        this.unitJunior.amount = value;
+        this.unitJunior.amount = parseInt(value) | 0;
         await this.$store.dispatch("units/saveValue", this.unitJunior);
       }
+    },
+    fiveStarPet: function() {
+      return this.petPet.fragments >= 330;
+    },
+    additionalBuffs: function() {
+      return this.pet.additionalBuffs;
+    },
+    buffs: function() {
+      return this.unitSenior.buffs;
     }
   }
 };

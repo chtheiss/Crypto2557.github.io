@@ -1,6 +1,7 @@
 <template>
-  <v-app :style="{ background: '#26292f' }">
-    <v-navigation-drawer v-model="drawer" app clipped color="primary">
+  <v-app :style="{background: $vuetify.theme.themes.dark.background}">
+    >
+    <v-navigation-drawer v-model="drawer" app clipped color="secondary">
       <v-list>
         <div v-for="(item, i) in items" :key="i">
           <v-list-item-group v-if="!item.subItems" value="true">
@@ -30,7 +31,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left color="primary">
+    <v-app-bar app clipped-left color="secondary">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <img id="logo-image" :src="require('./assets/img/media/logo.svg')" alt="Endless Farming" />
       <v-toolbar-title></v-toolbar-title>
@@ -123,11 +124,13 @@ export default {
 .v-list .v-list-item--active {
   color: #fff;
 }
-.pet-card-input .v-input__append-outer, .unit-card-input .v-input__append-outer {
+.pet-card-input .v-input__append-outer,
+.unit-card-input .v-input__append-outer {
   margin-top: 7px !important;
   margin-left: 1px !important;
 }
-.pet-card-input .v-input__prepend-outer, .unit-card-input .v-input__prepend-outer  {
+.pet-card-input .v-input__prepend-outer,
+.unit-card-input .v-input__prepend-outer {
   margin-top: 7px !important;
   margin-right: 1px !important;
 }
@@ -152,9 +155,7 @@ export default {
 }
 body,
 html {
-  background-color: #26292f;
   font-family: Arial, Helvetica, sans-serif;
-  color: #d3d4d5;
   font-size: 14px;
   margin: 0;
 }

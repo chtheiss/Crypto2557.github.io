@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <TicketInfo />
     <TicketRow v-for="ticket in tickets" v-bind:key="ticket._id" v-bind:ticket="ticket" />
   </v-container>
 </template>
@@ -7,7 +8,10 @@
 <script>
 export default {
   name: "Tickets",
-  components: { TicketRow: () => import("../components/ticketRow") },
+  components: {
+    TicketRow: () => import("../components/ticketRow"),
+    TicketInfo: () => import("../components/dialogs/info/ticketInfo")
+  },
   computed: {
     tickets: function() {
       return this.$store.state.units.tickets;

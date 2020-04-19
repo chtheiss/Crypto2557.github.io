@@ -113,6 +113,9 @@ export const actions = {
       }
       data.units = newUnits;
       data.player.push({ name: "warp", value: 0 });
+      for (let i = 0; i < data.pets.length; i++) {
+        data.pets[i].name = data.pets[i].name.replaceAll("_", " ");
+      }
       data = JSON.stringify(data);
     }
     console.log("Clearing old database!");

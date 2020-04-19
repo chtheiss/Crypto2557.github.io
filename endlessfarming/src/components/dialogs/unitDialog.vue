@@ -9,7 +9,7 @@
         v-bind:class="classObject"
       />
     </template>
-    <v-card>
+    <v-card color="background">
       <v-card-title>
         <h5 class="modal-title">{{unit.name}}</h5>
         <img
@@ -22,7 +22,7 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-card-title>
-      <v-card-text>
+      <v-card-text class="white--text">
         <ul>
           <li v-for="(ability, index) in unit.abilities" :key="index">{{ability}}</li>
         </ul>

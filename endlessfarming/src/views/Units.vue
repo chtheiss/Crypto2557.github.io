@@ -1,11 +1,12 @@
 <template>
   <v-container fluid>
-    <v-tabs v-model="tab" :color="'#fff'" dark center-active show-arrows centered>
+    <UnitInfo />
+    <v-tabs v-model="tab" center-active show-arrows centered>
       <v-tabs-slider></v-tabs-slider>
       <v-tab v-for="name in tabs" :key="name" :href="`#tab-${name}`">{{ name }}</v-tab>
       <v-tab-item v-for="(name, index) in tabs" :key="name" :value="'tab-' + name">
         <keep-alive>
-          <v-card flat tile :style="{'background': '#26292f'}">
+          <v-card flat tile color="background">
             <UnitTable v-bind:tribe="3-index" />
           </v-card>
         </keep-alive>
@@ -17,7 +18,10 @@
 <script>
 export default {
   name: "Units",
-  components: { UnitTable: () => import("../components/units/unitTable") },
+  components: {
+    UnitTable: () => import("../components/units/unitTable"),
+    UnitInfo: () => import("../components/dialogs/info/unitInfo")
+  },
   data: () => ({
     tab: null,
     tabs: ["Orc", "Undead", "Elf", "Human"]

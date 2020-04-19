@@ -10,28 +10,28 @@
       hide-details
       filled
     >
-      <v-icon medium dense slot="prepend" color="#fff" @click="down">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
+      <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
+      <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
     </v-text-field>
     <div class="unit-card-buffs">
-      <v-progress-linear
+      <Buff
         v-for="buff in unit.buffs"
         v-bind:key="buff._id"
-        height="25"
-        rounded
-        color="#29abe2"
-      >
-        <strong>{{0}}/{{10}}</strong>
-      </v-progress-linear>
+        v-bind:buff="buff"
+        v-bind:amount-jr="amount"
+      />
     </div>
   </v-container>
 </template>
 
 <script>
+import Buff from "./buff";
+
 export default {
   name: "UnitCardEx",
   props: ["unit"],
   components: {
+    Buff,
     PetDialog: () => import("../dialogs/petDialog"),
     UnitDialog: () => import("../dialogs/unitDialog")
   },
@@ -54,7 +54,7 @@ export default {
         return this.unit.amount;
       },
       async set(value) {
-        this.unit.amount = value;
+        this.unit.amount = parseInt(value) | 0;
         await this.$store.dispatch("units/saveValue", this.unit);
       }
     }

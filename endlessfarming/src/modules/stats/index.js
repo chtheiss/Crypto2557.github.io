@@ -11,8 +11,8 @@ const getDefaultState = () => {
     edit_priorities: 0,
     refills: 0,
     refills_hard: 0,
-    tickets: 0,
-    tickets_hard: 0
+    tickets: 10,
+    tickets_hard: 5,
   };
 };
 
@@ -25,7 +25,7 @@ export const stats = {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };
 
 export default getDefaultState;

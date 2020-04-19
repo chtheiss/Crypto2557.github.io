@@ -9,14 +9,14 @@ export const actions = {
   async saveValue(context, value) {
     let idbValue = {
       id: value._id,
-      amount: value.amount
+      amount: value.amount,
     };
     await idb.saveUnit(idbValue);
     context.commit("updateUnit", value);
   },
   async getUnitsData(context) {
     let unitsData = await axios.get(
-      `https://endless-farming-backend.herokuapp.com/api/v1/units/`
+      `https://endless-farming-backend.herokuapp.com/api/v2/units/`
     );
     let data = unitsData.data.data;
 
@@ -32,13 +32,14 @@ export const actions = {
           idb.saveUnit(
             {
               id: unit._id,
-              amount: unit.amount
+              amount: unit.amount,
             },
             "units"
           )
         );
       }
     }
+    console.log("Done");
     await Promise.all(unitPromises);
     console.log("units/getUnitsData");
     context.commit("setUnitsData", mergedList);
@@ -50,5 +51,5 @@ export const actions = {
     tickets = tickets.data.data;
     console.log("units/getTickets");
     context.commit("setTickets", tickets);
-  }
+  },
 };
