@@ -10,8 +10,8 @@
       hide-details
       filled
     >
-      <v-icon medium dense slot="prepend" color="#fff" @click="down">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
+      <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
+      <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
     </v-text-field>
     <div class="unit-card-buffs">
       <Buff

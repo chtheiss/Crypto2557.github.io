@@ -5,18 +5,18 @@
         <v-icon>fas fa-cog</v-icon>
       </v-btn>
     </template>
-    <v-card>
-      <v-toolbar dark color="primary">
+    <v-card color="background">
+      <v-toolbar color="secondary">
         <v-toolbar-title>Settings</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-          <v-btn icon dark @click="dialog = false">
+          <v-btn icon @click="dialog = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-toolbar-items>
         <template v-slot:extension>
-          <v-tabs v-model="tab" align-with-title color="#fff">
-            <v-tabs-slider color="#fff"></v-tabs-slider>
+          <v-tabs v-model="tab" align-with-title>
+            <v-tabs-slider></v-tabs-slider>
             <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
           </v-tabs>
         </template>
@@ -24,22 +24,22 @@
       <v-tabs-items v-model="tab">
         <v-tab-item :key="items[0]">
           <v-card flat>
-            <v-list subheader>
+            <v-list subheader color="background">
               <v-subheader>User</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Knightage Level</v-list-item-title>
-                  <NumberInput value-name="KL"  v-bind:min="1"/>
+                  <NumberInput value-name="KL" v-bind:min="1" />
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Warp</v-list-item-title>
-                  <NumberInput value-name="warp"  v-bind:min="0"/>
+                  <NumberInput value-name="warp" v-bind:min="0" />
                 </v-list-item-content>
               </v-list-item>
             </v-list>
-            <v-list subheader>
+            <v-list subheader color="background">
               <v-subheader>Data Transfer</v-subheader>
               <v-list-item>
                 <v-list-item-content>
@@ -57,7 +57,13 @@
                         ></v-file-input>
                       </v-col>
                       <v-col cols="2" class="d-flex align-center">
-                        <v-btn light id="reset-btn" @click="importJson">Import</v-btn>
+                        <v-btn
+                          light
+                          id="reset-btn"
+                          color="primary"
+                          class="black--text"
+                          @click="importJson"
+                        >Import</v-btn>
                       </v-col>
                     </v-row>
                   </v-list-item-title>
@@ -68,10 +74,22 @@
                   <v-list-item-title>
                     <v-row>
                       <v-col cols="6" class="d-flex justify-center">
-                        <v-btn light id="reset-btn" @click="exportJson">Export</v-btn>
+                        <v-btn
+                          light
+                          id="reset-btn"
+                          color="primary"
+                          class="black--text"
+                          @click="exportJson"
+                        >Export</v-btn>
                       </v-col>
                       <v-col cols="6" class="d-flex justify-center">
-                        <v-btn light id="reset-btn" @click="deleteDatabase">Delete All</v-btn>
+                        <v-btn
+                          light
+                          id="reset-btn"
+                          color="primary"
+                          class="black--text"
+                          @click="deleteDatabase"
+                        >Delete All</v-btn>
                       </v-col>
                     </v-row>
                   </v-list-item-title>
@@ -82,11 +100,11 @@
         </v-tab-item>
         <v-tab-item :key="items[1]">
           <v-card flat>
-            <v-list subheader>
+            <v-list subheader color="background">
               <v-subheader>General</v-subheader>
               <v-list-item>
                 <v-list-item-action>
-                  <v-checkbox color="blue" v-model="hide_five_star_pets"></v-checkbox>
+                  <v-checkbox color="primary" v-model="hide_five_star_pets"></v-checkbox>
                 </v-list-item-action>
                 <v-list-item-content>
                   <v-list-item-title>Hide 5 Star Pets</v-list-item-title>
@@ -94,7 +112,7 @@
               </v-list-item>
               <v-list-item>
                 <v-list-item-action>
-                  <v-checkbox color="blue" v-model="hide_unattainable_pets"></v-checkbox>
+                  <v-checkbox color="primary" v-model="hide_unattainable_pets"></v-checkbox>
                 </v-list-item-action>
                 <v-list-item-content>
                   <v-list-item-title>Hide Unattainable Pets</v-list-item-title>
@@ -102,7 +120,7 @@
               </v-list-item>
               <v-list-item>
                 <v-list-item-action>
-                  <v-checkbox color="blue" v-model="edit_priorities"></v-checkbox>
+                  <v-checkbox color="primary" v-model="edit_priorities"></v-checkbox>
                 </v-list-item-action>
                 <v-list-item-content>
                   <v-list-item-title>Enable Editing Pet Priorities</v-list-item-title>
@@ -110,33 +128,33 @@
               </v-list-item>
             </v-list>
             <v-divider></v-divider>
-            <v-list subheader>
+            <v-list subheader color="background">
               <v-subheader>Spirit Highland Normal</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
-                  <NumberInput value-name="tickets" v-bind:min="10"/>
+                  <NumberInput value-name="tickets" v-bind:min="10" />
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Refills</v-list-item-title>
-                  <NumberInput value-name="refills"  v-bind:min="0" v-bind:max="6"/>
+                  <NumberInput value-name="refills" v-bind:min="0" v-bind:max="6" />
                 </v-list-item-content>
               </v-list-item>
             </v-list>
-            <v-list subheader>
+            <v-list subheader color="background">
               <v-subheader>Spirit Highland Hard</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
-                  <NumberInput value-name="tickets_hard" v-bind:min="5"/>
+                  <NumberInput value-name="tickets_hard" v-bind:min="5" />
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Refills</v-list-item-title>
-                  <NumberInput value-name="refills_hard" v-bind:min="0" v-bind:max="3"/>
+                  <NumberInput value-name="refills_hard" v-bind:min="0" v-bind:max="3" />
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -219,5 +237,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-</style>

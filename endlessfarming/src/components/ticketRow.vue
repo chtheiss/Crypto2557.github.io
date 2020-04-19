@@ -31,9 +31,9 @@ export default {
     },
     color: function() {
       if (this.completeness >= 100) {
-        return "#1ca51c";
+        return "success";
       }
-      return "#29abe2";
+      return "info";
     }
   }
 };

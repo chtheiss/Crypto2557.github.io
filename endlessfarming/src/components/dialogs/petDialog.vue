@@ -20,7 +20,7 @@
         v-bind:class="{'five-star-pet': pet.fragments >=330}"
       />
     </template>
-    <v-card>
+    <v-card color="background">
       <v-card-title>
         <h5 class="modal-title">{{pet.name}}</h5>
         <img
@@ -33,7 +33,7 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-card-title>
-      <v-card-text class="modal-content">
+      <v-card-text class="modal-content white--text">
         <v-container fluid>
           <v-row>
             <v-col cols="12" class="px-2 py-1">Skill 1: {{pet.skill1}}</v-col>
@@ -119,7 +119,7 @@ export default {
   max-height: 45px;
 }
 .five-star-pet {
-  filter: drop-shadow(#1ca51c 1px 1px 10px);
+  filter: drop-shadow(var(--v-success-base) 1px 1px 10px);
 }
 .unit-card-pet {
   grid-area: pet;
@@ -134,7 +134,6 @@ export default {
   }
 }
 .modal-content > * {
-  color: #fff;
   font-size: 14px;
   max-width: 100%;
 }

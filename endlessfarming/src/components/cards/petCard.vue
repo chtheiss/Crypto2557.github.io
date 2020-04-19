@@ -28,8 +28,8 @@
       hide-details
       filled
     >
-      <v-icon medium dense slot="prepend" color="#fff" @click="down">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
+      <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
+      <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
     </v-text-field>
     <div v-if="klRequirement.length" class="pet-card-kl">
       <div
@@ -142,7 +142,7 @@ export default {
 <style>
 .pet-card-kl-number.availableStage,
 .pet-card > p.pet-card-frags.availableStage {
-  color: #1ca51c;
+  color: var(--v-success-base);
 }
 .pet-card.invisible,
 .pet-card-other.invisible {
@@ -184,14 +184,14 @@ export default {
   background: radial-gradient(circle, #333 0, #333 0, rgba(224, 49, 6, 0.3));
 }
 h4 {
-  font-size: 16px;
+  font-size: 18px;
   margin: 0;
   font-weight: 400;
 }
 
 .pet-pets .pet-card:hover,
 .pet-pets .pet-card-other:hover {
-  background-color: #393c3f;
+  background-color: var(--v-background-lighten1);
   cursor: pointer;
 }
 .pet-card {
@@ -229,7 +229,7 @@ h4 {
 }
 .pet-card > p.pet-card-frags {
   margin-bottom: 0px;
-  color: #ce2323;
+  color: var(--v-error-base);
 }
 .pet-card-name {
   grid-area: name;
@@ -270,7 +270,7 @@ img.img-responsive {
 }
 .pet-card-kl div {
   font-weight: bold;
-  color: #ce2323;
+  color: var(--v-error-base);
   justify-self: center;
 }
 .pet-card-other {

@@ -5,7 +5,7 @@
         <v-list-item-title>{{ title }}</v-list-item-title>
       </v-list-item>
     </template>
-    <v-card>
+    <v-card color="background">
       <v-card-title>
         <span>Patch Notes</span>
         <v-spacer></v-spacer>
@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .version-underline {
-  border-bottom: 2px solid #999;
+  border-bottom: 2px solid var(--v-secondary-lighten5);
 }
 .version-header {
   font-size: 18px;

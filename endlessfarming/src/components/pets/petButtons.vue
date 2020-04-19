@@ -1,7 +1,19 @@
 <template>
   <div class="pet-buttons">
-    <v-btn light id="reset-btn" color="primary" v-on:click="resetPriority">Reset Priority</v-btn>
-    <v-btn light id="add-all-btn" color="primary" v-on:click="progressOneDay">Progress 1 Day</v-btn>
+    <v-btn
+      light
+      id="reset-btn"
+      color="primary"
+      class="black--text"
+      v-on:click="resetPriority"
+    >Reset Priority</v-btn>
+    <v-btn
+      light
+      id="add-all-btn"
+      color="primary"
+      class="black--text"
+      v-on:click="progressOneDay"
+    >Progress 1 Day</v-btn>
   </div>
 </template>
 

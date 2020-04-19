@@ -11,8 +11,8 @@
       hide-details
       filled
     >
-      <v-icon medium dense slot="prepend" color="#fff" @click="downJr">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" color="#fff" @click="upJr">mdi-plus</v-icon>
+      <v-icon medium dense slot="prepend" @click="downJr">mdi-minus</v-icon>
+      <v-icon medium dense slot="append-outer" @click="upJr">mdi-plus</v-icon>
     </v-text-field>
     <v-text-field
       v-model="amountSr"
@@ -22,8 +22,8 @@
       hide-details
       filled
     >
-      <v-icon medium dense slot="prepend" color="#fff" @click="downSr">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" color="#fff" @click="upSr">mdi-plus</v-icon>
+      <v-icon medium dense slot="prepend" @click="downSr">mdi-minus</v-icon>
+      <v-icon medium dense slot="append-outer" @click="upSr">mdi-plus</v-icon>
     </v-text-field>
     <div class="unit-card-buffs">
       <Buff

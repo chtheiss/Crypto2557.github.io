@@ -1,15 +1,18 @@
 <template>
-  <v-tooltip top max-width="250px" class="white--text" color="#17191a">
+  <v-tooltip top max-width="250px" color="primary" class="black--text">
     <template v-slot:activator="{ on }">
       <v-progress-linear height="25" rounded :color="color" v-on="on" :value="percentage">
         <strong v-if="maxRequirement==currentRequirement">{{total}}/{{currentRequirement}}</strong>
         <strong v-else>{{total}}/{{currentRequirement}} ({{maxRequirement}})</strong>
       </v-progress-linear>
     </template>
-    <h4>{{buff.name}}</h4>
-    <v-divider></v-divider>
-    <span v-if="petActive & buff.descriptionForPet!=undefined">{{buff.descriptionForPet}}</span>
-    <span v-else>{{buff.description}}</span>
+    <h4 class="black--text">{{buff.name}}</h4>
+    <v-divider color="secondary"></v-divider>
+    <span
+      class="black--text"
+      v-if="petActive & buff.descriptionForPet!=undefined"
+    >{{buff.descriptionForPet}}</span>
+    <span class="black--text" v-else>{{buff.description}}</span>
   </v-tooltip>
 </template>
 
@@ -90,9 +93,9 @@ export default {
     },
     color: function() {
       if (!this.obtainable) {
-        return "#F44336";
+        return "error";
       }
-      return this.total < this.maxRequirement ? "#29abe2" : "#1ca51c";
+      return this.total < this.maxRequirement ? "info" : "success";
     }
   }
 };
