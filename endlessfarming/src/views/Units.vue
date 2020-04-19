@@ -1,5 +1,10 @@
 <template>
   <v-container fluid>
+    <v-container>
+      <v-btn icon class="d-flex justify-end">
+        <v-icon>fas fa-question</v-icon>
+      </v-btn>
+    </v-container>
     <v-tabs v-model="tab" :color="'#fff'" dark center-active show-arrows centered>
       <v-tabs-slider></v-tabs-slider>
       <v-tab v-for="name in tabs" :key="name" :href="`#tab-${name}`">{{ name }}</v-tab>

@@ -103,7 +103,7 @@ export default {
         return this.pet.fragments;
       },
       async set(value) {
-        this.pet.fragments = value;
+        this.pet.fragments = parseInt(value) | 0;
         await this.$store.dispatch("pets/saveValue", this.pet);
       }
     },

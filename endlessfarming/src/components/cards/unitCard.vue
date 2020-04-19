@@ -26,8 +26,23 @@
       <v-icon medium dense slot="append-outer" color="#fff" @click="upSr">mdi-plus</v-icon>
     </v-text-field>
     <div class="unit-card-buffs">
-      <Buff v-for="buff of buffs" v-bind:key="buff._id" v-bind:buff="buff" />
-      <Buff v-for="buff of additionalBuffs" v-bind:key="buff._id" v-bind:buff="buff" />
+      <Buff
+        v-for="buff of buffs"
+        v-bind:key="buff._id"
+        v-bind:buff="buff"
+        v-bind:amount-jr="amountJr"
+        v-bind:amount-sr="amountSr"
+        v-bind:pet-active="fiveStarPet"
+      />
+      <Buff
+        v-for="buff of additionalBuffs"
+        v-bind:key="buff._id"
+        v-bind:buff="buff"
+        v-bind:amount-jr="amountJr"
+        v-bind:amount-sr="amountSr"
+        v-bind:pet-active="fiveStarPet"
+        v-bind:obtainable="fiveStarPet"
+      />
     </div>
   </v-container>
 </template>
@@ -71,7 +86,7 @@ export default {
         return this.unitSenior.amount;
       },
       async set(value) {
-        this.unitSenior.amount = value;
+        this.unitSenior.amount = parseInt(value) | 0;
         await this.$store.dispatch("units/saveValue", this.unitSenior);
       }
     },
@@ -80,7 +95,7 @@ export default {
         return this.unitJunior.amount;
       },
       async set(value) {
-        this.unitJunior.amount = value;
+        this.unitJunior.amount = parseInt(value) | 0;
         await this.$store.dispatch("units/saveValue", this.unitJunior);
       }
     },
@@ -88,28 +103,10 @@ export default {
       return this.petPet.fragments >= 330;
     },
     additionalBuffs: function() {
-      return this.pet.additional_buffs;
+      return this.pet.additionalBuffs;
     },
     buffs: function() {
-      let b = this.unitSenior.buffs.map(
-        function(buff) {
-          let petBuff = this.pet.buffs.filter(
-            petBuff => petBuff.name == buff.name
-          )[0];
-          if (this.fiveStarPet & (petBuff != undefined)) {
-            petBuff.linked_multiplier = buff.linked_multiplier;
-            buff = petBuff;
-          }
-          buff.pet_active = this.fiveStarPet;
-          return buff;
-        }.bind(this)
-      );
-      return b;
-    },
-    buffValues: function() {
-      return this.buffs.map(buff => {
-        return buff.multiplier;
-      });
+      return this.unitSenior.buffs;
     }
   }
 };

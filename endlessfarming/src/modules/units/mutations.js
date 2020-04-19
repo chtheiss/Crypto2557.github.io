@@ -6,10 +6,9 @@ export const mutations = {
     Object.assign(state, getDefaultState());
   },
   updateUnit(state, unit) {
-    let idx = state.data.indexOf(u => u._id == unit.id);
+    let idx = state.data.indexOf((u) => u._id == unit.id);
     let units = state.data;
     units[idx] = unit;
-    console.log(units);
     Vue.set(state, "data", units);
   },
   setUnitsData(state, units) {
@@ -17,5 +16,5 @@ export const mutations = {
   },
   setTickets(state, tickets) {
     Vue.set(state, "tickets", tickets);
-  }
+  },
 };

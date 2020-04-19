@@ -14,7 +14,12 @@
       <v-icon medium dense slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
     </v-text-field>
     <div class="unit-card-buffs">
-      <Buff v-for="buff in unit.buffs" v-bind:key="buff._id" v-bind:buff="buff" />
+      <Buff
+        v-for="buff in unit.buffs"
+        v-bind:key="buff._id"
+        v-bind:buff="buff"
+        v-bind:amount-jr="amount"
+      />
     </div>
   </v-container>
 </template>
@@ -49,7 +54,7 @@ export default {
         return this.unit.amount;
       },
       async set(value) {
-        this.unit.amount = value;
+        this.unit.amount = parseInt(value) | 0;
         await this.$store.dispatch("units/saveValue", this.unit);
       }
     }

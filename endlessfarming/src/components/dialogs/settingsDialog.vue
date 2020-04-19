@@ -29,13 +29,13 @@
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Knightage Level</v-list-item-title>
-                  <NumberInput value-name="KL" />
+                  <NumberInput value-name="KL"  v-bind:min="1"/>
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Warp</v-list-item-title>
-                  <NumberInput value-name="warp" />
+                  <NumberInput value-name="warp"  v-bind:min="0"/>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -115,13 +115,13 @@
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
-                  <NumberInput value-name="tickets" />
+                  <NumberInput value-name="tickets" v-bind:min="10"/>
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Refills</v-list-item-title>
-                  <NumberInput value-name="refills" />
+                  <NumberInput value-name="refills"  v-bind:min="0" v-bind:max="6"/>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -130,13 +130,13 @@
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
-                  <NumberInput value-name="tickets_hard" />
+                  <NumberInput value-name="tickets_hard" v-bind:min="5"/>
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Refills</v-list-item-title>
-                  <NumberInput value-name="refills_hard" />
+                  <NumberInput value-name="refills_hard" v-bind:min="0" v-bind:max="3"/>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -174,7 +174,7 @@ export default {
       reader.onload = async () => {
         this.fileData = reader.result;
         await this.$store.dispatch("transfer/loadDataFromJson", this.fileData);
-        //this.$router.go();
+        this.$router.go();
       };
     },
     async exportJson() {

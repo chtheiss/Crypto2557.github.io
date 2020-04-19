@@ -13,6 +13,10 @@ export default {
       type: Number,
       default: 0
     },
+    max: {
+      type: Number,
+      default: Infinity
+    },
     valueName: String
   },
   methods: {
@@ -29,7 +33,10 @@ export default {
         return this.$store.state.stats[this.valueName];
       },
       async set(value) {
-        let stat = { name: this.valueName, value: value };
+        value = parseInt(value) | 0;
+        value = value < this.min ? this.min : value;
+        value = value > this.max ? this.max : value;
+        let stat = { name: this.valueName, value: parseInt(value) | 0 };
         await this.$store.dispatch("stats/saveValue", stat);
       }
     }
