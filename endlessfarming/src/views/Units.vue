@@ -1,10 +1,6 @@
 <template>
   <v-container fluid>
-    <v-container fluid class="ma-0 pa-0 d-flex justify-end">
-      <v-btn icon>
-        <v-icon>fas fa-question</v-icon>
-      </v-btn>
-    </v-container>
+    <UnitInfo />
     <v-tabs v-model="tab" center-active show-arrows centered>
       <v-tabs-slider></v-tabs-slider>
       <v-tab v-for="name in tabs" :key="name" :href="`#tab-${name}`">{{ name }}</v-tab>
@@ -22,7 +18,10 @@
 <script>
 export default {
   name: "Units",
-  components: { UnitTable: () => import("../components/units/unitTable") },
+  components: {
+    UnitTable: () => import("../components/units/unitTable"),
+    UnitInfo: () => import("../components/dialogs/info/unitInfo")
+  },
   data: () => ({
     tab: null,
     tabs: ["Orc", "Undead", "Elf", "Human"]

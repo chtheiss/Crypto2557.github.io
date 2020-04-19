@@ -13,7 +13,7 @@ const opts = {
       dark: {
         primary: "#29abe2",
         secondary: "#17191a",
-        background: "#2f3136",
+        background: "#26292f",
         success: "#1ca51c",
         info: "#29abe2"
       }

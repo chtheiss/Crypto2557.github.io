@@ -9,16 +9,15 @@
         </v-container>
       </template>
 
-      <v-card>
-        <v-card-title class="headline" primary-title>How to Use</v-card-title>
-
+      <v-card color="background">
+        <v-card-title class="headline" primary-title>Info</v-card-title>
         <v-card-text class="white--text">
-          <p class="col-12 pa-0 ma-0">
+          <p class="pa-0 ma-0">
             <b>1.</b> On this page you can find suggestions in which order you should use your valuable Unit Selection Tickets.
           </p>
-          <p class="col-12 pa-0 ma-0">
-            <b>2.</b> You can use this list as a general guideline. However, if you want to get the most you can you can
-            click on the “Units” tab and enter all relevant unit data if you haven't done so yet. That way we can provide you with
+          <p class="pa-0 ma-0">
+            <b>2.</b> You can use this list as a general guideline. However, if you want to get the most out of it you can
+            click on the “Units” tab. and enter all relevant unit data if you haven't done so yet. That way we can provide you with
             the most accurate priority guide.
           </p>
         </v-card-text>
