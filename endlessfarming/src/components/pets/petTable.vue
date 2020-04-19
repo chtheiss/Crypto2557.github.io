@@ -1,5 +1,10 @@
 <template>
-  <draggable class="pet-pets" v-model="petsData" @end="changePriority" :disabled="!editPriorities">
+  <draggable
+    class="pet-pets mt-4"
+    v-model="petsData"
+    @end="changePriority"
+    :disabled="!editPriorities"
+  >
     <PetCard
       v-for="(pet, index) in petsData"
       :key="pet.id"

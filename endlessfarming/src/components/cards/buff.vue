@@ -1,5 +1,5 @@
 <template>
-  <v-tooltip top max-width="250px" class="white--text" color="#272727">
+  <v-tooltip top max-width="250px" class="white--text" color="#17191a">
     <template v-slot:activator="{ on }">
       <v-progress-linear height="25" rounded :color="color" v-on="on" :value="percentage">
         <strong v-if="maxRequirement==currentRequirement">{{total}}/{{currentRequirement}}</strong>
@@ -74,12 +74,11 @@ export default {
         linkedSixStarAmount +=
           this.linkedSixStarUnits[i].amount * this.buff.linkedMultiplier[i];
       }
-      let total = (
+      let total =
         this.amountJr * this.buff.multiplier +
         this.amountSr +
         this.buff.multiplier * linkedFiveStarAmount +
-        linkedSixStarAmount
-      )
+        linkedSixStarAmount;
       total = Number.isInteger(total) ? total : total.toFixed(2);
       return total;
     },

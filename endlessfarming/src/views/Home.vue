@@ -10,7 +10,7 @@
         />
       </div>
       <div class="index-purpose bordered">
-        <h2 class="col-12 pa-0 mb-3 text-center" color="red--text">The Purpose of This Site</h2>
+        <h2 class="col-12 pa-0 mb-3 text-center">The Purpose of This Site</h2>
         <p class="col-12 pa-0 ma-0">
           <b>1.</b> Provide a priority system for farming Spirit Highlands (SH)
           pets that will maximize growth based on your current Knightage Level
@@ -91,7 +91,9 @@
           >Endless Frontier Data</a>
           for their unit and pet images as well as data, to HarroweD for writing
           an awesome
-          <a href="http://bit.ly/HarroweD">pet guide</a>, CheezyBob
+          <a
+            href="http://bit.ly/HarroweD"
+          >pet guide</a>, CheezyBob
           for thinking up the original unit selection list and CryBenihime and
           SxeSpanky for keeping the meta progression up-to-date.
         </p>
@@ -170,7 +172,7 @@ export default {
   grid-area: addition;
 }
 .index-addition a {
-  color: #29abe2;
+  color: var(--v-primary-base);
 }
 /* Styling the grid items that represent content */
 .index-purpose,

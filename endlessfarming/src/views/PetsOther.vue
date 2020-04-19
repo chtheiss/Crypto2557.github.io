@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
-    <v-tabs v-model="tab" :color="'#fff'" dark grow>
+    <v-tabs v-model="tab" dark grow>
       <v-tabs-slider></v-tabs-slider>
       <v-tab v-for="name in tabs" :key="name" :href="`#tab-${name}`">{{ name }}</v-tab>
       <v-tab-item v-for="(name, index) in tabs" :key="name" :value="'tab-' + name" grow>
         <keep-alive>
-          <v-card flat tile>
+          <v-card flat tile color="background">
             <PetTable
               :edit-priorities="0"
               :knightage-level="0"
@@ -68,7 +68,6 @@ export default {
   grid-template-columns: repeat(8, 1fr);
   justify-content: center;
   align-content: center;
-  background: #26292f;
 }
 @media screen and (max-width: 630px) {
   .pet-pets {

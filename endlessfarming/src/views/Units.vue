@@ -1,16 +1,16 @@
 <template>
   <v-container fluid>
-    <v-container>
-      <v-btn icon class="d-flex justify-end">
+    <v-container fluid class="ma-0 pa-0 d-flex justify-end">
+      <v-btn icon>
         <v-icon>fas fa-question</v-icon>
       </v-btn>
     </v-container>
-    <v-tabs v-model="tab" :color="'#fff'" dark center-active show-arrows centered>
+    <v-tabs v-model="tab" center-active show-arrows centered>
       <v-tabs-slider></v-tabs-slider>
       <v-tab v-for="name in tabs" :key="name" :href="`#tab-${name}`">{{ name }}</v-tab>
       <v-tab-item v-for="(name, index) in tabs" :key="name" :value="'tab-' + name">
         <keep-alive>
-          <v-card flat tile :style="{'background': '#26292f'}">
+          <v-card flat tile color="background">
             <UnitTable v-bind:tribe="3-index" />
           </v-card>
         </keep-alive>

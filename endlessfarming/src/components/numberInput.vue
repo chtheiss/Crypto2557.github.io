@@ -1,7 +1,7 @@
 <template>
   <v-text-field v-model.number="value" step="1" class="input-number" dense hide-details filled>
-    <v-icon slot="prepend" color="#fff" @click="down">mdi-minus</v-icon>
-    <v-icon slot="append-outer" color="#fff" @click="up">mdi-plus</v-icon>
+    <v-icon slot="prepend" @click="down">mdi-minus</v-icon>
+    <v-icon slot="append-outer" @click="up">mdi-plus</v-icon>
   </v-text-field>
 </template>
 
