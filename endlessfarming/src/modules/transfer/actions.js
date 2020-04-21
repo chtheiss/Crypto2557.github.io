@@ -86,6 +86,22 @@ function exportToJsonString(idbDatabase, cb) {
   }
 }
 
+function ConvertV1ToV2Pets(petsV1, petsV2) {
+  let newPets = [];
+  for (let i = 0; i < petsV1.length; i++) {
+    console.log(petsV1[i].name);
+    let petId = petsV2.filter(
+      (pet) => pet.name == petsV1[i].name.replaceAll("_", " ")
+    )[0]._id;
+    newPets.push({
+      id: petId,
+      fragments: petsV1[i].fragments,
+      priority: petsV1[i].priority,
+    });
+  }
+  return newPets;
+}
+
 String.prototype.replaceAll = function(search, replacement) {
   let target = this;
   return target.replace(new RegExp(search, "g"), replacement);
@@ -98,13 +114,33 @@ export const actions = {
       console.log("Really? Still using version 1 data? *sigh*");
       data = JSON.parse(JSON.parse(data));
       await context.dispatch("units/getUnitsData", null, { root: true });
+      await context.dispatch(
+        "pets/getPetsData",
+        {
+          origin: "shn",
+          storageName: "pets",
+        },
+        { root: true }
+      );
+      await context.dispatch(
+        "pets/getPetsData",
+        {
+          origin: "shh",
+          storageName: "pets_hard",
+        },
+        { root: true }
+      );
+      await context.dispatch("pets/getOtherPetsData", null, { root: true });
+
       let newUnits = [];
       for (let i = 0; i < data.player.length; i++) {
         data.player[i].value = parseInt(data.player[i].value);
       }
       for (let i = 0; i < data.units.length; i++) {
         let unitsV2 = context.rootState.units.data
-          .filter(unit => unit.name == data.units[i].name.replaceAll("_", " "))
+          .filter(
+            (unit) => unit.name == data.units[i].name.replaceAll("_", " ")
+          )
           .sort((a, b) => a.stars - b.stars);
         newUnits.push({ id: unitsV2[0]._id, amount: data.units[i].nsr });
         if (unitsV2[0].stars == 5) {
@@ -113,9 +149,16 @@ export const actions = {
       }
       data.units = newUnits;
       data.player.push({ name: "warp", value: 0 });
-      for (let i = 0; i < data.pets.length; i++) {
-        data.pets[i].name = data.pets[i].name.replaceAll("_", " ");
-      }
+
+      data.pets = ConvertV1ToV2Pets(data.pets, context.rootState.pets.data);
+      data.pets_hard = ConvertV1ToV2Pets(
+        data.pets_hard,
+        context.rootState.pets.dataHard
+      );
+      data.pets_other = ConvertV1ToV2Pets(
+        data.pets_other,
+        context.rootState.pets.dataOther
+      );
       data = JSON.stringify(data);
     }
     console.log("Clearing old database!");
@@ -162,5 +205,5 @@ export const actions = {
         downloadAnchorNode.remove();
       }
     });
-  }
+  },
 };

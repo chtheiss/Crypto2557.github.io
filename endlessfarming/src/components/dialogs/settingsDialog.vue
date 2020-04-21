@@ -25,7 +25,7 @@
         <v-tab-item :key="items[0]">
           <v-card flat>
             <v-list subheader color="background">
-              <v-subheader>User</v-subheader>
+              <v-subheader class="mb-2">User</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Knightage Level</v-list-item-title>
@@ -40,12 +40,12 @@
               </v-list-item>
             </v-list>
             <v-list subheader color="background">
-              <v-subheader>Data Transfer</v-subheader>
+              <v-subheader class="mb-2">Data Transfer</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>
                     <v-row>
-                      <v-col cols="10">
+                      <v-col cols="8">
                         <v-file-input
                           dense
                           filled
@@ -56,7 +56,7 @@
                           label="Click here to select a .json file"
                         ></v-file-input>
                       </v-col>
-                      <v-col cols="2" class="d-flex align-center">
+                      <v-col cols="4" class="d-flex align-center">
                         <v-btn
                           light
                           id="reset-btn"
@@ -84,15 +84,49 @@
                       </v-col>
                       <v-col cols="6" class="d-flex justify-center">
                         <v-btn
-                          light
-                          id="reset-btn"
                           color="primary"
                           class="black--text"
-                          @click="deleteDatabase"
+                          dark
+                          @click.stop="deleteDialog = true"
                         >Delete All</v-btn>
+                        <v-dialog v-model="deleteDialog" max-width="290">
+                          <v-card color="background">
+                            <v-card-title class="headline">Do you want to delete everything?</v-card-title>
+                            <v-card-text
+                              class="white--text"
+                            >This will delete all your stored data on this device.</v-card-text>
+                            <v-card-actions>
+                              <v-spacer></v-spacer>
+                              <v-btn
+                                outlined
+                                color="success lighten3"
+                                text
+                                @click="deleteDatabase"
+                              >Yes</v-btn>
+                              <v-btn
+                                outlined
+                                color="error lighten3"
+                                text
+                                @click="deleteDialog = false"
+                              >No</v-btn>
+                            </v-card-actions>
+                          </v-card>
+                        </v-dialog>
                       </v-col>
                     </v-row>
                   </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+            <v-list subheader color="background">
+              <v-subheader class="mb-2">Privacy</v-subheader>
+              <v-list-item>
+                <v-list-item-content>
+                  <p>
+                    Click
+                    <a href="#" @click.prevent="disableTracking">here</a>,
+                    to disable the tracking through Google Analytics.
+                  </p>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -101,7 +135,7 @@
         <v-tab-item :key="items[1]">
           <v-card flat>
             <v-list subheader color="background">
-              <v-subheader>General</v-subheader>
+              <v-subheader class="mb-2">General</v-subheader>
               <v-list-item>
                 <v-list-item-action>
                   <v-checkbox color="primary" v-model="hide_five_star_pets"></v-checkbox>
@@ -129,7 +163,7 @@
             </v-list>
             <v-divider></v-divider>
             <v-list subheader color="background">
-              <v-subheader>Spirit Highland Normal</v-subheader>
+              <v-subheader class="mb-2">Spirit Highland Normal</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
@@ -144,7 +178,7 @@
               </v-list-item>
             </v-list>
             <v-list subheader color="background">
-              <v-subheader>Spirit Highland Hard</v-subheader>
+              <v-subheader class="mb-2">Spirit Highland Hard</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
@@ -179,7 +213,8 @@ export default {
       tab: null,
       items: ["General", "Pets", "Artifacts"],
       chosenFile: null,
-      fileData: null
+      fileData: null,
+      deleteDialog: false
     };
   },
   methods: {
@@ -201,6 +236,10 @@ export default {
     async deleteDatabase() {
       await this.$store.dispatch("transfer/clearDatabase");
       this.$router.go();
+    },
+    disableTracking: function() {
+      this.$ga.disable();
+      alert("Tracking disabled");
     }
   },
   computed: {

@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <PetOtherInfo />
     <v-tabs v-model="tab" dark grow>
       <v-tabs-slider></v-tabs-slider>
       <v-tab v-for="name in tabs" :key="name" :href="`#tab-${name}`">{{ name }}</v-tab>
@@ -21,6 +22,8 @@
 </template>
 
 <script>
+import PetOtherInfo from "../components/dialogs/info/petOtherInfo";
+
 export default {
   name: "PetsOther",
   data: () => ({
@@ -51,10 +54,13 @@ export default {
       "Outland"
     ]
   }),
-  components: { PetTable: () => import("../components/pets/petTable") },
+  components: {
+    PetTable: () => import("../components/pets/petTable"),
+    PetOtherInfo
+  },
   created: function() {
     if (!this.$store.state.pets.dataOther.length) {
-      this.$store.dispatch("pets/getOtherPetsData", this.petTypes);
+      this.$store.dispatch("pets/getOtherPetsData");
     }
   }
 };

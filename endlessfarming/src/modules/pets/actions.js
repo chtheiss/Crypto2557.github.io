@@ -8,9 +8,9 @@ export const actions = {
   },
   async saveValue(context, value) {
     let idbValue = {
-      name: value.name,
+      id: value._id,
       fragments: value.fragments,
-      priority: value.priority
+      priority: value.priority,
     };
     let storageName;
     if (value.origin.includes("shn")) {
@@ -33,7 +33,7 @@ export const actions = {
     }
     let pets = await idb.getPets(storageName);
     let mergedList = _.map(data, function(item) {
-      return _.extend(item, _.find(pets, { name: item.name }));
+      return _.extend(item, _.find(pets, { id: item._id }));
     });
     let petPromises = [];
     for (const pet of mergedList) {
@@ -42,9 +42,9 @@ export const actions = {
         petPromises.push(
           idb.savePet(
             {
-              name: pet.name,
+              id: pet._id,
               fragments: pet.fragments,
-              priority: pet.priority
+              priority: pet.priority,
             },
             storageName
           )
@@ -57,10 +57,22 @@ export const actions = {
     console.log("pets/getPetsData");
     context.commit("setPetsData", {
       pets: mergedList,
-      storageName: storageName
+      storageName: storageName,
     });
   },
-  async getOtherPetsData(context, origins) {
+  async getOtherPetsData(context) {
+    let origins = [
+      "ss1",
+      "ss2",
+      "ss3",
+      "ss4",
+      "ss5",
+      "greek",
+      "zodiac",
+      "event",
+      "raid",
+      "ob",
+    ];
     let petPromises = [];
     for (const origin of origins) {
       petPromises.push(
@@ -88,7 +100,7 @@ export const actions = {
         data[i].priority = i;
       }
       let mergedList = _.map(data, function(item) {
-        return _.extend(item, _.find(pets, { name: item.name }));
+        return _.extend(item, _.find(pets, { id: item._id }));
       });
       let petPromises = [];
       for (const pet of mergedList) {
@@ -97,9 +109,9 @@ export const actions = {
           petPromises.push(
             idb.savePet(
               {
-                name: pet.name,
+                id: pet._id,
                 fragments: pet.fragments,
-                priority: pet.priority
+                priority: pet.priority,
               },
               pet.origin.includes("shh") ? "pets_hard" : "pets_other"
             )
@@ -112,7 +124,7 @@ export const actions = {
     console.log("pets/getOtherPetsData");
     context.commit("setPetsData", {
       pets: [].concat(...petsData),
-      storageName: undefined
+      storageName: undefined,
     });
-  }
+  },
 };
