@@ -88,10 +88,11 @@ export const actions = {
     for (const petStorage of [pets_hard, pets_other]) {
       let dict = {};
       for (const key in petStorage) {
-        dict[petStorage[key].name] = petStorage[key];
+        dict[petStorage[key].id] = petStorage[key];
       }
       pets.push(dict);
     }
+    console.log(pets);
     pets = Object.assign(...pets);
     for (let i = 0; i < petsData.length; i++) {
       let data = petsData[i];

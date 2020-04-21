@@ -89,7 +89,6 @@ function exportToJsonString(idbDatabase, cb) {
 function ConvertV1ToV2Pets(petsV1, petsV2) {
   let newPets = [];
   for (let i = 0; i < petsV1.length; i++) {
-    console.log(petsV1[i].name);
     let petId = petsV2.filter(
       (pet) => pet.name == petsV1[i].name.replaceAll("_", " ")
     )[0]._id;
