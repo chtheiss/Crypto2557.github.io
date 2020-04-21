@@ -25,7 +25,7 @@
         <v-tab-item :key="items[0]">
           <v-card flat>
             <v-list subheader color="background">
-              <v-subheader>User</v-subheader>
+              <v-subheader class="mb-2">User</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Knightage Level</v-list-item-title>
@@ -40,7 +40,7 @@
               </v-list-item>
             </v-list>
             <v-list subheader color="background">
-              <v-subheader>Data Transfer</v-subheader>
+              <v-subheader class="mb-2">Data Transfer</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>
@@ -118,12 +118,24 @@
                 </v-list-item-content>
               </v-list-item>
             </v-list>
+            <v-list subheader color="background">
+              <v-subheader class="mb-2">Privacy</v-subheader>
+              <v-list-item>
+                <v-list-item-content>
+                  <p>
+                    Click
+                    <a href="#" @click.prevent="disableTracking">here</a>,
+                    to disable the tracking through Google Analytics.
+                  </p>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
           </v-card>
         </v-tab-item>
         <v-tab-item :key="items[1]">
           <v-card flat>
             <v-list subheader color="background">
-              <v-subheader>General</v-subheader>
+              <v-subheader class="mb-2">General</v-subheader>
               <v-list-item>
                 <v-list-item-action>
                   <v-checkbox color="primary" v-model="hide_five_star_pets"></v-checkbox>
@@ -151,7 +163,7 @@
             </v-list>
             <v-divider></v-divider>
             <v-list subheader color="background">
-              <v-subheader>Spirit Highland Normal</v-subheader>
+              <v-subheader class="mb-2">Spirit Highland Normal</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
@@ -166,7 +178,7 @@
               </v-list-item>
             </v-list>
             <v-list subheader color="background">
-              <v-subheader>Spirit Highland Hard</v-subheader>
+              <v-subheader class="mb-2">Spirit Highland Hard</v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Tickets</v-list-item-title>
@@ -224,6 +236,10 @@ export default {
     async deleteDatabase() {
       await this.$store.dispatch("transfer/clearDatabase");
       this.$router.go();
+    },
+    disableTracking: function() {
+      this.$ga.disable();
+      alert("Tracking disabled");
     }
   },
   computed: {
