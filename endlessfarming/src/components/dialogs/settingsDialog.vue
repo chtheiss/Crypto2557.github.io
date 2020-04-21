@@ -45,7 +45,7 @@
                 <v-list-item-content>
                   <v-list-item-title>
                     <v-row>
-                      <v-col cols="10">
+                      <v-col cols="8">
                         <v-file-input
                           dense
                           filled
@@ -56,7 +56,7 @@
                           label="Click here to select a .json file"
                         ></v-file-input>
                       </v-col>
-                      <v-col cols="2" class="d-flex align-center">
+                      <v-col cols="4" class="d-flex align-center">
                         <v-btn
                           light
                           id="reset-btn"
