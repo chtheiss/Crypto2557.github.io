@@ -84,12 +84,34 @@
                       </v-col>
                       <v-col cols="6" class="d-flex justify-center">
                         <v-btn
-                          light
-                          id="reset-btn"
                           color="primary"
                           class="black--text"
-                          @click="deleteDatabase"
+                          dark
+                          @click.stop="deleteDialog = true"
                         >Delete All</v-btn>
+                        <v-dialog v-model="deleteDialog" max-width="290">
+                          <v-card color="background">
+                            <v-card-title class="headline">Do you want to delete everything?</v-card-title>
+                            <v-card-text
+                              class="white--text"
+                            >This will delete all your stored data on this device.</v-card-text>
+                            <v-card-actions>
+                              <v-spacer></v-spacer>
+                              <v-btn
+                                outlined
+                                color="success lighten3"
+                                text
+                                @click="deleteDatabase"
+                              >Yes</v-btn>
+                              <v-btn
+                                outlined
+                                color="error lighten3"
+                                text
+                                @click="deleteDialog = false"
+                              >No</v-btn>
+                            </v-card-actions>
+                          </v-card>
+                        </v-dialog>
                       </v-col>
                     </v-row>
                   </v-list-item-title>
@@ -179,7 +201,8 @@ export default {
       tab: null,
       items: ["General", "Pets", "Artifacts"],
       chosenFile: null,
-      fileData: null
+      fileData: null,
+      deleteDialog: false
     };
   },
   methods: {
