@@ -14,7 +14,7 @@
         v-bind:class="{'availableStage':farmableFragments>0}"
       >{{farmableFragments}}</p>
       <h4 class="pet-card-name">{{ pet.name }}</h4>
-      <fieldset class="pet-card-stars">
+      <fieldset class="pet-card-stars mb-2 mt-1">
         <label
           class="image-checkbox"
           v-bind:id="`${pet._id}-${index}star`"
