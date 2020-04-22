@@ -58,11 +58,12 @@ export default {
       starActive: require("../../assets/img/star.png"),
       starInactive: require("../../assets/img/stargrey.png"),
       fragments: `${this.pet.fragments}`,
-      stars: [10, 30, 80, 180, 330]
-        .map(threshold => {
-          return this.pet.fragments >= threshold;
-        })
-        .lastIndexOf(true)
+      stars:
+        [10, 30, 80, 180, 330]
+          .map(threshold => {
+            return this.pet.fragments >= threshold;
+          })
+          .lastIndexOf(true) + 1
     };
   },
   props: {
@@ -82,11 +83,11 @@ export default {
       this.changeFragments();
     },
     up() {
-      this.fragments += 1;
+      this.fragments = (parseInt(this.fragments) | 0) + 1;
       this.changeFragments();
     },
     down() {
-      this.fragments -= 1;
+      this.fragments = (parseInt(this.fragments) | 0) - 1;
       this.changeFragments();
     },
     changeFragments: async function() {
@@ -100,8 +101,13 @@ export default {
       } else {
         this.pet.fragments = parseInt(this.fragments) | 0;
       }
-      console.log(this.pet.fragments);
       this.fragments = this.pet.fragments;
+      this.stars =
+        [10, 30, 80, 180, 330]
+          .map(threshold => {
+            return this.pet.fragments >= threshold;
+          })
+          .lastIndexOf(true) + 1;
       await this.$store.dispatch("pets/saveValue", this.pet);
     }
   },
