@@ -1,57 +1,69 @@
 <template>
-  <v-sheet elevation="5" v-bind:id="pet._id" class="ma-1" v-bind:class="classObject">
-    <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
-    <p
-      v-if="farmableFragments>=0"
-      v-bind:id="`${pet._id}-farmable-fragments`"
-      class="pet-card-frags"
-      v-bind:class="{'availableStage':farmableFragments>0}"
-    >{{farmableFragments}}</p>
-    <h4 class="pet-card-name">{{ pet.name }}</h4>
-    <fieldset class="pet-card-stars">
-      <label
-        class="image-checkbox"
-        v-bind:id="`${pet._id}-${index}star`"
-        v-for="(star, index) in stars"
-        v-bind:key="index"
-      >
-        <img v-if="star" class="img-responsive" v-bind:src="starActive" />
-        <img v-else class="img-responsive" v-bind:src="starInactive" />
-        <input type="checkbox" v-on:click="changeValueByStar(index)" />
-      </label>
-    </fieldset>
-    <v-text-field
-      v-model.number="fragments"
-      step="1"
-      class="pet-card-input"
-      dense
-      hide-details
-      filled
+  <v-hover v-slot:default="{ hover }" :disabled="!editPriorities">
+    <v-sheet
+      :elevation="hover ? 20 : 5"
+      v-bind:id="pet._id"
+      class="mx-1 my-2"
+      v-bind:class="classObject"
     >
-      <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
-    </v-text-field>
-    <div v-if="klRequirement.length" class="pet-card-kl">
-      <div
-        class="pet-card-kl-number"
-        v-for="(req, index) in klRequirement"
-        v-bind:key="`kl-${index}`"
-        v-bind:class="{'availableStage': req<=knightageLevel}"
-      >{{req}}</div>
-    </div>
-  </v-sheet>
+      <PetDialog :pet="pet" :fragments="pet.fragments" :star-thresholds="starThresholds" />
+      <p
+        v-if="farmableFragments>=0"
+        v-bind:id="`${pet._id}-farmable-fragments`"
+        class="pet-card-frags"
+        v-bind:class="{'availableStage':farmableFragments>0}"
+      >{{farmableFragments}}</p>
+      <h4 class="pet-card-name">{{ pet.name }}</h4>
+      <fieldset class="pet-card-stars">
+        <label
+          class="image-checkbox"
+          v-bind:id="`${pet._id}-${index}star`"
+          v-for="(star, index) in stars"
+          v-bind:key="index"
+        >
+          <v-icon color="primary" v-if="star" class="img-responsive">fas fa-star</v-icon>
+          <v-icon color="primary" v-else class="img-responsive">far fa-star</v-icon>
+          <input type="checkbox" v-on:click="changeValueByStars(index)" />
+        </label>
+      </fieldset>
+      <v-text-field
+        v-model="fragments"
+        step="1"
+        class="pet-card-input"
+        dense
+        hide-details
+        filled
+        v-on:focus="inputFocus = true"
+        v-on:blur="inputFocus = false"
+      >
+        <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
+        <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
+      </v-text-field>
+      <div v-if="klRequirement.length" class="pet-card-kl">
+        <div
+          class="pet-card-kl-number"
+          v-for="(req, index) in klRequirement"
+          v-bind:key="`kl-${index}`"
+          v-bind:class="{'availableStage': req<=knightageLevel}"
+        >{{req}}</div>
+      </div>
+    </v-sheet>
+  </v-hover>
 </template>
 
 <script>
 export default {
   name: "PetCard",
   components: { PetDialog: () => import("../dialogs/petDialog") },
-  data: () => ({
-    starThresholds: [10, 30, 80, 180, 330],
-    stagesPerTwoKl: 10,
-    starActive: require("../../assets/img/star.png"),
-    starInactive: require("../../assets/img/stargrey.png")
-  }),
+  data: function() {
+    return {
+      starThresholds: [10, 30, 80, 180, 330],
+      stagesPerTwoKl: 10,
+      starActive: require("../../assets/img/star.png"),
+      starInactive: require("../../assets/img/stargrey.png"),
+      inputFocus: false
+    };
+  },
   props: {
     pet: Object,
     loopIndex: Number,
@@ -60,17 +72,35 @@ export default {
     petType: {
       type: String,
       default: "shn"
-    }
+    },
+    editPriorities: Number
   },
   methods: {
-    changeValueByStar: function(index) {
+    changeValueByStars: function(index) {
       this.fragments = this.starThresholds[index];
+      this.changeFragments();
     },
     up() {
       this.fragments += 1;
+      this.changeFragments();
     },
     down() {
       this.fragments -= 1;
+      this.changeFragments();
+    },
+    changeFragments: async function() {
+      if (typeof this.fragments == "number") {
+        this.pet.fragments = this.fragments;
+      } else if (this.fragments.includes("+")) {
+        this.pet.fragments = this.fragments
+          .split("+")
+          .map(num => parseInt(num) | 0)
+          .reduce((a, b) => a + b, 0);
+      } else {
+        this.pet.fragments = parseInt(this.fragments) | 0;
+      }
+      this.fragments = this.pet.fragments;
+      await this.$store.dispatch("pets/saveValue", this.pet);
     }
   },
   computed: {
@@ -78,6 +108,21 @@ export default {
       return this.starThresholds.map(threshold => {
         return this.fragments >= threshold;
       });
+    },
+    fragments: {
+      get() {
+        return this.pet.fragments;
+      },
+      async set(value) {
+        if (typeof value == "number") {
+          this.pet.fragments = value;
+        } else if (value.includes(".")) {
+          this.pet.fragments = eval(value.split(".")[0]);
+        } else {
+          this.pet.fragments = parseInt(value) | 0;
+        }
+        await this.$store.dispatch("pets/saveValue", this.pet);
+      }
     },
     hideFiveStar: function() {
       return this.$store.state.stats.hide_five_star_pets;
@@ -88,24 +133,16 @@ export default {
     classObject: function() {
       return {
         invisible:
-          ((this.fragments >= 330) & this.hideFiveStar) |
+          ((this.pet.fragments >= 330) & this.hideFiveStar & !this.inputFocus) |
           ((this.klRequirement.filter(req => req > this.knightageLevel)
             .length ==
             this.klRequirement.length) &
             this.hideUnattainable &
             ((this.petType == "shn") | (this.petType == "shh"))),
         "pet-card": (this.petType == "shn") | (this.petType == "shh"),
-        "pet-card-other": (this.petType != "shn") & (this.petType != "shh")
+        "pet-card-other": (this.petType != "shn") & (this.petType != "shh"),
+        "on-hover": !this.editPriorities
       };
-    },
-    fragments: {
-      get() {
-        return this.pet.fragments;
-      },
-      async set(value) {
-        this.pet.fragments = parseInt(value) | 0;
-        await this.$store.dispatch("pets/saveValue", this.pet);
-      }
     },
     activeBackgroundClass: function() {
       let trueIndex = this.starThresholds
@@ -140,6 +177,10 @@ export default {
 </script>
 
 <style>
+.v-sheet:not(.on-hover) {
+  cursor: pointer;
+}
+
 .pet-card-kl-number.availableStage,
 .pet-card > p.pet-card-frags.availableStage {
   color: var(--v-success-base);
@@ -274,8 +315,7 @@ img.img-responsive {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1.5fr 0.5fr 1fr;
   grid-template-areas: "pet name" "stars stars" "input input";
-  padding: 2% 1% 1% 1%;
-  margin: 1%;
+  padding: 2%;
 }
 .pet-card-other > * {
   justify-self: center;

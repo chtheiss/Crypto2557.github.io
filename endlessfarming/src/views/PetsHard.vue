@@ -95,12 +95,10 @@ export default {
     }
   },
   created: function() {
-    if (!this.petsData.length) {
-      this.$store.dispatch("pets/getPetsData", {
-        origin: "shh",
-        storageName: "pets_hard"
-      });
-    }
+    this.$store.dispatch("pets/getPetsData", {
+      origin: "shh",
+      storageName: "pets_hard"
+    });
   }
 };
 </script>

@@ -36,6 +36,10 @@
           <p class="pa-0 ma-0">
             <b>6.</b> You can click the pet images to get additional information about each pet.
           </p>
+          <p class="pa-0 ma-0">
+            <b>7.</b> You can do simple math in the input fields by ending your input with a dot.
+            For example if you type "80+10." the resulting fragments will be 90.
+          </p>
         </v-card-text>
       </v-card>
     </v-dialog>

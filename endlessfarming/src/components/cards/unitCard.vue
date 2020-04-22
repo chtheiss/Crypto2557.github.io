@@ -1,5 +1,5 @@
 <template>
-  <v-container class="unit-card bordered">
+  <v-sheet elevation="5" class="mx-1 my-2 unit-card">
     <UnitDialog :unit="unitJunior" />
     <UnitDialog :unit="unitSenior" :senior="true" />
     <PetDialog v-if="pet!=undefined" :pet="petPet" :unitDialog="true" />
@@ -44,7 +44,7 @@
         v-bind:obtainable="fiveStarPet"
       />
     </div>
-  </v-container>
+  </v-sheet>
 </template>
 
 <script>
