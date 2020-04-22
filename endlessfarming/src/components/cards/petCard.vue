@@ -1,5 +1,5 @@
 <template>
-  <v-sheet elevation="5" v-bind:id="pet._id" class="ma-1" v-bind:class="classObject">
+  <v-sheet elevation="5" v-bind:id="pet._id" class="mx-1 my-2" v-bind:class="classObject">
     <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
     <p
       v-if="farmableFragments>=0"
@@ -274,8 +274,7 @@ img.img-responsive {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1.5fr 0.5fr 1fr;
   grid-template-areas: "pet name" "stars stars" "input input";
-  padding: 2% 1% 1% 1%;
-  margin: 1%;
+  padding: 2%;
 }
 .pet-card-other > * {
   justify-self: center;

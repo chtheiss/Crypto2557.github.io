@@ -59,15 +59,11 @@ export default {
     PetOtherInfo
   },
   created: function() {
-    if (!this.$store.state.pets.dataOther.length) {
-      this.$store.dispatch("pets/getOtherPetsData");
-    }
-    if (!this.$store.state.pets.dataHard.length) {
-      this.$store.dispatch("pets/getPetsData", {
-        origin: "shh",
-        storageName: "pets_hard"
-      });
-    }
+    this.$store.dispatch("pets/getOtherPetsData");
+    this.$store.dispatch("pets/getPetsData", {
+      origin: "shh",
+      storageName: "pets_hard"
+    });
   }
 };
 </script>

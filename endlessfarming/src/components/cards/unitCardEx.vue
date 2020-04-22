@@ -1,5 +1,5 @@
 <template>
-  <v-container class="unit-card bordered">
+  <v-sheet elevation="5" class="mx-1 my-2 unit-card">
     <UnitDialog :unit="unit" :extreme="true" />
     <PetDialog v-if="pet!=undefined" :pet="pet" :unitDialog="true" />
     <v-text-field
@@ -21,7 +21,7 @@
         v-bind:amount-jr="amount"
       />
     </div>
-  </v-container>
+  </v-sheet>
 </template>
 
 <script>
