@@ -89,14 +89,17 @@ function exportToJsonString(idbDatabase, cb) {
 function ConvertV1ToV2Pets(petsV1, petsV2) {
   let newPets = [];
   for (let i = 0; i < petsV1.length; i++) {
-    let petId = petsV2.filter(
+    let pet = petsV2.filter(
       (pet) => pet.name == petsV1[i].name.replaceAll("_", " ")
-    )[0]._id;
-    newPets.push({
-      id: petId,
-      fragments: petsV1[i].fragments,
-      priority: petsV1[i].priority,
-    });
+    )[0];
+    if (pet != undefined) {
+      let petId = pet._id;
+      newPets.push({
+        id: petId,
+        fragments: petsV1[i].fragments,
+        priority: petsV1[i].priority,
+      });
+    }
   }
   return newPets;
 }
