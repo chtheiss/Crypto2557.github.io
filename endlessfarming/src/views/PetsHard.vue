@@ -118,23 +118,11 @@ export default {
 }
 @media screen and (max-width: 600px) {
   .pet-container {
-    width: 70%;
+    width: 90%;
   }
 }
-.pet-container-other {
-  display: grid;
-  width: 80%;
-  grid-gap: 5px;
-  grid-template-columns: 1fr;
-  grid-template-rows: minmax(min-content, 150px) 1fr 12px;
-  grid-template-areas: "nav" "pets" "footer";
-  justify-content: center;
-  align-content: center;
-  margin: auto;
-}
 
-.pet-container > *,
-.pet-container-other > * {
+.pet-container > * {
   justify-self: center;
   align-self: center;
 }
