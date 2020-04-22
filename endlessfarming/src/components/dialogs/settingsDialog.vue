@@ -59,11 +59,20 @@
                       <v-col cols="4" class="d-flex align-center">
                         <v-btn
                           light
-                          id="reset-btn"
                           color="primary"
+                          :disabled="importDialog"
+                          :loading="importDialog"
                           class="black--text"
                           @click="importJson"
                         >Import</v-btn>
+                        <v-dialog v-model="importDialog" hide-overlay persistent width="300">
+                          <v-card color="primary" dark>
+                            <v-card-text>
+                              Please stand by
+                              <v-progress-linear indeterminate color="white" class="mb-0"></v-progress-linear>
+                            </v-card-text>
+                          </v-card>
+                        </v-dialog>
                       </v-col>
                     </v-row>
                   </v-list-item-title>
@@ -74,13 +83,7 @@
                   <v-list-item-title>
                     <v-row>
                       <v-col cols="6" class="d-flex justify-center">
-                        <v-btn
-                          light
-                          id="reset-btn"
-                          color="primary"
-                          class="black--text"
-                          @click="exportJson"
-                        >Export</v-btn>
+                        <v-btn light color="primary" class="black--text" @click="exportJson">Export</v-btn>
                       </v-col>
                       <v-col cols="6" class="d-flex justify-center">
                         <v-btn
@@ -214,7 +217,8 @@ export default {
       items: ["General", "Pets", "Artifacts"],
       chosenFile: null,
       fileData: null,
-      deleteDialog: false
+      deleteDialog: false,
+      importDialog: false
     };
   },
   methods: {
@@ -222,12 +226,13 @@ export default {
       if (!this.chosenFile) {
         this.fileData = "No File Chosen";
       }
+      this.importDialog = true;
       var reader = new FileReader();
       reader.readAsText(this.chosenFile);
       reader.onload = async () => {
         this.fileData = reader.result;
         await this.$store.dispatch("transfer/loadDataFromJson", this.fileData);
-        this.$router.go();
+        this.importDialog = false;
       };
     },
     async exportJson() {

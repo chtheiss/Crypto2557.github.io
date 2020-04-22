@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:id="pet._id" class="bordered noselect" v-bind:class="classObject">
+  <v-sheet elevation="5" v-bind:id="pet._id" class="ma-1" v-bind:class="classObject">
     <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
     <p
       v-if="farmableFragments>=0"
@@ -39,7 +39,7 @@
         v-bind:class="{'availableStage': req<=knightageLevel}"
       >{{req}}</div>
     </div>
-  </div>
+  </v-sheet>
 </template>
 
 <script>
@@ -189,19 +189,13 @@ h4 {
   font-weight: 400;
 }
 
-.pet-pets .pet-card:hover,
-.pet-pets .pet-card-other:hover {
-  background-color: var(--v-background-lighten1);
-  cursor: pointer;
-}
 .pet-card {
   display: grid;
   grid-gap: 1px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1.5fr 1fr 0.8fr 0.8fr;
   grid-template-areas: "pet frags name" "stars stars stars" "input input input" "kl kl kl";
-  padding: 5% 1% 1% 1%;
-  margin: 1%;
+  padding: 2%;
 }
 @media screen and (max-width: 630px) {
   .pet-card {
@@ -221,6 +215,7 @@ h4 {
 }
 .pet-card-pet {
   grid-area: pet;
+  cursor: pointer;
 }
 .pet-card-frags {
   grid-area: frags;

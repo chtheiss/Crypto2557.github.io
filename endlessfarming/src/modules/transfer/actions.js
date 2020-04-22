@@ -104,6 +104,28 @@ function ConvertV1ToV2Pets(petsV1, petsV2) {
   return newPets;
 }
 
+async function dispatchAll(context) {
+  await context.dispatch("units/getUnitsData", null, { root: true });
+  await context.dispatch("stats/getStats", null, { root: true });
+  await context.dispatch(
+    "pets/getPetsData",
+    {
+      origin: "shn",
+      storageName: "pets",
+    },
+    { root: true }
+  );
+  await context.dispatch(
+    "pets/getPetsData",
+    {
+      origin: "shh",
+      storageName: "pets_hard",
+    },
+    { root: true }
+  );
+  await context.dispatch("pets/getOtherPetsData", null, { root: true });
+}
+
 String.prototype.replaceAll = function(search, replacement) {
   let target = this;
   return target.replace(new RegExp(search, "g"), replacement);
@@ -115,25 +137,7 @@ export const actions = {
     if (!data.includes("warp")) {
       console.log("Really? Still using version 1 data? *sigh*");
       data = JSON.parse(JSON.parse(data));
-      await context.dispatch("units/getUnitsData", null, { root: true });
-      await context.dispatch(
-        "pets/getPetsData",
-        {
-          origin: "shn",
-          storageName: "pets",
-        },
-        { root: true }
-      );
-      await context.dispatch(
-        "pets/getPetsData",
-        {
-          origin: "shh",
-          storageName: "pets_hard",
-        },
-        { root: true }
-      );
-      await context.dispatch("pets/getOtherPetsData", null, { root: true });
-
+      await dispatchAll(context);
       let newUnits = [];
       for (let i = 0; i < data.player.length; i++) {
         data.player[i].value = parseInt(data.player[i].value);
@@ -179,6 +183,7 @@ export const actions = {
         });
       }
     });
+    await dispatchAll(context);
   },
   async clearDatabase(context) {
     let db = await idb.getDb();
