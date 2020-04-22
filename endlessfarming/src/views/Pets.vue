@@ -125,7 +125,7 @@ export default {
 }
 @media screen and (max-width: 600px) {
   .pet-container {
-    width: 70%;
+    width: 90%;
   }
 }
 .pet-container-other {
