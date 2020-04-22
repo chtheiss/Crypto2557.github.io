@@ -6,7 +6,7 @@
       class="mx-1 my-2"
       v-bind:class="classObject"
     >
-      <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
+      <PetDialog :pet="pet" :fragments="pet.fragments" :star-thresholds="starThresholds" />
       <p
         v-if="farmableFragments>=0"
         v-bind:id="`${pet._id}-farmable-fragments`"
@@ -14,25 +14,23 @@
         v-bind:class="{'availableStage':farmableFragments>0}"
       >{{farmableFragments}}</p>
       <h4 class="pet-card-name">{{ pet.name }}</h4>
-      <fieldset class="pet-card-stars">
-        <label
-          class="image-checkbox"
-          v-bind:id="`${pet._id}-${index}star`"
-          v-for="(star, index) in stars"
-          v-bind:key="index"
-        >
-          <img v-if="star" class="img-responsive" v-bind:src="starActive" />
-          <img v-else class="img-responsive" v-bind:src="starInactive" />
-          <input type="checkbox" v-on:click="changeValueByStar(index)" />
-        </label>
-      </fieldset>
+      <v-rating
+        v-model="stars"
+        class="pet-card-stars my-1"
+        dense
+        color="primary"
+        background-color="primary"
+        v-on:input="changeValueByStars"
+        size="20"
+      ></v-rating>
       <v-text-field
-        v-model.number="fragments"
+        v-model="fragments"
         step="1"
         class="pet-card-input"
         dense
         hide-details
         filled
+        v-on:blur="changeFragments"
       >
         <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
         <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
@@ -53,12 +51,20 @@
 export default {
   name: "PetCard",
   components: { PetDialog: () => import("../dialogs/petDialog") },
-  data: () => ({
-    starThresholds: [10, 30, 80, 180, 330],
-    stagesPerTwoKl: 10,
-    starActive: require("../../assets/img/star.png"),
-    starInactive: require("../../assets/img/stargrey.png")
-  }),
+  data: function() {
+    return {
+      starThresholds: [10, 30, 80, 180, 330],
+      stagesPerTwoKl: 10,
+      starActive: require("../../assets/img/star.png"),
+      starInactive: require("../../assets/img/stargrey.png"),
+      fragments: `${this.pet.fragments}`,
+      stars: [10, 30, 80, 180, 330]
+        .map(threshold => {
+          return this.pet.fragments >= threshold;
+        })
+        .lastIndexOf(true)
+    };
+  },
   props: {
     pet: Object,
     loopIndex: Number,
@@ -68,25 +74,38 @@ export default {
       type: String,
       default: "shn"
     },
-    editPriorities: Boolean
+    editPriorities: Number
   },
   methods: {
-    changeValueByStar: function(index) {
-      this.fragments = this.starThresholds[index];
+    changeValueByStars: async function() {
+      this.fragments = this.starThresholds[this.stars - 1];
+      this.changeFragments();
     },
     up() {
       this.fragments += 1;
+      this.changeFragments();
     },
     down() {
       this.fragments -= 1;
+      this.changeFragments();
+    },
+    changeFragments: async function() {
+      if (typeof this.fragments == "number") {
+        this.pet.fragments = this.fragments;
+      } else if (this.fragments.includes("+")) {
+        this.pet.fragments = this.fragments
+          .split("+")
+          .map(num => parseInt(num) | 0)
+          .reduce((a, b) => a + b, 0);
+      } else {
+        this.pet.fragments = parseInt(this.fragments) | 0;
+      }
+      console.log(this.pet.fragments);
+      this.fragments = this.pet.fragments;
+      await this.$store.dispatch("pets/saveValue", this.pet);
     }
   },
   computed: {
-    stars: function() {
-      return this.starThresholds.map(threshold => {
-        return this.fragments >= threshold;
-      });
-    },
     hideFiveStar: function() {
       return this.$store.state.stats.hide_five_star_pets;
     },
@@ -96,7 +115,7 @@ export default {
     classObject: function() {
       return {
         invisible:
-          ((this.fragments >= 330) & this.hideFiveStar) |
+          ((this.pet.fragments >= 330) & this.hideFiveStar) |
           ((this.klRequirement.filter(req => req > this.knightageLevel)
             .length ==
             this.klRequirement.length) &
@@ -106,15 +125,6 @@ export default {
         "pet-card-other": (this.petType != "shn") & (this.petType != "shh"),
         "on-hover": !this.editPriorities
       };
-    },
-    fragments: {
-      get() {
-        return this.pet.fragments;
-      },
-      async set(value) {
-        this.pet.fragments = parseInt(value) | 0;
-        await this.$store.dispatch("pets/saveValue", this.pet);
-      }
     },
     activeBackgroundClass: function() {
       let trueIndex = this.starThresholds
