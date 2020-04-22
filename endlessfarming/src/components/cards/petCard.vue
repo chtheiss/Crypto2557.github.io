@@ -1,45 +1,52 @@
 <template>
-  <v-sheet elevation="5" v-bind:id="pet._id" class="mx-1 my-2" v-bind:class="classObject">
-    <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
-    <p
-      v-if="farmableFragments>=0"
-      v-bind:id="`${pet._id}-farmable-fragments`"
-      class="pet-card-frags"
-      v-bind:class="{'availableStage':farmableFragments>0}"
-    >{{farmableFragments}}</p>
-    <h4 class="pet-card-name">{{ pet.name }}</h4>
-    <fieldset class="pet-card-stars">
-      <label
-        class="image-checkbox"
-        v-bind:id="`${pet._id}-${index}star`"
-        v-for="(star, index) in stars"
-        v-bind:key="index"
-      >
-        <img v-if="star" class="img-responsive" v-bind:src="starActive" />
-        <img v-else class="img-responsive" v-bind:src="starInactive" />
-        <input type="checkbox" v-on:click="changeValueByStar(index)" />
-      </label>
-    </fieldset>
-    <v-text-field
-      v-model.number="fragments"
-      step="1"
-      class="pet-card-input"
-      dense
-      hide-details
-      filled
+  <v-hover v-slot:default="{ hover }" :disabled="!editPriorities">
+    <v-sheet
+      :elevation="hover ? 20 : 5"
+      v-bind:id="pet._id"
+      class="mx-1 my-2"
+      v-bind:class="classObject"
     >
-      <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
-      <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
-    </v-text-field>
-    <div v-if="klRequirement.length" class="pet-card-kl">
-      <div
-        class="pet-card-kl-number"
-        v-for="(req, index) in klRequirement"
-        v-bind:key="`kl-${index}`"
-        v-bind:class="{'availableStage': req<=knightageLevel}"
-      >{{req}}</div>
-    </div>
-  </v-sheet>
+      <PetDialog :pet="pet" :fragments="fragments" :star-thresholds="starThresholds" />
+      <p
+        v-if="farmableFragments>=0"
+        v-bind:id="`${pet._id}-farmable-fragments`"
+        class="pet-card-frags"
+        v-bind:class="{'availableStage':farmableFragments>0}"
+      >{{farmableFragments}}</p>
+      <h4 class="pet-card-name">{{ pet.name }}</h4>
+      <fieldset class="pet-card-stars">
+        <label
+          class="image-checkbox"
+          v-bind:id="`${pet._id}-${index}star`"
+          v-for="(star, index) in stars"
+          v-bind:key="index"
+        >
+          <img v-if="star" class="img-responsive" v-bind:src="starActive" />
+          <img v-else class="img-responsive" v-bind:src="starInactive" />
+          <input type="checkbox" v-on:click="changeValueByStar(index)" />
+        </label>
+      </fieldset>
+      <v-text-field
+        v-model.number="fragments"
+        step="1"
+        class="pet-card-input"
+        dense
+        hide-details
+        filled
+      >
+        <v-icon medium dense slot="prepend" @click="down">mdi-minus</v-icon>
+        <v-icon medium dense slot="append-outer" @click="up">mdi-plus</v-icon>
+      </v-text-field>
+      <div v-if="klRequirement.length" class="pet-card-kl">
+        <div
+          class="pet-card-kl-number"
+          v-for="(req, index) in klRequirement"
+          v-bind:key="`kl-${index}`"
+          v-bind:class="{'availableStage': req<=knightageLevel}"
+        >{{req}}</div>
+      </div>
+    </v-sheet>
+  </v-hover>
 </template>
 
 <script>
@@ -60,7 +67,8 @@ export default {
     petType: {
       type: String,
       default: "shn"
-    }
+    },
+    editPriorities: Boolean
   },
   methods: {
     changeValueByStar: function(index) {
@@ -95,7 +103,8 @@ export default {
             this.hideUnattainable &
             ((this.petType == "shn") | (this.petType == "shh"))),
         "pet-card": (this.petType == "shn") | (this.petType == "shh"),
-        "pet-card-other": (this.petType != "shn") & (this.petType != "shh")
+        "pet-card-other": (this.petType != "shn") & (this.petType != "shh"),
+        "on-hover": !this.editPriorities
       };
     },
     fragments: {
@@ -140,6 +149,10 @@ export default {
 </script>
 
 <style>
+.v-sheet:not(.on-hover) {
+  cursor: pointer;
+}
+
 .pet-card-kl-number.availableStage,
 .pet-card > p.pet-card-frags.availableStage {
   color: var(--v-success-base);

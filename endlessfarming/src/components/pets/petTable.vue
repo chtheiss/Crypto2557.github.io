@@ -13,6 +13,7 @@
       :knightage-level="knightageLevel"
       :farmable-fragments="fragmentsToFarm!=undefined ? fragmentsToFarm[index].farmableFragments : -1"
       :pet-type="petType"
+      :edit-priorities="editPriorities"
     ></PetCard>
   </draggable>
 </template>
