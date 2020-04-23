@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     resetPriority: async function() {
+      this.$emit("start-change-prio", true);
       let originalPetsData = await axios.get(
         `https://endless-farming-backend.herokuapp.com/api/v1/priority/${this.origin}`
       );
@@ -55,6 +56,7 @@ export default {
       for (const pet of mergedList) {
         await this.$store.dispatch("pets/saveValue", pet);
       }
+      this.$emit("end-change-prio", false);
     },
     progressOneDay: async function() {
       for (let farmObj of this.fragmentsToFarm.filter(

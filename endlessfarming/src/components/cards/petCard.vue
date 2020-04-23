@@ -180,7 +180,6 @@ export default {
 .v-sheet:not(.on-hover) {
   cursor: pointer;
 }
-
 .pet-card-kl-number.availableStage,
 .pet-card > p.pet-card-frags.availableStage {
   color: var(--v-success-base);
