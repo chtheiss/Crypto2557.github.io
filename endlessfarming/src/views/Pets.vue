@@ -6,17 +6,24 @@
         :fragments-to-farm="fragmentsToFarm"
         :pets-data="petsData"
         :storage-name="'pets'"
+        v-on:start-change-prio="showOverlay"
+        v-on:end-change-prio="showOverlay"
       />
       <PetTrackers :fragments-to-farm="fragmentsToFarm" />
       <PetTable
         :edit-priorities="editPriorities"
         :knightage-level="knightageLevel"
         :fragments-to-farm="fragmentsToFarm"
+        v-on:start-change-prio="showOverlay"
+        v-on:end-change-prio="showOverlay"
       />
       <footer
         class="page-footer pet-footer"
       >This priority ranking was originally created by HarroweD.</footer>
     </div>
+    <v-overlay :value="overlay">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </v-container>
 </template>
 
@@ -29,7 +36,13 @@ import PetInfo from "../components/dialogs/info/petInfo";
 export default {
   name: "Pets",
   components: { PetTable, PetTrackers, PetButtons, PetInfo },
-  data: () => ({ petType: "shn" }),
+  data: () => ({ petType: "shn", overlay: false }),
+  methods: {
+    showOverlay(value) {
+      console.log("Show overlay", value);
+      this.overlay = value;
+    }
+  },
   computed: {
     knightageLevel: function() {
       return this.$store.state.stats.KL;
