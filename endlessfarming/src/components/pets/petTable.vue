@@ -5,6 +5,9 @@
     @end="changePriority"
     :disabled="!editPriorities"
   >
+    <v-overlay :value="overlay">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
     <PetCard
       v-for="(pet, index) in petsData"
       :key="pet.id"
@@ -21,6 +24,7 @@
 <script>
 export default {
   name: "PetTable",
+  data: () => ({ overlay: false }),
   props: {
     editPriorities: Number,
     knightageLevel: Number,
@@ -36,6 +40,7 @@ export default {
   },
   methods: {
     changePriority: async function(evt) {
+      this.overlay = true;
       let change = this.petsData.filter(pet => {
         let prio = pet.priority;
         if (evt.newIndex < evt.oldIndex) {
@@ -56,6 +61,7 @@ export default {
         }
         await this.$store.dispatch("pets/saveValue", pet);
       }
+      this.overlay = false;
     }
   },
   computed: {
