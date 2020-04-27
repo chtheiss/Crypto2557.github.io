@@ -224,7 +224,7 @@ export default {
   background: radial-gradient(circle, #333 0, #333 0, rgba(224, 49, 6, 0.3));
 }
 h4 {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
   font-weight: 400;
 }

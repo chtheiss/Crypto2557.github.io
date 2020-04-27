@@ -10,7 +10,7 @@
       </template>
 
       <v-card color="background">
-        <v-card-title class="headline" primary-title>Info</v-card-title>
+        <v-card-title class="headline" primary-title><span class="headlines">Info</span></v-card-title>
         <v-card-text class="white--text">
           <p v-for="(info,index) in infos" v-bind:key="index" class="pa-0 ma-0">
             <b>{{index+1}}.</b>

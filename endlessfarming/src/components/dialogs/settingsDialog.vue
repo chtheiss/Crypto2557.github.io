@@ -94,7 +94,7 @@
                         >Delete All</v-btn>
                         <v-dialog v-model="deleteDialog" max-width="290">
                           <v-card color="background">
-                            <v-card-title class="headline">Do you want to delete everything?</v-card-title>
+                            <v-card-title class="headline"><span class="headlines">Do you want to delete everything?</span></v-card-title>
                             <v-card-text
                               class="white--text"
                             >This will delete all your stored data on this device.</v-card-text>
