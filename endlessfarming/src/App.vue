@@ -125,8 +125,20 @@
         color: #fff;
     }
 
-    .headlines {
+    .header-font-size, .v-toolbar__title {
         font-size: 20px !important;
+    }
+
+    .default-font-size, .v-list-item__title {
+        font-size: 16px !important;
+    }
+
+    .secondary-font-size, .v-btn, .v-tab, .v-subheader, button {
+        font-size: 14px !important;
+    }
+
+    .tertiary-font-size {
+        font-size: 12px !important;
     }
 
     .pet-card-input .v-input__append-outer,

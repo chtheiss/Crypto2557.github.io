@@ -25,7 +25,7 @@
         <v-tab-item :key="items[0]">
           <v-card flat>
             <v-list subheader color="background">
-              <v-subheader class="mb-2">User</v-subheader>
+              <v-subheader class="mb-2"><span class="secondary-font-size">User</span></v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Knightage Level</v-list-item-title>
@@ -40,7 +40,7 @@
               </v-list-item>
             </v-list>
             <v-list subheader color="background">
-              <v-subheader class="mb-2">Data Transfer</v-subheader>
+              <v-subheader class="mb-2"><span class="secondary-font-size">Data Transfer</span></v-subheader>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>
@@ -94,7 +94,7 @@
                         >Delete All</v-btn>
                         <v-dialog v-model="deleteDialog" max-width="290">
                           <v-card color="background">
-                            <v-card-title class="headline"><span class="headlines">Do you want to delete everything?</span></v-card-title>
+                            <v-card-title class="headline"><span class="header-font-size">Do you want to delete everything?</span></v-card-title>
                             <v-card-text
                               class="white--text"
                             >This will delete all your stored data on this device.</v-card-text>

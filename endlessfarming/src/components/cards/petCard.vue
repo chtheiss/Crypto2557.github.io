@@ -13,7 +13,7 @@
         class="pet-card-frags"
         v-bind:class="{'availableStage':farmableFragments>0}"
       >{{farmableFragments}}</p>
-      <h4 class="pet-card-name">{{ pet.name }}</h4>
+      <h4 class="pet-card-name default-font-size">{{ pet.name }}</h4>
       <fieldset class="pet-card-stars mb-2 mt-1">
         <label
           class="image-checkbox"
@@ -21,8 +21,8 @@
           v-for="(star, index) in stars"
           v-bind:key="index"
         >
-          <v-icon color="primary" v-if="star" class="img-responsive">fas fa-star</v-icon>
-          <v-icon color="primary" v-else class="img-responsive">far fa-star</v-icon>
+          <v-icon color="primary" v-if="star" class="img-responsive header-font-size">fas fa-star</v-icon>
+          <v-icon color="primary" v-else class="img-responsive header-font-size">far fa-star</v-icon>
           <input type="checkbox" v-on:click="changeValueByStars(index)" />
         </label>
       </fieldset>
