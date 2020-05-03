@@ -23,7 +23,7 @@
                                 :to="subItem.route"
                         >
                             <v-list-item-content>
-                                <v-list-item-title v-text="subItem.text" class="secondary-font-size"></v-list-item-title>
+                                <v-list-item-title v-text="subItem.text" class="default-font-size"></v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-list-group>
@@ -132,15 +132,15 @@
         color: #fff;
     }
 
-    .header-font-size, .v-toolbar__title, .version-header, h4, .pet-card-frags {
+    .header-font-size, .v-list-item__title, .v-toolbar__title, .version-header, h4, .pet-card-frags {
         font-size: var(--header-font-size) !important;
     }
 
-    .default-font-size, .v-list-item__title, .v-btn, .v-tab, button, p, .index-purpose, html {
+    .default-font-size, .v-btn, .v-tab, button, p, .index-purpose, html, .v-tooltip__content {
         font-size: var(--default-font-size) !important;
     }
 
-    .secondary-font-size, .v-subheader, .modal-content > * {
+    .secondary-font-size, .v-subheader, .credits, .modal-content > * {
         font-size: var(--secondary-font-size) !important;
     }
 
