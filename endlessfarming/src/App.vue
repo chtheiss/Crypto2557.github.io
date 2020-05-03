@@ -23,7 +23,7 @@
                                 :to="subItem.route"
                         >
                             <v-list-item-content>
-                                <v-list-item-title v-text="subItem.text"></v-list-item-title>
+                                <v-list-item-title v-text="subItem.text" class="secondary-font-size"></v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-list-group>
@@ -121,24 +121,31 @@
 </script>
 
 <style>
+    :root {
+        --header-font-size: 20px;
+        --default-font-size: 16px;
+        --secondary-font-size:14px;
+        --tertiary-font-size: 12px;
+    }
+
     .v-list .v-list-item--active {
         color: #fff;
     }
 
     .header-font-size, .v-toolbar__title {
-        font-size: 20px !important;
+        font-size: var(--header-font-size) !important;
     }
 
-    .default-font-size, .v-list-item__title {
-        font-size: 16px !important;
+    .default-font-size, .v-list-item__title, .v-btn, .v-tab, button {
+        font-size: var(--default-font-size) !important;
     }
 
-    .secondary-font-size, .v-btn, .v-tab, .v-subheader, button {
-        font-size: 14px !important;
+    .secondary-font-size, .v-subheader {
+        font-size: var(--secondary-font-size) !important;
     }
 
     .tertiary-font-size {
-        font-size: 12px !important;
+        font-size: var(--tertiary-font-size) !important;
     }
 
     .pet-card-input .v-input__append-outer,

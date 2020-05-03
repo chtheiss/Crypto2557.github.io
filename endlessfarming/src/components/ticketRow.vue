@@ -2,7 +2,7 @@
   <v-container class="ticket-row">
     <v-row class="my-1">
       <img class="unit-image mx-2" :src="require(`../assets/img/units/${ticket.unit._id}.png`)" />
-      <h2 class="d-flex align-center default-font-size">{{ticket.unit.name}}</h2>
+      <h2 class="d-flex align-center header-font-size">{{ticket.unit.name}}</h2>
     </v-row>
     <v-row>
       <v-progress-linear :value="completeness" height="25" rounded :color="color">

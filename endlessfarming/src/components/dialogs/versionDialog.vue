@@ -51,7 +51,7 @@ export default {
   border-bottom: 2px solid var(--v-secondary-lighten5);
 }
 .version-header {
-  font-size: 20px;
+  font-size: var(--header-font-size);
   font-style: italic;
   font-weight: bold;
 }
