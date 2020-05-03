@@ -134,7 +134,6 @@ export default {
   }
 }
 .modal-content > * {
-  font-size: 14px;
   max-width: 100%;
 }
 </style>

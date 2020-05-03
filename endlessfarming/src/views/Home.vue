@@ -82,7 +82,6 @@ export default {
 .index-purpose {
   grid-area: purpose;
   padding: 1%;
-  font-size: 16px;
   max-width: 612px;
   justify-self: center;
 }

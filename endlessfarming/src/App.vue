@@ -132,15 +132,15 @@
         color: #fff;
     }
 
-    .header-font-size, .v-toolbar__title {
+    .header-font-size, .v-toolbar__title, .version-header, h4, .pet-card-frags {
         font-size: var(--header-font-size) !important;
     }
 
-    .default-font-size, .v-list-item__title, .v-btn, .v-tab, button {
+    .default-font-size, .v-list-item__title, .v-btn, .v-tab, button, p, .index-purpose, html {
         font-size: var(--default-font-size) !important;
     }
 
-    .secondary-font-size, .v-subheader {
+    .secondary-font-size, .v-subheader, .modal-content > * {
         font-size: var(--secondary-font-size) !important;
     }
 
@@ -184,7 +184,6 @@
     body,
     html {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
         margin: 0;
     }
 

@@ -224,7 +224,6 @@ export default {
   background: radial-gradient(circle, #333 0, #333 0, rgba(224, 49, 6, 0.3));
 }
 h4 {
-  font-size: var(--header-font-size);
   margin: 0;
   font-weight: 400;
 }
@@ -259,7 +258,6 @@ h4 {
 }
 .pet-card-frags {
   grid-area: frags;
-  font-size: var(--header-font-size);
   font-weight: bold;
 }
 .pet-card > p.pet-card-frags {

@@ -42,9 +42,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-p {
-  font-size: 16px;
-}
-</style>
