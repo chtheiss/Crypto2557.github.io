@@ -10,7 +10,7 @@
       </template>
 
       <v-card color="background">
-        <v-card-title class="headline" primary-title>Info</v-card-title>
+        <v-card-title class="headline" primary-title><span class="header-font-size">Info</span></v-card-title>
         <v-card-text class="white--text">
           <p class="pa-0 ma-0">
             <b>1.</b> On this page you can find suggestions in which order you should use your valuable Unit Selection Tickets.
@@ -36,9 +36,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-p {
-  font-size: 16px;
-}
-</style>

@@ -10,7 +10,7 @@
       </template>
 
       <v-card color="background">
-        <v-card-title class="headline" primary-title>Info</v-card-title>
+        <v-card-title class="headline" primary-title><span class="header-font-size">Info</span></v-card-title>
         <v-card-text class="white--text">
           <p class="pa-0 ma-0">
             <b>1.</b> This site provides a priority system for farming Spirit Highlands (SH) pets that will maximize growth based on your current Knightage Level (KL) and available tickets.Provide a priority system for farming Spirit Highlands (SH) pets
@@ -56,9 +56,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-p {
-  font-size: 16px;
-}
-</style>

@@ -71,6 +71,10 @@ export default {
     total: function() {
       let linkedFiveStarAmount = 0;
       let linkedSixStarAmount = 0;
+      let multiplier =
+        this.petActive & (this.buff.multiplierWithPet != undefined)
+          ? this.buff.multiplierWithPet
+          : this.buff.multiplier;
       for (let i = 0; i < this.linkedFiveStarUnits.length; i++) {
         linkedFiveStarAmount +=
           this.linkedFiveStarUnits[i].amount * this.buff.linkedMultiplier[i];
@@ -78,9 +82,9 @@ export default {
           this.linkedSixStarUnits[i].amount * this.buff.linkedMultiplier[i];
       }
       let total =
-        this.amountJr * this.buff.multiplier +
+        this.amountJr * multiplier +
         this.amountSr +
-        this.buff.multiplier * linkedFiveStarAmount +
+        multiplier * linkedFiveStarAmount +
         linkedSixStarAmount;
       total = Number.isInteger(total) ? total : total.toFixed(2);
       return total;

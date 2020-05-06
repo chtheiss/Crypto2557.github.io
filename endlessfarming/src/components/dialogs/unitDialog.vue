@@ -11,7 +11,7 @@
     </template>
     <v-card color="background">
       <v-card-title>
-        <h5 class="modal-title">{{unit.name}}</h5>
+        <h5 class="modal-title header-font-size">{{unit.name}}</h5>
         <img
           class="unit-image ml-2"
           :src="require(`../../assets/img/units/${unit._id}.png`)"
@@ -22,7 +22,7 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-card-title>
-      <v-card-text class="white--text">
+      <v-card-text class="white--text default-font-size">
         <ul>
           <li v-for="(ability, index) in unit.abilities" :key="index">{{ability}}</li>
         </ul>

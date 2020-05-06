@@ -6,6 +6,7 @@ venv
 
 .DS_Store
 node_modules
+endlessfarming/node_modules
 /dist
 
 # local env files

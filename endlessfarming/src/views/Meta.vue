@@ -5,7 +5,7 @@
       src="../assets/img/meta_progression_v2.png"
       aspect-ratio="2"
     ></v-img>
-    <p class="text-center">{{ credit }}</p>
+    <p class="text-center credits">{{ credit }}</p>
   </v-container>
 </template>
 
@@ -18,9 +18,3 @@ export default {
   })
 };
 </script>
-
-<style scoped>
-p {
-  font-size: 12px;
-}
-</style>
