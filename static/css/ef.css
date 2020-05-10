@@ -29,6 +29,10 @@ body, html{
     margin:0;
 }
 
+.announcement-container{
+    text-align: center;
+}
+
 #logo-image{
     max-height: 38.5px;
 }
